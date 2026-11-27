@@ -1021,6 +1021,50 @@ class TimelineControllerTests(unittest.TestCase):
             history=stage_fixture(); mutation(history)
             self.assertIn("unavailable",self.drive(history)["timeline-status"]["text"])
 
+    def test_taxonomy_and_cross_references_render_in_timeline_and_catalogue(self):
+        data = catalogue()
+        data["stage_history"] = stage_fixture()
+        data["tradition_taxonomy"] = {
+            "rite_families": [
+                {"id": "roman-curial", "label": "Roman & Curial", "color": "#2c7a51", "ink": "#1d5739", "wash": "#eef6f1"},
+                {"id": "byzantine", "label": "Byzantine", "color": "#9b2c40", "ink": "#701c2b", "wash": "#fcf0f2"},
+            ],
+            "regions": [{"id": "rome-italy", "label": "Rome & Italy"}],
+            "traditions": {
+                "fixture-line": {"rite_family": "roman-curial", "region": "rome-italy"},
+                "parallel-line": {"rite_family": "byzantine", "region": "rome-italy"},
+            },
+        }
+        data["cross_references"] = {
+            "by_record_id": {
+                "example": {
+                    "stages": [{"id": "second", "tradition_id": "fixture-line", "tradition_label": "Constructed principal recension",
+                                "label": "Book state second", "date_label": "1210–1230", "text_coverage": "partial"}],
+                    "comparisons": [],
+                }
+            },
+            "by_stage_id": {
+                "second": {
+                    "source_library_editions": [{"edition_id": "edition.fixture.1210", "record_id": "example",
+                                                 "title": "Fixture Source Edition", "url": "../sources/#edition=edition.fixture.1210"}],
+                    "related_routes": [{"kind": "liturgy", "label": "Read in Today’s Missal", "href": "../liturgy/day.html#missal=roman-1962"}],
+                }
+            },
+        }
+        import _eucharistic_history as history_mod
+        thin_stage = history_mod.stage_history_projection(
+            {**data, "scope_ref": data.get("scope_ref", "fixture-scope"), "counts": data.get("counts", {})}
+        )
+        got_timeline = self.drive(data["stage_history"], data=data, stage_data=thin_stage, hash="#stage=second")
+        self.assertEqual(got_timeline["calls"], ["structure/act-history/stage-history.json"])
+        self.assertIn("Elsewhere in Triptych", got_timeline["timeline-detail"]["text"])
+        self.assertTrue(any(link["href"] == "../sources/#edition=edition.fixture.1210" for link in got_timeline["timeline-detail"]["links"]))
+        self.assertTrue(any(link["href"] == "../liturgy/day.html#missal=roman-1962" for link in got_timeline["timeline-detail"]["links"]))
+        got_cat = CatalogueControllerTests().drive(data, hash="#record=example")
+        self.assertIn("Elsewhere in this Missal Timeline", got_cat["catalogue-detail"]["text"])
+        self.assertTrue(any("view=timeline" in link["href"] and "stage=second" in link["href"]
+                            for link in got_cat["catalogue-detail"]["links"]))
+
 
 @unittest.skipIf(NODE is None, "node is unavailable")
 class CatalogueControllerTests(unittest.TestCase):
@@ -1292,8 +1336,12 @@ class CatalogueControllerTests(unittest.TestCase):
         self.assertEqual(got["calls"], ["structure/act-history/catalogue.json", *fragments])
         self.assertEqual(got["catalogue-comparison-list"]["texts"], ["First wording.", "Second wording."])
         for term in ["--- left\n+++ right", "ninth century", "1915", "1861", "source.left-1", "source.right-2",
-                     "2 source units", "Publication basis", "does not date its introduction"]:
+                     "2 source units", "Publication basis", "does not date its introduction",
+                     "Visual word-by-word witness diff",
+                     "git diff --word-diff=color reconstruction/left reconstruction/right -- text/"]:
             self.assertIn(term, got["catalogue-comparison-list"]["text"])
+        self.assertIn("del", got["catalogue-comparison-list"]["tags"])
+        self.assertIn("ins", got["catalogue-comparison-list"]["tags"])
         self.assertNotIn("svg", got["catalogue-comparison-list"]["tags"])
 
     def test_parallel_function_comparison_does_not_claim_same_composition(self):

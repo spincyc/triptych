@@ -1,0 +1,2422 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "western-uses-orders-2026-11",
+  "title": "Western Diocesan Uses (Iberian, French, German) and Religious-Order Liturgical Depth",
+  "traditions": [
+    {
+      "id": "lubeck-use",
+      "label": "Lübeck Diocesan Use (Missale Lubicense)",
+      "family": "Western diocesan use (German / Northern Imperial)",
+      "scope": "Printed diocesan Mass-book witnesses attributed to the Diocese of Lübeck (1486–c. 1505).",
+      "coverage_note": "Documents the inspected c. 1505 Usuarium 7238 witness and records the 1486 Matthäus Brandis incunable (Usuarium 41 / ISTC im00659300) as a provisional lead; USTC 741258/676212 reconciliation and Reformation closure remain open."
+    },
+    {
+      "id": "merseburg-use",
+      "label": "Merseburg Diocesan Use (Missale Merseburgense)",
+      "family": "Western diocesan use (German / Saxon Imperial)",
+      "scope": "Printed diocesan Mass-book witness attributed to the Diocese of Merseburg (1502).",
+      "coverage_note": "Documents the inspected 1502 Usuarium 7271 witness (UB Leipzig III/243, Amiet 591); direct imprint/body inspection and Reformation-era cessation remain open."
+    },
+    {
+      "id": "benedictine-monastic",
+      "label": "Benedictine Monastic Missals (Missale Benedictinum / Casinense / Romano-Monasticum)",
+      "family": "Western monastic order (Benedictine)",
+      "scope": "Selected non-Bursfelde, non-Cluniac Benedictine printed missal states (1481 generic Benedictine incunable, 1580 Cassinese Congregation missal, 1937 Missale Romano-Monasticum rubric extract); kept distinct from individual abbey uses, Bursfelde, and Cluny.",
+      "coverage_note": "Documents three bounded printed/preliminary states without asserting a single unified Benedictine recension across independent congregations."
+    }
+  ],
+  "sources": [
+    {
+      "id": "western-uses-orders-2026-11:src-usuarium-41",
+      "title": "USUARIUM 41: Missale Lubicense (Lübeck, Matthäus Brandis, 29 September 1486)",
+      "url": "https://usuarium.elte.hu/book/41/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Web-verified Usuarium route 41 for the 1486 Lübeck missal printed by Matthäus Brandis under Bishop Albert II Krummendiek (ISTC im00659300, Weale-Bohatta 542); full HTML not yet locally acquired.",
+      "checked_on": "2026-11-25",
+      "status": "lead",
+      "limitations": "Lead source pending local HTML and original scan acquisition."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-usuarium-7238",
+      "title": "USUARIUM 7238: Missale Lubicense (about 1505)",
+      "url": "https://usuarium.elte.hu/book/7238/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Repository-inspected (central-amiet-usuarium-7238 SHA-256 13ddeb58..., 16,791 bytes): Lübeck missal aged about 1505, Amiet 543, citing USTC 741258 and remark USTC 676212.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Catalogue metadata only; printer, holding shelfmark, and USTC 741258 vs 676212 reconciliation remain open."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-usuarium-7271",
+      "title": "USUARIUM 7271: Missale Merseburgense (1502)",
+      "url": "https://usuarium.elte.hu/book/7271/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Repository-inspected (central-amiet-usuarium-7271): Merseburg missal aged 1502, Amiet 591, UB Leipzig III/243, recording opening incipit Ex quo missalium diversitas in dioecesi Merszburgensi.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Catalogue metadata only; opening incipit is not read as a verified promulgating act; original imprint and body uninspected."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-ocarroll1979",
+      "title": "Maura O'Carroll, The Lectionary for the Proper of the Year in the Dominican and Franciscan Rites of the Thirteenth Century, AFP 49 (1979), 79–103",
+      "url": "https://heyjoe.fbk.eu/index.php/afp/article/download/8504/8505/8506",
+      "kind": "scholarship",
+      "inspection": "Repository-inspected (ocarroll-1979-pericopes): rendered PDF pp. 80–84 and comparison tables inspected, dating BL Add. MS 23935 to 1255–1263 and describing the 1256 Humbert of Romans prototype codex (Santa Sabina XIV L 1) and its 14 books.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Focuses on Temporal pericopes and prototype structure; does not collate the entire Dominican Mass Ordinary or later printed missals."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-usuarium-446",
+      "title": "USUARIUM 446: Ordinary of the Roman Correctorium (Arch. OP Roma, 1256)",
+      "url": "https://usuarium.elte.hu/book/446/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Repository-inspected (dominican-correctorium-1256): Ordinary of the Roman Correctorium, 1256, Arch. OP Roma; 1921 Guerrini critical edition distinguished.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Catalogue metadata only; direct foliation of Santa Sabina XIV L 1 not acquired."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-istc-dominican1482",
+      "title": "ISTC im00636000 / GW M24176: Missale Dominicanum (Venice, Octavianus Scotus, 24 December 1482)",
+      "url": "https://data.cerl.org/istc/im00636000",
+      "kind": "institutional-catalogue",
+      "inspection": "Web-verified ISTC im00636000 (GW M24176) for Octavianus Scotus's 24 December 1482 Venetian Dominican missal; full record and scan not yet locally acquired.",
+      "checked_on": "2026-11-25",
+      "status": "lead",
+      "limitations": "Lead source pending direct incunable inspection."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-op-1484-archive",
+      "title": "Incipit missale secundum Ordinem Fratrum Predicatorum (Venice: Nicolaus de Frankfordia, 1484), Internet Archive BPL copy",
+      "url": "https://archive.org/details/incipitmissalese00cath",
+      "kind": "primary-book",
+      "inspection": "Repository-verified in latin-missal-acts-v1.toml (1484-missale-praedicatorum-venetiis): 598 images, Boston Public Library copy, opening incipit verified as declaration of Dominican use.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Imprint, incipit, and extent verified; liturgical body units not yet collated."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-op-1933",
+      "title": "Missale S. Ordinis Praedicatorum (Rome, 1933), CMAA digital facsimile",
+      "url": "https://media.churchmusicassociation.org/dominican/M33.pdf",
+      "kind": "primary-book",
+      "inspection": "Repository-inspected (mendicant-src-cmaa-dom): 1933 title page and Master General Martin Gillet prefatory letter specifying corrected rubrics and sanctoral.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Front matter inspected; full body delta against 1604 and 1939 uncollated."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-op-1939",
+      "title": "Missale S. Ordinis Praedicatorum (Rome, 1939), MusicaSacra digital facsimile",
+      "url": "https://www.musicasacra.com/dominican/M39.pdf",
+      "kind": "primary-book",
+      "inspection": "Repository-inspected (mendicant-src-op-m39): PDF pp. 2–5 title and Master General Gillet letter after the 1938 General Chapter describing a smaller corrected and augmented edition.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Front matter inspected; exact textual delta from 1933 uncollated."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-op-1965",
+      "title": "Missale S. Ordinis Praedicatorum (1965), MusicaSacra digital facsimile",
+      "url": "https://www.musicasacra.com/dominican/M65.pdf",
+      "kind": "primary-book",
+      "inspection": "Repository-inspected (mendicant-src-op-m65): 1965 title and three SRC approval decrees, including PDF p. 4 protocol 55/965 dated 4 May 1965 alongside distinct 1960 and 1961 rubric/calendar decrees.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Front matter and decrees inspected; complete line-by-line body collation against 1933/1939 remains open."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-op-1985",
+      "title": "Missale et Lectionarium Ordinis Praedicatorum, editio typica (1985)",
+      "url": "https://www.op.org/wp-content/uploads/2026/05/TL-01-Missale-et-Lectionarium-OP-1985.pdf",
+      "kind": "primary-book",
+      "inspection": "Repository-inspected (mendicant-src-op-1985-original): PDF pp. 5–6 (printed VII–VIII) component list and PDF p. 8 (printed X §3 n. 5) citing Congregation for Divine Worship decree CD 98/69 (2 June 1969) adopting the reformed Roman Missal.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Front matter and decree citation inspected; original 1969 decree document itself not separately acquired."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-boyce2004",
+      "title": "James Boyce, The Carmelite Liturgy, Studia Musicologica 45 (2004), 17–34",
+      "url": "https://real.mtak.hu/65294/1/smus.45.2004.1-2.2.pdf",
+      "kind": "scholarship",
+      "inspection": "Repository-inspected (boyce-carmelite-2004): rendered pp. 18–20 and 28–29 inspected, documenting Sibert de Beka's Ordinal promulgated at the 1312 London General Chapter, its Mass/Office incipits, and Krakow liturgical manuscripts.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "An ordinal regulates rites and incipits rather than supplying a complete missal text."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-oc-1490-gallica",
+      "title": "Missale Carmelitarum (Brescia: Boninus de Boninis, 1490), Gallica bpt6k5578012t",
+      "url": "https://gallica.bnf.fr/ark:/12148/bpt6k5578012t",
+      "kind": "primary-book",
+      "inspection": "Repository discovery route (mendicant-src-oc-1490-gallica): Gallica ARK for the 1490 Brescia Carmelite incunable; original page images not yet acquired.",
+      "checked_on": "2026-10-20",
+      "status": "lead",
+      "limitations": "Lead source pending direct scan inspection and collation against 1574."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-oc-1935-openlib",
+      "title": "Missale Ordinis Fratrum B.M.V. de Monte Carmelo (Rome, 1935), Open Library record OL20996845M",
+      "url": "https://openlibrary.org/books/OL20996845M/Missale_ordinis_fratrum_beatae_Mariae_Virginis_de_Monte_Carmelo",
+      "kind": "institutional-catalogue",
+      "inspection": "Repository-inspected (mendicant-src-oc-openlibrary): bibliographic identity of the 1935 Rome Carmelite missal.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Catalogue metadata only; conflicting 1937 report and full contents unresolved."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-oc-1974-carmelus",
+      "title": "Carmelus bibliography entry 137: Proprium Missarum una cum lectionario OCarm, editio typica (1974)",
+      "url": "https://carmelus.com/index.php/carmelus/issue/download/24/17",
+      "kind": "scholarship",
+      "inspection": "Repository-inspected (mendicant-src-oc-carmelus): bibliography entry 137 identifying the 158-page 1974 typical edition of the Carmelite proper and lectionary.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Bibliographic entry only; original 1974 volume and approval decree not acquired."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-carthusian-usuarium",
+      "title": "USUARIUM Origin 227: Carthusian liturgical books (Charleville MS 154, 1275–1300)",
+      "url": "https://usuarium.elte.hu/origin/227/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Repository-inspected (carthusian-usuarium): origin table read, identifying Charleville MS 154 (1275–1300, ID 2262) and printed missals 1496, 1509, 1561, 1603, 1627.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Catalogue overview only; no direct folio collation of Charleville MS 154."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-carthusian-1496-bsb",
+      "title": "Missale Cartusiense (Speyer: Peter Drach for Henrick Eckert van Homberch, [1496]), BSB bsb00030081",
+      "url": "https://www.digitale-sammlungen.de/en/view/bsb00030081",
+      "kind": "primary-book",
+      "inspection": "Repository-verified in latin-missal-acts-v1.toml (1496-missale-cartusiense-spirae): IIIF manifest fetched and read (572 canvases, 278 leaves, BSB 2 Inc.s.a. 879, GW M24135, Weale-Bohatta 1728).",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Manifest metadata verified; liturgical body units not yet read or collated."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-carthusian-1679-gallica",
+      "title": "Missale Cartusiani Ordinis ex ordinatione Capituli Generalis 1677 (Fourvoirie in Savoy: Louis du Four, 1679), Gallica bpt6k9127828m",
+      "url": "https://gallica.bnf.fr/ark:/12148/bpt6k9127828m",
+      "kind": "primary-book",
+      "inspection": "Repository-verified in latin-missal-acts-v1.toml (cartusiense-capitulum-1679): engraved title plate at canvas f5 (FAVRATII IN SABAVDIA, 1679) and Prior General Innocent Le Masson's prefatory letter at canvas f7 quoting the 1677 General Chapter ordinance visually inspected in page images.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Title plate and opening of prefatory letter inspected; body text not collated against 1627 or 2021."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-king1955-lead",
+      "title": "Archdale A. King, Liturgies of the Religious Orders (1955), Internet Archive route",
+      "url": "https://archive.org/details/liturgiesofrelig00king",
+      "kind": "scholarship",
+      "inspection": "Web-verified public Internet Archive route for King's 1955 survey covering Carthusian 1517 Lyon and 1883 Montreuil editions as well as late-19th-century Premonstratensian printings; individual pages for these three witnesses not yet locally image-inspected.",
+      "checked_on": "2026-11-25",
+      "status": "lead",
+      "limitations": "Secondary scholarly lead pending direct page-image inspection of the 1517, 1883, and 1890/1900 printings."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-carthusian-official",
+      "title": "Carthusian Order official liturgical resources page",
+      "url": "https://chartreux.org/moines/ressources/textes/",
+      "kind": "official-retrospective",
+      "inspection": "Repository-inspected (carthusians-official): lines 20–28 confirm Roman recognition of the reformed Carthusian missal while not specifying edition year or decree date.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Does not supply publication year or decree text; 1981 identity relies on external bibliography lead."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-carthusian-nbc1",
+      "title": "Nouvelle Bibliographie Cartusienne (NBC 1), p. 162 (1981 Latin Missale Cartusiense)",
+      "url": "https://www.cartusiana.org/sites/default/files/NBC%201.pdf",
+      "kind": "scholarship",
+      "inspection": "Repository lead (carthusian-bibliography): search-index excerpt p. 162 identifies 1981 Latin Missale Cartusiense and 1982 English translation; direct PDF open failed in prior lane.",
+      "checked_on": "2026-10-20",
+      "status": "lead",
+      "limitations": "Lead only; 1981 edition front matter not directly acquired."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-carthusian-2021",
+      "title": "Missale Cartusiense (2021), 538-page PDF (title and Praenotanda §2)",
+      "url": "https://cartusialover.wordpress.com/wp-content/uploads/2023/04/missale-cartusiense-2021-1.pdf",
+      "kind": "primary-book",
+      "inspection": "Repository-inspected (monastic-src-carthusian-2021): title year 2021 and Praenotanda §2 inspected, explicitly reporting changed prayers, prefaces, commons, and ritual order, with 2018 calendar approval kept distinct.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Unofficially hosted PDF; exact collation against 1981 and formal Roman recognition date remain open."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-premon-usuarium",
+      "title": "USUARIUM Origin 232: Premonstratensian liturgical books (Charleville MS 3, 1150–1175)",
+      "url": "https://usuarium.elte.hu/origin/232/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Repository-inspected (premonstratensian-usuarium): origin table read, identifying Charleville MS 3 (ID 2246, 1150–1175) and Laon 226b alongside early printed missals 1510, 1530, 1578.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Catalogue overview only; manuscript text not directly inspected."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-premon-1510-bsb",
+      "title": "Ordo missalis secundum ritum ordinis Premonstratensis ([Strasbourg: Prüss, c. 1510]), BSB bsb00002021",
+      "url": "https://www.digitale-sammlungen.de/en/view/bsb00002021",
+      "kind": "primary-book",
+      "inspection": "Repository-verified in latin-missal-acts-v1.toml (1510-missale-praemonstratense-argentorati): IIIF manifest fetched (588 canvases, GW M24182, VD16 M 5647, Weale-Bohatta 1671), verifying opening title incipit and recording 1500–1511 dating conflict.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Manifest metadata and opening incipit verified; body text uncollated."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-premon-1530-bsb",
+      "title": "Missale Praemonstratense (Paris, 1530), BSB bsb10164241",
+      "url": "https://www.digitale-sammlungen.de/en/view/bsb10164241",
+      "kind": "primary-book",
+      "inspection": "Repository-verified in latin-missal-acts-v1.toml (1530-missale-praemonstratense-parisiis): IIIF manifest fetched (510 canvases, BSB 2 Liturg. 235 a, Paris 1530).",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Manifest metadata verified; body text uncollated against 1510 or 1578."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-premon-1936",
+      "title": "Missale Praemonstratense (Mechelen: H. Dessain, 1936), Abbot General Gummarus Crets preface",
+      "url": "https://drive.google.com/file/d/1PJrIXNaELcBcBl3zgorq-eUzzoxandRW/view",
+      "kind": "primary-book",
+      "inspection": "Repository-inspected (canonical-premon-1936-book): title (PDF 3) and Abbot General Gummarus Crets preface dated 2 September 1936 (PDF 4) image-inspected, reporting 1934 General Chapter authority, added Masses, and text/chant changes.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Title and preface inspected; specific changed formularies and comparison against 1890/1900/1902 predecessors remain uncollated."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-osb-usuarium-409",
+      "title": "USUARIUM Origin 409: Benedictine liturgical books (book 469, Missale Benedictinum, 1481)",
+      "url": "https://usuarium.elte.hu/origin/409/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Repository-inspected (monastic-src-usuarium-osb-409): origin table row 469 read (Italy, OSB, 1481, Missale Benedictinum).",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Origin table row only; physical title, colophon, and congregational affiliation uninspected."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-cassinese-1580",
+      "title": "Missale monasticum secundum ritum Congregationis Casinensis alias Sanctae Iustinae (Venice, 1580)",
+      "url": "https://archive.org/download/bub_gb_mMB31zxR8McC/bub_gb_mMB31zxR8McC.pdf",
+      "kind": "primary-book",
+      "inspection": "Repository-inspected (monastic-src-cassinese-1580): PDF p. 5 title in 563-page scan verified for Venice 1580 Cassinese Congregation imprint and invocation of general meeting decrees.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Title page only; cited congregational decrees and liturgical body delta uninspected."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-osb-1937",
+      "title": "Missale Romano-Monasticum, Editio quinta rubric extract (1937 dated preliminaries)",
+      "url": "https://archive.org/download/missale-romano-monasticum-1937-rubrics/Missale%20Romano-Monasticum%20%281937%29%20Rubrics.pdf",
+      "kind": "primary-book",
+      "inspection": "Repository-inspected (monastic-src-osb-1937): 27-page rubric/front-matter extract inspected at PDF p. 1 (undated Editio quinta title) and PDF p. 3 (prefatory letter 24 June 1937 and Ratisbon approval 15 August 1937).",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Front-matter/rubric extract only; complete missal body and comparison with earlier editions not acquired."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-osa-pal500",
+      "title": "Biblioteca Apostolica Vaticana, Pal. lat. 500 IIIF manifest (Augustinian Ordo missalis)",
+      "url": "https://digi.vatlib.it/iiif/MSS_Pal.lat.500/manifest.json",
+      "kind": "institutional-catalogue",
+      "inspection": "Repository-inspected (additional-orders-src-osa-pal500-manifest): BAV IIIF manifest inspected (387 canvases, title Ordo missalis, catalogue date 1314; Heidelberg catalogue places base hand in first half of 14th c. with c. 1400 and 1466 layers).",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Manifest metadata only; complete folio-level collation of base hand and later additions remains open."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-osa-1965",
+      "title": "Analecta Ordinis Augustinianorum Discalceatorum 1965 vol. 2 (17 July 1965 rescript)",
+      "url": "https://oadnet.org/wp-content/uploads/2021/04/Analecta-Ordinis-1965-vol-2.pdf",
+      "kind": "primary-act",
+      "inspection": "Repository-inspected (additional-orders-src-osa-1965): 17 July 1965 rescript permitting OAD use of the recently approved OSA Proprium Officiorum et Missarum with OAD variations.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Indirect rescript attestation of the 1965 OSA proper; primary OSA approval decree and complete Latin text not yet acquired."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-osa-2007-acta",
+      "title": "Acta Ordinis Augustinianorum Recollectorum (2007), PDF pp. 19–20 (17 February 2006 shared Augustinian Latin Proprium Missarum)",
+      "url": "https://agustinosrecoletos.com/wp-content/uploads/2016/09/FICHERO9159.pdf",
+      "kind": "primary-act",
+      "inspection": "Repository-inspected (additional-orders-src-augustinian-2007): official Acta OAR 2007 PDF pp. 19–20 printing the 17 February 2006 OAR confirmation of the shared OSA/OAR/OAD Latin Proprium Missarum and tracing the 1970–1976 postconciliar revision.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Confirms shared Latin proper structure and 2006 approval; full Latin proper book not acquired."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-servite-baroffio",
+      "title": "Giacomo Baroffio, AMEN AMEN (Uso servita bibliography, PDF pp. 230 & 254)",
+      "url": "https://www.liturgia.it/content/baroffio/AMEN%20AMEN.pdf",
+      "kind": "scholarship",
+      "inspection": "Repository-inspected (additional-orders-src-servite-bibliography): PDF pp. 230 and 254 explicitly identifying the 1998 editio typica altera of the Servite Proprium Missarum in two volumes (Vol. I Antiphonale Sacramentarium; Vol. II Lectionarium, Libri Liturgici OSM 1–2 bis).",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Scholarly bibliography only; original 1998 front matter, decree, and textual delta from 1972 remain uninspected."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-servite-order-biblio",
+      "title": "Servite Order bibliography, In memoriam (printed p. 585, Libri Liturgici OSM items 1, 2, 9)",
+      "url": "http://servidimaria.net/sitoosm/it/storia/altri/memoriam.pdf",
+      "kind": "official-retrospective",
+      "inspection": "Repository-inspected (additional-orders-src-servite-order-biblio): printed p. 585 listing the two 1972 volumes and the 1998 second typical edition.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Order bibliographic listing only; original 1998 volumes uninspected."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-welch2011",
+      "title": "Anna Elizabeth Welch, Franciscan Liturgy and Identities (2011 thesis), pp. 53–61",
+      "url": "https://repository.divinity.edu.au/divinityserver/api/core/bitstreams/a9adeb8b-8d7d-4cf4-a171-b6f087fe8d9b/content",
+      "kind": "scholarship",
+      "inspection": "Repository-inspected (latin-early-welch2011): complete thesis acquired; title and pp. 53–61 inspected on reconstructed 1223/1230 Regula curial-Franciscan missal prototypes and early manuscript witnesses.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Modern scholarly reconstruction; no single surviving physical archetype exemplar of the 1223/1230 Regula missal exists."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-sedda2019",
+      "title": "Filippo Sedda, Antonius liturgicus, Il Santo 59 (2019), pp. 298–326",
+      "url": "https://www.centrostudiantoniani.it/sites/default/files/riviste/pdfs/2019.3.rivista.pdf",
+      "kind": "scholarship",
+      "inspection": "Repository-inspected (latin-early-sedda2019): complete journal PDF acquired; pp. 298–319 comparative tables and manuscript descriptions of Assisi MS 607 (base hand pre-Haymonian rubrics & Anthony In medio Mass; second hand A2 marginal Haymo rubric/oration corrections, pp. 315–318) and p. 326 on Nicholas III / Orsini 1263–1280 Roman liturgical unification.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Scholarly paleographical and comparative analysis; direct folio images of Assisi MS 607 not separately acquired."
+    },
+    {
+      "id": "western-uses-orders-2026-11:src-usuarium-ofm-407",
+      "title": "USUARIUM Origin 407: Franciscan liturgical sources (item 5840, Venice 1482 Scotus / Philip de Rotingo)",
+      "url": "https://usuarium.elte.hu/origin/407/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Repository-inspected (latin-early-usuarium-ofm): origin table and 14 Mass detail routes inspected; item 5840 records Missale secundum morem Romanae ecclesiae revised by Philip de Rotingo OFM Obs., Venice: Octavianus Scotus, 1482 (BnF B-27921, fragmentary).",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Catalogue metadata only; Roman-curial missal edited by an Observant friar, not shown to be a distinct Franciscan liturgical rite."
+    }
+  ],
+  "stages": [
+    {
+      "id": "western-uses-orders-2026-11:lubeck-1486-brandis",
+      "tradition_id": "lubeck-use",
+      "label": "1486 Lübeck incunable missal (Matthäus Brandis)",
+      "date_label": "29 September 1486 (catalogue lead)",
+      "start_year": 1486,
+      "end_year": 1486,
+      "date_kind": "publication",
+      "status": "provisional",
+      "scope": "Earliest recorded printed missal for the Diocese of Lübeck, printed by Matthäus Brandis.",
+      "components": [
+        "ordinary",
+        "propers",
+        "calendar"
+      ],
+      "witness_ids": [
+        "western:central-lubeck-1486-brandis"
+      ],
+      "witness_label": "Missale Lubicense (Lübeck: Matthäus Brandis, 29 September 1486; Usuarium 41 / ISTC im00659300)",
+      "summary": "Usuarium 41 (ISTC im00659300, Weale-Bohatta 542) documents Matthäus Brandis's 29 September 1486 Lübeck incunable missal commissioned under Bishop Albert II Krummendiek.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-usuarium-41",
+          "locus": "Usuarium 41 bibliographic record",
+          "claim": "Identifies the 29 September 1486 Lübeck Brandis incunable missal."
+        }
+      ],
+      "limitations": "Provisional lead pending local HTML and original scan acquisition.",
+      "reception": "Publication lead only."
+    },
+    {
+      "id": "western-uses-orders-2026-11:lubeck-c1505",
+      "tradition_id": "lubeck-use",
+      "label": "c. 1505 Missale Lubicense print",
+      "date_label": "about 1505 (catalogue-reported approximate age)",
+      "start_year": 1505,
+      "end_year": 1505,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Early 16th-century printed witness of the Diocese of Lübeck in the inspected census.",
+      "components": [
+        "ordinary",
+        "propers",
+        "calendar"
+      ],
+      "witness_ids": [
+        "western:central-lubeck-usuarium-7238"
+      ],
+      "witness_label": "Missale Lubicense (c. 1505; Amiet 543, USTC 741258 / 676212)",
+      "summary": "Usuarium 7238 documents an approximately 1505 printed Missale Lubicense (Amiet 543) with unreconciled USTC references 741258 and 676212.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-usuarium-7238",
+          "locus": "Usuarium 7238 bibliographic table",
+          "claim": "Identifies the c. 1505 Missale Lubicense (Amiet 543, USTC 741258 / 676212)."
+        }
+      ],
+      "limitations": "Catalogue metadata only; printer, holding shelfmark, USTC reconciliation, and relation to 1486 Brandis remain open.",
+      "reception": "Bibliographic witness only."
+    },
+    {
+      "id": "western-uses-orders-2026-11:merseburg-1502",
+      "tradition_id": "merseburg-use",
+      "label": "1502 Missale Merseburgense print",
+      "date_label": "1502 (catalogue-reported publication year)",
+      "start_year": 1502,
+      "end_year": 1502,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Early 16th-century printed witness of the Diocese of Merseburg.",
+      "components": [
+        "ordinary",
+        "propers",
+        "calendar"
+      ],
+      "witness_ids": [
+        "western:central-merseburg-usuarium-7271"
+      ],
+      "witness_label": "Missale Merseburgense (1502; Amiet 591, UB Leipzig III/243)",
+      "summary": "Usuarium 7271 documents the 1502 Missale Merseburgense held at UB Leipzig (III/243, Amiet 591), noting the incipit Ex quo missalium diversitas in dioecesi Merszburgensi.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-usuarium-7271",
+          "locus": "Usuarium 7271 bibliographic table",
+          "claim": "Identifies the 1502 Missale Merseburgense (Amiet 591, UB Leipzig III/243)."
+        }
+      ],
+      "limitations": "Catalogue metadata only; incipit is not verified as an episcopal promulgation act and original body text is uninspected.",
+      "reception": "Bibliographic witness only."
+    },
+    {
+      "id": "western-uses-orders-2026-11:dominican-1256-prototype",
+      "tradition_id": "dominican",
+      "label": "1256 Humbert of Romans prototype & portable master exemplar",
+      "date_label": "1255–1263 (1256 chapter revision; portable exemplar BL Add. MS 23935)",
+      "start_year": 1255,
+      "end_year": 1263,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Mid-13th-century standardized Dominican liturgical archetype (Santa Sabina XIV L 1) and Master General portable exemplar (BL Add. MS 23935).",
+      "components": [
+        "propers",
+        "lectionary",
+        "calendar",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:dominican-correctorium-1256",
+        "western:dominican-master-exemplar-add23935"
+      ],
+      "witness_label": "Arch. OP Roma XIV L 1 (1256) & British Library Add. MS 23935 (1255–1263)",
+      "summary": "Inspected scholarship (O'Carroll 1979) documents the 1256 Humbert of Romans chapter standardization across fourteen complementary liturgical books and compares the Temporal pericopes of BL Add. MS 23935 with Santa Sabina XIV L 1.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-ocarroll1979",
+          "locus": "pp. 80–84 and comparison tables",
+          "claim": "Dates BL Add. MS 23935 to 1255–1263 and establishes the 1256 prototype structure and Temporal pericope agreement."
+        },
+        {
+          "source_id": "western-uses-orders-2026-11:src-usuarium-446",
+          "locus": "Usuarium 446 catalogue entry",
+          "claim": "Identifies the 1256 Ordinary of the Roman Correctorium at Arch. OP Roma."
+        }
+      ],
+      "limitations": "Pericope agreement does not prove total textual identity across all fourteen books of the prototype and portable exemplar; later additions exist in BL Add. MS 23935.",
+      "reception": "Order-wide normative prototype promulgated by the 1256 General Chapter; actual province-by-province conformity took decades."
+    },
+    {
+      "id": "western-uses-orders-2026-11:dominican-1482-scotus",
+      "tradition_id": "dominican",
+      "label": "1482 Venice Dominican incunable missal (Octavianus Scotus)",
+      "date_label": "24 December 1482 (catalogue lead)",
+      "start_year": 1482,
+      "end_year": 1482,
+      "date_kind": "publication",
+      "status": "provisional",
+      "scope": "Earliest dated printed Dominican missal (Venice: Octavianus Scotus).",
+      "components": [
+        "ordinary",
+        "propers",
+        "lectionary",
+        "calendar"
+      ],
+      "witness_ids": [
+        "western:dominican-1482-scotus"
+      ],
+      "witness_label": "Missale secundum ordinem Fratrum Praedicatorum (Venice: Octavianus Scotus, 24 December 1482)",
+      "summary": "ISTC im00636000 / GW M24176 documents Octavianus Scotus's 24 December 1482 Venetian printing of the Dominican missal, predating Nicolaus de Frankfordia's 1484 Venice printing.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-istc-dominican1482",
+          "locus": "ISTC im00636000 / GW M24176",
+          "claim": "Identifies the 24 December 1482 Venice Scotus Dominican missal."
+        }
+      ],
+      "limitations": "Provisional lead; original incunable scan not yet inspected or collated against 1484 and 1550.",
+      "reception": "Publication lead only."
+    },
+    {
+      "id": "western-uses-orders-2026-11:dominican-1484-venice",
+      "tradition_id": "dominican",
+      "label": "1484 Venice Dominican incunable missal (Nicolaus de Frankfordia)",
+      "date_label": "1484 (verified printed witness)",
+      "start_year": 1484,
+      "end_year": 1484,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Early Venetian printed Dominican missal held in the repository act-history catalogue.",
+      "components": [
+        "ordinary",
+        "propers",
+        "lectionary",
+        "calendar"
+      ],
+      "witness_ids": [
+        "latin-missal:praedicatorum-venetiis-1484"
+      ],
+      "witness_label": "Incipit missale secundum Ordinem Fratrum Predicatorum (Venice: Nicolaus de Frankfordia, 1484)",
+      "summary": "Digitized Boston Public Library copy (598 images) verifies the 1484 Venetian printing of the Dominican missal prior to the 1550 Giunta edition.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-op-1484-archive",
+          "locus": "Opening incipit and metadata",
+          "claim": "Verifies the 1484 Venice Nicolaus de Frankfordia Dominican missal (598 images)."
+        }
+      ],
+      "limitations": "Opening incipit and imprint verified; body text uncollated against 1256 prototype or 1550 Giunta.",
+      "reception": "Early printed witness of the Dominican use."
+    },
+    {
+      "id": "western-uses-orders-2026-11:dominican-1933-1939",
+      "tradition_id": "dominican",
+      "label": "1933 & 1939 Gillet-era Dominican Missals",
+      "date_label": "1933–1939 (two Roman editions under Master General Martin Gillet)",
+      "start_year": 1933,
+      "end_year": 1939,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "20th-century pre-conciliar editions of the Dominican Missal incorporating post-Divino Afflatu rubric and sanctoral updates.",
+      "components": [
+        "ordinary",
+        "propers",
+        "lectionary",
+        "calendar",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:mendicant-op-1933",
+        "western:mendicant-op-1939"
+      ],
+      "witness_label": "Missale S. Ordinis Praedicatorum (Rome, 1933 & 1939)",
+      "summary": "Directly inspected front matter of the 1933 and 1939 Rome editions records Master General Martin Gillet's letters announcing corrected rubrics and an updated sanctoral (with 1939 issued as a smaller augmented edition after the 1938 chapter).",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-op-1933",
+          "locus": "Title page and Gillet prefatory letter",
+          "claim": "Attests the 1933 Rome edition with corrected rubrics and sanctoral."
+        },
+        {
+          "source_id": "western-uses-orders-2026-11:src-op-1939",
+          "locus": "PDF pp. 2–5, title and Gillet letter",
+          "claim": "Attests the 1939 augmented edition following the 1938 General Chapter."
+        }
+      ],
+      "limitations": "Front matter inspected; full body textual delta between 1604, 1933, and 1939 remains uncollated.",
+      "reception": "Official typical/order-wide Dominican editions for pre-1960 celebration."
+    },
+    {
+      "id": "western-uses-orders-2026-11:dominican-1965",
+      "tradition_id": "dominican",
+      "label": "1965 Dominican Missal (final pre-conciliar Dominican-rite edition)",
+      "date_label": "1965 publication (incorporating 1960, 1961, and 4 May 1965 SRC decrees)",
+      "start_year": 1965,
+      "end_year": 1965,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Final full Dominican-rite altar missal, incorporating 1960–1965 Sacred Congregation of Rites rubric, calendar, and Order adjustments.",
+      "components": [
+        "ordinary",
+        "propers",
+        "lectionary",
+        "calendar",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:mendicant-op-1965"
+      ],
+      "witness_label": "Missale S. Ordinis Praedicatorum (1965; SRC Prot. 55/965)",
+      "summary": "Directly inspected front matter prints three distinct SRC approvals, culminating in protocol 55/965 (4 May 1965), applying 1960/1961 calendar and rubric reforms and interim 1965 ritual adjustments while preserving the Dominican Rite.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-op-1965",
+          "locus": "Title and SRC decrees, especially PDF p. 4 Prot. 55/965",
+          "claim": "Documents the 1960, 1961, and 4 May 1965 SRC approvals governing the 1965 Dominican Missal."
+        }
+      ],
+      "limitations": "Front-matter decrees inspected; full line-by-line prayer collation against 1933/1939 remains open.",
+      "reception": "Official Dominican-rite altar missal immediately preceding the 1969 adoption of the Roman Missal."
+    },
+    {
+      "id": "western-uses-orders-2026-11:carmelite-1312-sibert",
+      "tradition_id": "carmelite",
+      "label": "1312 Sibert de Beka Ordinal (London General Chapter)",
+      "date_label": "1312 London General Chapter promulgation (Lambeth MS 193 witness)",
+      "start_year": 1312,
+      "end_year": 1312,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Standardized Carmelite liturgical ordinal regulating Mass and Office incipits across the Order.",
+      "components": [
+        "calendar",
+        "propers",
+        "rubrics",
+        "chant"
+      ],
+      "witness_ids": [
+        "western:carmelite-sibert-ordinal"
+      ],
+      "witness_label": "Sibert de Beka Ordinal (Lambeth Palace MS 193; 1312 promulgation)",
+      "summary": "Inspected scholarship (Boyce 2004, pp. 18–20) documents the 1312 London General Chapter promulgation of Sibert de Beka's Ordinal, codifying the Carmelite adaptation of the Latin Rite of the Holy Sepulchre.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-boyce2004",
+          "locus": "pp. 18–20",
+          "claim": "Documents the 1312 London General Chapter promulgation of Sibert's Ordinal and its Mass/Office incipits."
+        }
+      ],
+      "limitations": "An ordinal specifies incipits and ceremonial directions rather than furnishing a complete altar missal text.",
+      "reception": "Normative order-wide Carmelite regulatory book of the 14th century."
+    },
+    {
+      "id": "western-uses-orders-2026-11:carmelite-1490-brescia",
+      "tradition_id": "carmelite",
+      "label": "1490 Brescia Carmelite incunable missal",
+      "date_label": "1490 (discovery route)",
+      "start_year": 1490,
+      "end_year": 1490,
+      "date_kind": "publication",
+      "status": "provisional",
+      "scope": "Early printed Carmelite altar missal (Brescia: Boninus de Boninis, 1490).",
+      "components": [
+        "ordinary",
+        "propers",
+        "calendar"
+      ],
+      "witness_ids": [
+        "western:mendicant-oc-1490"
+      ],
+      "witness_label": "Missale Carmelitarum (Brescia, 1490; Gallica bpt6k5578012t)",
+      "summary": "Gallica holds a digitized copy of the 1490 Brescia Carmelite incunable missal predating the 1574 Venice printing; page images remain uninspected locally.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-oc-1490-gallica",
+          "locus": "Gallica ARK bpt6k5578012t",
+          "claim": "Discovery route for the 1490 Brescia printed Carmelite missal."
+        }
+      ],
+      "limitations": "Provisional stage; original page images and textual comparison against 1574 remain unexamined.",
+      "reception": "Incunable publication witness only."
+    },
+    {
+      "id": "western-uses-orders-2026-11:carmelite-1935-rome",
+      "tradition_id": "carmelite",
+      "label": "1935 Rome Carmelite Missal",
+      "date_label": "1935 (catalogue date; conflicting 1937 report unresolved)",
+      "start_year": 1935,
+      "end_year": 1935,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "20th-century pre-conciliar edition of the Ancient Observance Carmelite-rite Missal.",
+      "components": [
+        "ordinary",
+        "propers",
+        "calendar",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:mendicant-oc-1935"
+      ],
+      "witness_label": "Missale Ordinis Fratrum B.M.V. de Monte Carmelo (Rome, 1935)",
+      "summary": "Open Library catalogue metadata identifies the 1935 Rome edition of the Carmelite-rite missal, representing the modern pre-Vatican II stage of the Ancient Observance (O.Carm.) rite (distinct from Discalced Carmelite Roman-base propers).",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-oc-1935-openlib",
+          "locus": "Open Library record OL20996845M",
+          "claim": "Identifies the 1935 Rome Missale Ordinis Fratrum BMV de Monte Carmelo."
+        }
+      ],
+      "limitations": "Catalogue metadata only; full original title, body contents, and conflicting 1937 citation remain unresolved.",
+      "reception": "Modern O.Carm. missal printing; distinct from O.C.D. Roman propers."
+    },
+    {
+      "id": "western-uses-orders-2026-11:carmelite-1974-proper",
+      "tradition_id": "carmelite",
+      "label": "1974 postconciliar Carmelite Proprium Missarum & Lectionary",
+      "date_label": "1974 (editio typica bibliographic attestation)",
+      "start_year": 1974,
+      "end_year": 1974,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Postconciliar O.Carm. proper missal and lectionary supplementing the reformed Roman Missal.",
+      "components": [
+        "propers",
+        "lectionary",
+        "calendar"
+      ],
+      "witness_ids": [
+        "western:mendicant-oc-proper1974"
+      ],
+      "witness_label": "Proprium Missarum una cum lectionario OCarm, editio typica (1974)",
+      "summary": "Carmelus bibliography entry 137 identifies the 158-page 1974 editio typica proper and lectionary reflecting the Ancient Observance Carmelites' postconciliar transition from a full Carmelite-rite missal to Roman Missal plus Carmelite proper.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-oc-1974-carmelus",
+          "locus": "Bibliography entry 137",
+          "claim": "Identifies the 158-page 1974 typical edition of Proprium Missarum una cum lectionario OCarm."
+        }
+      ],
+      "limitations": "Bibliographic attestation only; original 1974 volume and Congregation approval decree remain unacquired.",
+      "reception": "Postconciliar O.Carm. typical proper package."
+    },
+    {
+      "id": "western-uses-orders-2026-11:carthusian-medieval-charleville",
+      "tradition_id": "carthusian",
+      "label": "1275–1300 Carthusian manuscript missal (Charleville MS 154)",
+      "date_label": "1275–1300 (manuscript catalogue estimate)",
+      "start_year": 1275,
+      "end_year": 1300,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Medieval Carthusian manuscript missal witness predating print standardization.",
+      "components": [
+        "ordinary",
+        "propers",
+        "calendar"
+      ],
+      "witness_ids": [
+        "western:carthusian-medieval"
+      ],
+      "witness_label": "Charleville-Mézières BM MS 154 (1275–1300; Usuarium 2262)",
+      "summary": "Usuarium origin 227 identifies Charleville MS 154 (1275–1300) as a dated medieval Carthusian missal witness preceding the printed series beginning in 1496.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-carthusian-usuarium",
+          "locus": "Origin 227 table, ID 2262",
+          "claim": "Identifies Charleville MS 154 (1275–1300) as a medieval Carthusian missal witness."
+        }
+      ],
+      "limitations": "Catalogue metadata only; folio-level collation against early Carthusian customs and 1496/1603 prints remains open.",
+      "reception": "Single medieval charterhouse manuscript witness."
+    },
+    {
+      "id": "western-uses-orders-2026-11:carthusian-1496-speyer",
+      "tradition_id": "carthusian",
+      "label": "1496 Speyer Carthusian incunable missal (Peter Drach)",
+      "date_label": "1496 (verified incunable imprint)",
+      "start_year": 1496,
+      "end_year": 1496,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Earliest printed Carthusian missal verified in the repository act-history inventory.",
+      "components": [
+        "ordinary",
+        "propers",
+        "rubrics",
+        "calendar"
+      ],
+      "witness_ids": [
+        "latin-missal:cartusiense-spirae-1496"
+      ],
+      "witness_label": "Missale Cartusiense ([Speyer]: Peter Drach for H. Eckert van Homberch, [1496]; BSB bsb00030081)",
+      "summary": "BSB IIIF manifest (572 canvases, 278 leaves, GW M24135, Weale-Bohatta 1728) verifies the earliest surviving printed Carthusian missal.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-carthusian-1496-bsb",
+          "locus": "BSB bsb00030081 IIIF manifest",
+          "claim": "Verifies imprint, 278-leaf extent, and GW M24135 / Weale-Bohatta 1728 identity."
+        }
+      ],
+      "limitations": "Manifest metadata verified; body text not yet collated against 1582 Ordinarium or 1603/1627 prints.",
+      "reception": "Earliest printed witness of the Carthusian rite."
+    },
+    {
+      "id": "western-uses-orders-2026-11:carthusian-1517-lyon",
+      "tradition_id": "carthusian",
+      "label": "1517 Lyon Carthusian folio missal (Simon Bevilacqua)",
+      "date_label": "1517 (scholarly/bibliographic lead)",
+      "start_year": 1517,
+      "end_year": 1517,
+      "date_kind": "publication",
+      "status": "provisional",
+      "scope": "Early 16th-century Lyon printing associated with the Grande Chartreuse.",
+      "components": [
+        "ordinary",
+        "propers",
+        "rubrics",
+        "calendar"
+      ],
+      "witness_ids": [
+        "western:carthusian-1517-lyon"
+      ],
+      "witness_label": "Missale secundum ordinem Carthusiensium (Lyon: Simon Bevilacqua, 1517)",
+      "summary": "Bibliographic and scholarly literature identifies Simon Bevilacqua's 1517 Lyon folio printing as an early 16th-century Carthusian missal preceding the post-Tridentine 1582–1627 editions.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-king1955-lead",
+          "locus": "Carthusian Rite: editions of the missal",
+          "claim": "Notes early 16th-century Lyon printings of the Carthusian missal (1517 Bevilacqua)."
+        }
+      ],
+      "limitations": "Provisional lead pending direct BnF/USTC record and scan acquisition.",
+      "reception": "Publication lead only."
+    },
+    {
+      "id": "western-uses-orders-2026-11:carthusian-1679-chapter",
+      "tradition_id": "carthusian",
+      "label": "1679 Fourvoirie Carthusian Missal (1677 General Chapter / Innocent Le Masson)",
+      "date_label": "1679 printing (ordered by 1677 General Chapter)",
+      "start_year": 1679,
+      "end_year": 1679,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Late-17th-century Carthusian Missal printed at Fourvoirie in Savoy under Prior General Innocent Le Masson.",
+      "components": [
+        "ordinary",
+        "propers",
+        "rubrics",
+        "calendar"
+      ],
+      "witness_ids": [
+        "latin-missal:cartusiense-capitulum-1679"
+      ],
+      "witness_label": "Missale Cartusiani Ordinis (Fourvoirie: Louis du Four, 1679; Gallica bpt6k9127828m)",
+      "summary": "Directly inspected page images of the engraved title plate (canvas f5) and Prior General Innocent Le Masson's prefatory letter (canvas f7) verify the 1677 General Chapter ordinance ordering a new printing due to scarcity of missals and the 1679 Fourvoirie imprint.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-carthusian-1679-gallica",
+          "locus": "Canvases f5 (title plate) and f7 (Le Masson prefatory letter)",
+          "claim": "Verifies the 1677 General Chapter mandate, Le Masson's authority, and the 1679 Fourvoirie imprint."
+        }
+      ],
+      "limitations": "Title plate and opening of prefatory letter inspected; body text not collated against 1627 or later editions.",
+      "reception": "Official order-wide printing ordered by the 1677 General Chapter."
+    },
+    {
+      "id": "western-uses-orders-2026-11:carthusian-1883-montreuil",
+      "tradition_id": "carthusian",
+      "label": "1883 Montreuil-sur-Mer Carthusian Missal (Dom Anselme-Marie Bruniaux)",
+      "date_label": "1883 (scholarly/bibliographic lead)",
+      "start_year": 1883,
+      "end_year": 1883,
+      "date_kind": "publication",
+      "status": "provisional",
+      "scope": "Late-19th-century Carthusian Missal printed at Notre-Dame-des-Prés (Montreuil-sur-Mer).",
+      "components": [
+        "ordinary",
+        "propers",
+        "rubrics",
+        "calendar",
+        "chant"
+      ],
+      "witness_ids": [
+        "western:carthusian-1883-montreuil"
+      ],
+      "witness_label": "Missale sacri ordinis Cartusiensis (Montreuil-sur-Mer: Cartusia S. Mariae de Pratis, 1883)",
+      "summary": "Scholarly bibliography (King 1955; Martin 1913) identifies the 1883 folio Missale sacri ordinis Cartusiensis printed at Montreuil-sur-Mer under Prior General Dom Anselme-Marie Bruniaux as the landmark late-19th-century pre-Vatican II edition.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-king1955-lead",
+          "locus": "Carthusian Rite: modern editions",
+          "claim": "Identifies the 1883 Montreuil-sur-Mer / Cartusia S. Mariae de Pratis edition."
+        }
+      ],
+      "limitations": "Provisional lead pending direct scan acquisition and collation against 1679 and 1981.",
+      "reception": "Order-wide late-19th-century edition reported in scholarship."
+    },
+    {
+      "id": "western-uses-orders-2026-11:carthusian-1981",
+      "tradition_id": "carthusian",
+      "label": "1981 postconciliar Missale Cartusiense",
+      "date_label": "1981 (provisional bibliographic identity; official order confirms recognition without date)",
+      "start_year": 1981,
+      "end_year": 1981,
+      "date_kind": "publication",
+      "status": "provisional",
+      "scope": "Post-Vatican II reformed Carthusian Latin Missal retaining the distinct Carthusian Rite.",
+      "components": [
+        "ordinary",
+        "propers",
+        "rubrics",
+        "calendar"
+      ],
+      "witness_ids": [
+        "western:carthusian-1981"
+      ],
+      "witness_label": "Missale Cartusiense (1981)",
+      "summary": "The Carthusian Order's official website confirms Roman recognition of the reformed Carthusian missal while NBC 1 (p. 162 lead) identifies the 1981 Latin printing (followed by 1982 English and other vernacular expressions).",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-carthusian-official",
+          "locus": "Lines 20–28",
+          "claim": "Confirms Roman recognition of the reformed Carthusian missal."
+        },
+        {
+          "source_id": "western-uses-orders-2026-11:src-carthusian-nbc1",
+          "locus": "Printed p. 162 (lead)",
+          "claim": "Identifies the 1981 Latin Missale Cartusiense."
+        }
+      ],
+      "limitations": "Provisional stage pending direct inspection of the 1981 front matter and Roman recognition decree.",
+      "reception": "Official reformed Carthusian-rite missal; vernacular translations kept separate as expressions."
+    },
+    {
+      "id": "western-uses-orders-2026-11:premon-medieval-charleville",
+      "tradition_id": "premonstratensian",
+      "label": "1150–1175 Premonstratensian manuscript missal (Charleville MS 3)",
+      "date_label": "1150–1175 (manuscript catalogue estimate)",
+      "start_year": 1150,
+      "end_year": 1175,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Early Premonstratensian manuscript missal witness preceding printed editions.",
+      "components": [
+        "ordinary",
+        "propers",
+        "calendar"
+      ],
+      "witness_ids": [
+        "western:premonstratensian-medieval"
+      ],
+      "witness_label": "Charleville-Mézières BM MS 3 (1150–1175; Usuarium 2246)",
+      "summary": "Usuarium origin 232 identifies Charleville MS 3 (1150–1175, alongside Laon 226b) as an early medieval witness to the Norbertine Mass book.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-premon-usuarium",
+          "locus": "Origin 232 table, ID 2246",
+          "claim": "Identifies Charleville MS 3 (1150–1175) as an early Premonstratensian missal."
+        }
+      ],
+      "limitations": "Catalogue metadata only; folio-level collation against early Norbertine ordinals and 1510–1578 prints remains open.",
+      "reception": "Single medieval house witness."
+    },
+    {
+      "id": "western-uses-orders-2026-11:premon-1510-1530",
+      "tradition_id": "premonstratensian",
+      "label": "c. 1510 Strasbourg and 1530 Paris Premonstratensian prints",
+      "date_label": "c. 1510–1530 (two verified early printings)",
+      "start_year": 1510,
+      "end_year": 1530,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Earliest located printed Premonstratensian missals preceding the 1578 Paris printing.",
+      "components": [
+        "ordinary",
+        "propers",
+        "rubrics",
+        "calendar"
+      ],
+      "witness_ids": [
+        "latin-missal:praemonstratense-argentorati-1510",
+        "latin-missal:praemonstratense-parisiis-1530"
+      ],
+      "witness_label": "Ordo missalis Premonstratensis (Strasbourg, c. 1510) & Missale Praemonstratense (Paris, 1530)",
+      "summary": "BSB IIIF manifests verify both the c. 1510 Strasbourg printing (588 canvases, GW M24182 / VD16 M 5647, dating conflict 1500–1511 recorded) and the 1530 Paris printing (510 canvases, BSB 2 Liturg. 235 a).",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-premon-1510-bsb",
+          "locus": "BSB bsb00002021 IIIF manifest",
+          "claim": "Verifies the c. 1510 Strasbourg printing, opening incipit, and 1500–1511 dating conflict."
+        },
+        {
+          "source_id": "western-uses-orders-2026-11:src-premon-1530-bsb",
+          "locus": "BSB bsb10164241 IIIF manifest",
+          "claim": "Verifies the 1530 Paris printing (510 canvases)."
+        }
+      ],
+      "limitations": "Manifest metadata and 1510 incipit verified; body texts uncollated against each other or 1578.",
+      "reception": "Early printed Norbertine missal witnesses."
+    },
+    {
+      "id": "western-uses-orders-2026-11:premon-1890-westmalle",
+      "tradition_id": "premonstratensian",
+      "label": "1890 Westmalle Premonstratensian Missal (1889 General Chapter)",
+      "date_label": "1890 printing (1889 General Chapter mandate under Sigismund Stary; 1900 successor noted)",
+      "start_year": 1890,
+      "end_year": 1890,
+      "date_kind": "publication",
+      "status": "provisional",
+      "scope": "Late-19th-century restored Premonstratensian Missal printed at Westmalle Abbey.",
+      "components": [
+        "ordinary",
+        "propers",
+        "rubrics",
+        "calendar",
+        "chant"
+      ],
+      "witness_ids": [
+        "western:premon-1890-westmalle"
+      ],
+      "witness_label": "Missale canonicorum Praemonstratensis ordinis (Westmalle, 1890)",
+      "summary": "Authorized by the 1889 General Chapter under Abbot General Sigismund Stary and printed by the Cistercians of Westmalle Abbey in 1890 (followed by a 1900 printing), bridging the 18th-century editions and the 1936 Mechelen revision.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-king1955-lead",
+          "locus": "Premonstratensian Rite: modern editions",
+          "claim": "Documents the late-19th-century Westmalle Premonstratensian missal printings (1890/1900)."
+        }
+      ],
+      "limitations": "Provisional lead pending direct inspection of the 1890 and 1900 title pages and prefaces.",
+      "reception": "Order-wide late-19th-century Norbertine edition reported in scholarship."
+    },
+    {
+      "id": "western-uses-orders-2026-11:premon-1936-mechelen",
+      "tradition_id": "premonstratensian",
+      "label": "1936 Mechelen Premonstratensian Missal (Abbot General Gummarus Crets)",
+      "date_label": "1936 printing (2 September 1936 preface following 1934 General Chapter)",
+      "start_year": 1936,
+      "end_year": 1936,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "20th-century pre-conciliar edition of the Premonstratensian-rite Missal.",
+      "components": [
+        "ordinary",
+        "propers",
+        "rubrics",
+        "calendar",
+        "chant"
+      ],
+      "witness_ids": [
+        "western:premon-1936"
+      ],
+      "witness_label": "Missale Praemonstratense (Mechelen: H. Dessain, 1936)",
+      "summary": "Directly inspected title (PDF 3) and Abbot General Gummarus Crets's preface dated 2 September 1936 (PDF 4) document publication by authority of the 1934 General Chapter, explicitly reporting added Masses and changes in text and chant.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-premon-1936",
+          "locus": "PDF 3 (title) and PDF 4 (preface dated 2 September 1936)",
+          "claim": "Verifies H. Dessain Mechelen 1936 imprint, 1934 chapter mandate, added Masses, and text/chant revisions."
+        }
+      ],
+      "limitations": "Exact changed formularies and line-level collation against 1890/1900/1902 predecessors remain open.",
+      "reception": "Official pre-Vatican II Premonstratensian altar missal."
+    },
+    {
+      "id": "western-uses-orders-2026-11:benedictine-1481-usuarium469",
+      "tradition_id": "benedictine-monastic",
+      "label": "1481 Missale Benedictinum incunable witness (Usuarium 469)",
+      "date_label": "1481 (catalogue-reported incunable year)",
+      "start_year": 1481,
+      "end_year": 1481,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Early printed Benedictine missal witness recorded in the inspected Usuarium OSB origin table.",
+      "components": [
+        "ordinary",
+        "propers",
+        "calendar"
+      ],
+      "witness_ids": [
+        "western:monastic-usuarium-benedictine-469"
+      ],
+      "witness_label": "Missale Benedictinum (1481; Usuarium 469)",
+      "summary": "Usuarium origin 409 (row 469) documents a 1481 printed Missale Benedictinum, standing as an early printed monastic witness distinct from Bursfelde 1498 and Cluniac books.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-osb-usuarium-409",
+          "locus": "Origin 409 table, book row 469",
+          "claim": "Identifies the 1481 printed Missale Benedictinum."
+        }
+      ],
+      "limitations": "Origin table metadata only; printer, specific congregational provenance, and body text remain uninspected.",
+      "reception": "Single incunable witness; no order-wide uniformity inferred."
+    },
+    {
+      "id": "western-uses-orders-2026-11:benedictine-cassinese-1580",
+      "tradition_id": "benedictine-monastic",
+      "label": "1580 Venice Cassinese Congregation Monastic Missal",
+      "date_label": "1580 (verified title-page year)",
+      "start_year": 1580,
+      "end_year": 1580,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Post-Tridentine printed monastic missal of the Cassinese Congregation (alias Sanctae Iustinae).",
+      "components": [
+        "ordinary",
+        "propers",
+        "rubrics",
+        "calendar"
+      ],
+      "witness_ids": [
+        "western:monastic-cassinese-1580",
+        "latin-missal:monasticum-casinense-1580"
+      ],
+      "witness_label": "Missale monasticum Congregationis Casinensis alias Sanctae Iustinae (Venice, 1580)",
+      "summary": "Directly inspected title page (PDF p. 5) verifies the 1580 Venice printing for the Cassinese Congregation citing decrees of its general meetings and leadership; distinct from medieval Montecassino house manuscripts.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-cassinese-1580",
+          "locus": "PDF p. 5 title page",
+          "claim": "Verifies the Venice 1580 imprint for the Cassinese Congregation alias Sanctae Iustinae."
+        }
+      ],
+      "limitations": "Title page only; congregational decrees and textual delta against the 1570 Roman Missal and earlier Benedictine prints remain uncollated.",
+      "reception": "Bounded to the Cassinese Congregation of Benedictines."
+    },
+    {
+      "id": "western-uses-orders-2026-11:benedictine-1937-romano-monasticum",
+      "tradition_id": "benedictine-monastic",
+      "label": "1937 Missale Romano-Monasticum (5th-edition rubric extract)",
+      "date_label": "1937 prefatory letter (24 June) and Ratisbon approval (15 August)",
+      "start_year": 1937,
+      "end_year": 1937,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "20th-century Roman-base Benedictine monastic missal rubric and front-matter state.",
+      "components": [
+        "rubrics",
+        "calendar",
+        "propers"
+      ],
+      "witness_ids": [
+        "western:monastic-benedictine-1937"
+      ],
+      "witness_label": "Missale Romano-Monasticum, Editio quinta (1937 dated preliminaries)",
+      "summary": "Directly inspected 27-page rubric extract verifies the Editio quinta title (PDF p. 1), prefatory letter dated 24 June 1937, and Ratisbon approval dated 15 August 1937 (PDF p. 3).",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-osb-1937",
+          "locus": "PDF pp. 1 and 3",
+          "claim": "Verifies Editio quinta rubric title, 24 June 1937 prefatory letter, and 15 August 1937 Ratisbon approval."
+        }
+      ],
+      "limitations": "Rubric/front-matter extract only; complete missal text and congregation-level adoption remain unverified.",
+      "reception": "Roman-base monastic missal preliminaries for Benedictine use."
+    },
+    {
+      "id": "western-uses-orders-2026-11:osa-1965-proper",
+      "tradition_id": "osa-hermits-round2",
+      "label": "1965 pre-conciliar OSA Proprium Officiorum et Missarum",
+      "date_label": "Attested by 17 July 1965 OAD rescript",
+      "start_year": 1965,
+      "end_year": 1965,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Pre-Vatican II updated Augustinian proper attested via official OAD extension rescript.",
+      "components": [
+        "propers",
+        "calendar"
+      ],
+      "witness_ids": [
+        "western:additional-orders-osa-1965"
+      ],
+      "witness_label": "OSA Proprium Officiorum et Missarum (attested 17 July 1965)",
+      "summary": "Directly inspected 17 July 1965 rescript in Analecta Ordinis OAD authorizes Discalced Augustinians to use the recently approved OSA Office and Mass proper with OAD variations.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-osa-1965",
+          "locus": "Analecta Ordinis 1965 vol. 2, 17 July 1965 rescript",
+          "claim": "Attests the recently approved OSA Mass/Office proper and authorizes OAD adoption with local variations."
+        }
+      ],
+      "limitations": "Attested indirectly through the OAD rescript; primary OSA approval act and complete Latin Mass proper remain unacquired.",
+      "reception": "Approved OSA proper extended by rescript to OAD."
+    },
+    {
+      "id": "western-uses-orders-2026-11:osa-2006-shared-proper",
+      "tradition_id": "osa-hermits-round2",
+      "label": "2006 shared Augustinian Latin Proprium Missarum (OSA/OAR/OAD)",
+      "date_label": "17 February 2006 (OAR confirmation; separate decrees for OSA & OAD)",
+      "start_year": 2006,
+      "end_year": 2006,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Postconciliar shared Latin Mass proper jointly prepared for the Augustinian family (OSA, OAR, OAD).",
+      "components": [
+        "propers",
+        "calendar"
+      ],
+      "witness_ids": [
+        "western:additional-orders-osa-2006"
+      ],
+      "witness_label": "Shared Augustinian Latin Proprium Missarum (confirmed 17 February 2006)",
+      "summary": "Directly inspected Acta OAR 2007 (PDF pp. 19–20) prints the 17 February 2006 confirmation of the joint Latin Proprium Missarum sent separately to OSA, OAR, and OAD, tracing the postconciliar revision from 1970 and the 1976 Rome missal.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-osa-2007-acta",
+          "locus": "Acta OAR 2007, PDF pp. 19–20",
+          "claim": "Prints the 17 February 2006 confirmation and traces the 1970–1976 postconciliar revision leading to the shared OSA/OAR/OAD Latin proper."
+        }
+      ],
+      "limitations": "Acta report inspected; complete 2006 Latin proper text and separate OSA/OAD confirmation decrees remain unacquired.",
+      "reception": "Shared postconciliar Augustinian-family proper supplementing the Roman Missal."
+    },
+    {
+      "id": "western-uses-orders-2026-11:servite-1998-proper-alt",
+      "tradition_id": "servite-round2",
+      "label": "1998 Servite Proprium Missarum editio typica altera",
+      "date_label": "1998 (two-volume second typical edition)",
+      "start_year": 1998,
+      "end_year": 1998,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Second postconciliar typical edition of the Servite proper missal (Antiphonale Sacramentarium and Lectionarium).",
+      "components": [
+        "propers",
+        "lectionary",
+        "chant"
+      ],
+      "witness_ids": [
+        "western:additional-orders-servite-1998-antiphonale",
+        "western:additional-orders-servite-1998-lectionary"
+      ],
+      "witness_label": "Servite Proprium Missarum editio typica altera (1998, Vols. I–II)",
+      "summary": "Both Baroffio's AMEN AMEN (PDF p. 230) and the Servite Order bibliography (p. 585) document the 1998 two-volume editio typica altera (Vol. I Antiphonale Sacramentarium; Vol. II Lectionarium) succeeding the 1972 first typical edition.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-servite-baroffio",
+          "locus": "PDF pp. 230 and 254",
+          "claim": "Explicitly names Vol. I Antiphonale Sacramentarium and Vol. II Lectionarium of the 1998 editio typica altera."
+        },
+        {
+          "source_id": "western-uses-orders-2026-11:src-servite-order-biblio",
+          "locus": "Printed p. 585, Libri Liturgici OSM items 1, 2, 9",
+          "claim": "Lists the 1972 volumes and the 1998 second typical edition."
+        }
+      ],
+      "limitations": "Bibliographic records inspected; original 1998 front matter, Congregation decree, and exact changes from 1972 remain uncollated.",
+      "reception": "Second postconciliar typical proper edition for the Order of Servants of Mary."
+    },
+    {
+      "id": "western-uses-orders-2026-11:curial-regula-prototype",
+      "tradition_id": "roman-stages-curial",
+      "label": "1223/1230 Reconstructed Franciscan Regula curial missal",
+      "date_label": "1223–1230 (reconstructed redaction/distribution)",
+      "start_year": 1223,
+      "end_year": 1230,
+      "date_kind": "reconstruction",
+      "status": "documented",
+      "scope": "Scholarly reconstruction of the early Franciscan missal adopting the Roman Curia's liturgy per the 1223 Regula bullata.",
+      "components": [
+        "ordinary",
+        "propers",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:latin-early-regula-prototype"
+      ],
+      "witness_label": "Reconstructed Franciscan Regula curial missal (1223/1230)",
+      "summary": "Inspected scholarship (Welch 2011, pp. 53–61) documents the reconstructed Regula curial missal prototypes mediating the Innocent III / Honorius III papal-chapel liturgy to the Friars Minor prior to Haymo of Faversham.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-welch2011",
+          "locus": "pp. 53–61",
+          "claim": "Analyzes the reconstructed 1223/1230 Franciscan Regula missal prototypes and distinguishes reconstruction from surviving copies."
+        }
+      ],
+      "limitations": "Scholarly reconstruction rather than a located physical archetype; no uniform order-wide edition existed before Haymo.",
+      "reception": "Early Franciscan reception of the Roman curial liturgy; varied across provinces."
+    },
+    {
+      "id": "western-uses-orders-2026-11:curial-assisi607-base",
+      "tradition_id": "roman-stages-curial",
+      "label": "Pre-Haymonian Franciscan-curial missal (Assisi MS 607 base hand)",
+      "date_label": "1228–1244 (main scribe, pre-Haymonian layer)",
+      "start_year": 1228,
+      "end_year": 1244,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Surviving pre-Haymonian Franciscan-curial missal witness preserving Innocent III-derived rubrics and the Anthony In medio Mass.",
+      "components": [
+        "propers",
+        "rubrics",
+        "calendar"
+      ],
+      "witness_ids": [
+        "western:latin-early-assisi607"
+      ],
+      "witness_label": "Assisi, Biblioteca Comunale MS 607 (base hand)",
+      "summary": "Inspected paleographical analysis (Sedda 2019, pp. 298–319) shows Assisi MS 607's base scribe writing pre-Haymonian curial rubrics adapted for the friars alongside Anthony Mass scheme II (In medio ecclesie) and an added Dominic Mass on f. 79.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-sedda2019",
+          "locus": "pp. 298–319, esp. pp. 315–318",
+          "claim": "Dates the base sanctorale after 1228–1234 and before Haymo's correction, describing its pre-Haymonian Innocent III rubrics and Anthony In medio formulary."
+        },
+        {
+          "source_id": "western-uses-orders-2026-11:src-welch2011",
+          "locus": "pp. 53–61",
+          "claim": "Contextualizes Assisi 607 within second-quarter 13th-century pre-Haymonian Franciscan missals."
+        }
+      ],
+      "limitations": "Scholarly description inspected; full original folio images of Assisi MS 607 not separately acquired.",
+      "reception": "Concrete pre-Haymonian witness showing practical Franciscan liturgical diversity before 1244."
+    },
+    {
+      "id": "western-uses-orders-2026-11:curial-assisi607-haymo-layer",
+      "tradition_id": "roman-stages-curial",
+      "label": "Post-1244 Haymonian correction layer in Assisi MS 607 (hand A2)",
+      "date_label": "After 1244 (second hand A2 conforming book to Haymo's Ordo; upper bound undated)",
+      "start_year": 1244,
+      "end_year": 1300,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Physical marginal and interlinear revision layer conforming an older Franciscan-curial missal to Haymo of Faversham's 1243–1244 Ordo.",
+      "components": [
+        "propers",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:latin-early-assisi607-haymo-corrections"
+      ],
+      "witness_label": "Assisi, Biblioteca Comunale MS 607 (second hand A2 correction layer)",
+      "summary": "Sedda 2019 (pp. 315–317 & n. 43) documents a second scribe (A2) systematically inserting Haymo's Ordo rubrics and changed oration incipits in the margins while striking older readings, including entering the Haymonian Anthony Mass on f. 58v.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-sedda2019",
+          "locus": "pp. 315, 317 and n. 43",
+          "claim": "Documents hand A2's systematic marginal addition of Haymo's rubrics, altered oration incipits, and the Haymonian Anthony Mass on f. 58v."
+        }
+      ],
+      "limitations": "Correcting hand A2 is undated beyond terminus post quem 1244; full manuscript foliation not acquired.",
+      "reception": "Direct material testimony to how existing Franciscan books were physically updated to Haymo's Ordo."
+    },
+    {
+      "id": "western-uses-orders-2026-11:curial-nicholasiii-reform",
+      "tradition_id": "roman-stages-curial",
+      "label": "1263–1280 Nicholas III / Orsini unification of Roman urban books with curial-Franciscan books",
+      "date_label": "1263–1280 (John Cajetan Orsini cardinal-protectorate and pontificate as Nicholas III)",
+      "start_year": 1263,
+      "end_year": 1280,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Papal-curial liturgical reform harmonizing Roman basilica/urban churches with the modernized curial-Franciscan books.",
+      "components": [
+        "calendar",
+        "propers",
+        "rubrics",
+        "chant"
+      ],
+      "witness_ids": [
+        "western:latin-early-nicholasiii"
+      ],
+      "witness_label": "Nicholas III / John Cajetan Orsini curial-Roman reform (1263–1280)",
+      "summary": "Sedda 2019 (p. 326, synthesizing van Dijk and Cambell) summarizes Orsini/Nicholas III's unification of Roman urban churches with the papal curia, including calendar renewal adding Minorite saints, square notation, and adoption of modernized curial-Franciscan books.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-sedda2019",
+          "locus": "p. 326",
+          "claim": "Reports Orsini/Nicholas III's unification of Roman urban uses with the curia, calendar additions, square notation, and Franciscan-curial book reception."
+        }
+      ],
+      "limitations": "Secondary scholarly synthesis; primary bull/ordinal decrees and specific urban Roman basilica reception pace require dedicated manuscript review.",
+      "reception": "Key bridge transforming the papal-Franciscan curial missal into the standard Roman urban missal."
+    },
+    {
+      "id": "western-uses-orders-2026-11:curial-scotus1482-rotingo",
+      "tradition_id": "roman-stages-curial",
+      "label": "1482 Venice Roman-curial missal revised by Philip de Rotingo OFM Obs.",
+      "date_label": "1482 (catalogue-reported printing)",
+      "start_year": 1482,
+      "end_year": 1482,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Late-15th-century printed Roman-curial missal edited by an Observant Franciscan friar.",
+      "components": [
+        "ordinary",
+        "propers",
+        "calendar"
+      ],
+      "witness_ids": [
+        "western:latin-early-scotus1482"
+      ],
+      "witness_label": "Missale secundum morem Romanae ecclesiae (Venice: Octavianus Scotus, 1482; ed. Philip de Rotingo OFM Obs.)",
+      "summary": "Usuarium origin 407 (item 5840, BnF B-27921 fragmentary) documents Octavianus Scotus's 1482 Venetian Roman-curial missal purged of errors by Philip de Rotingo of Mantua OFM Obs., illustrating Observant Franciscan editorial stewardship of the printed Roman Missal.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-usuarium-ofm-407",
+          "locus": "Origin 407 / item 5840",
+          "claim": "Identifies the 1482 Venice Scotus Roman missal revised by Philip de Rotingo OFM Obs."
+        }
+      ],
+      "limitations": "Fragmentary copy and catalogue metadata only; edited Roman-curial book, not a distinct Franciscan rite.",
+      "reception": "Witness to late-15th-century Franciscan editing of the printed Missale Romanum."
+    }
+  ],
+  "transitions": [
+    {
+      "id": "western-uses-orders-2026-11:dominican-1256-to-1484",
+      "from_stage": "western-uses-orders-2026-11:dominican-1256-prototype",
+      "to_stage": "western-uses-orders-2026-11:dominican-1484-venice",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "Early Venetian printed Dominican missal succeeds the 13th-century Humbert prototype within the same order use; direct exemplar path unestablished.",
+      "components": [
+        "propers",
+        "lectionary",
+        "calendar"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-ocarroll1979",
+          "locus": "pp. 80–84",
+          "claim": "Establishes the 1256 Humbert prototype structure."
+        },
+        {
+          "source_id": "western-uses-orders-2026-11:src-op-1484-archive",
+          "locus": "Opening incipit",
+          "claim": "Declares Dominican order use in the 1484 Venice printing."
+        }
+      ],
+      "limitations": "Does not claim 1484 was typeset directly from Santa Sabina XIV L 1 or BL Add. MS 23935; intervening 14th–15th-century additions remain uncollated.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "western-uses-orders-2026-11:dominican-1484-to-1550",
+      "from_stage": "western-uses-orders-2026-11:dominican-1484-venice",
+      "to_stage": "latin-uses:dominican-1550",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "bibliographic-only",
+      "summary": "The 1550 Venetian Giunta Dominican missal succeeds the 1484 Nicolaus de Frankfordia printing within the Venetian Dominican printing sequence.",
+      "components": [
+        "propers",
+        "lectionary",
+        "calendar"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-op-1484-archive",
+          "locus": "Imprint and use declaration",
+          "claim": "Establishes the earlier 1484 Venetian Dominican print preceding 1550 Giunta."
+        }
+      ],
+      "limitations": "Bibliographic chronological succession only; textual collation between 1484 and 1550 remains open.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "western-uses-orders-2026-11:dominican-1604-to-1933",
+      "from_stage": "latin-uses:dominican-1604",
+      "to_stage": "western-uses-orders-2026-11:dominican-1933-1939",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "The 1933/1939 Gillet-era editions succeed earlier post-Tridentine Dominican missals with updated rubrics and sanctoral; intermediate 17th–19th-century editions are unmodeled here.",
+      "components": [
+        "propers",
+        "calendar",
+        "rubrics"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-op-1933",
+          "locus": "Title and Gillet letter",
+          "claim": "Names the 1933 corrected Dominican missal."
+        },
+        {
+          "source_id": "western-uses-orders-2026-11:src-op-1939",
+          "locus": "PDF pp. 2–5",
+          "claim": "Documents the 1939 smaller augmented edition after the 1938 chapter."
+        }
+      ],
+      "limitations": "Multiple intervening Dominican missals (e.g., 1644, 1748, 1855, 1923) are not yet modeled as separate stages.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "western-uses-orders-2026-11:dominican-1933-to-1965",
+      "from_stage": "western-uses-orders-2026-11:dominican-1933-1939",
+      "to_stage": "western-uses-orders-2026-11:dominican-1965",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "The 1965 Dominican Missal revises the 1933/1939 rubrical and calendar framework under the 1960, 1961, and 4 May 1965 SRC approval decrees.",
+      "components": [
+        "rubrics",
+        "calendar"
+      ],
+      "changes": [
+        {
+          "component": "rubrics",
+          "before": "1933/1939 Gillet-era Dominican rubrics prior to the 1960 Code of Rubrics and 1965 interim Order adjustments.",
+          "after": "Rubrics revised under SRC decrees of 1960, 1961, and Prot. 55/965 (4 May 1965).",
+          "locus_before": "M33.pdf title and Gillet letter; M39.pdf pp. 2–5",
+          "locus_after": "M65.pdf front matter and PDF p. 4, SRC Prot. 55/965 (4 May 1965)",
+          "evidence": [
+            {
+              "source_id": "western-uses-orders-2026-11:src-op-1933",
+              "locus": "Title and Gillet letter",
+              "claim": "Establishes the pre-1960 rubric state."
+            },
+            {
+              "source_id": "western-uses-orders-2026-11:src-op-1965",
+              "locus": "PDF p. 4, SRC Prot. 55/965",
+              "claim": "Documents the 1960/1961/1965 SRC rubric approvals."
+            }
+          ]
+        },
+        {
+          "component": "calendar",
+          "before": "1933/1939 Gillet-era Dominican sanctoral prior to the 1960–1961 calendar simplification.",
+          "after": "Calendar adapted under the 1960 and 1961 SRC decrees printed in the 1965 front matter.",
+          "locus_before": "M33.pdf title and Gillet letter",
+          "locus_after": "M65.pdf front matter SRC decrees (1960, 1961, 1965)",
+          "evidence": [
+            {
+              "source_id": "western-uses-orders-2026-11:src-op-1933",
+              "locus": "Title and Gillet letter",
+              "claim": "Establishes the 1933 sanctoral baseline."
+            },
+            {
+              "source_id": "western-uses-orders-2026-11:src-op-1965",
+              "locus": "Front matter decrees",
+              "claim": "Attests the separate 1960 and 1961 calendar/rubric approvals."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-op-1933",
+          "locus": "Title and Gillet letter",
+          "claim": "Identifies the earlier 1933 state."
+        },
+        {
+          "source_id": "western-uses-orders-2026-11:src-op-1965",
+          "locus": "Title and SRC decrees (PDF p. 4)",
+          "claim": "Documents the 1960/1961/1965 approvals governing the 1965 revision."
+        }
+      ],
+      "limitations": "Primary front-matter decree description only; line-by-line collation of individual rubric paragraphs and prayer texts remains open.",
+      "comparison_ids": [],
+      "historical_parentage": "established",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "western-uses-orders-2026-11:dominican-1965-to-1985",
+      "from_stage": "western-uses-orders-2026-11:dominican-1965",
+      "to_stage": "latin-uses:dominican-1985-proprium",
+      "kind": "reception",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "Following CD 98/69 (2 June 1969), the Order transitions from a standalone full Dominican-rite altar missal (1965) to the postconciliar Roman Missal supplemented by the 1985 Dominican Missale et Lectionarium proper.",
+      "components": [
+        "propers",
+        "lectionary",
+        "calendar",
+        "rubrics"
+      ],
+      "changes": [
+        {
+          "component": "rubrics",
+          "before": "Full Dominican-rite Missal (1965) with distinct Dominican Ordinary and rubrics.",
+          "after": "Postconciliar Roman Missal adopted as base book under CD 98/69 (2 June 1969), accompanied by a Dominican proper and lectionary (1985).",
+          "locus_before": "M65.pdf title and Prot. 55/965",
+          "locus_after": "TL-01-Missale-et-Lectionarium-OP-1985.pdf p. 8 (printed X §3 n. 5)",
+          "evidence": [
+            {
+              "source_id": "western-uses-orders-2026-11:src-op-1965",
+              "locus": "Title and PDF p. 4",
+              "claim": "Documents the full 1965 Dominican-rite missal."
+            },
+            {
+              "source_id": "western-uses-orders-2026-11:src-op-1985",
+              "locus": "PDF p. 8 (printed X §3 n. 5)",
+              "claim": "Cites CD 98/69 adopting the reformed Roman Missal."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-op-1965",
+          "locus": "Title and PDF p. 4",
+          "claim": "Establishes the 1965 full-rite state."
+        },
+        {
+          "source_id": "western-uses-orders-2026-11:src-op-1985",
+          "locus": "PDF pp. 5–6 and p. 8",
+          "claim": "Documents the 1969 Roman-Missal reception and 1985 proper package."
+        }
+      ],
+      "limitations": "Original 1969 decree document itself not separately acquired; subsequent local indult uses of the traditional Dominican Rite are outside this transition.",
+      "comparison_ids": [],
+      "historical_parentage": "established",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "western-uses-orders-2026-11:carmelite-1312-to-1574",
+      "from_stage": "western-uses-orders-2026-11:carmelite-1312-sibert",
+      "to_stage": "latin-uses:carmelite-1574",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "The 1574 Venice Carmelite missal stands downstream of the 1312 Sibert de Beka Ordinal within the Holy Sepulchre-derived Carmelite liturgical tradition.",
+      "components": [
+        "calendar"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-boyce2004",
+          "locus": "pp. 18–20",
+          "claim": "Documents the 1312 Sibert Ordinal as the normative baseline of the medieval Carmelite liturgy."
+        }
+      ],
+      "limitations": "Bridges 262 years with uncollated incunable intermediates (including Brescia 1490); no direct textual copying asserted.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "western-uses-orders-2026-11:carmelite-1621-to-1935",
+      "from_stage": "latin-uses:carmelite-1621",
+      "to_stage": "western-uses-orders-2026-11:carmelite-1935-rome",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "bibliographic-only",
+      "summary": "The 1935 Rome O.Carm. missal succeeds earlier post-Tridentine Carmelite-rite printings within the Ancient Observance rite.",
+      "components": [
+        "calendar",
+        "propers"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-oc-1935-openlib",
+          "locus": "Open Library record OL20996845M",
+          "claim": "Identifies the 1935 Rome Carmelite missal."
+        }
+      ],
+      "limitations": "Bibliographic succession only; intermediate 17th–19th-century printings and full textual changes uncollated.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "western-uses-orders-2026-11:carmelite-1935-to-1974",
+      "from_stage": "western-uses-orders-2026-11:carmelite-1935-rome",
+      "to_stage": "western-uses-orders-2026-11:carmelite-1974-proper",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "bibliographic-only",
+      "summary": "The 1974 O.Carm. Proprium Missarum & Lectionarium succeeds the 1935 standalone Carmelite-rite missal as a postconciliar proper volume.",
+      "components": [
+        "propers",
+        "calendar"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-oc-1935-openlib",
+          "locus": "Open Library record OL20996845M",
+          "claim": "Identifies the 1935 full Carmelite missal."
+        },
+        {
+          "source_id": "western-uses-orders-2026-11:src-oc-1974-carmelus",
+          "locus": "Bibliography entry 137",
+          "claim": "Identifies the 1974 postconciliar proper and lectionary."
+        }
+      ],
+      "limitations": "Bibliographic attestation only; the formal postconciliar adoption act transitioning O.Carm. to the Roman Missal base remains to be acquired.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "western-uses-orders-2026-11:carthusian-medieval-to-1496",
+      "from_stage": "western-uses-orders-2026-11:carthusian-medieval-charleville",
+      "to_stage": "western-uses-orders-2026-11:carthusian-1496-speyer",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "bibliographic-only",
+      "summary": "The 1496 Speyer incunable succeeds medieval manuscript Carthusian missals (such as Charleville MS 154) within the Carthusian Order's use.",
+      "components": [
+        "ordinary",
+        "propers",
+        "calendar"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-carthusian-usuarium",
+          "locus": "Origin 227 table",
+          "claim": "Lists both Charleville MS 154 and the 1496 print under Carthusian use."
+        },
+        {
+          "source_id": "western-uses-orders-2026-11:src-carthusian-1496-bsb",
+          "locus": "BSB bsb00030081 manifest",
+          "claim": "Verifies the 1496 Speyer printed missal."
+        }
+      ],
+      "limitations": "Bibliographic succession only; no manuscript-to-print textual collation performed.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "western-uses-orders-2026-11:carthusian-1496-to-1582",
+      "from_stage": "western-uses-orders-2026-11:carthusian-1496-speyer",
+      "to_stage": "latin-uses:carthusian-1582",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "bibliographic-only",
+      "summary": "The 1582 post-Tridentine Carthusian Ordinarium succeeds earlier printed Carthusian witnesses including Speyer 1496.",
+      "components": [
+        "ordinary",
+        "rubrics"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-carthusian-1496-bsb",
+          "locus": "BSB bsb00030081 manifest",
+          "claim": "Verifies the 1496 Speyer printing preceding 1582."
+        }
+      ],
+      "limitations": "Intermediate early-16th-century editions (e.g., 1509, 1517 Lyon, 1561) require direct inspection.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "western-uses-orders-2026-11:carthusian-1627-to-1679",
+      "from_stage": "latin-uses:carthusian-1627",
+      "to_stage": "western-uses-orders-2026-11:carthusian-1679-chapter",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "The 1679 Fourvoirie missal ordered by the 1677 General Chapter under Innocent Le Masson succeeds the 1627 Lyon missal ordered by the 1622 chapter.",
+      "components": [
+        "ordinary",
+        "rubrics"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-carthusian-1679-gallica",
+          "locus": "Canvases f5 and f7",
+          "claim": "Documents the 1677 General Chapter ordinance and 1679 Fourvoirie imprint."
+        }
+      ],
+      "limitations": "Inspected title plate and prefatory letter do not explicitly cite 1627; body-text changes between 1627 and 1679 remain uncollated.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "western-uses-orders-2026-11:carthusian-1679-to-2021",
+      "from_stage": "western-uses-orders-2026-11:carthusian-1679-chapter",
+      "to_stage": "latin-uses:carthusian-2018-calendar",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "The 2021 Missale Cartusiense stands in the same Carthusian-rite line downstream of 1679 (with 1883 and 1981 intermediates provisional pending direct acquisition).",
+      "components": [
+        "ordinary",
+        "propers",
+        "rubrics",
+        "calendar"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-carthusian-1679-gallica",
+          "locus": "Canvas f5",
+          "claim": "Documents the 1679 Carthusian missal."
+        },
+        {
+          "source_id": "western-uses-orders-2026-11:src-carthusian-2021",
+          "locus": "Title and Praenotanda §2",
+          "claim": "Documents the 2021 Carthusian missal."
+        }
+      ],
+      "limitations": "Intervening 18th–20th-century editions (1713, 1883 Montreuil, 1981) require direct collation to pinpoint when individual textual changes entered.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "western-uses-orders-2026-11:carthusian-1981-to-2021-provisional",
+      "from_stage": "western-uses-orders-2026-11:carthusian-1981",
+      "to_stage": "latin-uses:carthusian-2018-calendar",
+      "kind": "revision",
+      "status": "provisional",
+      "evidence_level": "primary-description",
+      "summary": "Provisional revision edge linking the postconciliar 1981 Carthusian Missal to the 2021 edition, whose inspected Praenotanda §2 explicitly reports revised prayers, prefaces, commons, and ritual order.",
+      "components": [
+        "ordinary",
+        "propers",
+        "rubrics"
+      ],
+      "changes": [
+        {
+          "component": "propers",
+          "before": "Postconciliar 1981 Missale Cartusiense state (front matter not yet acquired).",
+          "after": "2021 Missale Cartusiense reporting revised prayers, prefaces, and commons.",
+          "locus_before": "NBC 1 p. 162 (provisional lead)",
+          "locus_after": "Missale Cartusiense 2021, Praenotanda §2",
+          "evidence": [
+            {
+              "source_id": "western-uses-orders-2026-11:src-carthusian-2021",
+              "locus": "Praenotanda §2",
+              "claim": "Explicitly reports changed prayers, prefaces, commons, and ritual order in the 2021 edition."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-carthusian-2021",
+          "locus": "Title and Praenotanda §2",
+          "claim": "Documents the 2021 revisions."
+        }
+      ],
+      "limitations": "Provisional because the 1981 Latin edition itself has not yet been directly acquired and collated against 2021.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "western-uses-orders-2026-11:premon-medieval-to-1510",
+      "from_stage": "western-uses-orders-2026-11:premon-medieval-charleville",
+      "to_stage": "western-uses-orders-2026-11:premon-1510-1530",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "bibliographic-only",
+      "summary": "Early Strasbourg (c. 1510) and Paris (1530) prints succeed medieval Premonstratensian manuscript missals such as Charleville MS 3.",
+      "components": [
+        "ordinary",
+        "propers",
+        "calendar"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-premon-usuarium",
+          "locus": "Origin 232 table",
+          "claim": "Lists Charleville MS 3 and early printed Premonstratensian missals."
+        },
+        {
+          "source_id": "western-uses-orders-2026-11:src-premon-1510-bsb",
+          "locus": "BSB bsb00002021 manifest",
+          "claim": "Verifies the c. 1510 Strasbourg printed witness."
+        }
+      ],
+      "limitations": "Bibliographic succession only; body text uncollated.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "western-uses-orders-2026-11:premon-1530-to-1578",
+      "from_stage": "western-uses-orders-2026-11:premon-1510-1530",
+      "to_stage": "canonical-orders:premon-1578-embolism",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "bibliographic-only",
+      "summary": "The 1578 Paris Premonstratensian missal succeeds the c. 1510 Strasbourg and 1530 Paris printings.",
+      "components": [
+        "rubrics"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-premon-1530-bsb",
+          "locus": "BSB bsb10164241 manifest",
+          "claim": "Verifies the 1530 Paris printing preceding 1578."
+        }
+      ],
+      "limitations": "Bibliographic succession only; no direct typesetting or textual descent asserted.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "western-uses-orders-2026-11:premon-1663-to-1936",
+      "from_stage": "canonical-orders:premon-1663",
+      "to_stage": "western-uses-orders-2026-11:premon-1936-mechelen",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "The 1936 Mechelen Premonstratensian Missal succeeds the early modern printed Norbertine sequence (with 1739 and 1890/1900 Westmalle printings intervening).",
+      "components": [
+        "propers"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-premon-1936",
+          "locus": "PDF 3–4, title and 2 September 1936 preface",
+          "claim": "Verifies the 1936 Dessain printing authorized by the 1934 General Chapter."
+        }
+      ],
+      "limitations": "Multiple intervening printings (1739, 1890, 1900/1902) sit between 1663 and 1936.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "western-uses-orders-2026-11:premon-1890-to-1936-provisional",
+      "from_stage": "western-uses-orders-2026-11:premon-1890-westmalle",
+      "to_stage": "western-uses-orders-2026-11:premon-1936-mechelen",
+      "kind": "revision",
+      "status": "provisional",
+      "evidence_level": "primary-description",
+      "summary": "Provisional revision edge from the late-19th-century Westmalle printing to the 1936 Mechelen Missale Praemonstratense, whose inspected preface states that the new book adds Masses and introduces text and chant changes.",
+      "components": [
+        "propers",
+        "chant"
+      ],
+      "changes": [
+        {
+          "component": "propers",
+          "before": "Late-19th-century Westmalle Premonstratensian missal state (1890/1900, original unacquired).",
+          "after": "1936 Mechelen missal adding new Masses and text/chant revisions per Abbot General Gummarus Crets's preface.",
+          "locus_before": "King 1955 (provisional lead)",
+          "locus_after": "Missale Praemonstratense 1936, PDF 4 (preface dated 2 September 1936)",
+          "evidence": [
+            {
+              "source_id": "western-uses-orders-2026-11:src-premon-1936",
+              "locus": "PDF 4, 2 September 1936 preface",
+              "claim": "Explicitly states the 1936 book adds Masses and changes in text and chant."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-premon-1936",
+          "locus": "PDF 4, 2 September 1936 preface",
+          "claim": "Documents the 1934 chapter mandate and added Masses / text-chant changes."
+        }
+      ],
+      "limitations": "Provisional because the 1890 and 1900/1902 Westmalle predecessors have not yet been directly collated against 1936.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "western-uses-orders-2026-11:benedictine-1481-to-1580",
+      "from_stage": "western-uses-orders-2026-11:benedictine-1481-usuarium469",
+      "to_stage": "western-uses-orders-2026-11:benedictine-cassinese-1580",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "bibliographic-only",
+      "summary": "Chronological succession within Benedictine monastic missal printings from a 1481 incunable witness to the 1580 Cassinese Congregation edition; no congregational identity or textual descent asserted.",
+      "components": [
+        "ordinary",
+        "propers",
+        "calendar"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-osb-usuarium-409",
+          "locus": "Origin 409 row 469",
+          "claim": "Identifies the 1481 Missale Benedictinum."
+        },
+        {
+          "source_id": "western-uses-orders-2026-11:src-cassinese-1580",
+          "locus": "PDF p. 5 title",
+          "claim": "Verifies the 1580 Venice Cassinese Congregation missal."
+        }
+      ],
+      "limitations": "Distinct Benedictine congregations maintained separate customs; chronological succession does not assert shared provenance.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "western-uses-orders-2026-11:osa-pal500-to-early-print",
+      "from_stage": "other-orders:osa-pal500-base",
+      "to_stage": "other-orders:osa-early-print",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "bibliographic-only",
+      "summary": "The late-15th-century printed OSA missal succeeds the 14th-century manuscript Ordo missalis (BAV Pal. lat. 500) within the Augustinian Hermits' liturgical stream.",
+      "components": [
+        "ordinary",
+        "propers"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-osa-pal500",
+          "locus": "BAV IIIF manifest",
+          "claim": "Identifies the 14th-century Augustinian Ordo missalis."
+        }
+      ],
+      "limitations": "Bibliographic succession only; no direct collation of Pal. lat. 500 against the 1491/1496 printing.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "western-uses-orders-2026-11:osa-1965-to-2006",
+      "from_stage": "western-uses-orders-2026-11:osa-1965-proper",
+      "to_stage": "western-uses-orders-2026-11:osa-2006-shared-proper",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "Between the 1965 pre-conciliar OSA proper and the 2006 shared Latin Proprium Missarum, the Augustinian orders carried out a postconciliar revision (begun 1970, Rome missal 1976) culminating in a unified OSA/OAR/OAD Latin proper confirmed 17 February 2006.",
+      "components": [
+        "propers",
+        "calendar"
+      ],
+      "changes": [
+        {
+          "component": "propers",
+          "before": "1965 pre-conciliar OSA Proprium Officiorum et Missarum (extended to OAD with separate variations).",
+          "after": "Postconciliar shared Latin Proprium Missarum prepared jointly for OSA, OAR, and OAD and confirmed 17 February 2006.",
+          "locus_before": "Analecta Ordinis OAD 1965 vol. 2, 17 July 1965 rescript",
+          "locus_after": "Acta OAR 2007, PDF pp. 19–20 (17 February 2006 confirmation)",
+          "evidence": [
+            {
+              "source_id": "western-uses-orders-2026-11:src-osa-1965",
+              "locus": "17 July 1965 rescript",
+              "claim": "Documents the separate 1965 OSA proper extended to OAD with variations."
+            },
+            {
+              "source_id": "western-uses-orders-2026-11:src-osa-2007-acta",
+              "locus": "PDF pp. 19–20",
+              "claim": "Documents the 1970–1976 postconciliar reform and 2006 unified OSA/OAR/OAD Latin proper."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-osa-1965",
+          "locus": "17 July 1965 rescript",
+          "claim": "Attests the 1965 pre-conciliar proper."
+        },
+        {
+          "source_id": "western-uses-orders-2026-11:src-osa-2007-acta",
+          "locus": "PDF pp. 19–20",
+          "claim": "Attests the postconciliar revision and 2006 shared Latin proper."
+        }
+      ],
+      "limitations": "Primary institutional decrees inspected; complete Latin prayer texts of both 1965 and 2006 remain unacquired.",
+      "comparison_ids": [],
+      "historical_parentage": "established",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "western-uses-orders-2026-11:servite-1972-to-1998",
+      "from_stage": "other-orders:servite-1972-proper",
+      "to_stage": "western-uses-orders-2026-11:servite-1998-proper-alt",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "The 1998 two-volume Servite editio typica altera (Antiphonale Sacramentarium and Lectionarium) succeeds the 1972 first typical edition.",
+      "components": [
+        "propers",
+        "lectionary",
+        "chant"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-servite-baroffio",
+          "locus": "PDF pp. 230 and 254",
+          "claim": "Identifies both volumes of the 1998 editio typica altera following 1972."
+        },
+        {
+          "source_id": "western-uses-orders-2026-11:src-servite-order-biblio",
+          "locus": "Printed p. 585",
+          "claim": "Lists the 1972 and 1998 Servite typical editions in sequence."
+        }
+      ],
+      "limitations": "Exact textual and musical revisions between 1972 and 1998 remain uncollated pending acquisition of the 1998 volumes.",
+      "comparison_ids": [],
+      "historical_parentage": "established",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "western-uses-orders-2026-11:curial-regula-to-assisi607",
+      "from_stage": "western-uses-orders-2026-11:curial-regula-prototype",
+      "to_stage": "western-uses-orders-2026-11:curial-assisi607-base",
+      "kind": "reception",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "Assisi MS 607's base layer receives the early pre-Haymonian Franciscan adaptation of the Roman curial missal associated with the 1223 Regula bullata.",
+      "components": [
+        "propers",
+        "rubrics"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-welch2011",
+          "locus": "pp. 53–61",
+          "claim": "Connects early second-quarter 13th-century Franciscan missals to the reconstructed Regula prototype."
+        },
+        {
+          "source_id": "western-uses-orders-2026-11:src-sedda2019",
+          "locus": "pp. 315–318",
+          "claim": "Identifies Assisi 607's base layer as pre-Haymonian Innocent III curial ordo adapted for the friars."
+        }
+      ],
+      "limitations": "Regula prototype is a scholarly reconstruction; no single surviving physical exemplar is claimed as Assisi 607's direct antigraph.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "western-uses-orders-2026-11:curial-assisi607-haymo-revision",
+      "from_stage": "western-uses-orders-2026-11:curial-assisi607-base",
+      "to_stage": "western-uses-orders-2026-11:curial-assisi607-haymo-layer",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "A second hand (A2) physically revises Assisi MS 607 after 1244 to conform its rubrics, prayer incipits, and Anthony Mass to Haymo of Faversham's Ordo.",
+      "components": [
+        "propers",
+        "rubrics"
+      ],
+      "changes": [
+        {
+          "component": "rubrics",
+          "before": "Pre-Haymonian rubrics following Innocent III's curial ordo adapted for the Friars Minor.",
+          "after": "Haymo of Faversham's post-1244 Ordo rubrics systematically entered in the margins while striking obsolete directions.",
+          "locus_before": "Sedda 2019, pp. 315–318 (Assisi MS 607 base hand)",
+          "locus_after": "Sedda 2019, pp. 315, 317 and n. 43 (Assisi MS 607 hand A2)",
+          "evidence": [
+            {
+              "source_id": "western-uses-orders-2026-11:src-sedda2019",
+              "locus": "pp. 315–318 and n. 43",
+              "claim": "Documents hand A2's systematic marginal replacement of pre-Haymonian rubrics with Haymo's Ordo rubrics."
+            }
+          ]
+        },
+        {
+          "component": "propers",
+          "before": "Anthony Mass scheme II (In medio ecclesie) and older oration incipits in the base hand.",
+          "after": "Changed oration incipits and the Haymonian Anthony Mass entered in the margin of f. 58v by hand A2.",
+          "locus_before": "Sedda 2019, pp. 298–318 (Assisi MS 607 base sanctorale)",
+          "locus_after": "Sedda 2019, p. 317 and n. 43 (Assisi MS 607 f. 58v margin)",
+          "evidence": [
+            {
+              "source_id": "western-uses-orders-2026-11:src-sedda2019",
+              "locus": "pp. 315, 317 and n. 43",
+              "claim": "Documents hand A2 adding changed oration incipits and the Haymonian Anthony Mass on f. 58v."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-sedda2019",
+          "locus": "pp. 315–318 and n. 43",
+          "claim": "Paleographical proof of in-codex Haymonian revision of Assisi MS 607."
+        }
+      ],
+      "limitations": "Based on inspected scholarly paleography (Sedda 2019); direct digital folio images of Assisi MS 607 remain to be acquired.",
+      "comparison_ids": [],
+      "historical_parentage": "established",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "western-uses-orders-2026-11:curial-haymo-to-nicholasiii",
+      "from_stage": "western-uses-orders-2026-11:curial-assisi607-haymo-layer",
+      "to_stage": "western-uses-orders-2026-11:curial-nicholasiii-reform",
+      "kind": "reception",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "The Haymonian Franciscan-curial liturgical books are received and extended to the Roman urban churches under Cardinal Orsini / Pope Nicholas III (1263–1280).",
+      "components": [
+        "propers",
+        "rubrics"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-sedda2019",
+          "locus": "p. 326",
+          "claim": "Synthesizes van Dijk and Cambell on Nicholas III's imposition of modernized Franciscan-curial books on the Roman churches."
+        }
+      ],
+      "limitations": "Scholarly synthesis; individual Roman basilica adoption chronologies varied.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "western-uses-orders-2026-11:curial-1474-to-scotus1482",
+      "from_stage": "roman-stages-1474",
+      "to_stage": "western-uses-orders-2026-11:curial-scotus1482-rotingo",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "bibliographic-only",
+      "summary": "Octavianus Scotus's 1482 Venetian Roman-curial missal (revised by Philip de Rotingo OFM Obs.) succeeds the 1474 Milan editio princeps within the printed Roman-curial tradition.",
+      "components": [
+        "ordinary",
+        "propers",
+        "calendar"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "western-uses-orders-2026-11:src-usuarium-ofm-407",
+          "locus": "Origin 407 / item 5840",
+          "claim": "Identifies the 1482 Venice Scotus Roman-curial printing edited by Philip de Rotingo."
+        }
+      ],
+      "limitations": "Bibliographic succession only; textual collation against Milan 1474 has not been performed.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished",
+      "git_ancestry": false,
+      "text_inheritance": false
+    }
+  ],
+  "gaps": [
+    {
+      "id": "western-uses-orders-2026-11:gap-lubeck-reconciliation",
+      "tradition_id": "lubeck-use",
+      "period": "Direct inspection of 1486 Brandis, USTC 741258/676212 reconciliation for c. 1505, and 1531 Reformation closure",
+      "missing": "Direct acquisition of Usuarium 41 / ISTC im00659300 (Brandis 1486) and reconciliation of c. 1505 USTC 741258 vs 676212, plus Bugenhagen's 1531 Lübeck Church Order marking local cessation of the Catholic diocesan missal.",
+      "next_source": "KB København Inc. Haun. 2772 fol. / SB Lübeck I.-K. 877 and USTC 741258/676212 catalogue entries.",
+      "consequence": "Neither the relation between 1486 and c. 1505 nor the exact edition identity of c. 1505 is yet settled."
+    },
+    {
+      "id": "western-uses-orders-2026-11:gap-merseburg-scan",
+      "tradition_id": "merseburg-use",
+      "period": "Direct inspection of 1502 UB Leipzig III/243 (Melchior Lotter) and Reformation cessation",
+      "missing": "Visual inspection of the 1502 Merseburg missal's prefatory mandate (Ex quo missalium diversitas...) and Mass body, plus mid-16th-century Saxon Reformation closure.",
+      "next_source": "UB Leipzig III/243 digital catalogue / VD16 record for Melchior Lotter's 1502 Merseburg missal.",
+      "consequence": "Cannot treat the opening incipit as a verified episcopal decree or collate Merseburg's liturgical text against neighboring Magdeburg/Meissen uses."
+    },
+    {
+      "id": "western-uses-orders-2026-11:gap-benedictine-congregations",
+      "tradition_id": "benedictine-monastic",
+      "period": "Pre-1481 monastic manuscripts, Cassinese 1580 body collation, Maurist/Solesmes/Beuron congregational missals, and post-Vatican II Benedictine propers",
+      "missing": "Collation of the 1481 incunable and 1580 Cassinese body text against the 1570 Roman Missal, full acquisition of a complete 20th-century Missale Romano-Monasticum (beyond the 1937 27-page rubric extract), and post-1969 Benedictine Confederation proper missals.",
+      "next_source": "Complete scans of Cassinese 1580 body, 19th–20th-century Mechlin/Ratisbon/Tournai Missale Romano-Monasticum, and post-1970 Thesaurus Liturgiae Benedictinae.",
+      "consequence": "Benedictine monastic liturgy remains sampled at three bounded stations rather than mapped across all autonomous congregations."
+    },
+    {
+      "id": "western-uses-orders-2026-11:gap-dominican-intermediate",
+      "tradition_id": "dominican",
+      "period": "1482 Scotus direct inspection, 1604–1933 intermediate editions, and 1969 CD 98/69 primary decree",
+      "missing": "Direct scan of Octavianus Scotus 1482 (ISTC im00636000), key 17th–19th-century editions (e.g., 1644, 1748, 1855, 1923), and the primary text of CD 98/69 (2 June 1969).",
+      "next_source": "ISTC im00636000 holdings, BnF/BSB intermediate Dominican missals, and Notitiae 1969/1970 decree notices.",
+      "consequence": "Leaves a three-century gap between 1604 and 1933 and keeps 1482 Scotus provisional."
+    },
+    {
+      "id": "western-uses-orders-2026-11:gap-carmelite-modern",
+      "tradition_id": "carmelite",
+      "period": "1490 Brescia scan, 1621–1935 editions, 1935 vs 1937 resolution, and post-1969 O.Carm. reception act",
+      "missing": "Page inspection of Gallica bpt6k5578012t (1490 Brescia), 17th–19th-century O.Carm. editions, primary title of 1935 Rome (resolving 1937 report), and primary Congregation decree for 1974 Proprium Missarum.",
+      "next_source": "Gallica bpt6k5578012t, Analecta Ordinis Carmelitarum (1935–1937 and 1969–1974), and the 1974 typical edition.",
+      "consequence": "Concrete textual revisions between 1621, 1935, and 1974 cannot yet be documented."
+    },
+    {
+      "id": "western-uses-orders-2026-11:gap-carthusian-1517-1883-1981",
+      "tradition_id": "carthusian",
+      "period": "1517 Lyon, 1713 Correria, 1883 Montreuil, and 1981 Latin Missale Cartusiense primary inspections",
+      "missing": "Direct page acquisition and collation of Bevilacqua 1517, 1883 Montreuil-sur-Mer, and the 1981 postconciliar Latin edition (plus exact date of Holy See recognition for 1981 and 2021).",
+      "next_source": "BnF 1517 Carthusian missal, Montreuil 1883 digitized copy, and primary 1981 Latin Missale Cartusiense front matter.",
+      "consequence": "Keeps 1517, 1883, and 1981 provisional and prevents exact textual collation of the 1981→2021 changes reported in Praenotanda §2."
+    },
+    {
+      "id": "western-uses-orders-2026-11:gap-premon-1890-1900-postvatican2",
+      "tradition_id": "premonstratensian",
+      "period": "1890/1900 Westmalle primary scans, 1936 exact delta, and post-Vatican II Norbertine proper",
+      "missing": "Direct acquisition of the 1890 and 1900 Westmalle printings to verify the 1936 preface's reported text/chant changes, plus post-1969 Premonstratensian adoption of the Roman Missal and proper volumes.",
+      "next_source": "Westmalle 1890/1900 copies in Norbertine abbey libraries (Averbode/Tongerlo/Berne) and post-1970 Analecta Praemonstratensia liturgical decrees.",
+      "consequence": "Keeps 1890 Westmalle provisional and leaves post-1969 Norbertine liturgical books unmodeled."
+    },
+    {
+      "id": "western-uses-orders-2026-11:gap-osa-texts",
+      "tradition_id": "osa-hermits-round2",
+      "period": "1491/1496 vs Pal. lat. 500 collation, 1965 OSA original act, and 2006 full Latin proper text",
+      "missing": "Folio comparison of BAV Pal. lat. 500 against early printed OSA missals, primary 1965 OSA approval decree, and full 2006 shared OSA/OAR/OAD Latin Proprium Missarum text.",
+      "next_source": "BAV Pal. lat. 500 full folios, Analecta Augustiniana (1965), and the published 2006 Latin Proprium Missarum.",
+      "consequence": "Concrete prayer-level changes across medieval, 1965, and 2006 Augustinian propers remain uncollated."
+    },
+    {
+      "id": "western-uses-orders-2026-11:gap-servite-1998-text",
+      "tradition_id": "servite-round2",
+      "period": "15th–19th-century printed Servite propers and 1998 editio typica altera primary volumes",
+      "missing": "Direct acquisition of early modern Servite propers and the 1998 two-volume editio typica altera (Vol. I Antiphonale Sacramentarium, Vol. II Lectionarium) with its Congregation confirmation decree.",
+      "next_source": "Curia Generalizia OSM Rome liturgical publications (Libri Liturgici OSM 1–2 bis, 1998).",
+      "consequence": "Substantive prayer and chant revisions between 1972 and 1998 cannot yet be verified."
+    },
+    {
+      "id": "western-uses-orders-2026-11:gap-curial-franciscan-prints",
+      "tradition_id": "roman-stages-curial",
+      "period": "Assisi MS 607 direct folio images, 1280–1474 urban-curial manuscripts, and 1474 vs 1482 Scotus collation",
+      "missing": "Digital folios of Assisi MS 607 (especially f. 58v and f. 79), primary curial missals of the Avignon and early Renaissance papacy, and collation of Milan 1474 against Venice 1482 (Philip de Rotingo).",
+      "next_source": "Assisi Biblioteca Comunale MS 607 digitization, BnF B-27921 (1482 Scotus), and van Dijk Sources I–II critical apparatus.",
+      "consequence": "Prevents direct text-collated verification of Haymo's marginal edits and Philip de Rotingo's 1482 editorial corrections."
+    }
+  ]
+}

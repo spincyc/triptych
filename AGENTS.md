@@ -71,6 +71,7 @@ Select profiles by the document's actual genre and sources, not by superficial s
 - handbooks for a season of the postconciliar Roman Rite, with the territorial Lectionary, Mass, Hours and daily prayer: `guidance/liturgy/postconciliar-seasonal-handbooks.md`
 - 1962 Roman Rite altar-server response, pronunciation, memorization, and ceremonial training guides for Low Mass, Missa Cantata, and Solemn Mass: `guidance/liturgy/roman-1962-server-training.md`
 - comprehensive and use-derived pictorial dictionaries of Roman sanctuary composition, objects, linens, vessels, books, vestments, insignia, and related ceremonies at the 1962 horizon: `guidance/liturgy/roman-1962-pictorial-dictionaries.md`
+- comprehensive and use-derived illustrated dictionaries of the postconciliar Roman sanctuary, edition- and territory-scoped with explicit 1962 counterpart relations: `guidance/liturgy/postconciliar-pictorial-dictionaries.md`
 - self-paced Ecclesiastical Latin curricula centered on the 1962 Missal, including modular teaching packets, reference, practice, assessments, and keys: `guidance/curriculums/ecclesiastical-latin.md`
 - edition-specific histories and complete normative inventories of Roman calendars: `guidance/liturgy/roman-calendar-references.md`, plus the profile for the identified edition where its rules are used
 - recurring Roman calendar arithmetic used by any liturgical document — movable anchors, the Sunday `A`/`B`/`C` and weekday `I`/`II` Lectionary cycles, postconciliar Ordinary Time week numbering, and the 1962 resumed-Sunday mechanism: `guidance/liturgy/calendar-computation.md`
@@ -158,7 +159,7 @@ When legal rules, current discipline, translations, software, or other mutable f
 ## Repository and build discipline
 
 Preserve the provider hierarchy under `src/<provider>/`; the present providers
-are `gpt` and `claude`. Every publication leaf owns a `publication.toml`
+are `gpt`, `claude`, and `gemini`. Every publication leaf owns a `publication.toml`
 under `guidance/document-schemas.md`: its document type and ordered section
 list, and the records nothing else derives; its kind, outputs and entrypoints
 follow from its path and records. Existing TeX is authoritative plaintext;

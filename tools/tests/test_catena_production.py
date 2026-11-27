@@ -85,21 +85,22 @@ BROWSER = ROOT / "src/web/browser"
 CATENA = BROWSER / "catena"
 NODE = shutil.which("node")
 
-# gzip -9, whole file, mtime pinned to zero. The chapter finder and linked
-# English editions extend passage focus. Measurements are in guidance/catena.md.
-CSS_BUDGET_GZ = 8_800
+# gzip -9, whole file, mtime pinned to zero. Measured 2026-11-26 in
+# guidance/catena.md: catena.css 6,039 B (4,474 B stripped),
+# catena.js 13,864 B (13,507 B stripped), with ~5% headroom.
+CSS_BUDGET_GZ = 6_400
 
-JS_BUDGET_GZ = 15_000
+JS_BUDGET_GZ = 14_600
 
 # The same files with comments stripped: what the composition itself costs.
-# Base at main 9b9ff74a7: css 1,813 / js 6,450. The growth is the accepted
-# composition plus the correction work this file pins (typed hash validation,
-# canonical verse bounds, integrity errors, rights facts, chronology grouping,
-# filter recovery, route-owned history with arrival replaceState, print and
-# forced-colors blocks).
-CSS_RULES_BUDGET_GZ = 3_350
+# Base at main 9b9ff74a7: css 1,813 / js 6,450. The growth covers the sticky
+# wide composition, bidirectional verse linkage, structured textBlocks prose,
+# view/expansion controls, passage focus, chapter finder, paired English,
+# typed hash validation, rights facts, chronology grouping, and print/forced
+# colours.
+CSS_RULES_BUDGET_GZ = 4_700
 
-JS_CODE_BUDGET_GZ = 10_300
+JS_CODE_BUDGET_GZ = 14_200
 
 # The review's protected distinctions. The composition deliberately specifies
 # no treatment for the `.absence-*` selectors (they render in the page's
@@ -5680,9 +5681,13 @@ class ComposedButNotSimplifiedTest(unittest.TestCase):
                                  f"{selector} may not take the negative ink")
 
     def test_the_truthful_column_comment_replaced_the_pinned_claim(self):
+        # UPDATED PIN (2026-11-26): the left column is now genuinely sticky
+        # and independently scrollable on >= 60rem, and the stylesheet comment
+        # describes that real mechanism rather than overclaiming immobility.
         self.assertNotIn("never scrolls away", self.css)
         self.assertNotIn("never has to be scrolled", self.css)
-        self.assertIn("not pinned", self.css)
+        self.assertIn("independently scrollable", self.css)
+        self.assertIn("position: sticky", self.css)
 
 
 class CompositionTest(ReplayTest):
@@ -5713,10 +5718,11 @@ class CompositionTest(ReplayTest):
 
     def test_the_wide_grid_uses_explicit_rows_and_no_magic_span(self):
         css = held(CATENA / "catena.css")
-        self.assertIn("@media (min-width: 64.0625rem)", css)
-        self.assertIn("grid-template-columns: minmax(20rem, 26rem) minmax(0, 44rem)", css)
+        self.assertIn("@media (min-width: 60rem)", css)
+        self.assertIn("grid-template-columns: minmax(19rem, 25rem) minmax(0, 44rem)", css)
         self.assertIn("grid-template-rows: auto auto", css)
         self.assertIn("grid-row: 1 / -1", css)
+        self.assertIn("position: sticky", css)
         self.assertNotIn("span 100", css)
 
     def test_the_script_builds_one_column_for_everything_beside_the_chapter(self):
@@ -8555,7 +8561,7 @@ class V9ComposedPrefixFallbackClosureTest(ReplayTest):
             "sectionHeadings": ["One fragment held here"],
             "dataStates": ["held"],
             "authorGroups": [{"author": "Author 1", "date": "301",
-                              "count": "1 fragment", "open": False,
+                              "count": "1 fragment", "open": True,
                               "hidden": False}],
             "acknowledgements": [],
             # --- the chapter around it ---------------------------------
@@ -8598,17 +8604,22 @@ class V9ComposedPrefixFallbackClosureTest(ReplayTest):
             # node is visible as a vocabulary change rather than only as a
             # count. `fragment-text missing` is the refused row's own hook.
             "classes": [
-                "author", "author-body", "author-count", "author-date",
-                "author-fragments", "author-head", "author-name", "chain",
-                "chain-column", "chapter", "chapter-body", "chapter-count",
-                "chapter-head", "chapter-name", "english-availability", "fragment",
-                "fragment-apparatus", "fragment-author", "fragment-body",
-                "fragment-date", "fragment-extent", "fragment-head",
-                "fragment-language", "fragment-length", "fragment-source",
+                "author author-single-work", "author-body", "author-count",
+                "author-date", "author-fragments", "author-head",
+                "author-name", "author-work", "chain", "chain-column",
+                "chain-tool", "chain-tool chain-expand", "chain-toolbar",
+                "chain-views", "chapter", "chapter-body", "chapter-count",
+                "chapter-head", "chapter-name", "english-availability",
+                "fragment", "fragment-apparatus", "fragment-author",
+                "fragment-body", "fragment-date", "fragment-extent",
+                "fragment-head", "fragment-language", "fragment-length",
+                "fragment-locator", "fragment-source",
                 "fragment-text missing", "fragment-whole", "fragment-work",
-                "paragraph-note", "passage", "passage-paragraph",
-                "passage-paragraph projected", "section-heading", "sep",
-                "verse", "verse-num"],
+                "link-button fragment-jump", "paragraph-note", "passage",
+                "passage-paragraph", "passage-paragraph projected",
+                "section-heading", "sep", "verse",
+                "verse has-commentary verse-active", "verse-num",
+                "verse-num verse-trigger"],
             "langAttributes": ["passage=en", "fragment-text missing=la"],
         }
 
@@ -9132,20 +9143,25 @@ class V15TransportOwnershipTest(V14ProjectionAuthorityBase):
         "voiceLabels": ["Everything held", "The author’s own language"],
         "stepButtons": [False, False],
         "classes": [
-            "author", "author-body", "author-count", "author-date",
-            "author-fragments", "author-head", "author-name", "chain",
-            "chain-column", "chapter", "chapter-body", "chapter-count",
-            "chapter-head", "chapter-name", "english-availability", "fragment", "fragment-apparatus",
-            "fragment-author", "fragment-body", "fragment-date",
-            "fragment-extent", "fragment-head", "fragment-language",
-            "fragment-length", "fragment-source", "fragment-text",
-            "fragment-whole", "fragment-work", "paragraph-note", "passage",
-            "passage-paragraph", "passage-paragraph projected",
-            "section-heading", "sep", "verse", "verse-num"],
+            "author author-single-work", "author-body", "author-count",
+            "author-date", "author-fragments", "author-head", "author-name",
+            "author-work", "chain", "chain-column", "chain-tool",
+            "chain-tool chain-expand", "chain-toolbar", "chain-views",
+            "chapter", "chapter-body", "chapter-count", "chapter-head",
+            "chapter-name", "english-availability", "fragment",
+            "fragment-apparatus", "fragment-author", "fragment-body",
+            "fragment-date", "fragment-extent", "fragment-head",
+            "fragment-language", "fragment-length", "fragment-locator",
+            "fragment-para", "fragment-source", "fragment-text",
+            "fragment-whole", "fragment-work", "link-button fragment-jump",
+            "paragraph-note", "passage", "passage-paragraph",
+            "passage-paragraph projected", "section-heading", "sep", "verse",
+            "verse has-commentary verse-active", "verse-num",
+            "verse-num verse-trigger"],
         "langAttributes": ["passage=en", "fragment-text=la"],
         "acknowledgements": [],
         "authorGroups": [{"author": "Author 1", "date": "301",
-                          "count": "1 fragment", "open": False,
+                          "count": "1 fragment", "open": True,
                           "hidden": False}],
     }
 

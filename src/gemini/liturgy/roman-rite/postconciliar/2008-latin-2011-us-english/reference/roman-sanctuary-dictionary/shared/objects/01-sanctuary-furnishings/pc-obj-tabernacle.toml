@@ -1,0 +1,84 @@
+schema_version = 1
+id = "pc-obj-tabernacle"
+category = "sanctuary-furnishings"
+sort_order = 105
+plate_id = "pc-plt-02-furnishings"
+composition_plate_ids = ["pc-plt-01-sanctuary"]
+plate_position = "Bottom right (Plate II); recessed rear niche (Plate I)"
+preferred_english_name = "Tabernacle"
+latin_headword = "Tabernaculum"
+alternate_english_names = ["Eucharistic Tabernacle"]
+alternate_latin_names = []
+pronunciation_key = "tah-behr-NAH-koo-loom"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "required"
+scope_level = "universal-roman"
+territorial_note = ""
+
+[identification]
+summary = "The tabernacle is the immovable, solid, locked sacred shrine in which the Most Holy Eucharist is reserved for Viaticum, Communion of the sick, and the adoration of the faithful."
+appearance = "Illustrated at bottom right of Plate II as a rectangular solid metal safe with lockable double doors bearing relief crosses anchored upon a stone pedestal, and in Plate I as a domed opaque metal tabernacle set atop a pillar inside a recessed arched niche at the rear of the sanctuary, accompanied in both views by a hanging sanctuary lamp."
+placement_and_use = "Universal Roman law requires ordinarily one tabernacle in a church or oratory, immovable, crafted of solid opaque material, securely locked against danger of profanation, and blessed before liturgical use (GIRM 314; CIC can. 938; Redemptionis Sacramentum 130). Because the sign of Mass is clearer when the tabernacle does not stand upon the altar of celebration, universal law (GIRM 315) entrusts the Diocesan Bishop to place it either in the sanctuary apart from the altar of celebration—not excluding a former high altar no longer used for Mass—or in a distinct chapel suitable for private adoration that is organically connected to the church and readily visible to the faithful. The pastor or rector must diligently safeguard the tabernacle key (CIC can. 938 §5)."
+liturgical_colors = "Ordinarily displayed in its noble metal or architectural finish; a traditional fabric tabernacle veil (conopaeum) in white or the seasonal color of the day remains a lawful ornament where local custom retains it, though no longer universally mandated by GIRM 314."
+
+[ministers_and_handling]
+ordinary_ministers = ["bishop", "priest", "deacon"]
+prepares = ["priest", "deacon"]
+server_boundary = "clergy-reserved"
+server_boundary_summary = "Strictly reserved to clergy (and to instituted acolytes or duly deputed extraordinary ministers solely for Communion distribution or reposition); altar servers never open the tabernacle, handle its key, or touch reserved vessels, and genuflect before it outside Mass and at the beginning and end of Mass when it stands in the sanctuary (GIRM 274)."
+safety_warning = "Never open the tabernacle, touch the tabernacle key, or retrieve or repose the Blessed Sacrament. Key custody belongs strictly to the pastor or rector (CIC can. 938 §5). Genuflect on the right knee before the tabernacle outside Mass and at the beginning and end of Mass when it stands in the sanctuary (GIRM 274)."
+
+[audience_text]
+altar_server = "Inside the locked tabernacle rests the Body of Christ Himself. Whenever the sanctuary lamp burns beside it, genuflect smoothly on your right knee when passing before it outside Mass and at the entrance and exit of Mass when it stands in the sanctuary (unless you are carrying the processional cross or lighted candles, GIRM 274). An altar server never opens the tabernacle, never takes or holds the tabernacle key, and never reaches inside—only clergy, or instituted acolytes and duly mandated extraordinary ministers for Communion, handle what is reserved there."
+sacristan = "Keep the exterior of the tabernacle, its stone pedestal, and its surrounding prayer area spotless, while respecting the canonical security of the key under the pastor's responsibility (CIC can. 938 §5). Never leave the key resting unattended in the lock or on an open sacristy hook. Confirm that a clean linen corporal lines the interior floor (placed by clergy or an authorized minister), ensure that the continuous oil or wax sanctuary lamp burns beside it whenever hosts are reserved (GIRM 316), and prepare to leave the tabernacle empty and open on Good Friday until the Easter Vigil."
+general_reader = "Set in a prominent, quiet place of honor, the tabernacle is the locked sacred dwelling where consecrated hosts are kept after Mass so that Christ can be carried immediately to the sick and dying as Viaticum and adored by the faithful in silent prayer. Postconciliar Roman law places the tabernacle apart from the altar of celebration—either elsewhere in the sanctuary or in an adjoining Blessed Sacrament chapel as the Diocesan Bishop decides—so that worshipers clearly distinguish the unfolding Eucharistic action at the altar from Christ's abiding presence in reservation."
+
+[relationships]
+confusable_with = []
+related_objects = ["pc-obj-sanctuary-lamp", "pc-obj-ciborium", "pc-obj-pyx", "pc-obj-altar"]
+
+[symbolism]
+has_sourced_symbolism = true
+text = "The Church honors the tabernacle as the consecrated dwelling of Christ's abiding sacramental presence in the midst of His people, recalling the Lord's promise to Israel in Ex 25:8 (“And they shall make me a sanctuary, and I will dwell in the midst of them:”). Setting the tabernacle apart from the altar of celebration keeps distinct the sign of Christ's reserved presence for adoration and Viaticum from the sacrificial action of Mass, fulfilling the constant pastoral care that St. Thomas Aquinas grounds in bringing the Eucharist to the sick without delay."
+evidence_class = "liturgical-source"
+attribution = "GIRM 314–315; Eucharisticum Mysterium (1967) 53–55; Ex 25:8; St. Thomas Aquinas, Summa Theologiae III, q. 83, a. 5, ad 11"
+
+[counterpart_1962]
+relationship = "materially changed"
+locus_1962 = "Codex Iuris Canonici (1917) cann. 1268–1269; Missale Romanum (1962), Ritus Servandus II.2"
+comparison = "Both the 1917 Code (cann. 1268–1269) and current law (CIC 1983 can. 938; GIRM 314) mandate a single immovable, solid, opaque, securely locked tabernacle. Whereas 1917/1962 discipline ordinarily fixed the veiled tabernacle in the middle of the high altar of celebration, GIRM 315 considers it clearer as a sign not to place it on the altar where Mass is celebrated, entrusting the Diocesan Bishop to choose either another worthy place in the sanctuary or an organically connected adoration chapel, and no longer universally mandating a tabernacle veil."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N05"
+primary_loci = [
+  "GIRM 274, 314–317",
+  "CIC (1983) can. 938",
+  "Redemptionis Sacramentum (2004) 130–131",
+  "Eucharisticum Mysterium (1967) 52–55",
+]
+source_bindings = [
+  "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002",
+  "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021",
+  "edition.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-codex-2026-07-25",
+  "edition.acta-papal-archives.aas.096.2004-acta-aas-096",
+  "edition.catholic-church.codex-iuris-canonici-1917.vatican-polyglot-1918",
+  "edition.catholic-church.missale-romanum.vatican-typica-1962",
+  "edition.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

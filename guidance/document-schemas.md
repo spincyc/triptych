@@ -10,7 +10,7 @@ not replace the profiles' substantive judgment.
 
 ## Canonical sources
 
-Each publishable leaf under `src/gpt/` or `src/claude/` owns one
+Each publishable leaf under `src/gpt/`, `src/claude/`, or `src/gemini/` owns one
 `publication.toml`. It declares what already has one authoritative owner:
 plaintext, shared fragments, typed inventories, and their output entrypoints.
 Current TeX remains a lossless authoring source. A manifest is not permission
@@ -105,7 +105,7 @@ families preserve the material differences between genres:
 | `curriculum-guide`, `curriculum-reference`, `curriculum-memory` | Course dependencies, reference selection, memory recurrence, shared vocabulary and answer ownership. |
 | `curriculum-packet`, `curriculum-poetry`, `curriculum-assessment` | Stable lessons, passage/worksheet selections and coupled answers; qualitative readiness and profile-specific teaching order. |
 | `server-low-mass`, `server-trainer`, `server-sung`, `server-cards` | Actor/cue/action sequence, shared responses, child/trainer correspondence, team routes, and exact selected duplex faces. |
-| `pictorial-dictionary` | Canonical typed objects, claims, variants, artwork and plate selections; audience editions are curated projections. |
+| `pictorial-dictionary`, `pictorial-dictionary-postconciliar` | Canonical typed objects, claims, variants, artwork and plate selections; postconciliar editions add controlled dispositions and 1962 counterpart relations; audience editions are curated projections. |
 | `sacraments`, `sacraments-summary` | Shared sacrament matrix, lexicon, summaries and initiation table, with the profile's distinct treatise/companion order. |
 | `virtues`, `angelology`, `heresies` | Subject-specific census, terminology and authority/source inventories rather than a generic monograph outline. |
 | `marian-rosary`, `marian-prayer`, `marian-dogma`, `marian-apparition`, `marian-monograph`, `marian-authority` | Exact prayer witnesses, four-dogma scope, competent apparition acts, or the particular monograph/authority structure. |

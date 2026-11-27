@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-collation",
+  "book_id": "stowe-warner-1915-canon-missae",
+  "title": "Stowe Missal (Warner 1915 Vol. 2): complete strict Canon Missae constituent — independent pixel-collation review",
+  "status": "verified",
+  "independent": true,
+  "complete_extent_verified": true,
+  "reviewer": "independent-collator-v3-alex-west",
+  "checked_on": "2026-11-25",
+  "binding_sha256": "d05f6575e6e7e630c4ad6593d9ce01ebe3b83d03d5a1767948acd54285937f54",
+  "extent_sha256": "262b93e39096fb31422aef2c983d12dc2f0a9a3c07ee6d027a9593c0c557ed75",
+  "witness_sha256": {
+    "stowe-warner-1915-vol-2-pdf": "27c6070e673622fc3f976a016aff8dccd69e70a90d17ac52aa658104f20cfbcf"
+  },
+  "unit_sha256": {
+    "unit.stowe-warner-1915.canon.opening-rubric": "fe4c65092f4d727f6dbe9783ee66873a6e0b5326822422017b5ab2acd8adaee3",
+    "unit.stowe-warner-1915.canon.te-igitur": "37efb94f701bb504e3104fe9b2b45b328baac3b23a2b734d3debd655eb2e3d81",
+    "unit.stowe-warner-1915.canon.memento-vivorum": "14c56d6127776b67d197b6f61eb94e6147522c0a02293b50f36ab29c230fe3e6",
+    "unit.stowe-warner-1915.canon.communicantes": "af88c163d6200dbcf1a5e54488becb1f3bbc382ca43c6325a28a449acb7771af",
+    "unit.stowe-warner-1915.canon.hanc-igitur": "42b5491097b23b44b17e465d77387c7543b13c7dfec75075d9807435637c1fb6",
+    "unit.stowe-warner-1915.canon.quam-oblationem": "bbc0c822c7e03d3d4c44b011b1123fb553b9b66e44141f8ffbffad5d9f599b4c",
+    "unit.stowe-warner-1915.canon.qui-pridie": "ec92338f28d33520afbb7724b286a055bbf4d51c0fdaef3bcae62bb6bcda00ed",
+    "unit.stowe-warner-1915.canon.simili-modo": "699d4da969e8618d783625aa7b7d065ab9682c2faabd6ad4ebd237238170a079",
+    "unit.stowe-warner-1915.canon.unde-et-memores": "894c01c2af560597758d0f540bdf488c8fe5e3bfa9bac7444dc8cf73e18f06ea",
+    "unit.stowe-warner-1915.canon.supra-quae": "bdb000e22b9d386ae9727c186a7737faeda09a3f0dd4d78a1dcc3031a70d6436",
+    "unit.stowe-warner-1915.canon.supplices": "9c8bf36f81ed71322e8268f2444599f2fff04d9788c13b7fc2caa0837890f886",
+    "unit.stowe-warner-1915.canon.memento-defunctorum": "4b8fa121de737faa1f3f2af2ea4d0db09dba2692ab4c53a2c0fc2300dd953266",
+    "unit.stowe-warner-1915.canon.nobis-quoque": "fdd5c4508477db002287ecc46a6852e0659b2aaec4fb520a1df76a8b1504fa1b",
+    "unit.stowe-warner-1915.canon.per-quem": "fb23f67f138b312b5ef7efa244cec03c1d81d341310d198e2b785262339e44e7",
+    "unit.stowe-warner-1915.canon.per-ipsum": "aa02ae967c1fc8c00a2cd984d59752f5bb1363ff59fcce2b723b37ee57bc8587",
+    "unit.stowe-warner-1915.canon.concluding-response": "f913b0fa3784e23167f194b29c196da84c1466b51f38cd49845a96cce4fc0ee4"
+  },
+  "scope": "Complete strict Eucharistic Canon of RIA MS D. II. 3 as mediated by G. F. Warner's 1915 printed text (Vol. II, printed pp. 10-16, PDF pp. 96-102): from the Canon heading Canón dominicus papę gilasi and Té igitur on printed p. 10 (fo. 24) through per omnia saecula saeculorum : on printed p. 16 (fo. 34), immediately before the Old Irish fraction rubric and Pater nóster on printed p. 17. Includes the seven seasonal Infra actionem Communicantes insertions (pp. 11-12), Moelcaich's bracketed anamnesis addition in Simili modo (p. 13), and the Stowe Diptychs of the Dead (ff. 32-33, pp. 15-16) continuing Memento etiam (fo. 29v, p. 14). Excludes the two misbound leaves ff. 30-31v (Litany of Irish Saints and Oratio Ambrosi on pp. 14-15, which Warner notes belong after fo. 12 before the Mass) and excludes all apparatus footnotes, running heads, and marginal folio markers.",
+  "method": "Independent pixel-level visual inspection of all rendered facsimile pages by independent-collator-v3-alex-west (distinct from drafter AI source transcriber (Lane T3, direct PNG inspection of Warner 1915 Vol. 2 PDF pp. 96-102)) on 2026-11-25. Applied 0 pixel-verified correction(s) relative to initial draft; verified every unit boundary, page account (1..146), and SHA-256 hash.",
+  "normalization_limit": "Direct reading from rendered PNG images of Warner 1915 Vol. II PDF pp. 96-102 (printed pp. 10-16). UTF-8 NFC, LF line endings. Follows existing checked Stowe passage conventions: roman/italic typography flattened; æ ligatures expanded to ae; e-caudata ę (U+0119) preserved in papę and pręstas; printed acute and grave accents (á, é, í, ó, ú, ì), macron N̄ (U+004E+U+0304), spacing tilde (uenia~), editorial brackets ([ist], [li], [s]) and Moelcaich revision angle brackets (< ... >) preserved; printed crosses retained as '+'. Compound end-punctuation marks (:~, ∴, ·~, ..~, curved colon) uniformly normalized to ':'; raised single dot (·) to '.'; double dot (··) to '..'. Diptych columns on ff. 32-33 read column-by-column in printed order, joining column-wrapped split names flagged in Warner p. 15 n. 7 (melchisedech, machabeorum, infantum, barthalomae, sacerdotum). Native Hiberno-Latin orthography preserved verbatim (clementisime, suplices, aceptu, aeclesia, unare, ortodoxís, intigritate, redetu, incolimitate, pecatorum, prespeterís, arcisire, anriae, pilippi, thathei, ancleti, domiani, Quessumus, idulorum, dignareque, patiretur, diciens, agiens, rimisionem, abrache, obtilit, maistatis, replemur, praespiter, misserationvm, alaxandro, cicilia, anastassia, corum, estimatis). Superscript apparatus numbers, marginal folio tags, footnotes, running heads and misbound ff. 30-31v excluded.",
+  "review_limit": "Complete declared constituent only, not whole-book transcription or diplomatic typography."
+}

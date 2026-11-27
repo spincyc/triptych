@@ -180,8 +180,11 @@ lang = "la"
 label = "Historical Latin antecedent (Mame, 1922), not the controlling 2008 Missal"
 rights = "public-domain"
 caution = "A checked historical printing of the ancient prayer, with source spelling and explicit bounded source selection. It is not an authenticated complete 2008 target witness and is not a text for recitation."
-artifacts = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-ordinary-supplices-la",
+artifacts = [
+  "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-ordinary-supplices-la",
   "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-ordinary-ecce-la",
+  "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-dead-preface-latin-20261112",
+  "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-joseph-historical-latin-20261112",
 ]
 
 [[witnesses]]
@@ -278,7 +281,12 @@ lang = "en"
 label = "Complete historical English (Lasance, 1945), not approved postconciliar Missal English"
 rights = "public-domain"
 caution = "An independently checked historical English witness of the complete printed threefold Agnus Dei. The old source actor and ceremonial context are not assigned to the postconciliar setting. No approved translation, authenticated complete2008 identity or recitation authority is claimed."
-artifacts = ["artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"]
+artifacts = [
+  "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1",
+  "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-en",
+  "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-complete-a-en",
+  "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-complete-b-en",
+]
 
 # ---------------------------------------------------------------- absences
 
@@ -366,15 +374,23 @@ what = "A text the day's formulary itself appoints and prints, not the invariant
 [[appointments]]
 variable = "preface"
 name = "The Preface"
-what = "Which Preface the day's formulary appoints, where the formulary prints that direction and the mass index records it. Recorded so far only for Pentecost Sunday, Mass during the Day."
+what = "Which Preface the day's formulary appoints, where the formulary prints that direction and the mass index records it. Covers Pentecost Sunday plus eight independently sourced historical Prefaces (Christ the King, Nativity I, Lent IV, Exaltation of the Holy Cross, Dead I, Blessed Virgin Mary I, and Saint Joseph for 19 March and 1 May)."
 options = [
   { id = "pentecost", name = "Preface of the Mystery of Pentecost" },
+  { id = "christ-the-king", name = "Preface of Our Lord Jesus Christ, King of the Universe" },
+  { id = "nativity-i", name = "Preface I of the Nativity of the Lord" },
+  { id = "lent-iv", name = "Preface IV of Lent" },
+  { id = "exaltation-cross", name = "Preface of the Victory of the Glorious Cross (Exaltation of the Holy Cross)" },
+  { id = "dead-i", name = "Preface I for the Dead" },
+  { id = "bvm-i", name = "Preface I of the Blessed Virgin Mary" },
+  { id = "saint-joseph-solemnity", name = "Preface of Saint Joseph (19 March Solemnity)" },
+  { id = "saint-joseph-commemoration", name = "Preface of Saint Joseph (1 May Memorial)" },
 ]
 
 [[appointments]]
 variable = "dismissal"
 name = "The Dismissal"
-what = "Which dismissal the day's formulary appoints, where it prints one. Recorded so far only for the paschal dismissal with a double Alleluia at Pentecost Sunday, Mass during the Day."
+what = "Which dismissal the day's formulary appoints, where it prints one. Recorded for the paschal dismissal with a double Alleluia throughout the Octave of Easter (Easter Sunday through the Second Sunday of Easter, per 2002 Missal nn. 69 and 78, pp. 224-232) and on Pentecost Sunday, Mass during the Day (p. 267)."
 options = [
   { id = "paschal-double-alleluia", name = "Ite, missa est, with a double Alleluia" },
 ]
@@ -411,10 +427,11 @@ artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-18
 elements = ["signum-crucis"]
 column = "latin"
 relation = "antecedent"
-collation = "uncollated"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
 reading_note = "Historical Latin source wording; no complete authenticated2008 collation is claimed."
-note = "Source seq3 is split before its terminal Amen, with its entire source text retained. Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
-
+note = "Source seq3 is split before its terminal Amen, with its entire source text retained. Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state. 2026-11-25 visual collation against 2002 PDF p. 303 (n. 1) & 2008 Variationes (p. 372): word-exact (capitals/pointing only)."
 [sections.elements.english]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-ancient-frames-en"
@@ -422,7 +439,7 @@ elements = ["signum-crucis"]
 column = "english"
 relation = "antecedent"
 collation = "uncollated"
-reading_note = "Historical English (Cummiskey,1861); this is not approved postconciliar English. The source’s older wording and spelling are retained."
+reading_note = "Historical English (Cummiskey, 1861); this is not approved postconciliar English. The source’s older wording and spelling are retained."
 note = "The1861 source assigns the original whole block to the priest. The target priest/people division is separately evidenced, not misattributed to the source. Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
 
 [[sections.elements]]
@@ -453,10 +470,11 @@ artifact = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-co
 elements = ["greeting-trinitarian"]
 column = "latin"
 relation = "antecedent"
-collation = "uncollated"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
 reading_note = "Historical Latin source wording; no complete authenticated2008 collation is claimed."
-note = "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
-
+note = "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state. 2026-11-25 visual collation against 2002 PDF p. 303 (n. 2) & 2008 Variationes (p. 372): word-exact (Jesu/Iesu orthography only)."
 [sections.elements.english]
 witness = "edition.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030"
 artifact = "artifact.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030.ancient-frames-study-en"
@@ -484,10 +502,11 @@ artifact = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-co
 elements = ["greeting-grace-peace"]
 column = "latin"
 relation = "antecedent"
-collation = "uncollated"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
 reading_note = "Historical Latin source wording; no complete authenticated2008 collation is claimed."
-note = "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
-
+note = "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state. 2026-11-25 visual collation against 2002 PDF p. 303 (n. 2) & 2008 Variationes (p. 372): word-exact (Jesu/Iesu orthography only)."
 [sections.elements.english]
 witness = "edition.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030"
 artifact = "artifact.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030.ancient-frames-study-en"
@@ -515,10 +534,11 @@ artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-18
 elements = ["greeting-lord"]
 column = "latin"
 relation = "antecedent"
-collation = "uncollated"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
 reading_note = "Historical Latin source wording; no complete authenticated2008 collation is claimed."
-note = "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
-
+note = "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state. 2026-11-25 visual collation against 2002 PDF p. 303 (n. 2) & 2008 Variationes (p. 372): word-exact (printed P. speaker label only)."
 [sections.elements.english]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-ancient-frames-en"
@@ -526,7 +546,7 @@ elements = ["greeting-lord"]
 column = "english"
 relation = "antecedent"
 collation = "uncollated"
-reading_note = "Historical English (Cummiskey,1861); this is not approved postconciliar English. The source’s older wording and spelling are retained."
+reading_note = "Historical English (Cummiskey, 1861); this is not approved postconciliar English. The source’s older wording and spelling are retained."
 note = "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
 
 [[sections.elements]]
@@ -547,10 +567,11 @@ artifact = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-co
 elements = ["greeting-bishop"]
 column = "latin"
 relation = "antecedent"
-collation = "uncollated"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
 reading_note = "Historical scriptural greeting from John 20:19. Bishop-only form; no complete authenticated2008 collation is claimed."
-note = "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
-
+note = "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state. 2026-11-25 visual collation against 2002 PDF p. 303 (n. 2) & 2008 Variationes (p. 372): word-exact."
 [sections.elements.english]
 witness = "edition.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030"
 artifact = "artifact.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030.ancient-frames-study-en"
@@ -577,10 +598,11 @@ artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-18
 elements = ["greeting-response"]
 column = "latin"
 relation = "antecedent"
-collation = "uncollated"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
 reading_note = "Historical Latin source wording; no complete authenticated2008 collation is claimed."
-note = "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
-
+note = "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state. 2026-11-25 visual collation against 2002 PDF p. 303 (n. 2) & 2008 Variationes (p. 372): word-exact (printed R. speaker label only)."
 [sections.elements.english]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-ancient-frames-en"
@@ -588,7 +610,7 @@ elements = ["greeting-response"]
 column = "english"
 relation = "antecedent"
 collation = "uncollated"
-reading_note = "Historical English (Cummiskey,1861); this is not approved postconciliar English. The source’s older wording and spelling are retained."
+reading_note = "Historical English (Cummiskey, 1861); this is not approved postconciliar English. The source’s older wording and spelling are retained."
 note = "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
 
 [[sections.elements]]
@@ -695,7 +717,8 @@ elements = ["gloria-in-excelsis"]
 column = "latin"
 relation = "antecedent"
 collation = "collated"
-collation_finding = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/10-introductory-rites.tex:147-151"
+collation_finding = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/10-introductory-rites.tex:147-151; passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
 note = """
 ANTECEDENT, NOT THE CONTROLLING EDITION. The Latin here is the facing column of \
 the 1861 Philadelphia Cummiskey hand missal at its Gloria in excelsis, printed \
@@ -713,9 +736,8 @@ a weaker footing than the three elements that carry both. The cited study's \
 endnote to n. 8 states in terms that the Latin text at n. 8 is unchanged from \
 the older Roman form, and the study's own account of its method states that both \
 books were read directly for that comparison. It quotes no 2002 Latin at this \
-element, so no word-level comparison could be made here and none is claimed.
+element, so no word-level comparison could be made here and none is claimed. 2026-11-25 visual collation against 2002 PDF pp. 305-306 (n. 8) & 2008 Variationes (p. 372): word-exact (coelestis/caelestis, Jesu/Iesu, capitals/pointing only).
 """
-
 [[sections.elements]]
 key = "collecta"
 kind = "prayer"
@@ -827,7 +849,9 @@ artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-18
 elements = ["credo-in-unum-deum", "et-in-unum-dominum", "et-in-spiritum-sanctum"]
 column = "latin"
 relation = "antecedent"
-collation = "uncollated"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
 note = """
 ANTECEDENT, NOT THE CONTROLLING EDITION. The Latin here is the facing column of \
 the 1861 Philadelphia Cummiskey hand missal at its Credo, printed pages xxi-xxii, \
@@ -853,9 +877,8 @@ Nicene Creed among the texts retained with little or no change of wording at \
 :90-synthesis.tex:47-55, on a comparison for which it states that both books \
 were read directly. It quotes no 2002 Latin of the symbol, so no word-level \
 comparison has been made. The two Latin texts are conventionally taken to be \
-identical and that convention has not been checked here.
+identical and that convention has not been checked here. 2026-11-25 visual collation against 2002 PDF pp. 307-308 (n. 18) & 2008 Variationes (p. 372): word-exact (orthographic coel/cael, expecto/exspecto, j/i, and source footnote asterisk only).
 """
-
 [[sections.elements]]
 key = "symbolum-apostolicum"
 kind = "prayer"
@@ -874,10 +897,11 @@ artifact = "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hie
 elements = ["symbolum-apostolicum"]
 column = "latin"
 relation = "antecedent"
-collation = "uncollated"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
 reading_note = "Historical Latin antecedent (1888 Roman Breviary), not the controlling Missal. Acute accents are omitted; the source ligatures, j and pointing are retained."
-note = "The complete Apostles Creed on printed p. 1, original whole-PDF artifact p. 55, IA leaf n54, verified on a retained complete source-page derivative. This explicitly normalized historical-source transcription omits acute accents while retaining source words, ligatures, j, capitalization and punctuation, including lowercase sanctorum. The old opening agrees with the explicit2008 correction; the complete body was compared lexically with the secondary2002 reproduction. That evidence is bounded and does not establish identity with an authenticated complete2008 Missal; the target relation remains uncollated. The controlling2008 body is not carried here."
-
+note = "The complete Apostles Creed on printed p. 1, original whole-PDF artifact p. 55, IA leaf n54, verified on a retained complete source-page derivative. This explicitly normalized historical-source transcription omits acute accents while retaining source words, ligatures, j, capitalization and punctuation, including lowercase sanctorum. The old opening agrees with the explicit2008 correction; the complete body was compared lexically with the secondary2002 reproduction. That evidence is bounded and does not establish identity with an authenticated complete2008 Missal; the target relation remains uncollated. The controlling2008 body is not carried here. 2026-11-25 visual collation against 2002 PDF p. 308 (n. 19) & 2008 Variationes (Notitiae 503-504, artifact p. 54 / printed p. 372, which restores Credo in Deum fixing 2002's Credo in unum Deum): word-exact to the 2008 emended target (orthographic coel/cael, j/i, capitals/pointing only)."
 [sections.elements.english]
 witness = "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"
 artifact = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-ordinary-apostles-english"
@@ -1026,7 +1050,8 @@ elements = ["orate-fratres", "suscipiat-dominus"]
 column = "latin"
 relation = "antecedent"
 collation = "collated"
-collation_finding = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/40-preparation-of-the-gifts.tex:126-132"
+collation_finding = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/40-preparation-of-the-gifts.tex:126-132; passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
 note = """
 ANTECEDENT, NOT THE CONTROLLING EDITION. The Latin here is the facing column of \
 the 1861 Philadelphia Cummiskey hand missal at its Orate fratres and Suscipiat \
@@ -1044,9 +1069,8 @@ COLLATED. The cited study quotes the 2002 Latin of both texts at n. 29 and its \
 endnote states that both are retained from the older Roman Order without \
 material change; setting that quotation beside these two rows, they agree word \
 for word, the only differences being the capitalisation, the pointing and the \
-ligatures named above.
+ligatures named above. 2026-11-25 visual collation against 2002 PDF p. 310 (n. 29) & 2008 Variationes (p. 372): word-exact (printed R. label, capitals/pointing only).
 """
-
 [[sections.elements]]
 key = "super-oblata"
 kind = "prayer"
@@ -1109,7 +1133,8 @@ elements = ["sursum-corda"]
 column = "latin"
 relation = "antecedent"
 collation = "collated"
-collation_finding = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/50-eucharistic-prayer.tex:57-59"
+collation_finding = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/50-eucharistic-prayer.tex:57-59; passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
 note = """
 ANTECEDENT, NOT THE CONTROLLING EDITION. The Latin here is the facing column of \
 the 1861 Philadelphia Cummiskey hand missal at its Preface dialogue, printed \
@@ -1125,9 +1150,8 @@ setting of a dialogue the Missal sets the same way. \
 COLLATED. The cited study quotes the 2002 Latin of the whole dialogue at n. 31, \
 calling it the oldest continuously attested dialogue in the Latin liturgy; set \
 beside this row the two agree word for word, the sole divergence being justum \
-for iustum.
+for iustum. 2026-11-25 visual collation against 2002 PDF p. 310 (n. 31) & 2008 Variationes (p. 372): word-exact (justum/iustum, P./R. labels only).
 """
-
 [[sections.elements]]
 key = "praefatio"
 kind = "prayer"
@@ -1137,8 +1161,8 @@ latin_incipit = "Vere dignum et iustum est"
 missal_number = "nn. 33-82"
 absent_english = "proper-text-outside-ordinary"
 absent_latin = "not-a-text"
-note = "Fifty Prefaces, proper to the day, the season, or the Eucharistic Prayer itself. They are not carried in this layer."
-conditions = [{ kind = "unappointed", variable = "preface", basis = "The generic Preface element stands where no formulary appointment names the day's Preface; an appointed Preface stands in its place at praefatio-appointed." }]
+note = "The Missal prints proper and seasonal Prefaces across nn. 33-82 and in proper formularies. Where a day appoints one of the eight independently sourced historical Prefaces carried below, that appointed Preface replaces this generic placeholder."
+conditions = [{ kind = "unappointed", variable = "preface", basis = "The generic Preface element stands where no formulary appointment names the day's Preface; an appointed Preface stands in its place." }]
 
 [[sections.elements]]
 key = "praefatio-appointed"
@@ -1151,6 +1175,258 @@ absent_english = "approved-english-publication-restriction"
 absent_latin = "appointed-text-printed-with-formulary"
 note = "Appointed by the formulary of Pentecost Sunday, Mass during the Day, and printed with it (2002 artifact PDF p. 266). Its text is not carried here."
 conditions = [{ kind = "appointed", variable = "preface", options = ["pentecost"], basis = "Stands where the day's formulary appoints the Preface of the Mystery of Pentecost." }]
+
+[[sections.elements]]
+key = "praefatio-christ-the-king"
+kind = "prayer"
+speaker = "priest"
+name = "Preface — Christ, King of the Universe"
+latin_incipit = "Vere dignum et iustum est ... Qui Unigenitum Filium tuum, Dominum nostrum Iesum Christum, Sacerdotem aeternum et universorum Regem"
+missal_number = "proper to the formulary (p. 302)"
+conditions = [{ kind = "appointed", variable = "preface", options = ["christ-the-king"], basis = "Appointed by the Solemnity of Our Lord Jesus Christ, King of the Universe (Missale Romanum 2002 digital PDF p. 302)." }]
+note = "Latin collated word-exact from the pre-1931 Schott 1929 witness against 2002 digital PDF p. 302; historical English from Lasance 1945 (not approved 2011 English)."
+
+[sections.elements.latin]
+witness = "edition.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929"
+artifact = "artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.ordinary-two-prefaces-latin-20261112"
+elements = ["praefatio-christo-rege"]
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
+reading_note = "Historical Latin (Schott, 1929), collated word-exact to 2002 PDF p. 302 (orthography/pointing only). Complete 2008 exemplar not authenticated."
+note = "COLLATED WORD-EXACT TO 2002. Pre-1931 Schott 1929 Latin body agrees word-for-word with Missale Romanum 2002 digital PDF p. 302 (only orthographic justum/iustum, Jesum/Iesum, subjectis/subiectis, majestati/maiestati, justitiae/iustitiae, and punctuation). The bounded 2008 Variationes list (Notitiae 503-504, p. 372) names no lexical change here."
+
+[sections.elements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-en"
+elements = ["praefatio-christo-rege"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "Historical English (Lasance, 1945), not the approved 2011 translation."
+note = "HISTORICAL ENGLISH ANTECEDENT, NOT THE APPROVED ENGLISH OF THIS MISSAL. Lasance 1945 public-domain human translation of the identical Latin Preface. Uncollated against the approved 2011 English; not for recitation."
+
+[[sections.elements]]
+key = "praefatio-nativity-i"
+kind = "prayer"
+speaker = "priest"
+name = "Preface I of the Nativity of the Lord"
+latin_incipit = "Vere dignum et iustum est ... Quia per incarnati Verbi mysterium"
+missal_number = "n. 35 (pp. 312-313)"
+conditions = [{ kind = "appointed", variable = "preface", options = ["nativity-i"], basis = "Appointed on the Nativity of the Lord, its Octave, Holy Family, Second Sunday after Nativity, and Christmas weekdays before Epiphany (2002 digital PDF pp. 104-117; 2002 also offers Nativity Prefaces II-III)." }]
+note = "Latin collated word-exact from Mame 1922 printed p. 329 against 2002 n. 35 (p. 313); historical English from Lasance 1945 (not approved 2011 English)."
+
+[sections.elements.latin]
+witness = "edition.triptych.postconciliar-coldrev-2026-11-25-prefaces.2026-11-25-four-mame-prefaces-la"
+artifact = "artifact.triptych.postconciliar-coldrev-2026-11-25-prefaces.2026-11-25-four-mame-prefaces-la.coldrev-pc-four-mame-prefaces-la-0da0e3c3"
+elements = ["praefatio-nativity-i"]
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
+reading_note = "Historical Latin (Mame, 1922), collated word-exact to 2002 n. 35 (p. 313). Complete 2008 exemplar not authenticated."
+note = "COLLATED WORD-EXACT TO 2002. Visually transcribed from Mame 1922 printed p. 329 / artifact p. 443; agrees word-for-word with Missale Romanum 2002 n. 35 (p. 313) apart from orthographic justum/iustum, accents, and pointing. Bounded 2008 Variationes (p. 372) names no lexical change."
+
+[sections.elements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-complete-a-en"
+elements = ["praefatio-de-nativitate"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "Historical English (Lasance, 1945), not the approved 2011 translation."
+note = "HISTORICAL ENGLISH ANTECEDENT, NOT THE APPROVED ENGLISH OF THIS MISSAL. Lasance 1945 public-domain human translation of the identical Latin Nativity Preface. Uncollated against the approved 2011 English; not for recitation."
+
+[[sections.elements]]
+key = "praefatio-lent-iv"
+kind = "prayer"
+speaker = "priest"
+name = "Preface IV of Lent"
+latin_incipit = "Vere dignum et iustum est ... Qui corporali ieiunio vitia comprimis"
+missal_number = "n. 42 (p. 318)"
+conditions = [{ kind = "appointed", variable = "preface", options = ["lent-iv"], basis = "Appointed on Ash Wednesday (Preface III or IV) and Lenten weekdays through Saturday of the Fourth Week of Lent (2002 digital PDF pp. 125-156, n. 42 p. 318; 2002 also permits Lent Prefaces I-III on weekdays)." }]
+note = "Latin collated word-exact from Mame 1922 printed p. 331 against 2002 n. 42 (p. 318); historical English from Lasance 1945 (not approved 2011 English)."
+
+[sections.elements.latin]
+witness = "edition.triptych.postconciliar-coldrev-2026-11-25-prefaces.2026-11-25-four-mame-prefaces-la"
+artifact = "artifact.triptych.postconciliar-coldrev-2026-11-25-prefaces.2026-11-25-four-mame-prefaces-la.coldrev-pc-four-mame-prefaces-la-0da0e3c3"
+elements = ["praefatio-lent-iv"]
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
+reading_note = "Historical Latin (Mame, 1922), collated word-exact to 2002 n. 42 (p. 318). Complete 2008 exemplar not authenticated."
+note = "COLLATED WORD-EXACT TO 2002. Visually transcribed from Mame 1922 printed p. 331 / artifact p. 445; agrees word-for-word with Missale Romanum 2002 n. 42 (p. 318) apart from orthographic j/i, accents, and pointing. Bounded 2008 Variationes (p. 372) names no lexical change."
+
+[sections.elements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-complete-a-en"
+elements = ["praefatio-de-quadragesima"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "Historical English (Lasance, 1945), not the approved 2011 translation."
+note = "HISTORICAL ENGLISH ANTECEDENT, NOT THE APPROVED ENGLISH OF THIS MISSAL. Lasance 1945 public-domain human translation of the identical Latin Lent Preface. Uncollated against the approved 2011 English; not for recitation."
+
+[[sections.elements]]
+key = "praefatio-exaltation-cross"
+kind = "prayer"
+speaker = "priest"
+name = "Preface — Victory of the Glorious Cross (Exaltation of the Holy Cross)"
+latin_incipit = "Vere dignum et iustum est ... Qui salutem humani generis in ligno crucis constituisti"
+missal_number = "proper to the formulary (pp. 493-494)"
+conditions = [{ kind = "appointed", variable = "preface", options = ["exaltation-cross"], basis = "Appointed on the Feast of the Exaltation of the Holy Cross, 14 September (Missale Romanum 2002 digital PDF pp. 493-494; 2002 notes Passion Preface I may also be used)." }]
+note = "Latin collated word-exact from Mame 1922 printed pp. 331-332 against 2002 pp. 493-494; historical English from Lasance 1945 (not approved 2011 English). Note: 2002 Preface I of the Passion (n. 43, p. 319) is a separate postconciliar composition."
+
+[sections.elements.latin]
+witness = "edition.triptych.postconciliar-coldrev-2026-11-25-prefaces.2026-11-25-four-mame-prefaces-la"
+artifact = "artifact.triptych.postconciliar-coldrev-2026-11-25-prefaces.2026-11-25-four-mame-prefaces-la.coldrev-pc-four-mame-prefaces-la-0da0e3c3"
+elements = ["praefatio-exaltation-cross"]
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
+reading_note = "Historical Latin (Mame, 1922), collated word-exact to 2002 pp. 493-494. Complete 2008 exemplar not authenticated."
+note = "COLLATED WORD-EXACT TO 2002. Visually transcribed from Mame 1922 printed pp. 331-332 / artifact pp. 445-446; agrees word-for-word with Missale Romanum 2002 Exaltation of the Holy Cross (pp. 493-494) apart from orthographic j/i, capitals, accents, and pointing. Bounded 2008 Variationes (p. 372) names no lexical change."
+
+[sections.elements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-complete-a-en"
+elements = ["praefatio-de-sancta-cruce"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "Historical English (Lasance, 1945), not the approved 2011 translation."
+note = "HISTORICAL ENGLISH ANTECEDENT, NOT THE APPROVED ENGLISH OF THIS MISSAL. Lasance 1945 public-domain human translation of the identical Latin Holy Cross Preface. Uncollated against the approved 2011 English; not for recitation."
+
+[[sections.elements]]
+key = "praefatio-dead-i"
+kind = "prayer"
+speaker = "priest"
+name = "Preface I for the Dead"
+latin_incipit = "Vere dignum et iustum est ... In quo nobis spes beatae resurrectionis effulsit"
+missal_number = "n. 78 (p. 344)"
+conditions = [{ kind = "appointed", variable = "preface", options = ["dead-i"], basis = "Appointed on the Commemoration of All the Faithful Departed (All Souls, three formularies, 2002 digital PDF pp. 514-516; 2002 offers Prefaces for the Dead I-V)." }]
+note = "Latin collated word-exact from Mame 1922 against 2002 n. 78 (p. 344); historical English from Lasance 1945 (not approved 2011 English)."
+
+[sections.elements.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-dead-preface-latin-20261112"
+elements = ["praefatio-defunctis"]
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
+reading_note = "Historical Latin (Mame, 1922), collated word-exact to 2002 n. 78 (p. 344). Complete 2008 exemplar not authenticated."
+note = "COLLATED WORD-EXACT TO 2002. Tracked Mame 1922 Latin body agrees word-for-word with Missale Romanum 2002 n. 78 (p. 344); only orthographic spelling differences (justum/iustum, conditio/condicio, hujus/huius, accents/pointing). Bounded 2008 Variationes (p. 372) names no lexical change."
+
+[sections.elements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-en"
+elements = ["praefatio-defunctis"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "Historical English (Lasance, 1945), not the approved 2011 translation."
+note = "HISTORICAL ENGLISH ANTECEDENT, NOT THE APPROVED ENGLISH OF THIS MISSAL. Lasance 1945 public-domain human translation of the identical Latin Preface for the Dead. Uncollated against the approved 2011 English; not for recitation."
+
+[[sections.elements]]
+key = "praefatio-bvm-i"
+kind = "prayer"
+speaker = "priest"
+name = "Preface I of the Blessed Virgin Mary"
+latin_incipit = "Vere dignum et iustum est ... Et te in ... beatae Mariae semper Virginis collaudare"
+missal_number = "n. 62 (pp. 332-333)"
+conditions = [{ kind = "appointed", variable = "preface", options = ["bvm-i"], basis = "Appointed on Mary, Mother of God (p. 111), Visitation (p. 450), Queenship (p. 485), Nativity of BVM (p. 490), Our Lady of Sorrows (p. 495), Our Lady of the Rosary (p. 505), and the Common of BVM (pp. 540-548), where 2002 fills the printed occasion slot." }]
+note = "Latin collated word-exact from Mame 1922 printed pp. 336-337 against 2002 n. 62 (pp. 332-333), preserving Mame's *** variable occasion placeholder; historical English from Lasance 1945 (not approved 2011 English)."
+
+[sections.elements.latin]
+witness = "edition.triptych.postconciliar-coldrev-2026-11-25-prefaces.2026-11-25-four-mame-prefaces-la"
+artifact = "artifact.triptych.postconciliar-coldrev-2026-11-25-prefaces.2026-11-25-four-mame-prefaces-la.coldrev-pc-four-mame-prefaces-la-0da0e3c3"
+elements = ["praefatio-bvm-i"]
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
+reading_note = "Historical Latin (Mame, 1922), collated word-exact to 2002 n. 62 (pp. 332-333), with variable occasion slot ***. Complete 2008 exemplar not authenticated."
+note = "COLLATED WORD-EXACT TO 2002. Visually transcribed from Mame 1922 printed pp. 336-337 / artifact pp. 450-451; agrees word-for-word with Missale Romanum 2002 n. 62 (pp. 332-333), where both editions print a variable occasion slot (*** in Mame, ... in 2002) after Et te in. Only orthographic j/i, accents, and pointing differ. Bounded 2008 Variationes (p. 372) names no lexical change."
+
+[sections.elements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-complete-b-en"
+elements = ["praefatio-de-beata-maria-virgine"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "Historical English (Lasance, 1945), not the approved 2011 translation. Preserves Lasance's . . . occasion blank."
+note = "HISTORICAL ENGLISH ANTECEDENT, NOT THE APPROVED ENGLISH OF THIS MISSAL. Lasance 1945 public-domain human translation of the identical Latin Marian Preface. Uncollated against the approved 2011 English; not for recitation."
+
+[[sections.elements]]
+key = "praefatio-saint-joseph-solemnity"
+kind = "prayer"
+speaker = "priest"
+name = "Preface of Saint Joseph (19 March Solemnity)"
+latin_incipit = "Vere dignum et iustum est ... Et te in sollemnitate beati Ioseph"
+missal_number = "proper to the formulary (pp. 433-434)"
+conditions = [{ kind = "appointed", variable = "preface", options = ["saint-joseph-solemnity"], basis = "Appointed on 19 March, Solemnity of Saint Joseph, Spouse of the Blessed Virgin Mary (Missale Romanum 2002 digital PDF pp. 433-434)." }]
+note = "Historical 1922 Mame Latin prints Festivitate (Veneratione) where 2002 p. 433 appoints sollemnitate; every other word agrees. Paired with original Triptych study English rendering the March 19 solemnity wording."
+
+[sections.elements.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-joseph-historical-latin-20261112"
+elements = ["praefatio-sancto-ioseph"]
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+reading_note = "Historical Latin (Mame, 1922), collated to 2002 pp. 433-434: source prints Festivitate (Veneratione) where 2002 reads sollemnitate; all other words agree."
+note = "COLLATED WITH ONE OCCASION-WORD DIVERGENCE. Tracked Mame 1922 printed p. 337 Latin agrees word-for-word with 2002 digital PDF pp. 433-434 except at the single occasion noun: Mame prints * Festivitate (Veneratione) where 2002 prints sollemnitate. Source wording is carried unmodified without target_wording = word-exact. Bounded 2008 Variationes (p. 372) names no lexical change."
+
+[sections.elements.english]
+witness = "edition.triptych.postconciliar-coldrev-2026-11-25-prefaces.2026-11-25-joseph-prefaces-study-en"
+artifact = "artifact.triptych.postconciliar-coldrev-2026-11-25-prefaces.2026-11-25-joseph-prefaces-study-en.coldrev-pc-joseph-prefaces-study-en-d3ae8e17"
+elements = ["praefatio-saint-joseph-solemnity"]
+column = "english"
+relation = "own"
+reading_note = "Triptych study English for the 19 March Solemnity of Saint Joseph Preface (on the solemnity of blessed Joseph). Not approved 2011 liturgical English."
+note = "Original project-created study English over the 1922 Mame Latin body with the appointed March 19 occasion noun (solemnity). Not approved liturgical English or for recitation."
+
+[[sections.elements]]
+key = "praefatio-saint-joseph-commemoration"
+kind = "prayer"
+speaker = "priest"
+name = "Preface of Saint Joseph (1 May Memorial)"
+latin_incipit = "Vere dignum et iustum est ... Et te in commemoratione beati Ioseph"
+missal_number = "proper to the formulary (p. 442)"
+conditions = [{ kind = "appointed", variable = "preface", options = ["saint-joseph-commemoration"], basis = "Appointed on 1 May, Optional Memorial of Saint Joseph the Worker (Missale Romanum 2002 digital PDF p. 442)." }]
+note = "Historical 1922 Mame Latin prints Festivitate (Veneratione) where 2002 p. 442 appoints commemoratione; every other word agrees. Paired with original Triptych study English rendering the May 1 commemoration wording."
+
+[sections.elements.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-joseph-historical-latin-20261112"
+elements = ["praefatio-sancto-ioseph"]
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+reading_note = "Historical Latin (Mame, 1922), collated to 2002 p. 442: source prints Festivitate (Veneratione) where 2002 reads commemoratione; all other words agree."
+note = "COLLATED WITH ONE OCCASION-WORD DIVERGENCE. Tracked Mame 1922 printed p. 337 Latin agrees word-for-word with 2002 digital PDF p. 442 except at the single occasion noun: Mame prints * Festivitate (Veneratione) where 2002 prints commemoratione. Source wording is carried unmodified without target_wording = word-exact. Bounded 2008 Variationes (p. 372) names no lexical change."
+
+[sections.elements.english]
+witness = "edition.triptych.postconciliar-coldrev-2026-11-25-prefaces.2026-11-25-joseph-prefaces-study-en"
+artifact = "artifact.triptych.postconciliar-coldrev-2026-11-25-prefaces.2026-11-25-joseph-prefaces-study-en.coldrev-pc-joseph-prefaces-study-en-d3ae8e17"
+elements = ["praefatio-saint-joseph-commemoration"]
+column = "english"
+relation = "own"
+reading_note = "Triptych study English for the 1 May Memorial of Saint Joseph the Worker Preface (on the commemoration of blessed Joseph). Not approved 2011 liturgical English."
+note = "Original project-created study English over the 1922 Mame Latin body with the appointed May 1 occasion noun (commemoration). Not approved liturgical English or for recitation."
 
 [[sections.elements]]
 key = "sanctus"
@@ -1178,7 +1454,9 @@ artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-18
 elements = ["sanctus"]
 column = "latin"
 relation = "antecedent"
-collation = "uncollated"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
 note = """
 ANTECEDENT, NOT THE CONTROLLING EDITION. The Latin here is the facing column of \
 the 1861 Philadelphia Cummiskey hand missal at its Sanctus, printed page xxviii, \
@@ -1198,9 +1476,8 @@ Sanctus among the texts retained with little or no change of wording, at \
 states that both books were read directly. It quotes no 2002 Latin at this \
 element, so no word-level comparison has been made; and that same retention list \
 is known to mislead, since at two elements of this file it says retained where \
-the words are not in fact the same words.
+the words are not in fact the same words. 2026-11-25 visual collation against 2002 PDF p. 310 (n. 31) & 2008 Variationes (p. 372): word-exact (coeli/caeli, capitals/pointing only).
 """
-
 [[sections.elements]]
 key = "te-igitur"
 kind = "prayer"
@@ -1228,9 +1505,10 @@ artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-18
 elements = ["te-igitur", "te-igitur-cultoribus"]
 column = "latin"
 relation = "antecedent"
-collation = "uncollated"
-note = "ANTECEDENT, NOT THE CONTROLLING EDITION. Joined from the 1861 Cummiskey Latin column's two blocks at printed p. xxxiii, Internet Archive leaf 43. The source prints imprimis here, opens the second block lower-case, and prints no cross signs; none is normalised. The target study quotes only haec dona, haec munera, haec sancta sacrificia illibata, which agrees over that extent, and records the target's one Canon cross in this section. The rest is untested, so the complete antecedent remains uncollated and is never identified as the target."
-
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
+note = "ANTECEDENT, NOT THE CONTROLLING EDITION. Joined from the 1861 Cummiskey Latin column's two blocks at printed p. xxxiii, Internet Archive leaf 43. The source prints imprimis here, opens the second block lower-case, and prints no cross signs; none is normalised. The target study quotes only haec dona, haec munera, haec sancta sacrificia illibata, which agrees over that extent, and records the target's one Canon cross in this section. The rest is untested, so the complete antecedent remains uncollated and is never identified as the target. 2026-11-25 visual collation against 2002 PDF pp. 347-348 (n. 84) & 2008 Variationes (p. 372): word-exact (imprimis/in primis, Jesu/Iesu, cross rubric, capitals/pointing only)."
 [[sections.elements]]
 key = "memento-domine"
 kind = "prayer"
@@ -1258,9 +1536,10 @@ artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-18
 elements = ["memento-domine", "et-omnium-circumstantium"]
 column = "latin"
 relation = "antecedent"
-collation = "uncollated"
-note = "ANTECEDENT, NOT THE CONTROLLING EDITION. Joined from the 1861 Cummiskey Latin column at printed pp. xxxiii-xxxiv, Internet Archive leaves 43-44; the source omits a comma after Memento and breaks pro redemptione across the page. The target study quotes no complete n. 85 Latin. These source-owned words are therefore carried without normalisation as an uncollated antecedent, not as the target."
-
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
+note = "ANTECEDENT, NOT THE CONTROLLING EDITION. Joined from the 1861 Cummiskey Latin column at printed pp. xxxiii-xxxiv, Internet Archive leaves 43-44; the source omits a comma after Memento and breaks pro redemptione across the page. The target study quotes no complete n. 85 Latin. These source-owned words are therefore carried without normalisation as an uncollated antecedent, not as the target. 2026-11-25 visual collation against 2002 PDF p. 348 (n. 85) & 2008 Variationes (p. 372): word-exact (pointing/capitals only)."
 [[sections.elements]]
 key = "communicantes"
 kind = "prayer"
@@ -1269,9 +1548,8 @@ name = "Eucharistic Prayer I — Communicantes"
 latin_incipit = "Communicantes, et memoriam venerantes"
 missal_number = "n. 86"
 absent_english = "official-exemplar-not-carried"
-absent_latin = "element-spans-mixed-matter"
 alternatives = [{ group = "eucharistic-prayer", option = "ep-i" }]
-note = "The carried English is a project study rendering of the common form only, with every saint named and the whole older conclusion omitted. It combines the separately sourced historical body with the exact authorized Joseph clause; it supplies none of the seasonal proper heads or their appointments and establishes no complete authenticated2008 or approved English identity."
+note = "Both Latin (qualified-public-domain: 1922 Mame body with the 13 November 1962 Saint Joseph insertion, AAS 54 p. 873 / 1962 n. 1090) and study English carry the common form only, with full saints list and the optional parenthesized closing formula omitted per 2002 nn. 32 and 86. Seasonal proper Communicantes forms remain unfilled; complete 2008 authentication is not asserted."
 
 [sections.elements.english]
 witness = "edition.triptych.postconciliar-common-communicantes-study-english-20261030.study-english-20261030"
@@ -1281,6 +1559,17 @@ column = "english"
 relation = "own"
 reading_note = "Triptych study English: common form only, full saints list, conclusion omitted. Seasonal proper forms remain unfilled. Not approved for liturgical use or recitation."
 note = "SOURCE-ONLY COMMON FORM; UNCOLLATED to complete controlling2008 wording. Fresh project English from the complete historical Mame common body and the separately authorized exact Joseph clause, with every source name retained and the whole older conclusion excluded. It is not an English witness of any seasonal proper Communicantes, an approved translation, or an appointment ruling. The clause short-phrase basis supplies no English permission; this English has the independent project-created study-translation route."
+
+[sections.elements.latin]
+witness = "edition.triptych.postconciliar-coldrev-2026-11-25-ordinary-qpd.2026-11-25-communicantes-qpd"
+artifact = "artifact.triptych.postconciliar-coldrev-2026-11-25-ordinary-qpd.2026-11-25-communicantes-qpd.coldrev-pc-communicantes-qpd-8a7ce0a2"
+elements = ["communicantes-common-body"]
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+reading_note = "Qualified-public-domain Latin: common form (1922 Mame body + 13 Nov 1962 Saint Joseph insertion, AAS 54 p. 873), full saints list, optional closing formula omitted per 2002 nn. 32/86. Seasonal proper forms remain unfilled."
+note = "QUALIFIED-PUBLIC-DOMAIN, COLLATED TO 2002 BODY. Common Communicantes body through muniamur auxilio., incorporating the Saint Joseph insertion first published by the Sacred Congregation of Rites on 13 November 1962 (AAS 54, p. 873; reprinted 1962 typical edition n. 1090). Collated visually against Missale Romanum 2002 digital PDF pp. 348-349 (n. 86): every word of the common body agrees (2002 places Iacobi through Damiani and the closing formula Per Christum Dominum nostrum. Amen. in red optional parentheses per n. 32). The optional closing formula is omitted here to match the carried study English side and avoid the 1962 eundem variant. Bounded 2008 Variationes (Notitiae 503-504, p. 372) names no lexical change here."
 
 [[sections.elements]]
 key = "hanc-igitur"
@@ -1309,9 +1598,10 @@ artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-18
 elements = ["hanc-igitur"]
 column = "latin"
 relation = "antecedent"
-collation = "uncollated"
-note = "ANTECEDENT, NOT THE CONTROLLING EDITION. The 1861 Cummiskey Latin column prints this block across pp. xxxiv-xxxv, leaves 44-45, with an em rule before italic Amen. The target passage records an optional parenthesised conclusion and a proper Easter form, but the study quotes no complete n. 87 text. The literal older row is carried as an uncollated antecedent and does not claim the target's configuration or wording."
-
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
+note = "ANTECEDENT, NOT THE CONTROLLING EDITION. The 1861 Cummiskey Latin column prints this block across pp. xxxiv-xxxv, leaves 44-45, with an em rule before italic Amen. The target passage records an optional parenthesised conclusion and a proper Easter form, but the study quotes no complete n. 87 text. The literal older row is carried as an uncollated antecedent and does not claim the target's configuration or wording. 2026-11-25 visual collation against 2002 PDF p. 350 (n. 87) & 2008 Variationes (p. 372): word-exact over all printed words (2002 parenthesizes the optional closing formula per n. 32; jubeas/iubeas orthography only)."
 [[sections.elements]]
 key = "quam-oblationem"
 kind = "prayer"
@@ -1340,9 +1630,9 @@ elements = ["quam-oblationem"]
 column = "latin"
 relation = "antecedent"
 collation = "collated"
-collation_finding = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/55-roman-canon.tex:61-68"
-note = "ANTECEDENT, NOT THE CONTROLLING EDITION. The 1861 Cummiskey Latin column prints this complete prayer at p. xxxv, leaf 45. It has no comma after tu, carries its own punctuation and ligatures, prints adscriptam and Jesu, and has no cross signs; all are retained. COLLATED: the cited study quotes the complete target n. 88 prayer, and the source row agrees word for word, with only those named typographic and orthographic accidents. The carried words remain attributed to the public-domain antecedent, never to the target edition."
-
+collation_finding = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/55-roman-canon.tex:61-68; passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
+note = "ANTECEDENT, NOT THE CONTROLLING EDITION. The 1861 Cummiskey Latin column prints this complete prayer at p. xxxv, leaf 45. It has no comma after tu, carries its own punctuation and ligatures, prints adscriptam and Jesu, and has no cross signs; all are retained. COLLATED: the cited study quotes the complete target n. 88 prayer, and the source row agrees word for word, with only those named typographic and orthographic accidents. The carried words remain attributed to the public-domain antecedent, never to the target edition. 2026-11-25 visual collation against 2002 PDF p. 350 (n. 88) & 2008 Variationes (p. 372): word-exact (Jesu/Iesu, cross rubric, pointing only)."
 [[sections.elements]]
 key = "qui-pridie"
 kind = "prayer"
@@ -1430,9 +1720,10 @@ artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-18
 elements = ["unde-et-memores"]
 column = "latin"
 relation = "antecedent"
-collation = "uncollated"
-note = "ANTECEDENT, NOT THE CONTROLLING EDITION. The 1861 Cummiskey Latin column prints this row at p. xxxvi, leaf 46, with Cœlos and other original capitals and ligatures, and with no cross signs over Hostiam through Calicem. The target study's quotation agrees word for word over every quoted phrase but elides two internal extents. Because the complete row has not been compared, it remains an unnormalised, uncollated antecedent rather than target text."
-
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
+note = "ANTECEDENT, NOT THE CONTROLLING EDITION. The 1861 Cummiskey Latin column prints this row at p. xxxvi, leaf 46, with Cœlos and other original capitals and ligatures, and with no cross signs over Hostiam through Calicem. The target study's quotation agrees word for word over every quoted phrase but elides two internal extents. Because the complete row has not been compared, it remains an unnormalised, uncollated antecedent rather than target text. 2026-11-25 visual collation against 2002 PDF p. 352 (n. 92) & 2008 Variationes (p. 372): word-exact (ejusdem/eiusdem, Coelos/caelos, capitals/pointing only)."
 [[sections.elements]]
 key = "supra-quae"
 kind = "prayer"
@@ -1460,9 +1751,10 @@ artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-18
 elements = ["supra-quae"]
 column = "latin"
 relation = "antecedent"
-collation = "uncollated"
-note = "ANTECEDENT, NOT THE CONTROLLING EDITION. The 1861 Cummiskey row spans pp. xxxvi-xxxvii, leaves 46-47. Heavy inking damages the first letters of habere twice, sacerdos and Melchisedech; the artifact records that each was read from surviving strokes and repaired from no other book. The target study agrees word for word over its quoted extent, but elides parts of the prayer. The full row therefore remains an unnormalised, uncollated antecedent."
-
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
+note = "ANTECEDENT, NOT THE CONTROLLING EDITION. The 1861 Cummiskey row spans pp. xxxvi-xxxvii, leaves 46-47. Heavy inking damages the first letters of habere twice, sacerdos and Melchisedech; the artifact records that each was read from surviving strokes and repaired from no other book. The target study agrees word for word over its quoted extent, but elides parts of the prayer. The full row therefore remains an unnormalised, uncollated antecedent. 2026-11-25 visual collation against 2002 PDF p. 352 (n. 93) & 2008 Variationes (p. 372): word-exact (justi/iusti, pointing only)."
 [[sections.elements]]
 key = "supplices"
 kind = "prayer"
@@ -1489,10 +1781,10 @@ artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quar
 elements = ["supplices-body"]
 column = "latin"
 relation = "antecedent"
-collation = "uncollated"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
 reading_note = "Historical Latin prayer body (Mame,1922). Its separate conclusion is omitted here; this is not a complete authenticated2008 collation."
-note = "The checked1922 Mame source prints perferri, correcting the earlier different-witness blocker. Its complete source prayer body through repleamur agrees lexically with the registered secondary2002 n.94 after declared spelling/typographic normalization. The full older conclusion remains separately retained. The selected prefix corresponds to the conclusion-omitted form which the2002 source permits; complete controlling2008 wording and marks remain unestablished."
-
+note = "The checked1922 Mame source prints perferri, correcting the earlier different-witness blocker. Its complete source prayer body through repleamur agrees lexically with the registered secondary2002 n.94 after declared spelling/typographic normalization. The full older conclusion remains separately retained. The selected prefix corresponds to the conclusion-omitted form which the2002 source permits; complete controlling2008 wording and marks remain unestablished. 2026-11-25 visual collation against 2002 PDF pp. 352-353 (n. 94) & 2008 Variationes (p. 372): Mame 1922 body agrees word-for-word through repleamur. (including perferri), but omits the optional parenthesized closing formula (Per Christum Dominum nostrum. Amen.) printed at 2002 p. 353 (omissible per n. 32); therefore collated without target_wording = word-exact."
 [[sections.elements]]
 key = "memento-etiam"
 kind = "prayer"
@@ -1520,9 +1812,9 @@ artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-18
 elements = ["memento-etiam", "ipsis-domine"]
 column = "latin"
 relation = "antecedent"
-collation = "uncollated"
-note = "ANTECEDENT, NOT THE CONTROLLING EDITION. Joined from two 1861 Cummiskey blocks at p. xxxviii, leaf 48, carrying the source's capital Fidei, lower-case per and italic Amen. The registered target passage records the conclusion as parenthesised, but the study quotes no complete n. 95 Latin. These literal older rows are therefore an uncollated antecedent and make no claim about the target's complete wording or optional configuration."
-
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+note = "ANTECEDENT, NOT THE CONTROLLING EDITION. Joined from two 1861 Cummiskey blocks at p. xxxviii, leaf 48, carrying the source's capital Fidei, lower-case per and italic Amen. The registered target passage records the conclusion as parenthesised, but the study quotes no complete n. 95 Latin. These literal older rows are therefore an uncollated antecedent and make no claim about the target's complete wording or optional configuration. 2026-11-25 visual collation against 2002 PDF p. 353 (n. 95) & 2008 Variationes (p. 372): prayer body agrees word-for-word through deprecamur, but 1861 closes per eumdem Christum Dominum nostrum. Amen. whereas 2002 prints (Per Christum Dominum nostrum. Amen.) — 1-word lexical divergence (eumdem omitted in 2002) plus optional parentheses; therefore collated without target_wording = word-exact."
 [[sections.elements]]
 key = "nobis-quoque"
 kind = "prayer"
@@ -1550,9 +1842,10 @@ artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-18
 elements = ["nobis-quoque"]
 column = "latin"
 relation = "antecedent"
-collation = "uncollated"
-note = "ANTECEDENT, NOT THE CONTROLLING EDITION. The 1861 Cummiskey Latin column prints this row at p. xxxviii, leaf 48, with its ae-ligatures and full saints list. The target passage records the list from Ignatio, Alexandro as parenthesised and optional, while the study quotes no complete n. 96 Latin. The source row is carried literally as an uncollated antecedent; it does not assert the target's configuration or word identity."
-
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
+note = "ANTECEDENT, NOT THE CONTROLLING EDITION. The 1861 Cummiskey Latin column prints this row at p. xxxviii, leaf 48, with its ae-ligatures and full saints list. The target passage records the list from Ignatio, Alexandro as parenthesised and optional, while the study quotes no complete n. 96 Latin. The source row is carried literally as an uncollated antecedent; it does not assert the target's configuration or word identity. 2026-11-25 visual collation against 2002 PDF p. 353 (n. 96) & 2008 Variationes (p. 372): word-exact over all printed words (Joanne/Ioanne orthography; 2002 parenthesizes the optional saints Ignatio through Anastasia per n. 32)."
 [[sections.elements]]
 key = "per-quem"
 kind = "prayer"
@@ -1580,9 +1873,9 @@ artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-18
 elements = ["per-quem"]
 column = "latin"
 relation = "antecedent"
-collation = "uncollated"
-note = "ANTECEDENT, NOT THE CONTROLLING EDITION. The 1861 Cummiskey row is at p. xxxviii, leaf 48. It misprints ereas for creas—the e was verified at 250 percent—and prints no cross signs over the three verbs; the error is retained and attributed only to that source. The target study quotes no complete n. 97 Latin, so this is an uncollated antecedent and no target identity is claimed."
-
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+note = "ANTECEDENT, NOT THE CONTROLLING EDITION. The 1861 Cummiskey row is at p. xxxviii, leaf 48. It misprints ereas for creas—the e was verified at 250 percent—and prints no cross signs over the three verbs; the error is retained and attributed only to that source. The target study quotes no complete n. 97 Latin, so this is an uncollated antecedent and no target identity is claimed. 2026-11-25 visual collation against 2002 PDF pp. 353-354 (n. 97) & 2008 Variationes (p. 372): agrees everywhere except the retained 1861 printer misprint ereas for 2002 creas; therefore collated without target_wording = word-exact."
 [[sections.elements]]
 key = "doxologia"
 kind = "prayer"
@@ -1630,7 +1923,9 @@ artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-18
 elements = ["per-ipsum", "per-omnia-saecula"]
 column = "latin"
 relation = "antecedent"
-collation = "uncollated"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
 note = """
 ANTECEDENT, NOT THE CONTROLLING EDITION. The Latin here is the facing column of \
 the 1861 Philadelphia Cummiskey hand missal at its Per ipsum and the versicle \
@@ -1659,11 +1954,10 @@ substantially identical from Te igitur to Per ipsum apart from the changes to \
 the dominical words, which fall elsewhere in the Canon and not in this element. \
 It quotes no 2002 Latin of the doxology. The separate 2026-10-20 direct page \
 review establishes the speaker boundary above, without promoting this \
-antecedent to exact controlling-2008 wording.
+antecedent to exact controlling-2008 wording. 2026-11-25 visual collation against 2002 PDF p. 354 (n. 98) & 2008 Variationes (p. 372): word-exact (printed P./R. source markers and pointing only).
 """
 
 # ================================================================ F. Ritus communionis
-
 [[sections]]
 key = "ritus-communionis"
 name = "The Communion Rite"
@@ -1712,7 +2006,8 @@ artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-18
 elements = ["praeceptis-salutaribus", "pater-noster"]
 column = "latin"
 relation = "antecedent"
-collation = "uncollated"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
 note = """
 ANTECEDENT, NOT THE CONTROLLING EDITION. The Latin here is the facing column of \
 the 1861 Philadelphia Cummiskey hand missal at its Praeceptis salutaribus and \
@@ -1748,9 +2043,8 @@ further accent, punctuation, colour and typography \
 corrections outside that list. Alternative tones referred to in the 2002 \
 Appendix at pp. 1242-1243 were not inspected in this check. The antecedent \
 relation and uncollated grade are retained, with no deletion, harmonisation \
-or new target ceremony inferred.
+or new target ceremony inferred. 2026-11-25 visual collation against 2002 PDF p. 366 (n. 124) & 2008 Variationes (p. 372): body agrees (quotidianum/cotidianum orthography), but 1861 appends source-only P. Amen. absent from 2002 n. 124; therefore collated without target_wording = word-exact.
 """
-
 [[sections.elements]]
 key = "libera-nos"
 kind = "prayer"
@@ -1820,7 +2114,9 @@ artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-18
 elements = ["pax-domini"]
 column = "latin"
 relation = "antecedent"
-collation = "uncollated"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
 note = """
 ANTECEDENT, NOT THE CONTROLLING EDITION. The Latin here is the facing column of \
 the 1861 Philadelphia Cummiskey hand missal at printed page xl, Internet \
@@ -1834,9 +2130,8 @@ the versicle word for word, but it does not establish Et cum spiritu tuo at \
 this number. The response is attested elsewhere in the target book and that is \
 not a collation of this element. The older source block is therefore carried \
 as an honestly labelled antecedent, never as the target text, and no complete \
-identity is claimed.
+identity is claimed. 2026-11-25 visual collation against 2002 PDF p. 367 (n. 127) & 2008 Variationes (p. 372): word-exact across both Priest versicle and People response (P./R. labels only).
 """
-
 [[sections.elements]]
 key = "offerte-vobis-pacem"
 kind = "dialogue"
@@ -1856,10 +2151,11 @@ artifact = "artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-
 elements = ["offerte-vobis-pacem"]
 column = "latin"
 relation = "antecedent"
-collation = "uncollated"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
 reading_note = "Historical Ambrosian invitation (Milan,1712). Its separate source response is omitted here; no complete authenticated2008 collation is claimed."
-note = "The complete historical invitation on printed155, original193, is selected literally. Its separate Deo-gratias response and Ambrosian conditions remain source context and are not imported. Secondary2002 n128, original367, independently establishes the modern conditional invitation and has the same three words apart from its tonic accent. This is historical source wording, not a complete controlling2008 exemplar."
-
+note = "The complete historical invitation on printed155, original193, is selected literally. Its separate Deo-gratias response and Ambrosian conditions remain source context and are not imported. Secondary2002 n128, original367, independently establishes the modern conditional invitation and has the same three words apart from its tonic accent. This is historical source wording, not a complete controlling2008 exemplar. 2026-11-25 visual collation against 2002 PDF p. 367 (n. 128) & 2008 Variationes (p. 372): word-exact."
 [sections.elements.english]
 witness = "edition.triptych.postconciliar-ordinary-peace-invitation-study-english-20261030.study-english-20261030"
 artifact = "artifact.triptych.postconciliar-ordinary-peace-invitation-study-english-20261030.study-english-20261030.peace-invitation-study-en"
@@ -1915,9 +2211,9 @@ artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-18
 elements = ["agnus-dei"]
 column = "latin"
 relation = "antecedent"
-collation = "uncollated"
-note = "ANTECEDENT, NOT THE CONTROLLING EDITION. The Latin here is the facing column of the 1861 Philadelphia Cummiskey hand missal at its Agnus Dei, printed page xl, Internet Archive leaf 50. The controlling 2008 text is not distributable on this surface and is not served here. The repository holds and has read a verified 2002 Ordo witness and the official bounded 2008 variation list, but that evidence does not establish this word identity; these are the 1861 printing's words. Carried as printed and normalised nowhere: the book does not write the invocation out three times. It sets three asterisks at the head of three short lines, * miserere nobis, twice and then * dona nobis pacem., the asterisk marking where Agnus Dei, qui tollis peccata mundi is resumed, and they are run in here as the sibling English row runs them. A reader must expand them as the book intends and not read four clauses where the rite has three invocations. UNCOLLATED: the identity of this text with the controlling edition's is not established here. This repository's study of this Order of Mass describes n. 130 at 00-order-of-mass/sections/70-communion-rite.tex:86-91 and names the Agnus Dei among the texts retained with little or no change of wording, on a comparison for which it states that both books were read directly; it quotes the 2002 Latin of the ending dona nobis pacem only, which this witness matches. The invocation itself has been compared with nothing.\n"
-
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+note = "ANTECEDENT, NOT THE CONTROLLING EDITION. The Latin here is the facing column of the 1861 Philadelphia Cummiskey hand missal at its Agnus Dei, printed page xl, Internet Archive leaf 50. The controlling 2008 text is not distributable on this surface and is not served here. The repository holds and has read a verified 2002 Ordo witness and the official bounded 2008 variation list, but that evidence does not establish this word identity; these are the 1861 printing's words. Carried as printed and normalised nowhere: the book does not write the invocation out three times. It sets three asterisks at the head of three short lines, * miserere nobis, twice and then * dona nobis pacem., the asterisk marking where Agnus Dei, qui tollis peccata mundi is resumed, and they are run in here as the sibling English row runs them. A reader must expand them as the book intends and not read four clauses where the rite has three invocations. UNCOLLATED: the identity of this text with the controlling edition's is not established here. This repository's study of this Order of Mass describes n. 130 at 00-order-of-mass/sections/70-communion-rite.tex:86-91 and names the Agnus Dei among the texts retained with little or no change of wording, on a comparison for which it states that both books were read directly; it quotes the 2002 Latin of the ending dona nobis pacem only, which this witness matches. The invocation itself has been compared with nothing.\n 2026-11-25 visual collation against 2002 PDF p. 367 (n. 130) & 2008 Variationes (p. 372): 1861 uses three * continuation marks rather than writing out Agnus Dei, qui tollis peccata mundi three times as 2002 prints it; therefore collated without target_wording = word-exact."
 [[sections.elements]]
 key = "praeparatio-sacerdotis"
 kind = "rubric"
@@ -1943,10 +2239,11 @@ artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-18
 elements = ["domine-fili-dei-vivi-petition"]
 column = "latin"
 relation = "antecedent"
-collation = "uncollated"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
 reading_note = "Exact historical source petition (Cummiskey, 1861), ending at its printed colon. The separate old conclusion is excluded and retained in source apparatus. Not approved Missal English or a complete2008 collation."
-note = "The complete source-contiguous petition on printed p. xli, original PDF p.52, IA n51, is carried verbatim through its colon. The parent source and separate derivative conclusion remain unchanged and retained. Fresh secondary2002 n.131 inspection on artifact pp.367-368 establishes that this first alternative ends with the petition, omitting the older relative conclusion and Amen. Lexical comparison allows only source spelling and pointing differences. This does not authenticate complete2008 wording or approved2011 English; the source relation remains uncollated to that controlling edition."
-
+note = "The complete source-contiguous petition on printed p. xli, original PDF p.52, IA n51, is carried verbatim through its colon. The parent source and separate derivative conclusion remain unchanged and retained. Fresh secondary2002 n.131 inspection on artifact pp.367-368 establishes that this first alternative ends with the petition, omitting the older relative conclusion and Amen. Lexical comparison allows only source spelling and pointing differences. This does not authenticate complete2008 wording or approved2011 English; the source relation remains uncollated to that controlling edition. 2026-11-25 visual collation against 2002 PDF pp. 367-368 (n. 131) & 2008 Variationes (p. 372): word-exact (Jesu/Iesu, co-operante/cooperante, sacro-sanctum/sacrosanctum, nunquam/numquam, trailing colon only)."
 [sections.elements.english]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinary-preparation-source-prefix-en-20261112"
@@ -2004,10 +2301,11 @@ artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quar
 elements = ["ecce-agnus"]
 column = "latin"
 relation = "antecedent"
-collation = "uncollated"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
 reading_note = "Historical Latin source wording; no complete authenticated2008 collation is claimed."
-note = "Complete directly checked1922 source sentence; plural peccata and both ecce words are retained. Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
-
+note = "Complete directly checked1922 source sentence; plural peccata and both ecce words are retained. Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state. 2026-11-25 visual collation against 2002 PDF p. 368 (n. 132) & 2008 Variationes (p. 372): word-exact."
 [sections.elements.english]
 witness = "edition.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030"
 artifact = "artifact.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030.ancient-frames-study-en"
@@ -2034,10 +2332,11 @@ artifact = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-co
 elements = ["beati-ad-cenam"]
 column = "latin"
 relation = "antecedent"
-collation = "uncollated"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
 reading_note = "Historical biblical blessing (Apoc19:9), with source nuptiarum ('of the wedding') omitted. No complete authenticated2008 collation."
-note = "Source Apoc19:9 quoted blessing, with only nuptiarum omitted. The source cœnam ligature and semicolon remain; this does not relabel the whole verse as a target quotation. Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
-
+note = "Source Apoc19:9 quoted blessing, with only nuptiarum omitted. The source cœnam ligature and semicolon remain; this does not relabel the whole verse as a target quotation. Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state. 2026-11-25 visual collation against 2002 PDF p. 368 (n. 132) & 2008 Variationes (p. 372): word-exact (coenam/cenam ligature and trailing semicolon only)."
 [sections.elements.english]
 witness = "edition.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030"
 artifact = "artifact.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030.ancient-frames-study-en"
@@ -2064,10 +2363,11 @@ artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-18
 elements = ["domine-non-sum-dignus"]
 column = "latin"
 relation = "antecedent"
-collation = "uncollated"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
 reading_note = "Historical Latin source wording; no complete authenticated2008 collation is claimed."
-note = "Only the source prayer row18 is joined; its separate older threefold rubric is not joined. Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
-
+note = "Only the source prayer row18 is joined; its separate older threefold rubric is not joined. Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state. 2026-11-25 visual collation against 2002 PDF p. 368 (n. 132) & 2008 Variationes (p. 372): word-exact (pointing only)."
 [sections.elements.english]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en"
@@ -2075,7 +2375,7 @@ elements = ["domine-non-sum-dignus"]
 column = "english"
 relation = "antecedent"
 collation = "uncollated"
-reading_note = "Historical English (Cummiskey,1861); this is not approved postconciliar English. The source’s older wording and spelling are retained. The separate older threefold instruction is not joined."
+reading_note = "Historical English (Cummiskey, 1861); this is not approved postconciliar English. The source’s older wording and spelling are retained. The separate older threefold instruction is not joined."
 note = "Complete source prayer row18, word for word. Its once-only priest-and-people assignment comes from target n132, not the older priest-only source rubric. Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
 
 [[sections.elements]]
@@ -2115,7 +2415,8 @@ elements = ["quod-ore-sumpsimus"]
 column = "latin"
 relation = "antecedent"
 collation = "collated"
-collation_finding = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/70-communion-rite.tex:167-169"
+collation_finding = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/70-communion-rite.tex:167-169; passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.coldrev-pc-ordo-collation-20261125"
+target_wording = "word-exact"
 note = """
 ANTECEDENT, NOT THE CONTROLLING EDITION. The Latin here is the facing column of \
 the 1861 Philadelphia Cummiskey hand missal at its Quod ore sumpsimus, printed \
@@ -2128,9 +2429,8 @@ nowhere: the book points a comma after \
 temporali which the study's quotation of the 2002 text does not. \
 COLLATED. The cited study quotes the 2002 Latin of this prayer entire at n. 137 \
 and calls it a post-Communion prayer of great antiquity, retained; set beside \
-this row the two agree word for word, the sole divergence being that comma.
+this row the two agree word for word, the sole divergence being that comma. 2026-11-25 visual collation against 2002 PDF p. 368 (n. 137) & 2008 Variationes (p. 372): word-exact (accents and pointing only).
 """
-
 [[sections.elements]]
 key = "post-communionem"
 kind = "prayer"
@@ -2178,7 +2478,7 @@ name = "The paschal Dismissal, with a double Alleluia"
 latin_incipit = "Ite, missa est, alleluia, alleluia"
 missal_number = "n. 144, as the formulary appoints it"
 note = "Appointed by the formulary of Pentecost Sunday, Mass during the Day, with its doubled response (2002 artifact PDF p. 267). The 2008 Variationes add an alternative dismissal formula for this formulary (Notitiae 44, entry for Missal p. 448); that new alternative is not carried."
-conditions = [{ kind = "appointed", variable = "dismissal", options = ["paschal-double-alleluia"], basis = "Stands where the day's formulary appoints the paschal dismissal with a double Alleluia." }]
+conditions = [{ kind = "appointed", variable = "dismissal", options = ["paschal-double-alleluia"], basis = "Stands throughout the Octave of Easter (Easter Sunday through the Second Sunday of Easter, per 2002 nn. 69 & 78, pp. 224-232) and on Pentecost Sunday, Mass during the Day (p. 267)." }]
 turns_basis = "Secondary 2002 Missal, Pentecost Sunday, Mass during the Day, artifact PDF p. 267, read in its text layer and on the rendered page on 2026-11-14: 'Ad populum dimittendum, diaconus vel, eo absente, ipse sacerdos cantat vel dicit' introduces the dismissal, and the answer carries R. Speakers and the response role only; no word of that artifact is carried here."
 latin_turns = [
   { key = "dismissal", seq = [1], speaker = "deacon-or-priest" },
@@ -2480,6 +2780,39 @@ artifacts = ["artifact.triptych.postconciliar-ordinary-fraction-perceptio-study-
 "rights" = "project-created"
 "caution" = "New study translation from the independently checked medieval Latin. Not the approved 2011 English, not approved for liturgical use or recitation, and not human-reviewed."
 "artifacts" = ["artifact.triptych.postconciliar-ordinary-lava-me-study-english-20261112.study-english-20261112.lava-me-study-en"]
+
+[[witnesses]]
+id = "edition.triptych.postconciliar-coldrev-2026-11-25-ordinary-qpd.2026-11-25-communicantes-qpd"
+lang = "la"
+label = "Common Communicantes Latin (1922 Mame body with 1962 Saint Joseph insertion, qualified-public-domain)"
+rights = "qualified-public-domain"
+acknowledgement = "Published on a qualified basis (publication policy priority 6; confidence medium-low): a Holy See text first published in Vatican City in 1931-1975 that lapsed into the U.S. public domain for want of a formality, and whose twenty-year Vatican term under Italian Law 633/1941 arts. 11 and 29, as applied by Vatican Law XII of 1960, had on this project's reading expired before the 1 January 1996 U.S. restoration date (17 U.S.C. 104A). Not adjudicated; U.S. copyright only; implies no ecclesiastical approval or permission."
+caution = "Published on a qualified basis, never as plain public domain: the notice printed with these words says why. Carries the common Communicantes body incorporating the Saint Joseph insertion promulgated on 13 November 1962 (AAS 54, p. 873; 1962 typical edition n. 1090), with full saints list and the optional closing formula omitted to match the English study side and 2002 nn. 32/86. Not an authenticated 2008 altar Missal and not for recitation."
+artifacts = ["artifact.triptych.postconciliar-coldrev-2026-11-25-ordinary-qpd.2026-11-25-communicantes-qpd.coldrev-pc-communicantes-qpd-8a7ce0a2"]
+
+[[witnesses]]
+id = "edition.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929"
+lang = "la"
+label = "Historical Latin Preface (Schott, Herder 1929), collated word-exact to 2002"
+rights = "public-domain"
+caution = "Pre-1931 U.S. public-domain Latin printing of the Preface of Christ the King (Herder, 1929), collated word-for-word against 2002 digital PDF p. 302. Retains source spelling and pointing. Not an authenticated 2008 exemplar or text for recitation."
+artifacts = ["artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.ordinary-two-prefaces-latin-20261112"]
+
+[[witnesses]]
+id = "edition.triptych.postconciliar-coldrev-2026-11-25-prefaces.2026-11-25-four-mame-prefaces-la"
+lang = "la"
+label = "Historical Latin Prefaces (Mame, 1922 visual transcription), collated word-exact to 2002"
+rights = "public-domain"
+caution = "Visual page-image transcriptions of four pre-1931 public-domain Prefaces from Missale Romanum (Tours: Mame, 1922) — Nativity I, Lent IV, Exaltation of the Holy Cross, and BVM I — collated word-for-word against the secondary 2002 digital PDF. Retains Mame spelling, ligatures, punctuation, and *** occasion slot; not an authenticated 2008 exemplar or text for recitation."
+artifacts = ["artifact.triptych.postconciliar-coldrev-2026-11-25-prefaces.2026-11-25-four-mame-prefaces-la.coldrev-pc-four-mame-prefaces-la-0da0e3c3"]
+
+[[witnesses]]
+id = "edition.triptych.postconciliar-coldrev-2026-11-25-prefaces.2026-11-25-joseph-prefaces-study-en"
+lang = "en"
+label = "Triptych study English of the appointed Saint Joseph Prefaces (not approved liturgical English)"
+rights = "project-created"
+caution = "Original AI-authored project study English over the 1922 Mame Latin Preface of Saint Joseph with the March 19 solemnity and May 1 commemoration occasion nouns. Not approved 2011 liturgical English and not for recitation."
+artifacts = ["artifact.triptych.postconciliar-coldrev-2026-11-25-prefaces.2026-11-25-joseph-prefaces-study-en.coldrev-pc-joseph-prefaces-study-en-d3ae8e17"]
 
 [[ordinary_witness_links]]
 source_id = "artifact.catholic-church.missale-romanum.2011-english-cbcew-excerpts.ep1-a4-pdf"
@@ -2787,6 +3120,14 @@ languages = ["en"]
 elements = [
   "prex-eucharistica/praefatio",
   "prex-eucharistica/praefatio-appointed",
+  "prex-eucharistica/praefatio-christ-the-king",
+  "prex-eucharistica/praefatio-nativity-i",
+  "prex-eucharistica/praefatio-lent-iv",
+  "prex-eucharistica/praefatio-exaltation-cross",
+  "prex-eucharistica/praefatio-dead-i",
+  "prex-eucharistica/praefatio-bvm-i",
+  "prex-eucharistica/praefatio-saint-joseph-solemnity",
+  "prex-eucharistica/praefatio-saint-joseph-commemoration",
 ]
 
 [[ordinary_witness_links]]

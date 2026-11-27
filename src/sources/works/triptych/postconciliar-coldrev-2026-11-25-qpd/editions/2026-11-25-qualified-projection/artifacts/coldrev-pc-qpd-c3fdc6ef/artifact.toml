@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.triptych.postconciliar-coldrev-2026-11-25-qpd.2026-11-25-qualified-projection.coldrev-pc-qpd-c3fdc6ef"
+edition_id = "edition.triptych.postconciliar-coldrev-2026-11-25-qpd.2026-11-25-qualified-projection"
+artifact_type = "editorial-projection"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "qualified-public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Admitted under src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml: Published on a qualified basis (publication policy priority 6; confidence medium-low): a Holy See text first published in Vatican City in 1931-1975 that lapsed into the U.S. public domain for want of a formality, and whose twenty-year Vatican term under Italian Law 633/1941 arts. 11 and 29, as applied by Vatican Law XII of 1960, had on this project's reading expired before the 1 January 1996 U.S. restoration date (17 U.S.C. 104A). Not adjudicated; U.S. copyright only; implies no ecclesiastical approval or permission. Carries two Holy See orations first published in Vatican City in 1932 (AAS 24 p. 165, St. Robert Bellarmine Postcommunion) and 1950 (AAS 42 p. 793, Assumption Collect), projected from their tracked 1962 qualified-public-domain carriers and pre-1931 cue/placeholder witnesses; no 1970/2002/2008 edition supplies any word."
+sha256 = "c3fdc6efa6c295f3885cc166746e81f65b61aab0a25980f7ab4ad7956ecc9238"
+byte_size = 473
+retrieved = "2026-11-25"
+path = "src/sources/works/triptych/postconciliar-coldrev-2026-11-25-qpd/editions/2026-11-25-qualified-projection/artifacts/coldrev-pc-qpd-c3fdc6ef/qpd-propers.tsv"
+encoding = "utf-8"
+indexable = true
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-latin", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112", "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.assumption-collect-789d2b5d", "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.bellarmine-postcommunion-d093d4d3"]
+provenance = "Projected from the tracked 1962 qualified-public-domain carriers (AAS 1932 & 1950) and pre-1931 public-domain cue witnesses; compared text-free against the 2002 digital Missal PDF."
+transformation = "Calendar orthography (i for j, ae/oe digraphs, no accents), 2002 pointing, and independently witnessed pre-1931 short conclusion cues and N. placeholder."

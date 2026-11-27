@@ -1,0 +1,91 @@
+schema_id = "triptych-postconciliar-sanctuary-inventory"
+schema_version = 1
+record_encoding = "UTF-8"
+unknown_fields = "reject"
+
+[edition_context]
+latin_typical_edition = "Missale Romanum, editio typica tertia (2002; reimpressio emendata 2008)"
+territorial_edition = "The Roman Missal, Third Edition (United States of America, 2011) with USCCB adaptations to the General Instruction"
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+
+[controlled_enums]
+categories = [
+  "sanctuary-furnishings",
+  "sacred-vessels",
+  "linens",
+  "liturgical-books",
+  "service-and-incense",
+  "vesture-and-ministry",
+  "sacramental-adjacent",
+  "superseded-postconciliar",
+]
+
+dispositions = [
+  "required",
+  "provided",
+  "permitted",
+  "optional",
+  "territorial adaptation",
+  "local selection",
+  "customary",
+  "superseded",
+  "not applicable",
+  "unresolved",
+]
+
+scope_levels = [
+  "universal-roman",
+  "territorial-usccb",
+  "diocesan-or-local",
+  "customary",
+  "historically-superseded",
+]
+
+ministers = [
+  "bishop",
+  "priest",
+  "deacon",
+  "instituted-acolyte",
+  "instituted-lector",
+  "extraordinary-minister",
+  "altar-server",
+  "sacristan",
+  "faithful",
+  "subdeacon-historical",
+]
+
+server_boundaries = [
+  "handles",
+  "carries",
+  "presents",
+  "prepares",
+  "moves-only-by-direction",
+  "recognizes-only",
+  "clergy-reserved",
+  "superseded-historical",
+]
+
+symbolism_evidence_classes = [
+  "liturgical-source",
+  "scriptural-patristic",
+  "devotional-tradition",
+  "none-practical",
+]
+
+counterpart_1962_relationships = [
+  "continued",
+  "renamed",
+  "materially changed",
+  "changed use",
+  "optional",
+  "superseded",
+  "newly provided",
+  "no established counterpart",
+]
+
+[id_patterns]
+object_id = "^pc-obj-[a-z0-9]+(?:-[a-z0-9]+)*$"
+plate_id = "^pc-plt-[0-9]{2}-[a-z0-9]+(?:-[a-z0-9]+)*$"
+artwork_id = "^pc-art-[0-9]{2}-[a-z0-9]+(?:-[a-z0-9]+)*$"
+note_key = "^N[0-9]{2}$"

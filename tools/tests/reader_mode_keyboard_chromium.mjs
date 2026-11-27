@@ -170,13 +170,24 @@ try {
     assert.equal((await evaluate(cdp, snapshot())).focus, 'read');
     await key(cdp, 'Tab');
     assert.equal((await evaluate(cdp, snapshot())).focus, 'reader-text-size');
-    await key(cdp, 'Tab');
+    // Display options sit between text size and Details; Tab traverses them in order.
+    let displayStops = 0;
+    for (let tabs = 0; tabs < 10; tabs += 1) {
+      await key(cdp, 'Tab');
+      const focus = (await evaluate(cdp, snapshot())).focus;
+      if (focus === 'details') break;
+      assert.match(String(focus), /^mode-/, page.path + ' display option stop: ' + focus);
+      displayStops += 1;
+    }
+    assert.ok(displayStops >= 4, page.path + ' has display option Tab stops');
     assert.equal((await evaluate(cdp, snapshot())).focus, 'details');
     await key(cdp, 'Tab');
     assert.equal((await evaluate(cdp, snapshot())).focus, 'close');
     await key(cdp, 'Tab', true);
     assert.equal((await evaluate(cdp, snapshot())).focus, 'details');
-    await key(cdp, 'Tab', true);
+    for (let tabs = 0; tabs < displayStops + 1; tabs += 1) {
+      await key(cdp, 'Tab', true);
+    }
     assert.equal((await evaluate(cdp, snapshot())).focus, 'reader-text-size');
     await key(cdp, 'Tab', true);
     assert.equal((await evaluate(cdp, snapshot())).focus, 'read');
@@ -212,7 +223,10 @@ try {
       await key(cdp, 'Tab');
     }
     assert.equal((await evaluate(cdp, snapshot())).focus, 'reader-text-size');
-    await key(cdp, 'Tab');
+    for (let tabs = 0; tabs < 10; tabs += 1) {
+      await key(cdp, 'Tab');
+      if ((await evaluate(cdp, snapshot())).focus === 'details') break;
+    }
     assert.equal((await evaluate(cdp, snapshot())).focus, 'details');
     await key(cdp, 'Tab');
     assert.equal((await evaluate(cdp, snapshot())).focus, 'close');

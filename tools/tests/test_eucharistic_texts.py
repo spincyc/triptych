@@ -530,6 +530,21 @@ class NativeBookTests(unittest.TestCase):
         self.assertTrue(result["scope"]["complete_declared_extent"])
         self.assertFalse(result["scope"]["whole_book_complete"])
 
+    def test_scan_pdf_page_range_and_facsimile_pdf_are_accepted_direct_facsimiles(self):
+        for artifact_type in ("scan-pdf-page-range", "facsimile-pdf"):
+            with self.subTest(artifact_type=artifact_type):
+                native_fixture(self)
+                self.records["artifact.fixture-book.scan"].data.update(
+                    artifact_type=artifact_type, media_type="application/pdf"
+                )
+                result = self.load()
+                self.assertEqual("Exact native fixture.", result["units"][0]["text"])
+                self.assertEqual(
+                    artifact_type,
+                    next(source["artifact_type"] for source in result["sources"]
+                         if source["id"] == "artifact.fixture-book.scan"),
+                )
+
     def test_image_preserving_pdf_derivative_remains_a_reviewed_facsimile(self):
         book, extent, review, save = native_fixture(self)
         images = self.artifact("artifact.fixture-book.images", "Synthetic exact page-image package.\n",

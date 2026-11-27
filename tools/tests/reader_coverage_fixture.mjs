@@ -114,8 +114,9 @@ export const allSoulsEnglishRoles = {
   'edition.edward-caswall.lyra-catholica.london-1849': ['Sequence'],
   'edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861': ['Collect', 'Secret', 'Postcommunion'],
   'edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945': ['Tract', 'Offertory'],
+  'edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946': ['Gradual'],
   'edition.hymns-ancient-and-modern-proprietors.hymns-ancient-and-modern.london-complete-edition-1890': ['Sequence'],
-  'project-created': ['Introit', 'Gradual', 'Communion']
+  'project-created': ['Introit', 'Communion']
 };
 
 // This path validates data and semantic selection without starting a server or Chromium.
@@ -124,14 +125,15 @@ export function verifyRealWitnesses(structure, root) {
   const caswall = 'edition.edward-caswall.lyra-catholica.london-1849';
   const alias = 'artifact.edward-caswall.lyra-catholica.london-1849.missal-sequences-en';
   const lasance = 'edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945';
+  const lasance1946 = 'edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946';
   const study = 'project-created';
   const sept15 = structure.masses.find(row => row.key === 'septem-dolorum-beatae-mariae-virginis');
   const sequence = sept15.propers.find(row => row.name === 'Sequence');
   assert.equal(sequence.translations.filter(row => row.lang === 'en').length, 2);
   const dolorsWitnesses = T.coverageWitnesses(sept15.coverage, 'en');
   assert.deepEqual(dolorsWitnesses.map(row => [row.id, row.available]),
-    [[caswall, 1], [lasance, 3], [study, 4]]);
-  const studyChants = ['Gradual', 'Alleluia', 'Offertory', 'Communion'];
+    [[caswall, 1], [lasance, 3], [lasance1946, 3], [study, 1]]);
+  const studyChants = ['Alleluia'];
   assert.deepEqual(sept15.propers.filter(row => (row.translations || []).some(
     translation => translation.lang === 'en' && !translation.source_id
   )).map(row => row.name), studyChants);
@@ -224,6 +226,16 @@ export function verifyRealWitnesses(structure, root) {
   }
   const english = T.orationLanguagesOf(structure).find(row => row.lang === 'en');
   assert.equal(T.orationLanguageLabel(english),
-    `English — ${english.available_targets} of ${english.targets} represented texts available`);
+    english.available_targets >= english.targets && english.targets > 0
+      ? 'English'
+      : `English — ${english.available_targets} of ${english.targets} represented texts available`);
+  assert.equal(T.orationOptionLabel(english),
+    english.available_targets >= english.targets && english.targets > 0
+      ? 'English'
+      : `English (${english.available_targets.toLocaleString('en-US')}/${english.targets.toLocaleString('en-US')})`);
+  assert.equal(T.orationLanguageLabel({ lang: 'en', targets: 10, available_targets: 4 }),
+    'English — 4 of 10 represented texts available');
+  assert.equal(T.orationOptionLabel({ lang: 'en', targets: 10, available_targets: 4 }),
+    'English (4/10)');
   return ['canonical-witness-aliases', 'partial-witness-no-fallback', 'report-language-labels'];
 }

@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.addai-mari-checked-syriac-441ec525"
+edition_id = "edition.chaldean-catholic-church.missale.1901-mosul-dominican"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Faithful bounded reading transcription of original-language liturgical text from Missale Chaldaeorum (Mosul Dominican, 1901) — Anaphora of Addai and Mari Core, whose United States copyright term has expired by publication date (1901). Derived directly from tracked public-domain facsimile artifact.chaldean-catholic-church.missale.1901-mosul-dominican.bonn-scan-pdf-dbc2a822 without modern translation or editorial reconstruction. Third-party historical text is excluded from Triptych's CC BY 4.0 license."
+provenance = "Pixel-verified primary-source transcription prepared by lane-t2-syriac and independently collated against rendered facsimile page images by independent-collator-v2-syriac on 2026-11-25. Not a glyph-diplomatic edition or human specialist critical apparatus; complete bounded constituent only."
+retrieved = "2026-11-25"
+sha256 = "441ec5252608627e64aa3fa0d777f6608a419c1ea9370c278bdb5e053d580ad7"
+byte_size = 5767
+path = "src/sources/works/chaldean-catholic-church/missale/editions/1901-mosul-dominican/artifacts/addai-mari-checked-syriac-441ec525/text.txt"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.bonn-scan-pdf-dbc2a822"
+transformation = "Pure consonantal Classical Syriac Unicode (U+0710..U+072C, UTF-8 NFC) with single ASCII spaces between words and single LF (\\n) line endings, one canonical liturgical unit per line.; All East Syriac and West Syriac vowel points, seyame (U+0308), qushshaya/rukkakha, linea occultans/marhetana, punctuation dots, liturgical crosses, quotation marks, kashidas, catchwords, running heads, signature marks, and page numbers are omitted for scan-safe cross-edition diffing.; Rubrics (red or black stage directions), section headers (e.g. Qanona, Gehanta), speaker labels (priest/deacon/people), abbreviated posture cues (e.g. gehanta bow marker), intervening private Kushapa prayers, diaconal calls outside the main dialogue, and parallel Garshuni/Arabic columns are excluded.; Printed historical orthography, abbreviations (such as abbreviated Sanctus incipits), omissions, and additions are preserved verbatim without harmonizing or supplying words from memory."
+notes = "Bounded constituent of the exact same eight aligned core units of the Anaphora of Addai and Mari in Classical Syriac (syr), preserving 1901's distinctive placement of the Institution Narrative inside the Post-Sanctus (PDF 72-71) prior to Gehanta 2, while using identical canonical native_path slugs for direct 3-way diffing against Chaldean 1767 and Syro-Malabar 1906."

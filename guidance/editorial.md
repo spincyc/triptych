@@ -499,11 +499,15 @@ articles of faith) are held to these tests as well:
   own ([received prayer](#rights-quotation-and-received-prayer)).
 
 These are judgements, like those above, and a reviewer reports a failure as a
-register defect under the same criterion. A teaching or devotional work also
-has a reader review before release: a reviewer who has not seen the
-production reads the work as its reader would and reports flat, stilted,
-repetitive or machine-register passages, and missed moments the sources
-offered, by section.
+register defect under the same criterion. When sections of a longer work are
+drafted separately, run a whole-volume harmonization pass before review to give
+each major quotation one canonical home (rather than repeating full block
+quotations across chapters), unify biblical book-naming conventions and divine
+pronoun style, and standardize quotation environments and attributions. A
+teaching or devotional work also has a reader review before release: a reviewer
+who has not seen the production reads the work as its reader would and reports
+flat, stilted, repetitive or machine-register passages, and missed moments the
+sources offered, by section.
 The second Advent draft, written to these tests, cleared the ledger
 vocabulary but drew 126 findings from its blind reader, chiefly self-narration,
 restating maxims, research voice in history and law, a confession counsel given
@@ -529,6 +533,22 @@ full-bleed treatment with a clear editorial purpose. Review illustrated pages
 at full size and under enough contrast to expose seams and floating
 rectangles.
 
+Non-papal publications using `src/common/preamble.tex` compile with `pdflatex`
+via `tools/print-document build` (`xelatex` is reserved for papal editions).
+Browser-native print bundles (`tools/native-print-compile`) compile against the
+pinned runtime manifest (`src/common/native-tex-runtime.json`), so avoid
+unbundled font or TikZ extensions (such as `amssymb`'s `msam10` symbols or
+`\usetikzlibrary{patterns}`) and verify new leaves with
+`tools/native-print-compile prepare` and `compile`.
+Write literal `\includegraphics{...}` paths directly inside print-only branches
+(`\ifdefined\TriptychPrintEdition ... \else ... \fi`) without macro-argument
+indirection so native print bundles and revision-timestamp closures discover
+every raster plate automatically. For Pandoc web-edition fidelity, never place
+a braced group immediately after `\noindent` (`\noindent{\footnotesize ...}`,
+which Pandoc consumes as an argument of `\noindent` and silently drops), and
+never place `\addlinespace[...]` after a `longtable`'s final `\\` before
+`\end{longtable}` (which Pandoc reads as an empty row).
+
 ## Evidence and claims
 
 Keep these states distinct in research and publication:
@@ -541,7 +561,7 @@ Keep these states distinct in research and publication:
 
 Do not invent a fact, quotation, citation, source search, verification event, consensus, doctrine, or law. Do not turn resemblance into exegesis, discipline into doctrine, opinion into settled teaching, or plausible legal analysis into binding law. A global disclaimer never cures false attribution or overstatement.
 
-Prefer primary, official, edition-identified, stable sources. OCR, searchable transcriptions, aggregations, quotation sites, and secondary citations are finding aids until the underlying witness is checked. Cite enough edition/version and locus information to reproduce the claim; record stable links and access dates where online evidence matters.
+Prefer primary, official, edition-identified, stable sources. OCR, searchable transcriptions, aggregations, quotation sites, and secondary citations are finding aids until the underlying witness is checked. Matching a string inside a collected-works OCR file or catena does not establish authorship: verify the owning section heading, running title, and editor footnotes before attributing a text to the volume's named author (for example, editor-appended *Raccolta* devotions in collected works, or `non occ.` marginalia in the *Catena Aurea*). Cite enough edition/version and locus information to reproduce the claim; record stable links and access dates where online evidence matters.
 
 When an external source is registered for repository-wide reuse, follow
 `guidance/sources.md`, which owns the evidence states and their exact names —

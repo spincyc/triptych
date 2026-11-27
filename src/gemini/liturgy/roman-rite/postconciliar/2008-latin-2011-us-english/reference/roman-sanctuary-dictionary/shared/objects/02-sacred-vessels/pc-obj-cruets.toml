@@ -1,0 +1,78 @@
+schema_version = 1
+id = "pc-obj-cruets"
+category = "sacred-vessels"
+sort_order = 206
+plate_id = "pc-plt-06-service"
+composition_plate_ids = ["pc-plt-01-sanctuary"]
+plate_position = "See Plate VI, top left (paired with stoppers on an oval metal tray); Plate I, atop the credence table"
+preferred_english_name = "Cruets"
+latin_headword = "Urceoli"
+alternate_english_names = ["Wine and Water Cruets"]
+alternate_latin_names = ["Ampullae", "Urceoli cum vino et aqua"]
+pronunciation_key = "oor-CHEH-oh-lee"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "required"
+scope_level = "universal-roman"
+territorial_note = ""
+
+[identification]
+summary = "Cruets are paired small stoppered vessels—ordinarily clear glass or metal—that hold the unconsecrated wine and pure water prepared for the Preparation of the Gifts, the handwashing rite, and the purification of sacred vessels."
+appearance = "Depicted at top left of Plate VI as two matching clear glass pitchers with looped handles, pouring spouts, and fitted glass stoppers resting on an oval metal tray; Plate I shows them standing ready atop the credence table."
+placement_and_use = "Before Mass, the cruets of wine and water are prepared on the credence table (unless the wine is brought forward in the Procession of the Gifts, in which case the water cruet still remains ready on the credence table: GIRM 118c, 140). At the Preparation of the Gifts, the server or instituted acolyte brings the cruets to the deacon or priest at the altar, who pours wine and a few drops of water into the chalice (GIRM 142, 178, 190). After Communion, the server brings the water cruet again so the priest, deacon, or instituted acolyte may purify the paten, chalice, and ciboria (GIRM 163, 279). Because cruets hold unconsecrated elements and are not sacred vessels, clear glass is customary and helpful so ministers tell wine from water at a glance."
+liturgical_colors = "Clear glass or noble metal (non-liturgical color)."
+
+[ministers_and_handling]
+ordinary_ministers = ["priest", "deacon", "instituted-acolyte", "altar-server"]
+prepares = ["sacristan", "altar-server"]
+server_boundary = "presents"
+server_boundary_summary = "Cruets are core altar-server equipment: servers prepare them cleanly on the credence table, carry them to the altar with stoppers removed and handles turned toward the priest or deacon, return them promptly off the altar mensa (GIRM 306), and bring the water cruet back for vessel purification after Communion."
+safety_warning = "Remove glass stoppers safely on the credence table before approaching the altar so stoppers are not dropped on stone steps; never leave cruets sitting on the altar table during the Eucharistic Prayer (GIRM 306)."
+
+[audience_text]
+altar_server = "Cruets are among the most frequent items you will handle at Mass. Check before Mass that you know which holds wine and which holds water—clear glass makes this easy. Leave the stoppers safely on the credence tray, carry the cruets steadily to the side of the altar at the Preparation of the Gifts with handles turned toward the priest or deacon (wine first, then water), bow when stepping back, and return them immediately to the credence table. After Communion, bring the water cruet promptly for the priest, deacon, or instituted acolyte to purify the sacred vessels."
+sacristan = "Fill the wine cruet with valid natural grape wine (pure, unspoiled, free of foreign substances, CIC can. 924 §3) and the water cruet with fresh clean water, setting both on a small tray on the credence table (GIRM 118c). Keep stoppers clean to guard against dust or insects, and wash glass cruets thoroughly after Mass so no dried wine residue accumulates."
+general_reader = "Resting quietly on the side credence table, the small pair of wine and water cruets supplies the unconsecrated wine that becomes Christ's Blood and the water mingled into it before the Eucharistic Prayer—as well as the water used afterward to purify the sacred vessels. Clear glass has long been preferred so the server and priest can distinguish wine from water immediately."
+
+[relationships]
+confusable_with = ["pc-obj-flagon", "pc-obj-lavabo-towel"]
+related_objects = ["pc-obj-credence-table", "pc-obj-chalice", "pc-obj-communion-cup"]
+
+[symbolism]
+has_sourced_symbolism = false
+text = ""
+evidence_class = "none-practical"
+attribution = ""
+
+[counterpart_1962]
+relationship = "continued"
+locus_1962 = "Missale Romanum (1962), Rubricae Generales 528; Ritus Servandus VII.4, VII.6, VII.10"
+comparison = "Both the 1962 Roman Missal (using Latin ampullae, RG 528) and the 2008/2011 IGMR (using Latin urceoli, GIRM 118c) appoint paired wine and water cruets on the credence table for the Offertory mixing and ablutions. Postconciliar rubrics omit kissing the cruets and signing the water cruet with the cross, and allow the wine to be carried from the nave in the Procession of the Gifts (GIRM 140)."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N13"
+primary_loci = [
+  "GIRM 118c, 139–142, 163, 178, 190, 279, 306",
+  "CIC (1983) can. 924 §3",
+]
+source_bindings = [
+  "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002",
+  "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021",
+  "edition.catholic-church.missale-romanum.vatican-typica-1962",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

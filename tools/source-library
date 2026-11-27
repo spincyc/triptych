@@ -3539,7 +3539,7 @@ def _library_cache_entry(root: Path, check_binding_fingerprints: bool) -> Path |
     source_root = root / "src/sources"
     if not source_root.is_dir():
         return None
-    pub_roots = [r for r in (root / "src/gpt", root / "src/claude") if r.is_dir()]
+    pub_roots = [r for r in (root / "src/gpt", root / "src/claude", root / "src/gemini") if r.is_dir()]
     src_fp, src_count = tree_fingerprint([source_root])
     pub_fp, pub_count = tree_fingerprint(pub_roots, prune_names=frozenset({"evaluations"})) if pub_roots else ("", 0)
     if src_count + pub_count < LIBRARY_CACHE_FLOOR:
@@ -3746,7 +3746,7 @@ def load_library(
     library = Library(
         root=root,
         source_root=root / "src/sources",
-        publication_roots=[root / "src/gpt", root / "src/claude"],
+        publication_roots=[root / "src/gpt", root / "src/claude", root / "src/gemini"],
     )
     sources_safe, source_scan = _scan_source_tree(library)
     publications_safe = all(

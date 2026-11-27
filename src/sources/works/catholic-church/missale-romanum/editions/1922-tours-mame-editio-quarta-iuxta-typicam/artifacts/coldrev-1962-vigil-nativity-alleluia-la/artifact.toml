@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.coldrev-1962-vigil-nativity-alleluia-la"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Faithful transcription of the conditional Sunday Alleluia printed in the 1922 Tours Mame Missale Romanum (printed p. 18, artifact PDF p. 132), public domain in the United States by pre-1931 publication date. Mechanical normalization of wraps, ligatures, stress accents, and declared j/i orthography adds no authorship."
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+transformation = "Join physical line wraps; remove stress accents; expand ae ligature; normalize barred versicle glyph to V. and Alleluja to calendar Alleluia; preserve every word and pointing."
+provenance = "Read on 200 dpi page image of Mame 1922 PDF p. 132 (printed p. 18, left column, under In Vigilia Nativitatis Domini) on 2026-11-25, and collated word-for-word against CMAA 1962 PDF p. 96 (printed p. 15, right column, no. 102)."
+retrieved = "2026-11-25"
+sha256 = "22d9ff958c6353b07c90911bf8b22175bc5137b0ff0277b4f258bc728e24ff20"
+byte_size = 112
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/coldrev-1962-vigil-nativity-alleluia-la/text.txt"
+encoding = "utf-8"
+indexable = true
+notes = "Conditional Sunday Alleluia Crastina die for vigil-nativity-lord (said only when December 24 falls on a Sunday)."

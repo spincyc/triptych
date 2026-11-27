@@ -15,7 +15,7 @@ leaf supplies its metadata and title lines, the ordered sections of its body
 and apparatus (with any raw keep-together or scope-appendix macro between
 them), and its option choices; doc-local macros stay in its format.tex.
 """
-kinds = ["calendar-reference", "assembly-reference", "mass-ordinary", "mass-comparison", "seasonal-handbook-1962", "seasonal-handbook-postconciliar"]
+kinds = ["calendar-reference", "assembly-reference", "mass-ordinary", "mass-comparison", "seasonal-handbook-1962", "seasonal-handbook-postconciliar", "pictorial-dictionary-postconciliar"]
 
 # Title lines, as each front option and title style uses them: series-line is
 # the small-capitals series line above the title; title-detail the edition or

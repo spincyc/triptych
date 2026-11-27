@@ -1,0 +1,75 @@
+schema_version = 1
+id = "pc-obj-aspergillum-aspersorium"
+category = "service-and-incense"
+sort_order = 504
+plate_id = "pc-plt-06-service"
+composition_plate_ids = []
+plate_position = "Bottom right, holy-water bucket and perforated sprinkler (Plate VI)"
+preferred_english_name = "Aspergillum and Aspersorium"
+latin_headword = "Aspergillum et aspersorium"
+alternate_english_names = ["Holy-Water Sprinkler and Bucket", "Holy-Water Vessel"]
+alternate_latin_names = ["Vas aquae benedicendae", "Vas aquae benedictae"]
+pronunciation_key = "ahs-pehr-JEEL-loom eht ahs-pehr-SOH-ree-oom"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "optional"
+scope_level = "universal-roman"
+territorial_note = ""
+
+[identification]
+summary = "The aspersorium is the portable vessel that holds blessed water, paired with the aspergillum, the handheld sprinkler used to cast holy water over the assembly, altar, or blessed objects."
+appearance = "A tapered cylindrical metal bucket rests on a molded circular foot with an arched wire bail handle hooked to twin rim lugs; beside it lies a turned metal sprinkler handle ending in a perforated hollow sphere (some parishes also use a bristled brush or natural evergreen branch)."
+placement_and_use = "On Sundays, especially during Easter Time, the Order for the Blessing and Sprinkling of Water may replace the ordinary Penitential Act within the Introductory Rites of Mass (GIRM 51; Roman Missal, Appendix II). When the sprinkling rite is scheduled, the clean vessel of water to be blessed (or already blessed, as at the Easter Vigil) is prepared with the sprinkler on the credence table (GIRM 118c). The priest—vested in his chasuble—blesses the water, sprinkles himself and the ministers, and walks through the church sprinkling the faithful while a deacon or server carries the bucket beside him. The same paired instruments serve at funerals, church blessings, and sacramentals in the Book of Blessings."
+liturgical_colors = "Not governed by the seasonal color cycle; made of brass, bronze, pewter, silver-plate, or stainless metal that resists water corrosion."
+
+[ministers_and_handling]
+ordinary_ministers = ["bishop", "priest", "deacon"]
+prepares = ["sacristan", "altar-server"]
+server_boundary = "presents"
+server_boundary_summary = "Servers fill the clean vessel on the credence table before Mass, bring it to the priest for the blessing and sprinkling rite, accompany him through the nave holding the bucket steady, and return both articles cleanly to the credence table afterward (GIRM 51, 118c)."
+safety_warning = "Fill the bucket only half to two-thirds full so water does not slosh over the rim onto stone or polished sanctuary steps and create a slipping hazard for ministers and communicants."
+
+[audience_text]
+altar_server = "Before a Sunday sprinkling rite, confirm that the clean holy-water bucket is filled roughly two-thirds full on the credence table with the sprinkler beside it (GIRM 118c). Bring both to the priest at the chair or altar when signaled, hand him the sprinkler handle first, and walk steadily at his side through the aisle holding the bucket level so he can dip easily without spilling water on the steps. Return both pieces to the credence table as soon as the sprinkling ends."
+sacristan = "Clean and dry the interior liner of the aspersorium regularly so mineral deposits do not accumulate, and inspect the perforated head of the aspergillum to ensure its internal sponge (if fitted) is clean and free of mildew. Set fresh clean water in the vessel on the credence table before any Mass using the Sunday sprinkling rite (GIRM 51, 118c), and pour any remaining blessed water after use into the sacrarium or clean earth."
+general_reader = "On Sundays—especially during the fifty days of Easter Time—the priest may bless water during the Introductory Rites and walk down the aisle sprinkling the congregation with this metal bucket and perforated sprinkler (GIRM 51). This shower of blessed water recalls every baptized Christian’s entry into Christ’s death and resurrection."
+
+[relationships]
+confusable_with = ["pc-obj-cruets", "pc-obj-baptismal-font"]
+related_objects = ["pc-obj-baptismal-font", "pc-obj-credence-table", "pc-obj-chasuble", "pc-obj-cope"]
+
+[symbolism]
+has_sourced_symbolism = true
+text = "The bucket and sprinkler are practical service instruments; the sacred symbolism belongs to the sprinkling rite itself, which recalls the grace and cleansing of Baptism (GIRM 51; Roman Missal, Appendix II). Its classic antiphon echoes the Psalmist: “Thou shalt sprinkle me with hyssop, and I shall be cleansed: thou shalt wash me, and I shall be made whiter than snow” (Ps 50:9 [Heb 51:7])."
+evidence_class = "liturgical-source"
+attribution = "GIRM 51; Roman Missal, Appendix II; Ps 50:9 [Heb 51:7]"
+
+[counterpart_1962]
+relationship = "changed use"
+locus_1962 = "Missale Romanum (1962), Ordo ad aspergendam aquam benedictam, pp. [231]–[233]; Fortescue (1917), p. 16; Fortescue (1943), pp. 79–81"
+comparison = "Although the portable metal bucket and sprinkler continue unchanged in form, the 1962 Roman Missal placed the Sunday Asperges me or Vidi aquam before the start of Mass, with the water blessed in the sacristy and the celebrant wearing a cope before putting on the chasuble. In the 2002/2008 Roman Missal, the Blessing and Sprinkling of Water takes place inside the Introductory Rites in place of the Penitential Act, celebrated by the priest already vested in his chasuble (GIRM 51, 118c; Appendix II)."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N28"
+primary_loci = ["GIRM 51", "GIRM 118c", "Roman Missal (2008/2011) Appendix II", "Tres abhinc annos (1967) 26"]
+source_bindings = [
+  "work.catholic-church.institutio-generalis-missalis-romani",
+  "work.catholic-church.missale-romanum",
+  "work.adrian-fortescue.ceremonies-of-the-roman-rite-described",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

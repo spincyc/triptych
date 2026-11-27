@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "armenian-1823-badarak-anaphora",
+  "title": "Venice 1823 San Lazzaro Lyturgia Armena: core Armenian Badarak Anaphora constituent",
+  "scope": "Core Classical Armenian (Grabar) Anaphora of the Armenian Divine Liturgy (Badarak) from the priest's opening Trinitarian blessing rubric and greeting (Քահանայն դարձցի և խաչակնքեսցէ ✠ ՚ի վերայ ժողովրդեանն, և ասասցէ։ Շնորհք, սէր, և աստուածային սրբարար զօրութիւն...) at printed p. 46 (PDF p. 50) through the Preface, Sanctus incipit (p. 47 / PDF p. 51; excluding the intervening full-page Crucifixion engraving at unnumbered p. [48] / PDF p. 52 as non-text), Post-Sanctus and Institution Narrative (pp. [49]–50 / PDF pp. 53–54), Anamnesis and Oblation (pp. 51–52 / PDF pp. 55–56), and the complete Epiclesis (triple past-tense արարեր blessings, combined փոխարկելով blessing, rubric, and concluding ekphonesis Որպէս զի եղիցի սա... ՚ի թողութիւն մեղաց։) at printed p. 53 (PDF p. 57), immediately before the post-epiclesis general intercessions (Սովաւ շնորհեա՛ զսէր...). Uses the exact same 6 canonical native_path slugs as armenian-1642-badarak-anaphora for 1-to-1 collation.",
+  "transcribed_by": "lane-t1-byz-arm",
+  "stage_ids": [
+    "armenian-eucharistic-stages:venice1823-state"
+  ],
+  "catalogue_witness_ids": [
+    "eastern:arm-1823"
+  ],
+  "components": [
+    "anaphoras"
+  ],
+  "languages": [
+    "hy"
+  ],
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "Title page (PDF p. 5) and all pre-Anaphora service texts (Vesting, Preparation, Enarxis, Readings, Armenian-form Creed with Nicene anathema at pp. 40–41, Offertory, and Kiss of Peace through printed p. 46 upper half)",
+    "Full-page Crucifixion engraving and its two-line devotional verse caption on unnumbered printed p. [48] (PDF p. 52), accounted for as non-text",
+    "Post-Epiclesis general intercessions (Սովաւ շնորհեա՛...), Diptychs (including papal/hierarch rubric at p. 55), Lord's Prayer, Communion, Gospel bodies (pp. 69–70), Dismissal (p. 71), and Alleluia appendix (pp. 72–80)",
+    "Printed page numbers (46–53), signature mark (4 on p. [49]), woodcut headpiece on p. [49], library stamps, and Google Books digitizer stamps"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "1823 Venice San Lazzaro publication",
+    "start_year": 1823,
+    "end_year": 1823,
+    "evidence": [
+      {
+        "source_id": "passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.title",
+        "locus": "Title page printed PA1, PDF p. 5: ԽՈՐՀՐԴԱՏԵՏՐ ՍՐԲՈՅ ՊԱՏԱՐԱԳԻՆ ԸՍՏ ԱՐԱՐՈՂՈՒԹԵԱՆ ՀԱՅԱՍՏԱՆԵԱՅՑ ԵԿԵՂԵՑՒՈՅ Համեմատ օրինակին տպելոյ ՚ի Հռովմ 1677։ ՚Ի ՎԷՆԷՏԻԿ ՚Ի ՎԱՆՍ ՍՐԲՈՅՆ ՂԱԶԱՐՈՒ 1823."
+      }
+    ]
+  },
+  "extent_path": "src/sources/inventories/eucharistic-books/support/armenian-1823-badarak-anaphora-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/armenian-1823-badarak-anaphora-review.json",
+  "witnesses": [
+    {
+      "id": "arm-1823-google",
+      "edition_id": "edition.armenian-church.lyturgia-armena.1823-venice-san-lazzaro",
+      "artifact_id": "artifact.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.google-pdf-81812bd4",
+      "scope_pages": [
+        [
+          50,
+          57
+        ]
+      ],
+      "completeness_evidence": [
+        {
+          "source_id": "passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-facsimile",
+          "locus": "PDF pages 50–57 of 88; complete bounded constituent scope."
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "unit.arm-1823.badarak.01-opening-dialogue",
+      "native_path": [
+        "anaphoras",
+        "badarak",
+        "01-opening-dialogue"
+      ],
+      "source_order": 1,
+      "language": "hy",
+      "component": "anaphoras",
+      "kind": "dialogue-with-rubrics",
+      "witness_id": "arm-1823-google",
+      "witness_pages": [
+        [
+          50,
+          50
+        ]
+      ],
+      "passage_id": "passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-01-opening-dialogue",
+      "text_sha256": "05503c1269e6edc58bfcb5152e9e60bec9f0feb4f3dfacaeea6bd48f5813e42f"
+    },
+    {
+      "unit_id": "unit.arm-1823.badarak.02-preface-thanksgiving",
+      "native_path": [
+        "anaphoras",
+        "badarak",
+        "02-preface-thanksgiving"
+      ],
+      "source_order": 2,
+      "language": "hy",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "arm-1823-google",
+      "witness_pages": [
+        [
+          51,
+          51
+        ]
+      ],
+      "passage_id": "passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-02-preface-thanksgiving",
+      "text_sha256": "93c4bd4bffc62a9fd2e813c41bf9309a16a00a7f5a27bae1e1adce042476faff"
+    },
+    {
+      "unit_id": "unit.arm-1823.badarak.03-sanctus",
+      "native_path": [
+        "anaphoras",
+        "badarak",
+        "03-sanctus"
+      ],
+      "source_order": 3,
+      "language": "hy",
+      "component": "anaphoras",
+      "kind": "sanctus-with-rubrics",
+      "witness_id": "arm-1823-google",
+      "witness_pages": [
+        [
+          51,
+          51
+        ]
+      ],
+      "passage_id": "passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-03-sanctus",
+      "text_sha256": "7200b0b68ead1d9b889ea85879c463ba836fbe8f879703dad9a45bf09d8a3865"
+    },
+    {
+      "unit_id": "unit.arm-1823.badarak.04-post-sanctus-institution",
+      "native_path": [
+        "anaphoras",
+        "badarak",
+        "04-post-sanctus-institution"
+      ],
+      "source_order": 4,
+      "language": "hy",
+      "component": "anaphoras",
+      "kind": "institution-narrative-with-rubrics",
+      "witness_id": "arm-1823-google",
+      "witness_pages": [
+        [
+          53,
+          54
+        ]
+      ],
+      "passage_id": "passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-04-post-sanctus-institution",
+      "text_sha256": "3e1bfbe30572c79e6aa78992bef32a81144d7af26cfb556c1be62a393a6bce8d"
+    },
+    {
+      "unit_id": "unit.arm-1823.badarak.05-anamnesis-oblation",
+      "native_path": [
+        "anaphoras",
+        "badarak",
+        "05-anamnesis-oblation"
+      ],
+      "source_order": 5,
+      "language": "hy",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "arm-1823-google",
+      "witness_pages": [
+        [
+          55,
+          56
+        ]
+      ],
+      "passage_id": "passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-05-anamnesis-oblation",
+      "text_sha256": "5f80c8d47ac0b331d979d9bd4ed229f5ccc4601aff51999e5be33b4c3a4f9ca4"
+    },
+    {
+      "unit_id": "unit.arm-1823.badarak.06-epiclesis",
+      "native_path": [
+        "anaphoras",
+        "badarak",
+        "06-epiclesis"
+      ],
+      "source_order": 6,
+      "language": "hy",
+      "component": "anaphoras",
+      "kind": "epiclesis-with-rubrics",
+      "witness_id": "arm-1823-google",
+      "witness_pages": [
+        [
+          56,
+          57
+        ]
+      ],
+      "passage_id": "passage.armenian-church.lyturgia-armena.1823-venice-san-lazzaro.badarak-anaphora-06-epiclesis",
+      "text_sha256": "38d674c1cc5d5f1967216b6be0151d2be7cdc9fc99cd99c0a3cbae8d02a04664"
+    }
+  ]
+}

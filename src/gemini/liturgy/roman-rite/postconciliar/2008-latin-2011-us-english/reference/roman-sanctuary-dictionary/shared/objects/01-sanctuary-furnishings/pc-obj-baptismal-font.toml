@@ -1,0 +1,83 @@
+schema_version = 1
+id = "pc-obj-baptismal-font"
+category = "sanctuary-furnishings"
+sort_order = 107
+plate_id = "pc-plt-10-communion-sacramental"
+composition_plate_ids = []
+plate_position = "See Plate X, bottom right"
+preferred_english_name = "Baptismal Font"
+latin_headword = "Fons baptismalis"
+alternate_english_names = ["Font"]
+alternate_latin_names = ["Fons baptismatis"]
+pronunciation_key = "fohns bahp-tees-MAH-lees"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "required"
+scope_level = "universal-roman"
+territorial_note = ""
+
+[identification]
+summary = "The baptismal font is the permanent stone or metal water basin required in every parish church for administering the Sacrament of Baptism."
+appearance = "Illustrated at bottom right of Plate X as a carved octagonal stone basin decorated with foliate relief panels, raised on a matching paneled pedestal and stepped plinth, with a ribbed domed cover resting ajar to expose the smooth interior basin."
+placement_and_use = "The baptismal font is governed by universal canon law (CIC can. 858 §1, requiring a font in every parish church), the Rite of Baptism for Children (General Introduction 25, 45–47), and the Easter Vigil rubrics of the Roman Missal. Local architecture places it either in a distinct baptistery or in a prominent, clearly visible area near the church entrance or sanctuary so the assembly can participate in Baptisms and process to the font at the Easter Vigil; its design accommodates clean flowing or poured water (and, where provided, immersion). Bishops, priests, and deacons are the ordinary ministers of Baptism (CIC can. 861 §1)."
+liturgical_colors = "Remains in its natural carved stone, wood, or metal finish; during Easter Time the tall white Paschal Candle stands beside it."
+
+[ministers_and_handling]
+ordinary_ministers = ["bishop", "priest", "deacon"]
+prepares = ["sacristan", "deacon", "altar-server"]
+server_boundary = "recognizes-only"
+server_boundary_summary = "Servers walk in procession to the font with cross, candles, ritual book, or drying towels during Baptisms and the Easter Vigil, never pouring sacramental water or disposing of blessed baptismal water improperly."
+safety_warning = "Never empty blessed baptismal water into an ordinary sink or sewer drain; blessed water must be poured reverently into the sacrarium or directly into clean earth. Wipe any splashed water from stone or tiled steps immediately to prevent slipping."
+
+[audience_text]
+altar_server = "You will serve around the octagonal baptismal font during parish Baptisms and the Easter Vigil procession. Your role is to accompany the priest or deacon carrying the processional cross, lighted candles, the ritual book, or a clean tray with linen towels and the closed holy-oil stocks when requested. Leave the pouring of water and all anointings to the clergy, watch for slippery droplets on the floor around the basin, and never dump blessed baptismal water down an ordinary drain."
+sacristan = "Before every Baptism and especially before the Easter Vigil, scrub the font basin thoroughly and fill it with fresh, clean water (warmed gently when infants are baptized). Keep the removable domed cover clean and steady when lifted, stage clean linen towels, a pouring shell or pitcher, the baptismal candle, and the labeled Oil of Catechumens and Sacred Chrism nearby, and verify that any drained blessed water flows strictly into the sacrarium or clean earth."
+general_reader = "Required in every parish church by canon law, the baptismal font marks the threshold of Christian life where believers are reborn of water and the Holy Spirit. Traditionally carved with eight sides to recall the eighth day of Christ's Resurrection, the postconciliar font is placed prominently where the whole parish can gather around it for Baptisms and return to it during the Easter Vigil to renew their baptismal promises."
+
+[relationships]
+confusable_with = ["pc-obj-aspergillum-aspersorium"]
+related_objects = ["pc-obj-holy-oils-stocks", "pc-obj-aspergillum-aspersorium", "pc-obj-processional-cross", "pc-obj-altar-candles"]
+
+[symbolism]
+has_sourced_symbolism = true
+text = "The ancient Roman Easter Vigil blessing calls the baptismal font the motherly womb from which the Church brings forth new children in Christ, uniting the Lord's teaching in John 3:5 (“unless a man be born again of water and the Holy Ghost, he cannot enter into the kingdom of God.”) with St. Paul's mystery of death and resurrection in Rom 6:3–4 (“Know you not that all we who are baptized in Christ Jesus are baptized in his death? For we are buried together with him by baptism into death: that, as Christ is risen from the dead by the glory of the Father, so we also may walk in newness of life.”). Early Christian catechesis, including St. Cyril of Jerusalem, expounds the font as both tomb and womb of new creation, reflected architecturally in the classic octagonal basin of the eighth day."
+evidence_class = "liturgical-source"
+attribution = "Roman Missal Easter Vigil; CCC 1237–1243; John 3:5; Rom 6:3–4; St. Cyril of Jerusalem, Mystagogical Catechesis 2.4"
+
+[counterpart_1962]
+relationship = "materially changed"
+locus_1962 = "Missale Romanum (1962), Vigilia Paschalis (cf. Missale Romanum 1922, Holy Saturday); Rituale Romanum (1925/1952), Tit. II"
+comparison = "Both 1962 discipline and CIC (1983) can. 858 require a baptismal font in every parish church. Whereas 1962 practice ordinarily enclosed the font inside a gated baptistery near the church entrance and blessed the year's water at the Easter Vigil with an infusion of Oil of Catechumens and Sacred Chrism directly into the basin, postconciliar rites bless fresh water at each Baptism outside Easter Time without pouring oils into the font and favor congregationally visible placement suited to pouring or immersion."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N07"
+primary_loci = [
+  "CIC (1983) can. 858, can. 861 §1",
+  "Ordo Baptismi Parvulorum (General Introduction 25, 45–47)",
+  "Roman Missal (2008/2011) Easter Vigil Blessing of Baptismal Water",
+  "CCC 1237–1243",
+]
+source_bindings = [
+  "edition.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-codex-2026-07-25",
+  "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002",
+  "edition.catholic-church.catechism.english-usccb-second-2019",
+  "edition.catholic-church.missale-romanum.vatican-typica-1962",
+  "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+  "edition.cyril-of-jerusalem.catechetical-lectures.english-gifford-npnf2-7-newadvent-web-2026-07-27",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

@@ -265,14 +265,39 @@
       return node;
     }
 
+    function sourceHref(value) {
+      const text = String(value || '');
+      if (/^(?:edition|artifact|passage)\.[a-z0-9_.-]+$/i.test(text)) {
+        return '../sources/#' + encodeURIComponent(text);
+      }
+      return null;
+    }
+
     function fact(list, label, value) {
       if (value === null || value === undefined || value === '') return;
+      const text = T.formatLocator ? T.formatLocator(String(value)) : String(value);
       list.appendChild(T.el('dt', null, label));
-      list.appendChild(T.el('dd', null, String(value)));
+      const dd = T.el('dd');
+      const href = sourceHref(text);
+      if (href) {
+        const anchor = T.el('a', 'study-source-link', text);
+        anchor.href = href;
+        dd.appendChild(anchor);
+      } else {
+        dd.textContent = text;
+      }
+      list.appendChild(dd);
     }
 
     const overview = T.el('div', 'study-overview');
-    const intro = section(overview, 'Study this selection', 'study-intro');
+    const overviewDetails = T.el('details', 'study-overview-disclosure');
+    const summaryText = [
+      'Study overview',
+      study.edition,
+      study.resolved && study.resolved.formulary
+    ].filter(Boolean).join(' · ');
+    overviewDetails.appendChild(T.el('summary', null, summaryText));
+    const intro = section(overviewDetails, 'Study this selection', 'study-intro');
     intro.appendChild(T.el('p', null,
       'The reading below retains its source text. This apparatus reports selected calendar, coverage, placement, and source identities.'));
     const identity = T.el('dl', 'study-facts');
@@ -282,7 +307,7 @@
     fact(identity, 'Standing', study.resolved && study.resolved.standing);
     intro.appendChild(identity);
     if (study.calendar) {
-      const node = section(overview, 'Calendar result', 'study-calendar');
+      const node = section(overviewDetails, 'Calendar result', 'study-calendar');
       const facts = T.el('dl', 'study-facts');
       fact(facts, 'Civil date', study.calendar.date);
       fact(facts, 'Calendar', study.calendar.calendar);
@@ -304,15 +329,23 @@
     }
 
     if (study.coverage.length) {
-      const node = section(overview, 'Coverage', 'study-coverage');
+      const node = section(overviewDetails, 'Coverage', 'study-coverage');
       study.coverage.forEach(function (row) {
         const item = T.el('div', 'study-coverage-row');
         const facts = T.el('dl', 'study-facts');
         fact(facts, 'Scope', row.scope);
         fact(facts, 'State', row.state);
         fact(facts, 'Completeness', row.completeness);
+        const deduped = new Map();
         row.reasons.forEach(function (reason) {
-          fact(facts, 'Reason', reason.kind);
+          const key = [reason.kind || '', reason.basis || '', reason.applicability || ''].join('|');
+          const held = deduped.get(key);
+          if (held) held.count += 1;
+          else deduped.set(key, { reason: reason, count: 1 });
+        });
+        deduped.forEach(function (entry) {
+          const reason = entry.reason;
+          fact(facts, 'Reason', reason.kind + (entry.count > 1 ? ' (×' + entry.count + ')' : ''));
           fact(facts, 'Source basis', reason.basis);
           fact(facts, 'Applicability', reason.applicability);
         });
@@ -322,7 +355,7 @@
     }
 
     if (study.executionCoverage) {
-      const node = section(overview, 'Execution-scoped historical petitions', 'study-execution-coverage');
+      const node = section(overviewDetails, 'Execution-scoped historical petitions', 'study-execution-coverage');
       const facts = T.el('dl', 'study-facts');
       fact(facts, 'Source petitions', study.executionCoverage.petitions);
       fact(facts, 'Unresolved executions', study.executionCoverage.unresolved);
@@ -332,7 +365,7 @@
     }
 
     if (study.unresolvedChoices.length) {
-      const node = section(overview, 'Unresolved choices', 'study-choices');
+      const node = section(overviewDetails, 'Unresolved choices', 'study-choices');
       study.unresolvedChoices.forEach(function (choice) {
         const item = T.el('div', 'study-choice');
         const facts = T.el('dl', 'study-facts');
@@ -382,13 +415,14 @@
     }
 
     if (study.nameExecutionCoverage) {
-      const node = section(overview, 'Finite name execution coverage', 'study-name-execution');
+      const node = section(overviewDetails, 'Finite name execution coverage', 'study-name-execution');
       const facts = T.el('dl', 'study-facts');
       fact(facts, 'Bound occurrences', study.nameExecutionCoverage.bound);
       fact(facts, 'Unresolved occurrences', study.nameExecutionCoverage.unresolved);
       fact(facts, 'Recovered historical named English', 0);
       node.appendChild(facts);
     }
+    overview.appendChild(overviewDetails);
 
     attached.forEach(function (row) {
       const event = row.event;

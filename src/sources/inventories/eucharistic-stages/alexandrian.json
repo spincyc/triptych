@@ -387,7 +387,10 @@
       ],
       "limitations": "Creed wording and the placement of sampled Cyril intercessions are directly image-checked. Their exact differences from Tuki’s unidentified manuscript exemplar remain uncollated. Chalcedon and omitted commemorations remain Brightman’s scholarly description; no specific removed name or pope addition is inferred. The native binding certifies the complete Arabic Creed only (139 normalized words on three pages), excluding parallel Coptic, rubrics and every other book division; it is not a complete Ordinary or missal.",
       "reception": "Brightman expressly identifies Tuki and derivatives as the Coptic Catholic modified rite; no parish adoption date established.",
-      "text_binding": "native-book:tuki-1736-arabic-creed"
+      "text_bindings": [
+        "native-book:tuki-1736-arabic-creed",
+        "native-book:coptic-1736-basil-anaphora"
+      ]
     },
     {
       "id": "alexandrian-stages-coptic1898",
@@ -684,7 +687,7 @@
       ],
       "witness_label": "ሥርዓተ፡ ቅዳሴ፡ ዘቤተ፡ ክርስቲያን፡ ካቶሊካዊት፡ እንተ፡ በኢትዮጵያ። (Asmara, Catholic press, Ethiopian year ፲፱፻፯); ULB Bonn copy",
       "summary": "The original book is now inspected. Propaganda Fide for Oriental Rite affairs approved the Missale Aethiopicum on 25 February 1913 as duly revised and purged of errors, for priests using the rite received in Abyssinia; the Vicar Apostolic of Eritrea gave the imprimatur at Asmara on 12 April 1913. The title-page imprint year is Ethiopian 1907. The Apostles anaphora asks the Father to send the Holy Spirit and power at the receiving of the bread and cup and, in the second person, to make it the Body and Blood.",
-      "text_coverage": "not-transcribed",
+      "text_coverage": "partial",
       "evidence": [
         {
           "source_id": "alexandrian-stages-asmara-scan",
@@ -718,7 +721,8 @@
         }
       ],
       "limitations": "Original title, approval and one prayer are inspected; whole-book collation with 1890 is impossible without that book. Printed page numerals at the anaphora are not securely legible, so loci are PDF pages. The approbation’s claim of revision is unquantified. The Keren studies’ 1913 matches the approbation year; no separate 1913 impression is evidenced, so the stage’s publication bounds follow the imprint (1914/15).",
-      "reception": "Roman approbation for the priests of the rite received in Abyssinia and an Eritrean vicar apostolic’s imprimatur are directly evidenced. Use in Ethiopian, as distinct from Eritrean, territory and dated local adoption are not established."
+      "reception": "Roman approbation for the priests of the rite received in Abyssinia and an Eritrean vicar apostolic’s imprimatur are directly evidenced. Use in Ethiopian, as distinct from Eritrean, territory and dated local adoption are not established.",
+      "text_binding": "native-book:geez-1914-apostles-anaphora"
     },
     {
       "id": "alexandrian-stages-coptic1971",

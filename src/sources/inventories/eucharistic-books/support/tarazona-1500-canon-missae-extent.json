@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-extent",
+  "book_id": "tarazona-1500-canon-missae",
+  "title": "Tarazona 1500 (Missale Tirasonense): complete strict Canon Missae constituent — complete constituent extent and page account",
+  "status": "complete",
+  "unresolved": [],
+  "omitted": [],
+  "expected_unit_ids": [
+    "unit.tarazona-1500.canon.te-igitur",
+    "unit.tarazona-1500.canon.memento-vivorum",
+    "unit.tarazona-1500.canon.communicantes",
+    "unit.tarazona-1500.canon.hanc-igitur",
+    "unit.tarazona-1500.canon.quam-oblationem",
+    "unit.tarazona-1500.canon.qui-pridie",
+    "unit.tarazona-1500.canon.simili-modo",
+    "unit.tarazona-1500.canon.unde-et-memores",
+    "unit.tarazona-1500.canon.supra-quae",
+    "unit.tarazona-1500.canon.supplices",
+    "unit.tarazona-1500.canon.memento-defunctorum",
+    "unit.tarazona-1500.canon.nobis-quoque",
+    "unit.tarazona-1500.canon.per-quem",
+    "unit.tarazona-1500.canon.per-ipsum",
+    "unit.tarazona-1500.canon.concluding-response"
+  ],
+  "scope": "Complete strict Eucharistic Canon of the 13 February 1500 Tarazona-use missal printed at Pamplona by Arnaldo Guillén de Brocar (Bizkaia INC-35, PDF pp. 350-354): from the woodcut initial Te igitur at PDF p. 350 col. 1 through Et uoce alta dicit. Per omnia secula seculorum. R. Amen. at PDF p. 354 col. 1 immediately before Oremus preceptis salutaribus / Pater noster. Includes all printed headings, action rubrics, red N. placeholders and 26 printed crosses (✠) under declared selective Latin reading normalization.",
+  "pages": [
+    {
+      "witness_id": "tarazona-1500-brocar-pdf",
+      "ranges": [
+        [
+          1,
+          349
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Library card, arms, calendar, local-use instruction, Temporale, Mass preparation and Prefaces/Sanctus through PDF p. 349."
+    },
+    {
+      "witness_id": "tarazona-1500-brocar-pdf",
+      "ranges": [
+        [
+          350,
+          350
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.tarazona-1500.canon.te-igitur",
+        "unit.tarazona-1500.canon.memento-vivorum",
+        "unit.tarazona-1500.canon.communicantes"
+      ],
+      "description": "PDF p. 350 (sig. pp): Te igitur, Oratio pro uiuis / Memento, Infra actionem / Communicantes through Iohannis."
+    },
+    {
+      "witness_id": "tarazona-1500-brocar-pdf",
+      "ranges": [
+        [
+          351,
+          351
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.tarazona-1500.canon.communicantes",
+        "unit.tarazona-1500.canon.hanc-igitur",
+        "unit.tarazona-1500.canon.quam-oblationem",
+        "unit.tarazona-1500.canon.qui-pridie",
+        "unit.tarazona-1500.canon.simili-modo"
+      ],
+      "description": "PDF p. 351: completion of Communicantes, Hanc igitur, Quam oblationem, Qui pridie (Hoc est enim corpus meum.), and start of Simili modo."
+    },
+    {
+      "witness_id": "tarazona-1500-brocar-pdf",
+      "ranges": [
+        [
+          352,
+          352
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.tarazona-1500.canon.simili-modo",
+        "unit.tarazona-1500.canon.unde-et-memores",
+        "unit.tarazona-1500.canon.supra-quae",
+        "unit.tarazona-1500.canon.supplices"
+      ],
+      "description": "PDF p. 352: completion of Simili modo (Hic est enim calix...), Unde et memores, Supra que, and Supplices through omni ✠ be-."
+    },
+    {
+      "witness_id": "tarazona-1500-brocar-pdf",
+      "ranges": [
+        [
+          353,
+          353
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.tarazona-1500.canon.supplices",
+        "unit.tarazona-1500.canon.memento-defunctorum",
+        "unit.tarazona-1500.canon.nobis-quoque",
+        "unit.tarazona-1500.canon.per-quem",
+        "unit.tarazona-1500.canon.per-ipsum"
+      ],
+      "description": "PDF p. 353: completion of Supplices, Memento defunctorum, Nobis quoque (with Hic non dicitur: Amen:), Per quem, and Per ipsum."
+    },
+    {
+      "witness_id": "tarazona-1500-brocar-pdf",
+      "ranges": [
+        [
+          354,
+          354
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.tarazona-1500.canon.concluding-response"
+      ],
+      "description": "PDF p. 354 col. 1 top lines 1-3: Et uoce alta dicit. Per omnia secula seculorum. R. Amen.; Oremus / Pater noster / Libera nos below excluded."
+    },
+    {
+      "witness_id": "tarazona-1500-brocar-pdf",
+      "ranges": [
+        [
+          355,
+          658
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Post-Canon Ordinary, Sanctorale, Commons, votive Masses and Pamplona 1500 colophon (p. 656)."
+    }
+  ]
+}

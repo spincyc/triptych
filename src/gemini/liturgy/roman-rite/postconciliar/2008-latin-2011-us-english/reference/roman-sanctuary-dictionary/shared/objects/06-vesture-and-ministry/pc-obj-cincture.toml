@@ -1,0 +1,76 @@
+schema_version = 1
+id = "pc-obj-cincture"
+category = "vesture-and-ministry"
+sort_order = 602
+plate_id = "pc-plt-08-vesture-ordained"
+composition_plate_ids = []
+plate_position = "Tied at waist of center deacon and coiled in lower right inset (Plate VIII)"
+preferred_english_name = "Cincture"
+latin_headword = "Cingulum"
+alternate_english_names = ["Girdle", "Waist Cord"]
+alternate_latin_names = ["Zona"]
+pronunciation_key = "CHEEN-goo-loom"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "required"
+scope_level = "universal-roman"
+territorial_note = ""
+
+[identification]
+summary = "The cincture is a braided cord or cloth band tied around the waist over an unfitted alb to gather its folds neatly and hold its length clear of the floor."
+appearance = "Shown looped at the waist of the center deacon in Plate VIII with twin tasseled ends hanging neatly at his left side, and coiled in the lower right inset, the cincture is a supple rope cord finished with fringed tassels at both ends."
+placement_and_use = "Universal Roman law directs that the alb be secured at the waist with a cincture unless the alb is specifically tailored to fit cleanly without one (GIRM 336; RS 122; Caeremoniale Episcoporum 65). Any bishop, priest, deacon, instituted acolyte, instituted lector, or altar server wearing an unfitted alb ties the cincture smoothly around the waist so that the garment hangs evenly at ankle height. For a deacon serving without a dalmatic, the cincture may also steady the diagonal stole at the waist, whereas the postconciliar priest’s straight stole hangs freely over or beside the cincture rather than crossing beneath it (GIRM 340)."
+liturgical_colors = "Ordinarily white, though a cord matching the liturgical color of the day may be worn by clergy or by servers where parish custom avoids confusing colored cords with clerical insignia."
+
+[ministers_and_handling]
+ordinary_ministers = ["bishop", "priest", "deacon", "instituted-acolyte", "instituted-lector", "altar-server"]
+prepares = ["sacristan", "altar-server"]
+server_boundary = "handles"
+server_boundary_summary = "Altar servers tie the cincture neatly around the waist whenever wearing an unfitted alb, keeping the tasseled ends even and well clear of the floor and never confusing a colored waist cord with an ordained stole."
+safety_warning = "Tie the cincture securely so loose cord ends cannot drag on sanctuary steps, snag on pew corners or candle stands, or brush against open candle flames and hot thuribles."
+
+[audience_text]
+altar_server = "Whenever your alb is loose-fitting rather than tailored to sit smoothly without a belt, wrap a cincture around your waist and tie it cleanly at the side so the tasseled ends hang evenly above your knees (GIRM 336). Keep the knot tight so cords never dangle near candle flames or steps, and remember that even a colored server cincture is only a practical waist cord—never a clerical stole."
+sacristan = "Keep braided cinctures neatly hung or coiled beside the albs so cords do not tangle or fray at the tassels. Provide white cinctures as the standard pairing for clergy and servers, and verify that unfitted albs always have a matching cincture available in the vesting sacristy (GIRM 336)."
+general_reader = "Because a traditional linen alb is cut generously, a woven rope cincture gathers it comfortably at the waist and adjusts the hem so it clears the floor cleanly. Under current Roman law, the cincture is required whenever an alb is not tailored to fit smoothly on its own (GIRM 336)."
+
+[relationships]
+confusable_with = ["pc-obj-stole"]
+related_objects = ["pc-obj-alb", "pc-obj-amice", "pc-obj-stole"]
+
+[symbolism]
+has_sourced_symbolism = true
+text = "The General Instruction prescribes the cincture strictly for the practical task of fastening an unfitted alb at the waist (GIRM 336). Distinct from that rubrical rule, the traditional Roman sacristy vesting prayer asks God to gird the minister with the belt of purity, continence, and chastity, echoing the Gospel and Epistles—“Let your loins be girt and lamps burning in your hands” (Luke 12:35) and “Stand therefore, having your loins girt about with truth” (Eph 6:14)—while Amalarius of Metz likewise reads the cincture as an emblem of self-mastery."
+evidence_class = "devotional-tradition"
+attribution = "Practical norm: GIRM 336; devotional tradition: Roman sacristy vesting prayer (Ad Cingulum); Luke 12:35; Eph 6:14; Amalarius of Metz, Liber Officialis II.22"
+
+[counterpart_1962]
+relationship = "optional"
+locus_1962 = "Missale Romanum (1962), Ritus Servandus I.3; Praeparatio ad Missam (Ad Cingulum)"
+comparison = "In the 1962 Roman Missal, the cincture was unconditionally mandatory with every alb both to gather the tunic and to anchor the priest’s crossed stole across the breast (RS I.3). Under the 2002/2008 GIRM, the cincture becomes conditionally optional whenever an alb is tailored to fit cleanly without one (GIRM 336), and the priest’s stole hangs straight rather than crossing through the cincture (GIRM 340)."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N32"
+primary_loci = ["GIRM 336", "GIRM 340", "Redemptionis Sacramentum 121–122", "Caeremoniale Episcoporum (1984) 65"]
+source_bindings = [
+  "work.catholic-church.institutio-generalis-missalis-romani",
+  "work.catholic-church.missale-romanum",
+  "work.catholic-church.caeremoniale-episcoporum",
+  "work.amalarius-of-metz.liber-de-ordine-antiphonarii",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

@@ -1,0 +1,75 @@
+schema_version = 1
+id = "pc-obj-missal-stand"
+category = "liturgical-books"
+sort_order = 405
+plate_id = "pc-plt-05-books"
+composition_plate_ids = []
+plate_position = "Top left, low angled stand beneath the open Missal (Plate V)"
+preferred_english_name = "Missal Stand"
+latin_headword = "Pulpitum"
+alternate_english_names = ["Altar bookstand", "Missal cushion"]
+alternate_latin_names = ["Legile", "Cussinus"]
+pronunciation_key = "POOL-pee-toom"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "customary"
+scope_level = "customary"
+territorial_note = ""
+
+[identification]
+summary = "A low, angled wooden, metal, or cushioned bookrest placed on the altar at the Preparation of the Gifts to support the open Roman Missal at a readable slope without obstructing the assembly's view."
+appearance = "At top left of Plate V, directly beneath the open Roman Missal, the low hinged wooden stand features a shallow front ledge that holds the heavy volume securely from sliding while keeping the book well below eye level across the altar."
+placement_and_use = "Although neither a stand nor a cushion is expressly mandated by name in GIRM 118 or 306, a low stand or firm cushion is widely customary on the altar during the Liturgy of the Eucharist (GIRM 139, 306). Kept off the bare mensa during the Introductory Rites and Liturgy of the Word, it is brought to the altar at the Preparation of the Gifts and positioned cleanly to the left of the corporal—never overlapping the linen and low enough not to impede the faithful's view of what takes place at the altar (GIRM 306--307)—then removed after vessel purification or Mass."
+liturgical_colors = "Finished in natural wood, brass, or subtle metal harmonious with the altar; where a fabric Missal cushion is used, it may match the white altar cloth or the liturgical color of the day."
+
+[ministers_and_handling]
+ordinary_ministers = ["bishop", "priest"]
+prepares = ["sacristan", "deacon", "instituted-acolyte", "altar-server"]
+server_boundary = "handles"
+server_boundary_summary = "Servers keep the Missal stand off the altar mensa before the Preparation of the Gifts, carry it to the altar alongside the Roman Missal at the Preparation of the Gifts, set it neatly to the left of the corporal without overlapping the linen, and remove it cleanly after purification or Mass."
+safety_warning = "Verify that hinged wooden or metal stands lock firmly at a low angle before setting the heavy Roman Missal upon them so the stand cannot collapse during the Eucharistic Prayer, and never set any edge of the stand over the unfolded corporal."
+
+[audience_text]
+altar_server = "Look directly beneath the open Roman Missal at top left of Plate V to see the low angled Missal stand. Keep the stand on the credence table—never sitting empty on the bare altar—until the Preparation of the Gifts (GIRM 139, 306). When you carry it to the altar, double-check that its folding hinge is locked securely, set it squarely to the left of the unfolded corporal without touching the linen or edging toward a candle, and remove it neatly after purification when directed."
+sacristan = "Select a low-profile, sturdy Missal stand (or firm cushion) proportioned to the altar so it supports the heavy third-edition Roman Missal without forming a visual barrier between the celebrant and the assembly (GIRM 307). Check hinges, lips, and protective felt base pads regularly so the stand neither collapses nor scuffs the altar cloth, and stage it on the credence table rather than on the mensa before Mass (GIRM 306)."
+general_reader = "This low angled wooden rest—or, in some churches, a firm tailored cushion—supports the heavy Roman Missal at a legible slope for the priest during the Liturgy of the Eucharist. It remains off the altar during the first half of Mass so the mensa stays uncluttered, and its low height preserves an unobstructed view of the Eucharistic action (GIRM 306--307)."
+
+[relationships]
+confusable_with = ["pc-obj-ambo"]
+related_objects = ["pc-obj-roman-missal", "pc-obj-altar", "pc-obj-credence-table", "pc-obj-corporal"]
+
+[symbolism]
+has_sourced_symbolism = false
+text = ""
+evidence_class = "none-practical"
+attribution = ""
+
+[counterpart_1962]
+relationship = "continued"
+locus_1962 = "Missale Romanum (1962), Rubricae Generales 527; Ritus Servandus VI.5, XI.1"
+comparison = "The Missal stand or cushion continues in practical form from the 1962 Roman Missal, which expressly required a cushion or bookstand beneath the Missal on the altar from the start of Mass and directed the server to move it from the Epistle side to the Gospel side and back (RG 527; RS VI.5, XI.1). In the postconciliar Roman Rite, it is neither mandated by name nor kept on the altar before the Preparation of the Gifts, but set once on the mensa for the Liturgy of the Eucharist and removed afterward (GIRM 139, 306)."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N24"
+primary_loci = ["GIRM 139, 306--307 (practical custom supporting the altar Missal)"]
+source_bindings = [
+  "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002",
+  "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021",
+  "passage.catholic-church.missale-romanum.vatican-typica-1962.rubricae-generales-altar-preparation",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

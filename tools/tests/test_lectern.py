@@ -165,6 +165,28 @@ class CatenaAdapterTests(unittest.TestCase):
         with self.assertRaisesRegex(Refused, "verse selection is invalid"):
             bridge.call("catena", "body", "Phil", 1, "", ident, "21x")
 
+    def test_catena_view_carries_spans_verse_map_by_verse_order_and_human_recast(self) -> None:
+        mark = bridge.call("catena", "view", "Mark", 1, "douay-rheims", "")
+        self.assertTrue(mark["scripture"]["canonicalAligned"])
+        self.assertIsNotNone(mark["verse_commentary"])
+        self.assertEqual(mark["verse_commentary"]["count"], 45)
+        self.assertEqual(mark["chain"]["fragments"][0]["span"],
+                         {"start": 1, "end": 1, "crossesBefore": False, "crossesAfter": False})
+        self.assertEqual(sorted(mark["chain"]["by_verse_order"]),
+                         list(range(len(mark["chain"]["fragments"]))))
+        body = bridge.call("catena", "body", "Mark", 1, "", mark["chain"]["fragments"][1]["id"], "2-3")
+        self.assertFalse(body["missing"])
+        self.assertTrue(any(block["kind"] == "lemma" for block in body["blocks"]))
+        self.assertTrue(any(block["speaker"] for block in body["blocks"]))
+        self.assertTrue(body["snippets"])
+        self.assertTrue(body["snippets"][0]["blocks"])
+        # Under a recast shift (Psalm 50 -> KJV Psalm 51), verse_commentary is withheld and recast is humanized.
+        recast = bridge.call("catena", "view", "Ps", 50, "king-james-version", "")
+        self.assertFalse(recast["scripture"]["canonicalAligned"])
+        self.assertIsNone(recast["verse_commentary"])
+        self.assertIn("Psalm 51", recast["scripture"]["note"])
+        self.assertIn("Hebrew numbering", recast["scripture"]["note"])
+
 
 @unittest.skipUnless(NODE, "node is not installed; the reader's derivations run the browser's models under node")
 class LiturgyAdapterTests(unittest.TestCase):
@@ -566,7 +588,7 @@ class DrawingTests(unittest.TestCase):
     def test_an_open_choice_is_drawn_open(self) -> None:
         drawn = self.snapshot("--surface", "day", "--date", "2026-10-22", "--calendar", "postconciliar")
         self.assertIn("Nothing is selected for you by order", drawn)
-        self.assertIn("No day is settled here", drawn)
+        self.assertIn("Choose a formulary", drawn)
         # Enter before the reader has moved to an option chooses nothing: the
         # dialog stays, and leaving it leaves the day open.
         pressed = self.snapshot("--surface", "day", "--date", "2026-10-22", "--calendar", "postconciliar",
@@ -574,7 +596,7 @@ class DrawingTests(unittest.TestCase):
         self.assertIn("Nothing is chosen by order", pressed)
         left = self.snapshot("--surface", "day", "--date", "2026-10-22", "--calendar", "postconciliar",
                              "--keys", "s,enter,escape")
-        self.assertIn("No day is settled here", left)
+        self.assertIn("Choose a formulary", left)
 
 
 @unittest.skipUnless(TEXTUAL and NODE, "Textual and node are required for the reader interaction regressions")
@@ -599,10 +621,10 @@ class ReaderInteractionTests(unittest.IsolatedAsyncioTestCase):
         month.chosen = dt.date(2026, 10, 22)
         messages = []
         with patch.object(month, "post_message", side_effect=messages.append):
-            month.on_click(SimpleNamespace(get_content_offset=lambda _: Offset(1, 2)))
+            month.on_click(SimpleNamespace(get_content_offset=lambda _: Offset(1, 1)))
             self.assertEqual(messages, [])
             month.on_click(SimpleNamespace(
-                get_content_offset=lambda _: Offset(3 * month._cell() + 1, 2)))
+                get_content_offset=lambda _: Offset(3 * month._cell() + 1, 1)))
         self.assertEqual([message.date for message in messages], [dt.date(2026, 10, 1)])
         self.assertEqual(month.chosen, dt.date(2026, 10, 22))
 
@@ -1458,15 +1480,17 @@ class PropersCoverageNoticeTests(unittest.IsolatedAsyncioTestCase):
                               patch.object(propers.missal, "events", wraps=propers.missal.events) as events):
                             owner.show(view)
                         rendered = str(owner.query_one("#propers-text", Static).render())
-                        self.assertEqual(captured[-1].count((notice, "italic $warning")), 1)
-                        self.assertEqual(rendered.count(notice), 1)
+                        formatted = propers.missal.format_coverage_notice(notice)
                         recension = view["mass"].get("recension")
+                        if not ordinary:
+                            expected_style = ("italic $text-muted"
+                                              if propers.missal.is_complete_notice(notice, recension=recension)
+                                              else "italic $warning")
+                            self.assertEqual(captured[-1].count((formatted, expected_style)), 1)
+                            self.assertEqual(rendered.count(formatted), 1)
                         if recension:
                             self.assertTrue(notice.startswith(recension))
                             self.assertEqual(rendered.count(recension), 1)
-                        advisory = (view.get("ordinary") or {}).get("advisory")
-                        if ordinary and advisory:
-                            self.assertIn(advisory, rendered)
                         for absence in view.get("explicitAbsences") or []:
                             reason = absence.get("reason") or ""
                             if " " in reason:

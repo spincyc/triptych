@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-collation",
+  "book_id": "byzantine-1873-chrysostom-anaphora",
+  "title": "Rome 1873 Propaganda Euchologion: complete strict Anaphora of St. John Chrysostom constituent — independent pixel-collation review",
+  "status": "verified",
+  "independent": true,
+  "complete_extent_verified": true,
+  "reviewer": "independent-collator-v1-byz-arm",
+  "checked_on": "2026-11-25",
+  "binding_sha256": "99149185f763ff95c29713a6ac675564b1f4bdcd2c2774a6a931400c6fc615b5",
+  "extent_sha256": "c31f566bb78fd0f58b94aeb4f1cc033d0987c8600d47e2648d2834fe7b259b23",
+  "witness_sha256": {
+    "byz-1873-google": "50c485b5fd723a0bdc894dcfb8e587cab666bd8724f51b0c0ae3f57cd33b2323"
+  },
+  "unit_sha256": {
+    "unit.byz-1873.chrysostom.01-opening-dialogue": "dfc6cb459c12bf2d86fe4c18ae10d47e6489ab623a78777632ba9de42cf2739d",
+    "unit.byz-1873.chrysostom.02-preface-thanksgiving": "7005f6880ef4c9c527686ffcc961cf81e84b8337cfb2d3981f337c8d1d237104",
+    "unit.byz-1873.chrysostom.03-sanctus-and-asterisk": "832c2f958f0c323a8502b7cd7e8ad1afb85d3da21d56b7609ed743d10cf8dcb8",
+    "unit.byz-1873.chrysostom.04-post-sanctus-institution": "45a1bf59c0e2044ce8738b4601f5e4e63e659c26d45ec4d0511bd6cd42489f13",
+    "unit.byz-1873.chrysostom.05-anamnesis-oblation": "9b0759dbd7ea891d3b43f251e7cbd239bef5d579a13f18415c49cb7b6d031f0f",
+    "unit.byz-1873.chrysostom.06-epiclesis": "2dbb670cf00d27b10c8364d702337054cc57f00981c0dcc1e101060616844443",
+    "unit.byz-1873.chrysostom.07-commemoration-of-saints": "3c9468b2662f25f82ec813ab49f50e80874c927500b964c40de4217bbb8f1ce5",
+    "unit.byz-1873.chrysostom.08-intercessions-dead-and-church": "3854db5de361455a5cad9acdd08fe1ab9868aaaa550407566a04ea664cc71b9b",
+    "unit.byz-1873.chrysostom.09-intercessions-hierarch-and-living": "7dc9045b477dcca9bc8e52f044f1170e7eb1ad2dce86d7d348594145d6481cd4",
+    "unit.byz-1873.chrysostom.10-concluding-doxology-and-blessing": "945dbc9b03122d801919739c569a16fa6c239feea502b9e73af293cf944aeef9"
+  },
+  "scope": "Complete strict Anaphora of St. John Chrysostom in original polytonic Greek from the Deacon's opening call (Ὁ Διάκονος. Στῶμεν καλῶς...) at printed p. 61 (PDF p. 68) through the concluding doxology (Καὶ δὸς ἡμῖν...), final blessing (Καὶ ἔσται τὰ ἐλέη...) at printed p. 67 (PDF p. 74), and the immediately following choir response (Χορός· Καὶ μετὰ τοῦ πνεύματός σου.) at the top of printed p. 68 (PDF p. 75), directly before the post-Anaphora litany rubric (Ὁ Διάκονος λαβὼν καιρὸν...). Uses the exact same 10 canonical native_path slugs as byzantine-1754-chrysostom-anaphora for 1-to-1 collation. Includes all printed prayers, ekphoneseis, expanded choir hymns/responses (including Ἅγιος, Σὲ ὑμνοῦμεν, and Ἄξιόν ἐστιν), full Third-Hour troparion, rubrics, and the Roman-communion footnote on p. 67.",
+  "method": "Independent pixel-level visual inspection of all rendered facsimile pages by independent-collator-v1-byz-arm (distinct from drafter lane-t1-byz-arm) on 2026-11-25. Applied 0 pixel-verified correction(s) relative to initial draft; verified every unit boundary, page account (1..596), and SHA-256 hash.",
+  "normalization_limit": "Unicode NFC polytonic Greek (grc) read directly from 240–400 DPI PNG renders of the tracked 1873 facsimile PDF.; 19th-century Polyglott Press Greek typography uses modern non-ligatured sorts; exact printed spelling, accents, breathings, iota subscripts, punctuation (including raised dot ·, ellipses ..., and em-dash —), and genuine printed abbreviations (Στίχ.) are preserved.; Authentic printed compositor errors verified at 400 DPI are preserved verbatim rather than silently emended: ἀνέστησυς (for ἀνέστησας, p. 62 / PDF p. 69), ποῦ ἁγίου Ἰωάννου (for τοῦ, p. 66 / PDF p. 73), προκεκοιμένων (for προκεκοιμημένων, p. 66 / PDF p. 73), and unaccented δοξαζειν (p. 67 / PDF p. 74).; Printed unaccented all-caps Institution words (ΛΑΒΕΤΕ..., ΠΙΕΤΕ...) are preserved in uppercase without added diacritics.; Words hyphenated across line breaks are joined; printed page numbers, signature marks (9 on p. 65), and rubric/black ink color distinctions are excluded from the plain-text stream, with headings, rubrics, speaker utterances, and the p. 67 footnote placed on sequential logical physical lines.",
+  "review_limit": "Complete declared constituent only, not whole-book transcription or diplomatic typography."
+}

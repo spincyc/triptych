@@ -3,7 +3,10 @@ from __future__ import annotations
 
 import asyncio
 import datetime as dt
+import os
+import sys
 from collections.abc import Awaitable, Callable
+from pathlib import Path
 
 from rich.style import Style
 from rich.text import Text
@@ -16,7 +19,7 @@ from textual.screen import ModalScreen
 from textual.widgets import ContentSwitcher, Footer, LoadingIndicator, Static
 from textual.worker import WorkerCancelled, get_current_worker
 
-from . import bridge
+from . import bridge, prefs
 from .repo import Refused
 from .surface import Pending, Surface, shown
 from .theme import SURFACE_ACCENTS, THEMES
@@ -44,9 +47,14 @@ class TopBar(Static):
     current = reactive("day")
     where = reactive("")
 
-    def _tabs(self, short: bool) -> Text:
+    def __init__(self, *args, **kwargs) -> None:
+        super().__init__(*args, **kwargs)
+        self._tab_spans: list[tuple[int, int, str]] = []
+
+    def _tabs(self, short: bool) -> tuple[Text, list[tuple[int, int, str]]]:
         variables = self.app.theme_variables
         bar = Text()
+        spans: list[tuple[int, int, str]] = []
         bar.append("✠ ", style=f"bold {variables.get('day-color', SURFACE_ACCENTS['day'][0])}")
         bar.append("triptych  " if not short else "", style="bold")
         for kind in surfaces():
@@ -56,23 +64,32 @@ class TopBar(Static):
             name = kind.label
             if short and not chosen:
                 name = name[:3]
-            click = Style.from_meta({"@click": f"app.surface('{ident}')"})
             label = f" {kind.key} {name} "
+            start = bar.cell_len
             style = f"bold {accent}" if chosen else variables.get("muted", "grey70")
-            bar.append(label, style=Style.parse(style) + click)
-        return bar
+            # Avoid Textual's `@click` link meta, which paints tabs with `$link-color`
+            # and erases surface accents; mouse clicks are handled directly in `on_click`.
+            bar.append(label, style=Style.parse(style))
+            spans.append((start, bar.cell_len, ident))
+        return bar, spans
 
     def render(self) -> Text:
         width = max(1, self.size.width - 2)
-        bar = self._tabs(short=False)
+        bar, spans = self._tabs(short=False)
         if bar.cell_len > width:
-            bar = self._tabs(short=True)
+            bar, spans = self._tabs(short=True)
         if bar.cell_len > width:
             # Every section still has its digit and command-palette entry.
             # At very small widths the active identity outranks eight clipped tabs.
+            variables = self.app.theme_variables
+            accent = variables.get(f"{self.current}-color", "#888888")
             label = next((kind.label for kind in surfaces() if kind.surface_id() == self.current), self.current)
-            bar = Text(f"✠ {label}  ", style="bold")
-            bar.append("1–8 sections · ctrl+p commands", style=self.app.theme_variables.get("muted", "grey70"))
+            bar = Text()
+            bar.append("✠ ", style=f"bold {variables.get('day-color', SURFACE_ACCENTS['day'][0])}")
+            bar.append(f"{label}  ", style=f"bold {accent}")
+            bar.append("1–8 sections · ctrl+p commands", style=variables.get("muted", "grey70"))
+            spans = []
+        self._tab_spans = spans
         bar.truncate(width, overflow="ellipsis")
         bar.append("\n")
         if self.where:
@@ -81,6 +98,15 @@ class TopBar(Static):
             bar.append_text(note)
         return bar
 
+    def on_click(self, event) -> None:
+        offset = event.get_content_offset(self)
+        if offset is None or offset.y != 0:
+            return
+        for start, end, ident in self._tab_spans:
+            if start <= offset.x < end:
+                self.app.action_surface(ident)
+                return
+
 
 class Help(ModalScreen[None]):
     """Every key, for the shell and for the surface in front of the reader."""
@@ -88,7 +114,7 @@ class Help(ModalScreen[None]):
     DEFAULT_CSS = """
     Help { align: center middle; background: $background 65%; }
     Help > VerticalScroll {
-        width: 76; max-width: 95%; height: auto; max-height: 90%;
+        width: 82; max-width: 95%; height: auto; max-height: 90%;
         border: round $primary 65%; background: $surface; padding: 1 2;
     }
     """
@@ -108,24 +134,24 @@ class Help(ModalScreen[None]):
         def section(title: str, rows) -> None:
             parts.append(Text(title, style="bold underline"))
             grid = Table.grid(padding=(0, 2))
-            grid.add_column(style=f"bold {hotkey}", no_wrap=True, min_width=16)
+            grid.add_column(style=f"bold {hotkey}", no_wrap=True, min_width=18)
             grid.add_column(ratio=1)
             for key, what in rows:
                 grid.add_row(key, what)
             parts.append(grid)
             parts.append(Text(""))
 
-        section("everywhere", (
+        section("Everywhere", (
             ("1 … 8", "switch surface: day, propers, catena, scripture, texts, sources, history, law"),
             ("tab, shift+tab", "move between panes"),
-            ("f", "show or hide navigation; on narrow screens, switch between navigation and reading"),
+            ("f", "show or hide navigation panes; on compact Day/Propers, switch between navigation and reading"),
             ("ctrl+p", "command palette: every surface and action, searchable"),
-            ("T", "next theme: triptych, vellum, compline"),
+            ("T", "next theme: triptych, triptych-vellum, triptych-compline"),
             ("?", "this help"),
             ("q, ctrl+c", "quit"),
         ))
         if self.surface is not None and self.surface.HELP:
-            section(self.surface.label.lower(), self.surface.HELP)
+            section(self.surface.label, self.surface.HELP)
         parts.append(Text(
             "Colour decorates; every state it marks is also written out in words or a marked glyph. "
             "Nothing is derived here: each view is read from the published data or asked of the "
@@ -133,15 +159,15 @@ class Help(ModalScreen[None]):
             style="dim italic",
         ))
         with VerticalScroll() as box:
-            box.border_title = "help"
-            box.border_subtitle = "esc close"
-            yield Static(Group(*parts))
+            box.border_title = "Help"
+            box.border_subtitle = "esc close · ↑↓ scroll"
             if self.surface is not None and self.surface.surface_id() == "day":
                 from .surfaces.day import legend_for
 
-                yield Static("Calendar marks", classes="help-section")
+                yield Static("Calendar Marks", classes="help-section")
                 month = self.surface.months.get((self.surface.calendar, self.surface.date.strftime("%Y-%m")))
-                yield Static(legend_for(month).content())
+                yield Static(legend_for(month).content(), classes="help-legend")
+            yield Static(Group(*parts))
 
 
 class ReaderFooter(Footer):
@@ -224,8 +250,8 @@ class TriptychApp(App[None]):
     Surface { padding: 0 1; }
     .pending { padding: 2 4; color: $text-muted; }
     Footer { background: $panel; }
-    Help .help-section { text-style: bold; margin-bottom: 1; }
-    TopBar { link-style: none; link-style-hover: bold; link-background-hover: $panel-lighten-2; }
+    Help .help-section { text-style: bold underline; margin-bottom: 0; }
+    Help .help-legend { margin-bottom: 1; }
     Panel OptionList, Panel OptionList:focus, ScrollPanel OptionList, ScrollPanel OptionList:focus {
         border: none; padding: 0; background: transparent; background-tint: $foreground 0%;
         scrollbar-size-vertical: 1;
@@ -243,14 +269,21 @@ class TriptychApp(App[None]):
 
     def __init__(self, *, start: str = "day", intent: dict | None = None,
                  theme: str = "triptych", today: dt.date | None = None,
-                 prepare: Callable[[], Awaitable[None]] | None = None) -> None:
+                 prepare: Callable[[], Awaitable[None]] | None = None,
+                 persist: bool | None = None, prefs_path: Path | None = None) -> None:
         super().__init__()
         # The date the reader calls today. A snapshot pins it, so that what it
         # draws depends on the arguments and never on the clock.
         self.today = today or dt.date.today()
         for palette in THEMES:
             self.register_theme(palette)
+        self._explicit_theme = theme != "triptych" or "--theme" in sys.argv
+        self._persist = persist
+        self._prefs_path = prefs_path
+        self._saved_prefs: dict = {}
         self.theme = theme
+        if self._persist is True:
+            self._load_saved_prefs()
         self.start = start
         self.intent = intent or {}
         self._surface_focus = {}
@@ -259,6 +292,32 @@ class TriptychApp(App[None]):
         self.startup_error: Refused | None = None
         self._startup_worker = None
         self._quitting = False
+
+    def persistence_enabled(self) -> bool:
+        if self._persist is not None:
+            return self._persist
+        return not self.is_headless and os.environ.get("LECTERN_NO_PREFS") != "1"
+
+    def _load_saved_prefs(self) -> None:
+        self._saved_prefs = prefs.load_prefs(self._prefs_path)
+        valid_themes = {palette.name for palette in THEMES}
+        saved_theme = self._saved_prefs.get("theme")
+        if not self._explicit_theme and isinstance(saved_theme, str) and saved_theme in valid_themes:
+            self.theme = saved_theme
+
+    def saved_prefs(self) -> dict:
+        if not self.persistence_enabled():
+            return {}
+        return dict(self._saved_prefs)
+
+    def remember_pref(self, key: str, value: object) -> None:
+        if not self.persistence_enabled():
+            return
+        if value is None:
+            self._saved_prefs.pop(key, None)
+        else:
+            self._saved_prefs[key] = value
+        prefs.save_prefs({key: value}, self._prefs_path)
 
     def compose(self) -> ComposeResult:
         with Container(id="reader", classes="preparing", disabled=True):
@@ -277,6 +336,8 @@ class TriptychApp(App[None]):
                 yield Static("q / ctrl+c  cancel", id="loading-hint")
 
     def on_mount(self) -> None:
+        if self.persistence_enabled() and not self._saved_prefs:
+            self._load_saved_prefs()
         # The first frame must be visible before verification can start.
         self.call_after_refresh(self._begin_startup)
 
@@ -391,6 +452,11 @@ class TriptychApp(App[None]):
 
     # --- the rest ------------------------------------------------------------
 
+    def _apply_theme(self, name: str) -> None:
+        self.theme = name
+        self.remember_pref("theme", name)
+        self.query_one(TopBar).refresh()
+
     def get_system_commands(self, screen):
         """Every surface, and every keyed action of the one in front, by name."""
         from textual.app import SystemCommand
@@ -409,7 +475,7 @@ class TriptychApp(App[None]):
                                     lambda action=binding.action, surface=surface: surface.run_action(action))
         for palette in THEMES:
             yield SystemCommand(f"theme: {palette.name}", "colours only; nothing they mark is lost",
-                                lambda name=palette.name: setattr(self, "theme", name))
+                                lambda name=palette.name: self._apply_theme(name))
         yield SystemCommand("help", "key ?", self.action_help)
         yield SystemCommand("quit", "key q", self.action_quit)
 
@@ -419,8 +485,7 @@ class TriptychApp(App[None]):
     def action_next_theme(self) -> None:
         names = [palette.name for palette in THEMES]
         position = names.index(self.theme) if self.theme in names else -1
-        self.theme = names[(position + 1) % len(names)]
-        self.query_one(TopBar).refresh()
+        self._apply_theme(names[(position + 1) % len(names)])
         self.notify(f"theme: {self.theme}", timeout=1.5)
 
 

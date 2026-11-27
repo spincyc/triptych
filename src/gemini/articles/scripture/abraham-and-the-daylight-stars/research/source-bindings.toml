@@ -1,0 +1,253 @@
+schema = 2
+record_type = "bindings"
+document = "articles/scripture/abraham-and-the-daylight-stars"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-01-genesis-4f9a0975"
+loci = ["Gen.1.5", "Gen.2.21", "Gen.13.14-17", "Gen.15.1-21", "Gen.22.17", "Gen.26.4"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:aba8e34331af3fc19e272bdef11140f842ca4e75fb2d097f1c8211b637d4fe94"
+context = "Governing public-domain English Scripture witness (Challoner Douay-Rheims) for Genesis 15 and Genesis star-promise parallels."
+
+[[bindings]]
+source_id = "passage.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.gen-15.1-6"
+loci = ["Gen.15.1-6"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:4eb0dfebb201f6a2acfc7f8a3fa49f5aff38b2915bab54ba38df920704e97ff6"
+context = "Verified Douay-Rheims passage record for Genesis 15:1-6 (vision, heir dialogue, star-promise, and justifying faith)."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-01-genesis-aef47948"
+loci = ["Gen.15.1-21"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:5df2123b7aac068d93661dfff80cc9cd65231a5056a1e8688ade8551d006da79"
+context = "Clementine Vulgate Latin control for Genesis 15:1, 5, 6, 11, 12, 17, 18 (per visionem, eduxitque eum foras, abigebat, occumberet/sopor, occubuisset/caligo tenebrosa, in illo die)."
+
+[[bindings]]
+source_id = "passage.hebrew-bible.masoretic-text.kittel-leipzig-vol-1-1909.gen-15.5"
+loci = ["Gen.15.5"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:40fc17fc7380f4db22f3d7110443545792d7415116c99d4fa99546c43ecf8d2f"
+context = "Kittel 1909 Biblia Hebraica verified passage record for Genesis 15:5 (wayyiqtol progression without elapsed-time measure)."
+
+[[bindings]]
+source_id = "passage.hebrew-bible.masoretic-text.kittel-leipzig-vol-1-1909.gen-15.12"
+loci = ["Gen.15.12"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:34575192678c5a15896e9475699d9c6a7595c0a324dc4d5aa10785831ade9f60"
+context = "Kittel 1909 Biblia Hebraica verified passage record for Genesis 15:12 (wayehi hashemesh lavo, sun approaching setting, tardemah)."
+
+[[bindings]]
+source_id = "passage.hebrew-bible.masoretic-text.kittel-leipzig-vol-1-1909.gen-15.17-18"
+loci = ["Gen.15.17-18"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:37164f85af9447f0947f7e181fb31e4a3aa183a877f091e9bc41cd45bff9673a"
+context = "Kittel 1909 Biblia Hebraica verified passage record for Genesis 15:17-18 (ba'ah morphology, alatah darkness, and bayyom hahu)."
+
+[[bindings]]
+source_id = "artifact.swete.old-testament-in-greek.cambridge-vol-1-1909.gen-15-checked-text-a7b4f38b"
+loci = ["Gen.15.1-21"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:85eb69f1c730e41a50f192493c77ab12b5a17283eb7f049025d17e410b40e064"
+context = "Swete 1909 checked Greek text of Genesis 15:1-21 (Codex Alexandrinus across Vaticanus's opening lacuna Gen 1:1-46:28a): synekathisen (v. 11), ekstasis (v. 12), flox without dark mist (v. 17), and ekei (v. 18)."
+
+[[bindings]]
+source_id = "artifact.lancelot-brenton.septuagint-english-translation.ebible-eng-brenton.verse-text-01-genesis-61ab97a1"
+loci = ["Gen.15.1-21"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:4e3159890d1f18f7153d87226031dc718fba357e722a96e37d846a3435f8cdd2"
+context = "Brenton 1844 public-domain English rendering of the Sixtine Septuagint text of Genesis 15 (preserving 'In that day' at v. 18 and 'there was a flame' at v. 17)."
+
+[[bindings]]
+source_id = "passage.peshitta-old-testament.genesis.syriac-peshitta-eu-web-2026-07-27.genesis-15-5-12-17-18"
+loci = ["15.5, 15.12, 15.17-18"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:a6714b203d4e61fd877ede35964545e3c584784ffa289bd92d6a6fb9465b423e"
+context = "Inspected Syriac Peshitta passage record confirming no inserted temporal interval between v. 5 and vv. 12, 17-18."
+
+[[bindings]]
+source_id = "passage.book-of-jubilees.english-charles-oxford-1913-ccel-web-2026-07-27.chapter-14-1-20"
+loci = ["14.1-20"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f4f9d0d3f0b56cc0669391d0bd9af9415774c73d6f690f390f1bc5f199c1093f"
+context = "Second Temple rewriting in Jubilees 14: explicitly states Abram beheld the stars (14:5), dates sacrifice to mid-third month (14:10), reports sunset at 14:13 and 14:17, and retains 'on that day' (14:18)."
+
+[[bindings]]
+source_id = "passage.josephus.antiquitates-judaicae.whiston-1737-penelope-book-1-web-2026-07-27.book-1-chapter-10-section-3"
+loci = ["1.10.3"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:2b202836af666f816ebab2b51e6c0b4f55c6d116f7089a7507a2eba66bf84265"
+context = "Josephus Antiquities I.10.3 abridgment of Genesis 15 omitting going outside, looking up, sunset, darkness, and 'on that day'."
+
+[[bindings]]
+source_id = "artifact.isaac-abarbanel.perush-al-ha-torah.warsaw-1862.gen-15-question-7-checked-text-718b7f8c"
+loci = ["Gen.15.5", "Gen.15.12"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-26"
+source_fingerprint = "sha256:f06e6f16dd1fd50b50ef1ccde86ee085862bcd4d6f7b6358530fd102b96c0f84"
+context = "Checked Warsaw 1862 Hebrew text of Isaac Abarbanel's opening formula and prefatory Questions 7 and 16 on Genesis 15 (earliest explicit formulation and rejection of waking daytime star-counting; excerpt does not include Abarbanel's body answers)."
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-2-tei"
+loci = ["16.23-24"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:c8c46915ec1d5dd7bf34a4332481bd214a4c8c42aadf62da985ec3fd29224b9a"
+context = "CSEL 40/2 critical Latin text of Augustine, City of God XVI.23-24 (in eodem visu; Haec omnia in visu facta divinitus atque dicta sunt; Aratus and Eudoxus)."
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45304-body-lf"
+loci = ["10.8"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:3b6e07da2d1ed3cedf883f7671a37d82f99427badc4daa23239366798e78d34b"
+context = "Dods 1871 translation of Augustine, City of God X.8 (citing the flame between Abraham's divided sacrifices among miraculous signs)."
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45305-body-lf"
+loci = ["16.23-24"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:6bd16ca34656e4a17b7967a6b8ce070ebb4fdffa9b8c855088ab3e08e30bf996"
+context = "Dods 1871 public-domain English translation of Augustine, City of God XVI.23-24 quoted verbatim."
+
+[[bindings]]
+source_id = "artifact.augustine.de-genesi-ad-litteram.migne-pl-34.degenesi-latin-text-ec363ece"
+loci = ["12.6"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:484aa4562151ceb4dcf64faa1be38053a839d19ec8b695ce4886bc3fb35b6895"
+context = "Augustine's three kinds of vision (corporeal, spiritual/imaginative, intellectual) explaining how spiritual vision beholds heaven and earth even in darkness."
+
+[[bindings]]
+source_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+loci = ["73", "74", "75", "76", "77"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:7801ab59a4ac49ffd8fecbf4360e151ad3cf5fafb30b8f3737d39c989280219d"
+context = "Jerome's Hebrew Questions on Genesis ch. 15 (quaestiones 73-77): verifies philological notes on vv. 2-3, 7, 10-11, 12, 16 and total silence on v. 5."
+
+[[bindings]]
+source_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+loci = ["4.2", "4.4", "4.10", "4.12", "4.13"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:db1b82eab848d777b7a7a1c013eb988ff691746c76990ff647ec4ea0d9f1c54b"
+context = "Venerable Bede, In principium Genesis (PL 91) on Gen 15:5 (indoors vs led outside foras to represent the universal Church shining as stars) and vv. 12, 17."
+
+[[bindings]]
+source_id = "artifact.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.interrogationes-latin-text-bcd7bc6b"
+loci = ["165", "166", "167", "168", "169", "170"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:269d0bb010d767cb766ed3e9e2932a2b253ce98123641ea3e9e88d40f5c0d2f0"
+context = "Alcuin's six questions on Genesis 15 (QQ. 165-170); complete silence on v. 5 and daylight stars."
+
+[[bindings]]
+source_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+loci = ["15.1", "15.2", "15.5", "15.6", "15.7"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:9429bab56c158fdeec1557ead36cffc8e3ff055535b457dc0e2f731c963996f7"
+context = "Angelomus of Luxeuil on Genesis 15: stars as firmer elect versus sand as carnal multitude; silence on chronological tension."
+
+[[bindings]]
+source_id = "artifact.cornelius-a-lapide.commentaria-in-pentateuchum.antwerp-1700.gen-15-notes-checked-text-ea514bf7"
+loci = ["Gen.15.1", "Gen.15.5", "Gen.15.11", "Gen.15.12", "Gen.15.17"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:cfc2ea35443b82da6222e58b23d23f4b94a9d4c36134f3e5dd1eedfa8c77478a"
+context = "Checked Antwerp 1700 Latin notes of Cornelius a Lapide: Erat ergo tunc nox (v. 5, citing the telescope), ex nimio labore diurno (v. 12), and in ecstasi (v. 17)."
+
+[[bindings]]
+source_id = "artifact.ante-nicene-fathers.volume-1.ccel-web-2026-10-13.ccel-text-ee9c7f0a"
+loci = ["1 Clement 10"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:55185d261b4711561d2908f7ad9d4398cd02feb77eac70722120ef8090518990"
+context = "St. Clement of Rome, 1 Clement 10 quoting Genesis 15:5-6 from the Septuagint as an example of Abraham's faith and obedience."
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-10.ccel-web-2026-10-13.ccel-text-14fa05cc"
+loci = ["De excessu fratris Satyri 2.95"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:71c2da20461a210a60d7d1b536390ec6048ba02c13e0ded9ae509ae12ae1f926"
+context = "St. Ambrose, On the Belief in the Resurrection (De excessu fratris Satyri II), section 95, alluding to Gen 15:5 as 'the heaven illuminated with stars'."
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-11.ccel-web-2026-09-17.ccel-text-8bdb50c6"
+loci = ["Homilies on Romans 9 (Rom 4:18-20)"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:7d98baa780dd6a78202b5e9f7bd92f641eae103c1a9e2deb89f324578bc47cab"
+context = "St. John Chrysostom, Homily 9 on Romans 4:18-20 enumerating Abraham's biological and evidential obstacles with zero mention of daylight stars."
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-13.english-ccel-web-2026-09-05.ccel-npnf113-text-54274dd9"
+loci = ["Commentary on Galatians 3:6"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:374d296602c0a52e4c252ad0e7704b9c9952d06f6b66b891bb391c8509c390db"
+context = "St. John Chrysostom, Commentary on Galatians on 3:6 treating Abraham's justifying faith before the Law."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-secunda-secundae.pg18755-body-13b14d17"
+loci = ["II-II.173.3.corpus", "II-II.174.6.corpus"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:a85980f155106dc475c0a698619c509a12e9ec9f175ff42dd4f11734323234e9"
+context = "St. Thomas Aquinas on modes of prophetic vision (sensible, imaginary with abstraction from senses, intellectual) and Abraham's place in the progress of revelation."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.1920-english-dominicans-web-2026-09-29.tertia-q30-text-fb2d3ba8"
+loci = ["III.30.3.reply-3"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:a0e5a116025d9ce3ac0666602a96fed900d5142e3dd8a3e4ed81b295d5555324"
+context = "St. Thomas Aquinas citing Genesis 15:12's deep sleep and darksome horror as an example of imaginary vision disturbing bodily powers."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.in-omnes-pauli-epistolas-commentaria.dessain-volume-2-1857.book-ocr-2b7b11dc"
+loci = ["Super Galatas 3:16"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:fc0fe651fc1f34b1d124831a6538442a81cd47acb7ec6161c19a7bfb4269aadf"
+context = "St. Thomas Aquinas citing Gen 15:5 (Suspice caelum et numera stellas) among the Abrahamic promises fulfilled in Christ."

@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "coptic-1736-basil-anaphora",
+  "title": "Tuki 1736 (Missale Copto-Arabicum): Bohairic Coptic St. Basil Anaphora core constituent",
+  "scope": "Complete Bohairic Coptic column of the St. Basil Anaphora core in Raphael Tuki's 1736 Rome Missale Copto-Arabicum (ULB Bonn digital copy, Part II printed pp. 96-116 / PDF pp. 389-409): from the Anaphora heading ⲦⲀⲚⲀⲪⲞⲢⲀ ⲛ̀ⲧⲉ ⲡⲓⲁ̀ⲅⲓⲟⲥ ⲂⲀⲤⲒⲖⲒⲞⲤ ⲙ̀ Ⲫⲓⲱⲧ and Opening Dialogue on II.96 (PDF p. 389), through Preface, printed Pre-Sanctus hymns, Sanctus, Post-Sanctus, Institution Narrative of Bread and Cup (including Ⲁϥϫⲉⲙϯⲡⲓ 'He tasted' at II.110 / PDF p. 403), Anamnesis, and Epiclesis (including Tuki's printed Ⲡⲭ̅ⲥ̅ at II.114 / PDF p. 407) through the concluding communion-fruits petition Ⲁⲣⲓⲧⲉⲛ ⲛⲉⲙⲡ̀ϣⲁ ⲧⲏⲣⲉⲛ ... ⲓⲥϫⲉⲛ ⲡⲉⲛⲉϩ. on II.116 (PDF p. 409) immediately before the Great Intercessions (Ⲁⲣⲓⲫⲙⲉⲩⲓ̀ Ⲡϭ̅ⲥ̅...). Excludes the parallel Arabic translation column, Arabic-only rubrics, running heads, page numerals, catchwords, and later blue/purple manuscript reader annotations.",
+  "transcribed_by": "AI source transcriber (Lane T3, direct PNG inspection of Tuki 1736 PDF pp. 389-409)",
+  "stage_ids": [
+    "alexandrian-stages-coptic1736"
+  ],
+  "catalogue_witness_ids": [
+    "eastern:alex-coptic-1736"
+  ],
+  "components": [
+    "anaphoras"
+  ],
+  "languages": [
+    "cop"
+  ],
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "All Part I incense offices, Ordo Communis, Arabic Creed (separately certified in tuki-1736-arabic-creed), and pre-Anaphora prayers (PDF pp. 1-388)",
+    "Great Intercessions (beginning Ⲁⲣⲓⲫⲙⲉⲩⲓ̀ Ⲡϭ̅ⲥ̅ on II.116 / PDF p. 409), Fraction, Pater, Confession, Gregory and Cyril Anaphoras, errata leaves (pp. 667-671) and colophon (p. 672) (PDF pp. 410-676)",
+    "Right-hand Arabic translation column and Arabic-only action rubrics spanning PDF pp. 389-409",
+    "Later handwritten blue/purple ink reader annotations (especially visible on PDF pp. 389-391, 398-408), running heads (ⲦⲀⲚⲀⲪⲞⲢⲀ / ⲚⲦⲈ ⲠⲒⲀⲄⲒⲞⲤ ⲂⲀⲤⲒⲖⲒⲞⲤ), Coptic folio numerals (ϥⲋ-ⲣⲓⲋ), signatures (Ccc-Eee2), decorative borders and page-foot catchwords"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "1736 Rome publication (colophon 3 Baunah / 13 June 1736)",
+    "start_year": 1736,
+    "end_year": 1736,
+    "evidence": [
+      {
+        "source_id": "segment.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.colophon",
+        "locus": "Original colophon, artifact page 672, completion 3 Baunah / 13 June 1736"
+      }
+    ]
+  },
+  "extent_path": "src/sources/inventories/eucharistic-books/support/coptic-1736-basil-anaphora-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/coptic-1736-basil-anaphora-review.json",
+  "witnesses": [
+    {
+      "id": "tuki-1736-bonn-pdf",
+      "edition_id": "edition.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki",
+      "artifact_id": "artifact.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.bonn-pdf-add039d0",
+      "scope_pages": [
+        [
+          389,
+          409
+        ]
+      ],
+      "completeness_evidence": [
+        {
+          "source_id": "passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-facsimile",
+          "locus": "PDF pages 389–409 of 676; complete bounded constituent scope."
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "unit.tuki-1736.coptic.basil.opening-dialogue",
+      "native_path": [
+        "anaphoras",
+        "st-basil",
+        "opening-dialogue"
+      ],
+      "source_order": 1,
+      "language": "cop",
+      "component": "anaphoras",
+      "kind": "dialogue-with-cues",
+      "witness_id": "tuki-1736-bonn-pdf",
+      "witness_pages": [
+        [
+          389,
+          390
+        ]
+      ],
+      "passage_id": "passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-opening-dialogue",
+      "text_sha256": "e4356a3479aa9e6061e106083bced617b06ab0802045e6153bf77f9cb382b626"
+    },
+    {
+      "unit_id": "unit.tuki-1736.coptic.basil.preface",
+      "native_path": [
+        "anaphoras",
+        "st-basil",
+        "preface"
+      ],
+      "source_order": 2,
+      "language": "cop",
+      "component": "anaphoras",
+      "kind": "prayer-with-cues",
+      "witness_id": "tuki-1736-bonn-pdf",
+      "witness_pages": [
+        [
+          390,
+          392
+        ]
+      ],
+      "passage_id": "passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-preface",
+      "text_sha256": "acbcdcf431efee1cfb83130d22e3d2524525a1219b8a7761a0437a1dcd7340bc"
+    },
+    {
+      "unit_id": "unit.tuki-1736.coptic.basil.pre-sanctus-hymns",
+      "native_path": [
+        "anaphoras",
+        "st-basil",
+        "pre-sanctus-hymns"
+      ],
+      "source_order": 3,
+      "language": "cop",
+      "component": "anaphoras",
+      "kind": "hymns-with-cues",
+      "witness_id": "tuki-1736-bonn-pdf",
+      "witness_pages": [
+        [
+          392,
+          395
+        ]
+      ],
+      "passage_id": "passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-pre-sanctus-hymns",
+      "text_sha256": "0f48aed172c17f0da733f9c4dd0e1227ddfe20302131ea5ad891c4c54dd8f922"
+    },
+    {
+      "unit_id": "unit.tuki-1736.coptic.basil.sanctus",
+      "native_path": [
+        "anaphoras",
+        "st-basil",
+        "sanctus"
+      ],
+      "source_order": 4,
+      "language": "cop",
+      "component": "anaphoras",
+      "kind": "hymn",
+      "witness_id": "tuki-1736-bonn-pdf",
+      "witness_pages": [
+        [
+          396,
+          396
+        ]
+      ],
+      "passage_id": "passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-sanctus",
+      "text_sha256": "328cee4a6cc150897974e9625c95bd44d7f0f75449f75e723c5696618cd7d04a"
+    },
+    {
+      "unit_id": "unit.tuki-1736.coptic.basil.post-sanctus",
+      "native_path": [
+        "anaphoras",
+        "st-basil",
+        "post-sanctus"
+      ],
+      "source_order": 5,
+      "language": "cop",
+      "component": "anaphoras",
+      "kind": "prayer-with-cues",
+      "witness_id": "tuki-1736-bonn-pdf",
+      "witness_pages": [
+        [
+          396,
+          399
+        ]
+      ],
+      "passage_id": "passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-post-sanctus",
+      "text_sha256": "dfa4198e3fd54828c751c12b0a63a0dcc6c9abc941f582a152d6afc98ea00393"
+    },
+    {
+      "unit_id": "unit.tuki-1736.coptic.basil.institution-narrative",
+      "native_path": [
+        "anaphoras",
+        "st-basil",
+        "institution-narrative"
+      ],
+      "source_order": 6,
+      "language": "cop",
+      "component": "anaphoras",
+      "kind": "institution-narrative-with-cues",
+      "witness_id": "tuki-1736-bonn-pdf",
+      "witness_pages": [
+        [
+          399,
+          404
+        ]
+      ],
+      "passage_id": "passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-institution-narrative",
+      "text_sha256": "0e9c374887a6d7095cc06afc09b41ebe92975d5a432ab3d4908160fd81e23a96"
+    },
+    {
+      "unit_id": "unit.tuki-1736.coptic.basil.anamnesis",
+      "native_path": [
+        "anaphoras",
+        "st-basil",
+        "anamnesis"
+      ],
+      "source_order": 7,
+      "language": "cop",
+      "component": "anaphoras",
+      "kind": "prayer-with-cues",
+      "witness_id": "tuki-1736-bonn-pdf",
+      "witness_pages": [
+        [
+          404,
+          406
+        ]
+      ],
+      "passage_id": "passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-anamnesis",
+      "text_sha256": "786dabaabc50022538f96e7320493d0b5ea9b08a233ecdbdcf36164cc25e42a3"
+    },
+    {
+      "unit_id": "unit.tuki-1736.coptic.basil.epiclesis",
+      "native_path": [
+        "anaphoras",
+        "st-basil",
+        "epiclesis"
+      ],
+      "source_order": 8,
+      "language": "cop",
+      "component": "anaphoras",
+      "kind": "prayer-with-cues",
+      "witness_id": "tuki-1736-bonn-pdf",
+      "witness_pages": [
+        [
+          407,
+          409
+        ]
+      ],
+      "passage_id": "passage.coptic-catholic-church.missale-copto-arabicum.1736-rome-tuki.basil-anaphora-coptic-epiclesis",
+      "text_sha256": "a53f90283430810941ac89ad98754361de6736ce8cadead844fa5d9303501938"
+    }
+  ]
+}

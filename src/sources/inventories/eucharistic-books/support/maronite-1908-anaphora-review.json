@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-collation",
+  "book_id": "maronite-1908-anaphora",
+  "title": "Ketābā de-qurbānā (Beirut Maronite Press, 1908 second printing of Dibs 1888) — Anaphora of the Twelve Apostles Core — independent pixel-collation review",
+  "status": "verified",
+  "independent": true,
+  "complete_extent_verified": true,
+  "reviewer": "independent-collator-v2-syriac",
+  "checked_on": "2026-11-25",
+  "binding_sha256": "28d23ee3262d8be0faae7a4dc3b29e291378c5bc917432299485d8a104d732f3",
+  "extent_sha256": "9e8fb3e13c425a4dee060f4f3cb27ed9adaa6b3b39d07dba4b13f5b2c431eacf",
+  "witness_sha256": {
+    "maronite-1908-beirut-bonn-part2-pdf": "5b0fbb003b4e8deb29c7f2a785a51494a7afd83135e25537f942595ec26f1594"
+  },
+  "unit_sha256": {
+    "maronite-1908-anaphora.01-opening-dialogue": "a3eefa34e66a16a44be5df44bc3d47d0863856c6d2297bdeb46996df45bd7406",
+    "maronite-1908-anaphora.02-institution-bread": "412580bf8f58973cd979bab5855929dc2b06b570167b4aff3c832e51405515a8",
+    "maronite-1908-anaphora.03-institution-chalice": "67864aa4bc253b5da845a06bb66cc20f9ba175398a497861df693dadfa976861",
+    "maronite-1908-anaphora.04-epiclesis-call": "daaf866467483faa9c73d17ab41717f8c8f6032bba0d88d0249a974083fbd78d",
+    "maronite-1908-anaphora.05-epiclesis-consecration": "7c11417135875f9a032f9276b8b4541289a2e8f66ed02928a1bda59212bbed05"
+  },
+  "scope": "Bounded constituent of the exact same five aligned core units of the Anaphora of the Twelve Apostles (printed inline in the Ordo Communis under running head 'ܡܢ ܢܐܦܘܪ ܐܠܬܠܡܝܕܗ ܐܠܬܢܐܥܫܪܝܗ') in Classical Syriac (syr), located in retained Part 2 (pages-0224-0447-5b0fbb00, PDF 127, 125-122; reversed RTL scan order), enabling a direct 1594 vs 1908 Maronite visual diff.",
+  "method": "Independent pixel-level visual inspection of all rendered facsimile pages by independent-collator-v2-syriac (distinct from drafter lane-t2-syriac) on 2026-11-25. Applied 1 pixel-verified correction(s) relative to initial draft; verified every unit boundary, page account (1..224), and SHA-256 hash.",
+  "normalization_limit": "Pure consonantal Classical Syriac Unicode (U+0710..U+072C, UTF-8 NFC) with single ASCII spaces between words and single LF (\\n) line endings, one canonical liturgical unit per line.; All West Syriac vowel points, seyame (U+0308), qushshaya/rukkakha, punctuation marks, liturgical crosses (including inline red crosses splitting ܘܒܪܟ in 1594), kashidas, catchwords, running heads, border ornaments, and page numbers are omitted for scan-safe cross-edition diffing.; Rubrics (red Syriac or red Garshuni stage directions), speaker labels (priest/deacon/people), editorial 'etc.' cues (ܘܫܪ), intervening rubricated Trinitarian cross-blessings, and parallel Garshuni/Arabic columns are excluded.; Printed historical orthography (such as ܐܪܙܐ in 1594 vs ܪܐܙܐ in 1908, and ܒܐܝܕܝܐ in both Chalice preambles), abbreviations (such as abbreviated Dialogue incipits in 1594), omissions, and additions are preserved verbatim without harmonizing or supplying words from memory.",
+  "review_limit": "Complete declared constituent only, not whole-book transcription or diplomatic typography."
+}

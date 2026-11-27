@@ -123,7 +123,7 @@ def wrap(content: str, context: dict, route: str, action: str = "") -> str:
         return escape(posixpath.relpath(target, posixpath.dirname(route) or "."), quote=True)
 
     current = context["current"]
-    provider = {"gpt": "ChatGPT", "claude": "Claude"}.get(context["provider"], context["provider"])
+    provider = {"gpt": "ChatGPT", "claude": "Claude", "gemini": "Gemini"}.get(context["provider"], context["provider"])
     proper = context["kind"].startswith("proper-")
     choices = context["choices"]
     position = next(index for index, row in enumerate(choices) if row["owner"] == context["owner"])

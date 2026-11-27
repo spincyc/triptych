@@ -1,0 +1,36 @@
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[[structure]]
+role = "artwork-audit"
+source = "research/artwork-audit.md"
+
+[document]
+type = 'theology-reference-v1'
+
+[document.main]
+pdftitle = 'The Dwelling of the Living God: The Ark of the Covenant and the Mother of the Lord'
+pdfsubject = '''The Ark of the Covenant across Sacred Scripture, its New-Covenant fulfillment in the Blessed Virgin Mary, patristic and liturgical reception, the four Marian dogmas, Saint Joseph and virginal marriage, and the interior life'''
+title = 'The Dwelling of the Living God'
+subtitle = 'The Ark of the Covenant and the Mother of the Lord'
+kind-line = 'A Biblical, Patristic, and Dogmatic Monograph\\From the Cloud of Sinai to the Overshadowed Virgin'
+note = 'Scope, source boundaries, and use qualifications appear in the terminal appendix.'
+emergencystretch = '2.5em'
+body = [
+  'sections/01-the-dwelling-prepared',
+  'sections/02-cloud-wilderness-and-jordan',
+  'sections/03-captivity-hiddenness-and-zion',
+  'sections/04-house-of-cedar-and-hidden-promise',
+  'sections/05-atlas-of-the-covenant-journey',
+  'sections/06-overshadowed-virgin-and-hill-country',
+  'sections/07-fathers-liturgy-and-living-tradition',
+  'sections/08-four-marian-dogmas',
+  'sections/09-joseph-and-virginal-marriage',
+  'sections/10-interior-dwelling',
+  { source = 'sections/11-dogmatic-and-typological-synopsis', roles = ['synopsis'] },
+]
+appendix = [
+  { source = 'sections/90-scope-and-qualifications', roles = ['scope-appendix'] },
+  { source = 'sections/99-references', roles = ['references'] },
+]

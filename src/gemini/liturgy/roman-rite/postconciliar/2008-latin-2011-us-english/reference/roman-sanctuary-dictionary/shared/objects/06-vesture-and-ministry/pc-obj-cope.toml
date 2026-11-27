@@ -1,0 +1,80 @@
+schema_version = 1
+id = "pc-obj-cope"
+category = "vesture-and-ministry"
+sort_order = 608
+plate_id = "pc-plt-09-vesture-choir-solemn"
+composition_plate_ids = []
+plate_position = "Center figure, three-quarter rear view showing full semicircular cloak, embroidered hood shield, and tassel over an alb (Plate IX)"
+preferred_english_name = "Cope"
+latin_headword = "Pluviale"
+alternate_english_names = ["Processional Mantle"]
+alternate_latin_names = ["Cappa"]
+pronunciation_key = "ploo-vee-AH-leh"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "provided"
+scope_level = "universal-roman"
+territorial_note = "GIRM 341 governs the cope universally according to the rubrics of individual rites; United States GIRM 346e and 346h apply to funeral and festive gold/silver color choices."
+
+[identification]
+summary = "The cope is a long, open-fronted semicircular ceremonial mantle fastened across the chest with a clasp (morse), worn by a bishop, priest, or presiding deacon in processions, Solemn Vespers, Eucharistic Benediction, and other non-Mass rites."
+appearance = "Shown on the center figure of Plate IX in three-quarter rear view over a white alb: a sweeping floor-length semicircular cloak bordered with ornamental trim and carrying a flat, shield-shaped decorative hood finished with a single tassel across the upper back."
+placement_and_use = "GIRM 341 specifies that the cope is worn by the priest in processions and during other sacred actions in accordance with the rubrics proper to individual rites—such as Solemn Benediction with the monstrance (where a white cope and humeral veil are prescribed: Holy Communion and Worship of the Eucharist Outside Mass nn. 91–92), Eucharistic processions, Solemn Liturgy of the Hours, solemn blessings, and funeral rites outside Mass. A priest never celebrates the Mass itself in a cope: if worn for an entrance procession such as Palm Sunday, he exchanges it for the chasuble before beginning the Mass prayers (GIRM 337, 341). A deacon wears the cope only when presiding at specific non-Mass rites such as Solemn Benediction or Solemn Vespers."
+liturgical_colors = "Follows GIRM 346 seasonal color of the celebration; strictly white for Eucharistic Exposition, Benediction, and Corpus Christi processions."
+
+[ministers_and_handling]
+ordinary_ministers = ["bishop", "priest", "deacon"]
+prepares = ["sacristan", "altar-server"]
+server_boundary = "clergy-reserved"
+server_boundary_summary = "Strictly reserved to bishops, priests, and deacons presiding at proper non-Mass rites; servers never wear a cope, though servers may assist in vesting it in the sacristy and—when directed during Benediction or processions—hold back its front edges as the celebrant incenses or blesses."
+safety_warning = "When holding the edges of a priest's or bishop's cope during incensation or procession, keep the heavy front fabric well clear of lighted candles and hot thurible chains, and unfasten the chest clasp gently without tugging delicate embroidery."
+
+[audience_text]
+altar_server = "You will recognize the cope immediately by its long flowing cloak shape, open down the front, with a flat shield-like hood hanging down the back. Priests and deacons wear it outside Mass—for Solemn Benediction, Eucharistic processions, and Solemn Vespers—never for offering the Mass itself. During Benediction or processions, you may be asked to hold back the front edges of the cope so the priest can freely use the thurible or lift the monstrance; keep the fabric carefully clear of open flames and glowing charcoal."
+sacristan = "Prepare the white cope paired with a matching white stole and humeral veil for Eucharistic Benediction and Corpus Christi processions (HCWEOM nn. 91–92), and seasonal copes for Palm Sunday processions or Solemn Liturgy of the Hours (GIRM 341). Check that the front clasp (morse) closes securely before vesting, and store copes flat or on wide curved hangers to prevent shoulder creases."
+general_reader = "Descending from the ancient hooded outdoor cloak (Latin pluviale, “rain cloak”), the semicircular cope lends solemn beauty to Catholic processions, Solemn Vespers, and Eucharistic Benediction. Open in front and fastened at the chest by a clasp, it distinguishes non-Mass liturgical rites from the Eucharistic sacrifice, for which the priest vests in the chasuble."
+
+[relationships]
+confusable_with = ["pc-obj-chasuble", "pc-obj-humeral-veil"]
+related_objects = ["pc-obj-alb", "pc-obj-stole", "pc-obj-cassock-surplice"]
+
+[symbolism]
+has_sourced_symbolism = false
+text = ""
+evidence_class = "none-practical"
+attribution = ""
+
+[counterpart_1962]
+relationship = "continued"
+locus_1962 = "Missale Romanum (1962), Rubricae Generales Cap. XIX (137); Caeremoniale Episcoporum (1948) II.8 n. 18"
+comparison = "The cope continues from 1962 usage in processions, solemn Office, and Eucharistic Benediction (GIRM 341; HCWEOM nn. 91–92). Following Tres abhinc annos (1967) no. 26 and GIRM 51 and 337, postconciliar rubrics permit the chasuble rather than requiring a cope for rites integrated directly into Mass such as the Sunday sprinkling rite and Ash Wednesday imposition of ashes."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N38"
+primary_loci = [
+  "GIRM 337, 341, 346",
+  "Holy Communion and Worship of the Eucharist Outside Mass (1973) 91–92",
+  "Tres abhinc annos (1967) 26",
+  "Caeremoniale Episcoporum (1984)",
+]
+source_bindings = [
+  "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002",
+  "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021",
+  "edition.catholic-church.rubricae-breviarii-et-missalis-romani.latin-aas-52-1960",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

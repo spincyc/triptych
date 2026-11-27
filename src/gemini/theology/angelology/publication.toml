@@ -1,0 +1,49 @@
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[document]
+type = 'theology-reference-v1'
+
+[document.main]
+pdftitle = 'The City of Unseen Spirits: Catholic Angelology in Scripture, the Fathers, the Celestial Hierarchy, and St. Thomas Aquinas'
+pdfsubject = 'Systematic and patristic Catholic angelology following Summa theologiae I, questions 50-64 and 106-114, and Pseudo-Dionysius, Celestial Hierarchy'
+title = 'The City of\\[0.2em]Unseen Spirits'
+subtitle = 'Catholic Angelology in Scripture, the Fathers,\\the \emph{Celestial Hierarchy}, and St.~Thomas Aquinas'
+kind-line = 'A systematic and patristic reference work\\following \emph{Summa theologiae} I, qq.~50--64 and 106--114'
+overline = 'Triptych'
+tocdepth = '2'
+emergencystretch = '3em'
+headings = 'standard'
+penalties = 'none'
+titlepage = 'overline'
+closing = 'footnotesize'
+body = [
+  'sections/01-scripture-and-faith',
+  'sections/02-pre-christian-continuities',
+  'sections/03-patristic-witness',
+  'sections/04-celestial-hierarchy',
+  'sections/05-st-nature-qq50-53',
+  'sections/06-st-knowledge-qq54-58',
+  'sections/07-st-will-grace-qq59-62',
+  'sections/08-st-fall-qq63-64',
+  'sections/09-st-hierarchy-qq106-109',
+  'sections/10-st-ministry-qq110-114',
+  'sections/11-christ-mary-angels',
+  'sections/12-schools-and-byzantine',
+  'sections/13-liturgy-devotion-saints',
+  '\clearpage',
+]
+appendix = [
+  { source = 'appendices/01-orders-and-orderings', roles = ['exposition'] },
+  { source = 'appendices/02-pre-christian-continuities', roles = ['exposition'] },
+  { source = 'appendices/03-article-census', roles = ['exposition'] },
+  { source = 'appendices/04-aquinas-parallels', roles = ['exposition'] },
+  { source = 'appendices/05-dionysian-concordance', roles = ['exposition'] },
+  { source = 'appendices/06-magisterial-chronology', roles = ['chronology-display'] },
+  { source = 'appendices/07-calendar-scripture-names', roles = ['exposition'] },
+  { source = 'appendices/08-demons-and-first-sin', roles = ['exposition'] },
+  { source = 'appendices/09-terminology-and-witnesses', roles = ['exposition'] },
+  { source = 'appendices/90-scope', roles = ['scope-appendix'] },
+  { source = 'appendices/99-references', roles = ['references'] },
+]

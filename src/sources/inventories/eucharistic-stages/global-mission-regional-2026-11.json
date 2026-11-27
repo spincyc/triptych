@@ -1,0 +1,1660 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "global-mission-regional-2026-11",
+  "title": "Global geographic, missionary, and inculturated Eucharistic book states, transitions, and controls (Americas, Asia–Pacific, Africa)",
+  "traditions": [
+    {
+      "id": "global-mission-new-spain-roman",
+      "label": "New Spain & Mexico Colonial Roman Missal",
+      "family": "latin",
+      "scope": "Pre-Tridentine American Roman-curial missal printing (Mexico City 1561) and later colonial proper-Mass concessions (Our Lady of Guadalupe 1754) in New Spain; distinct from postconciliar indigenous Order adaptations.",
+      "coverage_note": "Espinosa's September 1561 folio is the first Missal printed in the Americas. Benedict XIV's 1754 bull Non est equidem approves a regional proper adjunct, not a separate whole rite."
+    },
+    {
+      "id": "global-mission-peru-lima-roman",
+      "label": "Viceroyalty of Peru & Lima Colonial Liturgical Reception",
+      "family": "latin",
+      "scope": "Conciliar Tridentine liturgical discipline (Third Council of Lima, 1582-1583) and colonial Peruvian Roman reception; distinct from surviving complete Peruvian-printed missals.",
+      "coverage_note": "Documents Tridentine reception and vernacular catechetical policy in Andean South America without inferring a distinct South American missal recension."
+    },
+    {
+      "id": "global-mission-quebec-roman",
+      "label": "New France & Quebec Gallican-to-Roman Transition",
+      "family": "latin",
+      "scope": "Colonial Quebec diocesan liturgical books (1703 Rituel) and the 1851-1853 provincial transition from French/Gallican liturgical usages toward Roman liturgical uniformity.",
+      "coverage_note": "Explicitly distinguishes sacramental Rituals (1703, 1853) from complete altar Missals; exact parish copies of Missale Parisiense vs. Missale Romanum remain to collate."
+    },
+    {
+      "id": "global-mission-chiapas-adaptations",
+      "label": "Chiapas Indigenous Roman Mass Adaptations",
+      "family": "latin",
+      "scope": "Optional Order of Mass adaptations recognized by the Holy See for Tseltal, Tsotsil, Ch'ol, Tojolabal, and Zoque communities in San Cristóbal de las Casas (2024); explicitly distinct from unapproved Amazonian Rite proposals.",
+      "coverage_note": "Grounded in CEM Explanatory Note Prot. 04/24 (22 November 2024, hosted by the Dicastery); original 8 November 2024 recognitio instrument and approved indigenous booklet remain to inspect."
+    },
+    {
+      "id": "global-mission-brazil-eucharistic-prayer",
+      "label": "Brazilian Roman Eucharistic Prayer V",
+      "family": "latin",
+      "scope": "Original Portuguese Eucharistic Prayer V approved for Brazil (Prot. 272/74, 11 November 1974) and its later 1991 Portuguese Missal translation-formula alignment.",
+      "coverage_note": "Component-level regional anaphora within the postconciliar Roman Missal; original 1974 decree and 1975/1991 books remain to acquire."
+    },
+    {
+      "id": "global-mission-china-roman",
+      "label": "China Mission Roman Missal Translations & Faculties",
+      "family": "latin",
+      "scope": "Papal Classical Chinese liturgy faculty (1615), Ludovico Buglio SJ's printed Beijing Missale Romanum Sinice (1670), and the 1949 Holy Office indult; strictly separated from the 1939 civil-rites instruction Plane compertum.",
+      "coverage_note": "Translation faculties and printed witnesses do not establish an independent Latin recension or prove widespread authorized altar celebration of the 1670 print."
+    },
+    {
+      "id": "global-mission-japan-nagasaki-control",
+      "label": "Japan Jesuit Mission Press Liturgical Control (Nagasaki)",
+      "family": "latin",
+      "scope": "Bishop Luís de Cerqueira's 1605 Nagasaki Manuale ad Sacramenta Ecclesiae Ministranda as a negative/boundary control proving the Nagasaki press issued a sacramental Ritual with chant, not a complete Roman Missal.",
+      "coverage_note": "Prevents conflating the 1605 Nagasaki Manuale with a printed Japanese Roman Missal; imported European Roman Missals used in Japan await archival census."
+    },
+    {
+      "id": "global-mission-goa-diamper",
+      "label": "Goa Padroado & Synod of Diamper Cross-Rite Intersection",
+      "family": "latin",
+      "scope": "Portuguese Padroado / Archdiocese of Goa legislative intervention (Synod of Diamper 1599, Coimbra 1606) imposing Latinizing modifications on the East Syriac Qurbana in Malabar.",
+      "coverage_note": "Recorded strictly as a cross-rite legislative intersection alongside eastern:malabar-gouvea-1606, distinct from the Syro-Malabar Syriac printing sequence in malabar.json."
+    },
+    {
+      "id": "global-mission-india-adaptations",
+      "label": "India Postconciliar Roman Ritual Concessions & Experimental Controls",
+      "family": "latin",
+      "scope": "Approved twelve-point Indian ritual concessions (Consilium Prot. 802/69, 25 April 1969; celebrated 15 February 1970) strictly separated from unapproved experimental Indian Orders, anaphora proposals (1972-1973), and 1974 Bharatheeya Pooja.",
+      "coverage_note": "Preserves the canonical boundary between Roman-approved optional ceremonial points and unapproved experimental anaphoras."
+    },
+    {
+      "id": "global-mission-philippines-adaptations",
+      "label": "Philippines Postconciliar Roman Permissions & Adaptation Proposals",
+      "family": "latin",
+      "scope": "Confirmed 1975 Ibanag Order/Eucharistic Prayer translation (Prot. 1910/74) contrasted with the withdrawn 1971 First Communion experimental prayer and the unapproved/pending 1976 Misa ng Bayang Pilipino submission.",
+      "coverage_note": "Distinguishes confirmed vernacular translation from experimental or pending cultural adaptation proposals."
+    },
+    {
+      "id": "global-mission-broome-australia",
+      "label": "Broome Diocese / Kimberley Aboriginal Roman Adaptation",
+      "family": "latin",
+      "scope": "Missa Terra Spiritus Sancti (Mass of the Land of the Holy Spirit) approved by the Australian Catholic Bishops Conference on 7 May 2024 for submission to Rome, with attested local diocesan use (2024, 2026).",
+      "coverage_note": "Conference approval and local celebration do not constitute Holy See recognitio, which remains unverified."
+    },
+    {
+      "id": "global-mission-ancient-north-africa",
+      "label": "Ancient North African Liturgical Attestations (Carthage & Hippo)",
+      "family": "latin",
+      "scope": "Patristic and conciliar attestations of ancient Latin North African Eucharistic worship (Cyprian c. 253, Hippo 393 / Carthage 397 canon 23, Augustine c. 400).",
+      "coverage_note": "Strictly fragmentary patristic and conciliar testimony; NO complete North African missal or sacramentary survives."
+    },
+    {
+      "id": "global-mission-keren-blin-geez",
+      "label": "Eparchy of Keren Blin–Ge'ez Bilingual Liturgy",
+      "family": "Alexandrian",
+      "scope": "Locally approved and celebrated Blin/Ge'ez bilingual service book (2008 imprimatur, 2009 inauguration, 2010 attested Blin celebration) translated from the 1945 Ge'ez Catholic missal.",
+      "coverage_note": "Scoped to the Eparchy of Keren (Eritrea); does not establish wider Eritrean/Ethiopian reception or a revision of the underlying Ge'ez text."
+    }
+  ],
+  "sources": [
+    {
+      "id": "global-mission-regional-2026-11:mexico1561-jcb",
+      "title": "Missale Romanum Ordinarium (Mexico City: Antonio de Espinosa, September 1561), John Carter Brown Library digitized copy",
+      "url": "https://archive.org/details/missaleromanumor00cath",
+      "kind": "institutional-catalogue",
+      "inspection": "Verified Internet Archive item record (missaleromanumor00cath) and leaf 330v colophon transcription ('Missale secundum romane curie ritum... Antonij de Espinosa... Mexicana impressum... 1561 Mense Septembri') alongside surviving copy census (JCB, Huntington RB 32667, NYPL) on 2026-11-25.",
+      "checked_on": "2026-11-25",
+      "status": "inspected",
+      "limitations": "Colophon, imprint, and three-copy survival census verified; full body text and square-note chant leaves not page-collated against European pre-1570 curial missals."
+    },
+    {
+      "id": "global-mission-regional-2026-11:lima1591-jcb",
+      "title": "Concilium Limense. Celebratum anno 1583... (Madrid, 1591)",
+      "url": "https://archive.org/details/conciliumlimense00cath",
+      "kind": "primary-act",
+      "inspection": "Verified Internet Archive digitized copy (conciliumlimense00cath, John Carter Brown Library) of the 1591 Madrid edition of the Third Provincial Council of Lima (1582-1583) on 2026-11-25.",
+      "checked_on": "2026-11-25",
+      "status": "inspected",
+      "limitations": "Edition and Tridentine/catechetical scope verified; individual Latin liturgical decrees not transcribed line-by-line."
+    },
+    {
+      "id": "global-mission-regional-2026-11:guadalupe1754-bullarium",
+      "title": "Benedict XIV Bullarium: Bull Non est equidem (25 May 1754) confirming Patronage and Proper Mass/Office of Our Lady of Guadalupe",
+      "url": "https://archive.org/details/bub_gb_ryAGJn4PcM8C",
+      "kind": "primary-act",
+      "inspection": "Verified Internet Archive digitized Bullarium record (bub_gb_ryAGJn4PcM8C) and historical date/scope of Non est equidem (25 May 1754) approving Patronage of New Spain and proper 12 December Mass/Office on 2026-11-25.",
+      "checked_on": "2026-11-25",
+      "status": "inspected",
+      "limitations": "Decree date and proper-Mass scope verified; exact 1754 Latin formulary wording not collated against later universal Guadalupe propers."
+    },
+    {
+      "id": "global-mission-regional-2026-11:quebec1703-rituel",
+      "title": "Bishop Saint-Vallier, Rituel du diocèse de Québec (Paris: Simon Langlois, 1703)",
+      "url": "https://archive.org/details/ritueldudiocese00sain",
+      "kind": "primary-book",
+      "inspection": "Verified Internet Archive item record (ritueldudiocese00sain) for the 1703 Paris edition of Saint-Vallier's Rituel du diocèse de Québec on 2026-11-25.",
+      "checked_on": "2026-11-25",
+      "status": "inspected",
+      "limitations": "This is a diocesan Rituel (sacramental manual), not a complete altar Missal; body leaves not transcribed."
+    },
+    {
+      "id": "global-mission-regional-2026-11:quebec1853-compendium",
+      "title": "Compendium ritualis romani ad usum dioecesium provinciae quebecensis, jussu Concilii provincialis quebecensis I editum (Quebec, 1853)",
+      "url": "https://archive.org/details/compendiumritual00cath_0",
+      "kind": "primary-book",
+      "inspection": "Verified Internet Archive item record (compendiumritual00cath_0) confirming First Provincial Council of Quebec (1851) mandate for Roman liturgical books and 1853 Quebec printing on 2026-11-25.",
+      "checked_on": "2026-11-25",
+      "status": "inspected",
+      "limitations": "Establishes 1851-1853 provincial Roman standardization direction; parish-by-parish replacement of Parisian Missals by Roman Missals awaits direct archival copies."
+    },
+    {
+      "id": "global-mission-regional-2026-11:bdw1999-draft",
+      "title": "Book of Divine Worship, Draft: November 1999 (reproducing 13 February 1987 CDF and CDW decrees)",
+      "url": "https://archive.org/details/book-of-divine-worship-1999",
+      "kind": "primary-book",
+      "inspection": "Inspected in repo roman-adaptations-2026-10-20.json (PDF title p. 1; CDF decree facsimile p. 8; CDW decree 13 February 1987 pp. 9-10 visually verified) and cross-checked 2026-11-25.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Draft witness and 1987 interim authorization decrees; full line-by-line delta against 2003 printed BDW uncollated."
+    },
+    {
+      "id": "global-mission-regional-2026-11:bdw2003-book",
+      "title": "The Book of Divine Worship (Newman House Press, 2003)",
+      "url": "https://web.archive.org/web/20131224210106/http://church.atonementonline.com/wp-content/uploads/Book-Of-Divine-Worship.pdf",
+      "kind": "primary-book",
+      "inspection": "Inspected in repo roman-adaptations-2026-10-20.json (PDF pp. 1-6 title/imprint/contents; PDF p. 277+ Rite One / Eucharist I; PDF p. 327+ Rite Two / Eucharist II) and cross-checked 2026-11-25.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Title, imprint, contents, and dual Rite One / Rite Two Eucharistic structure verified; complete prayer-by-prayer collation against 2015 DWM remains open. Copyrighted modern text: metadata/research inspection only."
+    },
+    {
+      "id": "global-mission-regional-2026-11:dwm2015-usccb",
+      "title": "USCCB Committee on Divine Worship Newsletter 51 (October 2015), pp. 37-39",
+      "url": "https://www.usccb.org/resources/newsletter-2015-10.pdf",
+      "kind": "official-retrospective",
+      "inspection": "Inspected directly in regional-variants.json and roman-adaptations-2026-10-20.json (PDF pp. 1-3 / printed pp. 37-39): May 2015 Holy See approval, 29 November 2015 effective date, three-ordinariate scope, single Prayer Book English Order, Roman Canon normative + alternative EP, calendar and Prayer of Humble Access.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Official episcopal explanation rather than complete altar missal or original signed decree."
+    },
+    {
+      "id": "global-mission-regional-2026-11:dwm2015-ordinariate-notice",
+      "title": "Personal Ordinariate of the Chair of Saint Peter, Divine Worship: The Missal — official publication notice and Q&A",
+      "url": "https://www.ordinariate.net/divine-worship-missal",
+      "kind": "official-retrospective",
+      "inspection": "Inspected directly in western-eucharistic-books-timeline-v1.toml and eucharistic-book-relationships-v1.toml: confirms replacement of 2003 Book of Divine Worship Eucharistic texts effective 29 November 2015, Roman Missal 3rd edition basis, and plural Anglican Prayer Book patrimony.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Official summary notice; does not supply full collated text of 2003 vs. 2015 editions."
+    },
+    {
+      "id": "global-mission-regional-2026-11:chiapas2024-cem-note",
+      "title": "Mexican Episcopal Conference (CEM), Explanatory Note on Approved Liturgical Adaptations, Prot. 04/24 (22 November 2024), hosted by the Dicastery for Divine Worship",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/pdf/EXPLANATORY-NOTE-ON-APPROVED-LITURGICAL-ADAPTATIONS-CEM.pdf",
+      "kind": "official-retrospective",
+      "inspection": "Inspected in regional-mission-permissions-2026-10-20.json and roman-adaptations-2026-10-20.json (PDF pp. 1-2, sections 1-5) and cross-checked 2026-11-25: confirms Dicastery recognitio for Tseltal, Tsotsil, Ch'ol, Tojolabal, and Zoque communities in San Cristóbal de las Casas and enumerates the three optional adaptations while clarifying it is not a separate Mayan rite.",
+      "checked_on": "2026-11-25",
+      "status": "inspected",
+      "limitations": "Official episcopal clarification hosted by the Dicastery; original 8 November 2024 recognitio decree and approved indigenous-language ritual booklet remain uninspected."
+    },
+    {
+      "id": "global-mission-regional-2026-11:brazil2006-taborda",
+      "title": "Francisco Taborda et al., Uma anáfora brasileira: A Oração Eucarística V, Perspectiva Teológica 38 (2006), pp. 35-63",
+      "url": "https://faje.edu.br/periodicos/index.php/perspectiva/article/download/313/583/1133",
+      "kind": "scholarship",
+      "inspection": "Inspected in roman-adaptations-2026-10-20.json (printed pp. 41-50, notes 17-18, 34, 36): documents 11 November 1974 Roman approval (Prot. 272/74), 1975 first use, and 1991 Portuguese Missal institution-word alignment.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Scholarly textual history; original Prot. 272/74 decree and 1975/1991 printed Portuguese Missals remain unacquired."
+    },
+    {
+      "id": "global-mission-regional-2026-11:china2011-notitiae",
+      "title": "Notitiae 47/48 (2011), Nos. 541-542: Chinese liturgical translation faculties (1615, 1670, 1680, 1949)",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/2010/notitiae-47-%282011%29/Notitiae-541-542-2011.pdf",
+      "kind": "official-retrospective",
+      "inspection": "Inspected in regional-mission-permissions-2026-10-20.json (printed pp. 552-554 for 26 March 1615 Holy Office decree, 27 June 1615 Paul V brief Romanae Sedis Antistes, 1670 Buglio printing, and 1680 failed renewal; pp. 561-562 and n. 56 for 12 April 1949 Holy Office indult).",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Official-journal historical study; original 1615 Vatican archives acts and original 1949 Holy Office indult remain uninspected."
+    },
+    {
+      "id": "global-mission-regional-2026-11:buglio1670-princeton",
+      "title": "Ludovico Buglio SJ, Missale Romanum Sinice redditum (Misa jingdian, Beijing 1670), Princeton University Library Scheide 46.1",
+      "url": "https://dpul.princeton.edu/catalog/9949430753506421",
+      "kind": "institutional-catalogue",
+      "inspection": "Verified Princeton Digital PUL record 9949430753506421 (Scheide 46.1) on 2026-11-25: Latin title page citing Paul V's authority ('Missale Romanvm auctoritate Pauli V. Pont. M. Sinicè redditum a P. Ludovico Buglio... Pekim... 1670') and Chinese xylographic leaves in Western codex binding.",
+      "checked_on": "2026-11-25",
+      "status": "inspected",
+      "limitations": "Title leaf and physical format verified; full Classical Chinese text not collated against its Latin exemplar (1604/1634 Roman Missal)."
+    },
+    {
+      "id": "global-mission-regional-2026-11:buglio1670-usuarium",
+      "title": "USUARIUM Book 8263: Buglio, Missale Romanum Sinice redditum (Beijing, 1670)",
+      "url": "https://usuarium.elte.hu/book/8263/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Inspected in regional-mission-permissions-2026-10-20.json: title and contents entries pp. 4, 23-25 identifying Mass order, prefaces, and Canon.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Catalogue contents map only; does not establish Roman confirmation or practical celebration."
+    },
+    {
+      "id": "global-mission-regional-2026-11:china1939-aas-control",
+      "title": "Instruction Plane compertum est (8 December 1939), AAS 32 (1940), pp. 24-25",
+      "url": "https://www.vatican.va/archive/aas/documents/AAS-32-1940-ocr.pdf",
+      "kind": "primary-act",
+      "inspection": "Inspected in regional-mission-permissions-2026-10-20.json (non_admissions: china-rites-1939): confirms scope is civil honors to Confucius and ancestors and prior oath, not a Chinese Mass liturgy.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Control source separating civil-rites permissions from Eucharistic translation indults."
+    },
+    {
+      "id": "global-mission-regional-2026-11:nagasaki1605-arsi",
+      "title": "Luís de Cerqueira SJ, Manuale ad sacramenta ecclesiae ministranda (Nagasaki, 1605), ARSI Jap. Sin. I 207",
+      "url": "https://archive.org/details/JapSin-I-207",
+      "kind": "primary-book",
+      "inspection": "Verified Internet Archive digitization of ARSI Jap. Sin. I 207 on 2026-11-25: Nagasaki Jesuit College 1605 imprint, rubricated movable type with plainchant notation, sacramental administration manual.",
+      "checked_on": "2026-11-25",
+      "status": "inspected",
+      "limitations": "Sacramental Manuale (Ritual), NOT a complete Roman Missal; full liturgical rubrics and Japanese pastoral insertions not transcribed."
+    },
+    {
+      "id": "global-mission-regional-2026-11:diamper1606-bnp",
+      "title": "Synodo diocesano da igreja e bispado de Angamale (Coimbra: Diogo Gomez Loureyro, 1606)",
+      "url": "http://purl.pt/17493",
+      "kind": "primary-act",
+      "inspection": "Verified Biblioteca Nacional de Portugal permanent digitization record (purl.pt/17493) of the 1606 Coimbra printed acts of the 1599 Synod of Diamper on 2026-11-25.",
+      "checked_on": "2026-11-25",
+      "status": "inspected",
+      "limitations": "Printed synodal acts verified as bibliographic witness; full Portuguese decrees and appended Missa de que usam os antigos christãos require page-level collation against Syriac manuscripts."
+    },
+    {
+      "id": "global-mission-regional-2026-11:diamper1694-geddes",
+      "title": "Michael Geddes, The History of the Church of Malabar... together with the Synod of Diamper (London, 1694)",
+      "url": "https://archive.org/details/historyofchurcho00gedd",
+      "kind": "scholarship",
+      "inspection": "Verified Internet Archive copy (historyofchurcho00gedd) on 2026-11-25 as early English rendering of the 1599 Diamper Action V Qurbana emendations.",
+      "checked_on": "2026-11-25",
+      "status": "inspected",
+      "limitations": "Secondary 17th-century translation with polemical preface; evaluated strictly alongside the 1606 Coimbra Portuguese original."
+    },
+    {
+      "id": "global-mission-regional-2026-11:india1969-notitiae",
+      "title": "Consilium Letter Prot. 802/69 (25 April 1969) and Twelve Points of Adaptation for India, Notitiae 5 (1969), pp. 365-374",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1960/notitiae-05-%281969%29/Notitiae-048-1969.pdf",
+      "kind": "primary-act",
+      "inspection": "Inspected directly in regional-mission-permissions-2026-10-20.json and roman-adaptations-2026-10-20.json (printed pp. 365-366 / PDF pp. 39-40 visually verified; pp. 365-374 text): enumerates twelve optional ritual concessions (posture, barefoot, anjali hasta/panchanga pranam, touching/eyes instead of kissing objects, namaste peace, incense/arati, vesture, tray, preparatory rite, universal prayer) and approves NO new anaphora.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Grants optional ritual concessions to be introduced locally by the conference and ordinaries after catechesis; does not approve an Indian Eucharistic Prayer or complete Indian altar Missal."
+    },
+    {
+      "id": "global-mission-regional-2026-11:india1970-celebration-notitiae",
+      "title": "Peculiaritates liturgicae pro India (15 February 1970 celebration), Notitiae 6 (1970), p. 89",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-06-%281970%29/Notitiae-052-1970.pdf",
+      "kind": "official-retrospective",
+      "inspection": "Inspected in regional-mission-permissions-2026-10-20.json (printed p. 89 / PDF p. 15): contemporary official notice reporting Archbishop Simon Lourdusamy's 15 February 1970 concelebration at Propaganda Fide using the 25 April 1969 concessions within the new Order of Mass.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Does not itemize every single concession enacted or supply an altar-book text."
+    },
+    {
+      "id": "global-mission-regional-2026-11:india1973-control-notitiae",
+      "title": "India: CBCI Madras meeting (6-14 April 1972) and editorial footnote on proposed Indian anaphora, Notitiae 9 (1973), pp. 75-77",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-09-%281973%29/Notitiae-080-1973.pdf",
+      "kind": "official-retrospective",
+      "inspection": "Inspected in regional-mission-permissions-2026-10-20.json (printed pp. 75-77 / PDF pp. 33-35, III.5 and p. 77 n. 1): documents procedural voting threshold correction (24 July 1972) and reports lack of required pre-conference Roman submission for the proposed Indian anaphora.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Contemporary procedural control confirming non-approval in 1972-1973; does not inspect the full experimental typescripts."
+    },
+    {
+      "id": "global-mission-regional-2026-11:india2005-puthanangady",
+      "title": "Paul Puthanangady, Inculturation of the Eucharistic Celebration (2005), pp. 99-100",
+      "url": "https://zenodo.org/record/4290809/files/6%20Puthenangady%20Inculturation.pdf",
+      "kind": "scholarship",
+      "inspection": "Inspected in roman-adaptations-2026-10-20.json (pp. 99-100): participant historical account distinguishing the 1969 twelve points, 1971 prepared experimental Order, unapproved early anaphora, and later revised anaphora submitted without reported Roman approval by 2005.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Participant retrospective; original experimental Orders and correspondence not acquired."
+    },
+    {
+      "id": "global-mission-regional-2026-11:philippines1975-notitiae",
+      "title": "Insulae Philippinae: Ibanag Order of Mass and Eucharistic Prayers confirmation (Prot. 1910/74, 13 January 1975), Notitiae 11 (1975), p. 104",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-%281975%29/Notitiae-104-1975.pdf",
+      "kind": "primary-act",
+      "inspection": "Inspected in regional-mission-permissions-2026-10-20.json (printed p. 104): confirms Ibanag translation of Ordo Missae and Roman Eucharistic Prayers.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Decree summary only; bound Ibanag printing and dated celebration uninspected."
+    },
+    {
+      "id": "global-mission-regional-2026-11:philippines1980-boletin",
+      "title": "Boletin Eclesiastico de Filipinas 54, Nos. 602-603 (Jan.-Feb. 1980): The CBCP at Work, pp. 27, 41",
+      "url": "https://repository.mainlib.upd.edu.ph/omekas/s/rare-periodicals/item/74651",
+      "kind": "official-retrospective",
+      "inspection": "Inspected in roman-adaptations-2026-10-20.json (printed p. 27 / PDF p. 29 and printed p. 41 / PDF p. 43 visually): separates 16 March 1971 experimental First Communion prayer (later withdrawn) from Jan./June 1976 Misa ng Bayang Pilipino submission (still pending Roman study in 1980).",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Contemporary bishops' report; original 1971/1976 texts and final Roman disposition unacquired."
+    },
+    {
+      "id": "global-mission-regional-2026-11:broome2024-acbc",
+      "title": "Australian Catholic Bishops Conference Media Release: Bishops approve Mass of the Land of the Holy Spirit (7 May 2024)",
+      "url": "https://s3.ap-southeast-2.amazonaws.com/acbcwebsite/Articles/Media%20Releases/2024-05-07%20Bishops%20approve%20Mass%20of%20the%20Land%20of%20the%20Holy%20Spirit.pdf",
+      "kind": "official-retrospective",
+      "inspection": "Inspected in regional-mission-permissions-2026-10-20.json (PDF pp. 1-2): documents 7 May 2024 ACBC approval for Broome Diocese, subsequent submission for Roman recognitio, retrospective report of May 1973 diocesan experimental permission, and 2018 Liturgy Brisbane publication.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Conference approval release; does not supply Roman recognitio or complete submitted missal text."
+    },
+    {
+      "id": "global-mission-regional-2026-11:broome2026-diocesan-use",
+      "title": "Diocese of Broome, Walking Together vol. 13, Part 1 (June 2026): Pentecost 2026 – Warmun",
+      "url": "https://broomediocese.org/wp-content/uploads/2026/07/Walking-Together-13-Part1.pdf",
+      "kind": "official-retrospective",
+      "inspection": "Inspected in regional-mission-permissions-2026-10-20.json (PDF p. 3): directly attests celebration of Missa Terra Spiritus Sancti at Warmun for Pentecost 2026 with Bishop Tim concelebrating.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Local use attestation only; neither identifies exact service booklet nor establishes Holy See recognitio."
+    },
+    {
+      "id": "global-mission-regional-2026-11:zaire1988-notitiae",
+      "title": "Congregation for Divine Worship, Decree Zairensium Dioecesium (30 April 1988, Prot. 1520/85) and approved French Order/rubric excerpts, Notitiae 24 (1988), pp. 457-465",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-24-%281988%29/Notitiae-264-1988.pdf",
+      "kind": "primary-act",
+      "inspection": "Inspected directly in regional-variants.json and roman-adaptations-2026-10-20.json (printed p. 457 decree visually verified; pp. 458-465 approved French Order, introduction, and rubric excerpts): establishes invocation of saints and upright ancestors, relocation of Penitential Act with aspersion after Homily/Creed, relocation of Sign of Peace before Universal Prayer/Offertory, and inculturated ceremonial ministries.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Official decree and selected excerpts inspected; complete bound Kinshasa exemplar, complete propers, and exact first local printing date remain unacquired."
+    },
+    {
+      "id": "global-mission-regional-2026-11:zaire2020-francis",
+      "title": "Pope Francis, Video Message for the presentation of 'Pope Francis and the Roman Missal for the Dioceses of Zaire' (1 December 2020)",
+      "url": "https://www.vatican.va/content/francesco/en/messages/pont-messages/2020/documents/papa-francesco_20201201_videomessaggio-messale-zaire.html",
+      "kind": "official-retrospective",
+      "inspection": "Verified exact Vatican URL on 2026-11-25: confirms Pope Francis's 1 December 2019 St. Peter's Basilica celebration using the Zaire Missal and affirms its continuing standing as an approved postconciliar inculturated Roman rite.",
+      "checked_on": "2026-11-25",
+      "status": "inspected",
+      "limitations": "Papal reception affirmation, not a textual revision of the 1988 approved order."
+    },
+    {
+      "id": "global-mission-regional-2026-11:carthage-canons-newadvent",
+      "title": "Code of Canons of the African Church (Council of Carthage A.D. 419, incorporating Hippo 393 canon 21 / Carthage 397 canon 23), NPNF II-14",
+      "url": "https://www.newadvent.org/fathers/3816.htm",
+      "kind": "critical-edition",
+      "inspection": "Verified exact URL and Hippo 393 / Carthage 397 liturgical canon text on 2026-11-25: mandates addressing altar prayers to the Father ('semper ad Patrem dirigatur oratio') and vetting borrowed prayer libelli with instructiores fratres.",
+      "checked_on": "2026-11-25",
+      "status": "inspected",
+      "limitations": "Conciliar regulation preserved in African canon collections; supplies no complete Eucharistic prayer or intact liturgical manuscript."
+    },
+    {
+      "id": "global-mission-regional-2026-11:cyprian-ep62-newadvent",
+      "title": "St. Cyprian of Carthage, Epistle 62 (Hartel Ep. 63, c. 253) to Caecilius on the Eucharistic Cup",
+      "url": "https://www.newadvent.org/fathers/050662.htm",
+      "kind": "critical-edition",
+      "inspection": "Verified exact URL on 2026-11-25: patristic witness to 3rd-century North African Eucharistic practice of mixing water and wine in the chalice.",
+      "checked_on": "2026-11-25",
+      "status": "inspected",
+      "limitations": "Epistolary testimony only; not a service book."
+    },
+    {
+      "id": "global-mission-regional-2026-11:augustine-ep55-newadvent",
+      "title": "St. Augustine of Hippo, Letter 55 to Januarius (c. 400)",
+      "url": "https://www.newadvent.org/fathers/1102055.htm",
+      "kind": "critical-edition",
+      "inspection": "Verified exact URL on 2026-11-25: patristic witness to late-4th-century North African paschal cycle, liturgical calendar, and local custom diversity.",
+      "checked_on": "2026-11-25",
+      "status": "inspected",
+      "limitations": "Epistolary testimony only; supplies no complete missal or sacramentary."
+    },
+    {
+      "id": "global-mission-regional-2026-11:keren2008-cover",
+      "title": "Catholic Eparchy of Keren, Blin–Ge'ez Mass Book cover and imprimatur (27 April 2008)",
+      "url": "http://www.eparchyofkeren.com/liturgy/Blin-Geez-Mass-cover.pdf",
+      "kind": "primary-book",
+      "inspection": "Inspected in regional-mission-permissions-2026-10-20.json (cover PDF p. ii): establishes 27 April 2008 eparchial imprimatur by Bishop Kidane Yebio for the 442-page bilingual Blin–Ge'ez service book.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Front cover/imprimatur only; full 442-page Blin–Ge'ez body uncollated."
+    },
+    {
+      "id": "global-mission-regional-2026-11:keren2009-blin-history",
+      "title": "Bishop Kidane Yebio, History of the translation of the missal into Blin (Keren, 16 June 2009)",
+      "url": "http://www.eparchyofkeren.com/topics/History.Blin.Mass.pdf",
+      "kind": "official-retrospective",
+      "inspection": "Inspected directly in alexandrian.json (4-page PDF, pp. 2 and 4 visually inspected): explicitly names the 1945 Ge'ez Catholic missal as the translation base for the Keren Blin–Ge'ez Mass book.",
+      "checked_on": "2026-10-17",
+      "status": "inspected",
+      "limitations": "Local translation history for Keren; does not prove universal Eritrean/Ethiopian adoption or a Ge'ez source-text revision."
+    },
+    {
+      "id": "global-mission-regional-2026-11:keren2010-use",
+      "title": "Kiflemariam Hamde, Eparchy of Keren conference report (June 2010), section V",
+      "url": "http://www.eparchyofkeren.com/topics/Kiflemariam.pdf",
+      "kind": "scholarship",
+      "inspection": "Inspected in regional-mission-permissions-2026-10-20.json (section V, PDF p. 5): firsthand eparchy-hosted report expressly attesting official Mass celebration in Blin by June 2010.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Attests local Blin celebration without identifying a physical altar exemplar or wider diocesan reception."
+    }
+  ],
+  "stages": [
+    {
+      "id": "global-mission-regional-2026-11:mexico-espinosa-1561",
+      "tradition_id": "global-mission-new-spain-roman",
+      "label": "1561 Mexico City Missale Romanum Ordinarium (Espinosa)",
+      "date_label": "September 1561 printing",
+      "start_year": 1561,
+      "end_year": 1561,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "First Missal printed in the Americas: pre-Tridentine Roman-curial folio with red-and-black typography and square-note chant on red staves, commissioned for Franciscan and Augustinian churches in New Spain.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "rubrics",
+        "calendar",
+        "lectionary",
+        "chant"
+      ],
+      "witness_ids": [
+        "western:mexico-espinosa-1561"
+      ],
+      "witness_label": "Missale Romanum Ordinarium, Mexico City, Antonio de Espinosa, September 1561 (Huntington RB 32667; JCB/Archive.org; NYPL)",
+      "summary": "Printed nine years before Pius V's 1570 Tridentine Roman Missal, Espinosa's folio explicitly declares 'Missale secundum romane curie ritum' on leaf 330v, attesting pre-Tridentine Roman-curial liturgy and chant production in colonial New Spain.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "global-mission-regional-2026-11:mexico1561-jcb",
+          "locus": "Colophon leaf 330v and institutional copy census (JCB, Huntington RB 32667, NYPL)",
+          "claim": "Dates printing to September 1561 in Mexico City by Antonio de Espinosa and identifies the text as secundum romane curie ritum."
+        }
+      ],
+      "limitations": "Three imperfect/complete surviving copies are identified, but full prayer, calendar, and musical-notation collation against pre-1570 Spanish/Italian Roman-curial printings remains open.",
+      "reception": "Commissioned for Franciscan and Augustinian use in New Spain; superseded canonically after colonial reception of the 1570 Tridentine Roman Missal."
+    },
+    {
+      "id": "global-mission-regional-2026-11:mexico-guadalupe-1754",
+      "tradition_id": "global-mission-new-spain-roman",
+      "label": "1754 Papal Proper of Our Lady of Guadalupe (Non est equidem)",
+      "date_label": "25 May 1754 papal approval",
+      "start_year": 1754,
+      "end_year": 1754,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Regional Roman Missal proper-Mass and calendar concession for 12 December in New Spain; explicitly an adjunct proper, not a separate whole Missal.",
+      "components": [
+        "calendar",
+        "propers"
+      ],
+      "witness_ids": [
+        "western:new-spain-guadalupe-proper-1754"
+      ],
+      "witness_label": "Pope Benedict XIV, Bull Non est equidem (25 May 1754)",
+      "summary": "Benedict XIV confirmed Our Lady of Guadalupe as Patroness of New Spain and approved proper Mass and Office texts for 12 December across the territory.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "global-mission-regional-2026-11:guadalupe1754-bullarium",
+          "locus": "Bull Non est equidem, 25 May 1754",
+          "claim": "Approves Patronage of New Spain and proper liturgical texts for the 12 December feast."
+        }
+      ],
+      "limitations": "Proper-Mass wording is not collated here against printed 18th-century Mexican Missae Propriae fascicles or later universal Roman calendar extensions.",
+      "reception": "Broadly received across New Spain and later Latin America; exact local colonial printing chronology remains to catalog."
+    },
+    {
+      "id": "global-mission-regional-2026-11:lima-council-1583",
+      "tradition_id": "global-mission-peru-lima-roman",
+      "label": "Third Provincial Council of Lima (1582-1583; printed 1591)",
+      "date_label": "1582-1583 council; 1591 Madrid printing",
+      "start_year": 1591,
+      "end_year": 1591,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Conciliar Tridentine liturgical discipline and pastoral-catechetical legislation for the Viceroyalty of Peru; not an independent South American missal book.",
+      "components": [
+        "rubrics",
+        "calendar"
+      ],
+      "witness_ids": [
+        "western:lima-third-council-1583"
+      ],
+      "witness_label": "Concilium Limense (Madrid, 1591; JCB digitized copy)",
+      "summary": "Convened by Archbishop Toribio de Mogrovejo and confirmed by Sixtus V, the Third Council of Lima established Tridentine Roman liturgical discipline across colonial South America alongside trilingual Spanish-Quechua-Aymara catechetical instruments.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "global-mission-regional-2026-11:lima1591-jcb",
+          "locus": "Title page and printed acts of the 1582-1583 council (Madrid, 1591)",
+          "claim": "Documents papal confirmation and provincial liturgical/pastoral legislation for the Peruvian ecclesiastical province."
+        }
+      ],
+      "limitations": "Conciliar legislation rather than a printed Peruvian altar Missal; exact colonial Lima Missae Propriae (e.g., St. Rose of Lima 1671) await direct exemplar acquisition.",
+      "reception": "Normative conciliar framework across Andean colonial dioceses for centuries."
+    },
+    {
+      "id": "global-mission-regional-2026-11:quebec-rituel-1703",
+      "tradition_id": "global-mission-quebec-roman",
+      "label": "1703 Rituel du diocèse de Québec (French Colonial Context)",
+      "date_label": "1703 Paris printing",
+      "start_year": 1703,
+      "end_year": 1703,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Diocesan sacramental ritual issued by Bishop Saint-Vallier reflecting French colonial/Parisian liturgical context in New France; explicitly a Rituel, NOT a complete Missal.",
+      "components": [
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:quebec-rituel-1703-gallican-context"
+      ],
+      "witness_label": "Rituel du diocèse de Québec, Paris, Simon Langlois, 1703",
+      "summary": "Compiled for New France by Bishop Saint-Vallier and printed in Paris, the 1703 Rituel witnesses French colonial diocesan liturgical organization in an era when New France parishes drew on French Gallican/Parisian liturgical books and chant customs.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "global-mission-regional-2026-11:quebec1703-rituel",
+          "locus": "Title leaf and 1703 Paris imprint",
+          "claim": "Identifies Bishop Saint-Vallier's official colonial diocesan Rituel for Quebec."
+        }
+      ],
+      "limitations": "A sacramental Rituel does not supply the Mass Ordinary or Canon; surviving parish copies of Missale Parisiense used in New France remain to inspect.",
+      "reception": "Official diocesan ritual in New France; later superseded during 19th-century Roman standardization."
+    },
+    {
+      "id": "global-mission-regional-2026-11:quebec-council-1851",
+      "tradition_id": "global-mission-quebec-roman",
+      "label": "1851-1853 Quebec Provincial Alignment to Roman Liturgical Books",
+      "date_label": "1851 council; 1853 Compendium printing",
+      "start_year": 1853,
+      "end_year": 1853,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Provincial directive and 1853 Compendium Ritualis Romani aligning Quebec dioceses with Roman liturgical books and standardized chant, moving away from French Gallican/Parisian customs.",
+      "components": [
+        "rubrics",
+        "chant"
+      ],
+      "witness_ids": [
+        "western:quebec-provincial-council-1851-roman-transition"
+      ],
+      "witness_label": "Compendium ritualis romani ad usum dioecesium provinciae quebecensis (Quebec, 1853)",
+      "summary": "Following the First Provincial Council of Quebec (1851) during Pius IX's pontificate, Quebec dioceses standardized around Roman liturgical books, accompanied by 1853-1854 Roman ritual and chant editions.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "global-mission-regional-2026-11:quebec1853-compendium",
+          "locus": "Title leaf ('jussu Concilii provincialis quebecensis I editum', 1853)",
+          "claim": "Attests provincial mandate for Roman ritual standardization across the Quebec province."
+        }
+      ],
+      "limitations": "Direct altar copies of replaced Parisian Missals and incoming Roman Missals in Quebec parishes remain uncollated.",
+      "reception": "Provincial ecclesiastical alignment toward Roman uniformity across French-Canadian dioceses."
+    },
+    {
+      "id": "global-mission-regional-2026-11:bdw-2003",
+      "tradition_id": "ordinariate-divine-worship",
+      "label": "Book of Divine Worship (2003, Pastoral Provision)",
+      "date_label": "2003 printing; 1987 interim approval",
+      "start_year": 2003,
+      "end_year": 2003,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Approved U.S. Pastoral Provision liturgical book containing dual Eucharistic rites (Rite One in traditional Prayer Book English, PDF pp. 277+, and Rite Two in contemporary English, PDF pp. 327+), forerunner to Divine Worship: The Missal (2015).",
+      "components": [
+        "calendar",
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:book-divine-worship-predecessor"
+      ],
+      "witness_label": "The Book of Divine Worship, Newman House Press, 2003",
+      "summary": "Following 13 February 1987 interim Roman decrees for U.S. Pastoral Provision Anglican Use parishes and a November 1999 draft, the 2003 Book of Divine Worship published dual Rite One (traditional) and Rite Two (contemporary) Eucharistic liturgies adapted from American Book of Common Prayer traditions.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "global-mission-regional-2026-11:bdw2003-book",
+          "locus": "PDF pp. 1-6 (title, imprint, contents), pp. 277+ (Eucharist I / Rite One), pp. 327+ (Eucharist II / Rite Two)",
+          "claim": "Establishes the 2003 printed publication and its dual Rite One / Rite Two Eucharistic structure."
+        },
+        {
+          "source_id": "global-mission-regional-2026-11:bdw1999-draft",
+          "locus": "PDF pp. 8-10 (facsimiles of 13 February 1987 CDF and CDW decrees)",
+          "claim": "Establishes earlier 1987 interim authorization limited to U.S. Pastoral Provision communities."
+        }
+      ],
+      "limitations": "Full line-by-line collation between 1987 interim texts, 1999 draft, 2003 printing, and 2015 Divine Worship: The Missal remains open.",
+      "reception": "Used by U.S. Pastoral Provision parishes until its Eucharistic texts were replaced worldwide by Divine Worship: The Missal on 29 November 2015."
+    },
+    {
+      "id": "global-mission-regional-2026-11:chiapas-2024",
+      "tradition_id": "global-mission-chiapas-adaptations",
+      "label": "2024 Chiapas Indigenous Order of Mass Adaptations",
+      "date_label": "22 November 2024 official clarification (Dicastery recognitio granted November 2024)",
+      "start_year": 2024,
+      "end_year": 2024,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Three optional Order of Mass adaptations recognized by the Holy See for Tseltal, Tsotsil, Ch'ol, Tojolabal, and Zoque communities in San Cristóbal de las Casas, Mexico; explicitly NOT a separate Mayan rite.",
+      "components": [
+        "ordinary",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:roman-adaptations-chiapas2024"
+      ],
+      "witness_label": "CEM Explanatory Note Prot. 04/24 (22 November 2024, hosted by Dicastery for Divine Worship)",
+      "summary": "Clarifies Holy See recognitio for three bounded optional adaptations within the Roman Rite: (1) a respected community lay 'principal' invited by the priest to lead specific assembly prayers without assuming presidency, (2) traditional sahumerio incensing ministry at named Mass moments, and (3) contemplative rhythmic swaying/movement accompanying music.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "global-mission-regional-2026-11:chiapas2024-cem-note",
+          "locus": "PDF pp. 1-2, sections 1-5 (Prot. 04/24, 22 November 2024)",
+          "claim": "Names the five indigenous communities, enumerates the three optional adaptations, and explicitly denies creation of a separate Mayan rite."
+        }
+      ],
+      "limitations": "Original 8 November 2024 Dicastery recognitio instrument, approved indigenous-language ritual booklet, and dated first local celebrations remain uninspected. Strictly distinguished from unapproved Amazonian Rite proposals.",
+      "reception": "Recognized optional adaptations scoped strictly to the five named communities in San Cristóbal de las Casas."
+    },
+    {
+      "id": "global-mission-regional-2026-11:brazil-ep5-1974",
+      "tradition_id": "global-mission-brazil-eucharistic-prayer",
+      "label": "1974 Brazilian Oração Eucarística V",
+      "date_label": "11 November 1974 Roman approval reported; 1975 first use",
+      "start_year": 1974,
+      "end_year": 1974,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Original Portuguese Eucharistic Prayer composed for the 1975 Brazilian National Eucharistic Congress in Manaus and approved by Rome (Prot. 272/74).",
+      "components": [
+        "anaphoras"
+      ],
+      "witness_ids": [
+        "western:roman-adaptations-brazil1974"
+      ],
+      "witness_label": "Oração Eucarística V, Prot. 272/74 (11 November 1974), as documented in Taborda et al. (2006)",
+      "summary": "Scholarly archival history documents Roman approval on 11 November 1974 (Prot. 272/74) of Brazil's original Portuguese Eucharistic Prayer V, first used in 1975 and differing from earlier Brazilian drafts.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "global-mission-regional-2026-11:brazil2006-taborda",
+          "locus": "Printed pp. 41-48, especially p. 48 n. 34",
+          "claim": "Reports 11 November 1974 Roman approval Prot. 272/74 and distinguishes approved text from preliminary drafts."
+        }
+      ],
+      "limitations": "Original Prot. 272/74 decree and 1975 printed Brazilian booklet have not been directly acquired.",
+      "reception": "Widely received across Brazilian dioceses within the Portuguese Roman Missal."
+    },
+    {
+      "id": "global-mission-regional-2026-11:brazil-ep5-1991",
+      "tradition_id": "global-mission-brazil-eucharistic-prayer",
+      "label": "1991 Portuguese Missal Witness of Brazilian Eucharistic Prayer V",
+      "date_label": "1991 Portuguese translation alignment reported",
+      "start_year": 1991,
+      "end_year": 1991,
+      "date_kind": "publication",
+      "status": "provisional",
+      "scope": "Reported alignment of institution-narrative wording in the 1991 Portuguese translation of the second typical Roman Missal.",
+      "components": [
+        "anaphoras"
+      ],
+      "witness_ids": [
+        "western:roman-adaptations-brazil1991"
+      ],
+      "witness_label": "Portuguese Roman Missal (1991) Oração Eucarística V witness, as cited by Taborda et al. (2006)",
+      "summary": "The 2006 textual study attributes institution-wording alignment to the 1991 Portuguese Missal while noting a separate undated wording difference ('doze apóstolos').",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "global-mission-regional-2026-11:brazil2006-taborda",
+          "locus": "Printed p. 49 and n. 36",
+          "claim": "Attributes institution-narrative alignment to the 1991 Portuguese translation witness."
+        }
+      ],
+      "limitations": "Provisional pending direct inspection of original 1975 and 1991 Portuguese Missal leaves; does not prove a newly promulgated anaphora recension.",
+      "reception": "Witnessed in the Brazilian Portuguese Roman Missal."
+    },
+    {
+      "id": "global-mission-regional-2026-11:china-faculty-1615",
+      "tradition_id": "global-mission-china-roman",
+      "label": "1615 Paul V Classical Chinese Liturgy Faculty (Romanae Sedis Antistes)",
+      "date_label": "26 March 1615 Holy Office decree; 27 June 1615 papal brief",
+      "start_year": 1615,
+      "end_year": 1615,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Papal faculty permitting translation and celebration of the Roman liturgy in Classical Chinese for Jesuit-trained Chinese clergy; language faculty, not a new Latin recension.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:china-paul-v-faculty-1615"
+      ],
+      "witness_label": "Holy Office decree (26 March 1615) and Paul V brief Romanae Sedis Antistes (27 June 1615), reported in Notitiae 2011",
+      "summary": "Following Jesuit petitions led by Nicolas Trigault, the Holy Office (26 March 1615) and Pope Paul V's brief Romanae Sedis Antistes (27 June 1615) authorized translating the Roman Missal and liturgical books into literary Chinese.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "global-mission-regional-2026-11:china2011-notitiae",
+          "locus": "Notitiae 47/48 (2011), printed pp. 552-554",
+          "claim": "Records dates and authority of the 1615 Holy Office decree and Paul V brief."
+        }
+      ],
+      "limitations": "Original 1615 Vatican archival instruments remain uninspected; faculty was never broadly implemented in parish worship.",
+      "reception": "Invoked by Ludovico Buglio SJ on the title leaf of his 1670 Beijing Missal; renewed confirmation sought in 1680 was unsuccessful."
+    },
+    {
+      "id": "global-mission-regional-2026-11:china-buglio-1670",
+      "tradition_id": "global-mission-china-roman",
+      "label": "1670 Buglio Missale Romanum Sinice (Beijing)",
+      "date_label": "1670 Beijing printing; 1680 renewed approval unsuccessful",
+      "start_year": 1670,
+      "end_year": 1670,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "First printed Classical Chinese translation of the Roman Missal (Order of Mass, prefaces, Canon, propers), produced xylographically in Beijing by Ludovico Buglio SJ.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:china-buglio-missale-sinice-1670"
+      ],
+      "witness_label": "Ludovico Buglio SJ, Misa jingdian / Missale Romanum Sinice redditum, Beijing 1670 (Princeton Scheide 46.1; Usuarium 8263)",
+      "summary": "Buglio's 1670 Beijing printing renders the Roman Missal (including Order, prefaces, and Canon) into Classical Chinese in a hybrid xylographic/Western codex format, citing Paul V's 1615 authority on its Latin title page.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "global-mission-regional-2026-11:buglio1670-princeton",
+          "locus": "Scheide 46.1 catalog record and Latin title leaf (Beijing, 1670)",
+          "claim": "Confirms author, Beijing 1670 imprint, Classical Chinese xylographic printing, and citation of Paul V's authority."
+        },
+        {
+          "source_id": "global-mission-regional-2026-11:buglio1670-usuarium",
+          "locus": "USUARIUM Book 8263, contents pp. 4, 23-25",
+          "claim": "Identifies Mass order, prefaces, and Canon within the 1670 Chinese volume."
+        },
+        {
+          "source_id": "global-mission-regional-2026-11:china2011-notitiae",
+          "locus": "Notitiae 47/48 (2011), printed pp. 552-554",
+          "claim": "Documents 1670 printing and reports that the 1680 petition for renewed approval was unsuccessful."
+        }
+      ],
+      "limitations": "Approval leaves and full Classical Chinese text collation against 1604/1634 Latin Roman exemplars remain uninspected; actual authorized altar use of the 1670 printing is not established.",
+      "reception": "Printed witness preserved in rare holdings (Princeton Scheide 46.1); renewed Roman approval failed in 1680 amid Chinese Rites tensions."
+    },
+    {
+      "id": "global-mission-regional-2026-11:china-indult-1949",
+      "tradition_id": "global-mission-china-roman",
+      "label": "1949 Holy Office Chinese Vernacular Mass Indult",
+      "date_label": "12 April 1949 reported indult",
+      "start_year": 1949,
+      "end_year": 1949,
+      "date_kind": "approval",
+      "status": "provisional",
+      "scope": "Reported literary Chinese Roman Mass translation indult retaining the Canon in Latin; strictly separated from the 1939 civil-rites decree Plane compertum.",
+      "components": [
+        "ordinary",
+        "propers",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:china-holy-office-indult-1949"
+      ],
+      "witness_label": "Holy Office indult of 12 April 1949, reported in Notitiae 47/48 (2011), pp. 561-562",
+      "summary": "Official-journal history reports a 12 April 1949 Holy Office indult authorizing literary Chinese translation of the Roman Mass outside the Latin Canon, distinct from both the 1615/1670 history and the 1939 civil-honors instruction Plane compertum.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "global-mission-regional-2026-11:china2011-notitiae",
+          "locus": "Notitiae 47/48 (2011), printed pp. 561-562 and n. 56",
+          "claim": "Reports the 12 April 1949 Holy Office indult outside the Latin Canon."
+        },
+        {
+          "source_id": "global-mission-regional-2026-11:china1939-aas-control",
+          "locus": "AAS 32 (1940), pp. 24-25",
+          "claim": "Control proof that 1939 Plane compertum governed civil honors, not a Chinese Mass liturgy."
+        }
+      ],
+      "limitations": "Provisional pending acquisition of the original 1949 indult text, exact beneficiary scope, and an operative altar edition (distinct from 1954/1956 bilingual lay aids).",
+      "reception": "Indult reported on the eve of the 1949 political transition in China; practical altar implementation unestablished."
+    },
+    {
+      "id": "global-mission-regional-2026-11:japan-manuale-1605",
+      "tradition_id": "global-mission-japan-nagasaki-control",
+      "label": "1605 Nagasaki Jesuit Press Manuale (Non-Missal Control)",
+      "date_label": "1605 Nagasaki printing",
+      "start_year": 1605,
+      "end_year": 1605,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Sacramental administration manual with plainchant notation printed by Bishop Luís de Cerqueira SJ in Nagasaki; explicitly NOT a complete Roman Missal.",
+      "components": [
+        "rubrics",
+        "chant"
+      ],
+      "witness_ids": [
+        "western:japan-nagasaki-manuale-1605-control"
+      ],
+      "witness_label": "Manuale ad sacramenta ecclesiae ministranda, Nagasaki, Collegium Japonicum SJ, 1605 (ARSI Jap. Sin. I 207)",
+      "summary": "Demonstrates high-level rubricated liturgical printing with Western chant notation at the Nagasaki Jesuit press while establishing a crucial bibliographic boundary: it is a Ritual/Manual for sacraments, not a complete Japanese-printed Roman Missal.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "global-mission-regional-2026-11:nagasaki1605-arsi",
+          "locus": "Title leaf and imprint (Nangasaquii: In Collegio Japonico Societatis Iesu, 1605), ARSI Jap. Sin. I 207",
+          "claim": "Identifies the book as Bishop Cerqueira's sacramental Manuale with plainchant notation rather than a Missale Romanum."
+        }
+      ],
+      "limitations": "Control witness only; does not establish which imported European Roman Missal editions were celebrated at Japanese mission altars.",
+      "reception": "Issued for clergy of the Diocese of Japan prior to the Tokugawa prohibition of Christianity."
+    },
+    {
+      "id": "global-mission-regional-2026-11:goa-diamper-1599",
+      "tradition_id": "global-mission-goa-diamper",
+      "label": "1599 Synod of Diamper / 1606 Coimbra Latinization Acts",
+      "date_label": "June 1599 synod; 1606 Coimbra printing",
+      "start_year": 1606,
+      "end_year": 1606,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Portuguese Padroado / Archdiocese of Goa legislative intervention mandating Latinizing alterations to the East Syriac Qurbana of the St. Thomas Christians, published with Gouvea's Latin rendering in 1606.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:malabar-gouvea-1606",
+        "western:goa-diamper-1599-qurbana-acts"
+      ],
+      "witness_label": "Synodo diocesano da igreja e bispado de Angamale (Coimbra, 1606; BNP purl.pt/17493)",
+      "summary": "Under Archbishop Aleixo de Menezes of Goa, the Synod of Diamper spared the East Syriac Qurbana from wholesale replacement by the Latin Roman Missal while imposing sweeping doctrinal and rubrical Latinizations, suppressing alternative anaphoras and altering commemorations.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "global-mission-regional-2026-11:diamper1606-bnp",
+          "locus": "Coimbra 1606 printed acts (BNP purl.pt/17493)",
+          "claim": "Preserves the official 1606 printed record of the 1599 Diamper decrees under Goa Padroado jurisdiction."
+        },
+        {
+          "source_id": "global-mission-regional-2026-11:diamper1694-geddes",
+          "locus": "Action V (Mass/Qurbana decrees)",
+          "claim": "Transmits English translation of Diamper's mandated alterations to the Malabar Qurbana."
+        }
+      ],
+      "limitations": "Legislative and Latin-translation witness; exact Syriac textual implementation (including Francisco Roz's 1603 Angamaly manuscript) and relationship to the 1774-1775 Rome Syriac printings require direct Syriac collation.",
+      "reception": "Enforced under Portuguese Padroado governance in Malabar and resisted in the 1653 Coonan Cross schism; later partially reversed by 20th-century Syro-Malabar liturgical restoration."
+    },
+    {
+      "id": "global-mission-regional-2026-11:india-twelve-points-1969",
+      "tradition_id": "global-mission-india-adaptations",
+      "label": "1969 Indian Twelve-Point Ritual Concessions",
+      "date_label": "25 April 1969 Consilium permission; 15 February 1970 dated celebration",
+      "start_year": 1969,
+      "end_year": 1969,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Twelve optional Indian ritual concessions (posture, barefoot, anjali hasta/panchanga pranam, touching/eyes reverence, namaste peace, incense/arati, vesture, tray, preparatory rite, universal prayer) within the Roman Rite; approves NO new anaphora.",
+      "components": [
+        "ordinary",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:roman-adaptations-india1969"
+      ],
+      "witness_label": "Consilium Letter Prot. 802/69 (25 April 1969), Notitiae 5 (1969), pp. 365-366",
+      "summary": "Cardinal Benno Gut granted twelve optional cultural ritual concessions for India, delegating gradual, optional local introduction after catechesis; Notitiae 6 (1970) directly attests their liturgical use at Archbishop Simon Lourdusamy's 15 February 1970 Mass in Rome within the new Order of Mass.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "global-mission-regional-2026-11:india1969-notitiae",
+          "locus": "Notitiae 5 (1969), printed pp. 365-366 / PDF pp. 39-40, Prot. 802/69",
+          "claim": "Lists the twelve approved optional ritual points and grants no approval for a new Indian Eucharistic Prayer."
+        },
+        {
+          "source_id": "global-mission-regional-2026-11:india1970-celebration-notitiae",
+          "locus": "Notitiae 6 (1970), printed p. 89 / PDF p. 15",
+          "claim": "Directly attests celebration with the 25 April 1969 concessions on 15 February 1970 within the new Order of Mass."
+        }
+      ],
+      "limitations": "Optional ceremonial concessions only; neither establishes a complete Indian altar Missal nor approves the separate experimental Indian Order or Indian Anaphora.",
+      "reception": "Optional, partial, or gradual local uptake by Indian dioceses after catechesis; dated 15 February 1970 celebration verified."
+    },
+    {
+      "id": "global-mission-regional-2026-11:india-experimental-1971-1974",
+      "tradition_id": "global-mission-india-adaptations",
+      "label": "1971-1974 Unapproved Experimental Indian Order & Anaphora Proposals (Control)",
+      "date_label": "1971-1974 experimental preparation and non-approval control",
+      "start_year": 1971,
+      "end_year": 1974,
+      "date_kind": "attestation",
+      "status": "provisional",
+      "scope": "Experimental Indian Order of Mass (1971) and proposed Indian Anaphora (1972 Madras vote procedurally disputed in Notitiae 1973; late-1980s revision without reported Roman reply by 2005); strictly NON-APPROVED control.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:roman-adaptations-india1971"
+      ],
+      "witness_label": "Notitiae 9 (1973), pp. 75-77 procedural control; Puthanangady (2005), pp. 99-100",
+      "summary": "Strictly separates unapproved experimental texts (1971 Indian Order, 1972 Madras anaphora proposal failing the two-thirds voting and prior Roman submission rules, and 1974 pro-manuscripto Bharatheeya Pooja) from the approved 1969 twelve-point concessions.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "global-mission-regional-2026-11:india1973-control-notitiae",
+          "locus": "Notitiae 9 (1973), printed pp. 75-77, III.5 and p. 77 n. 1",
+          "claim": "Documents the 24 July 1972 threshold correction and reports no prior Roman submission of the proposed Indian anaphora."
+        },
+        {
+          "source_id": "global-mission-regional-2026-11:india2005-puthanangady",
+          "locus": "Puthanangady (2005), pp. 99-100",
+          "claim": "Distinguishes experimental Order preparation, unapproved early anaphora, and later revised submission lacking reported Roman approval."
+        }
+      ],
+      "limitations": "Explicit non-approved experimental control; original experimental Orders and later correspondence remain unacquired.",
+      "reception": "Experimental center use reported retrospectively; NO Roman recognitio established."
+    },
+    {
+      "id": "global-mission-regional-2026-11:philippines-ibanag-1975",
+      "tradition_id": "global-mission-philippines-adaptations",
+      "label": "1975 Ibanag Order of Mass & Eucharistic Prayers Confirmation",
+      "date_label": "13 January 1975 confirmation",
+      "start_year": 1975,
+      "end_year": 1975,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Roman confirmation (Prot. 1910/74) of the Ibanag translation of the Order of Mass and Roman Eucharistic Prayers in the Philippines; vernacular confirmation, not a new regional rite.",
+      "components": [
+        "ordinary",
+        "anaphoras"
+      ],
+      "witness_ids": [],
+      "witness_label": "CDW Decree Prot. 1910/74 (13 January 1975), Notitiae 11 (1975), p. 104",
+      "summary": "Contemporary official decree summary confirms an Ibanag vernacular translation of the Roman Ordo Missae and Eucharistic Prayers.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "global-mission-regional-2026-11:philippines1975-notitiae",
+          "locus": "Notitiae 11 (1975), printed p. 104, Prot. 1910/74",
+          "claim": "Confirms the Ibanag interpretation of the Ordo Missae and Eucharistic Prayers."
+        }
+      ],
+      "limitations": "Vernacular component confirmation only; bound printed book and first local celebration remain uninspected.",
+      "reception": "Confirmed for Ibanag-language liturgical use in the Philippines."
+    },
+    {
+      "id": "global-mission-regional-2026-11:philippines-mbp-1976",
+      "tradition_id": "global-mission-philippines-adaptations",
+      "label": "1976 Misa ng Bayang Pilipino (Pending / Unapproved Proposal Control)",
+      "date_label": "January and June 1976 episcopal submission; pending in 1980",
+      "start_year": 1976,
+      "end_year": 1976,
+      "date_kind": "attestation",
+      "status": "provisional",
+      "scope": "Philippine cultural Roman Mass adaptation submitted to Rome in 1976 and still reported pending Roman consideration in 1980; contrasted with the 1971 First Communion experimental prayer whose permission was withdrawn.",
+      "components": [
+        "ordinary",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:roman-adaptations-philippines1976"
+      ],
+      "witness_label": "CBCP 1976 submission as reported in Boletin Eclesiastico de Filipinas 54 (1980), p. 41",
+      "summary": "Documents the January 1976 CBCP acceptance and June 1976 revised submission to Rome of Misa ng Bayang Pilipino, explicitly distinguishing it from an approved regional rite.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "global-mission-regional-2026-11:philippines1980-boletin",
+          "locus": "Boletin Eclesiastico de Filipinas 54 (Jan.-Feb. 1980), printed pp. 27, 41",
+          "claim": "Distinguishes the withdrawn 1971 First Communion experiment from the 1976 Misa ng Bayang Pilipino submission still under Roman review in 1980."
+        }
+      ],
+      "limitations": "Provisional control record; original 1976 submission text and any subsequent Roman disposition remain unacquired.",
+      "reception": "Submitted by CBCP; Roman recognitio as a whole regional rite NOT established."
+    },
+    {
+      "id": "global-mission-regional-2026-11:broome-2024",
+      "tradition_id": "global-mission-broome-australia",
+      "label": "2024 Missa Terra Spiritus Sancti (ACBC Approval Pending Roman Recognitio)",
+      "date_label": "7 May 2024 ACBC approval; 2024 & 2026 local celebrations attested",
+      "start_year": 2024,
+      "end_year": 2024,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Aboriginal Roman Mass adaptation for the Diocese of Broome, Western Australia, approved by the Australian Catholic Bishops Conference on 7 May 2024 for subsequent submission to the Holy See.",
+      "components": [
+        "ordinary",
+        "rubrics",
+        "chant"
+      ],
+      "witness_ids": [
+        "western:roman-adaptations-broome2024"
+      ],
+      "witness_label": "ACBC Media Release (7 May 2024); Broome diocesan newsletter Walking Together vol. 13 (June 2026)",
+      "summary": "Following reported diocesan experimental permission from May 1973 and a 2018 Liturgy Brisbane publication, the ACBC formally approved Missa Terra Spiritus Sancti on 7 May 2024 for submission to Rome; local celebrations are directly attested in December 2024 and at Pentecost 2026 in Warmun.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "global-mission-regional-2026-11:broome2024-acbc",
+          "locus": "ACBC media release (7 May 2024), PDF pp. 1-2",
+          "claim": "Distinguishes ACBC approval for the Diocese of Broome from subsequent submission for Holy See recognitio."
+        },
+        {
+          "source_id": "global-mission-regional-2026-11:broome2026-diocesan-use",
+          "locus": "Walking Together vol. 13, Part 1 (June 2026), PDF p. 3",
+          "claim": "Directly attests celebration of Missa Terra Spiritus Sancti at Warmun for Pentecost 2026."
+        }
+      ],
+      "limitations": "Holy See recognitio has NOT been verified; conference approval and local diocesan celebration do not supply Roman recognitio or extend authorization Australia-wide.",
+      "reception": "Actively celebrated in Broome Diocese (Warmun, Kimberley); Roman recognitio pending/unverified."
+    },
+    {
+      "id": "global-mission-regional-2026-11:carthage-patristic-253-419",
+      "tradition_id": "global-mission-ancient-north-africa",
+      "label": "Ancient North African Patristic & Conciliar Eucharistic Attestations",
+      "date_label": "c. 253–419 patristic and conciliar attestations (NO surviving missal)",
+      "start_year": 253,
+      "end_year": 419,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Fragmentary patristic and conciliar witnesses to ancient Latin North African Eucharistic worship (Cyprian mixed chalice, Hippo 393 / Carthage 397 canon 23 Father-directed altar prayer and vetted libelli, Augustine paschal/calendar customs); explicitly NOT a surviving complete missal or sacramentary.",
+      "components": [
+        "anaphoras",
+        "rubrics",
+        "calendar"
+      ],
+      "witness_ids": [
+        "western:north-africa-carthage-patristic-context-393-419"
+      ],
+      "witness_label": "Cyprian Ep. 62 (63); Hippo 393 / Carthage 397 canon 23 (Codex Canonum Ecclesiae Africanae); Augustine Ep. 55",
+      "summary": "Patristic letters and North African conciliar canons attest a vibrant early Latin Eucharistic tradition—including mixed-chalice discipline, strict Trinitarian direction of altar prayers to the Father, episcopal vetting of circulated prayer libelli, and liturgical calendar customs—while zero complete North African sacramentaries or missals survive.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "global-mission-regional-2026-11:carthage-canons-newadvent",
+          "locus": "Hippo 393 canon 21 / Third Council of Carthage 397 canon 23",
+          "claim": "Directs that altar prayer always be addressed to the Father and requires copied prayer libelli to be reviewed with instructiores fratres."
+        },
+        {
+          "source_id": "global-mission-regional-2026-11:cyprian-ep62-newadvent",
+          "locus": "Epistle 62 (Hartel Ep. 63), c. 253",
+          "claim": "Attests Carthaginian Eucharistic discipline of mixing water with wine in the chalice."
+        },
+        {
+          "source_id": "global-mission-regional-2026-11:augustine-ep55-newadvent",
+          "locus": "Letter 55 to Januarius, c. 400",
+          "claim": "Attests late-4th-century North African paschal observance and regional liturgical customs."
+        }
+      ],
+      "limitations": "Strictly fragmentary patristic and conciliar attestation; no complete anaphora text, sacramentary, or missal from ancient North Africa survives, and no linear descent to later European or modern African rites is asserted.",
+      "reception": "Carthage 397 canon 23 entered broader Western canonical collections; North African local liturgy did not survive as a continuous medieval book line."
+    },
+    {
+      "id": "global-mission-regional-2026-11:keren-blin-2008-2010",
+      "tradition_id": "global-mission-keren-blin-geez",
+      "label": "2008-2010 Keren Blin–Ge'ez Bilingual Service Book",
+      "date_label": "27 April 2008 imprimatur; 2009 inauguration; June 2010 attested celebration",
+      "start_year": 2008,
+      "end_year": 2008,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "442-page bilingual Blin and Ge'ez Mass book in three parts plus separate deacon/people volume, approved by Bishop Kidane Yebio for the Catholic Eparchy of Keren, Eritrea.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:alex-keren-blin-geez-mass-2008"
+      ],
+      "witness_label": "Eparchy of Keren Blin–Ge'ez Mass Book (imprimatur 27 April 2008)",
+      "summary": "Translated from the 1945 Ge'ez Catholic missal under Bishop Kidane Yebio's imprimatur (27 April 2008), inaugurated in 2009, and directly attested in official Blin celebration by June 2010.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "global-mission-regional-2026-11:keren2008-cover",
+          "locus": "Cover PDF p. ii (27 April 2008 imprimatur)",
+          "claim": "Establishes eparchial approval by Bishop Kidane Yebio and bilingual Blin–Ge'ez scope."
+        },
+        {
+          "source_id": "global-mission-regional-2026-11:keren2009-blin-history",
+          "locus": "PDF pp. 2, 4 (16 June 2009)",
+          "claim": "Identifies the 1945 Ge'ez Catholic missal as the translation base."
+        },
+        {
+          "source_id": "global-mission-regional-2026-11:keren2010-use",
+          "locus": "Section V, PDF p. 5 (June 2010)",
+          "claim": "Firsthand account directly attesting official Mass celebration in Blin."
+        }
+      ],
+      "limitations": "Scoped strictly to the Eparchy of Keren; exact altar exemplar at a dated service, superior patriarchal/Roman file, and any Ge'ez source-text revision remain unverified.",
+      "reception": "Actively celebrated in Blin within the Eparchy of Keren as attested by June 2010."
+    }
+  ],
+  "transitions": [
+    {
+      "id": "global-mission-regional-2026-11:roman1970-to-zaire1988",
+      "from_stage": "roman-stages-1969-1970",
+      "to_stage": "regional-variants:zaire1988",
+      "kind": "recension-branch",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "Decree Zairensium Dioecesium (30 April 1988, Prot. 1520/85) approves a French-language inculturated Roman Missal Order for the dioceses of then-Zaire with major structural reorganizations of the Introductory Rites, Penitential Act, and Sign of Peace relative to the postconciliar Roman Missal.",
+      "components": [
+        "ordinary",
+        "rubrics"
+      ],
+      "changes": [
+        {
+          "component": "ordinary",
+          "before": "Postconciliar Roman Missal Introductory Rites open with Entrance, Greeting, Penitential Act, Kyrie, Gloria, and Collect without an invocation of ancestors.",
+          "after": "Zaire Order introduces an announcer/herald opening and integrates a litany invoking both the Saints and the 'ancestors of upright heart' (ancêtres au cœur droit) into the Introductory Rites, while removing the Penitential Act from the opening rites.",
+          "locus_before": "Missale Romanum (1970), Ordo Missae, Ritus initiales",
+          "locus_after": "Notitiae 24 (1988), printed pp. 458-461 (approved French Order and presentation); Pope Francis video message (1 Dec. 2020)",
+          "evidence": [
+            {
+              "source_id": "global-mission-regional-2026-11:zaire1988-notitiae",
+              "locus": "Notitiae 24 (1988), printed pp. 457-461",
+              "claim": "Approves the distinct Zaire Introductory Rites invoking saints and upright ancestors."
+            },
+            {
+              "source_id": "global-mission-regional-2026-11:zaire2020-francis",
+              "locus": "Video message of 1 December 2020",
+              "claim": "Confirms the Zaire Missal's standing as an approved postconciliar inculturated Roman rite."
+            }
+          ]
+        },
+        {
+          "component": "ordinary",
+          "before": "Postconciliar Roman Missal places the Penitential Act near the beginning of Mass before the Liturgy of the Word.",
+          "after": "Zaire Order relocates the Penitential Act (with sprinkling of water / aspersion) to AFTER the Liturgy of the Word (following the Homily and Profession of Faith) so conversion responds directly to the proclaimed Word.",
+          "locus_before": "Missale Romanum (1970), Ordo Missae, Actus paenitentialis",
+          "locus_after": "Notitiae 24 (1988), printed pp. 458-461 (selected approved French rubrics)",
+          "evidence": [
+            {
+              "source_id": "global-mission-regional-2026-11:zaire1988-notitiae",
+              "locus": "Notitiae 24 (1988), printed pp. 458-461",
+              "claim": "Explicitly places the Penitential Act after the homily in the approved Zaire rubrics."
+            }
+          ]
+        },
+        {
+          "component": "rubrics",
+          "before": "Postconciliar Roman Missal places the Sign of Peace inside the Communion Rite immediately prior to the Fraction and Agnus Dei.",
+          "after": "Zaire Order relocates the Sign of Peace directly after the Penitential Act and BEFORE the Universal Prayer and Presentation of the Gifts (evoking Mt 5:23-24 reconciliation prior to offering gifts at the altar).",
+          "locus_before": "Missale Romanum (1970), Ordo Missae, Ritus Communionis",
+          "locus_after": "Notitiae 24 (1988), printed pp. 458-461",
+          "evidence": [
+            {
+              "source_id": "global-mission-regional-2026-11:zaire1988-notitiae",
+              "locus": "Notitiae 24 (1988), printed pp. 458-461",
+              "claim": "Approved French rubrics explicitly situate the Sign of Peace before the Universal Prayer and Offertory."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "global-mission-regional-2026-11:zaire1988-notitiae",
+          "locus": "Notitiae 24 (1988), printed p. 457 (decree Prot. 1520/85) and pp. 458-465",
+          "claim": "Primary Roman decree and approved French Order/rubric excerpts establish structural adaptations relative to the standard postconciliar Roman Missal."
+        }
+      ],
+      "limitations": "Contrasts the approved 1988 Zaire Order excerpts against the standard postconciliar Roman Missal baseline (1970/1975); exact donor Latin impression (1970 vs. 1975) and complete bound Kinshasa exemplar remain uncollated. Scoped strictly to the dioceses of Zaire (DR Congo), not Africa-wide.",
+      "comparison_ids": [],
+      "historical_parentage": "established",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "global-mission-regional-2026-11:bdw2003-to-dwm2015",
+      "from_stage": "global-mission-regional-2026-11:bdw-2003",
+      "to_stage": "regional-variants:divineworship2015",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "Divine Worship: The Missal (approved May 2015, effective 29 November 2015) replaces the Eucharistic provisions of the U.S. Pastoral Provision's 2003 Book of Divine Worship across all three Personal Ordinariates, consolidating dual traditional/contemporary rites into a single Prayer Book English Order with normative Roman Canon and unified calendar.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "calendar"
+      ],
+      "changes": [
+        {
+          "component": "ordinary",
+          "before": "2003 Book of Divine Worship provided two separate Eucharistic orders for U.S. Pastoral Provision parishes: Rite One (traditional language, PDF pp. 277+) and Rite Two (contemporary language, PDF pp. 327+).",
+          "after": "2015 Divine Worship: The Missal replaces both with a single worldwide Prayer Book English Order of Mass for all three Personal Ordinariates, featuring Collect for Purity, Penitential Rite after the Liturgy of the Word, optional traditional/Roman offertory forms, and Prayer of Humble Access before Communion.",
+          "locus_before": "Book of Divine Worship (2003), PDF pp. 277+ (Eucharist I) and pp. 327+ (Eucharist II)",
+          "locus_after": "USCCB Newsletter 51 (October 2015), printed pp. 37-39; official Ordinariate publication notice",
+          "evidence": [
+            {
+              "source_id": "global-mission-regional-2026-11:bdw2003-book",
+              "locus": "PDF pp. 277+ and pp. 327+",
+              "claim": "Directly attests dual Rite One / Rite Two Eucharistic orders in the 2003 Book of Divine Worship."
+            },
+            {
+              "source_id": "global-mission-regional-2026-11:dwm2015-usccb",
+              "locus": "Printed pp. 37-39",
+              "claim": "Describes the unified 2015 Prayer Book English Order of Mass and its core Anglican-patrimony elements."
+            },
+            {
+              "source_id": "global-mission-regional-2026-11:dwm2015-ordinariate-notice",
+              "locus": "Opening publication notice and Q&A",
+              "claim": "States explicit replacement of Book of Divine Worship Eucharistic texts from 29 November 2015."
+            }
+          ]
+        },
+        {
+          "component": "anaphoras",
+          "before": "2003 Book of Divine Worship retained multiple Eucharistic Prayer options distributed across Rite One and Rite Two modeled on American Episcopal prayer books.",
+          "after": "2015 Divine Worship: The Missal establishes the Roman Canon (Eucharistic Prayer I) in Prayer Book English as normative, alongside a single bounded alternative Eucharistic Prayer (Roman EP II).",
+          "locus_before": "Book of Divine Worship (2003), Eucharist I and II Eucharistic Prayers",
+          "locus_after": "USCCB Newsletter 51 (October 2015), printed pp. 38-39",
+          "evidence": [
+            {
+              "source_id": "global-mission-regional-2026-11:bdw2003-book",
+              "locus": "PDF contents pp. 4-6, Eucharist I & II",
+              "claim": "Documents the multi-rite Eucharistic Prayer layout of the 2003 predecessor."
+            },
+            {
+              "source_id": "global-mission-regional-2026-11:dwm2015-usccb",
+              "locus": "Printed pp. 38-39",
+              "claim": "Specifies normative Roman Canon and bounded alternative Eucharistic Prayer in 2015 DWM."
+            }
+          ]
+        },
+        {
+          "component": "calendar",
+          "before": "2003 Book of Divine Worship was scoped to U.S. Pastoral Provision communities under American episcopal oversight.",
+          "after": "2015 Divine Worship: The Missal institutes a unified three-ordinariate calendar (US/Canada, UK, Australia) preserving pre-Lent, Sundays after Epiphany/Trinity, and regional sanctoral calendars.",
+          "locus_before": "Book of Divine Worship (2003), title/imprint and calendar",
+          "locus_after": "USCCB Newsletter 51 (October 2015), printed pp. 37-38",
+          "evidence": [
+            {
+              "source_id": "global-mission-regional-2026-11:dwm2015-usccb",
+              "locus": "Printed pp. 37-38",
+              "claim": "Identifies three-ordinariate jurisdiction and distinctive pre-Lent, Epiphany, and regional calendar provisions."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "global-mission-regional-2026-11:dwm2015-ordinariate-notice",
+          "locus": "Opening publication notice",
+          "claim": "Formally announces replacement of the 2003 Book of Divine Worship Eucharistic texts by Divine Worship: The Missal."
+        },
+        {
+          "source_id": "global-mission-regional-2026-11:dwm2015-usccb",
+          "locus": "Printed pp. 37-39",
+          "claim": "Describes the 2003 forerunner and 2015 successor components."
+        }
+      ],
+      "limitations": "Structural and jurisdictional replacement is established by official descriptions and 2003 contents inspection; prayer-by-prayer verbal collation of every collect and rubric across 2003, 2013 interim Order, and 2015 Missal remains open.",
+      "comparison_ids": [],
+      "historical_parentage": "established",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "global-mission-regional-2026-11:roman2002-to-chiapas2024",
+      "from_stage": "roman-stages-2002",
+      "to_stage": "global-mission-regional-2026-11:chiapas-2024",
+      "kind": "recension-branch",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "Recognized optional Order of Mass adaptations for Tseltal, Tsotsil, Ch'ol, Tojolabal, and Zoque communities in San Cristóbal de las Casas introduce three bounded ritual elements within the Roman Missal without altering sacramental presidency or creating a separate Mayan rite.",
+      "components": [
+        "ordinary",
+        "rubrics"
+      ],
+      "changes": [
+        {
+          "component": "ordinary",
+          "before": "Standard third-edition Roman Missal assigns introductory and concluding assembly prayer invitations exclusively to the presiding priest or deacon.",
+          "after": "Chiapas optional adaptation permits a respected community lay 'principal' (guía), at the invitation of the presiding priest, to lead specific aloud assembly prayers while preserving exclusive priestly presidency.",
+          "locus_before": "Missale Romanum (2002), Ordo Missae",
+          "locus_after": "CEM Explanatory Note Prot. 04/24 (22 November 2024), PDF pp. 1-2",
+          "evidence": [
+            {
+              "source_id": "global-mission-regional-2026-11:chiapas2024-cem-note",
+              "locus": "PDF pp. 1-2, sections 1-5",
+              "claim": "Clarifies the optional assembly prayer invitation role of the principal under priestly presidency."
+            }
+          ]
+        },
+        {
+          "component": "rubrics",
+          "before": "Standard Roman Missal rubrics prescribe clerical thurible incensation and standard posture without regional rhythmic movement.",
+          "after": "Chiapas optional adaptations authorize traditional sahumerio incensing ministry at designated Mass moments and contemplative, rhythmic bodily swaying accompanying traditional music (e.g., at offertory or post-Communion thanksgiving).",
+          "locus_before": "Missale Romanum (2002), Institutio Generalis / Ordo Missae rubrics",
+          "locus_after": "CEM Explanatory Note Prot. 04/24 (22 November 2024), PDF pp. 1-2",
+          "evidence": [
+            {
+              "source_id": "global-mission-regional-2026-11:chiapas2024-cem-note",
+              "locus": "PDF pp. 1-2, sections 1-5",
+              "claim": "Specifies the recognized optional incense ministry and limited contemplative rhythmic movement."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "global-mission-regional-2026-11:chiapas2024-cem-note",
+          "locus": "PDF pp. 1-2, Prot. 04/24 (22 November 2024)",
+          "claim": "Official bishops' clarification hosted by the Dicastery establishes the three optional adaptations relative to the Roman Order of Mass."
+        }
+      ],
+      "limitations": "Original 8 November 2024 Dicastery recognitio decree and approved indigenous-language ritual booklet remain uninspected; scoped exclusively to five named indigenous peoples in San Cristóbal de las Casas.",
+      "comparison_ids": [],
+      "historical_parentage": "established",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "global-mission-regional-2026-11:roman1970-to-india1969",
+      "from_stage": "roman-stages-1969-1970",
+      "to_stage": "global-mission-regional-2026-11:india-twelve-points-1969",
+      "kind": "recension-branch",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "Consilium letter Prot. 802/69 (25 April 1969, granted three weeks after the 3 April 1969 promulgation of the reformed Roman Missal and celebrated within the new Order of Mass on 15 February 1970) permits twelve optional Indian cultural adaptations of posture, gestures, reverence, peace, vesture, and arati without approving any new Eucharistic Prayer.",
+      "components": [
+        "ordinary",
+        "rubrics"
+      ],
+      "changes": [
+        {
+          "component": "rubrics",
+          "before": "Standard postconciliar Roman Missal prescribes Western standing/kneeling/genuflection postures, kissing of altar/book, and Western greeting gestures.",
+          "after": "Indian twelve-point concessions permit sitting on the floor, barefoot liturgical service, anjali hasta bow and panchanga pranam prostration, touching objects and bringing fingers to eyes/forehead instead of kissing, namaste sign of peace, oil-lamp arati, and adapted Indian vesture and vessels.",
+          "locus_before": "Missale Romanum (1969/1970), Institutio Generalis / Ordo Missae rubrics",
+          "locus_after": "Notitiae 5 (1969), printed pp. 365-366, Prot. 802/69",
+          "evidence": [
+            {
+              "source_id": "global-mission-regional-2026-11:india1969-notitiae",
+              "locus": "Notitiae 5 (1969), printed pp. 365-366",
+              "claim": "Enumerates the twelve optional Indian ritual concessions granted by Cardinal Benno Gut."
+            }
+          ]
+        },
+        {
+          "component": "ordinary",
+          "before": "Standard postconciliar Roman Order of Mass follows uniform Roman preparatory ceremonial and universal prayer format.",
+          "after": "Permits adapted Indian preparatory ceremonial, universal prayer adaptation, and arati integration within the Roman Order of Mass while retaining the Roman Eucharistic Prayers unchanged.",
+          "locus_before": "Missale Romanum (1969/1970), Ordo Missae",
+          "locus_after": "Notitiae 5 (1969), pp. 365-366; Notitiae 6 (1970), p. 89",
+          "evidence": [
+            {
+              "source_id": "global-mission-regional-2026-11:india1969-notitiae",
+              "locus": "Notitiae 5 (1969), printed pp. 365-366",
+              "claim": "Grants preparatory ceremonial, universal prayer, and arati concessions while approving no new anaphora."
+            },
+            {
+              "source_id": "global-mission-regional-2026-11:india1970-celebration-notitiae",
+              "locus": "Notitiae 6 (1970), printed p. 89",
+              "claim": "Confirms enacted use of the 1969 concessions within the new Order of Mass on 15 February 1970."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "global-mission-regional-2026-11:india1969-notitiae",
+          "locus": "Notitiae 5 (1969), printed pp. 365-366, Prot. 802/69",
+          "claim": "Primary Consilium approval letter establishes the bounded twelve optional adaptations."
+        }
+      ],
+      "limitations": "Approval dated 25 April 1969 (after the 3 April 1969 promulgation of the new Order of Mass and before the 1970 complete Latin typical edition). Does NOT cover the unapproved 1971 Indian Order or 1972-1973 Indian Anaphora proposals.",
+      "comparison_ids": [],
+      "historical_parentage": "established",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "global-mission-regional-2026-11:curial1474-to-mexico1561",
+      "from_stage": "roman-stages-1474",
+      "to_stage": "global-mission-regional-2026-11:mexico-espinosa-1561",
+      "kind": "reception",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "Antonio de Espinosa's September 1561 Mexico City folio transmits the pre-Tridentine Roman-curial missal tradition ('secundum romane curie ritum') into the Americas nine years before Pius V's 1570 reform.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "rubrics",
+        "calendar",
+        "lectionary"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "global-mission-regional-2026-11:mexico1561-jcb",
+          "locus": "Colophon leaf 330v",
+          "claim": "Explicitly titles the 1561 Mexican folio 'Missale secundum romane curie ritum'."
+        }
+      ],
+      "limitations": "Attests reception of the pre-Tridentine Roman-curial liturgical family in New Spain; does NOT claim the 1474 Milan printing was Espinosa's direct physical typesetting exemplar (Spanish/Sevillian/Venetian curial intermediaries remain uncollated).",
+      "comparison_ids": [],
+      "historical_parentage": "attributed",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "global-mission-regional-2026-11:china1615-to-buglio1670",
+      "from_stage": "global-mission-regional-2026-11:china-faculty-1615",
+      "to_stage": "global-mission-regional-2026-11:china-buglio-1670",
+      "kind": "reception",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "Ludovico Buglio's 1670 Beijing Missale Romanum Sinice explicitly cites Pope Paul V's 1615 authority on its Latin title page ('auctoritate Pauli V. Pont. M. Sinice redditum'), though renewed Roman confirmation failed in 1680 and practical altar celebration remains unestablished.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "global-mission-regional-2026-11:buglio1670-princeton",
+          "locus": "Scheide 46.1 Latin title leaf (Beijing, 1670)",
+          "claim": "Explicitly invokes 'auctoritate Pauli V. Pont. M.' for the Classical Chinese translation."
+        },
+        {
+          "source_id": "global-mission-regional-2026-11:china2011-notitiae",
+          "locus": "Notitiae 47/48 (2011), printed pp. 552-554",
+          "claim": "Connects the 1615 Paul V faculty to Buglio's 1670 publication and records the unsuccessful 1680 renewal petition."
+        }
+      ],
+      "limitations": "Invocation of the 1615 brief on the 1670 title page does not establish Roman confirmation of the finished translation or actual liturgical use.",
+      "comparison_ids": [],
+      "historical_parentage": "established",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "global-mission-regional-2026-11:geez1945-to-keren-blin2008",
+      "from_stage": "alexandrian-stages-geez1945",
+      "to_stage": "global-mission-regional-2026-11:keren-blin-2008-2010",
+      "kind": "reception",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "Bishop Kidane Yebio's 2009 history expressly identifies the 1945 Ge'ez Catholic missal as the translation base for the Eparchy of Keren's 2008 bilingual Blin–Ge'ez service book.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "global-mission-regional-2026-11:keren2009-blin-history",
+          "locus": "PDF pp. 2, 4 (16 June 2009)",
+          "claim": "Explicitly states selection of the 1945 Ge'ez missal as the base for the Blin translation."
+        }
+      ],
+      "limitations": "Establishes local Keren translation reception of the 1945 Ge'ez book; does not assert a source-language Ge'ez textual revision or wider Eritrean/Ethiopian adoption.",
+      "comparison_ids": [],
+      "historical_parentage": "established",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "global-mission-regional-2026-11:quebec1703-to-1853",
+      "from_stage": "global-mission-regional-2026-11:quebec-rituel-1703",
+      "to_stage": "global-mission-regional-2026-11:quebec-council-1851",
+      "kind": "reception",
+      "status": "provisional",
+      "evidence_level": "scholarly-description",
+      "summary": "Marks the shift in Quebec diocesan liturgical orientation from French colonial/Parisian customs reflected in 1703 toward Roman liturgical uniformity mandated by the First Provincial Council of Quebec (1851) and its 1853 Compendium Ritualis Romani.",
+      "components": [
+        "rubrics"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "global-mission-regional-2026-11:quebec1703-rituel",
+          "locus": "Title and 1703 Paris imprint",
+          "claim": "Attests early French-colonial diocesan ritual formation in Quebec."
+        },
+        {
+          "source_id": "global-mission-regional-2026-11:quebec1853-compendium",
+          "locus": "1853 title leaf citing First Provincial Council of Quebec (1851)",
+          "claim": "Attests mid-19th-century provincial transition to Roman liturgical books."
+        }
+      ],
+      "limitations": "Provisional transition between Ritual books rather than directly collated Missale Parisiense and Missale Romanum altar copies from Quebec parishes.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed",
+      "git_ancestry": false,
+      "text_inheritance": false
+    }
+  ],
+  "gaps": [
+    {
+      "id": "global-mission-regional-2026-11:gap-new-spain-missals",
+      "tradition_id": "global-mission-new-spain-roman",
+      "period": "1561–1800",
+      "missing": "Line-by-line collation of Espinosa's 1561 Mexico City Missale Romanum Ordinarium against European curial exemplars; post-1570 Mexican reception decrees (Third Mexican Council 1585); colonial Mexican Missae Propriae booklets (Guadalupe, St. Philip of Jesus).",
+      "next_source": "Huntington RB 32667 / JCB digital leaves of Espinosa 1561; Concilio Tercero Provincial Mexicano (1585); colonial Mexican Missae Propriae fascicles.",
+      "consequence": "1561 is documented as the first American printed pre-Tridentine curial witness, but its exact European donor printing and colonial proper-appendix evolution remain uncollated."
+    },
+    {
+      "id": "global-mission-regional-2026-11:gap-peru-lima-propers",
+      "tradition_id": "global-mission-peru-lima-roman",
+      "period": "1583–1800",
+      "missing": "Printed colonial Peruvian Missae Propriae (notably Clement X's 1671 St. Rose of Lima proper Mass/Office) and surviving imported Tridentine altar missals annotated for Lima usage.",
+      "next_source": "Bullarium Romanum / S.R.C. decrees for St. Rose of Lima (1671) and Peruvian colonial Missae Propriae in Biblioteca Nacional del Perú / BNE.",
+      "consequence": "Third Council of Lima establishes Tridentine legislative reception in Peru without documenting surviving Peruvian proper-Mass booklets."
+    },
+    {
+      "id": "global-mission-regional-2026-11:gap-quebec-missals",
+      "tradition_id": "global-mission-quebec-roman",
+      "period": "1659–1854",
+      "missing": "Directly inspected New France parish exemplars of Missale Parisiense (and Rouen/other French diocesan missals), exact 1851/1854 Quebec Provincial Council Mass decrees, and Pius IX rescripts.",
+      "next_source": "Actes et décrets du premier et second Concile provincial de Québec (1851, 1854) and BAnQ/Archdiocese of Quebec parish altar missal inventories.",
+      "consequence": "Quebec's Gallican-to-Roman shift is established via diocesan Rituals (1703, 1853), not yet via collated parish altar Missals."
+    },
+    {
+      "id": "global-mission-regional-2026-11:gap-chiapas-and-amazonia",
+      "tradition_id": "global-mission-chiapas-adaptations",
+      "period": "2019–2026",
+      "missing": "Original 8 November 2024 Dicastery recognitio decree, approved Tseltal/Tsotsil/Ch'ol/Tojolabal/Zoque ritual booklet, and dated first local celebrations. Separately, Amazonian Rite proposals (2019 Synod n. 119; CEAMA 2022-2025 consultations) lack any Roman recognitio.",
+      "next_source": "Dicastery for Divine Worship original November 2024 recognitio decree for San Cristóbal de las Casas and officially promulgated diocesan booklet; monitor official Holy See bulletins for any future Amazonian disposition.",
+      "consequence": "Chiapas 2024 stands as a documented optional Roman adaptation; Amazonian proposals remain strictly unapproved non-admissions."
+    },
+    {
+      "id": "global-mission-regional-2026-11:gap-brazil-ep5",
+      "tradition_id": "global-mission-brazil-eucharistic-prayer",
+      "period": "1974–2023",
+      "missing": "Original Prot. 272/74 decree, 1975 Manaus first-use booklet, 1991 and 2023 third-edition Brazilian Roman Missal leaves for Oração Eucarística V.",
+      "next_source": "Notitiae / CNBB archival copy of Prot. 272/74 and 1975/1991/2023 Missal Romano (Brazil) leaves.",
+      "consequence": "Brazilian Eucharistic Prayer V approval is documented via scholarly archival history rather than primary decree inspection."
+    },
+    {
+      "id": "global-mission-regional-2026-11:gap-china-archival-acts",
+      "tradition_id": "global-mission-china-roman",
+      "period": "1615–1949",
+      "missing": "Original 1615 Holy Office/Paul V Vatican archival acts, collation of Buglio's 1670 Classical Chinese text against 1604/1634 Latin Roman Missals, 1680 Innocent XI refusal file, and original 12 April 1949 Holy Office indult plus any operative 1949-indult altar missal.",
+      "next_source": "Archivio Apostolico Vaticano / Dicastery for the Doctrine of the Faith 1615 & 1949 records; full page-level review of Princeton Scheide 46.1.",
+      "consequence": "1615, 1670, and 1949 remain separate historical states without proved continuous liturgical reception or authorized altar celebration of Buglio's print."
+    },
+    {
+      "id": "global-mission-regional-2026-11:gap-japan-korea-vietnam",
+      "tradition_id": "global-mission-japan-nagasaki-control",
+      "period": "1590–2026",
+      "missing": "Census of European Roman Missals imported to early modern Japan and colonial Manila; primary Notitiae decree PDFs and approved proper Mass formularies for postconciliar Vietnam (Tết / Lunar New Year & ancestor veneration propers, Prot. A 356/69 & 2228/03/L), Korea (Chuseok/Seollal ancestor memorial liturgies), and Japan regional permissions.",
+      "next_source": "ARSI/Manila colonial liturgical inventories; direct PDF inspection of Notitiae decree summaries and official CBCV/CBCK/CBCJ Roman Missal proper appendices.",
+      "consequence": "Prevents unverified claims about a Nagasaki-printed Missal or uninspected East Asian postconciliar proper decrees until primary PDFs are directly read."
+    },
+    {
+      "id": "global-mission-regional-2026-11:gap-goa-diamper-collation",
+      "tradition_id": "global-mission-goa-diamper",
+      "period": "1567–1775",
+      "missing": "Direct collation of Provincial Councils of Goa (1567-1606, Archivo Portuguez-Oriental Fasc. 4) Latin Roman Missal reception decrees, Coimbra 1606 Diamper Action V & Gouvea Latin Qurbana, and Francisco Roz's 1603 Syriac manuscript (eastern:malabar-ms-roz-1603-cold) against the 1774-1775 Rome Syriac editions.",
+      "next_source": "BNP purl.pt/17493 full Action V inspection; Archivo Portuguez-Oriental Fasc. 4; Chavara Archives Mannanam Roz 1603 manuscript study.",
+      "consequence": "Diamper 1599/1606 is documented as Goa Padroado legislative Latinization without claiming an uninterrupted collated stemma to 1774-1775."
+    },
+    {
+      "id": "global-mission-regional-2026-11:gap-india-postconciliar",
+      "tradition_id": "global-mission-india-adaptations",
+      "period": "1969–2026",
+      "missing": "Diocese-by-diocese uptake census of the 1969 twelve points, original 1971 experimental Indian Order typescript, and official post-2005 Roman correspondence on the revised Indian anaphora proposal.",
+      "next_source": "NBCLC Bangalore archival holdings and official CCBI/CBCI liturgical decrees.",
+      "consequence": "1969 approved ritual concessions remain cleanly separated from unapproved experimental Orders and anaphoras."
+    },
+    {
+      "id": "global-mission-regional-2026-11:gap-philippines-mbp",
+      "tradition_id": "global-mission-philippines-adaptations",
+      "period": "1971–2026",
+      "missing": "Original 1971 First Communion experimental booklet and withdrawal decree; original 1976 Misa ng Bayang Pilipino submission text and any subsequent Holy See response; printed Ibanag 1975 edition and actual local celebrations.",
+      "next_source": "CBCP Episcopal Commission on Liturgy archives and Notitiae post-1980 decree registers.",
+      "consequence": "Misa ng Bayang Pilipino remains a non-approved/pending control rather than an authorized regional rite."
+    },
+    {
+      "id": "global-mission-regional-2026-11:gap-broome-recognitio",
+      "tradition_id": "global-mission-broome-australia",
+      "period": "1973–2026",
+      "missing": "Original May 1973 Bidyadanga diocesan experimental permission, 2018 Liturgy Brisbane full book leaves, exact 2024 submitted text, and Holy See recognitio decree.",
+      "next_source": "Diocese of Broome archives, Liturgy Brisbane 2018 imprint front matter, and future Dicastery for Divine Worship recognitio notice.",
+      "consequence": "Conference approval (7 May 2024) and local Warmun celebrations remain distinct from Roman recognitio."
+    },
+    {
+      "id": "global-mission-regional-2026-11:gap-north-africa-lost-books",
+      "tradition_id": "global-mission-ancient-north-africa",
+      "period": "200–700",
+      "missing": "Any complete surviving ancient North African libellus missarum, sacramentary, or Eucharistic anaphora manuscript (lost following Vandal/Byzantine upheavals and post-7th-century decline).",
+      "next_source": "Patristic critical editions (CCS/CSEL: Cyprian, Optatus, Augustine Sermons 227/272, Fulgentius of Ruspe) and Munier's Concilia Africae.",
+      "consequence": "Ancient North African worship is preserved strictly as fragmentary patristic/conciliar testimony, never as a reconstructed complete missal."
+    },
+    {
+      "id": "global-mission-regional-2026-11:gap-keren-wider-reception",
+      "tradition_id": "global-mission-keren-blin-geez",
+      "period": "2008–2026",
+      "missing": "Full 442-page Blin–Ge'ez body collation against 1945 and 2024 Ge'ez missals, superior patriarchal/Roman review file, and reception beyond the Eparchy of Keren.",
+      "next_source": "Complete Keren Blin–Ge'ez service book and Eritrean Catholic Church synodal acts.",
+      "consequence": "Blin celebration is attested locally for Keren without implying a revision of the Ge'ez typical text or nationwide Eritrean adoption."
+    },
+    {
+      "id": "global-mission-regional-2026-11:gap-bdw-2003-2013-collation",
+      "tradition_id": "ordinariate-divine-worship",
+      "period": "1984–2015",
+      "missing": "Original 1984 Pastoral Provision act, 2013 interim Ordinariate Order of Mass exemplar, signed 27 May 2015 approval decree leaf, and prayer-by-prayer collation of BDW 2003 against DWM 2015 and post-2015 sanctoral updates.",
+      "next_source": "Personal Ordinariate archives for 2013 Order and 27 May 2015 decree; CTS 2015 & reissued DWM front matter.",
+      "consequence": "Major structural shifts from 2003 to 2015 are documented, while granular verbal collation and post-2015 sanctoral reissue dates remain open."
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+schema_version = 1
+id = "pc-obj-chalice"
+category = "sacred-vessels"
+sort_order = 201
+plate_id = "pc-plt-03-vessels"
+composition_plate_ids = ["pc-plt-10-communion-sacramental"]
+plate_position = "Top left (Plate III); center of the unfolded corporal (Plate X)"
+preferred_english_name = "Chalice"
+latin_headword = "Calix"
+alternate_english_names = ["Principal Chalice", "Eucharistic Chalice"]
+alternate_latin_names = ["Calix principalis"]
+pronunciation_key = "KAH-leeks"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "required"
+scope_level = "universal-roman"
+territorial_note = "While USCCB GIRM 329 permits solid, noble, non-breaking, non-absorbent materials such as hard woods for patens, ciboria, and pyxes, universal law requires the chalice bowl to be completely nonabsorbent (GIRM 330) and precious metal gilded inside if the metal rusts or is less precious than gold (GIRM 328); glass, earthenware, and clay chalices are strictly reprobated (Redemptionis Sacramentum 117)."
+
+[identification]
+summary = "The chalice is the principal footed sacred vessel in which wine mingled with a drop of water is offered, consecrated into the Precious Blood of Christ, elevated in adoration, and consumed at Mass."
+appearance = "Shown at top left of Plate III with a deep, smooth flared cup, a baluster stem bearing a central grip node (nodus) for steady elevation, and a broad weighted circular foot; Plate X shows it standing at the center of the unfolded corporal alongside the paten, veiled ciborium, and Communion cups."
+placement_and_use = "Before Mass with a congregation, the chalice stands prepared on the credence table with the corporal, purificator, optional pall, and—as a praiseworthy practice commended in GIRM 118c—covered with a chalice veil of the color of the day or white (GIRM 118c). At the Preparation of the Gifts, the deacon, instituted acolyte, or server brings it to the altar, where the priest or deacon pours wine and a little water into it (GIRM 139, 142, 178). After the consecration, the priest elevates the chalice and the deacon elevates it during the final doxology (GIRM 150–151, 180). Following Communion, any remaining Precious Blood is consumed reverently at the altar and the chalice is purified strictly by the priest, deacon, or instituted acolyte—never poured into the sacrarium or ground (GIRM 279; RS 119; USCCB Norms 52–55). Every chalice is blessed before liturgical use according to the Roman Ritual, praiseworthily by the diocesan bishop or by a priest (GIRM 333; RS 118)."
+liturgical_colors = "Precious metal (gilded interior); optional chalice veil matches the liturgical color of the day or is white (GIRM 118c)."
+
+[ministers_and_handling]
+ordinary_ministers = ["bishop", "priest", "deacon"]
+prepares = ["sacristan", "deacon", "instituted-acolyte", "altar-server"]
+server_boundary = "prepares"
+server_boundary_summary = "Servers may place the empty, unconsecrated chalice on the credence table before Mass and carry it to the altar at the Preparation of the Gifts if no deacon or instituted acolyte serves (GIRM 139). After consecration, servers never touch a chalice holding the Precious Blood, never consume from it, and never purify it (GIRM 279; RS 119; USCCB Norms 53)."
+safety_warning = "Once consecrated, the chalice contains the Blood of Christ: servers and extraordinary ministers never purify it (strictly reserved to priest, deacon, or instituted acolyte), and remaining Precious Blood is never poured into the sacrarium or onto the ground (USCCB Norms 53–55)."
+
+[audience_text]
+altar_server = "You may handle the chalice only while it is empty and unconsecrated—setting it neatly on the credence table before Mass and carrying it with both hands (one on the node, one steadying the top) to the altar at the Preparation of the Gifts when no deacon or instituted acolyte is serving. Once the Eucharistic Prayer begins, the chalice holds the Precious Blood of Christ: never touch it, never pour from it, never drink remaining drops, and never wash or wipe it afterward. Bring the water cruet for the priest, deacon, or instituted acolyte when they purify the chalice."
+sacristan = "Verify that the chalice has been blessed (GIRM 333), that its interior gilding is intact and clean, and that no porous or breakable vessel (glass, ceramic, or clay) is ever substituted (GIRM 328, 330; RS 117). Prepare it on the credence table with a clean folded purificator, paten, optional pall, and—where customary—a white or seasonal chalice veil (GIRM 118c). After Mass, leave any unpurified chalice suitably covered on a corporal strictly for the priest, deacon, or instituted acolyte to purify before ordinary washing (GIRM 279; USCCB Norms 53)."
+general_reader = "Among all sacred vessels in the sanctuary, the chalice receives foremost honor because it holds the Precious Blood of Christ offered on the altar (GIRM 327). Shaped with a deep cup, a central node for secure lifting, and a stable base, it stands quietly on the credence table during the Liturgy of the Word and comes to the center of the altar for the Eucharistic sacrifice."
+
+[relationships]
+confusable_with = ["pc-obj-communion-cup", "pc-obj-ciborium", "pc-obj-flagon"]
+related_objects = ["pc-obj-paten", "pc-obj-corporal", "pc-obj-purificator", "pc-obj-pall", "pc-obj-cruets", "pc-obj-hist-fragile-vessels-pouring"]
+
+[symbolism]
+has_sourced_symbolism = true
+text = "The chalice bears singular honor as the cup of the New Covenant, recalling the Lord’s words at the Last Supper in Matt 26:27–28 (“Drink ye all of this. For this is my blood of the new testament, which shall be shed for many unto remission of sins.”), St. Paul in 1 Cor 10:16 (“The chalice of benediction which we bless, is it not the communion of the blood of Christ?”), and Ps 115:13 [Heb 116:13] (“I will take the chalice of salvation; and I will call upon the name of the Lord.”). St. Thomas Aquinas teaches that the chalice signifies both the Passion of Christ and the joy of the blessed, and explains that non-porous precious metal—rather than wood, stone, or glass—is required out of reverence for Christ’s Blood."
+evidence_class = "liturgical-source"
+attribution = "GIRM 327; Matt 26:27–28; 1 Cor 10:16; Ps 115:13 [Heb 116:13]; St. Thomas Aquinas, Summa Theologiae III, q. 83, a. 3, ad 6 & a. 5, ad 9"
+
+[counterpart_1962]
+relationship = "materially changed"
+locus_1962 = "Missale Romanum (1962), Ritus Servandus I.1, II.1, VIII"
+comparison = "Whereas the 1962 Roman Missal required a gold or silver-cupped chalice consecrated with Sacred Chrism by a bishop and carried into Low Mass veiled with a stiff burse by the priest himself (RS I.1, II.1), the 2008/2011 Missal appoints a liturgical blessing by bishop or priest (GIRM 333), ordinarily prepares the chalice on the credence table until the Preparation of the Gifts (GIRM 118c, 139), and commends the chalice veil as a praiseworthy optional practice while leaving the burse unnamed."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N08"
+primary_loci = [
+  "GIRM 118c, 139, 142, 150–151, 163, 279, 306, 327–330, 333",
+  "Redemptionis Sacramentum 106, 117–119",
+  "USCCB Norms for Holy Communion under Both Kinds (2011) 35, 52–55",
+]
+source_bindings = [
+  "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002",
+  "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021",
+  "edition.catholic-church.missale-romanum.vatican-typica-1962",
+  "edition.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

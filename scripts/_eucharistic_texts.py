@@ -687,14 +687,24 @@ _REPLAY_GRAPH = ContextVar("eucharistic_replay_graph", default=None)
 
 
 @contextmanager
-def replay_library(root: Path):
+def replay_library(root: Path, *, preloaded=None):
     """Reuse a graph only within one cold replay and its private library cache."""
-    graph = _ReplayGraph(root.resolve())
+    resolved = root.resolve()
+    existing = _REPLAY_GRAPH.get()
+    if existing is not None and existing.root == resolved and preloaded is None:
+        yield
+        return
+    graph = _ReplayGraph(resolved)
+    if preloaded is not None:
+        if getattr(preloaded, "errors", None):
+            raise AdapterError("Source library prevents text export: " + "; ".join(preloaded.errors))
+        graph.library = preloaded
     token = _REPLAY_GRAPH.set(graph)
     try:
         yield
         if graph.entry is not None:
             graph.check(_library_module()._library_cache_entry(graph.root, False))
+        if graph.entry is not None or preloaded is not None:
             for path, expected in graph.manifests.items():
                 if path.read_bytes() != expected:
                     raise AdapterError(f"Source manifest changed during the cold replay: {path}")
@@ -1214,7 +1224,14 @@ def _native_segment(sources: _Sources, segment_id: str, edition_id: str) -> tupl
 
 
 def _native_facsimile(sources: _Sources, artifact: dict) -> bool:
-    direct_types = {"scan", "scan-pdf", "facsimile", "facsimile-image"}
+    direct_types = {
+        "scan",
+        "scan-pdf",
+        "scan-pdf-page-range",
+        "facsimile",
+        "facsimile-pdf",
+        "facsimile-image",
+    }
     if artifact.get("artifact_type") in direct_types:
         return True
     # A PDF assembled from exact page images remains a facsimile. Preserve its

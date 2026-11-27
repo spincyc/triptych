@@ -2131,8 +2131,8 @@ async function runAssertions(cdp, base) {
       if (is1962) {
         assert.equal(day.ids.indexOf('ordinary-element/canon/communicantes-pentecoste') + 1,
           day.ids.indexOf('ordinary-element/canon/communicantes-continuatio'));
-        assert.doesNotMatch(day.text, /The appointed proper Canon form is not held here \(witness gap\)/);
-        assert.doesNotMatch(day.text, /Held English lacks the 1962 Saint Joseph clause \(witness gap\)/);
+        assert.doesNotMatch(day.text, /The appointed proper Canon form is not held here — not in this source edition/);
+        assert.doesNotMatch(day.text, /Held English lacks the 1962 Saint Joseph clause — not in this source edition/);
         const continuation = await evaluate(cdp,
           `dayReaderDebug.semantic.events.find(row => row.id === 'ordinary-element/canon/communicantes-continuatio').selected`);
         assert.equal(continuation.availability, 'held');
@@ -2156,7 +2156,7 @@ async function runAssertions(cdp, base) {
         assert.match(preface.note[0], /vigil of Pentecost/);
         assert.ok(preface.opening > 40, JSON.stringify(preface));
       } else {
-        assert.doesNotMatch(day.text, /The appointed proper Canon form is not held here \(witness gap\)/);
+        assert.doesNotMatch(day.text, /The appointed proper Canon form is not held here — not in this source edition/);
         const properCanon = await evaluate(cdp,
           `dayReaderDebug.semantic.events.find(row => row.id === 'ordinary-element/canon/communicantes-pentecoste').selected`);
         assert.equal(properCanon.availability, 'held');
@@ -2179,15 +2179,15 @@ async function runAssertions(cdp, base) {
     assert.equal(await evaluate(cdp, 'dayReaderDebug.state.languages.ordinary'), 'la');
     const unavailableLatin = await evaluate(cdp,
       'document.querySelector("#reader-document").innerText');
-    assert.match(unavailableLatin, /The 1861 witness prints this block only in English \(witness gap\)/);
+    assert.match(unavailableLatin, /The 1861 witness prints this block only in English — not in this source edition/);
     // 2026-10-19 (C2 G6): both not-in-the-1962-ordo orations are excluded,
     // so that reason no longer stands at any emitted element.
-    assert.doesNotMatch(unavailableLatin, /This older oration is outside the 1962 Ordinary \(witness gap\)/);
+    assert.doesNotMatch(unavailableLatin, /This older oration is outside the 1962 Ordinary — not in this source edition/);
     // 2026-10-19 (C2 Preface directions): the Sunday's printed Trinity
     // Preface is appointed, so no typed "appointment not established" stands.
-    assert.doesNotMatch(unavailableLatin, /This day’s Ordinary appointment is not established \(model gap\)/);
+    assert.doesNotMatch(unavailableLatin, /This day’s Ordinary appointment is not established — appointment not yet modeled/);
     assert.match(unavailableLatin, /Qui cum unigenito Filio tuo/);
-    assert.match(unavailableLatin, /The 1861 lay witness supplies its own English heading or rubric \(witness gap\)/);
+    assert.match(unavailableLatin, /The 1861 lay witness supplies its own English heading or rubric — not in this source edition/);
     assert.equal(await evaluate(cdp, 'document.querySelector("#coverage-notice").hidden'), false);
     await navigateCandidate(cdp, base, STATES.partial);
     assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'ready');
@@ -3002,11 +3002,18 @@ async function runAssertions(cdp, base) {
     const links = await evaluate(cdp, `[...document.querySelectorAll('[data-reader-details] a')]
       .map(row => ({ label: row.textContent.trim(), pathname: new URL(row.href).pathname }))`);
     assert.deepEqual(links.map(row => row.label), [
-      'Browse the Propers', 'The Code, Canon by Canon', 'Every Document'
+      'Open this formulary in Propers', 'Browse the Propers',
+      'The Story of Salvation', 'Catena Commentary', 'How the Missal Changed',
+      'The Source Library', 'The Code, Canon by Canon', 'Every Document'
     ]);
     assert.match(links[0].pathname, /\/liturgy\/index\.html$/);
-    assert.match(links[1].pathname, /\/law\/$/);
-    assert.match(links[2].pathname, /\/texts\/$/);
+    assert.match(links[1].pathname, /\/liturgy\/index\.html$/);
+    assert.match(links[2].pathname, /\/scripture\/$/);
+    assert.match(links[3].pathname, /\/catena\/$/);
+    assert.match(links[4].pathname, /\/history\/$/);
+    assert.match(links[5].pathname, /\/sources\/$/);
+    assert.match(links[6].pathname, /\/law\/$/);
+    assert.match(links[7].pathname, /\/texts\/$/);
     assert.deepEqual(await evaluate(cdp,
       `[...document.querySelectorAll('[data-reader-details] .details-section > h3')]
         .map(row => row.textContent.trim())`), [

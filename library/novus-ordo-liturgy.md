@@ -2,10 +2,11 @@
 
 [Return to Liturgy](liturgy.md)
 
-The Mass commonly called the *Novus Ordo*, studied in the 2008 Latin Roman Missal, its 2011 U.S. English edition, and the U.S. Lectionary for Mass.
+The Mass commonly called the *Novus Ordo*, studied in the 2008 Latin Roman Missal, its 2011 U.S. English edition, and the U.S. Lectionary for Mass. Follow the postconciliar editions and their relationship to earlier Roman books in **[Eucharistic Books Through History (Postconciliar Roman Missal)](../history/?view=timeline)**.
 
 [Core and reference works](#core-and-reference-works) ·
 [Seasonal handbooks](#seasonal-handbooks) ·
+[Sanctuary pictorial dictionaries](#sanctuary-pictorial-dictionaries) ·
 [Sunday propers calendar](#sunday-propers-calendar)
 
 ## Core and Reference Works
@@ -27,6 +28,16 @@ The Mass commonly called the *Novus Ordo*, studied in the 2008 Latin Roman Missa
 | **Easter Time**<br>Easter Sunday of the Resurrection | Planned | Planned | The fifty days from the Resurrection through Pentecost. |
 
 [The liturgical year in the United States](https://www.usccb.org/prayer-worship/liturgical-year)
+
+<a id="sanctuary-pictorial-dictionaries"></a>
+## Sanctuary Pictorial Dictionaries
+
+| Edition | ChatGPT | Claude | Gemini | Focus |
+| --- | --- | --- | --- | --- |
+| **Comprehensive dictionary** | — | — | [PDF](../pdf/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/comprehensive.pdf) · [Read](../web/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/comprehensive.html) | Complete postconciliar sanctuary inventory (2008 Latin / 2011 U.S. English, emended 2021), universal and U.S. norms, 1962 comparisons, and separated superseded transitions. |
+| **Altar server** | — | — | [PDF](../pdf/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/altar-server.pdf) · [Read](../web/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/altar-server.html) | Visual recognition, ministerial boundaries, handling, and safety for servers. |
+| **Sacristan** | — | — | [PDF](../pdf/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/sacristan.pdf) · [Read](../web/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/sacristan.html) | Preparation, placement, care of sacred vessels and linens, and U.S. adaptations. |
+| **General reader** | — | — | [PDF](../pdf/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/general-reader.pdf) · [Read](../web/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/general-reader.html) | Clear identification, symbolism, liturgical colors, and continuity with the 1962 rite. |
 
 ## Sunday Propers Calendar
 

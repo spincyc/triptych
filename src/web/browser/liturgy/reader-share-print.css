@@ -157,23 +157,89 @@
 .reader-instrument .reader-document .text-side .composed > .speaker-tag.is-opening-cue {
   inset-inline-start: 0;
   inset-inline-end: auto;
-  width: 1.5rem;
+  width: 1.75rem;
+}
+.reader-instrument .reader-document .text-side .ordinary-turn {
+  grid-template-columns: 1.75rem minmax(0, 1fr);
+  justify-content: stretch;
+  column-gap: 0.5rem;
 }
 .reader-instrument .reader-document .text-side .ordinary-dialogue > .ordinary-locus {
   margin-inline-start: 0;
 }
+.reader-instrument .text-side .unit-claim {
+  margin-top: 0.35rem;
+}
+/* Mode Display options section (1-click access inside Mode) */
+.reader-instrument .mode-display-options {
+  border-top: 1px solid var(--instrument-line);
+  display: grid;
+  gap: 0.15rem;
+}
+.reader-instrument .mode-display-options h3 {
+  margin: 0 0 0.35rem;
+  color: var(--instrument-faint);
+  font: 650 0.66rem/1.3 var(--instrument-sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.reader-instrument .mode-display-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 44px;
+  color: var(--instrument-ink);
+  font: 500 0.86rem/1.35 var(--instrument-sans);
+  cursor: pointer;
+}
+.reader-instrument .mode-display-toggle input {
+  flex: none;
+  width: 1.05rem;
+  height: 1.05rem;
+  accent-color: var(--instrument-accent);
+}
+.reader-instrument .mode-quick-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.55rem;
+}
+.reader-instrument .mode-quick-actions button {
+  min-height: 44px;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--instrument-control-line);
+  border-radius: 0.35rem;
+  background: var(--instrument-paper);
+  color: var(--instrument-ink);
+  font: 600 0.82rem/1.2 var(--instrument-sans);
+  cursor: pointer;
+}
+.reader-instrument .mode-quick-actions button:hover {
+  border-color: var(--instrument-accent);
+  background: var(--instrument-accent-soft);
+  color: var(--instrument-accent);
+}
+.reader-instrument .mode-quick-status {
+  margin: 0.35rem 0 0;
+  color: var(--instrument-soft);
+  font: 0.75rem/1.4 var(--instrument-sans);
+}
+.reader-instrument .mode-quick-status:empty { display: none; }
 @media (min-width: 72rem) {
   .reader-instrument .reader-document:has(.text-pair) {
-    width: min(calc(100% - 12rem), 72rem);
+    width: auto;
+    max-width: 68rem;
+    margin-inline: max(10.5rem, calc((100% - 68rem) / 2)) max(1.5rem, calc((100% - 68rem) / 2));
   }
   .reader-instrument:has(.text-pair) .reader-actions,
   .reader-instrument:has(.text-pair) .reader-locus {
     left: max(0.75rem, var(--reader-safe-left));
   }
   .reader-instrument:has(.text-pair) .reader-locus {
-    width: 4.25rem;
-    max-width: 4.25rem;
-    overflow-wrap: anywhere;
+    width: 8.75rem;
+    max-width: 8.75rem;
+    overflow-wrap: normal;
+    word-break: normal;
   }
   .reader-instrument .reader-document:has(.scripture-pair) .proper:not(:has(.text-pair)),
   .reader-instrument .reader-document:has(.scripture-pair) .proper > .composed,
@@ -192,7 +258,7 @@
   }
   .reader-instrument .reader-document .ordinary-element:has(> .text-pair) > * { grid-column: 1; }
   .reader-instrument .reader-document .proper:has(> .text-pair) > .citation { max-width: 39.75rem; }
-  .reader-instrument .text-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .reader-instrument .text-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 1.75rem; }
   .reader-instrument[data-reader-mode="compare"] .text-pair { grid-template-columns: minmax(0, 1fr); }
 }
 @media print {
@@ -200,12 +266,24 @@
     grid-template-columns: minmax(0, 1fr);
     display: block;
   }
+  /* True two-column bilingual Latin | English print layout in Read & Missal modes. */
+  .reader-instrument:is([data-reader-mode="read"],[data-reader-mode="missal"]) .text-pair {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 0.22in;
+    row-gap: 0.08in;
+    align-items: start;
+  }
+  .reader-instrument:is([data-reader-mode="read"],[data-reader-mode="missal"]) .text-pair > .text-side + .text-side {
+    margin-top: 0;
+  }
   .reader-instrument .text-side { break-inside: auto; }
   .reader-instrument .text-side.print-keep-short-body { break-inside: avoid-page; }
   .reader-instrument .compare-side:has(.text-pair) { break-inside: auto; }
   .reader-instrument .text-side-label { break-after: avoid-page; font-size: 9pt; }
   .reader-instrument .text-side + .text-side { margin-top: 0.12in; }
-  .reader-instrument .reader-text-display-context { font-size: 9pt; }
+  .reader-instrument .reader-text-display-context { width: auto; margin: 0 0 0.1in; font-size: 9pt; }
+  .mode-display-options { display: none !important; }
 }
 
 /* Long paired readings may continue across pages with their source credit

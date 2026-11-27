@@ -288,7 +288,8 @@ async function snapshot(cdp) {
     witnessChoices: [...document.querySelectorAll('[data-translation-witness-choice]')]
       .map((row) => row.dataset.translationWitnessChoice),
     witnessAnchors: [...document.querySelectorAll('[data-translation-witness-choice]')]
-      .map((row) => row.previousElementSibling?.dataset.semanticEventId ||
+      .map((row) => row.dataset.witnessFirstEvent ||
+        row.previousElementSibling?.dataset.semanticEventId ||
         row.closest('[data-semantic-event-id]')?.dataset.semanticEventId || null),
     witnessOptions: [...document.querySelectorAll('[data-translation-witness]')]
       .map((row) => row.value),
@@ -392,25 +393,22 @@ async function testCalendarChoices(cdp, base) {
   assert.equal(passionFriday.eventCount, 0);
   assert.equal(passionFriday.fallbackUnits, 0);
 
+  // Under CDWDS 2020 Responsa & NUALC 60, 2033-06-24 now settles cleanly to
+  // Sacred Heart of Jesus while Nativity of St. John the Baptist anticipates to 2033-06-23.
   await navigate(cdp, base, state({ date: '2033-06-24' }));
-  const unranked = await snapshot(cdp);
-  assert.equal(unranked.choice, 'calendar-reading');
-  assert.equal(unranked.eventCount, 0);
-  assert.deepEqual(unranked.contents, ['Choose a formulary to read']);
-  assert.deepEqual(new Set(unranked.options), new Set([
-    'most-sacred-heart-jesus', 'nativity-saint-john-baptist', 'ot-12-friday'
-  ]));
-  await click(cdp, '[data-choice-option="most-sacred-heart-jesus"]');
-  await click(cdp, '.candidate-choice-apply');
-  await waitFor(cdp, `dayReaderReady && dayReaderDebug.semantic?.resolved?.formulary === 'most-sacred-heart-jesus'`,
-    'reading a candidate whose precedence is unsettled');
-  const candidate = await snapshot(cdp);
-  assert.equal(candidate.resolved.standing, 'unresolved');
-  assert.equal(candidate.formularyControlHidden, false);
-  assert.ok(candidate.eventCount > 0);
+  const sacredHeart = await snapshot(cdp);
+  assert.equal(sacredHeart.choice, null);
+  assert.equal(sacredHeart.resolved.formulary, 'most-sacred-heart-jesus');
+  assert.ok(sacredHeart.eventCount > 0);
   const appointment = await evaluate(cdp, 'dayReaderDebug.semantic.calendarResult');
-  assert.equal(appointment.settled, false);
-  assert.equal(appointment.winner, null);
+  assert.equal(appointment.settled, true);
+  assert.equal(appointment.winner, 'most-sacred-heart-jesus');
+  await navigate(cdp, base, state({ date: '2033-06-23' }));
+  const anticipatedJohn = await snapshot(cdp);
+  assert.equal(anticipatedJohn.choice, null);
+  assert.equal(anticipatedJohn.resolved.formulary, 'nativity-saint-john-baptist');
+  assert.equal(anticipatedJohn.resolved.form, 'day');
+  assert.ok(anticipatedJohn.eventCount > 0);
 }
 
 async function testProperForms(cdp, base) {
@@ -701,6 +699,8 @@ async function testTranslationWitnesses(cdp, base) {
     'artifact.edward-caswall.lyra-catholica.london-1849.missal-sequences-en';
   const lasanceWitness =
     'edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945';
+  const lasance1946Witness =
+    'edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946';
   const studyWitness = 'project-created';
   const baseState = state({
     date: '2026-09-15', missal: 'roman-1962',
@@ -711,9 +711,9 @@ async function testTranslationWitnesses(cdp, base) {
   assert.equal(held.outcome, 'ready', JSON.stringify(held.error));
   assert.deepEqual(held.witnessChoices, ['mass/roman-1962/septem-dolorum-beatae-mariae-virginis']);
   assert.deepEqual([...new Set(held.witnessOptions)].sort(),
-    [editionWitness, lasanceWitness, studyWitness].sort());
-  // Four study chants join the four historical principal texts and the
-  // three source-appointed Nicomedes prayers.
+    [editionWitness, lasanceWitness, lasance1946Witness, studyWitness].sort());
+  // Three Lasance 1946 historical chants and one study Alleluia join the four
+  // historical principal texts and the three source-appointed Nicomedes prayers.
   assert.equal(held.englishComposed, 11);
   for (const witness of [editionWitness, artifactWitness]) {
     await navigate(cdp, base, baseState + '&translation-witness=' + witness);
@@ -741,14 +741,14 @@ async function testTranslationWitnesses(cdp, base) {
   const study = await snapshot(cdp);
   assert.equal(study.outcome, 'ready', JSON.stringify(study.error));
   assert.deepEqual(study.witnessChoices, []);
-  assert.equal(study.englishComposed, 4);
-  assert.match(study.coverageNotice, /4\/11 uses available from the selected witness/);
+  assert.equal(study.englishComposed, 1);
+  assert.match(study.coverageNotice, /1\/11 uses available from the selected witness/);
   const studyBodies = await evaluate(cdp,
     `(dayReaderDebug.semantic.events || []).filter(row => row.selected?.kind === 'composed' && row.selected.language === 'en' && !row.selected.missing).map(row => [row.editionSlotLabel, row.selected.sourceId, row.selected.rights])`);
-  assert.deepEqual(studyBodies, ['Gradual', 'Alleluia', 'Offertory', 'Communion']
+  assert.deepEqual(studyBodies, ['Alleluia']
     .map(name => [name, studyWitness, 'project-created']));
   const studyAbsences = await evaluate(cdp,
-    `(dayReaderDebug.semantic.events || []).filter(row => ['Collect', 'Secret', 'Postcommunion', 'Sequence'].includes(row.editionSlotLabel)).map(row => [row.editionSlotLabel, row.selected.reason, row.selected.text])`);
+    `(dayReaderDebug.semantic.events || []).filter(row => ['Collect', 'Sequence', 'Secret', 'Postcommunion'].includes(row.editionSlotLabel)).map(row => [row.editionSlotLabel, row.selected.reason, row.selected.text])`);
   assert.deepEqual(studyAbsences, ['Collect', 'Sequence', 'Secret', 'Postcommunion']
     .map(name => [name, 'absent-in-witness', null]));
 
@@ -773,7 +773,7 @@ async function testTranslationWitnesses(cdp, base) {
   const witnessRadioNames = tree.nodes.filter((node) => node.role?.value === 'radio')
     .map((node) => node.name?.value).filter(Boolean);
   for (const [name, count] of [['Lyra Catholica', 1], ['Eugene Cummiskey', 3],
-      ['The New Roman Missal', 2], ['Hymns Ancient and Modern', 1], ['Triptych study English', 3]]) {
+      ['The New Roman Missal', 2], ['1946 Benziger printing', 1], ['Hymns Ancient and Modern', 1], ['Triptych study English', 2]]) {
     assert.ok(witnessRadioNames.some(label => label.includes(name) && label.includes(count + ' of 9 uses')),
       'Missing accessible witness and count: ' + name);
   }

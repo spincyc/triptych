@@ -1,0 +1,81 @@
+schema_version = 1
+id = "pc-obj-pyx"
+category = "sacred-vessels"
+sort_order = 204
+plate_id = "pc-plt-03-vessels"
+composition_plate_ids = []
+plate_position = "Bottom right, shown hinged open to display the recessed interior (Plate III)"
+preferred_english_name = "Pyx"
+latin_headword = "Pyxis parva"
+alternate_english_names = ["Sick-Call Pyx", "Pocket Pyx"]
+alternate_latin_names = ["Theca", "Pyxis"]
+pronunciation_key = "PEEK-sees PAHR-vah"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "provided"
+scope_level = "universal-roman"
+territorial_note = "United States GIRM 329 explicitly enumerates pyxes among the sacred vessels governed by the noble, solid, non-breaking, non-absorbent material standard."
+
+[identification]
+summary = "The pyx is a small, securely closing circular sacred container used to carry consecrated Hosts reverently from the church to the sick, the homebound, and the dying for Viaticum."
+appearance = "Shown at bottom right of Plate III as a compact, flat circular metal locket-box with a secure clasp and hinged lid opened to display its smooth interior cavity, sized to hold one or several hosts safely inside a protective cloth burse or pouch."
+placement_and_use = "Kept clean and empty in the sacristy or with the sick-call kit until needed, a pyx is blessed before liturgical use (GIRM 333; RS 118). Consecrated hosts are placed in it by a bishop, priest, deacon, instituted acolyte, or formally deputed extraordinary minister of Holy Communion strictly for an authorized pastoral visit to the sick—never placed casually in an unauthorized private container (CIC can. 939; Holy Communion and Worship of the Eucharist Outside Mass; RS 133). After Communion of the sick, the pyx is purified reverently with water so no particle of the Host remains."
+liturgical_colors = "Precious metal (gilded inside) or approved solid noble material (US GIRM 329); often carried in a white or dark cloth pouch."
+
+[ministers_and_handling]
+ordinary_ministers = ["bishop", "priest", "deacon", "instituted-acolyte", "extraordinary-minister"]
+prepares = ["sacristan", "priest", "deacon"]
+server_boundary = "recognizes-only"
+server_boundary_summary = "Servers may hand an empty, clean pyx to a priest or deacon in the sacristy when requested, but never handle, carry, open, or purify a pyx containing a consecrated Host."
+safety_warning = "A closed pyx may contain the Body of Christ. Never open an unattended pyx or place it in ordinary storage; report any closed pyx found in the sanctuary or sacristy immediately to the priest or deacon."
+
+[audience_text]
+altar_server = "Look at the small round locket-box at the bottom right of Plate III: that is a pyx for bringing Holy Communion to the sick. You may pass an empty pyx to the priest before Mass if asked, but once a consecrated Host is placed inside it, only the priest, deacon, instituted acolyte, or a formally deputed extraordinary minister of Holy Communion may carry or open it. If you ever see a closed pyx left on the credence table or in the sacristy, do not open it—alert the priest immediately."
+sacristan = "Keep parish pyxes clean, dry, securely latching, and blessed (GIRM 333), stored together with small clean sick-call corporals and carrying pouches. Verify that pyxes brought forward for homebound ministry belong to authorized ministers and remind ministers to return empty pyxes properly purified rather than leaving fragments inside."
+general_reader = "Barely wider than a pocket watch, the hinged metal pyx enables the Church to carry Christ's Eucharistic presence beyond the church doors to hospital beds and homebound parishioners—especially as Viaticum, food for the journey, for the dying. St. Thomas Aquinas notes that the Church reserves consecrated hosts above all so the sick may never lack the sacrament in danger of death (Summa Theologiae III, q. 83, a. 5, ad 11)."
+
+[relationships]
+confusable_with = ["pc-obj-ciborium", "pc-obj-paten"]
+related_objects = ["pc-obj-tabernacle", "pc-obj-corporal", "pc-obj-holy-oils-stocks"]
+
+[symbolism]
+has_sourced_symbolism = false
+text = ""
+evidence_class = "none-practical"
+attribution = ""
+
+[counterpart_1962]
+relationship = "continued"
+locus_1962 = "Rituale Romanum (1925/1952), Title IV, ch. 2; Missale Romanum (1962), Ritus Servandus X.6"
+comparison = "The portable hinged metal pyx carried in a pouch for Communion of the sick continues unchanged in construction from the 1962 Roman Ritual (Title IV, ch. 2) into postconciliar discipline (GIRM 329; CIC can. 939). Postconciliar pastoral law narrows English usage of “pyx” specifically to this portable sick-call container and extends its authorized pastoral carriage to formally deputed extraordinary ministers alongside clergy."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N11"
+primary_loci = [
+  "GIRM 327–329, 333",
+  "USCCB GIRM 329",
+  "CIC (1983) can. 939",
+  "Redemptionis Sacramentum 117–119, 133",
+  "Holy Communion and Worship of the Eucharist Outside Mass (1973)",
+]
+source_bindings = [
+  "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021",
+  "edition.catholic-church.codex-iuris-canonici-1983.english-vatican-web-codex-2026-07-25",
+  "edition.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

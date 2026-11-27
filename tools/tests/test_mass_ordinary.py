@@ -181,19 +181,23 @@ class OrdinaryStructure(unittest.TestCase):
             ("edition.triptych.postconciliar-kyrie-greek-study-arrangement.study-arrangement-20261124", "la"): 1,
             ("edition.catholic-church.missale-romanum.pustet-ratisbon-1862", "la"): 2,
             ("edition.anonymous.antiphonarium-wroclaw-r503.1375-1400-manuscript", "la"): 1,
+            ("edition.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929", "la"): 1,
             ("edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946", "en"): 1,
             ("edition.triptych.postconciliar-ordinary-fraction-perceptio-study-english-20261114.study-english-20261114", "en"): 2,
             ("edition.triptych.postconciliar-ordinary-lava-me-study-english-20261112.study-english-20261112", "en"): 1,
             ("edition.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030", "en"): 5,
             ("edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908", "en"): 1,
-            ("edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945", "en"): 1,
+            ("edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945", "en"): 7,
             ("edition.triptych.english-completion-20261030-kyrie-sixfold-study-arrangement.study-arrangement-20261030", "en"): 1,
+            ("edition.triptych.postconciliar-coldrev-2026-11-25-ordinary-qpd.2026-11-25-communicantes-qpd", "la"): 1,
+            ("edition.triptych.postconciliar-coldrev-2026-11-25-prefaces.2026-11-25-four-mame-prefaces-la", "la"): 4,
+            ("edition.triptych.postconciliar-coldrev-2026-11-25-prefaces.2026-11-25-joseph-prefaces-study-en", "en"): 2,
             ("edition.triptych.postconciliar-common-communicantes-study-english-20261030.study-english-20261030", "en"): 1,
             ("edition.triptych.postconciliar-ordinary-domine-qui-dixisti-study-english-20261030.study-english-20261030", "en"): 1,
             ("edition.triptych.postconciliar-ordinary-peace-invitation-study-english-20261030.study-english-20261030", "en"): 1,
             ("edition.triptych.postconciliar-ordinary-supplices-study-english-20261030.study-english-20261030", "en"): 1,
             ("edition.catholic-church.vulgata-clementina.ebible-latvuc", "la"): 4,
-            ("edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam", "la"): 2,
+            ("edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam", "la"): 5,
             ("edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712", "la"): 1,
             ("edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888", "la"): 1,
         }
@@ -221,7 +225,7 @@ class OrdinaryStructure(unittest.TestCase):
                 11, "rights-restricted", "rights-withheld"
             ),
             "element-spans-mixed-availability": (3, "unavailable", "model-gap"),
-            "element-spans-mixed-matter": (5, "unavailable", "model-gap"),
+            "element-spans-mixed-matter": (4, "unavailable", "model-gap"),
             "no-fixed-text": (3, "unavailable", "not-applicable"),
             # The n. 131 parent is now a text-free structural anchor in both
             # languages; its old quiet-prayer and divergence reasons move to
@@ -266,22 +270,23 @@ class OrdinaryStructure(unittest.TestCase):
             )
 
         languages = {one["lang"]: one for one in file["languages"]}
-        # All61 original IDs remain; nine source-complete child boundaries
+        # All 61 original IDs remain; nine source-complete child boundaries
         # refine three preserved structural parents (eight plus bishop), and
         # the 2026-11-12 n. 131 admission adds two alternatives under the
         # preserved private-preparation parent, the first held in both
         # languages and the second wholly absent. 2026-11-14: the paschal
         # dismissal and Lava me gain both languages, Fraction and Perceptio
-        # English (public-domain witness campaign; installed Lava me package).
+        # English. 2026-11-25: 8 historical Prefaces (LA+EN) and QPD Latin
+        # communicantes (n. 86) bring totals to 48/80 EN and 45/80 LA.
         self.assertEqual((languages["en"]["held"], languages["en"]["elements"]),
-                         (40, 72))
+                         (48, 80))
         self.assertEqual((languages["la"]["held"], languages["la"]["elements"]),
-                         (36, 72))
+                         (45, 80))
         self.assertEqual(languages["en"]["elements"] - languages["en"]["held"], 32)
-        self.assertEqual(languages["la"]["elements"] - languages["la"]["held"], 36)
+        self.assertEqual(languages["la"]["elements"] - languages["la"]["held"], 35)
         held_elements = [one for one in elements(file) if one["translations"]]
         wholly_absent = [one for one in elements(file) if not one["translations"]]
-        self.assertEqual((len(held_elements), len(wholly_absent)), (40, 32))
+        self.assertEqual((len(held_elements), len(wholly_absent)), (48, 32))
 
         self.assertEqual({row["lang"] for row in source["witnesses"]}, {"la", "en"})
         self.assertEqual(len({(row["id"], row["lang"]) for row in source["witnesses"]}),
@@ -301,10 +306,10 @@ class OrdinaryStructure(unittest.TestCase):
         english_keys = {row["key"] for row in source_elements if "english" in row}
         latin_keys = {row["key"] for row in source_elements if "latin" in row}
         self.assertLessEqual(latin_keys, english_keys)
-        # 2026-11-14: the Fraction and Perceptio study Englishes join the
+        # 2026-11-25: communicantes n. 86 now holds QPD Latin, leaving three
         # English-only study renderings.
         self.assertEqual(english_keys - latin_keys,
-                         {"communicantes", "domine-iesu-christe-qui-dixisti",
+                         {"domine-iesu-christe-qui-dixisti",
                           "fractio", "perceptio-corporis-et-sanguinis"})
 
     def test_modern_kyrie_keeps_the_historical_greek_in_six_target_turns(self) -> None:
@@ -553,21 +558,20 @@ class OrdinaryStructure(unittest.TestCase):
                     if section == "praefatio" and row["element"].endswith("-heading")]
         self.assertEqual(len(headings), 11)
         replacements = [one for one in replacements if one not in headings]
-        self.assertEqual(len(replacements), 110)
+        self.assertEqual(len(replacements), 118)
         replacement_keys = {("roman-1962", section + "/" + row["element"], "en")
                             for section, row in replacements}
         expected |= replacement_keys
-        # 2026-11-12 ordinary-eight: eight existing 1962 Latin bodies are
-        # replaced by Mame 1922 source rows with their own reviewed turns,
-        # bound here to the parser review's exact new_source_turns. They no
-        # longer carry the 1861 P. marker (missal-reader-resume-2026-11-12/
-        # ordinary-eight/parser-review.json).
+        # 2026-11-12 ordinary-eight + 2026-11-25 exact-target Latin upgrades:
+        # 21 existing 1962 Latin bodies are replaced by Mame 1922 source rows
+        # with their own reviewed turns. The original 8 remain bound to the
+        # parser review's exact new_source_turns.
         latin_replacements = [
             (section["key"], row)
             for section in inventory["sections"]
             for row in section.get("latin_replacements", [])
         ]
-        self.assertEqual(len(latin_replacements), 8)
+        self.assertEqual(len(latin_replacements), 21)
         latin_replacement_keys = {("roman-1962", section + "/" + row["element"], "la")
                                   for section, row in latin_replacements}
         expected |= latin_replacement_keys
@@ -577,7 +581,7 @@ class OrdinaryStructure(unittest.TestCase):
             "parser-review.json")).read_text(encoding="utf-8"))
         reviewed_turns = {("roman-1962", row["key"], "la"): row["turns"]
                           for row in review["record"]["checks"]["new_source_turns"]}
-        self.assertEqual(set(reviewed_turns), latin_replacement_keys)
+        self.assertLessEqual(set(reviewed_turns), latin_replacement_keys)
         found_turns = {(calendar, key, lang): turns for calendar, key, lang, turns in found}
         for reach, turns in reviewed_turns.items():
             self.assertEqual(
@@ -996,11 +1000,11 @@ class OrdinaryStructure(unittest.TestCase):
             )
             for prayer in found
         }
-        self.assertEqual(sum(row is not None for row in latin.values()), 10)
+        self.assertEqual(sum(row is not None for row in latin.values()), 11)
         self.assertEqual(
             [key for key, row in latin.items()
              if row is not None and row["collation"] == "collated"],
-            ["prex-eucharistica/quam-oblationem"],
+            [key for key, row in latin.items() if row is not None],
         )
         self.assertEqual(
             {
@@ -1008,7 +1012,6 @@ class OrdinaryStructure(unittest.TestCase):
                 for prayer in found if latin[prayer["key"]] is None
             },
             {
-                "prex-eucharistica/communicantes": "element-spans-mixed-matter",
                 "prex-eucharistica/qui-pridie": "editio-typica-new-matter",
             },
         )
@@ -1016,7 +1019,7 @@ class OrdinaryStructure(unittest.TestCase):
         supplices = latin["prex-eucharistica/supplices"]
         self.assertEqual(supplices["source_id"],
                          "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam")
-        self.assertEqual(supplices["collation"], "uncollated")
+        self.assertEqual(supplices["collation"], "collated")
         self.assertIn("perferri", supplices["text"])
         self.assertNotIn("praeferri", supplices["text"])
         self.assertNotIn("Per eumdem", supplices["text"])

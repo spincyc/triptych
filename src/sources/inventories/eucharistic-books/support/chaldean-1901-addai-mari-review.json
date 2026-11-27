@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-collation",
+  "book_id": "chaldean-1901-addai-mari",
+  "title": "Missale Chaldaeorum (Mosul Dominican, 1901) — Anaphora of Addai and Mari Core — independent pixel-collation review",
+  "status": "verified",
+  "independent": true,
+  "complete_extent_verified": true,
+  "reviewer": "independent-collator-v2-syriac",
+  "checked_on": "2026-11-25",
+  "binding_sha256": "cae4cb72cd1095d23b77b9d38e4810a1a3876f2681e4e68eeae49ca8d0bf83d1",
+  "extent_sha256": "38ea76d7ba81f21e5de80c52e928c73314711987a995432a09e9e5f61dddb8a6",
+  "witness_sha256": {
+    "chaldean-1901-mosul-bonn-pdf": "dbc2a822e960ec581479e864968f6a4441dcf7ccf78fddd3fa28e89ef6a8abca"
+  },
+  "unit_sha256": {
+    "chaldean-1901-addai-mari.01-opening-dialogue": "3660b59c09250f5a6792e1887cca42a5b889959bd09ad51dd1c16a9434cf69f0",
+    "chaldean-1901-addai-mari.02-preface-gehanta-1": "60c55105276cd9aa8026c90083899d20afa84dda8d56762e465af885271d2a5b",
+    "chaldean-1901-addai-mari.03-sanctus": "09f92bce1ccbd9c5702230d5241e155943945d2d5b70f34b39eee86a98b5dcfb",
+    "chaldean-1901-addai-mari.08-institution-narrative": "d01ef9446869889513cc4c7ef821a1f4e8b19ec6295606d58992d51eecac85ac",
+    "chaldean-1901-addai-mari.04-post-sanctus-gehanta-2": "f38bb84a645e585ad5e9cb1e7485e9a48e689483891256850adc58f07ebfe721",
+    "chaldean-1901-addai-mari.05-intercession-gehanta-3": "7176211f952bdc4c667013a7ac9059dbe33e97e20f6eda1fd88c359c804e6e96",
+    "chaldean-1901-addai-mari.06-anamnesis-oblation": "24ca7b8816cf62efeec85df3b83be4ff7d0f4f0e519bb0d4eef6339d8d38468e",
+    "chaldean-1901-addai-mari.07-epiclesis-and-qanona": "9616ee1c448acac99cd9842cd533236defef6054548318813fcdae23d5c0e53d"
+  },
+  "scope": "Bounded constituent of the exact same eight aligned core units of the Anaphora of Addai and Mari in Classical Syriac (syr), preserving 1901's distinctive placement of the Institution Narrative inside the Post-Sanctus (PDF 72-71) prior to Gehanta 2, while using identical canonical native_path slugs for direct 3-way diffing against Chaldean 1767 and Syro-Malabar 1906.",
+  "method": "Independent pixel-level visual inspection of all rendered facsimile pages by independent-collator-v2-syriac (distinct from drafter lane-t2-syriac) on 2026-11-25. Applied 4 pixel-verified correction(s) relative to initial draft; verified every unit boundary, page account (1..107), and SHA-256 hash.",
+  "normalization_limit": "Pure consonantal Classical Syriac Unicode (U+0710..U+072C, UTF-8 NFC) with single ASCII spaces between words and single LF (\\n) line endings, one canonical liturgical unit per line.; All East Syriac and West Syriac vowel points, seyame (U+0308), qushshaya/rukkakha, linea occultans/marhetana, punctuation dots, liturgical crosses, quotation marks, kashidas, catchwords, running heads, signature marks, and page numbers are omitted for scan-safe cross-edition diffing.; Rubrics (red or black stage directions), section headers (e.g. Qanona, Gehanta), speaker labels (priest/deacon/people), abbreviated posture cues (e.g. gehanta bow marker), intervening private Kushapa prayers, diaconal calls outside the main dialogue, and parallel Garshuni/Arabic columns are excluded.; Printed historical orthography, abbreviations (such as abbreviated Sanctus incipits), omissions, and additions are preserved verbatim without harmonizing or supplying words from memory.",
+  "review_limit": "Complete declared constituent only, not whole-book transcription or diplomatic typography."
+}

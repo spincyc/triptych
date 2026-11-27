@@ -290,7 +290,7 @@ BROWSER_MODEL = Path("src/web/browser/texts/catalogue-model.js")
 # The two editions, named as ABOUT.md names them: "one by GPT and one by
 # Claude". The label is here and nowhere else, so a page cannot invent a third
 # spelling of an edition the repository already calls something.
-PROVIDER_LABELS = {"claude": "Claude", "gpt": "GPT"}
+PROVIDER_LABELS = {"claude": "Claude", "gemini": "Gemini", "gpt": "GPT"}
 
 # What the catalogue is, printed inside the catalogue, so that a consumer that
 # has the file has the caution that belongs with it.

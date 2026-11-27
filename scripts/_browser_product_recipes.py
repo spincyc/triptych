@@ -29,10 +29,10 @@ from _browser_product_inputs import ADAPTERS
 
 # Neither act-history nor source-reader reads workflows/ beyond the authority
 # records below (2026-11-04 audit), so new review records stale neither.
-_BROAD = ["src/sources", "src/gpt", "src/claude", "src/common", "web"]
+_BROAD = ["src/sources", "src/gpt", "src/claude", "src/gemini", "src/common", "web"]
 _SOURCE = ["src/sources"]
 # The source library preflights and loads every publication's bindings.
-_LIBRARY = ["src/sources", "src/gpt", "src/claude"]
+_LIBRARY = ["src/sources", "src/gpt", "src/claude", "src/gemini"]
 # calendar-days and calendar-rubrics read the calendar directory and, through
 # `_calendars.load_document` and `index_header`, the missal designator registry
 # that names each calendar's book (2026-11-14). The other inventory path in
@@ -58,6 +58,7 @@ _REVIEW_RECORDS = [
 _EVALUATION_ARCHIVES = [
     "src/gpt/**/evaluations",
     "src/claude/**/evaluations",
+    "src/gemini/**/evaluations",
 ]
 # Browser UI trees never opened by `documents` (which reads only
 # `src/web/browser/texts/catalogue-model.js`). `web-editions` reads nothing
@@ -142,9 +143,11 @@ def _recipe(identifier, prefix, argv, trees, files=(), *, excludes=(), delivery)
     holds_index = any(_READER_INDEX.startswith(tree + "/") for tree in trees)
     holds_gpt = any(tree == "src/gpt" or "src/gpt".startswith(tree + "/") for tree in trees)
     holds_claude = any(tree == "src/claude" or "src/claude".startswith(tree + "/") for tree in trees)
+    holds_gemini = any(tree == "src/gemini" or "src/gemini".startswith(tree + "/") for tree in trees)
     eval_excludes = [
         *(["src/gpt/**/evaluations"] if holds_gpt else []),
         *(["src/claude/**/evaluations"] if holds_claude else []),
+        *(["src/gemini/**/evaluations"] if holds_gemini else []),
     ]
     return {
         "id": identifier, "version": 1, "output_prefixes": [prefix],

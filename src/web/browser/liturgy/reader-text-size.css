@@ -47,6 +47,46 @@
 @media (max-width: 30rem) {
   .reader-instrument .reader-text-size { grid-template-columns: minmax(0, 1fr); }
 }
+/* Keep mobile navigation chrome compact and legible when screen text is enlarged to 125–200%. */
+@media screen and (max-width: 71.999rem) {
+  html[data-reader-text-size]:not([data-reader-text-size="100"]) .reader-instrument {
+    --reader-shell-height: 60px;
+  }
+  html[data-reader-text-size]:not([data-reader-text-size="100"]) .reader-instrument .reader-masthead {
+    min-height: 48px;
+    padding-block: 6px;
+  }
+  html[data-reader-text-size]:not([data-reader-text-size="100"]) .reader-instrument .reader-brand {
+    font-size: 14px;
+  }
+  html[data-reader-text-size]:not([data-reader-text-size="100"]) .reader-instrument .reader-place {
+    font-size: 12px;
+  }
+  html[data-reader-text-size]:not([data-reader-text-size="100"]) .reader-instrument .reader-actions {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    min-height: 58px;
+  }
+  html[data-reader-text-size]:not([data-reader-text-size="100"]) .reader-instrument .reader-actions button {
+    min-height: 54px;
+    padding: 6px 4px;
+    gap: 2px;
+    font-size: 12px;
+    line-height: 1.1;
+  }
+  html[data-reader-text-size]:not([data-reader-text-size="100"]) .reader-instrument .reader-actions .action-label {
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+  html[data-reader-text-size]:not([data-reader-text-size="100"]) .reader-instrument .reader-actions .action-state {
+    font-size: 10px;
+    line-height: 1.1;
+  }
+  html[data-reader-text-size]:not([data-reader-text-size="100"]) .reader-instrument .reader-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
 @media (max-height: 30rem) {
   /* A zoomed short viewport needs its full height for the focused control. */
   .reader-instrument [data-reader-surface="mode"] > .surface-head { position: static; }

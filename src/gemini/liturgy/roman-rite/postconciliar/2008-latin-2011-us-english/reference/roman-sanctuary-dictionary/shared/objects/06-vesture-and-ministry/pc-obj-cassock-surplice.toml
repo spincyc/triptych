@@ -1,0 +1,80 @@
+schema_version = 1
+id = "pc-obj-cassock-surplice"
+category = "vesture-and-ministry"
+sort_order = 607
+plate_id = "pc-plt-09-vesture-choir-solemn"
+composition_plate_ids = []
+plate_position = "Left figure, deep charcoal-black ankle-length buttoned cassock under bright pleated white surplice (Plate IX)"
+preferred_english_name = "Cassock and Surplice"
+latin_headword = "Vestis talaris et superpelliceum"
+alternate_english_names = ["Choir Dress", "Server's Cassock and Surplice"]
+alternate_latin_names = ["Talaris", "Superpelliceum", "Cotta"]
+pronunciation_key = "VEHS-tees tah-LAH-rees eht soo-pehr-pehl-LEE-cheh-oom"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "permitted"
+scope_level = "universal-roman"
+territorial_note = "Under the United States adaptation to GIRM 339, altar servers, acolytes, readers, and other lay ministers may wear either the alb or other appropriate and dignified clothing such as cassock and surplice. Universal law strictly forbids substituting a surplice over a cassock for the alb whenever a chasuble, dalmatic, or stole alone is worn (GIRM 336), and requires that a surplice always be worn over a cassock (Caeremoniale Episcoporum 1984 no. 65)."
+
+[identification]
+summary = "The cassock and surplice pair an ankle-length buttoned dark robe with a knee- or hip-length pleated white linen over-tunic, worn by non-concelebrating clergy in choir dress and—as a lawful dignified alternative to the alb—by altar servers."
+appearance = "Rendered on the left figure of Plate IX in clerical choir dress: a deep charcoal-black buttoned cassock reaching the ankles beneath a crisp, bright white square-yoked pleated surplice with wide open sleeves."
+placement_and_use = "In postconciliar discipline, two sharp rules govern cassock and surplice. First, the alb may never be exchanged for a surplice, not even over a cassock, when a chasuble or dalmatic is worn or when rubrics prescribe only a stole without an outer vestment (GIRM 336; CE 1984 no. 65). Second, whenever a surplice is worn, it must always be worn over a cassock—never directly over ordinary street clothing (CE 1984 no. 65). Non-concelebrating priests attending Mass in choir wear choir dress or a surplice over a cassock (Redemptionis Sacramentum 128). For altar servers in the United States, cassock and surplice remain a widely esteemed, dignified traditional alternative to the white alb (US GIRM 339)."
+liturgical_colors = "Black cassock (or red/purple only by established local/cathedral custom for servers; violet/scarlet piping reserved to prelates and bishops) with white linen surplice."
+
+[ministers_and_handling]
+ordinary_ministers = ["bishop", "priest", "deacon", "instituted-acolyte", "altar-server"]
+prepares = ["sacristan", "altar-server"]
+server_boundary = "handles"
+server_boundary_summary = "Altar servers wear cassock and surplice where parish custom appoints them (US GIRM 339), always wearing the surplice over a properly fitted cassock (never over street clothes alone) and never adding clerical collars, stoles, or prelatial insignia."
+safety_warning = "Ensure the cassock hem clears the floor cleanly above the shoes so it does not catch on sanctuary steps while carrying candles, the processional cross, or a smoking thurible; never wear a surplice without a cassock underneath (CE 1984 no. 65)."
+
+[audience_text]
+altar_server = "In many parishes, altar servers wear a black buttoned cassock under a crisp white pleated surplice instead of an alb—both are lawful and dignified under United States norms (US GIRM 339). Always wear the surplice over a cassock, never over street trousers or a shirt by itself (CE 1984 no. 65). Check that your cassock clears your shoes so you will not trip on sanctuary steps, wear dark modest shoes beneath it, button the cassock neatly, and hang both garments cleanly in the sacristy after Mass."
+sacristan = "Maintain a graded size rack of clean black cassocks and pressed white surplices for servers and choir clergy (RS 128; US GIRM 339), keeping missing buttons repaired and hems intact to prevent tripping hazards. Remember that priests celebrating or concelebrating Mass or vesting in a stole under GIRM 336 require an alb—never substitute a surplice over a cassock for the alb at Mass."
+general_reader = "The stark contrast of a bright pleated white surplice over a black ankle-length cassock has clothed altar servers and choir clergy for centuries. While the postconciliar Roman Missal made the full-length white alb the common garment of ordained and instituted ministers at Mass, cassock and surplice continue as choir dress for non-concelebrating priests and as lawful, traditional attire for altar servers."
+
+[relationships]
+confusable_with = ["pc-obj-alb"]
+related_objects = ["pc-obj-cope", "pc-obj-stole"]
+
+[symbolism]
+has_sourced_symbolism = false
+text = ""
+evidence_class = "none-practical"
+attribution = ""
+
+[counterpart_1962]
+relationship = "changed use"
+locus_1962 = "Missale Romanum (1962), Ritus Servandus I.2, II.1, VI.8; Caeremoniale Episcoporum (1948) I.11 §5"
+comparison = "In the 1962 Roman Missal, cassock and surplice were the standard vesture of altar servers, choir clergy, and priests administering many non-Mass rites with a stole (RS II.1, VI.8). Postconciliar GIRM 336 replaces surplice-and-stole with alb-and-stole whenever rubrics prescribe a stole alone or beneath chasuble/dalmatic, while retaining cassock and surplice for choir dress (RS 128) and permitting them for altar servers alongside the alb (US GIRM 339; CE 1984 no. 65)."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N37"
+primary_loci = [
+  "GIRM 119c, 336, 339",
+  "USCCB GIRM 339",
+  "Redemptionis Sacramentum 128",
+  "Caeremoniale Episcoporum (1984) 65",
+]
+source_bindings = [
+  "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002",
+  "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021",
+  "edition.catholic-church.missale-romanum.vatican-typica-1962",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

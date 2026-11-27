@@ -1,0 +1,66 @@
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[[structure]]
+role = "scope"
+data = "src/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/research/scope.md"
+
+[[structure]]
+role = "edition-manifest"
+data = "src/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/research/edition-manifest.md"
+
+[[structure]]
+role = "artwork-manifest"
+data = "src/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/research/artwork-manifest.toml"
+
+[[structure]]
+role = "artwork-audit"
+data = "src/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/research/artwork-manifest.md"
+
+[[structure]]
+role = "plate-manifest"
+data = "src/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/research/plate-manifest.md"
+
+[[structure]]
+role = "source-audit"
+data = "src/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/research/source-audit.md"
+
+[[structure]]
+role = "object-inventory"
+data = "src/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/research/object-inventory.md"
+
+[[structure]]
+role = "remaining-gaps"
+data = "src/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/research/remaining-gaps.md"
+
+[document]
+type = "liturgy-reference-v1"
+
+[document.main]
+pdftitle = 'The Illustrated Dictionary of the Postconciliar Roman Sanctuary: Comprehensive Adult Reference'
+pdfsubject = 'Illustrated dictionary of the postconciliar Roman sanctuary for the 2008 Latin third typical edition of the Roman Missal and 2011 United States edition'
+pdfkeywords = 'Roman Rite, postconciliar liturgy, GIRM, sanctuary furnishings, sacred vessels, altar linens, vestments, Roman Missal'
+series-line = 'Triptych Illustrated Liturgical Reference'
+title = 'The Illustrated Dictionary of the Postconciliar Roman Sanctuary'
+subtitle = 'Objects, Vessels, Linens, Books, Furnishings, and Vesture of the Roman Rite'
+title-detail = 'Comprehensive Adult Reference Edition — Missale Romanum (2002/2008) and Roman Missal, Third Edition (United States, 2011)'
+title-notice = 'A Triptych study and preparation reference as of 2026-11-25, not an official liturgical book. See Appendix E for edition scope, boundaries, and rights.'
+title-style = "series-detail"
+closing = "footnotesize-rights"
+body = [
+  'sections/00-key-and-sanctuary',
+  'sections/10-sanctuary-furnishings',
+  'sections/20-sacred-vessels',
+  'sections/30-altar-linens',
+  'sections/40-liturgical-books',
+  'sections/50-service-and-incense',
+  'sections/60-vesture-and-ministry',
+  'sections/70-communion-and-adjacent',
+  'sections/80-superseded-postconciliar',
+]
+apparatus = [
+  { source = 'sections/90-pronunciation-and-indexes', roles = ['exposition'] },
+  { source = 'sections/95-chronology-and-notes', roles = ['exposition'] },
+  { source = 'sections/98-scope-and-references', roles = ['scope-appendix', 'references'] },
+]

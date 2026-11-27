@@ -320,7 +320,13 @@ def _yaml():
     return yaml
 
 
+def _yaml_load(data: Any) -> Any:
+    yaml = _yaml()
+    return yaml.load(data, Loader=getattr(yaml, "CSafeLoader", yaml.SafeLoader))
+
+
 _COMMAND_YAML: ContextVar[dict | None] = ContextVar("catena_command_yaml", default=None)
+_COMMAND_CANDIDATES: ContextVar[dict | None] = ContextVar("catena_command_candidates", default=None)
 
 
 def _command_yaml(function):
@@ -328,9 +334,11 @@ def _command_yaml(function):
     @functools.wraps(function)
     def scoped(*args, **kwargs):
         token = _COMMAND_YAML.set({})
+        candidates_token = _COMMAND_CANDIDATES.set({})
         try:
             return function(*args, **kwargs)
         finally:
+            _COMMAND_CANDIDATES.reset(candidates_token)
             _COMMAND_YAML.reset(token)
     return scoped
 
@@ -706,11 +714,16 @@ class Sources(NamedTuple):
     passages: dict[str, dict[str, Any]]
 
 
-@functools.lru_cache(maxsize=1)
-def _source_library():
+def _resolve_tool(root: Path, relative: str) -> Path:
+    tool = Path(root).resolve() / relative
+    return tool if tool.is_file() else (ROOT / relative).resolve()
+
+
+@functools.lru_cache(maxsize=4)
+def _load_source_library(tool: Path):
     """The owner of passage controllers, including borrowed anthology bytes."""
     name = "_catena_source_library"
-    loader = importlib.machinery.SourceFileLoader(name, str(ROOT / "tools/source-library"))
+    loader = importlib.machinery.SourceFileLoader(name, str(tool))
     spec = importlib.util.spec_from_loader(name, loader)
     module = importlib.util.module_from_spec(spec)
     sys.modules[name] = module
@@ -718,11 +731,15 @@ def _source_library():
     return module
 
 
-@functools.lru_cache(maxsize=1)
-def _source_reader():
+def _source_library(root: Path = ROOT):
+    return _load_source_library(_resolve_tool(root, "tools/source-library"))
+
+
+@functools.lru_cache(maxsize=4)
+def _load_source_reader(tool: Path):
     """The owner of the licensed-text acknowledgement rule."""
     name = "_catena_source_reader"
-    loader = importlib.machinery.SourceFileLoader(name, str(ROOT / "tools/source-reader"))
+    loader = importlib.machinery.SourceFileLoader(name, str(tool))
     spec = importlib.util.spec_from_loader(name, loader)
     module = importlib.util.module_from_spec(spec)
     sys.modules[name] = module
@@ -730,14 +747,18 @@ def _source_reader():
     return module
 
 
-def _rights_notice(artifact: dict[str, Any]) -> dict[str, str]:
+def _source_reader(root: Path = ROOT):
+    return _load_source_reader(_resolve_tool(root, "tools/source-reader"))
+
+
+def _rights_notice(artifact: dict[str, Any], *, root: Path = ROOT) -> dict[str, str]:
     """Carry the controller's actual required notice with its words, verbatim.
 
     Source Reader already publishes licensed rights_basis as acknowledgement.
     Catena's web and terminal lazy-text readers accept that same field; neither
     a new attribution nor an edition/edge-basis substitute is needed.
     """
-    if artifact.get("rights_status") not in _source_reader().ATTRIBUTION_REQUIRED:
+    if artifact.get("rights_status") not in _source_reader(root).ATTRIBUTION_REQUIRED:
         return {}
     notice = artifact.get("rights_basis")
     if not isinstance(notice, str) or not notice.strip():
@@ -746,6 +767,17 @@ def _rights_notice(artifact: dict[str, Any]) -> dict[str, str]:
             "textual rights_basis for its required acknowledgement"
         )
     return {"acknowledgement": notice}
+
+
+def passage_edition_id(sources: Sources, passage: dict[str, Any]) -> str:
+    """Resolve the passage's edition_id, preferring its segment's edition_id when present."""
+    edition_id = str(passage.get("edition_id") or "")
+    segment_id = passage.get("segment_id")
+    if isinstance(segment_id, str) and segment_id:
+        segment = sources.segments.get(segment_id)
+        if segment is not None:
+            edition_id = str(segment.get("edition_id") or edition_id)
+    return edition_id
 
 
 class _ControllerRecords:
@@ -767,9 +799,11 @@ class _ControllerRecords:
         )
 
 
-def controlling_artifact(sources: Sources, passage: dict[str, Any]) -> dict[str, Any] | None:
+def controlling_artifact(
+    sources: Sources, passage: dict[str, Any], *, root: Path = ROOT
+) -> dict[str, Any] | None:
     """Resolve the passage's exact controller through the source-library owner."""
-    artifact = _source_library()._controlling_artifact(
+    artifact = _source_library(root)._controlling_artifact(
         SimpleNamespace(records=_ControllerRecords(sources)),
         SimpleNamespace(record_type="passage", data=passage),
     )
@@ -1266,7 +1300,7 @@ def _english_version_problems(sources, fragments, *, passage_ids=None):
 
     def language(identifier):
         passage = sources.passages.get(identifier) or {}
-        edition = sources.editions.get(passage.get("edition_id")) or {}
+        edition = sources.editions.get(passage_edition_id(sources, passage)) or {}
         return fold_language(edition.get("language"))
 
     for identifier, row in by_id.items():
@@ -1765,7 +1799,7 @@ def _passage_errors(
         errors.append(f"{label}: {edition_id} declares no language")
     errors.extend(_voice_errors(sources, label, work_id, edition_id, edition))
 
-    artifact = controlling_artifact(sources, passage)
+    artifact = controlling_artifact(sources, passage, root=root)
     artifact_id = str((artifact or {}).get("id") or passage.get("segment_id")
                       or passage.get("artifact_id") or "")
     if artifact is None:
@@ -1810,13 +1844,472 @@ def _solved_case_errors(data: dict[str, Any], where: str, known: set[str]) -> li
 
 
 # ---------------------------------------------------------------------------
+# Additive UTF-16 text_structure projection (never alters verbatim `text`)
+# ---------------------------------------------------------------------------
+
+CATENA_AUREA_WORK_PREFIX = "work.thomas-aquinas.catena-aurea-"
+_CANDIDATES_SCHEMA = "triptych-catena-aurea-candidates/v1"
+_TERMINAL_PUNCTUATION = frozenset('.?!:;"”’)]')
+_SUPERSCRIPT_DIGITS = "⁰¹²³⁴⁵⁶⁷⁸⁹"
+_PARAGRAPH_BREAK = re.compile(r"(?:\r?\n[ \t]*){2,}")
+_ED_NOTE_RE = re.compile(r"\[ed\.?\s*note(?:,\s*[^:\]]+)?\s*:[^\]]*\]", re.I)
+_CATENA_AUREA_LEMMA_LEADER_RE = re.compile(r"^(?:Ver\.?\s*\d+|\d+|\[[0-9]+\]|[lI]\.\s|\d+[lI]\.)")
+
+# Closed allowlist of patristic, gloss, and conciliar speaker heads verified
+# across Catena Aurea in Marcum and in Matthaeum (plus standard Fathers for
+# future CCEL Gospel witnesses). Longest forms come first for prefix safety.
+_CATENA_AUREA_SPEAKER_HEADS = (
+    "Second Council of Constantinople",
+    "The Council of Ephesus",
+    "Cyril of Alexandria",
+    "Pseudo-Augustine",
+    "Pseudo-Dionysius",
+    "Pseudo-Jerome",
+    "Pseudo-Origen",
+    "Pseudo-Chrys.",
+    "Pseudo-Chrys",
+    "Psuedo-Chrys.",
+    "Pseudo-Chyrs.",
+    "Pseudo-Athan.",
+    "Pseudo-Athan",
+    "Pseudo-Dionys.",
+    "Pseudo-Aug.",
+    "Pseudo-Aug",
+    "Psuedo-Aug.",
+    "Petrus Alfonsus",
+    "Greek Catena",
+    "Cat. Gr.",
+    "Greg. Nyss.",
+    "Gregory Nyss.",
+    "Ambrosiaster",
+    "Chrysologus",
+    "Chrysostom",
+    "Severianus",
+    "Cassiodorus",
+    "Athanasius",
+    "Epiphanius",
+    "Fulgentius",
+    "Lactantius",
+    "Tertullian",
+    "Theophylact",
+    "Theophlyact",
+    "Theophyact",
+    "Damascenus",
+    "Paschasius",
+    "Augustine",
+    "Dionysius",
+    "Euthymius",
+    "Gennadius",
+    "Theodoret",
+    "Theodotus",
+    "Eusebius",
+    "Irenaeus",
+    "Lanfranc",
+    "Nemesius",
+    "Remigius",
+    "Ambrose.",
+    "Ambrose",
+    "Bernard",
+    "Cassian",
+    "Clement",
+    "Cyprian",
+    "Gregory",
+    "Isidore",
+    "Josephus",
+    "Maximus",
+    "Prosper",
+    "Rabanus",
+    "Rufinus",
+    "Chrysol.",
+    "Chrysol",
+    "Damasc.",
+    "Damasc",
+    "Dionys.",
+    "Euthym.",
+    "Cassiod.",
+    "Faustus",
+    "Glossa",
+    "Gloss.",
+    "Gloss",
+    "Hilary",
+    "Jerome",
+    "Origen",
+    "Origin",
+    "Victor",
+    "Alcuin",
+    "Anselm",
+    "Athan.",
+    "Basil.",
+    "Basil",
+    "Chrys.",
+    "Chrys",
+    "Chyrs.",
+    "Damas.",
+    "Epiph.",
+    "Euseb.",
+    "Haymo",
+    "Raban.",
+    "Raban",
+    "Remig.",
+    "Remig",
+    "Theod.",
+    "Titus",
+    "Ambr.",
+    "Bede",
+    "Clem.",
+    "Cypr.",
+    "Cyril",
+    "Fulg.",
+    "Greg.",
+    "Greg",
+    "Iren.",
+    "Isid.",
+    "Lact.",
+    "Tert.",
+    "Vict.",
+    "Aug.",
+    "Aug",
+    "Hil.",
+    "Leo",
+    "Max.",
+)
+
+_CATENA_AUREA_SPEAKER_RE = re.compile(
+    rf"^(?P<label>(?:{'|'.join(re.escape(head) for head in _CATENA_AUREA_SPEAKER_HEADS)})(?![A-Za-z])"
+    rf"(?:(?:\s*[,;.]\s*|\s+)(?:[^:\[\n]|(?<=\d):(?=\d)){{1,80}})?\s*,?)"
+    rf"(?:(?P<ednote>\s*\[(?:ed\.?\s*note|marg(?:in|\.)?\s*note)[^\]]*\])\s*:|\s*:)(?=\s|\.|$)"
+)
+
+_CATENA_AUREA_TRANSITION_RE = re.compile(
+    r"(?P<label>(?:(?:And\s+)?(?:Wherefore|Whence|For|But|And|Hence|Therefore)\s+)?"
+    r"(?:(?:therefore\s+)?(?:it|there)\s+(?:also\s+)?(?:goes\s+on|follows|continues|is\s+said|is\s+added|comes\s+after|subjoins)"
+    r"|I\s+goes\s+on"
+    r"|Again"
+    r"|And\s+this\s+is\s+(?:that\s+which|what)\s+is\s+added"
+    r"|Where\s+it\s+is\s+said)"
+    r"\s*:)(?=\s|$)",
+    re.I,
+)
+
+
+def _utf16_converter(text: str):
+    """Map Unicode code-point offsets in `text` to UTF-16 code units in O(N)."""
+    utf16_len = len(text.encode("utf-16-le")) // 2
+    if utf16_len == len(text):
+        return (lambda idx: idx), utf16_len
+    offsets = [0] * (len(text) + 1)
+    pos = 0
+    for idx, ch in enumerate(text):
+        pos += 2 if ord(ch) > 0xFFFF else 1
+        offsets[idx + 1] = pos
+    return offsets.__getitem__, utf16_len
+
+
+def _trimmed_span(text: str, start: int, end: int) -> tuple[int, int] | None:
+    while start < end and text[start].isspace():
+        start += 1
+    while end > start and text[end - 1].isspace():
+        end -= 1
+    return (start, end) if start < end else None
+
+
+def _catena_aurea_candidates(
+    root: Path, artifact: dict[str, Any] | None
+) -> tuple[bool, frozenset[int]]:
+    """Load sibling CCEL `candidates*.json` scripture line numbers, if present."""
+    if not isinstance(artifact, dict):
+        return False, frozenset()
+    rel_path = artifact.get("path")
+    if not isinstance(rel_path, str) or not rel_path.strip():
+        return False, frozenset()
+    artifact_id = str(artifact.get("id") or "")
+    resolved_root = Path(root).resolve()
+    art_path = resolved_root / rel_path
+    artifacts_dir = art_path.parent.parent
+    cache = _COMMAND_CANDIDATES.get()
+    cache_key = (resolved_root, str(artifacts_dir), artifact_id)
+    if cache is not None and cache_key in cache:
+        return cache[cache_key]
+    candidate_paths: list[Path] = []
+    if artifacts_dir.is_dir():
+        candidate_paths.extend(sorted(artifacts_dir.glob("candidates*/candidates*.json")))
+    if not candidate_paths and art_path.parent.is_dir():
+        candidate_paths.extend(sorted(art_path.parent.glob("candidates*.json")))
+    result: tuple[bool, frozenset[int]] = (False, frozenset())
+    for candidate_path in candidate_paths:
+        if not candidate_path.is_file():
+            continue
+        try:
+            payload = json.loads(candidate_path.read_bytes().decode("utf-8"))
+        except (OSError, UnicodeError, ValueError):
+            continue
+        if not isinstance(payload, dict) or payload.get("schema") != _CANDIDATES_SCHEMA:
+            continue
+        declared_artifact = payload.get("artifact_id")
+        if declared_artifact and artifact_id and declared_artifact != artifact_id:
+            continue
+        scripture = frozenset(
+            int(row["line"])
+            for row in payload.get("paragraphs") or ()
+            if isinstance(row, dict)
+            and row.get("source_class") == "scripture"
+            and type(row.get("line")) is int
+        )
+        result = (True, scripture)
+        break
+    if cache is not None:
+        cache[cache_key] = result
+    return result
+
+
+def _segment_paragraph_spans(
+    text: str, segments: list[Any], *, is_ccel: bool
+) -> list[tuple[int, int, int | None]] | None:
+    """Recover paragraph code-point spans from collapsed `transcription_segments`."""
+    if len(segments) < 2 or not all(isinstance(seg, dict) for seg in segments):
+        return None
+    raw_texts = [str(seg.get("text") or "") for seg in segments]
+    if any(not piece for piece in raw_texts):
+        return None
+    spans: list[tuple[int, int, int | None]] = []
+    if " ".join(raw_texts) == text:
+        if not is_ccel:
+            avg_len = sum(len(piece) for piece in raw_texts) / len(raw_texts)
+            term_frac = (
+                sum(
+                    1 for piece in raw_texts
+                    if piece.rstrip().rstrip(_SUPERSCRIPT_DIGITS)[-1:] in _TERMINAL_PUNCTUATION
+                )
+                / len(raw_texts)
+            )
+            if avg_len < 220 or term_frac < 0.75:
+                return None
+        pos = 0
+        for seg, piece in zip(segments, raw_texts):
+            end = pos + len(piece)
+            trimmed = _trimmed_span(text, pos, end)
+            if trimmed is not None:
+                line_num = seg.get("line") if type(seg.get("line")) is int else None
+                spans.append((trimmed[0], trimmed[1], line_num))
+            pos = end + 1
+        return spans if spans else None
+    # Some witnesses (e.g. Pearse's Severian) normalize NBSP or runs of spaces
+    # between `transcription_segments` and `text` while keeping identical words.
+    text_tokens = list(re.finditer(r"\S+", text))
+    seg_words = [piece.split() for piece in raw_texts]
+    if any(not words for words in seg_words):
+        return None
+    flat_words = [word for words in seg_words for word in words]
+    if len(flat_words) != len(text_tokens) or any(
+        tok.group(0) != word for tok, word in zip(text_tokens, flat_words)
+    ):
+        return None
+    cursor = 0
+    candidate_spans: list[tuple[int, int, int | None]] = []
+    for seg, words in zip(segments, seg_words):
+        first_tok = text_tokens[cursor]
+        last_tok = text_tokens[cursor + len(words) - 1]
+        cursor += len(words)
+        line_num = seg.get("line") if type(seg.get("line")) is int else None
+        candidate_spans.append((first_tok.start(), last_tok.end(), line_num))
+    if not is_ccel:
+        avg_len = sum(end - start for start, end, _ in candidate_spans) / len(candidate_spans)
+        term_frac = (
+            sum(
+                1 for start, end, _ in candidate_spans
+                if text[start:end].rstrip().rstrip(_SUPERSCRIPT_DIGITS)[-1:] in _TERMINAL_PUNCTUATION
+            )
+            / len(candidate_spans)
+        )
+        if avg_len < 220 or term_frac < 0.75:
+            return None
+    return candidate_spans if candidate_spans else None
+
+
+def _validate_text_structure(structure: dict[str, Any], utf16_len: int) -> None:
+    """Verify every UTF-16 offset invariant before emitting `text_structure`."""
+    if structure.get("version") != 1:
+        raise CatenaError("text_structure version must be 1")
+    paragraphs = structure.get("paragraphs")
+    if not isinstance(paragraphs, list) or not paragraphs:
+        raise CatenaError("text_structure paragraphs must be a nonempty list")
+    prev_end = 0
+    for para in paragraphs:
+        start, end = para.get("start"), para.get("end")
+        if (
+            type(start) is not int
+            or type(end) is not int
+            or not (prev_end <= start < end <= utf16_len)
+        ):
+            raise CatenaError(f"text_structure paragraph bounds invalid: {start}..{end} (len {utf16_len})")
+        if para.get("kind") not in {"lemma", "commentary", "plain"}:
+            raise CatenaError(f"text_structure unsupported paragraph kind: {para.get('kind')!r}")
+        speaker_end = start
+        if "speaker" in para:
+            sp = para["speaker"]
+            if (
+                not isinstance(sp, list)
+                or len(sp) != 2
+                or any(type(v) is not int for v in sp)
+                or not (start <= sp[0] < sp[1] <= end)
+            ):
+                raise CatenaError(f"text_structure invalid speaker span: {sp!r}")
+            speaker_end = sp[1]
+        if "transition" in para:
+            tr = para["transition"]
+            if (
+                not isinstance(tr, list)
+                or len(tr) != 2
+                or any(type(v) is not int for v in tr)
+                or not (speaker_end <= tr[0] < tr[1] <= end)
+            ):
+                raise CatenaError(f"text_structure invalid transition span: {tr!r}")
+        if "notes" in para:
+            notes = para["notes"]
+            if not isinstance(notes, list) or not notes:
+                raise CatenaError("text_structure notes must be a nonempty list when present")
+            note_prev = start
+            for note in notes:
+                if (
+                    not isinstance(note, list)
+                    or len(note) != 2
+                    or any(type(v) is not int for v in note)
+                    or not (note_prev <= note[0] < note[1] <= end)
+                ):
+                    raise CatenaError(f"text_structure invalid note span: {note!r}")
+                note_prev = note[1]
+        prev_end = end
+
+
+def text_structure_for_passage(
+    root: Path,
+    passage: dict[str, Any],
+    text: str,
+    *,
+    work_id: str = "",
+    artifact: dict[str, Any] | None = None,
+) -> dict[str, Any] | None:
+    """Derive deterministic UTF-16 `text_structure` sidecar without altering `text`.
+
+    Shared by static `_structure_files` and indexed `_reader_commentary_products`
+    so both surfaces emit byte-identical text payloads.
+    """
+    if not isinstance(text, str) or not text.strip():
+        return None
+    is_catena_aurea = str(work_id or "").startswith(CATENA_AUREA_WORK_PREFIX)
+    is_ccel, scripture_lines = (
+        _catena_aurea_candidates(root, artifact) if is_catena_aurea else (False, frozenset())
+    )
+    segments = passage.get("transcription_segments") if isinstance(passage, dict) else None
+
+    raw_spans: list[tuple[int, int, int | None]] = []
+    if "\n\n" in text:
+        cursor = 0
+        for match in _PARAGRAPH_BREAK.finditer(text):
+            trimmed = _trimmed_span(text, cursor, match.start())
+            if trimmed is not None:
+                raw_spans.append((trimmed[0], trimmed[1], None))
+            cursor = match.end()
+        trimmed = _trimmed_span(text, cursor, len(text))
+        if trimmed is not None:
+            raw_spans.append((trimmed[0], trimmed[1], None))
+    elif "\n" not in text and isinstance(segments, list) and len(segments) >= 2:
+        recovered = _segment_paragraph_spans(text, segments, is_ccel=is_ccel)
+        if recovered is not None:
+            raw_spans = recovered
+    if not raw_spans:
+        trimmed = _trimmed_span(text, 0, len(text))
+        if trimmed is None:
+            return None
+        line_num = (
+            segments[0].get("line")
+            if isinstance(segments, list)
+            and len(segments) == 1
+            and isinstance(segments[0], dict)
+            and type(segments[0].get("line")) is int
+            else None
+        )
+        raw_spans = [(trimmed[0], trimmed[1], line_num)]
+
+    to_u16, utf16_len = _utf16_converter(text)
+    paragraphs: list[dict[str, Any]] = []
+    for start, end, line_num in raw_spans:
+        chunk = text[start:end]
+        notes = [[to_u16(start + m.start()), to_u16(start + m.end())] for m in _ED_NOTE_RE.finditer(chunk)]
+        speaker: list[int] | None = None
+        transition: list[int] | None = None
+        if is_catena_aurea:
+            m_sp = _CATENA_AUREA_SPEAKER_RE.match(chunk)
+            if is_ccel and line_num in scripture_lines:
+                if (
+                    not m_sp
+                    and chunk != "Amen."
+                    and _CATENA_AUREA_LEMMA_LEADER_RE.match(chunk)
+                ):
+                    kind = "lemma"
+                elif chunk == "Amen.":
+                    kind = "plain"
+                else:
+                    kind = "commentary"
+            elif is_ccel:
+                kind = "plain" if chunk == "Amen." else "commentary"
+            else:
+                kind = "commentary" if m_sp else "plain"
+            if kind == "commentary":
+                if m_sp:
+                    sp_end = len(m_sp.group("label").rstrip()) if m_sp.group("ednote") else m_sp.end()
+                    speaker = [to_u16(start), to_u16(start + sp_end)]
+                    rest_off = m_sp.end()
+                    while rest_off < len(chunk) and chunk[rest_off].isspace():
+                        rest_off += 1
+                    m_tr = _CATENA_AUREA_TRANSITION_RE.match(chunk, rest_off)
+                    if m_tr:
+                        transition = [to_u16(start + rest_off), to_u16(start + m_tr.end())]
+                else:
+                    m_tr = _CATENA_AUREA_TRANSITION_RE.match(chunk)
+                    if m_tr:
+                        transition = [to_u16(start), to_u16(start + m_tr.end())]
+        else:
+            kind = "plain"
+        entry: dict[str, Any] = {
+            "start": to_u16(start),
+            "end": to_u16(end),
+            "kind": kind,
+        }
+        if speaker is not None:
+            entry["speaker"] = speaker
+        if transition is not None:
+            entry["transition"] = transition
+        if notes:
+            entry["notes"] = notes
+        paragraphs.append(entry)
+
+    if not (
+        len(paragraphs) > 1
+        or any(p["kind"] == "lemma" or "speaker" in p or "notes" in p for p in paragraphs)
+    ):
+        return None
+    result = {"version": 1, "paragraphs": paragraphs}
+    _validate_text_structure(result, utf16_len)
+    return result
+
+
+# ---------------------------------------------------------------------------
 # What the browser is given
 # ---------------------------------------------------------------------------
 
 
 def fragments_for_book(
-    root: Path, token: str, *, scope=None, sources=None, edges=None, passage_ids=None,
-    snippets=None, validated_versions: bool = False,
+    root: Path,
+    token: str,
+    *,
+    scope=None,
+    sources=None,
+    edges=None,
+    passage_ids=None,
+    include_text_structure: bool = True,
+    snippets=None,
+    validated_versions: bool = False,
 ) -> list[dict[str, Any]]:
     """Every held fragment on a book, at its own extent, in chronological order.
 
@@ -1853,15 +2346,22 @@ def fragments_for_book(
         if not scope.allowed_work(work_id):
             continue
         work = sources.works.get(work_id) or {}
-        edition_id = str(passage.get("edition_id") or "")
+        edition_id = passage_edition_id(sources, passage)
         edition = sources.editions.get(edition_id) or {}
         if not passage.get("text") or not edition:
             raise CatenaError(f"{fragment['passage_id']}: commentary requires a held passage text and edition")
-        artifact = controlling_artifact(sources, passage) or {}
+        artifact = controlling_artifact(sources, passage, root=root) or {}
         import _reviewed_permissions
         permission_problems = _reviewed_permissions.problems(root, artifact, passage)
         if permission_problems:
             raise CatenaError("; ".join(permission_problems))
+        passage_text = str(passage.get("text") or "")
+        structure_sidecar = (
+            text_structure_for_passage(
+                root, passage, passage_text, work_id=work_id, artifact=artifact
+            )
+            if include_text_structure else None
+        )
         rows.append(
             {
                 "id": str(fragment["passage_id"]),
@@ -1886,7 +2386,7 @@ def fragments_for_book(
                 "locator": str(passage.get("locus") or ""),
                 **({"english_versions": fragment["english_versions"]} if "english_versions" in fragment else {}),
                 "rights": str(artifact.get("rights_status") or ""),
-                **_rights_notice(artifact),
+                **_rights_notice(artifact, root=root),
                 # Shown truthfully or not at all. `inspected` means someone read
                 # it; `verified` means it was collated against the controlling
                 # witness. Two agreeing web transcriptions are the first and not
@@ -1902,11 +2402,12 @@ def fragments_for_book(
                 # can say where a reader would actually find it.
                 "container": str((fragment.get("constituent_of") or "")),
                 "basis": str(fragment.get("basis") or ""),
-                "text": str(passage.get("text") or ""),
+                "text": passage_text,
                 "source_record": _catena_snippets.source_record(passage, artifact),
                 **({"snippets": _catena_snippets.project(
                     passage["text"], snippets[fragment["passage_id"]])}
                    if fragment["passage_id"] in snippets else {}),
+                **({"text_structure": structure_sidecar} if structure_sidecar is not None else {}),
                 "extent": {
                     "token": extent.token,
                     "first_chapter": extent.first_chapter,
@@ -2035,7 +2536,7 @@ def _scripture_editions(root: Path) -> list[tuple[_loci.EditionReader, Any]]:
     offered = {edition["id"] for edition in offered_editions(root)}
     if not offered:
         return []
-    register = _index_bible(ROOT)
+    register = _index_bible(root)
     readers = []
     for name, edition in sorted(register.EDITIONS.items()):
         if name not in offered or not edition["publishable"]:
@@ -2282,7 +2783,7 @@ CARRIED_WITH_TEXT = ("text", "basis", "date_basis")
 
 # Licence notices and reviewed source linkage travel with the lazy body.
 # Unlicensed payloads still gain no acknowledgement.
-OPTIONAL_CARRIED_WITH_TEXT = ("acknowledgement", "snippets", "source_record")
+OPTIONAL_CARRIED_WITH_TEXT = ("acknowledgement", "snippets", "source_record", "text_structure")
 
 # What a fragment says about its EDITION rather than about itself. Written once
 # per chapter file under `sources` and referenced by key, because the alternative
@@ -2597,8 +3098,11 @@ def _structure_files(
     directory = out / "structure" / "catena"
     texts = directory / TEXT_DIRECTORY
     books = canon(root)
-    folders = path_forms(root)
-    width = _canon.chapter_width(root)
+    folders = {
+        book["token"]: f"{number:0{_canon.BOOK_NUMBER_WIDTH}d}-{_canon._name_form(book['token'])}"
+        for number, book in enumerate(books, start=1)
+    }
+    width = len(str(max(int(book["last_chapter"]) for book in books)))
     index: list[dict[str, Any]] = []
     # The exact voice keys the corpus holds, composed the way the page composes
     # them (`catena-model.js`'s `voiceKey`), so the browser compares a whole key
@@ -2820,7 +3324,7 @@ def structure_drift(
 PARAGRAPHS_DIRECTORY = "paragraphs"
 
 
-def _index_bible(root: Path) -> Any:
+def _index_bible(root: Path = ROOT) -> Any:
     """The source-owned Bible edition registry and resolver (`_bible_reader`)."""
     import _bible_reader
     return _bible_reader
@@ -2846,8 +3350,12 @@ def _paragraph_files(
     """
     out = out or working_data_root(root)
     module = _index_bible(root)
-    folders = path_forms(root)
-    width = _canon.chapter_width(root)
+    books = canon(root)
+    folders = {
+        book["token"]: f"{number:0{_canon.BOOK_NUMBER_WIDTH}d}-{_canon._name_form(book['token'])}"
+        for number, book in enumerate(books, start=1)
+    }
+    width = len(str(max(int(book["last_chapter"]) for book in books)))
     directory = out / "structure" / PARAGRAPHS_DIRECTORY
     written: list[Path] = []
     files: dict[Path, str] = {}
@@ -2862,10 +3370,12 @@ def _paragraph_files(
         by_chapter: dict[tuple[str, int], dict[str, str]] = {}
         for (token, chapter, verse), kind in found.items():
             by_chapter.setdefault((token, chapter), {})[str(verse)] = kind
+        chapters_by_book: dict[str, list[int]] = {}
         for (token, chapter), marks in sorted(by_chapter.items()):
             folder = folders.get(token)
             if folder is None:
                 continue
+            chapters_by_book.setdefault(token, []).append(chapter)
             path = directory / identifier / folder / _canon.chapter_name(chapter, width)
             files[path] = _serialise(
                 {
@@ -2879,6 +3389,7 @@ def _paragraph_files(
         editions[identifier] = dict(
             _paragraphs.counts(found),
             path=f"structure/{PARAGRAPHS_DIRECTORY}/{identifier}/",
+            chapters={token: sorted(nums) for token, nums in sorted(chapters_by_book.items())},
         )
     concurring, positions = _paragraphs.disagreement()
     path = directory / "index.json"

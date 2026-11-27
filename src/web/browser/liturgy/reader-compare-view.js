@@ -260,7 +260,17 @@
               cell.event.sourceHooks.map(function (one) { return one.id; }).filter(Boolean).join('; ')
           ].filter(Boolean);
           facts.forEach(function (fact) {
-            column.appendChild(T.el('p', 'compare-evidence', fact));
+            const p = T.el('p', 'compare-evidence');
+            const witnessMatch = /^(Witness: )((?:edition|artifact|passage)\.[a-z0-9_.-]+)$/i.exec(fact);
+            if (witnessMatch) {
+              p.appendChild(root.document.createTextNode(witnessMatch[1]));
+              const link = T.el('a', 'study-source-link', witnessMatch[2]);
+              link.href = '../sources/#' + encodeURIComponent(witnessMatch[2]);
+              p.appendChild(link);
+            } else {
+              p.textContent = fact;
+            }
+            column.appendChild(p);
           });
         }
         pair.appendChild(column);

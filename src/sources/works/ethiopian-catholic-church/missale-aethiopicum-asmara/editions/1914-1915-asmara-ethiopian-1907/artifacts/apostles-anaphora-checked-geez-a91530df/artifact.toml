@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-checked-geez-a91530df"
+edition_id = "edition.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Faithful bounded reading transcription of original-language liturgical text from Asmara 1914/15 (Missale Aethiopicum): Anaphora of the Apostles core constituent, whose United States copyright term has expired by publication date (Ethiopian year 1907 (1914/15) Asmara imprint; approbation 25 Feb 1913, imprimatur 12 Apr 1913). Derived directly from tracked public-domain facsimile artifact.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.bonn-scan-pdf-b126e66a without modern translation or editorial reconstruction. Third-party historical text is excluded from Triptych's CC BY 4.0 license."
+provenance = "Pixel-verified primary-source transcription prepared by AI source transcriber (Lane T3, direct PNG inspection of Asmara 1914/15 PDF pp. 40, 44-45) and independently collated against rendered facsimile page images by independent-collator-v3-alex-west on 2026-11-25. Not a glyph-diplomatic edition or human specialist critical apparatus; complete bounded constituent only."
+retrieved = "2026-11-25"
+sha256 = "a91530df6781a0429e037aa59f68067a65277fd956096057c01e96b3f0b5b834"
+byte_size = 9408
+path = "src/sources/works/ethiopian-catholic-church/missale-aethiopicum-asmara/editions/1914-1915-asmara-ethiopian-1907/artifacts/apostles-anaphora-checked-geez-a91530df/text.txt"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.bonn-scan-pdf-b126e66a"
+transformation = "Direct reading from 220-dpi rendered PNG images (and column zooms) of Asmara 1914/15 PDF pp. 40, 44-45. UTF-8 NFC, LTR Ethiopic script (U+1200-U+137F), LF line endings. Preserves native Ge'ez fidel vowel orders, labiovelars (ኰ, ቍ, ኵ, ቍዓ, etc.), and Ethiopic numerals (፪, ፫, ፭, ፮). Standardizes Ethiopic punctuation as printed: wordspace '፡' (U+1361), full stop '።' (U+1362), comma '፣' (U+1363), preface/question stop '፧' (U+1367). Retains printed speaker cues (ይ፡ ካ። = priest, ይ፡ ሕ። = people, ይ፡ ዲ። = deacon, ካ፡ ን። = assistant priest), inline red gesture cues such as (አማሪ) ('pointing') and bracketed [ወእምድኅረ፡ ንስቲት], quotation marks around the consecration words (”...”), and printed crosses as '✠'. Line wraps within speakers/rubrics joined cleanly; each speaker turn or rubric block occupies one physical line. Excludes page numerals (፳፱, ፴), ornament and colour."
+notes = "Bounded Ge'ez Anaphora of the Holy Apostles core constituent of the Asmara Catholic missal (imprint year ፲፱፻፯ = 1914/15; Roman approbation 25 Feb 1913; Asmara imprimatur 12 Apr 1913; ULB Bonn Goussen 1665, PDF pp. 40, 44-45): title and opening Eucharistic dialogue plus opening Preface (ነአኵተከ) on PDF p. 40; Christological preface continuation, Sanctus, Post-Sanctus, Institution Narrative (bread and cup), Anamnesis, Epiclesis (preserving the distinctive Asmara 1914/15 formula በተመጥዎተ፡ ዝንቱ፡ ኅብስት፡ ወጽዋዕ...), unity prayer and concluding doxology/peace on PDF pp. 44-45 (printed pp. ፳፱-፴ / 29-30), terminating at the decorative bar immediately before the Prayer of Fraction (ጸሎተ፡ ፈትቶ) and Our Father on PDF p. 46. Excludes the intervening Alexandrian intercessions and Prayer of Blessing (PDF p. 40 col. 2 lower half through p. 41), blank verso p. 42, and full-page Crucifixion illustration p. 43."

@@ -433,13 +433,105 @@ window.Triptych = (function () {
     statusLine(text);
   }
 
+  const TITLE_CASE_MINOR = new Set([
+    'a', 'an', 'and', 'as', 'at', 'by', 'for', 'from', 'in', 'of', 'on', 'or', 'the', 'to', 'with'
+  ]);
+
   /** "after-pentecost" -> "After Pentecost"; "roman-1962" -> "Roman 1962". */
   function titleCase(id) {
     return String(id)
       .split(/[-_\s]+/)
       .filter(Boolean)
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .map((word, index) => {
+        const lower = word.toLowerCase();
+        if (index > 0 && TITLE_CASE_MINOR.has(lower)) return lower;
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      })
       .join(' ');
+  }
+
+  /** Format structured JSON or raw archival locators into clean citation prose. */
+  function formatLocator(raw) {
+    if (raw === null || raw === undefined) return '';
+    let text = String(raw).replace(/Cummiskey,(\d{4})/g, 'Cummiskey, $1').trim();
+    if (!text) return '';
+    function formatSpan(values, singular, plural) {
+      const items = (Array.isArray(values) ? values : [values])
+        .filter((v) => v !== null && v !== undefined && String(v).trim() !== '')
+        .map((v) => String(v).trim());
+      if (!items.length) return '';
+      if (items.length === 1) return singular + ' ' + items[0];
+      return plural + ' ' + items[0] + '–' + items[items.length - 1];
+    }
+    function formatObject(obj) {
+      if (!obj || typeof obj !== 'object' || Array.isArray(obj)) return '';
+      const parts = [];
+      const ctx = obj.locus_context || obj.context;
+      if (typeof ctx === 'string' && ctx.trim()) parts.push(ctx.trim());
+      const printed = obj.printed_pages !== undefined
+        ? formatSpan(obj.printed_pages, 'printed p.', 'printed pp.')
+        : obj.printed_page !== undefined
+          ? formatSpan(obj.printed_page, 'printed p.', 'printed pp.')
+          : obj.printed_folios !== undefined
+            ? formatSpan(obj.printed_folios, 'printed f.', 'printed ff.')
+            : obj.printed_folio !== undefined
+              ? formatSpan(obj.printed_folio, 'printed f.', 'printed ff.')
+              : '';
+      const pdf = obj.artifact_pages !== undefined
+        ? formatSpan(obj.artifact_pages, 'PDF p.', 'PDF pp.')
+        : obj.artifact_page !== undefined
+          ? formatSpan(obj.artifact_page, 'PDF p.', 'PDF pp.')
+          : '';
+      if (printed && pdf) parts.push(printed + ' (' + pdf + ')');
+      else if (printed) parts.push(printed);
+      else if (pdf) parts.push(pdf);
+      if (obj.marginal_number !== undefined && obj.marginal_number !== null && String(obj.marginal_number).trim() !== '') {
+        parts.push('no. ' + String(obj.marginal_number).trim());
+      }
+      if (!parts.length && typeof obj.columns === 'string' && obj.columns.trim()) {
+        parts.push(obj.columns.trim());
+      }
+      return parts.join(', ');
+    }
+    let guard = 0;
+    while (text.indexOf('{') >= 0 && guard < 8) {
+      guard += 1;
+      const start = text.indexOf('{');
+      let depth = 0, inString = false, escaped = false, end = -1;
+      for (let i = start; i < text.length; i += 1) {
+        const ch = text[i];
+        if (inString) {
+          if (escaped) escaped = false;
+          else if (ch === '\\') escaped = true;
+          else if (ch === '"') inString = false;
+        } else if (ch === '"') {
+          inString = true;
+        } else if (ch === '{') {
+          depth += 1;
+        } else if (ch === '}') {
+          depth -= 1;
+          if (depth === 0) { end = i; break; }
+        }
+      }
+      if (end < 0) break;
+      const candidate = text.slice(start, end + 1);
+      let replacement = '';
+      try {
+        replacement = formatObject(JSON.parse(candidate));
+      } catch (_error) {
+        replacement = candidate.slice(1, -1).replace(/"/g, '');
+      }
+      const before = text.slice(0, start).replace(/\s+locus:\s*$/i, ': ');
+      const after = text.slice(end + 1);
+      text = (before + replacement + after).trim();
+    }
+    text = text
+      .replace(/(?:Projection|Historical derivative) physical lines \[(\d+),\s*(\d+)\]\.?\s*/g, 'lines $1–$2. ')
+      .replace(/\s*\.\s*\./g, '.')
+      .replace(/\s{2,}/g, ' ')
+      .replace(/\.\s*$/, '')
+      .trim();
+    return text;
   }
 
   /* ------------------------------------------------------------------------
@@ -918,7 +1010,16 @@ window.Triptych = (function () {
       const label = el('span', 'visually-hidden', 'Verse ' + number + '. ');
       label.lang = 'en';
       verse.appendChild(label);
-      verse.appendChild(document.createTextNode(fragment.verses[number] + ' '));
+      const rawText = String(fragment.verses[number] || '');
+      const psalmTitle = locus && (locus.book === 'Ps' || locus.book === 'Psalm' || locus.book === 'Psalms') && number === 1
+        ? /^((?:Unto the end[^.]*\.|A psalm[^.]*\.|The psalm[^.]*\.|A canticle[^.]*\.|Understanding for[^.]*\.|Of David[^.]*\.|In finem[^.]*\.|Psalmus[^.]*\.|Canticum[^.]*\.|Intellectus[^.]*\.)(?:\s+(?:A psalm|The psalm|A canticle|Psalmus|Canticum|For|Of|To|The|In|On|When|David|By|From|With)[^.]*\.)*)\s+(.+)$/.exec(rawText)
+        : null;
+      if (psalmTitle) {
+        verse.appendChild(el('span', 'psalm-superscription', psalmTitle[1]));
+        verse.appendChild(document.createTextNode(' ' + psalmTitle[2] + ' '));
+      } else {
+        verse.appendChild(document.createTextNode(rawText + ' '));
+      }
       passage.appendChild(verse);
     }
     if (!joining) out.appendChild(passage);
@@ -1173,7 +1274,7 @@ window.Triptych = (function () {
     document.addEventListener('keydown', (event) => {
       if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
       const target = event.target;
-      if (target && target.closest && target.closest('select, input, textarea, button')) {
+      if (target && target.closest && target.closest('select, input, textarea, button, summary, a, [contenteditable]')) {
         return;
       }
       if (event.key === 'ArrowLeft') step(-1);
@@ -1457,10 +1558,22 @@ window.Triptych = (function () {
   /** The label an orations control gives one of those languages. */
   function orationLanguageLabel(entry) {
     // A zero denominator is not a ratio: "0 of 0" reads as a total absence.
+    // Once a missal's orations/translations are complete, omit the "N of M" ratio.
     return languageName(entry.lang) + (!Number.isInteger(entry.targets)
       ? ' — coverage not assessed'
       : entry.targets === 0 ? ' — no composed texts represented'
-        : ' — ' + entry.available_targets + ' of ' + entry.targets + ' represented texts available');
+        : entry.available_targets >= entry.targets ? ''
+          : ' — ' + entry.available_targets + ' of ' + entry.targets + ' represented texts available');
+  }
+
+  /** Compact select-option label so dropdowns stay readable without truncation. */
+  function orationOptionLabel(entry) {
+    const name = languageName(entry.lang);
+    if (!Number.isInteger(entry.targets)) return name + ' (unassessed)';
+    if (entry.targets === 0) return name + ' (no texts)';
+    if (entry.available_targets >= entry.targets) return name;
+    return name + ' (' + entry.available_targets.toLocaleString('en-US') + '/' +
+      entry.targets.toLocaleString('en-US') + ')';
   }
 
   const COVERAGE_RELATIONSHIPS = Object.freeze({
@@ -1660,14 +1773,27 @@ window.Triptych = (function () {
     }) };
   }
 
+  function cleanWitnessDisplayLabel(label) {
+    return String(label || '')
+      .replace(/\s*\(Internet Archive delivery locator[^)]*\)/gi, '')
+      .replace(/Cummiskey,(\d{4})/g, 'Cummiskey, $1')
+      .replace(/\s{2,}/g, ' ')
+      .trim();
+  }
+
   function coverageWitnesses(report, language) {
     const row = report && (report.languages || []).find(function (entry) { return entry.lang === language; });
     return (row && row.witnesses || []).map(function (witness) {
-      return Object.assign({}, witness, { label: witness.label + ' — ' + witness.available +
-        ' of ' + row.occurrences + ' uses' +
-        (witness.relationships && witness.relationships.length ? '; ' + witness.relationships.map(function (value) {
-          return COVERAGE_RELATIONSHIPS[value] || value;
-        }).join(', ') : '') });
+      const displayLabel = cleanWitnessDisplayLabel(witness.label);
+      const complete = Number.isInteger(row.occurrences) && row.occurrences > 0 &&
+        witness.available >= row.occurrences;
+      const rel = witness.relationships && witness.relationships.length ? witness.relationships.map(function (value) {
+        return COVERAGE_RELATIONSHIPS[value] || value;
+      }).join(', ') : '';
+      const suffix = complete
+        ? (rel ? ' — ' + rel : '')
+        : ' — ' + witness.available + ' of ' + row.occurrences + ' uses' + (rel ? '; ' + rel : '');
+      return Object.assign({}, witness, { label: displayLabel + suffix });
     });
   }
 
@@ -1722,8 +1848,10 @@ window.Triptych = (function () {
         (witness.relationships || []).some(function (value) { return value !== 'exact-target'; })
       : row.exact_target < row.occurrences) parts.push('Exact target wording remains incomplete.');
     const counts = bibleUseCounts(row);
-    if (counts.reconstructions) parts.push(counts.reconstructions + ' Bible reconstructions.');
-    if (counts.beside) parts.push(counts.beside + ' cited Bible passages beside Missal texts.');
+    if (counts.reconstructions) parts.push(counts.reconstructions +
+      (counts.reconstructions === 1 ? ' Bible reconstruction.' : ' Bible reconstructions.'));
+    if (counts.beside) parts.push(counts.beside +
+      (counts.beside === 1 ? ' cited Bible passage beside Missal texts.' : ' cited Bible passages beside Missal texts.'));
     return parts.join(' ');
   }
 
@@ -3076,9 +3204,10 @@ window.Triptych = (function () {
           note.lang = 'en';
           container.appendChild(note);
           if (latinProvenance.source_date || latinProvenance.source_id) {
+            const loc = formatLocator(latinProvenance.verification_locator);
             container.appendChild(el('p', 'composed-note latin-source-credit',
               'Latin source: ' + (latinProvenance.source_date || latinProvenance.source_id) +
-              (latinProvenance.verification_locator ? ' · ' + latinProvenance.verification_locator : '')));
+              (loc ? ' · ' + loc : '')));
           }
         }
       }
@@ -3148,10 +3277,19 @@ window.Triptych = (function () {
     });
     const relation = COVERAGE_RELATIONSHIPS[facts.relationship] ||
       (facts.relationship === 'antecedent' ? 'historical antecedent' : facts.relationship);
-    const label = el('p', 'text-side-label', [languageName(language), relation,
-      facts.rights && String(facts.rights).replace(/-/g, ' '),
-      facts.collation === 'uncollated' && 'uncollated'].filter(Boolean).join(' · '));
+    const label = el('p', 'text-side-label');
     label.lang = 'en';
+    label.appendChild(el('span', 'text-side-lang', languageName(language)));
+    if (relation) {
+      label.appendChild(el('span', 'text-side-relation', ' · ' + relation));
+    }
+    const meta = [
+      facts.rights && String(facts.rights).replace(/-/g, ' '),
+      facts.collation === 'uncollated' && 'uncollated'
+    ].filter(Boolean);
+    if (meta.length) {
+      label.appendChild(el('span', 'text-side-meta', ' · ' + meta.join(' · ')));
+    }
     side.appendChild(label);
     return side;
   }
@@ -3443,9 +3581,12 @@ window.Triptych = (function () {
     }
     const provenance = owner.latin && owner.latin.provenance;
     if (originalResult.shown && provenance && !originalSide.querySelector('.latin-source-credit') &&
-        (provenance.source_date || provenance.source_id)) originalSide.appendChild(el('p', 'composed-note',
-      'Latin source: ' + (provenance.source_date || provenance.source_id) +
-      (provenance.verification_locator ? ' · ' + provenance.verification_locator : '')));
+        (provenance.source_date || provenance.source_id)) {
+      const loc = formatLocator(provenance.verification_locator);
+      originalSide.appendChild(el('p', 'composed-note latin-source-credit',
+        'Latin source: ' + (provenance.source_date || provenance.source_id) +
+        (loc ? ' · ' + loc : '')));
+    }
     const selectedSide = textSide(asked, metadata(asked, selected));
     const result = renderSingleOrationState(selectedSide, owner,
       Object.assign({}, held, { separateOriginal: true }), scope, parentSource);
@@ -3961,6 +4102,8 @@ window.Triptych = (function () {
     massHasContent: massHasContent,
     orationLanguagesOf: orationLanguagesOf,
     orationLanguageLabel: orationLanguageLabel,
+    orationOptionLabel: orationOptionLabel,
+    formatLocator: formatLocator,
     coverageUnitsOf: coverageUnitsOf,
     selectedCoverageUnits: selectedCoverageUnits,
     selectedOrdinaryCoverageUnits: selectedOrdinaryCoverageUnits,

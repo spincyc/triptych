@@ -1,0 +1,75 @@
+schema_version = 1
+id = "pc-obj-purificator"
+category = "linens"
+sort_order = 303
+plate_id = "pc-plt-04-linens"
+composition_plate_ids = ["pc-plt-10-communion-sacramental"]
+plate_position = "Top right, folded lengthwise in thirds with stitched cross visible near the lower folded end (Plate IV); beside Communion cups (Plate X)"
+preferred_english_name = "Purificator"
+latin_headword = "Purificatorium"
+alternate_english_names = ["Chalice cloth"]
+alternate_latin_names = []
+pronunciation_key = "poo-ree-fee-kah-TOH-ree-oom"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "required"
+scope_level = "universal-roman"
+territorial_note = "Under GIRM 286 and the 2011 USCCB Norms for Holy Communion under Both Kinds (nos. 43, 53), one clean purificator accompanies every Communion chalice to wipe the rim after each communicant, and post-Communion vessel purification using the purificator belongs exclusively to the priest, deacon, or instituted acolyte."
+
+[identification]
+summary = "An oblong white absorbent linen cloth used to wipe the rim of the chalice during Communion and to dry the chalice, paten, and ciboria after purification."
+appearance = "At top right of Plate IV, the oblong linen cloth is folded lengthwise into thirds with a small stitched cross visible on the folded face; Plate X shows a folded purificator paired beside each footed Communion cup. Its narrow triple-folded form and small cross distinguish it clearly from both the square nine-fold corporal and the plain, uncrossed lavabo towel."
+placement_and_use = "Prepared on the credence table draped across the principal chalice—and paired one-to-one beside every additional Communion chalice whenever Communion is distributed under both kinds (GIRM 118c, 286). During Communion, the minister of the chalice wipes both sides of the rim with a clean fold after each communicant; after Communion, the priest, deacon, or instituted acolyte dries the purified sacred vessels with it at the altar or credence table (GIRM 279, 306)."
+liturgical_colors = "Always pure white absorbent linen (customarily marked with a small white or red embroidered cross)."
+
+[ministers_and_handling]
+ordinary_ministers = ["bishop", "priest", "deacon", "instituted-acolyte", "extraordinary-minister"]
+prepares = ["sacristan", "deacon", "instituted-acolyte", "altar-server"]
+server_boundary = "prepares"
+server_boundary_summary = "Servers may set clean, unused purificators on the credence table before Mass and carry them with unconsecrated chalices at the Preparation of the Gifts; once used with the Precious Blood, servers never wipe sacred vessels with them, shake them, or place them in ordinary laundry."
+safety_warning = "Used purificators hold traces of the Precious Blood. Never wash a used purificator in an ordinary sink or mix it into regular laundry; soak and hand-rinse it first in a dedicated basin and pour that first rinse water into the sacrarium or directly into clean earth before ordinary laundering (RS 120)."
+
+[audience_text]
+altar_server = "Spot the purificator at top right of Plate IV by its narrow triple-folded shape and small embroidered cross—never mix it up with the plain, uncrossed lavabo towel. Before Mass, lay clean purificators beside the unconsecrated chalices on the credence table and bring them to the altar at the Preparation of the Gifts if asked. Once Communion begins, used purificators carry traces of the Precious Blood; never wipe chalices with them, never shake them out, and leave them with the priest, deacon, or instituted acolyte for proper care after purification."
+sacristan = "Prepare one clean, unstarched absorbent linen purificator folded lengthwise in thirds for the principal chalice and one fresh purificator for each additional Communion chalice whenever Communion under both kinds is celebrated (GIRM 118c, 286). Skip heavy starch so the linen absorbs cleanly along the chalice rim. After Mass, collect all used purificators strictly apart from lavabo towels, soak and hand-rinse them first in a dedicated basin, and pour the first rinse water into the sacrarium or directly into clean earth before ordinary washing and ironing (RS 120)."
+general_reader = "This narrow folded strip of absorbent white linen accompanies every chalice at Mass. During Communion under both kinds, ministers carefully wipe the chalice rim with a clean fold after each communicant; afterward, the priest, deacon, or instituted acolyte uses it to dry the sacred vessels once they have been purified. Because it comes into direct contact with the Precious Blood, the Church mandates reverent hand-rinsing into the sacrarium before regular laundering."
+
+[relationships]
+confusable_with = ["pc-obj-lavabo-towel", "pc-obj-corporal", "pc-obj-pall"]
+related_objects = ["pc-obj-chalice", "pc-obj-communion-cup", "pc-obj-paten", "pc-obj-ciborium", "pc-obj-corporal"]
+
+[symbolism]
+has_sourced_symbolism = false
+text = ""
+evidence_class = "none-practical"
+attribution = ""
+
+[counterpart_1962]
+relationship = "continued"
+locus_1962 = "Missale Romanum (1962), Ritus Servandus I.1, VII.4, X.5"
+comparison = "The folded white linen purificator continues directly from the 1962 Roman Missal (RS I.1, X.5), where a single purificator served the celebrant's chalice and ablutions. In postconciliar celebration, Communion under both kinds expands its use so that a separate clean purificator accompanies every Communion chalice (GIRM 286)."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N17"
+primary_loci = ["GIRM 118c, 139, 163, 178, 192, 279, 286, 306", "Redemptionis Sacramentum 119--120", "USCCB Norms for Holy Communion under Both Kinds (2011) 43, 53"]
+source_bindings = [
+  "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002",
+  "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021",
+  "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-chalice-and-paten-preparation",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

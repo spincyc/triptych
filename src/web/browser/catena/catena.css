@@ -6,59 +6,62 @@
  * fragment beside it.
  *
  * The site gives every section a colour; commentary is VIOLET, declared once
- * as `.section-violet` in the site stylesheet and not restated here — a
- * development fallback that did restate it drifted, and nobody noticed
- * because a slightly wrong violet still looks like violet. Where violet is
- * used for text — `.tally b`, `.spans`, the review state — it is
- * --section-ink (11.91:1 on white) and NEVER --section-accent, which in the
- * gold section fails outright. The accent is for rules, markers and fills.
+ * as `.section-violet` in the site stylesheet and not restated here. Where
+ * violet is used for text — `.tally b`, `.spans`, `.speaker-name`, the review
+ * state — it is --section-ink (11.91:1 on white) and NEVER --section-accent.
+ * The accent is for rules, markers and fills.
  *
- * THE WAVE 1 COMPOSITION (E0, accepted). At 64.0625rem and above the chapter
- * stands in a left column and the chain reads beside it; below that width
- * the order is what it always was. Panels became hairline rules, held
- * commentary took a reading serif at 66ch, and the metadata beside names
- * was normalised to one card-catalogue voice. Everything is spoken in the
- * shared sheet's own tokens — no second palette lives here.
+ * WIDE COMPOSITION. At 60rem and above the chapter stands in a sticky,
+ * independently scrollable left column and the chain reads beside it; below
+ * that width the order is document flow. Held commentary takes a reading
+ * serif at 66ch with structured lemmas, paragraphs and speaker leads, and
+ * metadata beside names stays in one card-catalogue voice. Everything uses
+ * the shared sheet's own tokens — no second palette lives here.
  *
  * SOLID MEANS TEXT, DASHED MEANS NOT. A fragment must never look like a
  * lead: an excerpt hangs off the chain's solid rules in the reading serif;
  * a lead, a blocked work and a refusal sit under one dashed rule in the
  * sans. The kind of rule survives forced colours; a background does not.
  *
- * WHAT THIS COMPOSITION DELIBERATELY LEFT ALONE: `.absence-*` (undeclared
+ * WHAT THIS COMPOSITION DELIBERATELY LEAVES ALONE: `.absence-*` (undeclared
  * here, served in the page's inherited sans and ink), `.paragraph-note`,
  * `.passage-paragraph.projected`, `.aside-note`, `.fragment-basis`,
  * `.spans`. Those carry the page's epistemic distinctions; they keep the
- * section's palette while held commentary moves, so they read further
- * apart now, not closer.
+ * section's palette while held commentary moves, so they read apart.
  * ======================================================================== */
 
 /* ---------------------------------------------------------------------------
- * The header: a reference, not a masthead
+ * The header: a compact reference, not a masthead
  * ------------------------------------------------------------------------ */
 
-/* The chapter is the second line: it changes as the reader moves, and the
-   page's own name stays put above it. The reading serif and the reading ink:
-   this is the text's first line, not a second masthead — though it IS a
-   heading (`h2`), so the locus stands in heading navigation. The padding
-   and text-wrap below undo what the site sheet gives every `h2`; the rest
-   already restated every heading default this line uses. */
+.catena-page .page-header {
+  margin-bottom: 0.45rem;
+}
+
+.catena-page .page-header h1 {
+  margin-bottom: 0.1rem;
+  font-size: clamp(1.35rem, 2.8vw, 1.85rem);
+}
+
+.catena-page .page-header h1::after {
+  margin-top: 0.2rem;
+}
+
 .catena-page .page-header .reference-line {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: 0.5rem 0.75rem;
-  margin: 0.5rem 0 0;
+  gap: 0.35rem 0.65rem;
+  margin: 0.3rem 0 0;
   padding: 0;
   font-family: var(--serif);
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.25;
   text-wrap: wrap;
   color: var(--ink);
 }
 
-/* The chapter reference is the fact; the book it belongs to is context. */
 .catena-page .page-header .reference-book {
   font-size: 0.62em;
   font-weight: 400;
@@ -67,9 +70,8 @@
   color: var(--ink-faint);
 }
 
-/* One line under the reference, and it is a count, not a description. */
 .tally {
-  margin: 0.35rem 0 0;
+  margin: 0.2rem 0 0;
   font-size: 0.85rem;
 }
 
@@ -78,52 +80,78 @@
   color: var(--section-ink);
 }
 
-/* Canonical verse focus belongs with the chapter and edition controls. */
+/* Canonical verse focus sits compactly below the main selector bar. */
 .passage-focus {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.5rem;
-  margin: 1rem 0 1.5rem;
-  padding-block: 0.75rem;
-  border-block: 1px solid var(--section-pale);
+  gap: 0.4rem 0.55rem;
+  margin: 0.35rem 0 0.25rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--section-pale);
 }
-.passage-focus label { font-weight: 600; }
+.passage-focus label { font-size: 0.85rem; font-weight: 600; }
 .focus-numbering { font-weight: 400; color: var(--ink-soft); }
 .passage-focus input {
-  width: 10rem;
+  width: 9rem;
   max-width: 100%;
-  min-height: var(--control-min, 2.75rem);
-  padding: 0.4rem 0.6rem;
+  min-height: var(--control-compact, 2.25rem);
+  padding: 0.3rem 0.55rem;
   border: 1px solid var(--hairline-strong, var(--ink-faint));
   border-radius: var(--radius, 0.2rem);
   color: var(--ink);
   background: var(--panel);
   font: inherit;
 }
-/* Its buttons are the shared controls' (browser-core.css, `.steps`). */
-.passage-focus p { flex-basis: 100%; margin: 0; font-size: 0.82rem; }
+.catena-page .passage-focus button,
+.catena-page .steps button {
+  min-height: var(--control-compact, 2.25rem);
+  padding: 0.3rem 0.7rem;
+}
+.catena-page .field select {
+  min-height: var(--control-compact, 2.25rem);
+  padding: 0.35rem 0.55rem;
+}
+.passage-focus p { flex-basis: 100%; margin: 0; font-size: 0.8rem; }
 #verse-help, .english-availability { color: var(--ink-soft); }
 #verse-error { color: var(--section-ink); font-weight: 600; }
 .focus-note {
-  margin: 0 0 1rem;
-  padding-inline-start: 0.75rem;
+  margin: 0 0 0.75rem;
+  padding-inline-start: 0.65rem;
   border-inline-start: 2px solid var(--section-ink);
-  font-size: 0.88rem;
+  font-size: 0.84rem;
 }
-.english-availability { font-size: 0.85rem; }
+.focus-chip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.75rem;
+  margin: 0 0 0.75rem;
+  padding: 0.4rem 0.7rem;
+  border-inline-start: 2px solid var(--section-accent);
+  background: var(--section-row);
+  font-size: 0.85rem;
+  color: var(--section-ink);
+}
+.focus-chip .focus-clear {
+  margin-inline-start: auto;
+  min-height: var(--control-compact, 2.25rem);
+  font-size: 0.82rem;
+}
+.english-availability { margin: 0 0 0.55rem; font-size: 0.84rem; }
 
 .commentary-navigation {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 0 1.25rem;
+  gap: 0 1rem;
+  margin: 0 0 0.25rem;
 }
-.commentary-navigation .link-button { min-height: 2.75rem; margin: 0; }
+.commentary-navigation .link-button { min-height: var(--control-compact, 2.25rem); margin: 0; }
 .catena-page #commentary-finder { flex: 1 1 12rem; margin: 0; }
 .catena-page #commentary-finder[open] { flex-basis: 100%; }
 .catena-page #commentary-finder > summary { border: 0; }
-.catena-page #controls { margin-bottom: 0; }
+.catena-page #controls { margin-bottom: 0; padding: 0.5rem 0 0.55rem; gap: 0.55rem 0.75rem; }
 #finder-count, .finder-note {
   font-size: 0.8125rem;
   font-weight: 400;
@@ -134,49 +162,106 @@
 .finder-english {
   display: flex;
   align-items: center;
-  min-height: var(--control-min, 2.75rem);
+  min-height: var(--control-compact, 2.25rem);
   gap: 0.5rem;
 }
 .finder-english input { accent-color: var(--section-accent); }
+
 .paired-english {
-  margin-block: 0.6rem 1rem;
-  padding: 0.75rem;
+  margin: 0.8rem 0 0.7rem;
+  padding: 0.6rem 0.8rem;
   border-inline-start: 2px solid var(--section-accent);
   background: var(--panel);
 }
 .version-available, .version-title { color: var(--section-ink); }
 .version-available { font: 600 0.8rem var(--sans); }
-.paired-english .version-title { min-height: 2.75rem; margin: 0; }
+.paired-english .version-title {
+  display: block;
+  width: 100%;
+  min-height: var(--control-compact, 2.25rem);
+  margin: 0;
+  padding: 0.35rem 0;
+  text-align: start;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid var(--section-wash);
+}
+.paired-english > div:last-child .version-title { border-bottom: 0; }
 .version-title::after { content: " +"; }
 .version-title[aria-expanded="true"]::after { content: " −"; }
+.english-edition { padding: 0.45rem 0 0.35rem; }
 
 /* ---------------------------------------------------------------------------
  * The chapter
  * ------------------------------------------------------------------------ */
 
-/* The anchor. Wide enough to read at and no wider; above 64rem it is the
-   left column. It is not pinned — it scrolls with the page. */
+/* The anchor. Wide enough to read at and no wider; at 60rem and above it
+   takes the sticky, independently scrollable left column beside the chain. */
 .chapter {
   width: 100%;
   max-width: 46rem;
-  margin: 0 0 3rem;
+  margin: 0 0 2rem;
 }
 
-/* Scripture was once bare while every fragment sat in a panel, which
-   inverted the emphasis. The correction was a panel here; it is now the
-   removal of every panel: place, measure and two hairlines mark the text. */
 .chapter-body {
-  padding: 1rem 0 1.5rem;
+  padding: 0.85rem 0 1.25rem;
   border-block: 1px solid var(--ink-faint);
 }
 
-/* Scripture in the reading serif; the apparatus around it stays sans, so a
-   reader tells the text from what is said about it before reading a word. */
 .catena-page .passage {
   color: var(--ink);
   font-family: var(--serif);
-  font-size: 1.06rem;
-  line-height: 1.68;
+  font-size: 1.04rem;
+  line-height: 1.66;
+}
+
+.catena-page .citation-recast {
+  margin: 0 0 0.5rem;
+  font-size: 0.84rem;
+  color: var(--ink-soft);
+}
+
+.catena-page .citation-recast::before {
+  content: none;
+}
+
+/* Interactive verses linked to commentary. */
+.catena-page .verse-trigger {
+  display: inline;
+  margin: 0 0.22em 0 0;
+  padding: 0 0.2em;
+  border: 0;
+  border-bottom: 1.5px solid var(--section-accent);
+  border-radius: 0.15rem;
+  background: var(--section-wash);
+  color: var(--section-ink);
+  font-family: var(--sans);
+  font-size: 0.66em;
+  font-weight: 700;
+  line-height: 1.1;
+  vertical-align: super;
+  cursor: pointer;
+}
+
+.catena-page .verse-trigger:hover,
+.catena-page .verse-trigger[aria-pressed="true"] {
+  background: var(--section-accent);
+  color: #fff;
+}
+
+.catena-page .verse.verse-focused {
+  background: var(--section-row);
+  border-radius: 0.15rem;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.catena-page .verse.verse-active {
+  background: color-mix(in srgb, var(--section-accent) 18%, transparent);
+  border-radius: 0.15rem;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 .chapter-head {
@@ -204,48 +289,34 @@
   color: var(--muted, var(--section-ink));
 }
 
-/* Verses run on as prose: thirty-one short lines is a concordance, not a
-   text. The hairline parts the text from the summary row. */
 .chapter-body[open] > .passage {
-  margin: 0.75rem 0 0;
-  padding-top: 0.75rem;
+  margin: 0.65rem 0 0;
+  padding-top: 0.65rem;
   border-top: 1px solid var(--section-pale);
 }
 
-/* Paragraphs, where the edition or the projection divides the chapter. The
-   first takes no top margin, so a chapter that divides opens exactly where
-   one that runs on opens. */
 .passage-paragraph {
-  margin: 0.85rem 0 0;
+  margin: 0.8rem 0 0;
+  border-left: 2px solid transparent;
+  padding-left: 0.7rem;
+  margin-left: -0.9rem;
 }
 
 .passage-paragraph:first-child {
   margin-top: 0;
 }
 
-/* Every paragraph reserves the same margin, drawn in or not: indenting only
-   the projected ones put a mixed chapter on two left edges, which reads as
-   broken long before it reads as a distinction. */
-.passage-paragraph {
-  border-left: 2px solid transparent;
-  padding-left: 0.7rem;
-  margin-left: -0.9rem;
-}
-
-/* A break this project PROJECTED, marked apart from one the edition prints.
-   Different claims, one reserved edge; the text does not move. */
 .passage-paragraph.projected {
   border-left-color: var(--section-pale);
 }
 
-/* What the divisions are owed to, in words, below the text. */
 .paragraph-note {
   font-family: var(--sans);
   font-size: 0.74rem;
   line-height: 1.45;
   color: var(--ink-faint);
-  margin: 0.9rem 0 0;
-  padding-top: 0.55rem;
+  margin: 0.85rem 0 0;
+  padding-top: 0.5rem;
   border-top: 1px solid var(--section-wash);
   max-width: var(--measure);
 }
@@ -254,14 +325,56 @@
  * The chain
  * ------------------------------------------------------------------------ */
 
-/* One continuous thing beside the scripture, drawn as one: a rule down its
-   left edge with the authors hung off it. A stack of cards read as
-   unrelated objects rather than as a chain. */
+.chain-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.75rem;
+  margin: 0 0 0.75rem;
+}
+
+.chain-views {
+  display: inline-flex;
+  border: 1px solid var(--section-line);
+  border-radius: var(--radius, 0.2rem);
+  overflow: hidden;
+}
+
+.chain-tool {
+  min-height: var(--control-compact, 2.25rem);
+  padding: 0.25rem 0.65rem;
+  border: 0;
+  background: var(--panel);
+  color: var(--ink-soft);
+  font: 500 0.8125rem var(--sans);
+  cursor: pointer;
+}
+
+.chain-views .chain-tool + .chain-tool {
+  border-left: 1px solid var(--section-line);
+}
+
+.chain-tool[aria-pressed="true"] {
+  background: var(--section-row);
+  color: var(--section-ink);
+  font-weight: 600;
+}
+
+.chain-tool:hover {
+  color: var(--section-ink);
+}
+
+.chain-expand {
+  margin-inline-start: auto;
+  border: 1px solid var(--section-line);
+  border-radius: var(--radius, 0.2rem);
+}
+
 .chain {
   width: 100%;
   max-width: none;
   margin: 0;
-  padding: 0 0 0 1.5rem;
+  padding: 0 0 0 1.25rem;
   border-left: 1px solid var(--ink-faint);
   list-style: none;
 }
@@ -273,49 +386,46 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--section-ink);
-  margin: 0 0 0.9rem;
-  padding-bottom: 0.4rem;
+  margin: 0 0 0.65rem;
+  padding-bottom: 0.35rem;
   border-bottom: 1px solid var(--section-pale);
 }
 
-/* One kind of thing at two depths, so one treatment: a row parted from the
-   next by a hairline — no panel, no accent bar. */
 .author,
 .fragment {
   min-width: 0;
   margin: 0;
-  padding: 0.75rem 0 1rem;
+  padding: 0.6rem 0 0.75rem;
   border-bottom: 1px solid var(--section-pale);
 }
 
-/* Author, work and extent on one line where there is room. The date sits at
-   the end because the chain is already in date order: it confirms the
-   position rather than announcing it. */
+.fragment[hidden] { display: none; }
+
 .fragment-head {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
   gap: 0.15rem 0.55rem;
-  /* Closed, the head is the whole row; open, the text wants air. */
   margin-bottom: 0;
   position: relative;
 }
 
 .fragment-body[open] > .fragment-head {
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.55rem;
 }
 
 .fragment-author {
   font-family: var(--sans);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--ink);
 }
 
-.fragment-work {
+.fragment-work,
+.author-work {
   font-family: var(--serif);
   font-style: italic;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--ink-soft);
 }
 
@@ -324,23 +434,26 @@
   white-space: nowrap;
 }
 
-/* The extent is the fragment's own claim about what it addresses, so it is
-   always present and always full, even under a chapter it only reaches
-   into. */
-.fragment-extent {
-  flex-basis: 100%;
+.fragment-locator {
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  color: var(--ink-soft);
 }
 
-/* AN EXTENT THAT CROSSES A BOUNDARY IS NOT A CHIP. It keeps the section's
-   ink and weight while everything around it is normalised, and the chip
-   rule below must never reach it. */
+.fragment-extent {
+  flex-basis: auto;
+}
+
+.catena-page .fragment-head > .fragment-extent {
+  font-weight: 600;
+  color: var(--ink);
+}
+
 .fragment-extent .spans {
   color: var(--section-ink);
   font-weight: 600;
 }
 
-/* The language it is in and how long it is, both read before it is opened,
-   because opening it is what fetches the text. */
 .fragment-language {
   font-variant: small-caps;
   letter-spacing: 0.03em;
@@ -351,8 +464,7 @@
 }
 
 /* THE CARD CATALOGUE: one size, one ink, one face for every fact printed
-   beside a name. Six were set in four sizes and three colours, which made
-   the date read as a heading and the language as a warning. */
+   beside a name. */
 .fragment-date,
 .fragment-extent,
 .fragment-language,
@@ -364,19 +476,31 @@
   color: var(--ink-soft);
 }
 
-/* A father's words, at a measure they can be read at. */
+/* Inside a single-work author group, the group summary already announces the
+   author, work and date; keep them in the DOM for assistive technology while
+   letting each fragment row lead cleanly with extent and locator. */
+.author-single-work .fragment-author,
+.author-single-work .fragment-work,
+.author-single-work:not(.author-undated) .fragment-date {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Structured commentary prose: lemmas, paragraphs, speaker leads and notes. */
 .fragment-text {
   max-width: 66ch;
   margin: 0;
   font-family: var(--serif);
   font-size: 1rem;
-  line-height: 1.58;
+  line-height: 1.62;
   color: var(--ink);
-  white-space: pre-line;
+  white-space: normal;
 }
 
-/* A text that would not load says why, in the place the words would have
-   been, rather than leaving a gap that reads as a short fragment. */
 .fragment-text.missing {
   font-family: var(--sans);
   font-size: 0.85rem;
@@ -384,25 +508,91 @@
   white-space: normal;
 }
 
-.fragment-context { margin-top: 1rem; }
-.fragment-context > summary { padding: 0.5rem 0; cursor: pointer; }
-.fragment-context[open] > summary { margin-bottom: 0.5rem; }
+.fragment-para {
+  margin: 0 0 0.7rem;
+  white-space: pre-line;
+}
 
-/* A licence ABOVE the words it covers, so a copied selection carries the
-   condition with it. Quiet but not fine print: it is a condition of use. */
+.fragment-para:last-child {
+  margin-bottom: 0;
+}
+
+.catena-page blockquote.fragment-lemma {
+  margin: 0.75rem 0 0.55rem;
+  padding: 0.35rem 0.75rem;
+  border: 0;
+  border-left: 2px solid var(--section-line);
+  background: color-mix(in srgb, var(--section-accent) 5%, transparent);
+  font-style: italic;
+  color: var(--ink);
+  white-space: pre-line;
+}
+
+.catena-page blockquote.fragment-lemma:first-child {
+  margin-top: 0;
+}
+
+.catena-page blockquote.fragment-lemma + blockquote.fragment-lemma {
+  margin-top: 0.25rem;
+}
+
+.fragment-snippets > .fragment-basis {
+  margin: 0.85rem 0 0.35rem;
+  font-weight: 600;
+  color: var(--section-ink);
+}
+
+.fragment-snippets > .fragment-basis:first-child {
+  margin-top: 0;
+}
+
+.speaker-name {
+  font-family: var(--sans);
+  font-size: 0.9em;
+  font-weight: 650;
+  color: var(--section-ink);
+}
+
+.lemma-transition {
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.ed-note {
+  font-size: 0.88em;
+  color: var(--ink-soft);
+}
+
+.fragment-jump {
+  display: inline-block;
+  margin: 0.45rem 0 0;
+  font-size: 0.8rem;
+  color: var(--section-ink);
+}
+
+.fragment-context { margin-top: 0.9rem; }
+.fragment-context > summary { padding: 0.4rem 0; cursor: pointer; }
+.fragment-context[open] > summary { margin-bottom: 0.45rem; }
+
 .fragment-acknowledgement {
   font-family: var(--sans);
   font-size: 0.78rem;
   line-height: 1.45;
   color: var(--section-ink);
-  margin: 0 0 0.6rem;
+  margin: 0 0 0.55rem;
   max-width: 66ch;
 }
 
-/* Why the extent was drawn where it was, and on what ground the date rests.
-   Below the text and quieter: the project's reasoning, not the words. */
 .fragment-apparatus {
-  margin: 0.7rem 0 0;
+  margin: 0.55rem 0 0;
+}
+
+.fragment-notes > summary {
+  min-height: 2rem;
+  padding: 0.25rem 0;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  color: var(--ink-faint);
 }
 
 .fragment-basis {
@@ -410,17 +600,15 @@
   font-size: 0.78rem;
   line-height: 1.45;
   color: var(--ink-faint);
-  margin: 0.4rem 0 0;
+  margin: 0.35rem 0 0;
 }
 
-/* Where the fragment came from and how to check it. Below the text, never
-   above it. */
 .fragment-source {
   font-family: var(--sans);
   font-size: 0.76rem;
   color: var(--ink-faint);
-  margin: 0.7rem 0 0;
-  padding-top: 0.55rem;
+  margin: 0.6rem 0 0;
+  padding-top: 0.5rem;
   border-top: 1px solid var(--section-wash);
 }
 
@@ -429,8 +617,6 @@
   margin: 0 0.4rem;
 }
 
-/* The review state, when it is short of collation. Noticed, not a warning:
-   an inspected text is one someone read, not a suspect one. */
 .fragment-source .state {
   font-variant: small-caps;
   letter-spacing: 0.03em;
@@ -439,15 +625,11 @@
 
 /* ---------------------------------------------------------------------------
  * The things that are not fragments
- *
- * All live below the chain and none takes the reading serif or a solid
- * rule. A reader scrolling past must be unable to mistake any for an
- * excerpt.
  * ------------------------------------------------------------------------ */
 
 .aside {
   max-width: var(--measure);
-  margin: 2.5rem 0 0;
+  margin: 2rem 0 0;
 }
 
 .aside .section-heading {
@@ -459,7 +641,7 @@
   font-family: var(--sans);
   font-size: 0.82rem;
   color: var(--ink-faint);
-  margin: 0 0 0.8rem;
+  margin: 0 0 0.75rem;
   line-height: 1.5;
 }
 
@@ -471,10 +653,6 @@
   column-gap: 2rem;
 }
 
-/* THREE THINGS THAT ARE NOT READABLE COMMENTARY, UNDER ONE DASHED RULE: a
-   work the acquisition record lists, a work held but not renderable, a
-   boundary the projection refused to place. Commentary never takes a dashed
-   rule and none of these takes a solid one. */
 .lead,
 .blocked,
 .refusal {
@@ -496,13 +674,6 @@
   font-style: italic;
 }
 
-/* A held work that may not render, saying why: silently absent would be
-   indistinguishable from never acquired.
-
-   UNEXERCISED AS SHIPPED: every tracked chapter file carries an empty
-   `blocked` array, so this has never rendered on real data. Rule and
-   renderer both stay — the distinction is one the corpus needs the day the
-   first record exists — and the real fixture is the generator's to supply. */
 .blocked b {
   color: var(--ink);
 }
@@ -513,9 +684,6 @@
   color: var(--ink-faint);
 }
 
-/* A refusal the projection made, rendered as one. The only thing on this
-   page allowed the negative ink and rule, and it earns them: it is the page
-   declining to tell the reader something it does not know. */
 .refusal {
   border-left: 0.2rem solid var(--notice);
   padding-left: 0.75rem;
@@ -523,9 +691,6 @@
   max-width: var(--measure);
 }
 
-/* An error is not an absence: a record the index promised that would not
-   come, or an address naming things the page does not have. Negative ink
-   for the heading, plain prose for the account, recovery inside it. */
 .catena-error {
   max-width: var(--measure);
   margin: 0 0 1.5rem;
@@ -551,15 +716,21 @@
 }
 
 /* ---------------------------------------------------------------------------
- * Narrow. A phone is about 20rem of usable width: the date leaves the head
- * line rather than squeezing the author, the leads drop to one column, and
- * the chain's indents give back their words.
+ * Narrow viewports
  * ------------------------------------------------------------------------ */
 
 @media (max-width: 40rem) {
   .catena-page .page-action--print { max-width: 100%; white-space: normal; }
   .catena-page .fragment-date { white-space: normal; }
-  .paired-english .version-title { text-align: start; }
+  .catena-page .passage-paragraph { margin-left: 0; padding-left: 0.55rem; }
+  .catena-page .chain { padding-left: 0.65rem; }
+  .catena-page .author-fragments { padding-left: 0.35rem; }
+  .catena-page .author-fragments .fragment {
+    border-left: 0;
+    border-bottom: 1px solid var(--section-wash);
+    padding-left: 0;
+  }
+  .catena-page .passage-focus input { flex: 1 1 8rem; width: auto; }
   .lead-list { columns: 1; }
 }
 
@@ -573,20 +744,13 @@
 }
 
 @media (max-width: 30rem) {
-  .chain { padding-left: 1rem; }
-  .author-fragments { padding-left: 0.5rem; }
-  .author-fragments .fragment { padding-left: 0.75rem; }
   .fragment-date { margin-left: 0; flex-basis: 100%; }
 }
 
 /* ---------------------------------------------------------------------------
- * The chain as a tree: author, then that author's fragments beneath him.
- * The outer level answers "who comments here"; the inner, "what did he
- * say". The first group opens; the rest wait to be asked.
+ * The chain as a tree
  * ------------------------------------------------------------------------ */
 
-/* `.author` takes the same row treatment as `.fragment`, declared with it
-   above. */
 .author[hidden] { display: none; }
 
 .author-head {
@@ -611,18 +775,16 @@
 
 .author-count { margin-left: auto; }
 
-/* A second rule inside the chain's own: two rules at two depths read as one
-   tree, where two boxes read as two objects. */
 .author-fragments {
   margin: 0;
-  padding: 0 0 0 1rem;
+  padding: 0 0 0 0.85rem;
   list-style: none;
 }
 
 .author-fragments .fragment {
   border: 0;
   border-left: 1px solid var(--section-pale);
-  padding: 0.5rem 0 0.75rem 1rem;
+  padding: 0.45rem 0 0.65rem 0.85rem;
   margin: 0;
 }
 
@@ -634,19 +796,17 @@
   display: flex;
   flex-wrap: wrap;
   max-width: none;
-  gap: 0.5rem 1rem;
-  margin: 0 0 1rem;
+  gap: 0.4rem 0.9rem;
+  margin: 0 0 0.85rem;
 }
 
 .author-toggle {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.45rem;
   font-family: var(--sans);
   font-size: 0.875rem;
   color: var(--ink);
-  /* A checkbox and its name are ONE target, at the 44px a thumb needs; the
-     box itself stays the size a checkbox is. */
   min-height: 2.75rem;
   cursor: pointer;
 }
@@ -660,16 +820,11 @@
 
 /* ---------------------------------------------------------------------------
  * Disclosure
- *
- * MEASURED, Chromium: a `<summary>` whose `display` is `flex` renders NO
- * marker — `::marker` belongs to `display: list-item`. So the three flex
- * heads (chapter, fragment, author) keep the drawn chevron, and every other
- * summary takes the browser's own triangle.
  * ------------------------------------------------------------------------ */
 
 .catena-page summary {
-  min-height: 2.75rem;
-  padding: 0.5rem 2rem 0.5rem 0;
+  min-height: var(--control-compact, 2.25rem);
+  padding: 0.35rem 2rem 0.35rem 0;
   align-content: center;
   cursor: pointer;
   list-style: disclosure-closed;
@@ -679,8 +834,6 @@
   list-style-type: disclosure-open;
 }
 
-/* The flex heads: marker off both ways, so a browser that one day renders a
-   marker on a flex summary cannot draw a triangle beside the chevron. */
 .catena-page details > summary.chapter-head,
 .catena-page details > summary.fragment-head,
 .catena-page details > summary.author-head {
@@ -691,15 +844,13 @@
 .fragment-head::-webkit-details-marker,
 .author-head::-webkit-details-marker { display: none; }
 
-/* The chevron, drawn rather than typed, so it rotates with the state
-   instead of swapping one character for another. */
 .chapter-head::after,
 summary.fragment-head::after,
 .author-head::after {
   content: '';
   position: absolute;
   right: 0.15rem;
-  top: 1.05rem;
+  top: 0.85rem;
   width: 0.42rem;
   height: 0.42rem;
   border-right: 2px solid var(--ink-faint);
@@ -708,8 +859,7 @@ summary.fragment-head::after,
   transition: transform 0.15s ease-in-out;
 }
 
-/* The chapter head is a single line and sits higher than the other two. */
-.chapter-head::after { top: 0.85rem; }
+.chapter-head::after { top: 0.7rem; }
 
 .chapter-body[open] > .chapter-head::after,
 .fragment-body[open] > .fragment-head::after,
@@ -722,22 +872,20 @@ summary.fragment-head::after,
 }
 
 /* ---------------------------------------------------------------------------
- * The two wrapper disclosures — the chapter-and-voice form and the author
- * filter. Furniture, not content, so both take a plus-and-minus rather than
- * a triangle. `index.html` says why the form's ships open.
+ * Wrapper disclosures
  * ------------------------------------------------------------------------ */
 
 .catena-page .controls-filter,
 .catena-page .author-filter-disclosure {
-  margin: 0 0 1.5rem;
+  margin: 0 0 0.8rem;
 }
 
 .catena-page details.controls-filter > summary,
 .catena-page details.author-filter-disclosure > summary {
   display: flex;
   align-items: center;
-  min-height: 2.75rem;
-  padding: 0.75rem 0;
+  min-height: var(--control-compact, 2.25rem);
+  padding: 0.4rem 0;
   list-style: none;
   color: var(--ink);
   font-family: var(--sans);
@@ -772,12 +920,11 @@ summary.fragment-head::after,
 }
 
 .catena-page .author-filter-disclosure {
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 /* ---------------------------------------------------------------------------
- * The static entry — what the built page owns before (or without) script.
- * Prose in the shared voice; it is replaced the moment the page renders.
+ * The static entry
  * ------------------------------------------------------------------------ */
 
 .static-entry p {
@@ -790,16 +937,12 @@ summary.fragment-head::after,
 }
 
 /* ---------------------------------------------------------------------------
- * The instrument: the chapter in a left column, the chain beside it
+ * The instrument: sticky chapter on the left, commentary chain beside it
  *
- * The signature of the accepted composition. Above 64rem the chapter takes
- * the narrow column and everything else — one wrapper the script builds —
- * reads beside it. The chapter is NOT pinned: it stands at the top of its
- * column and scrolls with the page. Below 64rem, document order.
- *
- * Two explicit rows, so `1 / -1` names a real last line: the right column
- * holds at most a refusal and the chain wrapper, and the chapter spans both
- * rows of the explicit grid.
+ * At 60rem (960px) and above the chapter takes the left column, sticky and
+ * independently scrollable within the viewport so Scripture remains beside
+ * long commentary chains while scrolling. Two explicit rows keep `1 / -1`
+ * bounded to the real last line. Below 60rem, document flow.
  * ------------------------------------------------------------------------ */
 
 .catena-page .reading {
@@ -807,23 +950,40 @@ summary.fragment-head::after,
   max-width: none;
 }
 
-/* THIS PAGE MOVES FOCUS INTO THE REGION — a rebuild that swallows the node
-   the reader stood on (the recovery link, a failing load) hands focus to
-   `#reading` — and the shared sheet's `.reading:focus { outline: none }`
-   outranks the universal `:focus-visible`, so the reader was moved without
-   being shown where. The section's own ring, restored for `:focus-visible`
-   alone so a click on the region stays undecorated. `outline-offset` is not
-   in the shorthand the shared rule resets, so it still governs. */
 .catena-page .reading:focus-visible { outline: 3px solid var(--focus); }
 
-@media (min-width: 64.0625rem) {
-  .page-shell.page-browser.catena-page { max-width: 78rem; }
-  .catena-page #controls .field-narrow { flex: 0 1 6rem; }
+@media (min-width: 60rem) {
+  #main-content.catena-page { max-width: 78rem; margin-top: 0.75rem; padding-top: 1rem; }
+  /* Side-by-side already shows commentary beside Scripture; keep the jump
+     button reachable to keyboard and assistive technology without taking space. */
+  .catena-page #read-commentary {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    min-height: 0;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .catena-page .controls-filter { margin-bottom: 0.45rem; }
+  .catena-page details.controls-filter > summary { min-height: 1.9rem; padding: 0.2rem 0; }
+  .catena-page #controls { padding: 0.35rem 0 0.4rem; gap: 0.4rem 0.65rem; }
+  .catena-page #controls .field { flex: 1.1 1 9.5rem; }
+  .catena-page #controls .field-narrow { flex: 0 1 4.8rem; }
+  .catena-page #controls .field:has(#bible-select) { flex: 1.75 1 15.5rem; }
+  .catena-page .passage-focus { margin: 0.2rem 0 0; padding: 0.3rem 0; gap: 0.3rem 0.5rem; }
+  .catena-page .passage-focus #verse-help {
+    flex: 1 1 12rem;
+    margin-inline-start: 0.4rem;
+    font-size: 0.75rem;
+    line-height: 1.25;
+  }
   .catena-page .reading {
     display: grid;
-    grid-template-columns: minmax(20rem, 26rem) minmax(0, 44rem);
+    grid-template-columns: minmax(19rem, 25rem) minmax(0, 44rem);
     grid-template-rows: auto auto;
-    column-gap: 2.5rem;
+    column-gap: 2rem;
     align-items: start;
   }
 
@@ -832,9 +992,17 @@ summary.fragment-head::after,
   .catena-page .reading > .chapter {
     grid-column: 1;
     grid-row: 1 / -1;
+    position: sticky;
+    top: 1rem;
+    align-self: start;
+    max-height: calc(100vh - 2rem);
+    max-height: calc(100dvh - 2rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-right: 0.75rem;
+    margin-bottom: 0;
   }
 
-  /* States that replace the reading own the whole line. */
   .catena-page .reading > .catena-error,
   .catena-page .reading > .static-entry,
   .catena-page .reading > .placeholder,
@@ -842,41 +1010,25 @@ summary.fragment-head::after,
 }
 
 /* ---------------------------------------------------------------------------
- * Forced colours. The hairlines take the system's ink of their own accord;
- * what needs saying is the one reserved edge. Every paragraph reserves a
- * 2px left border, and forcing its transparent base to CanvasText would
- * hand an ordinary passage the same mark as a projected boundary — so the
- * base is Canvas and only `.projected` takes CanvasText. Dashed against
- * solid survives untouched and the refusal keeps a visible rule. Focus needs
- * nothing here either: the one focus rule this page declares — the reading
- * region's restored ring, above — asks for `var(--focus)`, and a forced mode
- * substitutes its own colour for that as it does for the shared sheet's.
+ * Forced colours
  * ------------------------------------------------------------------------ */
 
 @media (forced-colors: active) {
   .catena-page .passage-paragraph { border-left-color: Canvas; }
   .catena-page .passage-paragraph.projected { border-left-color: CanvasText; }
   .catena-page .refusal { border-left-color: CanvasText; }
+  .catena-page .verse.verse-focused,
+  .catena-page .verse.verse-active { text-decoration: underline; }
 }
 
 /* ---------------------------------------------------------------------------
- * Print. Browser print of this page is a fallback, not a publication: the
- * chrome goes, the reading order stands (chapter, then chain), every
- * licence and source line prints with its text, and the page says what it
- * is. The print action first requests every fragment in the selected voice
- * and author set; it refuses a copy if any selected body is missing.
- *
- * Everything a paper copy cannot use goes: navigation, loopback links,
- * recovery links, the prose that speaks of opening and choosing. What
- * paper NEEDS stays even though it lives in the controls: the Scripture
- * edition and the commentary voice, printed as plain lines, because a
- * chapter away from the live page is unintelligible without its edition.
- * `::details-content` keeps them printable when the disclosure is folded.
+ * Print
  * ------------------------------------------------------------------------ */
 
 @media print {
   .catena-page .commentary-navigation, .catena-page .paired-english,
-  .catena-page .version-available { display: none !important; }
+  .catena-page .version-available, .catena-page .chain-toolbar,
+  .catena-page .focus-chip, .catena-page .fragment-jump { display: none !important; }
   .catena-page .passage-focus { display: none; }
   .catena-page .skip-link,
   .catena-page .banner,
@@ -890,9 +1042,15 @@ summary.fragment-head::after,
   .catena-page .error-recovery { display: none !important; }
 
   .catena-page .reading { display: block; }
+  .catena-page .chapter {
+    position: static;
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
+  }
+  .catena-page .passage-paragraph { margin-left: 0; }
+  .catena-page .verse-trigger { background: none; border: 0; padding: 0; }
 
-  /* The two identity fields, as printed lines rather than form controls.
-     Chromium prints a select as its selected option's text. */
   .catena-page .controls-filter { margin: 0; }
   .catena-page .controls-filter::details-content { content-visibility: visible; }
   .catena-page .controls {
@@ -921,9 +1079,6 @@ summary.fragment-head::after,
   .catena-page .fragment-head::after,
   .catena-page .author-head::after { display: none; }
 
-  /* Pagination: headings hold on to what they head — an author whose whole
-     run was kept unbreakable pushed to a fresh page and left the one before
-     it nearly blank — and the small blocks that read as units stay units. */
   .catena-page { orphans: 3; widows: 3; }
 
   .catena-page .fragment { break-inside: avoid; }
@@ -937,6 +1092,7 @@ summary.fragment-head::after,
   .catena-page .paragraph-note { break-inside: avoid; }
 
   .catena-page .page-header::after {
+    grid-column: 1 / -1;
     content: "Browser print — a flowed copy of the complete selection, not a "
       "canonical rendering; the page remains citable.";
     display: block;

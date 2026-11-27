@@ -1,0 +1,76 @@
+schema_version = 1
+id = "pc-obj-lavabo-towel"
+category = "linens"
+sort_order = 305
+plate_id = "pc-plt-04-linens"
+composition_plate_ids = ["pc-plt-06-service"]
+plate_position = "Bottom center, softly folded rectangular cloth (Plate IV); paired with lavabo pitcher and basin (Plate VI)"
+preferred_english_name = "Lavabo Towel"
+latin_headword = "Manutergium"
+alternate_english_names = ["Finger towel", "Hand towel"]
+alternate_latin_names = ["Tersorium"]
+pronunciation_key = "mah-noo-TEHR-jee-oom"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "required"
+scope_level = "universal-roman"
+territorial_note = ""
+
+[identification]
+summary = "A soft, absorbent rectangular white hand towel presented with the water pitcher and finger basin so the priest can dry his hands after the Offertory handwashing at the side of the altar."
+appearance = "At bottom center of Plate IV, the lavabo towel appears loosely folded in supple, unstarched absorbent linen or cotton without an embroidered cross—visually distinct from the starched creases and stitched crosses of the corporal and purificator. On Plate VI, it accompanies the metal lavabo pitcher and shallow round finger basin."
+placement_and_use = "Prepared on the credence table beside the lavabo pitcher and basin (GIRM 118c appoints whatever is needed for the washing of hands). At the Preparation of the Gifts—immediately after the offerings are placed on the altar or after the incensation—an altar server or instituted acolyte pours water over the priest's hands at the side of the altar and presents the unfolded towel while the priest prays quietly for interior cleansing (GIRM 76, 145, 190)."
+liturgical_colors = "Always clean white absorbent linen or cotton without seasonal color change."
+
+[ministers_and_handling]
+ordinary_ministers = ["bishop", "priest"]
+prepares = ["sacristan", "instituted-acolyte", "altar-server"]
+server_boundary = "presents"
+server_boundary_summary = "Servers prepare the lavabo towel on the credence table before Mass, carry it with the water pitcher and basin to the side of the altar at the Preparation of the Gifts, present it cleanly unfolded for the priest to dry his hands, bow before and after, and return all three items promptly to the credence table."
+safety_warning = "Keep plain lavabo towels strictly separate from sacred purificators in both the sacristy and credence setup so the two are never interchanged. Hold the pitcher and basin level so water does not splash onto the altar cloth or sanctuary steps."
+
+[audience_text]
+altar_server = "Presenting the lavabo is one of your core server ministries at the Preparation of the Gifts. Spot the lavabo towel at bottom center of Plate IV by its soft, unstarched folds and lack of a stitched cross—never grab a purificator by mistake. Bring the water pitcher, shallow basin, and unfolded towel to the side of the altar (draping the towel cleanly over your forearm if serving alone, or holding it wide between both hands when two servers assist), bow to the priest, pour a steady gentle stream over his fingers into the basin, offer the towel cleanly, bow again, and return all items to the credence table."
+sacristan = "Set a fresh, dry, absorbent white hand towel beside the filled lavabo pitcher and empty finger basin on the credence table before each Mass (GIRM 118c), replacing damp towels between consecutive celebrations. Because the lavabo towel touches only clean washing water and never contacts the Sacred Species, launder it with ordinary church linens and store it in a clearly separate drawer from corporals and purificators."
+general_reader = "After the bread and wine are set upon the altar (and after the incensation when incense is used), a server brings water, a shallow basin, and this plain white hand towel to the side of the altar. While the towel itself serves a purely practical purpose, the handwashing action it supports expresses the priest's desire for interior purification before the Eucharistic Prayer (GIRM 76), echoing the psalmist's prayer: “Wash me yet more from my iniquity, and cleanse me from my sin” (Ps 50:4 [51:2])."
+
+[relationships]
+confusable_with = ["pc-obj-purificator", "pc-obj-corporal"]
+related_objects = ["pc-obj-credence-table", "pc-obj-cruets", "pc-obj-altar"]
+
+[symbolism]
+has_sourced_symbolism = false
+text = ""
+evidence_class = "none-practical"
+attribution = ""
+
+[counterpart_1962]
+relationship = "continued"
+locus_1962 = "Missale Romanum (1962), Rubricae Generales 528; Ritus Servandus VII.6--7, VII.10; Ordo Missae 1039"
+comparison = "The hand towel (manutergium) prepared with water and basin on the credence table continues directly from the 1962 Roman Missal (RG 528; RS VII.6--7, VII.10). In the postconciliar rite, the priest washes his hands rather than only thumb and forefinger tips, and replaces Psalm 25:6--12 (Lavabo inter innocentes) with the single verse of Psalm 50:4 [51:2] praying for interior cleansing (GIRM 76, 145)."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N19"
+primary_loci = ["GIRM 76, 118c, 145, 190"]
+source_bindings = [
+  "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002",
+  "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021",
+  "passage.catholic-church.missale-romanum.vatican-typica-1962.rubricae-generales-offertory-lavabo-articles",
+  "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-offertory-lavabo",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

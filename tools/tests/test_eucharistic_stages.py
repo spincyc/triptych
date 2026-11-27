@@ -592,6 +592,10 @@ class NativeStageBindingTests(unittest.TestCase):
             self.project()
         self.data["stages"][0]["text_coverage"] = "partial"
         self.assertEqual("partial", self.project()["stages"][0]["text_coverage"])
+        # A bounded constituent may cover one acquired witness of a multi-witness stage
+        # (e.g. an ordinary volume alongside a companion propers volume or unacquired earlier printing).
+        self.data["stages"][0]["witness_ids"] = ["research:first", "research:second"]
+        self.assertEqual("partial", self.project()["stages"][0]["text_coverage"])
         self.data["stages"][0]["witness_ids"] = ["research:second"]
         with self.assertRaisesRegex(stages.StageError, "scope mismatch"):
             self.project()

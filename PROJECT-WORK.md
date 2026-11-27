@@ -48,6 +48,37 @@ Augustine on Ps 84.15, corrected in the homily. The run is archived in the
 leaf; the driver's account, with the defects left for other owners, is
 [CYCLES.md](workflows/reviews/claude-pc-s01-production-2026-11-26/CYCLES.md).
 
+## Gemini six-lane showcase publications and third-provider integration, 2026-11-25
+
+<!-- promised-deliverable: gemini-six-showcase-publications-2026-11-25 -->
+
+**Complete (all six lanes authored, independently cold-reviewed, remediated, and validated locally; pushing to `main`).**
+Enabled `gemini` as Triptych's third first-class provider alongside `gpt` and
+`claude` across schemas, document types, metadata checks, source-library
+validation, indexed readers, browser-product recipes, edition-revision history,
+print recipes, web readers, and release policies, and registered the governing
+profile `guidance/liturgy/postconciliar-pictorial-dictionaries.md`
+(`kind = "pictorial-dictionary-postconciliar"`).
+
+Six isolated parallel lanes were authored under `src/gemini/` with authentic
+Catholic voice, source-first primary verification, bespoke monochrome graphite
+illustration where called for, and independent read-only cold reviews followed
+by full blocking and advisory remediation:
+
+1. **Lane 1 — Ark of the Covenant (`theology/mariology/ark-of-the-covenant`):** 58 pp. (`theology-reference-v1`), 6 monochrome graphite plates + TikZ overlays, 66 validated schema-2 bindings, 0 overfull hboxes, `house-voice` clean, `library/mariology.md` linked. Cold review caught and resolved Grimm's *Raccolta* appendix attribution (replaced with verbatim 1910 *Raccolta* No. 75), Oxford 1842 *Catena Aurea* Matt 1:25 wording, biblical book-naming uniformity, 4 unused references, 42.5 pt bibliography overflow, cross-section quote deduplication, and Plate V TikZ label placement (`d75eee4514`, `2f56de2e85`).
+2. **Lane 2 — Postconciliar Roman Sanctuary Dictionary (`liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/{comprehensive,altar-server,sacristan,general-reader}`):** 4 editions (55 / 41 / 42 / 43 pp., `liturgy-reference-v1`) deterministically projected from 43 canonical TOML records (40 current objects + 3 chronologically separated superseded forms) and 10 monochrome graphite plates, `Makefile` prerequisites wired, `library/novus-ordo-liturgy.md` linked. Cold review caught and resolved Pandoc `\noindent{...}` web-edition drop (restoring full field retention across all 4 editions), `\phantomsection` before `References`, `house-voice`, GIRM 315 / 134 / 277 / 346 accuracy, Cyril *Mystagogical Catechesis* 2.4, and *Lagoena* pronunciation (`25472ef461`).
+3. **Lane 3 — Angelology (`theology/angelology`):** 102 pp. (`theology-reference-v1`), 100% 1-to-1 census parity across all 24 questions / 118 articles of *ST* I qq. 50–64 & 106–114, all 15 chapters of *Celestial Hierarchy* with exact *CH*→*ST* parity, 119 validated schema-2 bindings, 0 overfull hboxes, 0 orphaned census headings, `house-voice` and `references-used` (54/54) clean, `library/faith.md` linked. Cold review caught and resolved *CH*→*ST* mismatches, doctrinal grading of *ST* I q. 108 aa. 1–2 / q. 63 a. 2 / q. 59 a. 2, Scotus vs. Suárez first-sin distinction, 5 truncated determinations, Appendix B text collision, and Council of Vienne / Ambrose reconciliation (`dd64bb71d2`).
+4. **Lane 4 — 1962 Advent Seasonal Handbook (`liturgy/roman-rite/1962/seasons/advent`):** 50 pp. (`liturgy-reference-v1`), 101-year calendar verification (2020–2120, 2,531 Advent days, 0 gaps/overlaps), 257 validated schema-2 bindings, `house-voice` clean, `library/traditional-latin-mass.md` linked. Cold review caught and resolved the upstream `latVUC` typo in the vocal Latin *Benedictus* (`sicut locutus est`), `source-audit.md` `catch-001`, 38 unused bindings/references + St. John Chrysostom Homily XXXVI on Matthew, Baltimore 1884 / Advent I Epistle / Week IV Isaiah 64–66 accuracy, and 14 orphaned Ch. 9–12 blockquote attributions (`ae8d5d59d3`).
+5. **Lane 5 — Discursive Benchmarks (`articles/faith/four-last-things-03-hell`, `articles/scripture/abraham-and-the-daylight-stars`, `articles/scripture/the-linen-cloths-at-the-empty-tomb`):** 33 / 21 / 28 pp., 41 / 28 / 65 validated schema-2 bindings (100% inspected on both Scripture studies), `house-voice`, `references-used` (37 / 21 / 35), `restricted-not-reproduced`, and `unquoted-not-quoted` clean, `library/faith.md` & `library/scripture.md` linked. Cold review passed `the-linen-cloths-at-the-empty-tomb` with 4 minor advisories and caught/resolved Augustine *Enchiridion* 113 (`mors illa perpetua`), Ps 18:10 vs. Augustine's *castus* lemma, Bernard/DS prose renderings, venial-sin body parity, shared `format.tex` header/web fixes, Abarbanel Q7/Q16 bounds, pruning 17 catalog-only witnesses in Abraham, and *ST* II-II q. 174 a. 6 (`e7646058ff`, `5eb33d0823`).
+6. **Lane 6 — *Reading Metaphysics* (`articles/faith/reading-metaphysics`):** 80 pp. (`article-v1`), Phase 1 vertical slice and final pencil test on unmentioned *ST* I q. 9 a. 1 passed, Appendix B verified on 1 exact physical page, 10/10 acceptance tests passed, `house-voice` and `references-used` (17/17) clean, `library/faith.md` linked. Cold review caught and resolved Lesson 8 `\logicop{Prec}(x, y)` order, three Aristotle Bekker citations, Lesson 3 Burden phrasing, unused *De potentia* / *In Metaph.* records, meta-label/workflow-jargon cleanup, web logic-operator spacing, and Lesson 0–8 section numbering (`b089cfb8df`).
+
+Evidence-backed provider wiring and guidance refinements from the six lanes and
+cold reviews were recorded in `49e00c0bce` across `guidance/editorial.md`,
+`guidance/articles.md`, `guidance/theology/angelology.md`,
+`guidance/liturgy/roman-1962-seasonal-handbooks.md`,
+`guidance/liturgy/postconciliar-pictorial-dictionaries.md`, and
+`src/common/document-types/article-v1/type.toml`.
+
 ## Claude 1962 First Sunday of Advent, 2026-11-29
 
 <!-- promised-deliverable: claude-1962-01-advent-2026-11-29 -->
@@ -7170,6 +7201,41 @@ and a subway-map visualizer over the same evidence. The workspace target is
 authorized rebasing this work and pushing it to `main`, including the automatic
 Pages deployment attempt that a main push triggers.
 The full project remains **in progress**.
+
+**Cold review, all-six-tradition native constituents, Visual Diff Studio & `main` reconciliation, 25 November 2026.**
+The [cold review report](workflows/reviews/missal-cold-review-2026-11-25/REPORT.md)
+documents the cold review and deduplicated reconciliation onto `462f311014`,
+preserving all Batch 4/5 dossiers, 20 prior checked native books, the unreviewed
+Greek Chrysostom drafts, and the browser-product architecture. Three net-new
+deduplicated stage dossiers (`eastern-expansion-2026-11.json`,
+`global-mission-regional-2026-11.json`, `western-uses-orders-2026-11.json`)
+expand the reconciled corpus to **42 dossiers, 278 canonical traditions** (all
+278 indexed in `eucharistic-tradition-taxonomy-v1.toml` across 10 rite families
+and 11 geographic regions), **568 stages** (533 not transcribed, 35 partial, 0
+complete whole books), **175 transitions**, **318 declared research gaps**,
+**2,052 catalogue entries** in 233 groups (458 Eastern, 1,535 Western, 59
+legacy), and **92 typed cross-tradition relationships**. Seventeen independently
+pixel-collated US-public-domain bounded constituents across all six Catholic
+liturgical traditions and seven languages (`la`, `syr`, `grc`, `hy`, `cop`,
+`gez`, `ar`) raise checked native-book constituents from 20 to **37** (540
+canonical units, 24,499 words) and source-hashed witness comparisons from 31 to
+**43**: Byzantine 1754 & 1873 Chrysostom (`grc`), Armenian 1642 & 1823 Badarak
+(`hy`), Coptic 1736 St. Basil (`cop`), Ge'ez 1914/15 Apostles (`gez`), Gregorian
+Hadrianum Wilson 1915 / Stowe Warner 1915 / Paris 1481 / Tarazona 1500 *Canon
+Missae* (`la`), Chaldean 1767 & 1901 and Syro-Malabar 1906 Addai & Mari (`syr`),
+Maronite 1594 & 1908 Twelve Apostles (`syr`), and Syriac Catholic 1843 & 1922
+St. James (`syr`). The History UI adds rite-family pills, region/search/has-text
+discovery, SVG era bands, multi-script typography fallbacks, and an exact Myers
+word-by-word Visual Diff Studio with reproducible `git diff --word-diff=color`
+commands; reverse cross-links connect **84 canonical Source Library editions**
+via `edition-cross-references.json`, `sources/`, `liturgy/{day,propers-reader}`,
+`library/*.md`, and `docs/the-mass.md`. Two independent cold browser builds
+recorded all 13 families (`30,620` files, `295,763,131` bytes), corpus indexes
+(`85,769` files, `60,573` records) and scoped release bindings (19 modified site
+sources) were refreshed, and deployment gates verified prior to fast-forward
+publication to `origin/main`. Whole-book transcription, post-1930 copyrighted
+editions, 318 archival gaps, and copy-to-copy Git parentage remain open; the
+full all-rite project remains **in progress**.
 
 **Main integration published and verified live, 21 October 2026.** The 35-commit feature line
 was rebased onto `edab7fee54e76daac24a1ec6c69141935c32f4c2`, preserving the

@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.triptych.postconciliar-coldrev-2026-11-25-ordinary-qpd.2026-11-25-communicantes-qpd.coldrev-pc-communicantes-qpd-8a7ce0a2"
+edition_id = "edition.triptych.postconciliar-coldrev-2026-11-25-ordinary-qpd.2026-11-25-communicantes-qpd"
+artifact_type = "editorial-projection"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "qualified-public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Admitted under src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml: Published on a qualified basis (publication policy priority 6; confidence medium-low): a Holy See text first published in Vatican City in 1931-1975 that lapsed into the U.S. public domain for want of a formality, and whose twenty-year Vatican term under Italian Law 633/1941 arts. 11 and 29, as applied by Vatican Law XII of 1960, had on this project's reading expired before the 1 January 1996 U.S. restoration date (17 U.S.C. 104A). Not adjudicated; U.S. copyright only; implies no ecclesiastical approval or permission. First Holy See publication with the Saint Joseph insertion: Sacred Congregation of Rites decree of 13 November 1962, Acta Apostolicae Sedis 54 (1962), p. 873 (reprinted in Missale Romanum, editio typica 1962, n. 1090, printed pp. 302-303). Every other word stands in pre-1931 public-domain Missals (Mame 1922 printed pp. 334-335). No 1970/2002/2008 edition supplies any word."
+sha256 = "8a7ce0a208d4dc59558ab0f1cada650414743914a50b6407e56773b1bd553dc5"
+byte_size = 851
+retrieved = "2026-11-25"
+path = "src/sources/works/triptych/postconciliar-coldrev-2026-11-25-ordinary-qpd/editions/2026-11-25-communicantes-qpd/artifacts/coldrev-pc-communicantes-qpd-8a7ce0a2/communicantes.tsv"
+encoding = "utf-8"
+indexable = true
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+provenance = "Ancient Roman Canon Communicantes common body (Mame 1922) incorporating the 13 November 1962 Saint Joseph insertion (AAS 54, p. 873; 1962 n. 1090), verified text-free against 2002 n. 86 (pp. 348-349)."
+transformation = "Calendar orthography (expand ligatures, remove stress accents, normalize j to i); full saints list retained; optional closing formula omitted to match the English study side and 2002 n. 32/86."

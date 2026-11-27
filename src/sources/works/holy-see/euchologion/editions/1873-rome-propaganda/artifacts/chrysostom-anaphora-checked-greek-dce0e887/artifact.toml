@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.holy-see.euchologion.1873-rome-propaganda.chrysostom-anaphora-checked-greek-dce0e887"
+edition_id = "edition.holy-see.euchologion.1873-rome-propaganda"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Faithful bounded reading transcription of original-language liturgical text from Rome 1873 Propaganda Euchologion: complete strict Anaphora of St. John Chrysostom constituent, whose United States copyright term has expired by publication date (1873 Rome publication). Derived directly from tracked public-domain facsimile artifact.holy-see.euchologion.1873-rome-propaganda.google-pdf-50c485b5 without modern translation or editorial reconstruction. Third-party historical text is excluded from Triptych's CC BY 4.0 license."
+provenance = "Pixel-verified primary-source transcription prepared by lane-t1-byz-arm and independently collated against rendered facsimile page images by independent-collator-v1-byz-arm on 2026-11-25. Not a glyph-diplomatic edition or human specialist critical apparatus; complete bounded constituent only."
+retrieved = "2026-11-25"
+sha256 = "dce0e887f3074d2b1f0bcd80956ac26da014dc42130de633c19bbb5717976932"
+byte_size = 17092
+path = "src/sources/works/holy-see/euchologion/editions/1873-rome-propaganda/artifacts/chrysostom-anaphora-checked-greek-dce0e887/text.txt"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.holy-see.euchologion.1873-rome-propaganda.google-pdf-50c485b5"
+transformation = "Unicode NFC polytonic Greek (grc) read directly from 240–400 DPI PNG renders of the tracked 1873 facsimile PDF.; 19th-century Polyglott Press Greek typography uses modern non-ligatured sorts; exact printed spelling, accents, breathings, iota subscripts, punctuation (including raised dot ·, ellipses ..., and em-dash —), and genuine printed abbreviations (Στίχ.) are preserved.; Authentic printed compositor errors verified at 400 DPI are preserved verbatim rather than silently emended: ἀνέστησυς (for ἀνέστησας, p. 62 / PDF p. 69), ποῦ ἁγίου Ἰωάννου (for τοῦ, p. 66 / PDF p. 73), προκεκοιμένων (for προκεκοιμημένων, p. 66 / PDF p. 73), and unaccented δοξαζειν (p. 67 / PDF p. 74).; Printed unaccented all-caps Institution words (ΛΑΒΕΤΕ..., ΠΙΕΤΕ...) are preserved in uppercase without added diacritics.; Words hyphenated across line breaks are joined; printed page numbers, signature marks (9 on p. 65), and rubric/black ink color distinctions are excluded from the plain-text stream, with headings, rubrics, speaker utterances, and the p. 67 footnote placed on sequential logical physical lines."
+notes = "Complete strict Anaphora of St. John Chrysostom in original polytonic Greek from the Deacon's opening call (Ὁ Διάκονος. Στῶμεν καλῶς...) at printed p. 61 (PDF p. 68) through the concluding doxology (Καὶ δὸς ἡμῖν...), final blessing (Καὶ ἔσται τὰ ἐλέη...) at printed p. 67 (PDF p. 74), and the immediately following choir response (Χορός· Καὶ μετὰ τοῦ πνεύματός σου.) at the top of printed p. 68 (PDF p. 75), directly before the post-Anaphora litany rubric (Ὁ Διάκονος λαβὼν καιρὸν...). Uses the exact same 10 canonical native_path slugs as byzantine-1754-chrysostom-anaphora for 1-to-1 collation. Includes all printed prayers, ekphoneseis, expanded choir hymns/responses (including Ἅγιος, Σὲ ὑμνοῦμεν, and Ἄξιόν ἐστιν), full Third-Hour troparion, rubrics, and the Roman-communion footnote on p. 67."

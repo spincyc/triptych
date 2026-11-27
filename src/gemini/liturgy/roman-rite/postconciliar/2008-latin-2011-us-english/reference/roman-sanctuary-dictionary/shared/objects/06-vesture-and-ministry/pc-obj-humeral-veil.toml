@@ -1,0 +1,80 @@
+schema_version = 1
+id = "pc-obj-humeral-veil"
+category = "vesture-and-ministry"
+sort_order = 609
+plate_id = "pc-plt-09-vesture-choir-solemn"
+composition_plate_ids = []
+plate_position = "Right figure, oblong fringed white cloth draped over shoulders with ends wrapping completely over both hands around a lidded ciborium (Plate IX)"
+preferred_english_name = "Humeral Veil"
+latin_headword = "Velum humerale"
+alternate_english_names = ["Benediction Veil"]
+alternate_latin_names = ["Velum"]
+pronunciation_key = "VEH-loom oo-meh-RAH-leh"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "provided"
+scope_level = "universal-roman"
+territorial_note = ""
+
+[identification]
+summary = "The humeral veil is a long oblong fringed white cloth draped across the shoulders and fastened across the chest so that its ends completely envelop the hands of the bishop, priest, or deacon when holding the monstrance or ciborium during Eucharistic Benediction and processions."
+appearance = "Shown on the right figure of Plate IX over an alb and straight priestly stole: a broad rectangular white shawl with fringed ends fastened in front, whose generous fabric wraps completely around both hands holding a closed lidded ciborium—never leaving bare hands gripping the vessel."
+placement_and_use = "The Eucharistic humeral veil is required whenever a bishop, priest, or deacon imparts Benediction with the monstrance (over a white cope) or with a ciborium, carries the Blessed Sacrament in a solemn procession (such as Corpus Christi), or transfers the Blessed Sacrament to the altar of reposition at the close of the Holy Thursday Evening Mass of the Lord's Supper (Holy Communion and Worship of the Eucharist Outside Mass nn. 91–92; Roman Missal, Holy Thursday). Extraordinary ministers of Holy Communion and altar servers never impart Eucharistic Benediction and never wear the Eucharistic humeral veil. Distinguish the Eucharistic humeral veil from the narrower vimpa worn by miter- and crosier-bearers during pontifical liturgies (Caeremoniale Episcoporum 1984)."
+liturgical_colors = "White (or gold where appropriate for solemn Eucharistic worship)."
+
+[ministers_and_handling]
+ordinary_ministers = ["bishop", "priest", "deacon"]
+prepares = ["sacristan", "altar-server"]
+server_boundary = "presents"
+server_boundary_summary = "Servers never wear the Eucharistic humeral veil to carry or bless with the Blessed Sacrament. During Benediction or Holy Thursday transfer, a server places the humeral veil evenly across the priest's or deacon's shoulders, fastens the front clasp securely, and removes and folds it cleanly afterward."
+safety_warning = "Fasten the front clasp cleanly and evenly without pulling the priest's stole or collar, and ensure the long fringed ends do not brush against lighted candles on the altar steps while the celebrant ascends to lift the monstrance or ciborium."
+
+[audience_text]
+altar_server = "Look closely at the priest on the right of Plate IX: the fringed white humeral veil wraps completely over his hands so he holds the sacred vessel through the cloth, showing that Christ Himself gives the blessing. You will never wear this veil to hold the Blessed Sacrament, but you have an important assisting role at Benediction and on Holy Thursday: step behind the kneeling priest or deacon at the cue, drape the veil evenly over his shoulders with its center cross straight down his back, fasten the front clasp neatly, and stand clear of its fringed ends as he rises."
+sacristan = "Lay out a clean, pressed white humeral veil beside the credence table or sanctuary steps before Eucharistic Benediction, Corpus Christi processions, and the Holy Thursday Evening Mass of the Lord's Supper (HCWEOM nn. 91–92). Check that its front ribbon ties or metal clasp work smoothly and that interior hand-pockets (if tailored) are clean and unripped. Keep episcopal vimpas labeled separately from the Eucharistic humeral veil."
+general_reader = "During Eucharistic Benediction and solemn processions of the Blessed Sacrament, the priest or deacon drapes a long white fringed shawl—the humeral veil—across his shoulders and wraps its ends completely around his hands before lifting the monstrance or ciborium. By veiling the minister's hands, the liturgy makes visually unmistakable that it is Christ Himself, truly present in the Eucharist, who blesses His people."
+
+[relationships]
+confusable_with = ["pc-obj-cope", "pc-obj-stole"]
+related_objects = ["pc-obj-ciborium", "pc-obj-alb", "pc-obj-hist-subdeacon-tunicle-maniple"]
+
+[symbolism]
+has_sourced_symbolism = true
+text = "Covering the minister's hands in clean white cloth while raising the monstrance or ciborium expresses profound reverence before Christ's Real Presence and visibly manifests that Christ Himself—not the human minister—imparts the Eucharistic blessing."
+evidence_class = "liturgical-source"
+attribution = "Holy Communion and Worship of the Eucharist Outside Mass (1973) nn. 91–92; Roman Missal (2008/2011), Evening Mass of the Lord's Supper"
+
+[counterpart_1962]
+relationship = "changed use"
+locus_1962 = "Missale Romanum (1962), Ritus Servandus VII.9, X.8; Holy Thursday Transfer"
+comparison = "In the 1962 Roman Missal, the humeral veil served both Eucharistic Benediction and processions and—at Solemn High Mass—the subdeacon, who wore it from Offertory to the Pater Noster to hold the empty paten (RS VII.9, X.8). After Paul VI's Ministeria quaedam (1972) suppressed the subdiaconate and the 1969/1970 Order of Mass omitted subdiaconal paten-holding, the humeral veil's liturgical use is dedicated exclusively to Eucharistic Benediction, processions, and Holy Thursday transfer."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N39"
+primary_loci = [
+  "Holy Communion and Worship of the Eucharist Outside Mass (1973) 91–92",
+  "Roman Missal (2002/2008/2011), Holy Thursday Evening Mass of the Lord's Supper",
+  "Caeremoniale Episcoporum (1984)",
+  "Ministeria quaedam (1972)",
+]
+source_bindings = [
+  "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002",
+  "edition.paul-vi.ministeria-quaedam.latin-vatican-web-2026-07-27",
+  "edition.catholic-church.missale-romanum.vatican-typica-1962",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

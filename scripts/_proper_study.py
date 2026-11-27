@@ -114,8 +114,8 @@ def identity(root: Path, document: str) -> str:
 
 
 def leaf_path(root: Path, provider: str, document: str) -> Path:
-    if provider not in {"gpt", "claude"}:
-        raise ValueError("provider must be gpt or claude")
+    if provider not in {"gpt", "claude", "gemini"}:
+        raise ValueError("provider must be gpt, claude, or gemini")
     leaf = root / "src" / provider / document
     if not leaf.resolve().is_relative_to(root / "src" / provider):
         raise ValueError("document resolves outside its provider")
@@ -834,8 +834,8 @@ def source_state(root: Path, provider: str, document: str, *, run_gates: bool = 
             "document": document, "identities": _document_schema.identities(root, record)}
 
 
-PROVIDER_LABELS = {"gpt": "GPT", "claude": "Claude"}
-PROVIDER_COLUMNS = {"ChatGPT": "gpt", "Claude": "claude"}
+PROVIDER_LABELS = {"gpt": "GPT", "claude": "Claude", "gemini": "Gemini"}
+PROVIDER_COLUMNS = {"ChatGPT": "gpt", "Claude": "claude", "Gemini": "gemini"}
 CATALOG_LINK = re.compile(r"\[([^\]]*)\]\(\.\./(?:pdf|web)/([a-z]+)/[^)]*\)")
 
 
@@ -1008,7 +1008,7 @@ def main() -> int:
     parser.add_argument("action", choices=("identity", "check", "snapshot", "snapshot-web", "seal",
                                           "source-dispositions", "binding-digests"))
     parser.add_argument("--root", type=Path, default=ROOT)
-    parser.add_argument("--provider", choices=("gpt", "claude"), default="gpt")
+    parser.add_argument("--provider", choices=("gpt", "claude", "gemini"), default="gpt")
     parser.add_argument("--document", required=True)
     parser.add_argument("--phase", choices=("scope", "research", "content", "artifacts", "publication"))
     parser.add_argument("--edition", choices=tuple(EDITIONS))

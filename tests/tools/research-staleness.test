@@ -83,7 +83,7 @@ detail_count="$(details_of "$sandbox/status.all" | grep -c . || true)"
 
 bad="$(details_of "$sandbox/status.all" |
 	awk '$1 != "stale" && $1 != "unbaselined" && $1 != "removed" { print }
-	     $2 != "gpt" && $2 != "claude" { print }')"
+	     $2 != "gpt" && $2 != "claude" && $2 != "gemini" { print }')"
 [ -z "$bad" ] || { echo "malformed status detail line(s): $bad" >&2; exit 1; }
 
 # The ledger and the working tree do not move under us: status is byte-stable.
@@ -97,8 +97,9 @@ fi
 # status --provider partitions the same report.
 status_into "$sandbox/status.gpt" --provider gpt
 status_into "$sandbox/status.claude" --provider claude
+status_into "$sandbox/status.gemini" --provider gemini
 
-for provider in gpt claude; do
+for provider in gpt claude gemini; do
 	off="$(details_of "$sandbox/status.$provider" | awk -v p="$provider" '$2 != p { print }')"
 	[ -z "$off" ] ||
 		{ echo "--provider $provider leaked other providers: $off" >&2; exit 1; }
@@ -106,8 +107,9 @@ done
 
 gpt_count="$(summary_of "$sandbox/status.gpt" | sed 's/^[a-z]*: \([0-9][0-9]*\) .*$/\1/')"
 claude_count="$(summary_of "$sandbox/status.claude" | sed 's/^[a-z]*: \([0-9][0-9]*\) .*$/\1/')"
-[ "$((gpt_count + claude_count))" -eq "$reported" ] ||
-	{ echo "provider counts $gpt_count + $claude_count do not sum to $reported" >&2; exit 1; }
+gemini_count="$(summary_of "$sandbox/status.gemini" | sed 's/^[a-z]*: \([0-9][0-9]*\) .*$/\1/')"
+[ "$((gpt_count + claude_count + gemini_count))" -eq "$reported" ] ||
+	{ echo "provider counts $gpt_count + $claude_count + $gemini_count do not sum to $reported" >&2; exit 1; }
 
 # ---------------------------------------------------------------------------
 # explain agrees with status, edition by edition.
@@ -166,11 +168,11 @@ fi
 # ---------------------------------------------------------------------------
 # Negative cases.
 reject "unknown verb" bogus
-reject "unknown provider for status" status --provider gemini
+reject "unknown provider for status" status --provider bogus-provider
 reject "status takes --provider, not a positional" status claude
 reject "explain with no arguments" explain
 reject "explain with no leaf" explain claude
-reject "unknown provider for explain" explain gemini articles/faith/nothing
+reject "unknown provider for explain" explain bogus-provider articles/faith/nothing
 reject "explain of an edition that does not exist" explain claude no/such/leaf/at/all
 # explain's provider is positional; the --provider spelling used by the other
 # verbs must not silently work here.
@@ -179,7 +181,7 @@ if [ -n "$fresh_leaf" ]; then
 fi
 # Only the flag parsing of the mutating verb is exercised: argparse rejects an
 # unknown provider before any handler can touch the ledger.
-reject "unknown provider for rebaseline" rebaseline --provider gemini
+reject "unknown provider for rebaseline" rebaseline --provider bogus-provider
 
 # ---------------------------------------------------------------------------
 # The read-only verbs left the tracked ledger exactly as they found it.

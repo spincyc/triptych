@@ -480,6 +480,21 @@ def discovery_files(spine):
             self.assertNotIn('src/sources/ignored-by-rule.txt', after_ignore[1])
             ignored_file.unlink()
 
+    def test_adaptive_path_sharding_keeps_small_groups_single_and_splits_large_groups(self):
+        for i in range(12):
+            self.put(f'scripts/extra_{i:02d}.py', f'x = {i}\n')
+        corpus.refresh(self.root)
+        small = corpus.CorpusIndex(self.root)
+        self.assertEqual(len(small._groups['scripts']), 1)
+        self.assertEqual(small.read('scripts/extra_07.py'), b'x = 7\n')
+        with patch.object(corpus, '_PATH_SHARD_SPLIT_THRESHOLD', 4):
+            corpus.refresh(self.root, full=True)
+            split = corpus.CorpusIndex(self.root)
+            self.assertGreater(len(split._groups['scripts']), 1)
+            self.assertEqual(split.read('scripts/extra_07.py'), b'x = 7\n')
+            self.assertEqual(len(split.paths(prefix='scripts/', suffix='.py')), 13)
+            corpus.refresh(self.root, check=True)
+
 
 if __name__ == '__main__':
     unittest.main()

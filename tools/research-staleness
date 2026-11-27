@@ -106,7 +106,7 @@ UNAVAILABLE = {
 
 ROOT = Path(__file__).resolve().parents[1]
 LEDGER = ROOT / "src" / "sources" / "inventories" / "research-staleness-v1.toml"
-PROVIDERS = ("gpt", "claude")
+PROVIDERS = ("gpt", "claude", "gemini")
 SCHEMA = 1
 CROSS_PROVIDER_NOTICE = (
     "cross-provider diagnostic only; staleness grants no authority "

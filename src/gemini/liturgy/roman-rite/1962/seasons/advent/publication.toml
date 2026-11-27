@@ -1,0 +1,40 @@
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[document]
+type = "liturgy-reference-v1"
+
+[document.main]
+pdftitle = "Keeping Advent: A Companion to the 1962 Roman Rite"
+pdfsubject = "A seasonal handbook for keeping Advent in the 1962 Roman Rite: the threefold coming of Christ; the regional and Roman history of the season; prayer, the domestic church, works of mercy, confession, and the law of penance; the four weeks of Advent, the Winter Ember Days, the Great O Antiphons, the Vigil of the Nativity, and the mystery of Bethlehem; with an evergreen daily course, received prayers and hymns, calendar rules, and references."
+pdfkeywords = "Advent, 1962 Roman Rite, Church Fathers, Ember Days, Great O Antiphons, Rorate caeli, Bethlehem, fasting, prayer, confession"
+title-style = "series-detail"
+series-line = "A Triptych Seasonal Handbook"
+title = "Keeping Advent"
+subtitle = "A Companion to the 1962 Roman Rite"
+title-detail = '''\textit{Missale Romanum} and \textit{Breviarium Romanum} of 1962\\[0.35em]
+under the \textit{Codex Rubricarum} of 26 July 1960'''
+title-notice = '''For your parish's liturgical schedule and local obligations of precept or
+fasting, consult your diocese and parish calendar; \textit{About This Book}
+explains the sources and legal horizon used here.'''
+body = [
+  'sections/01-entering-the-watch',
+  'sections/02-three-comings-and-one-lord',
+  'sections/03-how-the-church-learned-to-wait',
+  'sections/04-prayer-home-and-mercy',
+  'sections/05-penance-confession-and-law',
+  'sections/06-first-week',
+  'sections/07-second-week',
+  'sections/08-third-week',
+  'sections/09-ember-days',
+  'sections/10-fourth-week-and-great-antiphons',
+  'sections/11-vigil-of-the-nativity',
+  'sections/12-bethlehem-and-the-holy-night',
+]
+apparatus = [
+  'sections/90-daily-course',
+  'sections/92-received-prayers',
+  { source = 'sections/95-about-this-book', roles = ['scope-appendix'] },
+  { source = 'sections/99-references', roles = ['references'] },
+]

@@ -229,6 +229,50 @@ class CommentaryReaderTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("does not describe this book and its editions", result.stderr)
 
+    def test_text_structure_parity_between_static_and_indexed_producers(self):
+        """Static `_catena` and indexed `_reader_commentary_products` share one
+        `text_structure_for_passage` derivation and emit byte-identical JSON."""
+        for identifier in (
+            "passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.01-02-03",
+            "passage.nicene-and-post-nicene-fathers.series-2-volume-5.new-york-1893.gregory-de-hominis-opificio",
+            "passage.augustine.de-civitate-dei.dods-1871.11.7",
+            "passage.peter-chrysologus.sermones.1894-garnier-migne-pl-52.sermo-50",
+        ):
+            with self.subTest(passage=identifier):
+                indexed_bytes = self.resolve(f"structure/catena/text/{identifier}.json")
+                self.assertIsInstance(indexed_bytes, bytes)
+                indexed_payload = json.loads(indexed_bytes)
+                edges = _catena.load_edges(ROOT)
+                edge = next(r for r in edges["fragments"] if r["passage_id"] == identifier)
+                with self.index.verified_reads():
+                    sources = reader._sources(self.index)
+                    rows = _catena.fragments_for_book(
+                        ROOT, edge["extent"]["token"], sources=sources, edges=edges,
+                        passage_ids={identifier},
+                    )
+                static_carried = {name: rows[0].get(name, "") for name in _catena.CARRIED_WITH_TEXT}
+                static_carried.update({
+                    name: rows[0][name] for name in _catena.OPTIONAL_CARRIED_WITH_TEXT
+                    if name in rows[0]
+                })
+                static_bytes = _catena._serialise({"id": identifier, **static_carried}).encode("utf-8")
+                self.assertEqual(indexed_bytes, static_bytes)
+                if "dods-1871" in identifier or "sermo-50" in identifier:
+                    self.assertNotIn("text_structure", indexed_payload)
+                else:
+                    self.assertIn("text_structure", indexed_payload)
+                    self.assertEqual(indexed_payload["text_structure"]["version"], 1)
+
+    def test_paragraph_index_chapters_map_short_circuits_absent_chapters(self):
+        catalog = json.loads(self.index.read(reader.CATALOG_PATH))
+        ed_entry = catalog["paragraphs"]["editions"]["clementine-vulgate"]
+        ed_entry["chapters"] = {"Gen": [1]}
+        with patch.object(reader, "_catalog", return_value=catalog), \
+             patch.object(_reader_bibles, "bible", side_effect=AssertionError("should short-circuit")):
+            self.assertIsNone(
+                self.resolve("structure/paragraphs/clementine-vulgate/01-gen/002.json")
+            )
+
 
 if __name__ == "__main__":
     unittest.main()

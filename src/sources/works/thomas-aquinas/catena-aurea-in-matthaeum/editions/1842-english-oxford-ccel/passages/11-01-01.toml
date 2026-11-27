@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.11-01-01"
+edition_id = "edition.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel"
+artifact_id = "artifact.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.text-130e334a"
+artifact_sha256 = "130e334a0e087ba2ff7f2afc9f803921b4d1de16ed45d682c1756c0c14e3cd67"
+locus = "Matthew 11:1 (Oxford English lemma numbering)"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Aquinas’s compiled chain on Matthew 11:1, translated by Mark Pattison. Includes the lemma and all commentary through the end of the section, with the edition’s internal attributions."
+physical_line_ranges = [[2848, 2851]]
+text = "1. And it came to pass, when Jesus had made an end of commanding his twelve disciples, he departed thence to teach and to preach in their cities. Rabanus: The Lord having sent out His disciples to preach with the foregoing instructions, Himself now fulfils in action what He had taught in words, offering His preaching first to the Jews; “And it came to pass when Jesus had ended all these sayings, he passed thence.” Chrys., Hom, xxxvi: Having sent them forth, He withdrew Himself, giving them opportunity and time to do the things that He had enjoined; for while He was present and ready to heal, no man would come to His disciples. Remig.: He well passes from the special teaching which He had delivered to His disciples, to the general which He preached in the cities; passing therein as it were from heaven to earth, that He might give light to all. By this deed of the Lord, all holy preachers are admonished that they should study to benefit all."
+transcription_segments = [
+  { line = 2848, text = "1. And it came to pass, when Jesus had made an end of commanding his twelve disciples, he departed thence to teach and to preach in their cities." },
+  { line = 2849, text = "Rabanus: The Lord having sent out His disciples to preach with the foregoing instructions, Himself now fulfils in action what He had taught in words, offering His preaching first to the Jews; “And it came to pass when Jesus had ended all these sayings, he passed thence.”" },
+  { line = 2850, text = "Chrys., Hom, xxxvi: Having sent them forth, He withdrew Himself, giving them opportunity and time to do the things that He had enjoined; for while He was present and ready to heal, no man would come to His disciples." },
+  { line = 2851, text = "Remig.: He well passes from the special teaching which He had delivered to His disciples, to the general which He preached in the cities; passing therein as it were from heaven to earth, that He might give light to all. By this deed of the Lord, all holy preachers are admonished that they should study to benefit all." },
+]
+verified_on = "2026-11-25"
+notes = "Checked the complete retained digital block, XML ii.xi-p1 through ii.xi-p4, against the retained line-based derivative text-130e334a/source.txt and candidate index candidates-fd372a66/candidates.json. Verification establishes the retained electronic wording, paragraph order, and section boundary; inherited transcription defects and internal attributions are preserved. No facsimile collation is claimed."

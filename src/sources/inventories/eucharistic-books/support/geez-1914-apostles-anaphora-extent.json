@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-extent",
+  "book_id": "geez-1914-apostles-anaphora",
+  "title": "Asmara 1914/15 (Missale Aethiopicum): Anaphora of the Apostles core constituent — complete constituent extent and page account",
+  "status": "complete",
+  "unresolved": [],
+  "omitted": [],
+  "expected_unit_ids": [
+    "unit.geez-1914.apostles.opening-dialogue",
+    "unit.geez-1914.apostles.preface-and-sanctus",
+    "unit.geez-1914.apostles.post-sanctus",
+    "unit.geez-1914.apostles.institution-narrative",
+    "unit.geez-1914.apostles.anamnesis",
+    "unit.geez-1914.apostles.epiclesis-and-doxology"
+  ],
+  "scope": "Bounded Ge'ez Anaphora of the Holy Apostles core constituent of the Asmara Catholic missal (imprint year ፲፱፻፯ = 1914/15; Roman approbation 25 Feb 1913; Asmara imprimatur 12 Apr 1913; ULB Bonn Goussen 1665, PDF pp. 40, 44-45): title and opening Eucharistic dialogue plus opening Preface (ነአኵተከ) on PDF p. 40; Christological preface continuation, Sanctus, Post-Sanctus, Institution Narrative (bread and cup), Anamnesis, Epiclesis (preserving the distinctive Asmara 1914/15 formula በተመጥዎተ፡ ዝንቱ፡ ኅብስት፡ ወጽዋዕ...), unity prayer and concluding doxology/peace on PDF pp. 44-45 (printed pp. ፳፱-፴ / 29-30), terminating at the decorative bar immediately before the Prayer of Fraction (ጸሎተ፡ ፈትቶ) and Our Father on PDF p. 46. Excludes the intervening Alexandrian intercessions and Prayer of Blessing (PDF p. 40 col. 2 lower half through p. 41), blank verso p. 42, and full-page Crucifixion illustration p. 43.",
+  "pages": [
+    {
+      "witness_id": "geez-asmara-1914-bonn-pdf",
+      "ranges": [
+        [
+          1,
+          39
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Front matter, title/imprint (p. 10), Ge'ez permission (p. 12), Latin approbation/imprimatur (p. 13), and Ordo Communis."
+    },
+    {
+      "witness_id": "geez-asmara-1914-bonn-pdf",
+      "ranges": [
+        [
+          40,
+          40
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.geez-1914.apostles.opening-dialogue",
+        "unit.geez-1914.apostles.preface-and-sanctus"
+      ],
+      "description": "PDF p. 40: Apostles Anaphora title, opening dialogue (col. 1), and opening Preface ነአኵተከ (col. 2 top); col. 2 lower intercessions excluded."
+    },
+    {
+      "witness_id": "geez-asmara-1914-bonn-pdf",
+      "ranges": [
+        [
+          41,
+          41
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "PDF p. 41 (printed p. ፳፰): intervening Alexandrian intercessions and Prayer of Blessing (ጸሎተ፡ ቡራኬ)."
+    },
+    {
+      "witness_id": "geez-asmara-1914-bonn-pdf",
+      "ranges": [
+        [
+          42,
+          42
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "PDF p. 42: blank verso preceding Crucifixion plate."
+    },
+    {
+      "witness_id": "geez-asmara-1914-bonn-pdf",
+      "ranges": [
+        [
+          43,
+          43
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "PDF p. 43: full-page colour Crucifixion engraving facing p. ፳፱."
+    },
+    {
+      "witness_id": "geez-asmara-1914-bonn-pdf",
+      "ranges": [
+        [
+          44,
+          44
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.geez-1914.apostles.preface-and-sanctus",
+        "unit.geez-1914.apostles.post-sanctus",
+        "unit.geez-1914.apostles.institution-narrative"
+      ],
+      "description": "PDF p. 44 (printed p. ፳፱): Christological preface continuation, Sanctus, Post-Sanctus, and Institution Narrative through breaking/signing of bread."
+    },
+    {
+      "witness_id": "geez-asmara-1914-bonn-pdf",
+      "ranges": [
+        [
+          45,
+          45
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.geez-1914.apostles.institution-narrative",
+        "unit.geez-1914.apostles.anamnesis",
+        "unit.geez-1914.apostles.epiclesis-and-doxology"
+      ],
+      "description": "PDF p. 45 (printed p. ፴): Institution words over Bread and Cup, Anamnesis, Epiclesis (Asmara 1914/15 wording), unity prayer, doxology and Peace."
+    },
+    {
+      "witness_id": "geez-asmara-1914-bonn-pdf",
+      "ranges": [
+        [
+          46,
+          181
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Prayer of Fraction (p. 46), Our Father, Order of Communion (p. 50), and Anaphoras 2-14 (pp. 56-175) plus endleaves."
+    }
+  ]
+}

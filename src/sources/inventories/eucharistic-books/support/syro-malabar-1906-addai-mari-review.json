@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-collation",
+  "book_id": "syro-malabar-1906-addai-mari",
+  "title": "Ordo Chaldaicus Malabaricae (Puttenpalli, 1906) — Anaphora of Addai and Mari Core — independent pixel-collation review",
+  "status": "verified",
+  "independent": true,
+  "complete_extent_verified": true,
+  "reviewer": "independent-collator-v2-syriac",
+  "checked_on": "2026-11-25",
+  "binding_sha256": "0faed7d47fc64e791dca5a2d361334f1f2d6fd38787f75d31833b7604c99e5c1",
+  "extent_sha256": "805ad99bb3b7abb983ccb7daa50647abb90d9c9daadf8bb5599d9061ef3ae9f6",
+  "witness_sha256": {
+    "syro-malabar-1906-puttenpalli-part1-pdf": "51510073251bd819cc9a662e88c04ffd33f396d4a6427aad9acab66ae9e5157b"
+  },
+  "unit_sha256": {
+    "syro-malabar-1906-addai-mari.01-opening-dialogue": "dcf3837461c1215554e5ed7fa6669b0fba533447908077bfa449acb9c2c99498",
+    "syro-malabar-1906-addai-mari.02-preface-gehanta-1": "6a8dbcbcf8c82d0011684f83664f8b9e41d0005304a27ef8b2b67fa0bda7affc",
+    "syro-malabar-1906-addai-mari.03-sanctus": "8484fb7b28874a3c373a8404fb0d23c2a88e3a515a87a8145a627b6782e8aff0",
+    "syro-malabar-1906-addai-mari.04-post-sanctus-gehanta-2": "92091ea7ac2ba6e3539418dfc313083bb587c4f9aa7cd88015c47ae0ef38ef6f",
+    "syro-malabar-1906-addai-mari.05-intercession-gehanta-3": "72fdd11060b24aca91a555a118a7d5cc1a6f7caa136e7cc8117366fdf4509e7b",
+    "syro-malabar-1906-addai-mari.06-anamnesis-oblation": "92e13cdd1a30ef29d6a2c8e1e8f88b944ef2ee6d5b084a7dea3079c9278a6638",
+    "syro-malabar-1906-addai-mari.07-epiclesis-and-qanona": "a26e7072c479bcd14553197da00baf73235099e61e48b0eceda3d55968d68ab2",
+    "syro-malabar-1906-addai-mari.08-institution-narrative": "b2f07f2a3c02a2d68a773eee7a92aa915dc65b79109e1e46aeb42bb41fc31077"
+  },
+  "scope": "Bounded constituent of the exact same eight aligned core units of the Anaphora of Addai and Mari in Classical Syriac (syr), preserving Puttenpalli 1906's Fraction-placed Romanized Institution Narrative (PDF 230-229) and enabling a direct 3-way East Syriac diff against Chaldean 1767 and Chaldean 1901.",
+  "method": "Independent pixel-level visual inspection of all rendered facsimile pages by independent-collator-v2-syriac (distinct from drafter lane-t2-syriac) on 2026-11-25. Applied 10 pixel-verified correction(s) relative to initial draft; verified every unit boundary, page account (1..257), and SHA-256 hash.",
+  "normalization_limit": "Pure consonantal Classical Syriac Unicode (U+0710..U+072C, UTF-8 NFC) with single ASCII spaces between words and single LF (\\n) line endings, one canonical liturgical unit per line.; All East Syriac and West Syriac vowel points, seyame (U+0308), qushshaya/rukkakha, linea occultans/marhetana, punctuation dots, liturgical crosses, quotation marks, kashidas, catchwords, running heads, signature marks, and page numbers are omitted for scan-safe cross-edition diffing.; Rubrics (red or black stage directions), section headers (e.g. Qanona, Gehanta), speaker labels (priest/deacon/people), abbreviated posture cues (e.g. gehanta bow marker), intervening private Kushapa prayers, diaconal calls outside the main dialogue, the intervening elevation adoration verse between Bread and Chalice in Puttenpalli 1906 (PDF 230), and parallel Garshuni/Arabic columns are excluded.; Printed historical orthography, abbreviations (such as single-word Sanctus incipit ܩܕܝܫ and abbreviated Qanona endings ܗܫܐ ܘܒܟܠܙܒܢ), omissions, and additions are preserved verbatim without harmonizing or supplying words from memory.",
+  "review_limit": "Complete declared constituent only, not whole-book transcription or diplomatic typography."
+}

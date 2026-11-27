@@ -289,7 +289,7 @@ def server_artwork(root: Path, provider: str, canonical: str) -> tuple[set[str],
     closure. Card companions typeset no artwork.
     """
     root = Path(root).resolve()
-    _need(provider in {"gpt", "claude"} and canonical.startswith(SERVER + "/"), "no canonical server-guide owner")
+    _need(provider in {"gpt", "claude", "gemini"} and canonical.startswith(SERVER + "/"), "no canonical server-guide owner")
     name = canonical.rsplit("/", 1)[-1]
     if name.endswith(("flash-cards", "cue-cards")):
         return set(), {HELPER}

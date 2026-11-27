@@ -1,0 +1,23 @@
+% Leaf-local preamble for the Gemini monograph on the Ark of the Covenant and Mary.
+% The theology-reference-v1 document type in publication.toml owns the skeleton.
+
+\usepackage{graphicx}
+\usetikzlibrary{decorations.pathmorphing}
+
+% Clean, restrained typographic framing for plate captions and textual equivalents.
+\newenvironment{platecaption}{%
+  \par\vspace{0.35em}\begingroup\footnotesize\setlength{\parskip}{0.3em}%
+}{%
+  \par\endgroup\vspace{0.6em}%
+}
+
+\newenvironment{scriptureblock}{%
+  \begin{quote}\small\itshape
+}{%
+  \end{quote}
+}
+
+% Enables monochrome graphite plates and TikZ coordinate overlays in print PDF.
+% Web conversion automatically takes the \else branch (guidance/web-editions.md),
+% delivering complete accessible textual equivalents for every plate and map.
+\def\TriptychPrintEdition{}

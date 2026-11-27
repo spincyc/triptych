@@ -25,7 +25,7 @@ from types import SimpleNamespace
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = Path("src/common/document-schemas/registry.toml")
 MANIFEST = "publication.toml"
-PROVIDERS = ("claude", "gpt")
+PROVIDERS = ("claude", "gemini", "gpt")
 KEY = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 MANIFEST_FIELDS = {
     "schema_version", "id", "kind", "profile", "source_format", "entrypoint",

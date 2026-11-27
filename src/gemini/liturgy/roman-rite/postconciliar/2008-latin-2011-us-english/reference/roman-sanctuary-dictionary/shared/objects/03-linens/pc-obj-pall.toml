@@ -1,0 +1,75 @@
+schema_version = 1
+id = "pc-obj-pall"
+category = "linens"
+sort_order = 304
+plate_id = "pc-plt-04-linens"
+composition_plate_ids = []
+plate_position = "Bottom left, stiffened square (Plate IV)"
+preferred_english_name = "Pall"
+latin_headword = "Palla"
+alternate_english_names = ["Chalice pall"]
+alternate_latin_names = ["Palla calicis"]
+pronunciation_key = "PAHL-lah"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "optional"
+scope_level = "universal-roman"
+territorial_note = ""
+
+[identification]
+summary = "A stiffened flat square of white linen placed optionally over the mouth of the chalice to shield the wine and Precious Blood from dust, lint, or insects."
+appearance = "Shown at bottom left of Plate IV: a rigid, flat square of crisp white linen (typically six to seven inches across) bordered with fine hemstitching or drawn-thread work, held flat either by heavy starching of layered linen or by a removable waterproof insert inside a washable linen slipcover."
+placement_and_use = "Prepared on the credence table atop the chalice and paten whenever appropriate—explicitly qualified as optional (pro opportunitate, “if appropriate”) in GIRM 118c—and permitted on the altar mensa during the Liturgy of the Eucharist (GIRM 139, 306). The priest or deacon lifts it before pouring, consecrating, or drinking, and replaces it whenever dust, drafts, or insects threaten an open chalice, especially in warm seasons or outdoor Masses."
+liturgical_colors = "White linen on its functional body and underside; restrained white embroidery or subtle decorative trim occasionally adorns the upper face."
+
+[ministers_and_handling]
+ordinary_ministers = ["bishop", "priest", "deacon"]
+prepares = ["sacristan", "deacon", "instituted-acolyte", "altar-server"]
+server_boundary = "prepares"
+server_boundary_summary = "Servers may set a clean pall atop the unconsecrated chalice on the credence table and bring it to the altar at the Preparation of the Gifts; once the Eucharistic Prayer begins, servers do not place or remove the pall over a chalice containing the Precious Blood."
+safety_warning = "Remove any rigid insert before washing a slipcover pall; if drops of the Precious Blood ever touch the linen underside, soak and hand-rinse the linen first into the sacrarium or clean earth before ordinary laundering (RS 120)."
+
+[audience_text]
+altar_server = "Look at bottom left of Plate IV: unlike the folded corporal above it, the pall is completely flat and stiff so it rests steadily across the chalice rim without sagging into the wine. If your parish uses a pall, set it cleanly atop the paten on the unconsecrated chalice at the credence table and carry it steadily to the altar at the Preparation of the Gifts. Once the Eucharistic Prayer begins, leave placing and removing the pall to the priest or deacon."
+sacristan = "Keep clean, unwarped palls ready on the credence table whenever appropriate (GIRM 118c)—especially during summer months, open-window ventilation, or outdoor celebrations where dust or insects might fall into the chalice. Inspect the underside before every Mass for stains; remove any plastic or card insert before washing, and whenever the linen has contacted the Precious Blood, perform the sacrarium first-rinse mandated by Redemptionis Sacramentum 120 before regular laundering."
+general_reader = "This crisp, stiffened white square rests flat across the top of the chalice like a clean linen lid. Serving a practical office of reverence, it protects the wine and the Precious Blood from dust or insects, and postconciliar rubrics make its use optional whenever pastoral conditions call for it (GIRM 118c)."
+
+[relationships]
+confusable_with = ["pc-obj-corporal", "pc-obj-purificator"]
+related_objects = ["pc-obj-chalice", "pc-obj-paten", "pc-obj-corporal", "pc-obj-credence-table"]
+
+[symbolism]
+has_sourced_symbolism = false
+text = ""
+evidence_class = "none-practical"
+attribution = ""
+
+[counterpart_1962]
+relationship = "optional"
+locus_1962 = "Missale Romanum (1962), Ritus Servandus I.1, VII.5, VIII.7"
+comparison = "The 1962 Roman Missal required a blessed small linen pall on every prepared chalice stack to cover the host and chalice throughout the Offertory and Canon (RS I.1, VII.5, VIII.7). Postconciliar law expressly makes the pall optional, prescribing it “if appropriate” (pro opportunitate, GIRM 118c)."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N18"
+primary_loci = ["GIRM 118c (pro opportunitate), 139, 306", "Redemptionis Sacramentum 120"]
+source_bindings = [
+  "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002",
+  "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021",
+  "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-chalice-and-paten-preparation",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

@@ -1,0 +1,75 @@
+schema_version = 1
+id = "pc-obj-book-of-the-chair"
+category = "liturgical-books"
+sort_order = 404
+plate_id = "pc-plt-05-books"
+composition_plate_ids = []
+plate_position = "Bottom right, slimmer handheld ceremonial volume (Plate V)"
+preferred_english_name = "Book of the Chair"
+latin_headword = "Excerpts from the Roman Missal (no Latin typical edition)"
+alternate_english_names = ["Excerpts from the Roman Missal", "Presidential Prayer Book"]
+alternate_latin_names = []
+pronunciation_key = ""
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "territorial adaptation"
+scope_level = "territorial-usccb"
+territorial_note = "Officially titled Excerpts from the Roman Missal, this lighter companion ritual volume was prepared by the United States Conference of Catholic Bishops, confirmed by the Congregation for Divine Worship and the Discipline of the Sacraments, and published in 2018 to fulfill GIRM 118a at the presidential chair alongside the complete altar Missal."
+
+[identification]
+summary = "A slimmer, lighter Holy-See-confirmed United States ritual volume containing the presidential texts prayed away from the altar—such as the Introductory Rites, Collects, Prayers after Communion, and Solemn Blessings—designed for comfortable holding at the presidential chair."
+appearance = "At bottom right of Plate V, the closed Book of the Chair is markedly thinner and lighter than the thick altar Roman Missal at top left, bound in clean dignified covers with two silk ribbon markers extending from the foot of the spine and without the heavy fore-edge tab bank required for the Eucharistic Prayers."
+placement_and_use = "Placed beside the presidential chair before Mass (fulfilling GIRM 118a) and held open by an altar server or set on a discreet chair stand for the Introductory Rites, Collect, concluding prayer of the Universal Prayer, Prayer after Communion, and Final Blessing. Because it omits the Prefaces and Eucharistic Prayers, it is never placed on the altar mensa in place of the complete Roman Missal (GIRM 139, 306)."
+liturgical_colors = "Dignified cloth or leather binding (commonly red or complementary dark tones); the cover color does not change by liturgical season."
+
+[ministers_and_handling]
+ordinary_ministers = ["bishop", "priest"]
+prepares = ["sacristan", "altar-server"]
+server_boundary = "presents"
+server_boundary_summary = "Servers hold the Book of the Chair open flat and steady at the priest's reading angle during the Introductory Rites, Collect, Universal Prayer conclusion, Prayer after Communion, and Final Blessing, and never place it on the altar in place of the complete Roman Missal."
+safety_warning = "Never carry the Book of the Chair to the altar for the Liturgy of the Eucharist or the Eucharistic Prayer—it does not contain the Order of Mass altar prayers or Eucharistic Prayers, which require the complete Roman Missal (GIRM 306)."
+
+[audience_text]
+altar_server = "This slimmer ceremonial book at bottom right of Plate V was created with altar servers in mind. Because the full altar Roman Missal is heavy to hold steadily for long prayers, the Book of the Chair (officially Excerpts from the Roman Missal) contains only the prayers spoken at the presidential chair and entrance. Before Mass, confirm that both ribbons mark the Collect and Prayer after Communion; step promptly before the priest when he rises for prayer, hold the book open flat at a comfortable height without tipping the pages, and return it beside the chair—never to the altar."
+sacristan = "Mark both ribbons in Excerpts from the Roman Missal before Mass for the day's Collect, Prayer after Communion, and any Solemn Blessing or Prayer over the People, setting it neatly beside the presidential chair (GIRM 118a). Always prepare the full Roman Missal separately on the credence table (marked for the Prayer over the Offerings, Preface, and Eucharistic Prayer) so the Liturgy of the Eucharist never lacks its complete altar book (GIRM 139, 306)."
+general_reader = "During the opening and closing prayers of Mass, you will often see an altar server step before the priest at the presidential chair holding a noticeably slimmer book than the thick volume later used at the altar. Officially titled Excerpts from the Roman Missal and published in 2018 for United States dioceses, this practical companion gathers the prayers spoken at the chair while reserving the complete Roman Missal for the altar."
+
+[relationships]
+confusable_with = ["pc-obj-roman-missal", "pc-obj-lectionary"]
+related_objects = ["pc-obj-roman-missal", "pc-obj-presidential-chair"]
+
+[symbolism]
+has_sourced_symbolism = false
+text = ""
+evidence_class = "none-practical"
+attribution = ""
+
+[counterpart_1962]
+relationship = "no established counterpart"
+locus_1962 = "No presbyteral counterpart in Missale Romanum (1962), Rubricae Generales 527; episcopal book-bearer precedent only in Caeremoniale Episcoporum (1948) I.20"
+comparison = "Because the priest in the 1962 Roman Missal prayed the Collect and Postcommunion at the altar rather than at a presidential chair (RG 527), there was no presbyteral Book of the Chair (only a minister holding the Missal for a bishop under Caeremoniale Episcoporum I.20). The Holy-See-confirmed USCCB volume Excerpts from the Roman Missal (2018) is a distinct postconciliar practical companion fulfilling GIRM 118a."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N23"
+primary_loci = ["GIRM 118a, 306", "USCCB Excerpts from the Roman Missal (CDWDS confirmed, 2018)"]
+source_bindings = [
+  "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021",
+  "passage.catholic-church.missale-romanum.vatican-typica-1962.rubricae-generales-altar-preparation",
+  "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-1.chapter-20",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

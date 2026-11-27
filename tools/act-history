@@ -3886,30 +3886,35 @@ def build_structure_projection(sources: tuple[Path, ...], out: Path) -> dict:
     # otherwise be an orphan under the exact structure drift check.
     routing = ROOT / eucharistic_history.DEFAULT_SOURCE
     if routing.is_file():
-        catalogue = eucharistic_history.catalogue(routing, ROOT, act_loader=load)
-        eucharistic_history.write_catalogue(catalogue, root / "catalogue.json")
-        eucharistic_history.write_stage_history(
-            eucharistic_history.stage_history_projection(catalogue),
-            root / "stage-history.json",
-        )
-        for declaration in catalogue["native_texts"]:
-            payload = eucharistic_history.native_text(declaration["adapter_id"], ROOT)
-            if payload["binding_sha256"] != declaration["binding_sha256"]:
-                raise eucharistic_history.HistoryError("native text binding changed during structure generation")
-            target = root / declaration["projection_path"]
-            target.parent.mkdir(parents=True, exist_ok=True)
-            target.write_bytes(eucharistic_history.json_bytes(payload))
-        adapter_cache: dict[str, dict] = {}
-        for declaration in catalogue["comparisons"]:
-            comparison = eucharistic_history.compare(
-                routing, ROOT, declaration["id"], ventilator=ventilate, act_loader=load,
-                catalogue_context=catalogue, verify_context=False, adapter_cache=adapter_cache,
+        import _eucharistic_texts as eucharistic_texts
+        with eucharistic_texts.replay_library(ROOT):
+            catalogue = eucharistic_history.catalogue(routing, ROOT, act_loader=load)
+            eucharistic_history.write_catalogue(catalogue, root / "catalogue.json")
+            eucharistic_history.write_stage_history(
+                eucharistic_history.stage_history_projection(catalogue),
+                root / "stage-history.json",
             )
-            eucharistic_history.write_comparison(
-                comparison, root / declaration["projection_path"],
+            for declaration in catalogue["native_texts"]:
+                payload = eucharistic_history.native_text(declaration["adapter_id"], ROOT)
+                if payload["binding_sha256"] != declaration["binding_sha256"]:
+                    raise eucharistic_history.HistoryError("native text binding changed during structure generation")
+                target = root / declaration["projection_path"]
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_bytes(eucharistic_history.json_bytes(payload))
+            adapter_cache: dict[str, dict] = {}
+            for declaration in catalogue["comparisons"]:
+                comparison = eucharistic_history.compare(
+                    routing, ROOT, declaration["id"], ventilator=ventilate, act_loader=load,
+                    catalogue_context=catalogue, verify_context=False, adapter_cache=adapter_cache,
+                )
+                eucharistic_history.write_comparison(
+                    comparison, root / declaration["projection_path"],
+                )
+            if catalogue["comparisons"]:
+                eucharistic_history.verify_comparison_batch(ROOT, catalogue, adapter_cache)
+            eucharistic_history.write_edition_cross_references(
+                catalogue, root / "edition-cross-references.json", ROOT
             )
-        if catalogue["comparisons"]:
-            eucharistic_history.verify_comparison_batch(ROOT, catalogue, adapter_cache)
     with _open_directory_path(root, create=False) as (root_fd, safe_root):
         files = structure_files(root_fd, safe_root)
     return {

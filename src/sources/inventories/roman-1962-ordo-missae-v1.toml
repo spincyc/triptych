@@ -202,6 +202,14 @@ caution = "Historical lay-missal Latin for the three invocations of the Requiem 
 artifacts = ["artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.priest-gospel-blessing-request-3fabf5f0", "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.requiem-agnus-dei-a7d3db20"]
 
 [[witnesses]]
+id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+lang = "en"
+label = "The New Roman Missal in Latin and English, by F. X. Lasance and F. A. Walsh (New York: Benziger Brothers), revised edition of 1945, 1946 printing"
+rights = "public-domain"
+caution = "A publisher's hand missal, not an approved liturgical translation and never an altar book; nothing here may be used for recitation. Supplies page-image-verified ordinary-page historical English (printed pp. 775, 778, 793, 809-810, outside excluded lettered inserts) under the United States nonrenewal finding in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml."
+artifacts = ["artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-ordinary-lasance-en"]
+
+[[witnesses]]
 id = "edition.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929"
 lang = "la"
 label = "Schott/Bihlmeyer, second revised Herder1929 printing: two historical Latin Preface bodies"
@@ -216,7 +224,7 @@ lang = "la"
 label = "Missale Romanum, editio quarta juxta typicam (Tours: Alfred Mame, 1922), Gospel-adjacent prayers, proper Canon, historical Joseph and Dead Prefaces, final blessing Latin, and the Missal's own headings and rubrics of the Ordo Missae and Canon"
 rights = "public-domain"
 caution = "Checked Gospel-adjacent prayer bodies and Accendat from a 1922 altar missal, retained in that printing's own spelling and pointing. This is an antecedent witness, not the 1962 typical edition, and the reader is never a book to celebrate from. Its Ordo Missae and Canon headings and rubrics are the Missal's own words at the places this frame names, each word-exact with the 1962 typical edition; where the 1861 English beside one is the lay book's paraphrase, the element says that the Latin is not its source. The Munda cor meum priest cue is limited to the source's express reuse at Mass without deacon and subdeacon; its fully printed solemn-Mass occurrence belongs to the deacon. Cummiskey's English source and actor assignments remain separate. The complete historical Joseph body retains unselected alternatives under March 19 applicability only; the final blessing retains its own priest formula and unassigned response cue."
-artifacts = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.oratio-super-populum-cues-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordo-gospel-preparation-la-checked-03c65abd", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-proper-canon-la-20261026-34961eae", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-joseph-historical-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-final-blessing-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-dead-preface-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.requiem-peace-omission-50b82c2e"]
+artifacts = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.oratio-super-populum-cues-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordo-gospel-preparation-la-checked-03c65abd", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-proper-canon-la-20261026-34961eae", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-joseph-historical-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-final-blessing-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-dead-preface-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.requiem-peace-omission-50b82c2e", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.coldrev-1962-ordinary-exact-latin"]
 
 [[witnesses]]
 id = "edition.triptych.english-completion-20261029-ordinary-joseph.study-english-20261029"
@@ -2109,14 +2117,6 @@ target_wording = "word-exact"
 note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 47, printed p. xxvi, IA leaf 36), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1039, printed p. 222, artifact PDF p. 303, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
 
 [[sections.element_provenance]]
-element = "gloria-patri"
-lang = "la"
-relation = "antecedent"
-collation = "collated"
-collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1039, printed p. 222, artifact PDF p. 303"
-note = "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 48, printed p. xxvi, IA leaf 36), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1039, printed p. 222, artifact PDF p. 303, read on the page image. Under the 2026-09-03 words rule it is an abbreviated body, so this antecedent is not the 1962 wording: abbreviation at 1861 token 4: 1861 prints the first four words and &c.; the 1962 prints the whole doxology. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing. Abbreviated body."
-
-[[sections.element_provenance]]
 element = "suscipe-sancta-trinitas"
 lang = "la"
 relation = "antecedent"
@@ -2133,14 +2133,6 @@ collation = "collated"
 collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1041, printed p. 222, artifact PDF p. 303"
 target_wording = "word-exact"
 note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 52, printed p. xxvii, IA leaf 37), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1041, printed p. 222, artifact PDF p. 303, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
-
-[[sections.element_provenance]]
-element = "suscipiat-dominus"
-lang = "la"
-relation = "antecedent"
-collation = "collated"
-collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1042, printed p. 222, artifact PDF p. 303"
-note = "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 53, printed p. xxvii, IA leaf 37), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1042, printed p. 222, artifact PDF p. 303, read on the page image. Under the 2026-09-03 words rule it is a variant, so this antecedent is not the 1962 wording: insert at 1861 token 7: 1962 adds a two-word parenthetical alternative after the possessive (for the priest answering himself); not in the 1861. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing."
 
 [[sections.element_provenance]]
 element = "per-omnia-saecula"
@@ -2879,6 +2871,41 @@ element = "gloria-patri"
 conditions = [{ kind = "include-when-any", predicates = ["1962-lavabo-doxology"], basis = "Missale Romanum 1962, Ritus servandus VII.6 and XIII.1. The Lavabo doxology is omitted in Masses of the Dead and the Masses de Tempore from Passion Sunday through Holy Thursday inclusive." }]
 
 
+
+[[sections.latin_replacements]]
+element = "gloria-patri"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la-turn-divided-complete-2026-10-20", text_sha256 = "17fe837df48e3911d6e6379877dd20d815698459abc980a233646eb46ece5b50" }
+latin_turns = [{ key = "priest-1", seq = [1], speaker = "priest" }]
+turns_basis = "Mame 1922 printed p. 278, artifact PDF p. 392, left column after Lavabo psalm before rubric In Missis pro Defunctis; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.coldrev-1962-ordinary-gloria-patri; visually verified on 200 dpi Mame 1922 and CMAA 1962 page images on 2026-11-25."
+
+[sections.latin_replacements.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.coldrev-1962-ordinary-exact-latin"
+element = "gloria-patri"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1039, printed p. 222, artifact PDF p. 303"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin (printed p. 278, artifact PDF p. 392) replacing abbreviated or split 1861 Cummiskey Latin; collated word-for-word against Missale Romanum 1962 (n. 1039, printed p. 222, artifact PDF p. 303) on 200 dpi page images on 2026-11-25. Differences from 1962 are declared ligature, accent, i/j, capitalization, pointing, and cross-glyph normalization only."
+
+[[sections.latin_replacements]]
+element = "suscipiat-dominus"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la-turn-divided-complete-2026-10-20", text_sha256 = "17c54e4dc8570ab91042136fae676b41e8a322277ff2c34d1ccb8839d2e32bf1" }
+latin_turns = [{ key = "suscipiat-dominus", seq = [2], speaker = "server" }]
+turns_basis = "Mame 1922 printed p. 278, artifact PDF p. 392, right column beneath Minister, seu circumstantes respondent rubric (includes '(vel meis)' matching 1962 n. 1042); passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.coldrev-1962-ordinary-suscipiat-dominus; visually verified on 200 dpi Mame 1922 and CMAA 1962 page images on 2026-11-25."
+
+[sections.latin_replacements.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.coldrev-1962-ordinary-exact-latin"
+element = "suscipiat-dominus"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1042, printed p. 222, artifact PDF p. 303"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin (printed p. 278, artifact PDF p. 392) replacing abbreviated or split 1861 Cummiskey Latin; collated word-for-word against Missale Romanum 1962 (n. 1042, printed p. 222, artifact PDF p. 303) on 200 dpi page images on 2026-11-25. Differences from 1962 are declared ligature, accent, i/j, capitalization, pointing, and cross-glyph normalization only."
+
 [[sections]]
 key = "praefatio"
 name = "The Prefaces"
@@ -3207,7 +3234,7 @@ locus = "1962 n. 1081, printed p. 292, rubric under the heading; 1922 Mame print
 [[sections.conditional_spans]]
 element = "praefatio-de-spiritu-sancto"
 lang = "en"
-text = "[this day]"
+text = "(this day)"
 said = { anchor = "pentecost", from = -1, to = 6 }
 rubric = "The bracketed words are said from the vigil of Pentecost through the following Saturday, and omitted at every other Mass that takes this Preface."
 locus = "1962 n. 1081, printed p. 292, rubric under the heading; 1922 Mame printed p. 334"
@@ -3252,91 +3279,6 @@ collation = "collated"
 collation_finding = "Missale Romanum, editio typica 1962; Praefationes sine cantu, Praefatio communis, n. 1086, printed p. 297, artifact PDF p. 378; direct 200 and 400 dpi page-image collation on 2026-10-20"
 target_wording = "word-exact"
 note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. The 1861 Cummiskey facing Latin (praefationes-la seq 3, printed p. xxviii, IA leaf 38), collated in full with the 1962 typical edition's Common Preface at n. 1086, printed p. 297, artifact PDF p. 378, read at 200 and 400 dpi on 2026-10-20: all prayer words agree. The differences are transformations only: j for i, ae/oe ligatures and coeli for caeli, exultatione for exsultatione, accents, capitals and pointing. The source's asterisk after aeterne Deus is its own insertion apparatus and remains in the held text; the 1962 prayer is continuous. Neither the 1861 heading's applicability to Masses for the Dead nor its explanatory N.B. is collated here as a 1962 rubric. The source's separate Sanctus follows this body."
-
-[[sections.element_provenance]]
-element = "praefatio-de-ss-trinitate"
-lang = "la"
-relation = "antecedent"
-collation = "collated"
-collation_finding = "Missale Romanum, editio typica 1962; Praefatio de SS. Trinitate, n. 1082, printed p. 293, artifact PDF p. 374; direct 200 and 400 dpi page-image collation on 2026-10-20"
-note = "ANTECEDENT WORDING, BOUNDED COLLATION COMPLETE; PARTIAL SOURCE EXTENT. The complete 1861 Cummiskey facing Latin row (praefationes-la seq 6, printed pp. xxviii-xxix, IA leaves 38-39) was compared with the 1962 typical edition's Trinity Preface, n. 1082, printed p. 293, artifact PDF p. 374, on page images at 200 and 400 dpi on 2026-10-20. All 80 proper-clause prayer words from Qui through dicentes agree under the declared orthography: j, ligatures, capitals, stress accents, quotidie/cotidie and pointing only. The source's missing stop in aequalitas Quam and comma after dicentes remain unchanged. The unchanged source row starts at an insertion asterisk and retains the abbreviated Sanctus, &c. cue; it does not contain the preceding common opening. That 21-word source opening was independently compared and agrees, but this finding adds no opening occurrence, junction, text fragment, event or target role. The source cue is retained literally and the separately presented full Sanctus remains as before. No complete target-Preface or word-exact target_wording claim is made for this partial source row; the English stays antecedent and uncollated."
-
-# Proposed within the existing praefatio section; not applied.
-# Both records deliberately omit target_wording. An exact clause comparison is
-# not an exact-target claim for an unchanged partial row plus source cue.
-
-[[sections.element_provenance]]
-element = "praefatio-de-quadragesima"
-lang = "la"
-relation = "antecedent"
-collation = "collated"
-collation_finding = "Missale Romanum, editio typica 1962; Praefationes sine cantu, Praefatio de Quadragesima, n. 1075, printed p. 286, artifact PDF p. 367; complete source row and target occurrence read directly at 200 and 400 dpi on 2026-10-20"
-note = "ANTECEDENT WORDING, BOUNDED COLLATION COMPLETE; PARTIAL SOURCE EXTENT. The 1861 Cummiskey facing Latin (praefationes-la seq 13, printed p. xxx, IA leaf 40), checked in full on its page image against the 1962 Lent Preface at n. 1075, printed p. 286, artifact PDF p. 367, at 200 and 400 dpi on 2026-10-20. All eleven clause words from Qui through præmia agree; jejunio/ieiunio, the ae ligature, stress accents and pointing are transformations only. The immutable stored row also contains leading insertion apparatus and the abbreviated common-return cue * Per Christum, &c. It holds neither the common opening nor the full common continuation. This collation does not make that unchanged displayed row the complete target Preface, and no word-exact target_wording is declared for it. The source heading and cues remain its own; no target appointment, dialogue role, or internal conditional words are inferred."
-
-[[sections.element_provenance]]
-element = "praefatio-de-sancta-cruce"
-lang = "la"
-relation = "antecedent"
-collation = "collated"
-collation_finding = "Missale Romanum, editio typica 1962; Praefationes sine cantu, Praefatio de Sancta Cruce, n. 1076, printed p. 287, artifact PDF p. 368; complete source row and target occurrence read directly at 200 and 400 dpi on 2026-10-20"
-note = "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT. The 1861 Cummiskey facing Latin (praefationes-la seq 15, printed p. xxx, IA leaf 40), checked in full on its page image against the 1962 Holy Cross Preface at n. 1076, printed p. 287, artifact PDF p. 368, at 200 and 400 dpi on 2026-10-20. The source positively prints humam generis where the target prints humani generis, at zero-based source row token 3; the misprint remains unchanged. All other clause words agree, with accents, capitals and pointing transformations only. The immutable stored row also retains its leading asterisk and abbreviated common-return cue * Per Christum. &c., including the source full stop. It lacks the common opening and full common continuation, so both the word variant and source extent prevent an exact-target grade. The source heading is not this Missal's applicability rubric; no new target appointment, dialogue role or conditional words are inferred."
-
-[[sections.element_provenance]]
-element = "praefatio-de-nativitate"
-lang = "la"
-relation = "antecedent"
-collation = "collated"
-collation_finding = "Missale Romanum, editio typica 1962; Praefationes sine cantu n. 1073, printed p. 284 (section-opening numeral suppressed), artifact PDF p. 365; complete bounded source clause and target counterpart, plus source-owned opening/conclusion/Sanctus context, directly read at 200 and 400 dpi on 2026-10-20"
-note = "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C26 remaining Prefaces). The 1861 Cummiskey facing Latin (praefationes-la seq 9, printed p./pp. xxix-xxx, IA leaf/leaves n39-40, artifact PDF p./pp. 40-41) was collated on 2026-10-20 with 1962 Praefationes sine cantu n. 1073, printed p. 284 (section-opening numeral suppressed), artifact PDF p. 365, both read directly at 200 and 400 dpi. The 24-word proper clause has one lexical variant at word 13: source infusit, target infúlsit; this is a different verb form, not an orthographic transformation, and source text remains unchanged. The 22-word Et ideo conclusion agrees exactly under the declared orthography. The source literally ends Sanctus, Sanctus, &c.; its separate full Sanctus row agrees with the target, but the cue remains stored. The initial source asterisk calls for the common opening through æterne Deus.; that separate source-owned opening also agrees with this target, but the current inventory inserts it only for the Holy Spirit Preface. The unchanged partial cue-bearing row is not promoted to target wording: the source-cue/conclusion allowance does not itself supply the missing opening/full-conclusion assembly. This is a finding about the held clause and its separately checked return, not a claim that a complete Preface is represented. Source asterisk, dagger and abbreviation cues remain immutable; they are reference apparatus, not target ritual actions, dialogue roles or conditional spans. No in-clause conditional word variant is printed. No body, target role, appointment condition, English collation or rights basis is added."
-
-[[sections.element_provenance]]
-element = "praefatio-de-epiphania"
-lang = "la"
-relation = "antecedent"
-collation = "collated"
-collation_finding = "Missale Romanum, editio typica 1962; Praefationes sine cantu n. 1074, printed p. 285, artifact PDF p. 366; complete bounded source clause and target counterpart, plus source-owned opening/conclusion/Sanctus context, directly read at 200 and 400 dpi on 2026-10-20"
-note = "ANTECEDENT WORDING, COLLATED WITH WORD AGREEMENT LIMITED TO THE HELD CLAUSE AND SEPARATELY CHECKED CONCLUSION (C26 remaining Prefaces). The 1861 Cummiskey facing Latin (praefationes-la seq 11, printed p./pp. xxx, IA leaf/leaves n40, artifact PDF p./pp. 41) was collated on 2026-10-20 with 1962 Praefationes sine cantu n. 1074, printed p. 285, artifact PDF p. 366, both read directly at 200 and 400 dpi. All 15 words of the bounded proper clause agree exactly under the declared orthography. The literal source ending † Et ideo, &c. invokes the source-owned Christmas conclusion from its dagger onward (Latin wording: praefationes-la seq 9, artifact PDF pp. 40-41; dagger instruction: praefationes-en seq 8, artifact PDF p. 40); all 22 words of that conclusion agree with this target. The Nativity infusit variant precedes its dagger and is outside this reference. The initial source asterisk calls for the common opening through æterne Deus.; that separate source-owned opening also agrees with this target, but the current inventory inserts it only for the Holy Spirit Preface. The unchanged partial cue-bearing row is not promoted to target wording: the source-cue/conclusion allowance does not itself supply the missing opening/full-conclusion assembly. This is a finding about the held clause and its separately checked return, not a claim that a complete Preface is represented. Source asterisk, dagger and abbreviation cues remain immutable; they are reference apparatus, not target ritual actions, dialogue roles or conditional spans. No in-clause conditional word variant is printed. No body, target role, appointment condition, English collation or rights basis is added."
-
-[[sections.element_provenance]]
-element = "praefatio-de-ascensione"
-lang = "la"
-relation = "antecedent"
-collation = "collated"
-collation_finding = "Missale Romanum, editio typica 1962; Praefationes sine cantu n. 1078, printed p. 289, artifact PDF p. 370; complete bounded source clause and target counterpart, plus source-owned opening/conclusion/Sanctus context, directly read at 200 and 400 dpi on 2026-10-20"
-note = "ANTECEDENT WORDING, COLLATED WITH WORD AGREEMENT LIMITED TO THE HELD CLAUSE AND SEPARATELY CHECKED CONCLUSION (C26 remaining Prefaces). The 1861 Cummiskey facing Latin (praefationes-la seq 19, printed p./pp. xxxi, IA leaf/leaves n41, artifact PDF p./pp. 42) was collated on 2026-10-20 with 1962 Praefationes sine cantu n. 1078, printed p. 289, artifact PDF p. 370, both read directly at 200 and 400 dpi. All 27 words of the bounded proper clause, Per Christum through participes, agree exactly under the declared orthography, including source cœlum against target cælum. The literal source ending † Et ideo, &c. invokes the source-owned Christmas conclusion from its dagger onward (Latin wording: praefationes-la seq 9, artifact PDF pp. 40-41; dagger instruction: praefationes-en seq 8, artifact PDF p. 40); all 22 words of that conclusion agree with this target. The Nativity infusit variant precedes its dagger and is outside this reference. The initial source asterisk calls for the common opening through æterne Deus.; that separate source-owned opening also agrees with this target, but the current inventory inserts it only for the Holy Spirit Preface. The unchanged partial cue-bearing row is not promoted to target wording: the source-cue/conclusion allowance does not itself supply the missing opening/full-conclusion assembly. This is a finding about the held clause and its separately checked return, not a claim that a complete Preface is represented. Source asterisk, dagger and abbreviation cues remain immutable; they are reference apparatus, not target ritual actions, dialogue roles or conditional spans. No in-clause conditional word variant is printed. No body, target role, appointment condition, English collation or rights basis is added."
-
-# Scratch-only conservative element-provenance proposal for the existing praefatio section.
-# No target_wording is assigned: Paschal has word variants; BVM internal forms remain unexpanded.
-# Exact held target identity: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-# SHA256 648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a.
-
-[[sections.element_provenance]]
-element = "praefatio-paschalis"
-lang = "la"
-relation = "antecedent"
-collation = "collated"
-collation_finding = "Missale Romanum, editio typica 1962, Praefationes sine cantu, Praefatio paschalis, n. 1077, printed p. 288, artifact PDF p. 369; direct 200 and 400 dpi page-image comparison on 2026-10-20"
-note = "ANTECEDENT WORDING, COLLATED WITH VARIANTS. The 1861 Cummiskey facing Latin (praefationes-la seq 17, printed pp. xxx-xxxi, IA leaves 40-41), compared in full at 200 and 400 dpi on 2026-10-20 with the 1962 typical edition, Praefatio paschalis, n. 1077, printed p. 288, artifact PDF p. 369. All fixed words outside the temporal alternatives agree, allowing j, ligatures, stress accents, capitals and pointing. The source literally prints [ in hoc potissimum nocte vel die, vel ] in hoc; the target prescribes hac for the Vigil-night and Easter-day forms and potissimum after in hoc for later use. These inflectional and missing-word differences are retained, so no word-exact target wording is asserted and no conditional form is silently selected. The source begins at Vere dignum and needs no common opening. Its dagger Et ideo, &c. refers to the Christmas conclusion at source seq 9, whose 22 words through dicentes agree with this target; the abbreviated cue itself is not a complete conclusion. Source reference marks and conditional alternatives are not dialogue roles. The defective source English ending and its antecedent/uncollated qualification are unaffected."
-
-[[sections.element_provenance]]
-element = "praefatio-de-beata-maria-virgine"
-lang = "la"
-relation = "antecedent"
-collation = "collated"
-collation_finding = "Missale Romanum, editio typica 1962, Praefationes sine cantu, Praefatio de beata Maria Virgine, n. 1083, printed p. 294, artifact PDF p. 375; direct 200 and 400 dpi page-image comparison on 2026-10-20"
-note = "ANTECEDENT WORDING, BOUNDED COLLATION COMPLETED. The 1861 Cummiskey facing Latin clause (praefationes-la seq 23, printed p. xxxii, IA leaf 42), compared in full at 200 and 400 dpi on 2026-10-20 with the 1962 typical edition, Praefatio de beata Maria Virgine, n. 1083, printed p. 294, artifact PDF p. 375. The fixed clause words correspond, allowing Jesum/Iesum, ligatures, stress accents, capitals and pointing; the source spelling colaudare has one l where the target has collaudare, and is retained. The source N. and its double-dagger footnote leave the festival name to be supplied; the target prints a blank with explicit named-mystery, feast, Saturday and votive forms. This comparison does not implement or establish every internal substitution, and no unqualified exact-target wording is asserted. Independently checked source context supplies the common opening through aeterne Deus and the continuation from Per quem through dicentes; both agree with this target under the stated spelling transformations. The closing source Per quem cue resumes after the common Per Christum Dominum nostrum, which must not be repeated. The row remains an abbreviated clause, not an already assembled complete Preface. The asterisks and double dagger are source reference apparatus, not spoken words or dialogue roles; no source heading or footnote is promoted as a target rubric."
-
-# Bounded provenance suggestion within the existing praefatio section only.
-# No target_wording: the unchanged row retains an abbreviated conclusion cue.
-[[sections.element_provenance]]
-element = "praefatio-de-apostolis"
-lang = "la"
-relation = "antecedent"
-collation = "collated"
-collation_finding = "Missale Romanum, editio typica 1962; Praefationes sine cantu, Praefatio de Apostolis, n. 1085, printed p. 296, artifact PDF p. 377; independently read against source PDF p. 43 at 200 and 400 dpi on 2026-10-20"
-note = "ANTECEDENT WORDING, BOUNDED COLLATION COMPLETE; ABBREVIATED CONCLUSION. The 1861 Cummiskey facing Latin (praefationes-la seq 25, printed p. xxxii, IA leaf 42), independently checked on its page image against the 1962 Apostles Preface at n. 1085, printed p. 296, artifact PDF p. 377, at 200 and 400 dpi on 2026-10-20. Every one of the thirty-nine fixed words from VERE through pastores agrees, allowing j/i, ae ligatures, capitals, stress accents and pointing transformations only. This source has its own opening and needs no prefixed common initium. Its unchanged final * Et ideo, &c. is an abbreviated conclusion cue, while the target prints the full conclusion and Sanctus; no word-exact target_wording is declared for the unchanged stored row. The source asterisk is retained literally and no common or Christmas conclusion is silently appended. No internal conditional words, target applicability rule or dialogue role is inferred from this source body or heading."
-
-
 
 [[sections.english_replacements]]
 element = "praefatio-de-ss-trinitate"
@@ -3738,6 +3680,236 @@ rubrica-nota-asterisci = "lay-apparatus-no-missal-counterpart"
 rubrica-nota-obeli = "lay-apparatus-no-missal-counterpart"
 rubrica-nota-nominis = "lay-apparatus-no-missal-counterpart"
 
+
+[[sections.latin_replacements]]
+element = "praefatio-de-ss-trinitate"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la", text_sha256 = "2df3164c8f20978ba3fa1d05ae174cc14ead4be70bcec47571c1a9a18a5db228" }
+latin_turns = [{ key = "source-body", seq = [3] }]
+turns_basis = "Mame 1922 printed p. 335-336, artifact PDF p. 449-450, Praefationes sine cantu, In Festo Sanctissimae Trinitatis et in Dominicis per annum; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.coldrev-1962-ordinary-praefatio-de-ss-trinitate; visually verified on 200 dpi Mame 1922 and CMAA 1962 page images on 2026-11-25."
+
+[sections.latin_replacements.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.coldrev-1962-ordinary-exact-latin"
+element = "praefatio-de-ss-trinitate"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "Missale Romanum, editio typica 1962; Praefationes sine cantu, Praefatio de SS. Trinitate, n. 1082, printed p. 293, artifact PDF p. 374; page-image collation 2026-11-25"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin (printed p. 335-336, artifact PDF p. 449-450) replacing abbreviated or split 1861 Cummiskey Latin; collated word-for-word against Missale Romanum 1962 (n. 1082, printed p. 293, artifact PDF p. 374) on 200 dpi page images on 2026-11-25. Differences from 1962 are declared ligature, accent, i/j, capitalization, pointing, and cross-glyph normalization only."
+
+[[sections.latin_replacements]]
+element = "praefatio-de-nativitate"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la", text_sha256 = "d4e0e04439f3e12732a228e9cb536a1c3e3154ac4f5d399c832d3bec28bc07b7" }
+latin_turns = [{ key = "source-body", seq = [4] }]
+turns_basis = "Mame 1922 printed p. 329, artifact PDF p. 443, Praefationes sine cantu, In Nativitate Domini; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.coldrev-1962-ordinary-praefatio-de-nativitate; visually verified on 200 dpi Mame 1922 and CMAA 1962 page images on 2026-11-25."
+
+[sections.latin_replacements.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.coldrev-1962-ordinary-exact-latin"
+element = "praefatio-de-nativitate"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "Missale Romanum, editio typica 1962; Praefationes sine cantu, Praefatio de Nativitate Domini, n. 1073, printed p. 284, artifact PDF p. 365; page-image collation 2026-11-25"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin (printed p. 329, artifact PDF p. 443) replacing abbreviated or split 1861 Cummiskey Latin; collated word-for-word against Missale Romanum 1962 (n. 1073, printed p. 284, artifact PDF p. 365) on 200 dpi page images on 2026-11-25. Differences from 1962 are declared ligature, accent, i/j, capitalization, pointing, and cross-glyph normalization only."
+
+[[sections.latin_replacements]]
+element = "praefatio-de-epiphania"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la", text_sha256 = "67dbf8684573463cc4e06c3e32feca8f9c29a72be7c77a70bfb124320f3c4b2c" }
+latin_turns = [{ key = "source-body", seq = [5] }]
+turns_basis = "Mame 1922 printed p. 330, artifact PDF p. 444, Praefationes sine cantu, In Epiphania Domini; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.coldrev-1962-ordinary-praefatio-de-epiphania; visually verified on 200 dpi Mame 1922 and CMAA 1962 page images on 2026-11-25."
+
+[sections.latin_replacements.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.coldrev-1962-ordinary-exact-latin"
+element = "praefatio-de-epiphania"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "Missale Romanum, editio typica 1962; Praefationes sine cantu, Praefatio de Epiphania Domini, n. 1074, printed p. 285, artifact PDF p. 366; page-image collation 2026-11-25"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin (printed p. 330, artifact PDF p. 444) replacing abbreviated or split 1861 Cummiskey Latin; collated word-for-word against Missale Romanum 1962 (n. 1074, printed p. 285, artifact PDF p. 366) on 200 dpi page images on 2026-11-25. Differences from 1962 are declared ligature, accent, i/j, capitalization, pointing, and cross-glyph normalization only."
+
+[[sections.latin_replacements]]
+element = "praefatio-de-quadragesima"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la", text_sha256 = "adadae25ad59421ddf03fd64580e7a2abfe297f2b095edffc08609a015f577b5" }
+latin_turns = [{ key = "source-body", seq = [6] }]
+turns_basis = "Mame 1922 printed p. 331, artifact PDF p. 445, Praefationes sine cantu, In Quadragesima; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.coldrev-1962-ordinary-praefatio-de-quadragesima; visually verified on 200 dpi Mame 1922 and CMAA 1962 page images on 2026-11-25."
+
+[sections.latin_replacements.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.coldrev-1962-ordinary-exact-latin"
+element = "praefatio-de-quadragesima"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "Missale Romanum, editio typica 1962; Praefationes sine cantu, Praefatio de Quadragesima, n. 1075, printed p. 286, artifact PDF p. 367; page-image collation 2026-11-25"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin (printed p. 331, artifact PDF p. 445) replacing abbreviated or split 1861 Cummiskey Latin; collated word-for-word against Missale Romanum 1962 (n. 1075, printed p. 286, artifact PDF p. 367) on 200 dpi page images on 2026-11-25. Differences from 1962 are declared ligature, accent, i/j, capitalization, pointing, and cross-glyph normalization only."
+
+[[sections.latin_replacements]]
+element = "praefatio-de-sancta-cruce"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la", text_sha256 = "35c82dbd7c3b5cc2299eb47c7b5fe5e52cef0d56b3138aafd545beca301beb93" }
+latin_turns = [{ key = "source-body", seq = [7] }]
+turns_basis = "Mame 1922 printed p. 331-332, artifact PDF p. 445-446, Praefationes sine cantu, In Missis de Passione et de S. Cruce; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.coldrev-1962-ordinary-praefatio-de-sancta-cruce; visually verified on 200 dpi Mame 1922 and CMAA 1962 page images on 2026-11-25."
+
+[sections.latin_replacements.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.coldrev-1962-ordinary-exact-latin"
+element = "praefatio-de-sancta-cruce"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "Missale Romanum, editio typica 1962; Praefationes sine cantu, Praefatio de Sancta Cruce, n. 1076, printed p. 287, artifact PDF p. 368; page-image collation 2026-11-25"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin (printed p. 331-332, artifact PDF p. 445-446) replacing abbreviated or split 1861 Cummiskey Latin; collated word-for-word against Missale Romanum 1962 (n. 1076, printed p. 287, artifact PDF p. 368) on 200 dpi page images on 2026-11-25. Differences from 1962 are declared ligature, accent, i/j, capitalization, pointing, and cross-glyph normalization only."
+
+[[sections.latin_replacements]]
+element = "praefatio-paschalis"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la", text_sha256 = "d266c88768a9b7b7bc8a4bf87545c43d20375b6c2f82ab7d252ee651a57c2596" }
+latin_turns = [{ key = "source-body", seq = [8] }]
+turns_basis = "Mame 1922 printed p. 332, artifact PDF p. 446, Praefationes sine cantu, In Paschate (includes '(vel in hoc potissimum)' matching 1962 n. 1077); passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.coldrev-1962-ordinary-praefatio-paschalis; visually verified on 200 dpi Mame 1922 and CMAA 1962 page images on 2026-11-25."
+
+[sections.latin_replacements.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.coldrev-1962-ordinary-exact-latin"
+element = "praefatio-paschalis"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "Missale Romanum, editio typica 1962; Praefationes sine cantu, Praefatio paschalis, n. 1077, printed p. 288, artifact PDF p. 369; page-image collation 2026-11-25"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin (printed p. 332, artifact PDF p. 446) replacing abbreviated or split 1861 Cummiskey Latin; collated word-for-word against Missale Romanum 1962 (n. 1077, printed p. 288, artifact PDF p. 369) on 200 dpi page images on 2026-11-25. Differences from 1962 are declared ligature, accent, i/j, capitalization, pointing, and cross-glyph normalization only."
+
+[[sections.latin_replacements]]
+element = "praefatio-de-ascensione"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la", text_sha256 = "b7bf31937c0c83ae6a30d86a14f914d992e7a007200919d0f3678a420f708a0e" }
+latin_turns = [{ key = "source-body", seq = [9] }]
+turns_basis = "Mame 1922 printed p. 333, artifact PDF p. 447, Praefationes sine cantu, In Ascensione Domini; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.coldrev-1962-ordinary-praefatio-de-ascensione; visually verified on 200 dpi Mame 1922 and CMAA 1962 page images on 2026-11-25."
+
+[sections.latin_replacements.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.coldrev-1962-ordinary-exact-latin"
+element = "praefatio-de-ascensione"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "Missale Romanum, editio typica 1962; Praefationes sine cantu, Praefatio de Ascensione Domini, n. 1078, printed p. 289, artifact PDF p. 370; page-image collation 2026-11-25"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin (printed p. 333, artifact PDF p. 447) replacing abbreviated or split 1861 Cummiskey Latin; collated word-for-word against Missale Romanum 1962 (n. 1078, printed p. 289, artifact PDF p. 370) on 200 dpi page images on 2026-11-25. Differences from 1962 are declared ligature, accent, i/j, capitalization, pointing, and cross-glyph normalization only."
+
+[[sections.latin_replacements]]
+element = "praefatio-de-beata-maria-virgine"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la", text_sha256 = "0d4e724fb064774440ab0a60cf7a9279916eb2494ebb8328a5e051915bcd86d5" }
+latin_turns = [{ key = "source-body", seq = [10] }]
+turns_basis = "Mame 1922 printed p. 336-337, artifact PDF p. 450-451, Praefationes sine cantu, In Festis et Missis votivis B. Mariae Virginis (includes '***' placeholder matching 1962 n. 1083); passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.coldrev-1962-ordinary-praefatio-de-beata-maria-virgine; visually verified on 200 dpi Mame 1922 and CMAA 1962 page images on 2026-11-25."
+
+[sections.latin_replacements.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.coldrev-1962-ordinary-exact-latin"
+element = "praefatio-de-beata-maria-virgine"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "Missale Romanum, editio typica 1962; Praefationes sine cantu, Praefatio de beata Maria Virgine, n. 1083, printed p. 294, artifact PDF p. 375; page-image collation 2026-11-25"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin (printed p. 336-337, artifact PDF p. 450-451) replacing abbreviated or split 1861 Cummiskey Latin; collated word-for-word against Missale Romanum 1962 (n. 1083, printed p. 294, artifact PDF p. 375) on 200 dpi page images on 2026-11-25. Differences from 1962 are declared ligature, accent, i/j, capitalization, pointing, and cross-glyph normalization only."
+
+[[sections.latin_replacements]]
+element = "praefatio-de-apostolis"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la", text_sha256 = "16281f600b1090bdd1b21b725b8c1564afb0b46f4b76c66eb47c4a84fbbd72b7" }
+latin_turns = [{ key = "source-body", seq = [11] }]
+turns_basis = "Mame 1922 printed p. 338, artifact PDF p. 452, Praefationes sine cantu, In Festis et Missis votivis Apostolorum vel Evangelistarum; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.coldrev-1962-ordinary-praefatio-de-apostolis; visually verified on 200 dpi Mame 1922 and CMAA 1962 page images on 2026-11-25."
+
+[sections.latin_replacements.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.coldrev-1962-ordinary-exact-latin"
+element = "praefatio-de-apostolis"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "Missale Romanum, editio typica 1962; Praefationes sine cantu, Praefatio de Apostolis, n. 1085, printed p. 296, artifact PDF p. 377; page-image collation 2026-11-25"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin (printed p. 338, artifact PDF p. 452) replacing abbreviated or split 1861 Cummiskey Latin; collated word-for-word against Missale Romanum 1962 (n. 1085, printed p. 296, artifact PDF p. 377) on 200 dpi page images on 2026-11-25. Differences from 1962 are declared ligature, accent, i/j, capitalization, pointing, and cross-glyph normalization only."
+
+
+[[sections.english_replacements]]
+element = "praefatio-communis"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en", text_sha256 = "53bf73c99bbc31186118ee8dc0158a7971055033b041090bf2a5d47084b9fe2f" }
+english_turns = [{ key = "source-body", seq = [1] }]
+turns_basis = "Lasance 1946 printed p. 775, artifact PDF p. 785: Complete Common Preface English body on printed p. 775 / PDF p. 785 before separately printed Sanctus. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-ordinary-praefatio-communis-en."
+
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-ordinary-lasance-en"
+element = "praefatio-communis"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE 1946 HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. Page-image-verified ordinary-page English from Lasance/Walsh 1945 revision, 1946 printing (printed p. 775, artifact PDF p. 785, checked 2026-11-25), replacing 1861 Cummiskey English. Not an approved liturgical translation."
+
+[[sections.english_replacements]]
+element = "sanctus"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en", text_sha256 = "802ecf89906bfffb158b2960b1e1db574d3d2ebc95095b2c3af5ccf23b83fca1" }
+english_turns = [{ key = "source-body", seq = [2] }]
+turns_basis = "Lasance 1946 printed p. 775, artifact PDF p. 785: Complete Sanctus English body on printed p. 775 / PDF p. 785. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-ordinary-sanctus-en."
+
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-ordinary-lasance-en"
+element = "sanctus"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE 1946 HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. Page-image-verified ordinary-page English from Lasance/Walsh 1945 revision, 1946 printing (printed p. 775, artifact PDF p. 785, checked 2026-11-25), replacing 1861 Cummiskey English. Not an approved liturgical translation."
+
+[[sections.english_replacements]]
+element = "sanctus-post-praefationem"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en", text_sha256 = "802ecf89906bfffb158b2960b1e1db574d3d2ebc95095b2c3af5ccf23b83fca1" }
+english_turns = [{ key = "source-body", seq = [3] }]
+turns_basis = "Lasance 1946 printed p. 775, artifact PDF p. 785: Complete Sanctus English body after proper Prefaces, printed p. 775 / PDF p. 785. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-ordinary-sanctus-post-praefationem-en."
+
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-ordinary-lasance-en"
+element = "sanctus-post-praefationem"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE 1946 HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. Page-image-verified ordinary-page English from Lasance/Walsh 1945 revision, 1946 printing (printed p. 775, artifact PDF p. 785, checked 2026-11-25), replacing 1861 Cummiskey English. Not an approved liturgical translation."
+
+[[sections.english_replacements]]
+element = "praefatio-de-spiritu-sancto-initium"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en", text_sha256 = "67f3e502b200fe280efe3672e915f96e393b09dd2217d0b03d0c57d7d93a62d5" }
+english_turns = [{ key = "source-body", seq = [4] }]
+turns_basis = "Lasance 1946 printed p. 809, artifact PDF p. 819: Opening clause of the Preface for Pentecost through 'eternal God:' on printed p. 809 / PDF p. 819. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-ordinary-praefatio-de-spiritu-sancto-initium-en."
+
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-ordinary-lasance-en"
+element = "praefatio-de-spiritu-sancto-initium"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE 1946 HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. Page-image-verified ordinary-page English from Lasance/Walsh 1945 revision, 1946 printing (printed p. 809, artifact PDF p. 819, checked 2026-11-25), replacing 1861 Cummiskey English. Not an approved liturgical translation."
+
+[[sections.english_replacements]]
+element = "praefatio-de-spiritu-sancto"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en", text_sha256 = "e914b1c9da327306804afb13cdb7e7a75eadc48d7e1ccff7e1ff604ace791773" }
+english_turns = [{ key = "source-body", seq = [5] }]
+turns_basis = "Lasance 1946 printed p. 809-810, artifact PDF p. 819-820: Proper clause of the Preface for Pentecost from 'Through Christ our Lord:' through 'unceasingly repeat:' on printed pp. 809-810 / PDF pp. 819-820, including conditional '(this day)'. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-ordinary-praefatio-de-spiritu-sancto-en."
+
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-ordinary-lasance-en"
+element = "praefatio-de-spiritu-sancto"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE 1946 HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. Page-image-verified ordinary-page English from Lasance/Walsh 1945 revision, 1946 printing (printed p. 809-810, artifact PDF p. 819-820, checked 2026-11-25), replacing 1861 Cummiskey English. Not an approved liturgical translation."
+
 [[sections]]
 key = "canon"
 name = "The Canon of the Mass"
@@ -4100,22 +4272,6 @@ collation = "collated"
 collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-consecratio; n. 1102, printed p. 306, artifact PDF p. 387"
 target_wording = "word-exact"
 note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (canon-missae-la seq 13, printed p. xxxv, IA leaf 45), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1102, printed p. 306, artifact PDF p. 387, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. Flagged deletion was OCR."
-
-[[sections.element_provenance]]
-element = "simili-modo"
-lang = "la"
-relation = "antecedent"
-collation = "collated"
-collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-consecratio; n. 1103, printed p. 307, artifact PDF p. 388"
-note = "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (canon-missae-la seq 15, printed p. xxxv-xxxvi, IA leaf 45-46), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1103, printed p. 307, artifact PDF p. 388, read on the page image. Under the 2026-09-03 words rule it is a variant, so this antecedent is not the 1962 wording: insert at 1861 token 24: element boundary only: the 1962 ends n. 1103 with the six-word invitation that the 1861 places at the head of its form row (forma-sanguinis); the two elements together agree word for word. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing; coenatum/cenatum (spelling). Boundary difference, not a wording difference."
-
-[[sections.element_provenance]]
-element = "forma-sanguinis"
-lang = "la"
-relation = "antecedent"
-collation = "collated"
-collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-consecratio; n. 1104, printed p. 307, artifact PDF p. 388"
-note = "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (canon-missae-la seq 16, printed p. xxxvi, IA leaf 46), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1104, printed p. 307, artifact PDF p. 388, read on the page image. Under the 2026-09-03 words rule it is a variant, so this antecedent is not the 1962 wording: delete at 1861 token 0-5: element boundary only: the 1861 opens the form with the six-word invitation that the 1962 prints at the end of n. 1103; the rest agrees word for word. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing. Boundary difference, not a wording difference."
 
 [[sections.element_provenance]]
 element = "haec-quotiescumque"
@@ -4643,6 +4799,57 @@ target_wording = "word-exact"
 counterpart = "rubric-at-place"
 reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
 note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 344, original PDF p. 458, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 310, artifact PDF p. 391, rubric before n. 1110: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own."
+
+
+[[sections.latin_replacements]]
+element = "simili-modo"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la-turn-divided-2026-10-20", text_sha256 = "f2341bdacb05dee48da3da52f433b68a8e0171b14767439f227af9f5e432818f" }
+latin_turns = [{ key = "priest-1", seq = [12], speaker = "priest" }]
+turns_basis = "Mame 1922 printed p. 342, artifact PDF p. 456, Canon Missae, right column, through 'Accipite, et bibite ex eo omnes.' (matching 1962 n. 1103); passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.coldrev-1962-ordinary-simili-modo; visually verified on 200 dpi Mame 1922 and CMAA 1962 page images on 2026-11-25."
+
+[sections.latin_replacements.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.coldrev-1962-ordinary-exact-latin"
+element = "simili-modo"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-consecratio; n. 1103, printed p. 307, artifact PDF p. 388"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin (printed p. 342, artifact PDF p. 456) replacing abbreviated or split 1861 Cummiskey Latin; collated word-for-word against Missale Romanum 1962 (n. 1103, printed p. 307, artifact PDF p. 388) on 200 dpi page images on 2026-11-25. Differences from 1962 are declared ligature, accent, i/j, capitalization, pointing, and cross-glyph normalization only."
+
+[[sections.latin_replacements]]
+element = "forma-sanguinis"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la-turn-divided-2026-10-20", text_sha256 = "e24fa7338287f0b048d929fee33b3d05290c4bb6adcd5b4dad623c180a26f4fc" }
+latin_turns = [{ key = "priest-1", seq = [13], speaker = "priest" }]
+turns_basis = "Mame 1922 printed p. 343, artifact PDF p. 457, Canon Missae, left column, chalice consecration words opening 'Hic est enim Calix Sanguinis mei' (matching 1962 n. 1104); passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.coldrev-1962-ordinary-forma-sanguinis; visually verified on 200 dpi Mame 1922 and CMAA 1962 page images on 2026-11-25."
+
+[sections.latin_replacements.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.coldrev-1962-ordinary-exact-latin"
+element = "forma-sanguinis"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-consecratio; n. 1104, printed p. 307, artifact PDF p. 388"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin (printed p. 343, artifact PDF p. 457) replacing abbreviated or split 1861 Cummiskey Latin; collated word-for-word against Missale Romanum 1962 (n. 1104, printed p. 307, artifact PDF p. 388) on 200 dpi page images on 2026-11-25. Differences from 1962 are declared ligature, accent, i/j, capitalization, pointing, and cross-glyph normalization only."
+
+
+[[sections.english_replacements]]
+element = "communicantes"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en-turn-divided-2026-10-20", text_sha256 = "2c75cd7908ff7e0ef2fd27a1ec9d9dc0f945143a7a94737d407c9970c0ad4fb5" }
+english_turns = [{ key = "priest-1", seq = [6], speaker = "priest" }]
+turns_basis = "Lasance 1946 printed p. 778, artifact PDF p. 788: Common Communicantes head on printed p. 778 / PDF p. 788 cut at 'our God and our Lord:' before the 1962 Canon St. Joseph continuation. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-ordinary-communicantes-en."
+
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-ordinary-lasance-en"
+element = "communicantes"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE 1946 HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. Page-image-verified ordinary-page English from Lasance/Walsh 1945 revision, 1946 printing (printed p. 778, artifact PDF p. 788, checked 2026-11-25), replacing 1861 Cummiskey English. Not an approved liturgical translation."
 
 [[sections]]
 key = "communio"
@@ -5307,8 +5514,10 @@ artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revise
 element = "agnus-dei-defunctorum"
 column = "latin"
 relation = "antecedent"
-collation = "uncollated"
-note = "Historical Latin witness to the three Requiem invocations. Lasance/Walsh p. 788 (PDF p. 787), In Masses for the dead only."
+collation = "collated"
+collation_finding = "Missale Romanum, editio typica 1962, Ordo Missae n. 1120, printed p. 318, artifact PDF p. 399; corroborated by Mame 1922 printed p. 350, artifact PDF p. 464; page-image collation 2026-11-25"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. Three complete Requiem invocations printed in Lasance/Walsh p. 788 (PDF p. 787); collated word-for-word against Missale Romanum 1962 n. 1120 (printed p. 318 / PDF p. 399) and Mame 1922 (printed p. 350 / PDF p. 464) on 200 dpi page images on 2026-11-25."
 
 [[sections]]
 key = "conclusio"
@@ -6630,6 +6839,46 @@ office_creed_only = [
   "sexagesima",
 ]
 
+
+
+[[sections.element_provenance]]
+element = "dominus-vobiscum-defunctorum"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; n. 1131, printed p. 322, artifact PDF p. 403; corroborated by Mame 1922 printed p. 352, artifact PDF p. 466; page-image collation 2026-11-25"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. The two greeting turns repeated before the Requiem dismissal agree word-for-word with Missale Romanum 1962 Ordo Missae n. 1131 (printed p. 322 / PDF p. 403) and Mame 1922 (printed p. 352 / PDF p. 466); visually verified on 200 dpi page images on 2026-11-25."
+
+[[sections.english_replacements]]
+element = "dominus-vobiscum-ite-missa-est"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en-turn-divided-complete-2026-10-20", text_sha256 = "4d9d78c3066b5a726715366b61622afd5710484f2f96fa83a25bcb7cebcc199f" }
+english_turns = [{ key = "priest-1", seq = [7], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." }, { key = "server-1", seq = [8], speaker = "server", dialogue_role = "response", printed_marker = "R." }, { key = "priest-2", seq = [9], speaker = "priest", printed_marker = "P." }, { key = "server-2", seq = [10], speaker = "server", dialogue_role = "response", printed_marker = "R." }]
+turns_basis = "Lasance 1946 printed p. 793, artifact PDF p. 803: Four printed turns of the final greeting and Ite, missa est dismissal on printed p. 793 / PDF p. 803; dialogue_role verified on 1962 Ordo Missae nn. 1131-1132 (printed pp. 322-323 / PDF pp. 403-404). passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-ordinary-dominus-vobiscum-ite-missa-est-en."
+
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-ordinary-lasance-en"
+element = "dominus-vobiscum-ite-missa-est"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE 1946 HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. Page-image-verified ordinary-page English from Lasance/Walsh 1945 revision, 1946 printing (printed p. 793, artifact PDF p. 803, checked 2026-11-25), replacing 1861 Cummiskey English. Not an approved liturgical translation."
+
+[[sections.english_replacements]]
+element = "dominus-vobiscum-defunctorum"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en-turn-divided-complete-2026-10-20", text_sha256 = "d074c6b9d23233d3f8583f5f699677b7cc3c452973117c7527edff69d072a049" }
+english_turns = [{ key = "priest-1", seq = [11], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." }, { key = "server-1", seq = [12], speaker = "server", dialogue_role = "response", printed_marker = "R." }]
+turns_basis = "Lasance 1946 printed p. 793, artifact PDF p. 803: Two printed turns of the final greeting before Requiem dismissal on printed p. 793 / PDF p. 803; dialogue_role verified on 1962 Ordo Missae n. 1131 (printed p. 322 / PDF p. 403). passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-ordinary-dominus-vobiscum-defunctorum-en."
+
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-ordinary-lasance-en"
+element = "dominus-vobiscum-defunctorum"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE 1946 HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. Page-image-verified ordinary-page English from Lasance/Walsh 1945 revision, 1946 printing (printed p. 793, artifact PDF p. 803, checked 2026-11-25), replacing 1861 Cummiskey English. Not an approved liturgical translation."
 
 [[special_mass_frames]]
 mass = "mass-of-the-lords-supper"

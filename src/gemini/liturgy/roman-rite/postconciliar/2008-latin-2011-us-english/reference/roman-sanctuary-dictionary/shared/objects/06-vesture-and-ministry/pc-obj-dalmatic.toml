@@ -1,0 +1,80 @@
+schema_version = 1
+id = "pc-obj-dalmatic"
+category = "vesture-and-ministry"
+sort_order = 606
+plate_id = "pc-plt-08-vesture-ordained"
+composition_plate_ids = []
+plate_position = "Right figure, wide-sleeved rectangular outer vestment worn over the diagonal stole (Plate VIII)"
+preferred_english_name = "Dalmatic"
+latin_headword = "Dalmatica"
+alternate_english_names = ["Deacon's Dalmatic"]
+alternate_latin_names = ["Dalmatica diaconalis"]
+pronunciation_key = "dahl-MAH-tee-kah"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "provided"
+scope_level = "universal-roman"
+territorial_note = "Universal Roman law appoints the dalmatic as the proper vestment of the deacon (GIRM 338), permitting omission out of necessity or on lesser occasions while Redemptionis Sacramentum 125 praises refraining from omitting it; United States GIRM 346e and 346h govern funeral and solemnity color options."
+
+[identification]
+summary = "The dalmatic is the wide-sleeved, knee-length outer tunic proper to the deacon, worn at Mass and solemn celebrations over the alb and the diagonal diaconal stole."
+appearance = "Illustrated on the right figure of Plate VIII as a structured, wide-sleeved rectangular vestment ornamented with two vertical woven stripes (clavi) descending from the shoulders; the deacon's diagonal stole sits underneath it, with only its fringed end peeking cleanly below the deacon's right side."
+placement_and_use = "At Mass, the deacon vests in the alb (with amice and cincture as needed), puts on the stole diagonally from his left shoulder to his right hip, and wears the dalmatic over the stole—never the stole on top of the dalmatic (GIRM 336, 338, 340). Although GIRM 338 permits the dalmatic to be omitted out of necessity or on account of a lesser degree of solemnity, Redemptionis Sacramentum 125 commends keeping the dalmatic in regular use rather than routinely omitting it. On major solemnities and pontifical Masses, a bishop may also wear a lightweight pontifical dalmatic beneath his chasuble (Caeremoniale Episcoporum 1984 no. 56). Lay ministers—including instituted acolytes and altar servers—never wear a dalmatic (RS 126)."
+liturgical_colors = "Follows GIRM 346 seasonal colors matching the priest celebrant's chasuble (white, red, green, violet, rose, black where customary, or gold/silver on more solemn occasions under US GIRM 346h)."
+
+[ministers_and_handling]
+ordinary_ministers = ["deacon", "bishop"]
+prepares = ["sacristan"]
+server_boundary = "clergy-reserved"
+server_boundary_summary = "Strictly reserved to deacons (and bishops beneath the chasuble at major pontifical celebrations); never worn by instituted acolytes, instituted lectors, extraordinary ministers, or altar servers (RS 126). Servers recognize the sleeved dalmatic immediately to distinguish a deacon from a priest."
+safety_warning = ""
+
+[audience_text]
+altar_server = "Notice the clear visual difference on Plate VIII: the priest wears the draped, sleeveless chasuble, while the deacon wears the wide-sleeved, straight-sided dalmatic with vertical stripes. Because the deacon wears his diagonal stole underneath the dalmatic, only its fringed tip peeks out near his right knee (or you see the full diagonal stole whenever a deacon serves without a dalmatic, as shown in the center figure). Never put on a dalmatic—it belongs strictly to ordained deacons (RS 126)."
+sacristan = "Lay out a clean dalmatic matching the seasonal color of the celebrant's chasuble whenever a deacon ministers at Mass (GIRM 338, 346; RS 125), paired with a diaconal stole, alb, and cincture as needed. Verify that wide sleeves and side fastenings are neat and uncreased, and keep a lightweight pontifical dalmatic ready when the diocesan bishop celebrates major solemnities (CE 1984 no. 56)."
+general_reader = "Distinguished from the priest's flowing chasuble by its wide sleeves and twin vertical bands, the dalmatic has been the hallmark garment of the Roman deacon since late antiquity. Worn over the alb and the deacon's diagonal stole, it visually identifies the ordained minister who proclaims the Gospel, prepares the altar, and assists with the chalice."
+
+[relationships]
+confusable_with = ["pc-obj-chasuble", "pc-obj-hist-subdeacon-tunicle-maniple"]
+related_objects = ["pc-obj-alb", "pc-obj-stole", "pc-obj-cincture", "pc-obj-amice"]
+
+[symbolism]
+has_sourced_symbolism = true
+text = "The dalmatic outwardly manifests the diaconal order of service within the Body of Christ (GIRM 335, 338), and when worn by a bishop beneath his chasuble on solemnities it expresses the fullness of Holy Orders (CE 1984 no. 56). In devotional tradition distinct from the General Instruction, the traditional vesting prayer echoes Is 61:10 (“for he hath clothed me with the garments of salvation: and with the robe of justice he hath covered me”), while Amalarius of Metz links its wide sleeves to generous charity toward widows and orphans (James 1:27)."
+evidence_class = "liturgical-source"
+attribution = "GIRM 335, 338; Caeremoniale Episcoporum (1984) 56; Is 61:10; James 1:27; traditional Roman vesting prayer; Amalarius of Metz, Liber Officialis II.21"
+
+[counterpart_1962]
+relationship = "continued"
+locus_1962 = "Missale Romanum (1962), Rubricae Generales 134, 137; Caeremoniale Episcoporum (1948) II.8 n. 18"
+comparison = "The dalmatic continues from the 1962 Roman Missal (RG 137) as the proper outer vestment of the deacon over alb and diagonal stole. Postconciliar GIRM 338 introduces a limited omission faculty for necessity or lesser solemnity (discouraged by RS 125), while Caeremoniale Episcoporum (1984) no. 56 simplifies episcopal solemn vesting to a single dalmatic beneath the chasuble without a separate tunicle."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N36"
+primary_loci = [
+  "GIRM 119b, 335–336, 338, 340, 342–346",
+  "Redemptionis Sacramentum 125–126",
+  "Caeremoniale Episcoporum (1984) 56",
+]
+source_bindings = [
+  "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002",
+  "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021",
+  "edition.catholic-church.rubricae-breviarii-et-missalis-romani.latin-aas-52-1960",
+  "edition.amalarius-of-metz.liber-de-ordine-antiphonarii.latin-migne-pl-105",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

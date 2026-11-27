@@ -1,6 +1,8 @@
 """The Propers of the Mass: any formulary of any missal, read without a date."""
 from __future__ import annotations
 
+import re
+
 from textual import on, work
 from textual.binding import Binding
 from textual.containers import Horizontal, Vertical
@@ -8,13 +10,49 @@ from textual.widgets import Input, OptionList, Static
 from textual.widgets.option_list import Option
 
 from .. import bridge, missal
-from ..dialogs import Ask, Pick, Reading
+from ..dialogs import Ask, Pick, Reading, StudyDialog
 from ..reader_navigation import MissalSurface, ReadingNavigation, share
 from ..repo import Refused
 from ..widgets import Ink, MissalPanel, Panel, ScrollPanel
 
 ADAPTER = "liturgy"
 SEARCHED = "titles, keys, kinds, seasons, fixed dates, incipits, citations and witnesses"
+_UNSET = object()
+_YEAR_RE = re.compile(r"\b(1\d{3}|2\d{3})\b")
+
+
+def _missal_chip(short: str) -> str:
+    """Compact §10 year chip (`1962`, `2008`, `1920`) so pills always fit on one line."""
+    match = _YEAR_RE.search(short or "")
+    return match.group(1) if match else (short or "").split()[0]
+
+
+def _ordinary_lang_label(entry: dict) -> str:
+    label = entry.get("label") or entry.get("name") or entry.get("lang") or ""
+    if entry.get("lang") == "en" and label == "en":
+        return "English"
+    if entry.get("lang") == "la" and label == "la":
+        return "Latin"
+    return missal.format_coverage_notice(label)
+
+
+def _format_browse_counts(counts: list[dict]) -> str:
+    """Show language availability, omitting N/N ratios once complete."""
+    parts = []
+    for one in counts:
+        lang = str(one.get("lang") or "").upper()
+        avail = one.get("available")
+        occ = one.get("occurrences")
+        if not lang:
+            continue
+        if isinstance(occ, int) and occ > 0 and isinstance(avail, int):
+            if avail >= occ:
+                parts.append(lang)
+            else:
+                parts.append(f"{lang} {avail}/{occ}")
+        elif isinstance(avail, int) and avail > 0:
+            parts.append(lang)
+    return " · ".join(parts)
 
 
 class Propers(MissalSurface):
@@ -22,45 +60,50 @@ class Propers(MissalSurface):
     BROWSE = "#propers-list"
     key = "2"
     label = "Propers"
+
     @property
     def FIRST(self):
         return self.READING if self.reading and not self.has_class("navigation") else self.BROWSE
+
     HELP = (
-        ("℣ · ℟ · P · S", "versicle · response · priest · server"),
-        (",", "reading settings: celebration, prayers and Scripture"),
+        ("℣ · ℟ · P · S · All", "versicle · response · priest · server · congregation"),
+        (",", "reading settings: celebration, prayers, Scripture, sources"),
         ("↑ / ↓ · PgUp / PgDn", "scroll the reading by a line or a page"),
         ("/", "search this missal's formularies"),
         ("escape", "leave the search box"),
         ("enter", "read the highlighted formulary"),
-        ("c", "next missal"),
-        ("o", "orations in English or Latin"),
+        ("c", "next missal (2008 emended reprint, 1962 typical edition, 1920 typical edition)"),
+        ("o", "oration prayers in English or Latin"),
         ("b", "next Bible edition"),
-        ("B", "pair Latin and the selected language"),
+        ("B", "pair Latin and the selected language (side by side on wide terminals)"),
         ("L", "choose the Ordinary language independently"),
-        ("K", "choose a named Latin Bible companion, or remove it"),
-        ("i", "Contents: move to a semantic liturgical unit"),
-        ("u", "copy the canonical website URL for this reading"),
+        ("K", "choose or remove a named Latin Bible companion"),
+        ("i", "Contents: jump to a liturgical landmark"),
+        ("Ctrl+O", "open external source witness for the current prayer"),
+        ("e", "related links: dates in Day (1), Catena (3), Scripture (4), Sources (6), History (7)"),
+        ("u", "copy canonical website URL for this reading"),
         ("g", "open a Day or Propers reader URL"),
-        ("d", "Study: coverage, placement and source records"),
+        ("d", "Study: Overview, Current Unit, and All Units apparatus"),
         ("v / V", "compare this formulary / choose a comparison"),
         ("[ / ]", "previous / next formulary in this browse or search result"),
         ("w", "choose an oration witness"),
-        ("s", "choose a form, a lectionary cycle or a source choice"),
+        ("s", "choose a form, a lectionary cycle, or a source/Ordinary option"),
         ("m", "missal mode: these propers seated in the Ordinary"),
-        ("r", "rubrics shown or hidden in missal mode"),
-        ("f", "show or hide navigation panes; narrow screens start with the reading"),
+        ("r", "show or hide Ordinary rubrics in missal mode"),
+        ("f", "show or hide navigation panes; narrow screens start with Browse or reading"),
     )
     BINDINGS = [
         Binding("comma", "settings", "settings"),
         Binding("slash", "search", "search"),
-        Binding("c", "calendar", "missal"),
-        Binding("o", "orations", "language"),
+        Binding("c", "calendar", "edition"),
+        Binding("o", "orations", "prayers"),
         Binding("b", "bible", "bible", show=False),
         Binding("B", "bilingual", "bilingual", show=False),
         Binding("L", "ordinary_language", "Ordinary language", show=False),
         Binding("K", "companion", "Latin Bible", show=False),
         Binding("i", "contents", "contents"),
         Binding("ctrl+o", "prayer_source", "current prayer source", show=False),
+        Binding("e", "explore", "links", show=False),
         Binding("u", "share", "share", show=False),
         Binding("g", "open_url", "open URL", show=False),
         Binding("d", "study", "study"),
@@ -70,18 +113,25 @@ class Propers(MissalSurface):
         Binding("right_square_bracket", "step(1)", "next formulary", show=False),
         Binding("w", "witness", "witness", show=False),
         Binding("s", "choose", "choose"),
-        Binding("m", "missal", "missal mode"),
+        Binding("m", "missal", "missal"),
         Binding("r", "rubrics", "rubrics", show=False),
     ]
     CSS = """
     .propers.focus #propers-left { display: none; }
+    .propers.comparing #propers-left { display: none; }
     .propers.narrow #propers-left { width: 32; }
     .propers.compact #propers-left { display: none; }
     .propers.compact.navigation #propers-left { display: block; width: 1fr; margin-right: 0; }
     .propers.compact.navigation #propers-reading { display: none; }
     .propers #propers-reading { padding: 1 3; align: center top; }
+    .propers.compact #propers-reading { padding: 0 1; }
     .propers.narrow #propers-reading { padding: 1 2; }
-    .propers #propers-text { max-width: 78; }
+    .propers.narrow.compact #propers-reading { padding: 0 1; }
+    .propers #propers-text { max-width: 78; width: 100%; }
+    .propers.bilingual #propers-text, .propers.comparing #propers-text { max-width: 132; width: 100%; }
+    .propers.bilingual.narrow #propers-text, .propers.comparing.narrow #propers-text { max-width: 78; width: 100%; }
+    .propers.short #propers-find Input,
+    .propers.compact #propers-find Input { height: 1; padding: 0 1; }
     """
     DEFAULT_CSS = """
     Propers #propers-left { width: 38; margin-right: 1; }
@@ -104,6 +154,7 @@ class Propers(MissalSurface):
         self.navigation = ReadingNavigation()
         self.pending_source_role = None
         self.pending_study = False
+        self.return_from_day = ""
         self.url_legacy: dict = {}
         self.comparison: dict | None = None
         self.ordinary = False
@@ -115,21 +166,35 @@ class Propers(MissalSurface):
         self.view: dict | None = None
         self.opening: dict = {}
         self._intent: dict = {}
+        self._explicit_prefs: set[str] = set()
+        self._last_pair_width: int = 0
 
     def build(self) -> None:
         self.mount(
             Horizontal(
                 Vertical(
-                    Panel(Static("", id="propers-missals"), Input(placeholder="Title, incipit, citation, MM-DD, witness…",
+                    Panel(Static("", id="propers-missals"), Input(placeholder="Title, incipit, citation, MM-DD",
                                                                    id="propers-query"),
-                          Static("", id="propers-status"), title="find a formulary", id="propers-find"),
-                    Panel(OptionList(id="propers-list"), title="formularies", id="propers-list-box"),
+                          Static("", id="propers-status"), title="Find a Formulary", id="propers-find"),
+                    Panel(OptionList(id="propers-list"), title="Formularies", id="propers-list-box"),
                     id="propers-left",
                 ),
-                MissalPanel(Static("", id="propers-text"), title="propers", id="propers-reading"),
+                MissalPanel(Static("", id="propers-text"), title="Propers", id="propers-reading"),
             )
         )
         self.start()
+
+    def on_resize(self, event) -> None:
+        super().on_resize(event)
+        if self.view:
+            current_pair = self.pair_column_width() if self._is_wide_spread() else 0
+            if current_pair != self._last_pair_width:
+                self.show(self.view)
+        if self.calendar in self.catalogues:
+            self._update_status(self.catalogues[self.calendar], self.query_one("#propers-query", Input).value)
+
+    def _is_wide_spread(self) -> bool:
+        return bool(self.comparison) or self.text_display == "latin-and-selected" or bool(self.companion)
 
     @work(thread=True, exclusive=True, group="propers-start")
     def start(self) -> None:
@@ -144,15 +209,32 @@ class Propers(MissalSurface):
         self.opening = opening
         self.calendars = opening.get("propersCalendars") or opening["calendars"]
         self.bibles = opening["bibles"]
-        self.bible = self.bible or opening.get("defaultBible") or self.bibles[0]["id"]
-        self.orations = self.orations or opening.get("defaultOrations") or "la"
-        self.ordinary_language = self.ordinary_language or opening.get("defaultOrdinaryLanguage") or "en"
-        ids = [one["id"] for one in self.calendars]
-        if self.calendar not in ids:
+        saved = self.app.saved_prefs()
+        bible_ids = {one["id"] for one in self.bibles}
+        cal_ids = [one["id"] for one in self.calendars]
+        la_bibles = {one["id"] for one in self.bibles if one.get("language") == "la"}
+        if not self.bible:
+            saved_bible = saved.get("bible")
+            self.bible = (saved_bible if saved_bible in bible_ids else None) or opening.get("defaultBible") or self.bibles[0]["id"]
+        if not self.orations:
+            saved_orations = saved.get("orations")
+            self.orations = (saved_orations if saved_orations in ("en", "la") else None) or opening.get("defaultOrations") or "la"
+        if not self.ordinary_language:
+            saved_ord = saved.get("ordinary_language")
+            self.ordinary_language = (saved_ord if saved_ord in ("en", "la") else None) or opening.get("defaultOrdinaryLanguage") or "en"
+        if "textDisplay" not in self._explicit_prefs and saved.get("text_display") in ("selected", "latin-and-selected"):
+            self.text_display = saved["text_display"]
+        if "rubrics" not in self._explicit_prefs and isinstance(saved.get("rubrics"), bool):
+            self.rubrics = saved["rubrics"]
+        if "companion" not in self._explicit_prefs and saved.get("companion") in la_bibles:
+            self.companion = saved["companion"]
+        if self.calendar not in cal_ids:
             if self.calendar:
                 self.fail(f"No missal called {self.calendar!r} is offered here. Choose a held missal with c.")
                 return
-            self.calendar = opening.get("default") if opening.get("default") in ids else ids[0]
+            saved_cal = saved.get("calendar")
+            self.calendar = (saved_cal if saved_cal in cal_ids else None) or (
+                opening.get("default") if opening.get("default") in cal_ids else cal_ids[0])
         self.welcome()
         self.list_calendar()
         if self._intent.get("mass"):
@@ -168,11 +250,13 @@ class Propers(MissalSurface):
                **options) -> None:
         if calendar:
             self.calendar = calendar
+            self._explicit_prefs.add("calendar")
         for key, attribute in (("bible", "bible"), ("orations", "orations"), ("ordinary", "ordinary"),
                                ("ordinaryLang", "ordinary_language"), ("textDisplay", "text_display"),
                                ("companion", "companion"), ("urlLegacy", "url_legacy")):
             if key in options:
                 setattr(self, attribute, options[key])
+                self._explicit_prefs.add(key)
         if options.get("ordinary"):
             self.add_class("focus")
         selection = {name: options[name] for name in ("cycle", "witness", "properChoices", "variants", "alternative", "sourceLocal1970")
@@ -180,6 +264,7 @@ class Propers(MissalSurface):
         self.navigation.pending = options.get("location")
         self.pending_source_role = options.get("prayerRole")
         self.pending_study = bool(options.get("study"))
+        self.return_from_day = options.get("returnFromDay") or ""
         self.comparison = options.get("comparison")
         if not self.calendars:
             self._intent = {"mass": mass, "form": form, "selection": selection}
@@ -188,9 +273,11 @@ class Propers(MissalSurface):
         if options.get("browse"):
             self.reading = None
             self.view = None
+            self.return_from_day = ""
             self.welcome()
             self.remove_class("focus")
             self.add_class("navigation")
+            self.app.refresh_where()
             self.call_after_refresh(self.query_one("#propers-list", OptionList).focus)
             return
         if mass:
@@ -203,11 +290,11 @@ class Propers(MissalSurface):
 
     def welcome(self) -> None:
         ink = Ink()
-        ink.line("Choose a formulary to read.", "bold")
+        ink.line("Choose a formulary to read.", "bold $propers-color")
         ink.line()
         ink.line("Propers are read independently of a civil date: a formulary's fixed date in the list is the date "
                  "its source declares, not a claim about when it is celebrated. To read the Mass a date appoints, "
-                 "use the day surface (1), where p opens its formulary here.", "italic $text-muted")
+                 "use the Day surface (1), where p opens its formulary here.", "italic $text-muted")
         ink.line()
         ink.line("Nothing is opened for you: the list is the missal's own order, searched by the page's own search.",
                  "italic $text-muted")
@@ -219,9 +306,10 @@ class Propers(MissalSurface):
         names = Ink()
         for one in self.calendars:
             chosen = one["id"] == self.calendar
-            short = one["short"].replace(" Missal", "")
-            names(f" {short} ", "bold reverse $propers-color" if chosen else "$text-muted")(" ")
+            chip = _missal_chip(one["short"])
+            names(f" {chip} ", "bold reverse $propers-color" if chosen else "$text-muted")(" ")
         self.query_one("#propers-missals", Static).update(names.content())
+        self.app.refresh_where()
         self.load_catalogue(self.calendar)
 
     @work(thread=True, exclusive=True, group="propers-catalogue")
@@ -256,6 +344,23 @@ class Propers(MissalSurface):
             return
         self.deliver(self.filter, calendar, query, ordinals)
 
+    def _update_status(self, catalogue: dict, query: str) -> None:
+        rows = catalogue["rows"]
+        status = self.query_one("#propers-status", Static)
+        edition = catalogue.get("short") or self.calendar
+        compact = self.has_class("short") or self.has_class("compact")
+        if query.strip() and not self.shown:
+            status.update(Ink()(f"No formulary in {edition} matches {query!r}. The search covers {SEARCHED}; "
+                                "nothing nearby is offered in its place.", "italic $warning").content())
+        elif query.strip():
+            status.update(Ink()(f"{len(self.shown)} of {len(rows)} matches in {edition}." if compact else
+                                f"Showing {len(self.shown)} of {len(rows)} form-qualified results in {edition}.",
+                                "italic").content())
+        else:
+            status.update(Ink()(f"{len(rows)} formularies · {edition}" if compact else
+                                f"{len(rows)} form-qualified formularies in {edition}.",
+                                "italic").content())
+
     def filter(self, calendar: str, query: str, ordinals: list[int]) -> None:
         catalogue = self.catalogues.get(calendar)
         if not catalogue or calendar != self.calendar:
@@ -277,13 +382,14 @@ class Propers(MissalSurface):
                                           disabled=True))
             marks.clear()
 
-        season = None
+        season: object = _UNSET
         for ordinal in ordinals:
             row = rows[ordinal]
-            if not query.strip() and row.get("listSeason") != season:
+            group_key = row.get("listSeason") or row.get("kind") or ""
+            if not query.strip() and group_key != season:
                 close_group()
-                season = row.get("listSeason")
-                listing.add_option(Option(Ink()((season or row.get("kind") or "").replace("-", " "),
+                season = group_key
+                listing.add_option(Option(Ink()(str(group_key).replace("-", " "),
                                                 "bold $propers-color").content(), disabled=True))
             ink = Ink()(row["name"])
             if row.get("mark"):
@@ -292,17 +398,14 @@ class Propers(MissalSurface):
                     marks.append(row["mark"])
             if row.get("form_name"):
                 ink(f" · {row['form_name']}", "italic")
-            ink.line()
-            ink(f"  {row['kind']}", "$text-muted")
             if row.get("fixed_date"):
-                ink(f" · {row['fixed_date']}", "$text-muted")
+                ink("  ")(row["fixed_date"], "$text-muted")
             ink.line()
-            key = row["key"] if len(row["key"]) <= 29 else row["key"][:28] + "…"
-            ink(f"  {key}", "$text-muted")
-            counts = row.get("coverageCounts") or []
-            if counts:
-                ink.line().line("  " + " · ".join(f"{one['lang']} {one['available']}/{one['occurrences']}"
-                                                   for one in counts), "italic $text-muted")
+            detail_parts = [row["kind"].replace("-", " ")]
+            avail = _format_browse_counts(row.get("coverageCounts") or [])
+            if avail:
+                detail_parts.append(avail)
+            ink("  " + " · ".join(detail_parts), "$text-muted")
             listing.add_option(Option(ink.content(), id=f"row-{ordinal}"))
         close_group()
         active = None
@@ -316,18 +419,9 @@ class Propers(MissalSurface):
             listing.highlighted = first
             if active:
                 self.call_after_refresh(listing.scroll_to_highlight)
-        status = self.query_one("#propers-status", Static)
+        self._update_status(catalogue, query)
         edition = catalogue.get("short") or self.calendar
-        if query.strip() and not ordinals:
-            status.update(Ink()(f"No formulary in {edition} matches {query!r}. The search covers {SEARCHED}; "
-                                "nothing nearby is offered in its place.", "italic $warning").content())
-        elif query.strip():
-            status.update(Ink()(f"Showing {len(ordinals)} of {len(rows)} form-qualified results in {edition}.",
-                                "italic").content())
-        else:
-            status.update(Ink()(f"{len(rows)} form-qualified formularies in {edition}. Counts: composed text; Bible separate.",
-                                "italic").content())
-        self.query_one("#propers-list-box", Panel).retitle(f"formularies · {edition}")
+        self.query_one("#propers-list-box", Panel).retitle(f"Formularies · {edition}")
 
     def action_search(self) -> None:
         self.remove_class("focus")
@@ -348,6 +442,7 @@ class Propers(MissalSurface):
             return
         row = self.catalogues[self.calendar]["rows"][int(event.option.id[4:])]
         form = row["form_id"] if row.get("form_id") and row["form_id"] != "main" else None
+        self.return_from_day = ""
         self.read(self.calendar, row["key"], form)
 
     # --- reading -----------------------------------------------------------
@@ -377,6 +472,7 @@ class Propers(MissalSurface):
         ordinal = self.shown[matches[0] + step]
         row = rows[ordinal]
         form = row.get("form_id")
+        self.return_from_day = ""
         self.read(self.calendar, row["key"], None if form == "main" else form)
         listing = self.query_one("#propers-list", OptionList)
         listing.highlighted = listing.get_option_index(f"row-{ordinal}")
@@ -412,7 +508,22 @@ class Propers(MissalSurface):
         mass = (self.view or {}).get("mass") or {}
         calendar = (self.view or {}).get("calendar") or self.calendar
         edition = next((one["short"] for one in self.calendars if one["id"] == calendar), "")
-        return " · ".join(part for part in (edition, mass.get("name") or "choose a formulary") if part)
+        return " · ".join(part for part in (edition, mass.get("name") or "Browse formularies") if part)
+
+    @staticmethod
+    def _compare_pair_sides(section_blocks: list[dict]) -> tuple[list[dict], list[list[dict]]]:
+        """Split a Propers Compare section into lead blocks and side columns."""
+        lead: list[dict] = []
+        sides: list[list[dict]] = []
+        for block in section_blocks:
+            classes = set(block.get("classes") or [])
+            if block.get("tag") == "h3" and ({"compare-side-title", "compare-calendar-side"} & classes):
+                sides.append([block])
+            elif sides:
+                sides[-1].append(block)
+            else:
+                lead.append(block)
+        return lead, sides
 
     def show(self, view: dict) -> None:
         self.view = view
@@ -420,39 +531,58 @@ class Propers(MissalSurface):
         text = self.query_one("#propers-text", Static)
         ink = Ink()
         if view.get("refused"):
-            box.retitle("propers")
+            box.retitle("Propers")
             text.update(ink.line(view["refused"], "bold $error").content())
             return
         mass = view.get("mass") or {}
         state = view.get("state") or {}
+        compared = view.get("comparison")
+        self.set_class(bool(compared), "comparing")
+        self.set_class(self._is_wide_spread() and not compared, "bilingual")
+        pair_w = self.pair_column_width() if self._is_wide_spread() else 0
+        self._last_pair_width = pair_w
+        term_w = self.size.width or (self.app.size.width if self.app else 78)
+        nav_shown = not self.has_class("compact") and not self.has_class("focus") and not compared
+        avail_w = max(24, term_w - (48 if nav_shown else 10))
+        rule_w = min(pair_w or 72, avail_w)
+        ink._pair_width = pair_w
+        ink._rule_width = rule_w
+
         edition = mass.get("editionShort") or view["calendar"]
-        box.retitle(f"{mass.get('name') or view['key']} · {edition}")
-        mode = "missal" if state.get("ordinary") else "read"
+        box.retitle(edition)
+        mode = "Missal" if state.get("ordinary") else "Read"
         language = "English" if state.get("orations") == "en" else "Latin"
         extra = []
         if state.get("form"):
             extra.append(f"form {state['form']}")
         if state.get("cycle"):
-            extra.append(f"year {state['cycle']}")
+            extra.append(f"Year {state['cycle']}")
         if state.get("textDisplay") == "latin-and-selected":
-            extra.append("Latin paired with selected language")
+            extra.append("Bilingual")
         if state.get("ordinary"):
-            extra.append(f"{state.get('ordinaryLang') or state.get('orations')} Ordinary")
+            ord_code = state.get("ordinaryLang") or state.get("orations")
+            ord_name = "English" if ord_code == "en" else ("Latin" if ord_code == "la" else str(ord_code))
+            extra.append(f"{ord_name} Ordinary")
         if state.get("companion"):
-            extra.append(f"Latin Bible: {state['companion']}")
+            comp_label = next((b["label"] for b in self.bibles if b["id"] == state["companion"]), state["companion"])
+            extra.append(f"Latin Bible: {comp_label}")
         box.border_subtitle = " · ".join([mode, f"{language} orations", view["bible"]["label"], *extra])
-        configured = bool(state.get("ordinary") and view.get("events") and not view.get("comparison"))
-        if not configured:
-            ink(mass.get("name") or view["key"], "bold $propers-color")
-            if mass.get("kind"):
-                ink(f"  ·  {mass['kind']}", "$text-muted")
-            if mass.get("season"):
-                ink(f"  ·  {mass['season'].replace('-', ' ')}", "$text-muted")
-            ink.line()
-            ink.line(view["key"], "$text-muted")
-            # page: propers-reader.js:634
-            ink.line("Propers are read independently of a civil date", "italic $text-muted")
-        elif mass.get("recension"):
+
+        configured = bool(state.get("ordinary") and view.get("events") and not compared)
+        if self.return_from_day:
+            ink.line(f"Opened from Day ({self.return_from_day}) · press 1 to return", "bold $day-color")
+        # Ceremonial Hand-Missal Header (no raw slug; crisp title + identity ribbon + rule)
+        ink.line(mass.get("name") or view["key"], "bold $propers-color")
+        ribbon = []
+        if mass.get("kind"):
+            ribbon.append(mass["kind"].replace("-", " ").capitalize())
+        if mass.get("season"):
+            ribbon.append(mass["season"].replace("-", " ").capitalize())
+        ribbon.append("Date-independent formulary")
+        ink.line(" · ".join(ribbon), "$text-muted")
+        ink.line("─" * rule_w, "$rule")
+
+        if configured and mass.get("recension"):
             ink.line(mass["recension"], "italic $warning")
         missal.source_witness(ink, view)
         missal.ordinary_conditions(ink, view, compact=configured)
@@ -460,17 +590,18 @@ class Propers(MissalSurface):
             reason = absence.get("reason") or ""
             if " " in reason:
                 ink.line(reason, "italic $text-muted")
-        if not configured:
-            ink.line()
-        missal.choices(ink, view)
-        if view.get("notice") and not configured:
-            ink.line(view["notice"], "italic $warning")
+        if not compared:
+            missal.choices(ink, view)
+        notice = view.get("notice") or ""
+        if notice and not configured:
+            complete = missal.is_complete_notice(notice, recension=mass.get("recension"))
+            style = "italic $text-muted" if complete else "italic $warning"
+            ink.line(missal.format_coverage_notice(notice), style)
         if not configured and state.get("ordinary") and (view.get("ordinary") or {}).get("advisory"):
             ink.line(view["ordinary"]["advisory"], "italic $text-muted")
         self.navigation.begin((view["calendar"], view["key"], state.get("form")), box, text)
-        compared = view.get("comparison")
         if compared:
-            box.border_subtitle = f"compare · {compared.get('title') or 'unsupported selection'} · v reading · V choices"
+            box.border_subtitle = f"Compare · {compared.get('title') or 'unsupported selection'} · v reading · V choices"
             if compared.get("refused"):
                 ink.line("This comparison cannot be made as asked", "bold $warning")
                 ink.line(compared["refused"], "italic $warning")
@@ -478,19 +609,32 @@ class Propers(MissalSurface):
                 missal.blocks(ink, compared.get("lead") or [], accent="$propers-color")
                 for section in compared.get("sections") or []:
                     self.navigation.mark(section["id"], section["label"], ink)
-                    missal.blocks(ink, section["blocks"], accent="$propers-color")
+                    ink.line()
+                    lead_blocks, sides = self._compare_pair_sides(section["blocks"])
+                    if lead_blocks:
+                        missal.blocks(ink, lead_blocks, accent="$propers-color")
+                    if len(sides) == 2 and pair_w >= 80:
+                        missal._render_pair_columns(ink, sides[0], sides[1],
+                                                    pair_width=pair_w, accent="$propers-color",
+                                                    missal_mode=False, seen_notes=None)
+                    elif sides:
+                        for side_idx, side in enumerate(sides):
+                            if side_idx > 0:
+                                ink.line()
+                            missal.blocks(ink, side, accent="$propers-color")
         else:
             for path in view.get("sourcePaths") or []:
                 if not path.get("beforeEventId"):
-                    missal.blocks(ink, path["blocks"], accent="$propers-color")
+                    missal.blocks(ink, path["blocks"], accent="$propers-color", pair_width=pair_w)
             for event in view.get("events") or []:
                 if not self.rubrics and (event.get("element") or {}).get("kind") == "rubric":
                     continue
                 for path in view.get("sourcePaths") or []:
                     if path.get("beforeEventId") == event["id"]:
-                        missal.blocks(ink, path["blocks"], accent="$propers-color")
-                label = event.get("slot") or event.get("name") or (event.get("element") or {}).get("name") or event["id"]
-                self.navigation.mark(event["id"], label, ink)
+                        missal.blocks(ink, path["blocks"], accent="$propers-color", pair_width=pair_w)
+                if missal.is_contents_event(event):
+                    label = missal.event_label(event, indent_children=bool(state.get("ordinary")))
+                    self.navigation.mark(event["id"], label, ink)
                 missal.events(ink, {**view, "events": [event]}, rubrics=self.rubrics, accent="$propers-color")
         text.update(ink.content())
         if self.pending_source_role:
@@ -515,6 +659,7 @@ class Propers(MissalSurface):
         ids = [one["id"] for one in self.calendars]
         if ids:
             self.calendar = ids[(ids.index(self.calendar) + 1) % len(ids)] if self.calendar in ids else ids[0]
+            self.app.remember_pref("calendar", self.calendar)
             self.list_calendar()
 
     def again(self) -> None:
@@ -523,29 +668,60 @@ class Propers(MissalSurface):
 
     def action_orations(self) -> None:
         self.orations = "la" if self.orations == "en" else "en"
+        self.app.remember_pref("orations", self.orations)
         for selection in self.choices.values():
             selection.pop("witness", None)
         self.again()
 
     def action_bilingual(self) -> None:
         self.text_display = "selected" if self.text_display == "latin-and-selected" else "latin-and-selected"
+        self.app.remember_pref("text_display", self.text_display)
         self.again()
 
     def action_companion(self) -> None:
-        offers = [("", "no Latin Bible companion")]
+        offers = [("", "No Latin Bible companion")]
         offers += [(one["id"], one["label"]) for one in self.bibles if one.get("language") == "la"]
 
         def picked(value) -> None:
             if value is not None:
                 self.companion = value
+                self.app.remember_pref("companion", value or None)
                 self.again()
 
-        self.app.push_screen(Pick("Latin Bible companion", offers,
+        self.app.push_screen(Pick("Latin Bible Companion", offers,
                                   "Each edition retains its own numbering, provenance and refusals."), picked)
 
     def action_contents(self) -> None:
         self.navigation.choose(self, self.query_one("#propers-reading", ScrollPanel),
                                self.query_one("#propers-text", Static))
+
+    @work(thread=True, exclusive=True, group="propers-dates")
+    def action_calendar_dates(self) -> None:
+        if not self.reading:
+            return
+        calendar, key, _ = self.reading
+        year = self.app.today.year
+        try:
+            dates = bridge.call(ADAPTER, "formularyDates", calendar, key, year)
+        except Refused as refusal:
+            self.deliver(self.app.notify, str(refusal), severity="warning")
+            return
+        if not dates:
+            self.deliver(self.app.notify, f"No civil date in {year} appoints this formulary directly.")
+            return
+        options = [(row["date"],
+                    f"{row['longDate']}" + (f" · {row['branch']}" if row.get("branch") else "") +
+                    (f" ({row['standing']})" if row.get("standing") != "appointed" else ""))
+                   for row in dates]
+
+        def picked(iso) -> None:
+            if iso:
+                self.app.action_surface("day", calendar=calendar, date=iso)
+
+        self.deliver(self.app.push_screen,
+                     Pick(f"Calendar Uses in {year}", options,
+                          "Open a civil date in Day (1); the formulary itself remains date-independent."),
+                     picked)
 
     @work(thread=True, exclusive=True, group="propers-share")
     def action_share(self) -> None:
@@ -563,7 +739,7 @@ class Propers(MissalSurface):
         self.deliver(share, self, route)
 
     def action_open_url(self) -> None:
-        self.app.push_screen(Ask("open a reader URL", "Paste a canonical or retained Day or Propers link."),
+        self.app.push_screen(Ask("Open a Reader URL", "Paste a canonical or retained Day or Propers link."),
                              lambda value: value and self.open_link(value))
 
     @work(thread=True, exclusive=True, group="propers-open-url")
@@ -577,7 +753,7 @@ class Propers(MissalSurface):
 
     def action_ordinary_language(self) -> None:
         ordinary = (self.view or {}).get("ordinary") or {}
-        languages = [(one["lang"], one.get("label") or one.get("name") or one["lang"])
+        languages = [(one["lang"], _ordinary_lang_label(one))
                      for one in ordinary.get("languages") or []]
         if not languages:
             self.app.notify("Open Missal mode (m) to choose this edition's Ordinary language.")
@@ -586,9 +762,10 @@ class Propers(MissalSurface):
         def picked(value) -> None:
             if value:
                 self.ordinary_language = value
+                self.app.remember_pref("ordinary_language", value)
                 self.again()
 
-        self.app.push_screen(Pick("Ordinary language", languages,
+        self.app.push_screen(Pick("Ordinary Language", languages,
                                   "The oration language stays independently selected; unavailable text stays explicit."),
                              picked)
 
@@ -596,22 +773,67 @@ class Propers(MissalSurface):
     def action_study(self) -> None:
         if not self.reading:
             return
+        panel = self.query_one("#propers-reading", ScrollPanel)
+        text = self.query_one("#propers-text", Static)
+        scrolled = panel.scroll_y > 0.5 or self.navigation.focused is not None
+        current_id = self.navigation.current(panel, text) if not self.comparison and self.navigation.entries else None
+        current_label = self.navigation.current_label(panel, text) if current_id else ""
         calendar, key, _ = self.reading
         try:
-            blocks = bridge.call(ADAPTER, "studyPropers", calendar, key, self.options())
+            study_blocks = bridge.call(ADAPTER, "studyPropers", calendar, key, self.options())
         except Refused as refusal:
             self.deliver(self.app.notify, str(refusal), severity="warning")
             return
-        ink = Ink()
         view = self.view or {}
-        missal.source_witness(ink, view, detail=True)
-        missal.ordinary_conditions(ink, view)
-        if view.get("notice"):
-            ink.line(view["notice"], "italic $text-muted")
-        if (view.get("ordinary") or {}).get("advisory"):
-            ink.line(view["ordinary"]["advisory"], "italic $text-muted")
-        self.deliver(self.app.push_screen, Reading("Study this formulary",
-                     missal.blocks(ink, blocks, accent="$propers-color").content(), walks=False))
+        overview_blocks, by_event, all_units = missal.split_study_blocks(study_blocks)
+        unit_blocks = by_event.get(current_id or "", [])
+        urls, source_ids = missal.extract_study_references([view], study_blocks)
+
+        def build_overview(show_audit: bool):
+            ink = Ink()
+            missal.source_witness(ink, view, detail=True)
+            missal.ordinary_conditions(ink, view)
+            if view.get("notice"):
+                ink.line(missal.format_coverage_notice(view["notice"]), "italic $text-muted").line()
+            # Never dump the Ordinary monograph in Read mode (`self.ordinary` is False).
+            if self.ordinary and (view.get("ordinary") or {}).get("advisory"):
+                ink.line("Ordinary of the Mass — Witness Notes", "bold $propers-color")
+                ink.line(view["ordinary"]["advisory"], "italic $text-muted").line()
+            missal.blocks(ink, missal.filter_study_audit(overview_blocks, show_audit=show_audit),
+                          accent="$propers-color")
+            return ink.content()
+
+        def build_unit(show_audit: bool):
+            ink = Ink()
+            if current_label:
+                ink.line(current_label, "bold $propers-color").line()
+            filtered = missal.filter_study_audit(unit_blocks, show_audit=show_audit)
+            if filtered:
+                missal.blocks(ink, filtered, accent="$propers-color")
+            else:
+                ink.line("No separate unit apparatus is recorded for this anchor; see Overview or All Units.",
+                         "italic $text-muted")
+            return ink.content()
+
+        def build_all(show_audit: bool):
+            ink = Ink()
+            missal.blocks(ink, missal.filter_study_audit(all_units, show_audit=show_audit),
+                          accent="$propers-color")
+            return ink.content()
+
+        initial_tab = "unit" if (scrolled and unit_blocks) else "overview"
+        dialog = StudyDialog(
+            "Study This Formulary",
+            overview_builder=build_overview,
+            unit_builder=build_unit if unit_blocks else None,
+            all_builder=build_all if all_units else None,
+            unit_label=current_label,
+            initial_tab=initial_tab,
+            urls=urls,
+            source_ids=source_ids,
+            accent="$propers-color",
+        )
+        self.deliver(self.app.push_screen, dialog)
 
     def action_compare(self) -> None:
         if self.comparison:
@@ -653,15 +875,16 @@ class Propers(MissalSurface):
                     if peer is not None:
                         self.map_comparison_location(dimension)
                         self.comparison = {"dimension": dimension, "primary": primary, "peer": peer}
+                        self.show_reading_pane(hide_nav=True)
                         self.again()
 
-                self.app.push_screen(Pick("second comparison side", [(ident, label) for ident, label in peers
-                                                                        if ident != primary],
+                self.app.push_screen(Pick("Second Comparison Side", [(ident, label) for ident, label in peers
+                                                                     if ident != primary],
                                           "The formulary stays independent of a date."), peer_chosen)
 
-            self.app.push_screen(Pick("first comparison side", peers, "Choose both peers explicitly."), primary_chosen)
+            self.app.push_screen(Pick("First Comparison Side", peers, "Choose both peers explicitly."), primary_chosen)
 
-        self.app.push_screen(Pick("compare this formulary", [(one["dimension"], one["label"]) for one in offers],
+        self.app.push_screen(Pick("Compare This Formulary", [(one["dimension"], one["label"]) for one in offers],
                                   "Semantic slots are paired by the page's comparison model."), dimension_chosen)
 
     def source_rows(self) -> list[dict]:
@@ -674,6 +897,7 @@ class Propers(MissalSurface):
         ids = [one["id"] for one in self.bibles]
         if ids:
             self.bible = ids[(ids.index(self.bible) + 1) % len(ids)] if self.bible in ids else ids[0]
+            self.app.remember_pref("bible", self.bible)
             self.again()
 
     def action_missal(self) -> None:
@@ -683,11 +907,12 @@ class Propers(MissalSurface):
             self.navigation.pending = (((self.view or {}).get("navigation") or {}).get("nearest") or {}).get(current)
         self.ordinary = not self.ordinary
         if self.reading:
-            self.show_reading_pane()
+            self.show_reading_pane(hide_nav=self.ordinary)
             self.again()
 
     def action_rubrics(self) -> None:
         self.rubrics = not self.rubrics
+        self.app.remember_pref("rubrics", self.rubrics)
         if self.view:
             self.show(self.view)
 
@@ -696,7 +921,7 @@ class Propers(MissalSurface):
         if not witnesses:
             self.app.notify("No oration witness in this language is recorded for this missal.")
             return
-        offers = [("", "no single witness chosen; coequal witnesses remain open")]
+        offers = [("", "No single witness chosen; coequal witnesses remain open")]
         offers += [(one["id"], one["label"]) for one in witnesses]
 
         def picked(value) -> None:
@@ -708,35 +933,40 @@ class Propers(MissalSurface):
                 self.selection().pop("witness", None)
             self.again()
 
-        self.app.push_screen(Pick("oration witness", offers,
+        self.app.push_screen(Pick("Oration Witness", offers,
                                   "A missing text stays missing; no other witness fills it."), picked)
 
     def action_choose(self) -> None:
         view = self.view or {}
-        offers = []
+        form_items: list = []
+        proper_items: list = []
+        cycle_items: list = []
+        ordinary_groups: list[tuple[str, list]] = []
+
         historical = [event.get("sourceLocalActorChoice") for event in view.get("events") or []
                       if (event.get("sourceLocalActorChoice") or {}).get("available")]
         if historical:
             selected = any(offer.get("selected") for offer in historical)
-            offers.append((("source-local-1970", not selected),
-                           "Return to unchanged source quotation" if selected else
-                           "Historical 1970 reading (current 2008 correspondence not established)"))
+            proper_items.append((("source-local-1970", not selected),
+                                 "Return to unchanged source quotation" if selected else
+                                 "Historical 1970 reading (current 2008 correspondence not established)"))
         path_ids = {path["id"] for path in view.get("sourcePaths") or []}
+        proper_choice_ids = {e["id"] for e in view.get("events") or [] if e.get("kind") == "proper-choice"}
         for choice in view.get("unresolvedChoices") or []:
             ident = choice.get("id") or ""
-            if ident in path_ids or ident.startswith(("proper-condition/", "common-set:")):
+            if ident in path_ids or ident in proper_choice_ids or ident.startswith(("proper-condition/", "common-set:")):
                 continue
+            reason = missal.clean_choice_reason(choice, view)
             for option in choice.get("options") or []:
-                offers.append(((ident, option["id"]), f"{missal.option_label(choice, option, view)}"
-                                                      f"   ({choice.get('reason') or ident})"))
+                proper_items.append(((ident, option["id"]), f"{missal.option_label(choice, option, view)}   ({reason})"))
         for path in view.get("sourcePaths") or []:
             for option in path["options"]:
                 if not option["unavailable"] and option.get("properChoices"):
-                    offers.append((("source-path", option["properChoices"]), option["label"]))
+                    proper_items.append((("source-path", option["properChoices"]), option["label"]))
         cycles: list[str] = []
         for form in (view.get("mass") or {}).get("forms") or []:
             if form["id"] != (self.reading[2] or "main"):
-                offers.append((("proper-form", form["id"]), f"{form['name']}   (formulary form)"))
+                form_items.append((("proper-form", form["id"]), f"{form['name']}"))
         for event in view.get("events") or []:
             selected = event.get("selected") or {}
             if selected.get("kind") == "cycle-alternatives":
@@ -744,19 +974,51 @@ class Propers(MissalSurface):
                     if cycle not in cycles:
                         cycles.append(cycle)
             if event.get("kind") == "proper-choice":
+                chosen = (event.get("selection") or {}).get("option")
                 for option in event.get("options") or []:
                     if option.get("unavailable"):
                         continue
-                    offers.append((("proper-choice", event["id"], option["id"]), missal.choice_label(event, option)))
+                    mark = " (selected)" if option["id"] == chosen else ""
+                    proper_items.append((("proper-choice", event["id"], option["id"]),
+                                         f"{missal.choice_label(event, option)}{mark}"))
         cycles = list(dict.fromkeys(cycles + (view.get("cycles") or [])))
-        offers += [(("cycle", cycle), f"Cycle {cycle}   (the lectionary cycle)") for cycle in cycles]
+        cur_cycle = self.selection().get("cycle")
+        for cycle in cycles:
+            mark = " (selected)" if cycle == cur_cycle else ""
+            cycle_items.append((("cycle", cycle), f"Cycle {cycle}{mark}"))
+        if cur_cycle:
+            cycle_items.append((("cycle", None), "Every cycle, kept apart (no year chosen)"))
         ordinary = view.get("ordinary") or {}
         for group in ordinary.get("variants") or []:
+            selected = (ordinary.get("selection") or {}).get(group["group"])
+            gname = group.get("name") or group["group"]
+            gitems = []
             for option in group.get("options") or []:
-                offers.append((("ordinary-variant", group["group"], option["id"]),
-                               f"{group.get('name') or group['group']}: {option['name']}"))
-        if self.selection().get("cycle"):
-            offers.append((("cycle", None), "every cycle, kept apart (no year chosen)"))
+                mark = " (selected)" if option["id"] == selected else ""
+                app = option.get("applicability")
+                app_note = (" — applicability unresolved" if app == "unresolved"
+                            else (" — not appointed here" if app == "inapplicable" else ""))
+                gitems.append((("ordinary-variant", group["group"], option["id"]),
+                               f"{option['name']}{app_note}{mark}"))
+            if gitems:
+                ordinary_groups.append((gname, gitems))
+
+        groups: list[tuple[str, list]] = []
+        if form_items:
+            groups.append(("Formulary Form", form_items))
+        if cycle_items:
+            groups.append(("Lectionary Cycle", cycle_items))
+        if proper_items:
+            groups.append(("Proper Options", proper_items))
+        groups.extend(ordinary_groups)
+
+        offers: list = []
+        sections: dict[int, str] = {}
+        use_sections = len(groups) > 1
+        for heading, items in groups:
+            if use_sections:
+                sections[len(offers)] = heading
+            offers.extend(items)
         if not offers:
             self.app.notify("Nothing in this formulary is left open for the reader to choose.")
             return
@@ -789,5 +1051,5 @@ class Propers(MissalSurface):
                 return
             self.again()
 
-        self.app.push_screen(Pick("choose", offers, "The sources leave this open. Nothing is chosen by order."),
-                             picked)
+        self.app.push_screen(Pick("Choose", offers, "The sources leave this open. Nothing is chosen by order.",
+                                  sections=sections or None), picked)

@@ -218,6 +218,12 @@ WEEKDAYS = ("monday", "tuesday", "wednesday", "thursday", "friday", "saturday")
 
 FIXED_DATE_RULE = "the calendar's own index pins this mass to this month and day"
 
+BISSEXTILE_FIXED_DATE_RULE = (
+    "in a leap year (anno bissextili), Roman 1962 fixed-date feasts from 24 to "
+    "28 February move forward one day (Missale Romanum 1962, Kalendarium "
+    "p. XLVI; AAS 52 (1960) p. 713)"
+)
+
 # Masses whose day the guidance does not fix. Never placed; reported by
 # `coverage` with the reason. A mass that is never placed and is absent from
 # this map is reported with a generic reason instead, so an index that grows a
@@ -1712,11 +1718,16 @@ def calendars(root: Path, only: str | None) -> list[str]:
 def fixed_dates(index: dict, civil_year: int) -> dict[date, list[dict]]:
     """Every mass the calendar pins to a civil date, placed in `civil_year`."""
     out: dict[date, list[dict]] = {}
+    bissextile = index["directory"] == "roman-1962" and calendar.isleap(civil_year)
     for mass in index["masses"].values():
         parts = mass.get("date_parts")
         if not parts:
             continue
         month, day = parts
+        rule = FIXED_DATE_RULE
+        if bissextile and month == 2 and 24 <= day <= 28:
+            day += 1
+            rule = BISSEXTILE_FIXED_DATE_RULE
         try:
             when = date(civil_year, month, day)
         except ValueError:
@@ -1727,7 +1738,7 @@ def fixed_dates(index: dict, civil_year: int) -> dict[date, list[dict]]:
         # One rule for the whole fixed-date layer, because the rule is the date
         # the entry is filed under and repeating it per mass would put the
         # calendar's whole sanctoral into every year's rule table.
-        entry = {"key": mass["key"], "origin": "fixed-date", "rule": FIXED_DATE_RULE}
+        entry = {"key": mass["key"], "origin": "fixed-date", "rule": rule}
         option = FIXED_TERRITORIAL.get((index["builder"], mass["key"]))
         if option:
             entry["territorial"] = option

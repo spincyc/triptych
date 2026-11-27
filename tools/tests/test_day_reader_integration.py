@@ -303,7 +303,7 @@ class DayReaderIntegrationTests(unittest.TestCase):
             "branch.dataset.territorialBranch = row.branch.option",
             "runtime.branches = rendered.map(function (row)",
             "runtime.branch = multiple ? null : rendered[0].branch",
-            "title.textContent = multiple\n      ? 'Held territorial branches'",
+            "title.textContent = multiple\n      ? formattedDate + ' — Regional Observances'",
             "territory: row.branch.option",
         ):
             self.assertIn(token, source)

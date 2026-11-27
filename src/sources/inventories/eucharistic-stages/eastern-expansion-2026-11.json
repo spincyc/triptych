@@ -1,0 +1,2749 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "eastern-expansion-2026-11",
+  "title": "Eastern Catholic liturgical-book expansion: Melkite, Romanian Blaj, Syro-Malankara, Belarusian, Croatia–Serbia (Križevci), Hungarian, Bulgarian, Macedonian, Albanian, and Georgian-context bounds",
+  "traditions": [
+    {
+      "id": "eastern-expansion-2026-11:belarusian-uniate",
+      "label": "Belarusian lands: Kyivan Uniate and modern Belarusian Greek Catholic books",
+      "family": "Byzantine",
+      "scope": "Church Slavonic Uniate Sluzhebniks printed in Vilnius, Supraśl, and Pochaiv (1617–1788) in the historical Kyivan Metropolitan Province, plus a provisional lead for modern Belarusian Greek Catholic liturgical translations.",
+      "coverage_note": "Four documented historical printing states (1617, 1727–1732, 1758, 1788) with bounded primary-image and scholarly evidence connected to the 1692–1695 Vilnius–Supraśl and 1754 Roman Greek baselines, plus one provisional modern Belarusian lead (Nadson 2005). 1796–1839 Uniate printing and modern ecclesiastical approval remain open gaps."
+    },
+    {
+      "id": "eastern-expansion-2026-11:croatia-serbia-krizevci",
+      "label": "Byzantine Catholic Church of Croatia and Serbia (Križevci Eparchy and Ruski Krstur)",
+      "family": "Byzantine",
+      "scope": "Reception of Roman Ruthenian Church Slavonic exemplars (1942, 1970) in officially approved Croatian (2018) and Slovenian (2022–2023) liturgical books of the Križevci Eparchy, with Serbia (Eparchy of St. Nicholas in Ruski Krstur) kept explicitly distinct.",
+      "coverage_note": "Four documented stages (1965 Slovenian, 1970 Rome Ruthenian exemplar, 2018 Croatian Chrysostom, 2022–2023 Slovenian Služebnik) and four documented transitions showing reception of Rome 1942/1970 and concrete Slovenian antiphon/Proskomedia revisions. Pre-1942 Križevci Slavonic books (distinct from Parčić's 1894 Roman Glagolitic missal) and Ruski Krstur Serbian Rusyn altar books remain explicit gaps."
+    },
+    {
+      "id": "eastern-expansion-2026-11:georgian-byzantine",
+      "label": "Georgian Byzantine-rite Catholic historical community (non-sui iuris)",
+      "family": "Byzantine",
+      "scope": "Historical Byzantine-rite Georgian Catholic diaspora and Constantinople (Feriköy) monastery press context (from 1861/1870); explicitly NOT an autonomous sui iuris Eastern Catholic Church.",
+      "coverage_note": "Contextual historical note and explicit bibliographic gap only; zero book stages asserted until individual Constantinople or Montauban Byzantine-rite Georgian Catholic liturgical imprints are catalogued and inspected."
+    }
+  ],
+  "sources": [
+    {
+      "id": "eastern-expansion-2026-11:charon1908",
+      "title": "Cyrille Charon (Korolevsky), Le rite byzantin et la liturgie chrysostomienne dans les patriarcats melkites, in Chrysostomika (Rome: Pustet, 1908), pp. 519–629",
+      "url": "https://archive.org/details/chrysostomikastu00roma",
+      "kind": "scholarship",
+      "inspection": "Acquired whole 1178-page PDF in repository byzantine_greek review (SHA-256 9a0396bf2815d9faf47be459e99c0647de4339523355f59bb71cfbb0f9067566); printed pp. 519–629 read (Liturgikon repertoire pp. 539–593, table p. 591, office/reading books pp. 593–615, Euchologion pp. 615–623), with page images verified for pp. 532, 555, 560, 565, 567, 591, 597, 599, 602, 603, 606, 609, 611–615, 623.",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "Contemporary specialist bibliography transcribing primary front matter and reporting concrete 1839/1900/1883/1902/1903 differences; Charon's polemical judgments are excluded and several items (e.g., Choueir 1843) rest on Cheikho alone. Original Arabic books were not collated directly by this project."
+    },
+    {
+      "id": "eastern-expansion-2026-11:melkite-letter-2011",
+      "title": "Patriarch Gregorios III, Letter on the Liturgy (web page header 18 January 2010; instrument dated Damascus, 7 March 2011)",
+      "url": "https://melkitepat.org/eng/gregorios/view/Letter-on-the-Liturgy",
+      "kind": "official-retrospective",
+      "inspection": "Complete HTML acquired in repository byzantine_greek review (SHA-256 76b6ce1fb69c156b96f1b8be265d7f101f6e00ebfc3720c9159c5651c78d8843); Preface §§3–4, ch. 3 §2, ch. 4 §§1–5, and Appendices I–V read, documenting 1956, 1969, 1970, 1972, 1991/1992, 1996/1997–2000, 2001, 2006, and 2011 acts.",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "Official English patriarchal presentation summarizing Arabic decrees and books; original signed Arabic decrees and service-book bodies remain uncollated. Both the 18 January 2010 header and 7 March 2011 closing dateline are preserved."
+    },
+    {
+      "id": "eastern-expansion-2026-11:dli-melkite-office1997",
+      "title": "Deutsches Liturgisches Institut library catalogue, record 44455: Kitab as-salawat at-taqdisiyah (Jounieh: Paulist Press, 1997–2000, 4 vols. in 6 parts)",
+      "url": "https://dli.institute/dlibib/dlibibkatwp.php?layout=dbk&ausgabe=1&nummer=44455&Bestand=c&NurSchweiz=0",
+      "kind": "institutional-catalogue",
+      "inspection": "Full HTML record retrieved and read in repository byzantine_greek cold review (SHA-256 8da94ba8f44535410ccc3a03899e0d14f7c8d993484352f7edd093685da415a3): records permission of Patriarch Maximos V, 'corrected translation on the basis of the Greek original language', Jounieh Paulist Press, and per-part publication years/extents (1997–2000).",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "Catalogue metadata only; no digitized book offered; Arabic body and exact local adoption per eparchy uninspected."
+    },
+    {
+      "id": "eastern-expansion-2026-11:dli-melkite-liturgy2006",
+      "title": "Deutsches Liturgisches Institut library catalogue, record 47966: Kitab al-Liturgiyat al-ilahiyah al-muqaddasah (Jounieh: Paulist Press, 2006–2007)",
+      "url": "https://dli.institute/dlibib/dlibibkatwp.php?layout=dbk&ausgabe=1&nummer=47966&Bestand=c&NurSchweiz=0",
+      "kind": "institutional-catalogue",
+      "inspection": "Full HTML record retrieved and read in repository byzantine_greek cold review (SHA-256 6054a8b901c7947568c47616dacfd790d33bdc271d5f53053af974e75a898c30): Patriarchal Liturgical Commission, Part 1 Chrysostom (2006, [8]+907 pp.) and Part 2 Basil and Presanctified (2007, [8]+367 pp.).",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "Catalogue metadata only; no digital copy available; catalogue language codes not adopted without original inspection."
+    },
+    {
+      "id": "eastern-expansion-2026-11:blaj-book1775",
+      "title": "Dumnezeeştile Liturghii, Blaj 1775, BCU Cluj BRV 391",
+      "url": "https://www.bcucluj.ro/synfilebibdigit/patrimoniu/BCUCLUJ_FCS_BRV391.pdf",
+      "kind": "primary-book",
+      "inspection": "Complete 118-page scan acquired in repository byzantine_regional review (SHA-256 109b66354180a43313a3fe6d67f1736c73efedf25bcc2624062baa4f00b5d6ba); original Cyrillic title leaf PDF p. 3 visually inspected identifying Blaj and calling it the second printing.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Title leaf only collated; body text not collated against 1756 or 1807. Handwritten Râmnic 1733 marginal note is a later addition."
+    },
+    {
+      "id": "eastern-expansion-2026-11:balan1915",
+      "title": "Ioan Bălan, Stabilirea limbei liturgice româneşti (II), Cultura Creștină 5 (1915), no. 5, pp. 137–149",
+      "url": "https://dspace.bcucluj.ro/jspui/bitstream/123456789/1727/1/BCUCLUJ_FP_279432_1915_005_005.pdf",
+      "kind": "scholarship",
+      "inspection": "Complete 32-page issue acquired in repository byzantine_regional review (SHA-256 ebc27fb30ae47f225f5a368033ec471b7fb1f3f831d3e089d0c909a482674f3c); printed pp. 137–149 read, comparing Antim's text with Blaj 1756, 1775, 1807, 1870 (Latinizing vocabulary and added blessing with gifts), and 1905 (moderated wording).",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "Contemporary comparative study, not independent whole-book collation of the 1807, 1870, and 1905 Blaj originals by this project."
+    },
+    {
+      "id": "eastern-expansion-2026-11:sana2013",
+      "title": "Silviu-Iulian Sana, Cărţi liturgice şi de pietate în parohiile eparhiei greco-catolice de Oradea Mare (1850–1900), 2013, pp. 95–104",
+      "url": "https://old.historica-cluj.ro/suplimente/SuplimentHistorica2013/5.pdf",
+      "kind": "scholarship",
+      "inspection": "Complete 19-page article acquired in repository byzantine_regional review (SHA-256 9b4add07bcb5fe0d9a20204c6f58fef3c17da78e53275218a4540c2a97cef81b); Tables 1 and 3 (pp. 95–104) read for Blaj 1807/1870/1905 listings, 1870 parish reception resistance, and Oradea parish copies.",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "Table dates require independent imprint verification (e.g., 1817 and 1914 remain unverified); parish survival tables do not establish dates of initial receipt."
+    },
+    {
+      "id": "eastern-expansion-2026-11:macaveiu1932",
+      "title": "Victor Macaveiu, Postscriptum pentru noul Liturghier, Unirea 42, no. 7 (14 February 1932)",
+      "url": "https://dspace.bcucluj.ro/bitstream/123456789/37771/1/BCUCLUJ_FP_P2628_1932_042_0007.pdf",
+      "kind": "scholarship",
+      "inspection": "Complete 8-page issue acquired in repository byzantine_regional review (SHA-256 45a81af1dad09de4f5bf4f4d49cf5f90f3de3bdb93e2f09ca552db9695ca10e0); article from printed p. 1 read on the Stâna de Vale interdiocesan rubric commission and Episcopal Conference of 4 November 1931.",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "Firsthand commission-chair account in diocesan press, not the 1931 printed Liturghier itself or a Roman decree."
+    },
+    {
+      "id": "eastern-expansion-2026-11:neagu2019",
+      "title": "Radu Marius Neagu, study of Victor Macaveiu, Terra Sebus 11 (2019)",
+      "url": "https://www.cclbsebes.ro/wp-content/uploads/2020/02/Terra-Sebus-11-15-R_M_Neagu.pdf",
+      "kind": "scholarship",
+      "inspection": "Complete 23-page PDF acquired in repository byzantine_regional review (SHA-256 38f5b3ec14382a7028e371119036d22198a21d849de22f4307531f90e6415cb3); 1931 Liturghier discussion read, naming 1905 as the preceding edition and Macaveiu's preface.",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "Secondary scholarly study; original 1931 volume not acquired."
+    },
+    {
+      "id": "eastern-expansion-2026-11:ro-circular2015",
+      "title": "Romanian Greek Catholic Synod, Scrisoare circulară referitoare la noua ediție oficială a Liturghierului (20 May 2015)",
+      "url": "https://www.egco.ro/2015/05/20/scrisoare-circulara-referitoare-la-noua-editie-oficiala-a-liturghierului/",
+      "kind": "primary-act",
+      "inspection": "Complete HTML acquired in repository byzantine_regional review (SHA-256 d2f019dcb0775a616752983229ed6a5e3cb41ea8a02541cfdead8856e5774fe8); entire circular read, promulgating Blaj 2014 as official effective on publication, naming Rome 1996 as prior edition, affirming continuity with Vasile Suciu's 1931 linguistic tradition, and citing language corrections and clarified rubrics.",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "Official eparchial web republication; original signed circular and full 2014 printed book remain uninspected."
+    },
+    {
+      "id": "eastern-expansion-2026-11:ro-editors2014",
+      "title": "Francisca Băltăceanu and Monica Broșteanu, Nota asupra ediției 2014 a Liturghierului de la Blaj",
+      "url": "https://www.e-communio.ro/stire2882-nota-asupra-editiei-2014-a-liturghierului-de-la-blaj",
+      "kind": "official-retrospective",
+      "inspection": "Complete HTML acquired in repository byzantine_regional review (SHA-256 65d67cb4f18950cbc3a59629088dc6c74792e8ee37824adc77d3a8118f868628); entire editors' note read describing linguistic revision checked against the Greek text and theological usage.",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "Firsthand editors' explanation of linguistic work; no whole-book collation against 1996 performed by this project."
+    },
+    {
+      "id": "eastern-expansion-2026-11:theologos2020",
+      "title": "Theologos 22 (2020), no. 1: Testi promulgati del diritto particolare della Chiesa Greco-Cattolica [Romena], pp. 62–63, 66–67",
+      "url": "https://www.unipo.sk/public/media/31348/Theologos2020_1.pdf",
+      "kind": "scholarship",
+      "inspection": "Complete 250-page PDF acquired in repository byzantine_regional review (SHA-256 2a47ba7f359b9c5b241bf243b182b0ea0cde1c6d9e6c0ee84059969f39950c5c); printed pp. 62–63 (nn. 35–38) and 66–67 (n. 54) read for circular 68/2009 (1931 and 1996 approved), circular 723/2006 (Pope/Major Archbishop commemoration printed in Blaj 2014 pp. 80, 104), letter 4/2012 ('cardinal'), and the full 2014 title.",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "Scholarly legal digest; Acte Sinodale IV/4 (2009) and I/1 (2006) originals were not separately acquired."
+    },
+    {
+      "id": "eastern-expansion-2026-11:malankara-tiruvalla1960",
+      "title": "Ṭeksā d-qurbānā (Anaphora of Mar Xystus), Tiruvalla: St. Joseph's Printing House, 1960 (re-imprimatur 11 May 1960)",
+      "url": "https://archive.malankaralibrary.com/ImageUpload/e409cd1acacfe8d12f994ec61edd79bf.pdf",
+      "kind": "primary-book",
+      "inspection": "Complete 86-page PDF acquired in repository syriac_malankara review (SHA-256 db3636f820b6086541b2ac89c936551e377cca8b543e70057d3de8333cb99cc9); PDF images 1, 2 (title and re-imprimatur of Benedict Mar Gregorios, 11 May 1960), 4 (opening text), and 84/printed p. 71 (Syriac absolution appendix with Malayalam rubrics) visually inspected.",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "Body not transcribed; earlier approved edition implied by 're-imprimatur' remains unidentified."
+    },
+    {
+      "id": "eastern-expansion-2026-11:malankara-tiruvalla1965",
+      "title": "Ṭeksā d-qurbānā (Anaphora of Mar Xystus, Patriarch of Rome), Tiruvalla: St. Joseph's Printing House, 1965 (imprimatur 2 February 1965)",
+      "url": "https://archive.malankaralibrary.com/ImageUpload/712968df3b834d53488fad4238de74bd.pdf",
+      "kind": "primary-book",
+      "inspection": "Complete 99-page PDF acquired in repository syriac_malankara review (SHA-256 6baea59bef005c1af9325f242d000a105eec92d65c318727c980ecd5129c79b0); title and imprimatur of Benedict Mar Gregorios (2 February 1965) inspected at PDF pp. 2–3.",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "Body not transcribed or collated against Tiruvalla 1960; no substantive textual revision claimed."
+    },
+    {
+      "id": "eastern-expansion-2026-11:malankara-taksa1966",
+      "title": "Syro-Malankara Qurbana Taksa (സീറോ-മലങ്കര കുർബാന തക്സ, St. Xystus Anaphora; Puthusserry/Kallooppara: Kerala Printers, 1966)",
+      "url": "https://archive.malankaralibrary.com/ImageUpload/c4c664b902ed1f65cd1fcd4e40c1ae9d.pdf",
+      "kind": "primary-book",
+      "inspection": "Complete 160-page scan acquired in repository syriac_malankara review; PDF p. 2 title/imprint (Liturgical Committee, Rev. Thomas Pazhoor, hierarchical approval stated) and PDF p. 7 / printed p. iv episcopal preface signed 1 January 1966 by Benedict Mar Gregorios and Zacharias Mar Athanasios visually inspected.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Malayalam body not collated against Syriac predecessors; separate approval instrument and independent proof of actual parish celebration remain pending under guidance/time-machine.md §11."
+    },
+    {
+      "id": "eastern-expansion-2026-11:malankara-paniker1991",
+      "title": "Givergis Paniker Karichal, The Holy Qurbono in the Syro-Malankara Church (1991)",
+      "url": "https://archive.malankaralibrary.com/ImageUpload/fc50865f1a2dbdbdb2d71aca59a39255.pdf",
+      "kind": "scholarship",
+      "inspection": "Complete 56-page PDF acquired in repository syriac_malankara review (SHA-256 6402b3260adb81ff7faaf0b40c60f22bc81ae417dddf72905e1eb361aa0d4b3a); PDF p. 29 / printed p. 48 visually inspected listing the 1987 Teksod-Qurobo then in use with nine named anaphoras.",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "Scholarly testimony; original 1987 book not acquired and its exact language distribution is unstated at p. 48."
+    },
+    {
+      "id": "eastern-expansion-2026-11:malankara-synod2006",
+      "title": "Malankara: Synodal Acts and Voice 2.2 (January 2007): Fourth Ordinary Holy Episcopal Synod (31 October – 3 November 2006)",
+      "url": "https://malankaracatholicchurch.in/admin/pdf/Vol_2_No_2.pdf",
+      "kind": "primary-act",
+      "inspection": "Complete 136-page PDF acquired in repository syriac_malankara review (SHA-256 8da720470476331bc96b30a6015ef8ec50080ef334a31fc26b2b94f749225d7b); printed pp. 25–26, 30–31 (revised Takso criteria and named changes), and 46 (Decision II.6) read and image-checked.",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "Primary synodal approval act and summary of approved changes; original printed 2007 Malayalam Takso volume remains unacquired."
+    },
+    {
+      "id": "eastern-expansion-2026-11:malankara-synod2007",
+      "title": "Malankara: Synodal Acts and Voice 3.2 (February 2008): Fifth Ordinary Holy Episcopal Synod (9–12 October 2007)",
+      "url": "https://malankaracatholicchurch.in/admin/pdf/Vol_3_No_2.pdf",
+      "kind": "primary-act",
+      "inspection": "Complete 116-page PDF acquired in repository west-syriac review; printed pp. 24–25 (release of revised Taksa during 9–12 October 2007 synod, distinct from earlier published Qurbonakramam) and p. 40 visually inspected.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Records official release during the October 2007 synod; does not supply full printed text or measure parish-by-parish implementation."
+    },
+    {
+      "id": "eastern-expansion-2026-11:malankara-english2023",
+      "title": "The Order of the Holy Qurbono of the Syro-Malankara Catholic Church, English Translation (St. Mary, Queen of Peace Eparchy, USA and Canada, 15 August 2023)",
+      "url": "https://archive.malankaralibrary.com/ImageUpload/258457d35ed706e153ca5ee7ab629a09.pdf",
+      "kind": "primary-book",
+      "inspection": "Complete 346-page PDF acquired in repository syriac_malankara review (SHA-256 2878591ace056295121ae733d3c43ebec1e49d367bad9b8dda733105cede2e35); PDF p. 2 imprint/approval and PDF p. 4 (printed p. ii) preface read from page images, confirming that the 2007 Malayalam Takso contains nine anaphoras.",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "Diaspora English translation preface used strictly to confirm the 2007 Malayalam Takso's nine-anaphora repertoire; Malayalam body remains uncollated."
+    },
+    {
+      "id": "eastern-expansion-2026-11:tisserant1941",
+      "title": "Eugène Tisserant, Syro-Malabare (Église), Dictionnaire de théologie catholique 14.2 (1941), col. 3160",
+      "url": "https://fr.wikisource.org/wiki/Page:Alfred_Vacant_-_Dictionnaire_de_th%C3%A9ologie_catholique,_1908,_Tome_14.2.djvu/829",
+      "kind": "scholarship",
+      "inspection": "Original page image scan p. 829, cols. 3159–3160 visually inspected in repository west-syriac review: documents 1934 Pampakuda Syro-Malankara missal with two anaphoras (Xystus and short James).",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Contemporary bibliographic testimony; original 1934 printing remains unacquired."
+    },
+    {
+      "id": "eastern-expansion-2026-11:vilnius1617-scan",
+      "title": "Книга Служебникъ (Vilnius: Leon Mamonych press, 1617), compiled scan linked by UGCC Liturgical Commission",
+      "url": "https://drive.google.com/file/d/0B4vzPDufLbhuVEhuY3R3WlZwbHM/view",
+      "kind": "primary-book",
+      "inspection": "Complete 588-image PDF acquired in repository byzantine_slavic review (SHA-256 a40df26e4f1aa80c50e00d33c2315159b933b2ab715dafecaf9faefaeae171f2); title image 1, Sapieha arms image 2, and dedication/Nauka images 4–7 directly inspected.",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "Compiled file containing modern typescript/appended leaves (images 3, 582–588); only title and opening leaves visually checked, not full-book collation."
+    },
+    {
+      "id": "eastern-expansion-2026-11:kniga-belarusi1986",
+      "title": "Кніга Беларусі 1517–1917: зводны каталог (Minsk, 1986)",
+      "url": "https://files.knihi.com/Knihi/Biblijahrafija/Kniha_Belarusi_1517-1917.pdf",
+      "kind": "institutional-catalogue",
+      "inspection": "Whole 1687-page PDF acquired in repository byzantine_slavic review (SHA-256 46e5980a9013e571ade634c56fd653b447d59cc94e34e1a4fbe8216edb29a802); Cyrillic entries 80 (Vilnius 1617), 81 (Orthodox 1617 control), 167, 201, 209 (Supraśl 1727–1732), 231 (Supraśl 1758), 239 (Supraśl 1763), 248–250, 255 read.",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "Union catalogue covering Belarusian Cyrillic imprints through 1800; does not cover 19th-century Cyrillic Sluzhebniks or modern Belarusian liturgy."
+    },
+    {
+      "id": "eastern-expansion-2026-11:huculak1990",
+      "title": "Lawrence Daniel Huculak, The Divine Liturgy of St John Chrysostom in the Kievan Metropolitan Province during the Period of Union with Rome (1596–1839), Analecta OSBM (Rome, 1990)",
+      "url": "https://osbm.info/wp-content/uploads/2022/11/47.-Huculak-D.-L.-The-Divine-Liturgy-of-St.-John-Chrysostom-in-the-Kievan-Metr.-Province-1596-1839-cjm.pdf",
+      "kind": "scholarship",
+      "inspection": "Whole 426-page PDF acquired in repository byzantine_slavic review (SHA-256 b6adbdf04659724654eb62b6db97a6b9847d61560154aa0067c82fea689f6958); Appendix II (pp. 384–401) and Appendix III (pp. 402–404) read for 1617, 1692–1695, 1727–1732, 1758, 1763, and 1788 editions.",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "Scholarly repertoire ending at 1796; relies on the author's collations and historical catalogues without fresh leaf-by-leaf verification of every witness."
+    },
+    {
+      "id": "eastern-expansion-2026-11:senchenko2022",
+      "title": "L. Senchenko, Evoliutsiia uniatskoi liturgii po suprasl'skomu Liturgikonu (Sluzhebniku) 1727–1732 gg., Vestnik Orenburgskoi dukhovnoi seminarii 3 (24) (2022), pp. 43–75",
+      "url": "https://orends.ru/wp-content/uploads/2023/01/2022_3-24-3-0b8.pdf",
+      "kind": "scholarship",
+      "inspection": "Whole 33-page PDF acquired in repository byzantine_slavic review (SHA-256 a208bf8cfc04cd17158f217302a15496308d1a92841d7fd748228a3379617bd8); printed pp. 43–45 and footnotes 1–3 read on RNB OR VII.3.15 (title 1727, colophon p. 478 dated 14 January 1732, Josaphat commemoration at Proskomedia, Filioque, papal and royal commemorations).",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "Evaluative confessional framing excluded; only concrete bibliographic facts and reported textual features of RNB OR VII.3.15 are used; copy differences vs Kniga Belarusi no. 209 remain open."
+    },
+    {
+      "id": "eastern-expansion-2026-11:neb-suprasl1758",
+      "title": "Служебник в нем же литургиа ... Иоанна Златоустаго (Supraśl, 1758), Russian State Library copy MK Кир. 2° (NEB Knizhnye pamiatniki)",
+      "url": "https://kp.rusneb.ru/item/material/sluzhebnik-v-nem-zhe-liturgia-izhe-vo-svyatyh-otca-nashego-ioanna-zlatoustago",
+      "kind": "primary-book",
+      "inspection": "All 181 NEB images acquired and hashed in repository byzantine_slavic review (manifest SHA-256 107e33bbacea2add780b620e2d191e1dc9acf398c50e5c4db7121bbfa9efa1d5); image 3 (Cyrillic 1758 title for private/travelling priests), images 5–6 (Proskomedia), and images 176–177 (contents naming Latin-origin and Polish-Lithuanian patron propers) visually inspected.",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "Title, opening, and contents leaves visually checked; full liturgy body not transcribed or collated."
+    },
+    {
+      "id": "eastern-expansion-2026-11:casasloviec-nadson-lead",
+      "title": "Часасловец (Časasloviec): bibliography of Fr. Alexander Nadson's Belarusian liturgical editions (London: Božym Šlacham, 1999–2005)",
+      "url": "https://casasloviec.co.uk/index.php?newsid=17",
+      "kind": "institutional-catalogue",
+      "inspection": "Canonical URL and bibliographic entries (including Літургікон, London 2005) verified via web discovery; full HTML and printed volumes not directly inspected.",
+      "checked_on": "2026-11-25",
+      "status": "lead",
+      "limitations": "Uninspected community bibliographic lead; supports provisional modern Belarusian tracking only, not documented approval or textual collation."
+    },
+    {
+      "id": "eastern-expansion-2026-11:croatian2018-book",
+      "title": "Božanska liturgija svetog oca našega Ivana Zlatoustoga (Zagreb: Ordinarijat Križevačke eparhije, February 2018)",
+      "url": "https://drive.google.com/file/d/1a31f1NKfui80czwJLaq6eqIrZ8ACe5Se/view?usp=sharing",
+      "kind": "primary-book",
+      "inspection": "Complete 104-page official PDF acquired in repository byzantine_regional review (SHA-256 08f3500e86d66561df23d9ffc31f04e247a6e9106eb9c28022c86bad09852494); PDF pp. 1, 3 (title), 4 (source Rome 1970 Grottaferrata Recensio ruthena, Congregation approval 2 Feb 2017 Prot. N. 64/2016, imprint Feb 2018, 1000 copies, ISBN 978-953-59968-0-4), and 5 (Bishop Nikola Kekić decree 5/2018 of 30 Jan 2018, ad experimentum 5 years) directly image-inspected.",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "Front matter and decree verified on page images; full Croatian prayer body uncollated against Rome 1970; post-2023 renewal of the five-year ad experimentum decree unverified."
+    },
+    {
+      "id": "eastern-expansion-2026-11:bogataj2022",
+      "title": "Jan Dominik Bogataj, O novem slovenskem prevodu Božje liturgije, Edinost in dialog 77/2 (2022), pp. 247–264",
+      "url": "https://www.teof.uni-lj.si/uploads/File/Edinost/77/02/Bogataj1.pdf",
+      "kind": "scholarship",
+      "inspection": "Complete 18-page publisher PDF tracked in repository source library (SHA-256 78fae41428cf10eccecfaeaf78e94f82f2ad1197c0dddeba5a680bcd6aa2a9bf); printed pp. 249–250, 257, 259–261, and 263 read for the 1933/1965/2022 Slovenian chain, 1942 Rome Ruthenian source, restored antiphons, and Proskomedia saints.",
+      "checked_on": "2026-10-16",
+      "status": "inspected",
+      "limitations": "Firsthand translator account; original approval letters (Prot. 152/2022 and no. 14/2023) and complete printed volumes remain unacquired."
+    },
+    {
+      "id": "eastern-expansion-2026-11:ika2023-slovenian",
+      "title": "IKA (Informativna katolička agencija), Predstavljen prvi službeni prijevod Liturgikona na slovenskom jeziku (27 May 2023)",
+      "url": "https://ika.hkm.hr/novosti/predstavljen-prvi-sluzbeni-prijevod-liturgikona-na-slovenskom-jeziku/",
+      "kind": "official-retrospective",
+      "inspection": "Complete HTML acquired in repository byzantine_regional review (SHA-256 fe8cf1b1e9fd0e33c761c3e64523cbaad9905c3eff209e8e9383ef45866cc25a); entire report read on the 25 May 2023 Ljubljana presentation of three role volumes (Služebnik, Božja liturgija, notated edition), Rome 1942 source, 30 Nov 2022 Dicastery approval, Bishop Milan Stipić decree 14/2023, and ISBN 978-961-7155-17-4.",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "Official Catholic news report; does not identify which of the three volumes carries the cited ISBN or supply original decree scans."
+    },
+    {
+      "id": "eastern-expansion-2026-11:kolupaev2012",
+      "title": "V. E. Kolupaev, Slavianskie bogosluzhebnye knigi, napechatannye v monastyre Grottaferrata, Rossiiskie i slavianskie issledovaniia 7 (Minsk, 2012), pp. 386–392",
+      "url": "https://elib.bsu.by/bitstream/123456789/96716/1/61.pdf",
+      "kind": "scholarship",
+      "inspection": "PDF acquired and text layer read in repository byzantine_slavic review on Grottaferrata Slavonic photolithographic reissue practice (1952 Liturgikon, 1962/1968/1969/1970/1978 reprints).",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "Delivered PDF lacks the final bibliography; covers copies available to the author and does not inspect the Rome 1970 Ruthenian Chrysostom directly."
+    },
+    {
+      "id": "eastern-expansion-2026-11:dobos2020",
+      "title": "András Dobos, A magyar nyelvű liturgia emlékei, in Orcád világossága (Debrecen, 2020), pp. 386–403",
+      "url": "https://real.mtak.hu/123104/1/dobos_katalogus_2.pdf",
+      "kind": "scholarship",
+      "inspection": "Complete 18-page PDF acquired in repository byzantine_regional review (SHA-256 9a57306493693644e3d7fc949b2321f7d1f231995532cb4c39beb6a3bcc02fb8); printed pp. 386–403 read, especially Kat. IV.37 (p. 392), Kat. IV.41 (pp. 396–397 on 1882/1890 Debrecen books), and p. 391 n. 39 (Dudás 1954 ordinance 819).",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "Specialist institutional exhibition catalogue; full 1882, 1890, and 1954 originals were not separately acquired."
+    },
+    {
+      "id": "eastern-expansion-2026-11:ivancso2007",
+      "title": "István Ivancsó, Miklósy István hajdúdorogi megyéspüspök liturgikus rendelkezései, Athanasiana 26 (2007), pp. 65–87",
+      "url": "https://epa.oszk.hu/05200/05207/00026/pdf/EPA05207_athanasiana_2007_26.pdf",
+      "kind": "scholarship",
+      "inspection": "Complete issue acquired in repository byzantine_regional review (SHA-256 3c4935f9215fb7d4ecdd8151cd29e945ad309be4342f4277677790ef53b21d65); printed pp. 65–73 read for 1916 calendar circulars (1990/1916, 3150/1916), 1918 ruler petitions omission (4471/1918), 1919 Holy Cross propers (808/1919), and 1920/1921 Liturgikon directives.",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "Primary Hajdúdorog circulars quoted via scholarship; originals in GMFL I–1–h remain unacquired. Its 1793 Krucsay attribution is superseded by Dobos 2020."
+    },
+    {
+      "id": "eastern-expansion-2026-11:ivancso2008",
+      "title": "István Ivancsó, A magyar Liturgikon a hajdúdorogi egyházmegyében, Athanasiana 27 (2008), pp. 11–28",
+      "url": "https://epa.oszk.hu/05200/05207/00027/pdf/EPA05207_athanasiana_2008_27.pdf",
+      "kind": "scholarship",
+      "inspection": "Complete issue acquired in repository hungarian-reception review; printed pp. 13, 19–25 read (1882 and 1890 extents, 1920 revision against Greek and Greek parallel canonical parts quoting Emlékezetül pp. 309–310, 1949 extract, 1984 unchanged reprint).",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Original books and circulars not acquired in full; its 1949 permission table conflicts with Ivancsó 2003/OPAC 1650/1949."
+    },
+    {
+      "id": "eastern-expansion-2026-11:light2020",
+      "title": "The Light of Thy Countenance: Greek Catholics in Hungary (Debrecen, 2020, English edition)",
+      "url": "https://real.mtak.hu/123184/1/orcad_vilagossaga_angol.pdf",
+      "kind": "scholarship",
+      "inspection": "Complete 490-page PDF acquired in repository byzantine_regional review (SHA-256 7ee73bab7fe80cc73bc77a978d0a9dc3c96ad635280530ecddb72110c826b6c4); printed pp. 53–61, 71–72, and p. 391 (Dudás 1954 ordinance 819/1954) read.",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "Institutional catalogue survey; printed 1954 directive not acquired independently."
+    },
+    {
+      "id": "eastern-expansion-2026-11:eldarov1985-photos",
+      "title": "Georgi Eldarov, Служебник (Rome, 1985): bookseller photographs of contents leaves pp. 615–617",
+      "url": "https://knizhen-pazar.net/sold_products/books/4358614-sluzhebnik",
+      "kind": "primary-book",
+      "inspection": "Three photographs of printed contents leaves pp. 615–617 acquired and visually inspected in repository byzantine_regional review (SHA-256 1feff878c636d5ef9f0d279b94726216040d3ad17cd96e492e11005b15fcc9fa): verifies preparatory rites (pp. 7–12), Chrysostom (p. 20), Basil (p. 63), Presanctified (p. 105), Sacred Heart (p. 301) and Immaculate Heart (p. 306) propers, January–December calendar (pp. 319–571), and postcommunion prayers (p. 609).",
+      "checked_on": "2026-10-19",
+      "status": "inspected",
+      "limitations": "Only three contents leaves photographed; title leaf, approval leaf (seller claims Vatican Polyglot Press and Exarch Methodius permission), source exemplar, and relation to Roman Vulgata remain unverified."
+    },
+    {
+      "id": "eastern-expansion-2026-11:sico2009-macedonian",
+      "title": "Servizio Informazioni Chiese Orientali (SICO) Anno 2009, LXIV (printed December 2010), p. 291: 9 December 2009 recognitio for Macedonian Chrysostom and Basil Liturgies",
+      "url": "https://www.vatican.va/roman_curia/congregations/orientchurch/sico/SICO_PDF/SICO%202009.pdf",
+      "kind": "official-retrospective",
+      "inspection": "Complete 492-page official PDF acquired and hashed in repository (SHA-256 f85f4c6ebc5edca69da7c8d1bff487ce256e8a28bac8dfaef0132db7a56d71a9); PDF p. 290 / printed p. 291 directly image-inspected (rechecked 2026-10-20), verifying the final recognitio bullet dated 9 December 2009.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Official dicastery retrospective recording recognitio; does not name a printed title/imprint, identify the Greek or Church Slavonic exemplar, or prove dated local altar use."
+    },
+    {
+      "id": "eastern-expansion-2026-11:vatican-register-macedonian",
+      "title": "Congregation for the Eastern Churches, official liturgical text approvals register (dated bullet 9 December 2009)",
+      "url": "https://press.vatican.va/roman_curia/congregations/orientchurch/documents/rc_con_corient_doc_20070601_liturgical-texts_it.html",
+      "kind": "official-retrospective",
+      "inspection": "Complete HTML acquired and hashed in repository (SHA-256 91f32ae0d490a63ef5252a1d90ff42af3ca9e800387ab364a3f5a7c338d90388); HTML line 41 directly inspected (rechecked 2026-10-20), recording approval on 9 December 2009 for Macedonian Chrysostom and Basil Liturgies.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Calls the 9 December 2009 action 'approval' whereas SICO 2009 records 'recognitio'; neither names an exact printed edition or source recension."
+    }
+  ],
+  "stages": [
+    {
+      "id": "eastern-expansion-2026-11:melkite-karme-1612",
+      "tradition_id": "eastern-local-round2:melkite",
+      "label": "Meletios Karmé's Arabic Liturgikon revision",
+      "date_label": "1612 (pre-1724 shared Antiochian Arabic recension)",
+      "start_year": 1612,
+      "end_year": 1612,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Historical Arabic Liturgikon recension prior to the 1724 Antiochian split; shared baseline cited by Charon when analyzing 1701 and later Melkite printings.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-greek-karme1612"
+      ],
+      "witness_label": "Arabic Liturgikon revision of Meletios (Malatios) Karmé (1612), preface quoted in Charon (1908)",
+      "summary": "Metropolitan Meletios Karmé revised the Arabic Liturgikon against Greek sources; Charon quotes the preface and identifies Karmé's Arabic recension as the Arabic text later printed at Snagov in 1701.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:charon1908",
+          "locus": "Printed pp. 539–545 (and Liturgikon repertoire pp. 539–593)",
+          "claim": "Quotes Karmé's preface, dates the Liturgikon revision to 1612, and identifies it as the Arabic text printed in 1701."
+        }
+      ],
+      "limitations": "Pre-1724 shared Antiochian manuscript recension, not a Catholic-exclusive printing. Original manuscripts and Karmé's separate 1630s–1643 Euchologion project (Vat. ar. 618) were not collated by this project.",
+      "reception": "Shared Antiochian Arabic heritage received into printed circulation in 1701 and used by both Orthodox and Catholic Melkites prior to 1839."
+    },
+    {
+      "id": "eastern-expansion-2026-11:melkite-snagov-1701",
+      "tradition_id": "eastern-local-round2:melkite",
+      "label": "Snagov Greek–Arabic Liturgikon of Athanasios Dabbas",
+      "date_label": "1701 publication (later used in 1743 Roman correction project)",
+      "start_year": 1701,
+      "end_year": 1701,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "First printed Greek–Arabic Liturgikon containing Chrysostom, Basil, and Presanctified; Arabic follows Karmé while Greek follows a Venice edition (non-parallel columns).",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-greek-snagov1701"
+      ],
+      "witness_label": "The three Divine Liturgies in Greek and Arabic, Athanasios Dabbas (Snagov, 1701)",
+      "summary": "Printed in Wallachia under Patriarch Athanasios Dabbas combining Karmé's Arabic text with a Venice Greek edition; Charon documents its use among Melkite Catholics and describes the annotated Greek College copy prepared for the unprinted 1743 Demandatam correction project.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:charon1908",
+          "locus": "Printed pp. 545–565, table p. 591",
+          "claim": "Identifies the 1701 Snagov Greek–Arabic printing, distinguishes its Arabic (Karmé) and Greek (Venice) texts, attests Melkite Catholic usage, and describes the annotated 1743 project copy."
+        }
+      ],
+      "limitations": "Pre-1724 printing shared across Antioch; the 1743 bull Demandatam ordered a corrected Roman printing that did not appear in 1743. Original 1701 scan not independently collated.",
+      "reception": "Explicitly attested in Melkite Catholic use by Charon until superseded by Propaganda Fide's 1839 printing."
+    },
+    {
+      "id": "eastern-expansion-2026-11:melkite-choueir-zakher-1759-1787",
+      "tradition_id": "eastern-local-round2:melkite",
+      "label": "Choueir (Shuwayr) Monastery Press Arabic lectionary and proper books (Zakher press)",
+      "date_label": "1759–1787 first printings (reprinted through 1879; press founded 1733–1734)",
+      "start_year": 1759,
+      "end_year": 1787,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Complementary Eucharistic lectionary and proper books printed at Dayr Mar Yuhanna al-Sabigh (Choueir/Shuwayr): Apostolos (1759), Small Octoechos (1767), Book of Prophecies (1775), Gospels (1776), and Horologion (1787). Explicitly distinct from an altar Liturgikon.",
+      "components": [
+        "lectionary",
+        "propers",
+        "calendar"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-greek-epistles1759",
+        "eastern:byzantine-greek-octoechos-choueir",
+        "eastern:byzantine-greek-prophecies-choueir",
+        "eastern:byzantine-greek-gospels-choueir",
+        "eastern:byzantine-greek-horologion-choueir"
+      ],
+      "witness_label": "Choueir Basilian Monastery Arabic liturgical series (Apostolos 1759, Octoechos 1767, Prophecies 1775, Gospels 1776, Horologion 1787)",
+      "summary": "Following Abdallah Zakher's establishment of the Choueir Arabic press in 1733–1734 (first titles Mīzān al-zamān 1734 and Psalter 1735), the monastery issued the Melkite Catholic complementary reading and proper corpus—Apostolos (1759, Zakher's revision, five identical printings to 1859), Small Octoechos (1767, 1784), Book of Prophecies (1775, reproducing Dabbas 1708), Gospels (1776, 1818, 1861), and Horologion supplying apolytikia and kontakia (1787, 1852, 1879)—all without the Propaganda imprimatur mandated by Benedict XIV.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:charon1908",
+          "locus": "Printed pp. 593–602, 615 (including image-checked pp. 597, 599)",
+          "claim": "Catalogues the Choueir printings of the Apostolos (1759–1859), Octoechos (1767, 1784), Prophecies (1775–1833), Gospels (1776–1861), and Horologion (1787–1879), noting Zakher's revisions and absence of Roman imprimatur."
+        }
+      ],
+      "limitations": "Complementary lectionary and proper books only—NOT an 18th-century Shuwayr Liturgikon (no 1733, 1745, or 1764 Choueir Liturgikon is attested in Charon; 1745 is Orthodox Patriarch Sylvester's Iaşi Hieratikon, and 1764 at Choueir is Zakher's theological work Al-Burhān al-ṣarīḥ). Original Choueir copies remain unacquired.",
+      "reception": "Repeated identical reprints over a century attest sustained Melkite Catholic liturgical reliance on the Choueir press for readings and propers despite lack of Propaganda imprimatur."
+    },
+    {
+      "id": "eastern-expansion-2026-11:melkite-rome-1839",
+      "tradition_id": "eastern-local-round2:melkite",
+      "label": "Propaganda Fide Greek–Arabic Liturgikon",
+      "date_label": "1839 publication",
+      "start_year": 1839,
+      "end_year": 1839,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "First printed Catholic-revised Greek–Arabic altar Liturgikon (280 pp.), introducing papal commemoration, removing diptychs, and conforming communion prayers to the Roman Greek Euchologion.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-greek-rome1839"
+      ],
+      "witness_label": "Greek–Arabic Liturgikon (Rome: Propaganda Fide, 1839), 280 pp.",
+      "summary": "Propaganda Fide published the revised Melkite Greek–Arabic Liturgikon (accompanied by a Chrysostom offprint omitting prothesis), adding papal commemoration, suppressing the diptychs, and conforming communion prayers to the Roman Greek Euchologion text.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:charon1908",
+          "locus": "Printed pp. 565–575, table p. 591 (image-checked pp. 565, 567, 591)",
+          "claim": "Documents the 1839 Rome Propaganda printing (280 pp.) and specifies papal commemoration, removal of diptychs, and communion-prayer conformity to the Roman Greek text."
+        }
+      ],
+      "limitations": "Scholarly description by Charon; original 1839 Arabic–Greek volume not independently acquired or collated by this project.",
+      "reception": "Provided the textual base for the 1862 Vienna reprint and the 1880 Choueir Chrysostom printing."
+    },
+    {
+      "id": "eastern-expansion-2026-11:melkite-vienna-1862",
+      "tradition_id": "eastern-local-round2:melkite",
+      "label": "Vienna Greek–Arabic Liturgikon (reprint of Propaganda 1839)",
+      "date_label": "1862 publication (episcopal commission letter 22 February 1862)",
+      "start_year": 1862,
+      "end_year": 1862,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "288-page quarto reprinting Propaganda 1839 in identical typographic disposition for free distribution to Melkite Catholic churches.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-greek-vienna1862"
+      ],
+      "witness_label": "Greek–Arabic Liturgikon (Vienna: Imperial and Royal Press, 1862), 288 pp.",
+      "summary": "Edited by priests Moïse Maqhat and Philippe Noumeir under Patriarch Clement Bahouth and Bishop Basil Chahiat (letter of 22 February 1862) and funded by the Archbishop of Esztergom and Hungarian bishops, deliberately reproducing the 1839 Propaganda Liturgikon text and layout (with a companion 179-page Chrysostom extract).",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:charon1908",
+          "locus": "Printed pp. 575–580, table p. 591 (citing preface pp. 2–3)",
+          "claim": "Transcribes the 22 February 1862 preface data and confirms that Vienna 1862 deliberately reprints the 1839 Propaganda text and disposition."
+        }
+      ],
+      "limitations": "Reprint witness, not a substantive textual revision; original 1862 copy not acquired. Corrects secondary confusion labelling this 1862 Vienna book a Typikon.",
+      "reception": "Printed for free distribution across Melkite Catholic churches; exact parish-level distribution unquantified."
+    },
+    {
+      "id": "eastern-expansion-2026-11:melkite-jerusalem-euchologion-1865",
+      "tradition_id": "eastern-local-round2:melkite",
+      "label": "Great Arabic Euchologion (Jerusalem: Franciscan Press)",
+      "date_label": "1865 publication",
+      "start_year": 1865,
+      "end_year": 1865,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Complementary priestly/sacramental Euchologion (326 pp.) explicitly excluding the Divine Liturgies (Liturgikon); based on the Roman Greek Euchologion with Melkite adaptations of chorepiscopal and other orders.",
+      "components": [
+        "rubrics",
+        "ordinary"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-greek-great1865"
+      ],
+      "witness_label": "Great Arabic Euchologion (Jerusalem: Franciscan Press, 1865), 326 pp.",
+      "summary": "Issued at the Jerusalem Franciscan Press following the 1851 Propaganda Small Arabic Euchologion, supplying the wider Melkite priestly ritual based on the Roman Greek book with Melkite chorepiscopal adaptations while keeping the Eucharistic Liturgikon in a separate book.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:charon1908",
+          "locus": "Printed pp. 615–623 (image-checked pp. 615, 623)",
+          "claim": "Distinguishes the 1865 Jerusalem Great Euchologion (326 pp.) from Karmé's Vat. ar. 618 and notes its Roman Greek basis, Melkite chorepiscopal adaptations, and explicit exclusion of Liturgikon contents."
+        }
+      ],
+      "limitations": "Complementary priestly ritual rather than an altar Liturgikon; original 1865 volume and Charbel Nassif's 2022 OpenEdition study (efr/46083) remain to be read in full.",
+      "reception": "Major 19th-century Melkite Catholic Euchologion; predecessor context for the 1968 Paulist revision."
+    },
+    {
+      "id": "eastern-expansion-2026-11:melkite-menaia-horologion-1883",
+      "tradition_id": "eastern-local-round2:melkite",
+      "label": "Mo'aqqad Arabic Menaia and revised Horologion",
+      "date_label": "1883 publication",
+      "start_year": 1883,
+      "end_year": 1883,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Patriarchally approved Melkite Catholic Arabic proper books (875-page anthology-type Menaia and 736-page revised Horologion) supplying Eucharistic troparia, kontakia, and Typika psalms.",
+      "components": [
+        "propers",
+        "calendar",
+        "lectionary"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-greek-menaia1883",
+        "eastern:byzantine-greek-horologion1883"
+      ],
+      "witness_label": "Melkite Catholic Arabic Menaia (Beirut: Shaker Batlouni, 1883) and Arabic Horologion revised by Germanos Mo'aqqad (1883)",
+      "summary": "Approved by Patriarch Gregory II Youssef and revised by Archimandrite Ignatius (Germanos) Mo'aqqad (1881–1883): the Menaia present an anthology selection omitting synaxaria, vigil readings (kept in Book of Prophecies), and Royal Hours; the revised Horologion corrects the Arabic, restores Psalms 33 and 144 to the Typika, and inserts troparia of proper Melkite Catholic offices.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:charon1908",
+          "locus": "Printed pp. 599–606, 611–614 (image-checked pp. 599, 602–603, 606, 611–614)",
+          "claim": "Documents Gregory II Youssef's approvals and details the specific omissions in the 1883 Menaia and the restored Typika psalms and Melkite Catholic proper troparia in the 1883 Horologion."
+        }
+      ],
+      "limitations": "Scholarly description by Charon; original 1883 volumes and subsequent reprints (Menaia 1896, abridged Menaia 1898, Horologion 1890/1898/1905) remain unacquired.",
+      "reception": "Approved by Patriarch Gregory II Youssef and repeatedly reprinted into the early 20th century."
+    },
+    {
+      "id": "eastern-expansion-2026-11:melkite-beirut-rahme-1900",
+      "tradition_id": "eastern-local-round2:melkite",
+      "label": "Rahmé Arabic Liturgikon (Beirut: Jesuit Press)",
+      "date_label": "1899 (small format) and 1900 (grand duodecimo) publications",
+      "start_year": 1899,
+      "end_year": 1900,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Revised Arabic altar Liturgikon edited by Michael Ibrahim Rahmé (343 pp. in 1900; parallel 300 pp. small format in 1899), with undated permission of Patriarch Peter IV Geraigiry.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-greek-beirut1900",
+        "eastern:byzantine-greek-beirut1899"
+      ],
+      "witness_label": "The Divine Liturgies of Michael Ibrahim Rahmé (Beirut: Jesuit Press, 1899–1900)",
+      "summary": "Restyles Arabic rubrics without altering sense, corrects spelling and grammar in prayers, prints the diaconal litany in full, adds a preface and appendix, and inserts at pp. 140–141 a commemoration formula for Pope, patriarch, and bishop expressly annotated as absent from Propaganda 1839. Later cited by Patriarch Gregorios III's Letter on the Liturgy as a milestone edition.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:charon1908",
+          "locus": "Printed pp. 584–591, table p. 591 (noting pp. 140–141 commemoration formula)",
+          "claim": "Details Rahmé's 1899/1900 parallel formats, patriarchal permission, restyled rubrics, full diaconal litany, and added Pope–Patriarch–Bishop commemoration formula."
+        },
+        {
+          "source_id": "eastern-expansion-2026-11:melkite-letter-2011",
+          "locus": "Historical overview naming Rahmy's 1900 book",
+          "claim": "Official patriarchal retrospective recognizes Rahmé's 1900 Liturgikon in the Melkite service-book lineage."
+        }
+      ],
+      "limitations": "Original 1899/1900 copies unacquired; Charon notes he never heard the pp. 140–141 formula actually used in liturgy, proving that print presence does not equal universal observance.",
+      "reception": "Issued with undated patriarchal permission of Peter IV Geraigiry and recognized retrospectively by Patriarch Gregorios III."
+    },
+    {
+      "id": "eastern-expansion-2026-11:melkite-badaouy-propers-1900-1903",
+      "tradition_id": "eastern-local-round2:melkite",
+      "label": "Badaouy Melkite Catholic Pentecostarion (1900), Apostolos (1902), and Triodion (1903)",
+      "date_label": "1900–1903 publications",
+      "start_year": 1900,
+      "end_year": 1903,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Patriarchally approved Catholic Arabic seasonal proper and epistle books edited by Khalil Badaouy, replacing Melkite Catholic reliance on Orthodox Jerusalem printings (1854, 1856) and Zakher's Choueir Apostolos (1759–1859).",
+      "components": [
+        "propers",
+        "calendar",
+        "lectionary"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-greek-badaouy1900-pentecostarion",
+        "eastern:byzantine-greek-epistles1902",
+        "eastern:byzantine-greek-badaouy1903-triodion"
+      ],
+      "witness_label": "Melkite Catholic Pentecostarion (1900, 314 pp.), Apostolos (1902, 302 pp.), and Triodion (1903, 611 pp.), ed. Khalil Badaouy",
+      "summary": "Approved by Patriarch Peter IV Geraigiry: the 1900 Pentecostarion removes synaxaria and appends the office of the Most Holy Sacrament (Corpus Christi); the 1902 Apostolos replaces Abdallah Zakher's Arabic biblical text with the Jesuit Arabic Bible and shortens Sunday prokeimena; the 1903 Triodion removes synaxaria, replaces Gregory Palamas with Maximos III Mazloum's office of the Holy Relics, and omits the Synodikon of the Sunday of Orthodoxy.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:charon1908",
+          "locus": "Printed pp. 594–597, 606–611 (image-checked pp. 597, 606, 609, 611)",
+          "claim": "Records Peter IV Geraigiry's approvals and specifies the exact structural, scriptural, and calendar changes across all three Badaouy volumes."
+        }
+      ],
+      "limitations": "Charon did not have the Badaouy Pentecostarion and Triodion in hand when writing; original books and signed approvals remain unacquired.",
+      "reception": "First Melkite Catholic printed Pentecostarion and Triodion replacing previously used Orthodox Jerusalem editions (1854, 1856)."
+    },
+    {
+      "id": "eastern-expansion-2026-11:melkite-reforms-1956-1972",
+      "tradition_id": "eastern-local-round2:melkite",
+      "label": "Harissa renewal decree (1956) and Synodal Divine Liturgy decrees (1969, 1970, 1972)",
+      "date_label": "1956–1972 decrees (1969 abbreviations effective early 1970)",
+      "start_year": 1956,
+      "end_year": 1972,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Normative Melkite patriarchal and synodal decrees reshaping Divine Liturgy execution prior to the 1992–2007 books: liturgical renewal principles (1956), permitted abbreviations (1969/1970), aloud presbyteral prayers and post-epiclesis prostration (1970), and communion formula rule (1972).",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-greek-reform1956",
+        "eastern:byzantine-greek-reform1969",
+        "eastern:byzantine-greek-reform1970",
+        "eastern:byzantine-greek-reform1972"
+      ],
+      "witness_label": "Decrees of Maximos IV (Harissa 1956) and Holy Synod (1969, 1970, 1972), preserved in Patriarch Gregorios III's Letter on the Liturgy",
+      "summary": "Patriarch Maximos IV set out renewal principles at Harissa (1956); the Holy Synod subsequently enacted standardized liturgical abbreviations from early 1970 while permitting the full old text and ordering a corrected booklet (1969), directed named presbyteral prayers to be spoken aloud with a deep prostration after the epiclesis (1970), and affirmed 'the servant of God' while forbidding 'the son of God' in the communion formula (1972).",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:melkite-letter-2011",
+          "locus": "Chapter 3 §2, chapter 4, and Appendices III–V",
+          "claim": "Reproduces the 1956 Harissa principles and summarizes the 1969, 1970, and 1972 synodal enactments on abbreviations, aloud prayers, post-epiclesis prostration, and communion wording."
+        }
+      ],
+      "limitations": "Known here through the English official retrospective of 2010/2011; original Arabic synodal decrees and the ordered 1969/1970 booklet were not acquired.",
+      "reception": "Patriarchal and synodal norms for the Melkite Church; the 1969 decree explicitly left the older unabbreviated text optional."
+    },
+    {
+      "id": "eastern-expansion-2026-11:melkite-experimental-1992",
+      "tradition_id": "eastern-local-round2:melkite",
+      "label": "Experimental Book of the Divine Liturgies",
+      "date_label": "1992 experimental text (studies 1987–1988; use decree reported 1991)",
+      "start_year": 1992,
+      "end_year": 1992,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Commission-prepared experimental Arabic Liturgikon introducing variable presbyteral prayers and unified liturgical rubrics ahead of the 2001 definitive synodal text.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-greek-experimental1992"
+      ],
+      "witness_label": "Experimental Book of the Divine Liturgies (1992; decree of 1991 reported in patriarchal Letter)",
+      "summary": "Following 1987–1988 commission studies, the Patriarchal Liturgical Commission issued an experimental Arabic Book of the Divine Liturgies incorporating variable presbyteral prayers and revised rubrics for trial use across the patriarchate prior to definitive 2001 synodal approval.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:melkite-letter-2011",
+          "locus": "Preface §§3–4 and chapter 4 §§1–2",
+          "claim": "Reports the 1987–1988 studies, the 1991 use decree, and the 1992 experimental text with variable prayers and liturgical directions."
+        }
+      ],
+      "limitations": "The patriarchal letter dates the use decree to 1991 and the experimental text to 1992; both dates are preserved without harmonization pending inspection of the original Arabic title leaf and decree.",
+      "reception": "Authorized for experimental patriarchal use prior to the definitive 2001 approval and 2006–2007 printed volumes."
+    },
+    {
+      "id": "eastern-expansion-2026-11:melkite-office-corpus-1997-2000",
+      "tradition_id": "eastern-local-round2:melkite",
+      "label": "Unified Melkite Liturgical Prayer Books (four volumes in six parts)",
+      "date_label": "1997–2000 publication (decree 1996; exclusive use from Pascha 1997)",
+      "start_year": 1997,
+      "end_year": 2000,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Modern Arabic complementary proper and office corpus (Horologion, Paraklitike, Menaion, Triodion, Pentecostarion) translated/corrected from the Greek original into four volumes (six physical parts) at Jounieh.",
+      "components": [
+        "propers",
+        "calendar",
+        "lectionary",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-greek-office1997"
+      ],
+      "witness_label": "Kitāb al-ṣalawāt al-taqdīsiyya (Jounieh: Paulist Press, 1997–2000; DLI record 44455)",
+      "summary": "Issued with permission of Patriarch Maximos V (1996 decree mandating exclusive use from Pascha 1997; reaffirmed in 2011) as a 'corrected translation on the basis of the Greek original language', consolidating seasonal Menaia, Octoechos/Paraklitike, Triodion, and Pentecostarion propers into six chronologically sequenced parts printed 1997–2000.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:melkite-letter-2011",
+          "locus": "Chapter 4 §§1–5",
+          "claim": "Records the 1996 decree, Pascha 1997 exclusive-use mandate, and four-volume/six-part organization."
+        },
+        {
+          "source_id": "eastern-expansion-2026-11:dli-melkite-office1997",
+          "locus": "DLI record 44455, parts I.1–IV",
+          "claim": "Supplies exact Jounieh Paulist Press publication years (1997, 1998, 1999, 2000), pagination, Maximos V permission, and Greek-original correction statement."
+        }
+      ],
+      "limitations": "Complementary office and proper corpus, not the altar Liturgikon; original Arabic volumes remain unacquired and uncollated against the 1883–1903 editions.",
+      "reception": "Declared exclusive for Melkite use by Patriarch Maximos V (1996) and reaffirmed by Patriarch Gregorios III (7 March 2011)."
+    },
+    {
+      "id": "eastern-expansion-2026-11:romanian-rome-1996",
+      "tradition_id": "romanian-blaj:historical",
+      "label": "Rome Romanian Greek Catholic Liturghier",
+      "date_label": "1996 publication",
+      "start_year": 1996,
+      "end_year": 1996,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Post-1989 official Romanian Liturghier printed in Rome, retaining the 1931 linguistic tradition and named as the immediate predecessor of Blaj 2014.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-regional-rome1996"
+      ],
+      "witness_label": "Liturghier (Rome, 1996)",
+      "summary": "Named by the 20 May 2015 synodal circular as the previous official edition replaced by Blaj 2014, and listed alongside Blaj 1931 as an approved Liturghier by circular 68 of 21 November 2009; retains Vasile Suciu's 1931 linguistic line.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:ro-circular2015",
+          "locus": "Entire circular (20 May 2015)",
+          "claim": "Identifies Rome 1996 as the preceding edition and links its linguistic line to Blaj 1931."
+        },
+        {
+          "source_id": "eastern-expansion-2026-11:theologos2020",
+          "locus": "Printed pp. 62–63, nn. 35–38",
+          "claim": "Reports circular 68/2009 recognizing the 1931 and 1996 editions as approved."
+        }
+      ],
+      "limitations": "Original 1996 volume and front matter remain unacquired; shared 1931 linguistic continuity does not establish byte-level textual identity with 1931.",
+      "reception": "Affirmed as an approved official edition in circular 68/2009 until superseded by Blaj 2014 in May 2015."
+    },
+    {
+      "id": "eastern-expansion-2026-11:malankara-tiruvalla-1960",
+      "tradition_id": "syro-malankara-catholic",
+      "label": "Tiruvalla Syriac Xystus Taksa with Malayalam rubrics and reception appendix",
+      "date_label": "1960 publication (re-imprimatur 11 May 1960)",
+      "start_year": 1960,
+      "end_year": 1960,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Catholic-approved Syriac celebrant book for the Anaphora of Mar Xystus with Malayalam rubrics and printed absolution formulas for receiving converts and priests into Catholic communion.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:syriac-malankara-mal-tiruvalla-1960"
+      ],
+      "witness_label": "Ṭeksā d-qurbānā (Anaphora of Mar Xystus), Tiruvalla: St. Joseph's Printing House, 1960",
+      "summary": "Directly inspected Catholic Syro-Malankara printing bearing Benedict Mar Gregorios's re-imprimatur of 11 May 1960 (implying an earlier unidentified approved edition); prints the Syriac Xystus liturgy with Malayalam rubrics and an appendix (printed p. 71) giving Syriac absolution formulas and Malayalam rubrics for receiving laity and clergy into Catholic communion.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:malankara-tiruvalla1960",
+          "locus": "PDF pp. 1, 2, 4, and 84 (printed p. 71)",
+          "claim": "Title, Tiruvalla imprint, 11 May 1960 re-imprimatur, Syriac liturgical opening, and p. 71 reception-into-communion appendix directly inspected on page images."
+        }
+      ],
+      "limitations": "Full Syriac prayer body not transcribed or collated against 1934 Pampakuda; earlier edition implied by 're-imprimatur' remains unidentified.",
+      "reception": "Approved by Metropolitan Benedict Mar Gregorios for Syro-Malankara Catholic use; geographic extent of parish use unquantified."
+    },
+    {
+      "id": "eastern-expansion-2026-11:malankara-tiruvalla-1965",
+      "tradition_id": "syro-malankara-catholic",
+      "label": "Tiruvalla Syriac Xystus Taksa (1965 imprimatur printing)",
+      "date_label": "1965 publication (imprimatur 2 February 1965)",
+      "start_year": 1965,
+      "end_year": 1965,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Subsequent Catholic-approved Tiruvalla printing of the Syriac–Malayalam Xystus Taksa (99 PDF pages); no substantive textual change from 1960 established.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:syriac-malankara-mal-tiruvalla-1965"
+      ],
+      "witness_label": "Ṭeksā d-qurbānā (Anaphora of Mar Xystus, Patriarch of Rome), Tiruvalla: St. Joseph's Printing House, 1965",
+      "summary": "Directly inspected title and imprimatur of Benedict Mar Gregorios (2 February 1965) documenting a fresh Tiruvalla issue of the Syriac–Malayalam Mar Xystus Taksa immediately prior to the 1966 Malayalam-language edition.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:malankara-tiruvalla1965",
+          "locus": "PDF pp. 2–3",
+          "claim": "Original title leaf and 2 February 1965 imprimatur visually inspected."
+        }
+      ],
+      "limitations": "Body not collated against 1960; recorded as a printing/witness succession state rather than a substantive revision.",
+      "reception": "Episcopal imprimatur of Benedict Mar Gregorios; exact parish adoption unquantified."
+    },
+    {
+      "id": "eastern-expansion-2026-11:malankara-malayalam-1966",
+      "tradition_id": "syro-malankara-catholic",
+      "label": "Hierarchically approved Malayalam Qurbana Taksa (St. Xystus)",
+      "date_label": "1966 publication (joint episcopal preface 1 January 1966)",
+      "start_year": 1966,
+      "end_year": 1966,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Issued Malayalam-language St. Xystus Qurbana Taksa (160 PDF pages) prepared by the Liturgical Committee with joint episcopal preface; retained in origin/use review pending independent documentation of actual parish celebration.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:malankara-1966-taksa"
+      ],
+      "witness_label": "സീറോ-മലങ്കര കുർബാന തക്സ / Syro-Malankara Qurbana Taksa (Puthusserry/Kallooppara: Kerala Printers, 1966)",
+      "summary": "Directly inspected scan of the Liturgical Committee's Malayalam St. Xystus Qurbana Taksa published by Rev. Thomas Pazhoor with stated hierarchical approval and a 1 January 1966 joint preface signed by Benedict Mar Gregorios (Trivandrum) and Zacharias Mar Athanasios (Tiruvalla).",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:malankara-taksa1966",
+          "locus": "PDF p. 2 (title/imprint/approval) and PDF p. 7 / printed p. iv (joint episcopal preface)",
+          "claim": "Directly verifies hierarchical approval statement, Liturgical Committee authorship, publisher/printer, and 1 January 1966 joint episcopal signatures."
+        }
+      ],
+      "limitations": "Per repository scope review (2026-10-20) under guidance/time-machine.md §11, publication and hierarchical preface do not yet supply independent proof of actual parish use; Malayalam body is uncollated against Tiruvalla 1960/1965 or 1934 Pampakuda.",
+      "reception": "Issued with joint episcopal preface of Trivandrum and Tiruvalla hierarchs; dated actual altar use remains pending verification."
+    },
+    {
+      "id": "eastern-expansion-2026-11:malankara-takso-1987",
+      "tradition_id": "syro-malankara-catholic",
+      "label": "Nine-Anaphora Syro-Malankara Teksod-Qurobo",
+      "date_label": "1987 publication (attested in active use by 1991)",
+      "start_year": 1987,
+      "end_year": 1987,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Expanded nine-anaphora Eucharistic repertoire attested in active Syro-Malankara use by Paniker (1991), expanding dramatically beyond the two-anaphora repertoire of Pampakuda 1934.",
+      "components": [
+        "ordinary",
+        "anaphoras"
+      ],
+      "witness_ids": [
+        "eastern:syriac-malankara-mal-1987-takso"
+      ],
+      "witness_label": "Order of the Holy Qurbono of the Syro-Malankara Church (Teksod-Qurobo), 1987 edition",
+      "summary": "Givergis Paniker Karichal (1991, p. 48) documents the 1987 Teksod-Qurobo then in active use, containing nine anaphoras: Minor James, John the Apostle, Twelve Apostles, Dionysius, Ivanios, Peter, Xystus, Eustathius, and the Doctors.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:malankara-paniker1991",
+          "locus": "Printed p. 48 / PDF p. 29",
+          "claim": "Identifies the 1987 Teksod-Qurobo in active use and enumerates all nine anaphoras."
+        }
+      ],
+      "limitations": "Original 1987 printing remains unacquired and its exact language distribution (Malayalam vs Syriac) is not explicitly specified at Paniker p. 48. Distinct from the 1986 Syro-Malabar (East Syriac) Qurbana milestone.",
+      "reception": "Explicitly reported by Paniker (1991) as the Syro-Malankara edition then in active liturgical use."
+    },
+    {
+      "id": "eastern-expansion-2026-11:malankara-synod-2006-2007-taksa",
+      "tradition_id": "syro-malankara-catholic",
+      "label": "Synod-approved revised Malayalam Takso (approved 2006; released October 2007)",
+      "date_label": "Approved 31 October – 3 November 2006; released 9–12 October 2007",
+      "start_year": 2006,
+      "end_year": 2006,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Synodal approval criteria and release of the revised nine-anaphora Malayalam Takso (Malankara Catholic Publications); distinct from the February 2007 Qurbonokramam and the separate October 2007 concelebration directions.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics",
+        "propers"
+      ],
+      "witness_ids": [
+        "eastern:malankara-2007-taksa"
+      ],
+      "witness_label": "Revised Order of the Holy Qurbono (Takso), approved by Fourth Synod (2006), released Fifth Synod (October 2007)",
+      "summary": "Decision II.6 of the Fourth Ordinary Holy Episcopal Synod (31 Oct – 3 Nov 2006) approved the revised Malayalam Takso with named criteria: Malayalam translations of the nine anaphoras conformed to the Syriac, Syriac Institution Narrative and Epiclesis printed alongside Malayalam, St. Thomas added in the intercessions, kukilion revised, rubrics referred to the Thukasa except the three anaphora blessings, and Julius anaphora / long proemion-sedro / additional huthomo held in abeyance. Released by the Catholicos during the Fifth Synod (9–12 Oct 2007).",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:malankara-synod2006",
+          "locus": "Printed pp. 30–31 and Decision II.6 p. 46",
+          "claim": "Primary synodal report and decision specifying the exact Malayalam/Syriac revisions, St. Thomas intercession addition, rubric deferral to Thukasa, and items held in abeyance."
+        },
+        {
+          "source_id": "eastern-expansion-2026-11:malankara-synod2007",
+          "locus": "Printed pp. 24–25",
+          "claim": "Records official release of the revised Taksa during the Fifth Synod (9–12 October 2007), separate from the already published Qurbonakramam."
+        },
+        {
+          "source_id": "eastern-expansion-2026-11:malankara-english2023",
+          "locus": "PDF p. 4 / printed p. ii (preface)",
+          "claim": "Confirms that the 2007 Malayalam Takso prints nine anaphoras (six translated in the 2023 eparchial English edition)."
+        }
+      ],
+      "limitations": "Positioned at the 2006 approval event (distinct from October 2007 release). Original 2007 printed volume remains unacquired, and independent proof of actual parish celebration remains pending under guidance/time-machine.md §11.",
+      "reception": "Approved by the Holy Episcopal Synod (2006) and released by the Catholicos (October 2007); subsequent diaspora translations (English 2012/2023) draw on it, while parish-level implementation in Kerala remains unmeasured here."
+    },
+    {
+      "id": "eastern-expansion-2026-11:belarusian-vilnius-1617",
+      "tradition_id": "eastern-expansion-2026-11:belarusian-uniate",
+      "label": "Vilnius Mamonych Sluzhebnik (first Catholic Ruthenian printing)",
+      "date_label": "1617 publication (dedication 1 January 1617)",
+      "start_year": 1617,
+      "end_year": 1617,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "First Church Slavonic Sluzhebnik printed specifically for Catholic Ruthenians (Vilnius: Leon Mamonych, at Chancellor Lev Sapieha's expense), containing three liturgies, Presanctified, and a priest's Nauka mixing Eastern and Latin practice.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-slavic-vilnius1617-mamonych"
+      ],
+      "witness_label": "Книга Служебникъ (Vilnius: Leon Mamonych, 1617), 29+26 unnumbered leaves, pp. 1–473",
+      "summary": "Title and opening leaves directly inspected: issued without formal ecclesiastical approbation at Chancellor Lev Sapieha's expense; contains Chrysostom, Basil, Presanctified, Vespers, Matins, and a priest's Nauka blending Eastern and Latin rubrical usage, standing in direct contrast to the Orthodox Vilnius Holy Spirit Brotherhood Sluzhebnik of the same year (Kniga Belarusi no. 81, same pagination, no Nauka).",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:vilnius1617-scan",
+          "locus": "PDF images 1–2, 4–7",
+          "claim": "Title leaf (1617, three liturgies and Presanctified, Mamonych press), Sapieha arms, dedication, and Nauka directly inspected."
+        },
+        {
+          "source_id": "eastern-expansion-2026-11:kniga-belarusi1986",
+          "locus": "Entries 80 and 81",
+          "claim": "Provides collation, 1 January 1617 dedication date, full contents list, and bibliographic contrast with the Orthodox Brotherhood edition."
+        },
+        {
+          "source_id": "eastern-expansion-2026-11:huculak1990",
+          "locus": "Appendix II, pp. 384–401",
+          "claim": "Identifies Mamonych 1617 as the first Sluzhebnik produced for Catholic Ruthenians, without formal ecclesiastical approval, with a mixed Eastern–Latin Nauka."
+        }
+      ],
+      "limitations": "Title and opening leaves checked; full prayer body not collated leaf-by-leaf. Shared historical Kyivan Uniate metropolia witness, not exclusively modern Belarusian.",
+      "reception": "Printed for Catholic Ruthenians in the Polish–Lithuanian Commonwealth without formal hierarchical approbation; parish adoption extent unquantified."
+    },
+    {
+      "id": "eastern-expansion-2026-11:belarusian-suprasl-1727-1732",
+      "tradition_id": "eastern-expansion-2026-11:belarusian-uniate",
+      "label": "Supraśl post-Zamość Liturgikon (1727–1732 printing span)",
+      "date_label": "Title 1727; colophon completed 14 January 1732",
+      "start_year": 1727,
+      "end_year": 1732,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Post-Synod of Zamość Church Slavonic Liturgikon prepared in the Żochowski tradition (RNB OR VII.3.15, 478 pp.), incorporating Filioque, St. Josaphat at Proskomedia, and papal/royal commemorations.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics",
+        "propers"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-slavic-suprasl1727-1732"
+      ],
+      "witness_label": "Леитоургикон си ест Служебник (Supraśl, begun 1727 under Lev Kyshka, completed 14 January 1732 under Atanasii Sheptytsky)",
+      "summary": "One continuous production span across two metropolitans prepared as the edition decreed by the Synod of Zamość (1720) in the Żochowski (1692–1695) line, though printed without Roman approbation; Senchenko's examination of RNB OR VII.3.15 documents St. Josaphat commemorated at Proskomedia, the Creed with Filioque, and commemorations of the Pope and King.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:senchenko2022",
+          "locus": "Printed pp. 43–45 and nn. 1–3",
+          "claim": "Records 1727 title, 14 January 1732 colophon (p. 478), and RNB OR VII.3.15 liturgical features (Josaphat at Proskomedia, Filioque, papal and royal commemorations)."
+        },
+        {
+          "source_id": "eastern-expansion-2026-11:huculak1990",
+          "locus": "Appendix II, pp. 384–401",
+          "claim": "Identifies Supraśl 1727–1732 as the post-Zamość Żochowski-tradition edition printed without Roman approval."
+        },
+        {
+          "source_id": "eastern-expansion-2026-11:kniga-belarusi1986",
+          "locus": "Entry 209",
+          "claim": "Catalogues the first Supraśl impression ('первое типом издадеся') and its menaion/common-service components."
+        }
+      ],
+      "limitations": "RNB OR VII.3.15 original scan not acquired; structural discrepancy between Kniga Belarusi no. 209 contents summary and Senchenko's liturgy citations remains to be resolved on the physical copy.",
+      "reception": "Issued by the Supraśl Basilian monastery press for the Uniate metropolia (especially Belarusian–Lithuanian lands); later followed by the 1763 second impression."
+    },
+    {
+      "id": "eastern-expansion-2026-11:belarusian-nadson-2005",
+      "tradition_id": "eastern-expansion-2026-11:belarusian-uniate",
+      "label": "Modern Belarusian Liturgikon (Fr. Alexander Nadson, London; provisional lead)",
+      "date_label": "2005 reported publication (preceded by 1999 priest's book and reported 2004 Minsk edition)",
+      "start_year": 2005,
+      "end_year": 2005,
+      "date_kind": "publication",
+      "status": "provisional",
+      "scope": "Modern Belarusian-language Greek Catholic Liturgikon translated by Fr. Alexander Nadson (London: Božym Šlacham, 2005); provisional bibliographic lead pending book inspection and approval verification.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byz-belarusian-nadson-liturgikon-2005"
+      ],
+      "witness_label": "Літургікон (London: Božym Šlacham, 2005; Fr. Alexander Nadson translation)",
+      "summary": "Community bibliography records Fr. Alexander Nadson's Belarusian Liturgikon (London 2005, edited by S. Stasievič and A. Trafimienka), capping decades of Belarusian translations from Greek and Church Slavonic alongside his 1999 Chrysostom priest's book, 2002 prayer book, and a reported 2004 Minsk Sluzhebnik.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:casasloviec-nadson-lead",
+          "locus": "Časasloviec newsid=17 bibliographic list",
+          "claim": "Identifies the 2005 London Літургікон and companion Belarusian Greek Catholic editions prepared by Fr. Alexander Nadson."
+        }
+      ],
+      "limitations": "Provisional stage backed only by an uninspected community bibliographic lead; original volume, formal ecclesiastical approbation, exact Greek/Slavonic exemplar, and relation to the reported 2004 Minsk printing remain unverified.",
+      "reception": "Reported in Belarusian Greek Catholic diaspora and post-Soviet community use; formal canonical approval and nationwide adoption remain to be verified."
+    },
+    {
+      "id": "eastern-expansion-2026-11:krizevci-slovenian-1965",
+      "tradition_id": "eastern-expansion-2026-11:croatia-serbia-krizevci",
+      "label": "Slovenian Božja liturgija (Trieste and Rome, 1965)",
+      "date_label": "1965 publication",
+      "start_year": 1965,
+      "end_year": 1965,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Chrysostom and Basil Slovenian translation with rubrics and appended antiphons/dismissals (Latin Trieste imprimatur), serving as the documented before-state contrasted by the 2022–2023 official Slovenian Služebnik.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-regional-slovenian1965"
+      ],
+      "witness_label": "Božja liturgija sv. Janeza Zlatoustega in sv. Vasilija Velikega (Trieste and Rome, 1965; Markuža, Koren, Janežič)",
+      "summary": "Prepared by Jože Markuža, Anton Koren, and Stanko Janežič with nihil obstat of Jakob Ukmar and Latin imprimatur of Trieste vicar general Fortunato Fornasaro; Bogataj (2022) documents that its festal and daily antiphons were abridged and Sunday antiphons were omitted.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:bogataj2022",
+          "locus": "Printed pp. 257, 260",
+          "claim": "Identifies the 1965 Trieste/Rome edition, its Latin imprimatur, and its abridged festal/daily antiphons and absent Sunday antiphons."
+        }
+      ],
+      "limitations": "Original 1965 booklet and its underlying Church Slavonic source edition were not independently inspected; carried a Latin-diocesan imprimatur rather than Eastern Congregation approval.",
+      "reception": "Used historically among Slovenian Greek Catholics within Križevci jurisdiction prior to the 2022–2023 official translation."
+    },
+    {
+      "id": "eastern-expansion-2026-11:krizevci-ruthenian-1970-printing",
+      "tradition_id": "eastern-expansion-2026-11:croatia-serbia-krizevci",
+      "label": "Rome 1970 Grottaferrata Recensio ruthena Chrysostom printing (cited Križevci exemplar)",
+      "date_label": "1970 source imprint (cited in 2018 Croatian book)",
+      "start_year": 1970,
+      "end_year": 1970,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Church Slavonic Recensio ruthena Chrysostom printing issued at Grottaferrata in 1970 and explicitly named as the direct Izvornik of the 2018 Križevci Croatian Liturgikon.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-regional-ruthenian1970"
+      ],
+      "witness_label": "Božestvennaja Liturgija ... Ioanna Zlatoustago (Rim: V tipografii kriptoferatskija obiteli, 1970, Recensio ruthena)",
+      "summary": "Explicitly identified on directly inspected p. 4 of the 2018 Križevci Croatian Chrysostom Liturgikon as its Church Slavonic source text. By analogy with Grottaferrata's documented photolithographic reissue practice (Kolupaev 2012), it is probably a later printing of the Roman 1940 Ruthenian Chrysostom rather than a new textual recension, pending inspection of its own colophon.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:croatian2018-book",
+          "locus": "PDF/printed p. 4 (Izvornik statement)",
+          "claim": "Explicitly cites the Rome 1970 Grottaferrata Recensio ruthena Chrysostom printing as the direct source text."
+        },
+        {
+          "source_id": "eastern-expansion-2026-11:kolupaev2012",
+          "locus": "Printed pp. 390–392",
+          "claim": "Documents Grottaferrata monastery press photolithographic reissue practice for Roman Slavonic books."
+        }
+      ],
+      "limitations": "Original 1970 Grottaferrata copy and colophon remain unacquired; retained as a distinct printing witness without claiming a substantive textual change over Rome 1940.",
+      "reception": "Directly received as the Church Slavonic exemplar for the 2018 Croatian Križevci Chrysostom edition."
+    },
+    {
+      "id": "eastern-expansion-2026-11:krizevci-croatian-2018",
+      "tradition_id": "eastern-expansion-2026-11:croatia-serbia-krizevci",
+      "label": "Križevci Eparchy official Croatian Chrysostom Liturgikon (ad experimentum)",
+      "date_label": "Printed February 2018 (Congregation approval 2 Feb 2017; eparchial decree 30 Jan 2018)",
+      "start_year": 2018,
+      "end_year": 2018,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Official Croatian translation of the Chrysostom Liturgy for the Križevci Eparchy, translated directly from Rome 1970 Recensio ruthena and authorized ad experimentum for five years.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-regional-croatian2018"
+      ],
+      "witness_label": "Božanska liturgija svetog oca našega Ivana Zlatoustoga (Zagreb: Ordinarijat Križevačke eparhije, Feb 2018, ISBN 978-953-59968-0-4)",
+      "summary": "Directly image-inspected front matter (pp. 1, 3–5) verifies preparation by the eparchial liturgical council from the Rome 1970 Grottaferrata Recensio ruthena Chrysostom printing, Congregation for the Eastern Churches approval on 2 February 2017 (Prot. N. 64/2016), Bishop Nikola Kekić's decree no. 5/2018 (Zagreb, 30 January 2018) authorizing official liturgical use ad experimentum for five years, and a February 2018 print run of 1000 copies.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:croatian2018-book",
+          "locus": "PDF/printed pp. 1, 3, 4, and 5 (title, source/approval/imprint, decree 5/2018)",
+          "claim": "Directly authenticates the 1970 source imprint, 2017 Holy See approval, 2018 eparchial decree, and February 2018 publication."
+        }
+      ],
+      "limitations": "Renewal or definitive confirmation after the five-year ad experimentum period (c. early 2023) remains unverified; applies to Croatian use in the Križevci Eparchy and does NOT evidence Serbian (Ruski Krstur) usage.",
+      "reception": "Authorized as official liturgical book of the Križevci Eparchy for five years ad experimentum by decree 5/2018."
+    },
+    {
+      "id": "eastern-expansion-2026-11:krizevci-slovenian-2022-2023",
+      "tradition_id": "eastern-expansion-2026-11:croatia-serbia-krizevci",
+      "label": "Official Slovenian Služebnik for the Križevci Eparchy (Chrysostom and Basil)",
+      "date_label": "Approved 30 November 2022 (Dicastery) and 2023 (eparchial); presented 25 May 2023",
+      "start_year": 2022,
+      "end_year": 2023,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Official Slovenian celebrant Služebnik (with companion people's and notated volumes) translated directly from Rome 1942 Recensio ruthena, restoring antiphons and adding local Slovene first-millennium saints and St. Josaphat to the Proskomedia.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-regional-slovenian2022"
+      ],
+      "witness_label": "Služebnik. Božja liturgija Janeza Zlatoustega in Božja liturgija Bazilija Vélikega (Ljubljana: KUD Logos / Križevci Eparchy, 2022–2023)",
+      "summary": "Translated directly from the Rome 1942 Church Slavonic Ruthenian Liturgikon and approved by the Dicastery for the Eastern Churches (30 November 2022, Prot. 152/2022) and Bishop Milan Stipić (no. 14/2023); publicly presented in Ljubljana on 25 May 2023 in three role volumes (ISBN 978-961-7155-17-4). Restores the festal, daily, and Sunday antiphons abridged or omitted in 1965, and at the Dicastery's recommendation adds first-millennium saints of the Slovene lands (Maximilian of Celeia, Victorinus of Poetovio, Maximus of Emona, Jerome) and St. Josaphat Kuntsevych to the Proskomedia.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:bogataj2022",
+          "locus": "Printed pp. 259–261, 263",
+          "claim": "Identifies the Rome 1942 source, Prot. 152/2022 approval, restored antiphons, added Proskomedia saints, and coexistence alongside Church Slavonic."
+        },
+        {
+          "source_id": "eastern-expansion-2026-11:ika2023-slovenian",
+          "locus": "Entire report (27 May 2023)",
+          "claim": "Confirms the 25 May 2023 presentation of three role volumes, 30 Nov 2022 Dicastery approval, Bishop Stipić decree 14/2023, and KUD Logos/Križevci co-publication."
+        }
+      ],
+      "limitations": "Original signed decrees (Prot. 152/2022, no. 14/2023) and complete printed volumes remain unacquired; which of the three volumes bears ISBN 978-961-7155-17-4 is unstated.",
+      "reception": "Official Slovenian liturgical edition for Križevci Eparchy faithful in Slovenia; Bogataj notes it stands alongside, rather than replacing, Church Slavonic."
+    },
+    {
+      "id": "eastern-expansion-2026-11:hungarian-debrecen-1882-1890",
+      "tradition_id": "hungarian-reception:hajdudorog",
+      "label": "First printed Hungarian Chrysostom (1882) and complementary Basil/Presanctified (1890) volumes",
+      "date_label": "1882 (Chrysostom) and 1890 (Basil, Presanctified, priestly offices)",
+      "start_year": 1882,
+      "end_year": 1890,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Two complementary Debrecen-printed Hungarian service volumes prepared by the 1879 Mukachevo/Prešov consistories committee (without ecclesiastical approval), forming the direct base combined and revised in 1920.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics",
+        "propers"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-regional-hung1882",
+        "eastern:byzantine-regional-hung1890"
+      ],
+      "witness_label": "Debrecen 1882 Chrysostom (90+2 pp.) and Debrecen 1890 Basil/Presanctified/offices (103+2 pp.)",
+      "summary": "The nine-member committee formed at Hajdúdorog in 1879 compiled the 1882 Chrysostom volume (Debrecen, 90+2 pp., without ecclesiastical approval) from multiple Church Slavonic versions including Mohylan/Pochaiv/Lviv special-intention formularies and paschal rites; Emil Melles and János Danilovics supplied the complementary 1890 volume (Debrecen: Kutasi Imre, 103+2 pp.) containing Basil, Presanctified, priestly office prayers, and the Great Canon.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:dobos2020",
+          "locus": "Printed pp. 396–397 (Kat. IV.41)",
+          "claim": "Describes the 1882 committee compilation from multiple Slavonic versions, absence of ecclesiastical approval, Mohylan/Lviv intention formularies, and the 1890 complement."
+        },
+        {
+          "source_id": "eastern-expansion-2026-11:ivancso2008",
+          "locus": "Printed pp. 13 (n. 7), 23–25",
+          "claim": "Records exact titles and extents of 1882 and 1890 and identifies them as the two separate volumes combined and revised in 1920."
+        }
+      ],
+      "limitations": "Full 1882 and 1890 volumes remain unacquired; carried no formal ecclesiastical approbation, so public-use authorization is not inferred.",
+      "reception": "Foundational printed Hungarian liturgical corpus preceding the erection of the Hajdúdorog Eparchy (1912) and the 1920/1921 revised Liturgikon."
+    },
+    {
+      "id": "eastern-expansion-2026-11:hungarian-calendar-reform-1916",
+      "tradition_id": "hungarian-reception:hajdudorog",
+      "label": "Hajdúdorog Gregorian calendar reform (circulars 1990/1916 and 3150/1916)",
+      "date_label": "Decided 4 May 1916; effective 24 June 1916",
+      "start_year": 1916,
+      "end_year": 1916,
+      "date_kind": "effective",
+      "status": "documented",
+      "scope": "Episcopal calendar enactment moving Hajdúdorog feasts to the Gregorian calendar from 24 June 1916, with supplementary rules for three named autumn feasts.",
+      "components": [
+        "calendar",
+        "propers"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-regional-hung1916"
+      ],
+      "witness_label": "Bishop István Miklósy circulars 1990/1916 (Körlevelek VI, p. 25) and 3150/1916 (Körlevelek XI, p. 52)",
+      "summary": "Following a 4 May 1916 conference with the Mukachevo and Prešov bishops, Bishop Miklósy enacted the Gregorian calendar from 24 June 1916 (circular 1990/1916), supplemented by circular 3150/1916 making separate provision for the Exaltation of the Cross, St. Demetrius, and the Protection of the Theotokos. Mukachevo restored the Julian calendar in November 1918 and some Hajdúdorog parishes temporarily reverted in 1919.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:ivancso2007",
+          "locus": "Printed pp. 65–68 and p. 67 n. 8",
+          "claim": "Documents the 4 May decision, 24 June 1916 effective date, circular 1990/1916, supplementary circular 3150/1916, and uneven 1918–1919 regional observance."
+        }
+      ],
+      "limitations": "Original printed circulars in GMFL I–1–h not acquired; uneven 1919 compliance demonstrates that effective date does not prove uninterrupted universal observance.",
+      "reception": "Enacted for the Hajdúdorog Eparchy; calendar and 1921–1960 paschalion subsequently printed in the 1920 Liturgikon."
+    },
+    {
+      "id": "eastern-expansion-2026-11:hungarian-post-habsburg-revisions-1918-1919",
+      "tradition_id": "hungarian-reception:hajdudorog",
+      "label": "Miklósy circulars omitting ruler petitions (1918) and revising Holy Cross propers (1919)",
+      "date_label": "1918–1919 normative circulars (4471/1918 and 808/1919)",
+      "start_year": 1918,
+      "end_year": 1919,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Targeted post-abdication prayer and proper-text directives in the Hajdúdorog Eparchy immediately preceding the 1920/1921 Liturgikon.",
+      "components": [
+        "ordinary",
+        "propers"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-regional-hung1918",
+        "eastern:byzantine-regional-hung1919"
+      ],
+      "witness_label": "Miklósy circulars 4471/1918 and 808/1919 (quoted via Ivancsó 2007)",
+      "summary": "Following the 1918 imperial abdication, circular 4471/1918 removed prayers and litany petitions for the sovereign, and circular 808/1919 substituted the country for the ruler in the Holy Cross troparion and kontakion.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:ivancso2007",
+          "locus": "Printed pp. 68–71",
+          "claim": "Documents circulars 4471/1918 (omission of ruler petitions) and 808/1919 (Holy Cross troparion/kontakion substitution)."
+        }
+      ],
+      "limitations": "Circular originals remain unacquired; component-level directives rather than a full altar book.",
+      "reception": "Eparchial normative directives for Hajdúdorog parishes."
+    },
+    {
+      "id": "eastern-expansion-2026-11:hungarian-dudas-rubrics-1954",
+      "tradition_id": "hungarian-reception:hajdudorog",
+      "label": "Bishop Miklós Dudás's Solemn Chrysostom Rubrical Instruction",
+      "date_label": "1954 publication (ordinance 819 in circular 1954/XIII)",
+      "start_year": 1954,
+      "end_year": 1954,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Episcopal rubrical codification for solemn celebration of the Chrysostom Liturgy (Nyíregyháza, 1954), standardizing existing practice to prevent abridgements and anomalies rather than enacting a liturgical reform.",
+      "components": [
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-regional-hung1954"
+      ],
+      "witness_label": "Szertartási utasítások Aranyszájú Szent János Liturgiájának ünnepélyes bemutatásához (Nyíregyháza, 1954; circular 819/1954)",
+      "summary": "Issued by Bishop Miklós Dudás both as a Nyíregyháza instruction booklet and as ordinance 819 in circular 1954/XIII on uniform celebration of the liturgy and sacraments; Dobos (2020) characterizes it as a codification of existing ceremonial order designed to curb arbitrary abbreviations.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:dobos2020",
+          "locus": "Printed p. 391, n. 39",
+          "claim": "Records Dudás's 1954 Nyíregyháza instruction and ordinance 819/1954 as a codification of existing solemn celebration rubrics."
+        },
+        {
+          "source_id": "eastern-expansion-2026-11:light2020",
+          "locus": "Printed p. 391",
+          "claim": "Confirms the 1954 Dudás rubrical ordinance and its anti-abridgement purpose."
+        }
+      ],
+      "limitations": "Printed 1954 directive and circular 1954/XIII original remain unacquired; no textual change to prayers or anaphoras asserted.",
+      "reception": "Issued for the Hajdúdorog Eparchy; a manuscript copy is separately reported in Kántorjánosi parish records."
+    },
+    {
+      "id": "eastern-expansion-2026-11:bulgarian-eldarov-1985",
+      "tradition_id": "eastern-local-round2:bulgarian",
+      "label": "Bulgarian Sluzhebnik of Georgi Eldarov (contents-verified witness)",
+      "date_label": "1985 reported publication (contents leaves directly inspected)",
+      "start_year": 1985,
+      "end_year": 1985,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Complete Bulgarian Cyrillic celebrant service book attested directly by photographed contents leaves (pp. 615–617), covering preparatory rites, three Byzantine liturgies, Latin-associated heart propers, a full twelve-month calendar, and postcommunion prayers.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "calendar",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-regional-bulgarian1985"
+      ],
+      "witness_label": "Служебник (Георги Елдъров, Rome 1985; photographed contents leaves pp. 615–617)",
+      "summary": "Three directly inspected photographs of printed contents leaves pp. 615–617 establish a comprehensive Bulgarian Cyrillic celebrant book: preparatory rites (pp. 7–12), Chrysostom (p. 20), Basil (p. 63), Presanctified (p. 105), Sacred Heart (p. 301) and Immaculate Heart (p. 306) propers, January–December calendar (pp. 319–571), and postcommunion prayers (p. 609). Seller metadata attributes 617 pages, the Vatican Polyglot Press, and permission of Exarch Methodius, which remain to be verified on the title and approval leaves.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:eldarov1985-photos",
+          "locus": "Directly viewed photographs of printed contents leaves pp. 615–617",
+          "claim": "Verifies full Bulgarian Cyrillic celebrant contents including all three Byzantine liturgies, Sacred/Immaculate Heart propers, and full liturgical calendar."
+        }
+      ],
+      "limitations": "Title leaf, approval leaf, and source-edition statement were not photographed; does NOT prove reception of the 1942 Roman Slavonic Vulgata or distinguish original adaptation from translation.",
+      "reception": "Seller attributes Exarch Methodius's permission; original approbation and parish adoption in Bulgaria remain to be independently verified."
+    },
+    {
+      "id": "eastern-expansion-2026-11:macedonian-recognitio-2009",
+      "tradition_id": "eastern-local-round2:macedonian",
+      "label": "Holy See recognitio / approval of Macedonian Chrysostom and Basil Liturgies",
+      "date_label": "9 December 2009 (SICO: recognitio; online register: approval)",
+      "start_year": 2009,
+      "end_year": 2009,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Official Holy See approval/recognitio act for the Macedonian translation of the Divine Liturgies of St. John Chrysostom and St. Basil the Great; distinct from the unauthenticated printed Литургикон (2009) title lead.",
+      "components": [
+        "ordinary",
+        "anaphoras"
+      ],
+      "witness_ids": [
+        "eastern:byz-macedonian-recognitio-2009"
+      ],
+      "witness_label": "Congregation for the Eastern Churches act of 9 December 2009 (SICO 2009 p. 291; official register line 41)",
+      "summary": "Two directly inspected official Holy See sources document the 9 December 2009 ecclesiastical action authorizing Macedonian translations of the Divine Liturgies of St. John Chrysostom and St. Basil the Great for the Macedonian Greek Catholic Church (then Apostolic Exarchate in Macedonia, elevated in 2018 to the Eparchy of Strumica–Skopje). SICO 2009 records the act under 'recognitio', while the Congregation's web register labels it 'approval'; both terms are preserved.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:sico2009-macedonian",
+          "locus": "SICO Anno 2009, LXIV, printed p. 291 / PDF p. 290, final recognitio bullet",
+          "claim": "Records official Holy See recognitio dated 9 December 2009 for Macedonian Chrysostom and Basil Liturgies."
+        },
+        {
+          "source_id": "eastern-expansion-2026-11:vatican-register-macedonian",
+          "locus": "Acquired official HTML line 41",
+          "claim": "Corroborates the 9 December 2009 dated action for Macedonian Chrysostom and Basil under the register's approval heading."
+        }
+      ],
+      "limitations": "Documents the normative Holy See approval act only; does NOT authenticate the unverified third-party Scribd extract listing Литургикон (2009) and companion books, does NOT identify the underlying Greek or Church Slavonic exemplar (pre-2001 Križevci jurisdiction alone cannot prove Rome 1942 Ruthenian dependence), and does NOT establish dated operative parish celebration (Bishop Stojanov's 2023 pastoral letter requests thanksgiving liturgies without naming a book or language).",
+      "reception": "Official Holy See authorization for the Macedonian Greek Catholic Church; printed altar edition and dated operative reception remain open gaps."
+    }
+  ],
+  "transitions": [
+    {
+      "id": "eastern-expansion-2026-11:melkite-karme-to-snagov",
+      "from_stage": "eastern-expansion-2026-11:melkite-karme-1612",
+      "to_stage": "eastern-expansion-2026-11:melkite-snagov-1701",
+      "kind": "reception",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "Athanasios Dabbas's 1701 Snagov Greek–Arabic Liturgikon receives Meletios Karmé's 1612 Arabic recension beside an independent Venice Greek text.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:charon1908",
+          "locus": "Printed pp. 539–555",
+          "claim": "Identifies Karmé's 1612 Arabic revision as the Arabic text printed in Snagov 1701 alongside a non-parallel Venice Greek column."
+        }
+      ],
+      "limitations": "Scholarly textual identification by Charon; no project-level collation between Karmé manuscripts and Snagov 1701.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "eastern-expansion-2026-11:melkite-snagov-to-rome1839",
+      "from_stage": "eastern-expansion-2026-11:melkite-snagov-1701",
+      "to_stage": "eastern-expansion-2026-11:melkite-rome-1839",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "Propaganda Fide's 1839 Rome Liturgikon revises the shared Snagov 1701 text by adding papal commemoration, suppressing the diptychs, and conforming communion prayers to the Roman Greek Euchologion.",
+      "components": [
+        "ordinary",
+        "anaphoras"
+      ],
+      "changes": [
+        {
+          "component": "ordinary",
+          "before": "Pre-1724 Snagov 1701 text lacked Catholic papal commemoration and retained the older diptychs and Antiochian communion-prayer wording.",
+          "after": "Rome 1839 introduces papal commemoration, suppresses the diptychs, and conforms the communion prayers to the Roman Greek Euchologion text.",
+          "locus_before": "Snagov 1701 and annotated Greek College correction copy as described in Charon 1908, pp. 545–565",
+          "locus_after": "Rome 1839 Propaganda Liturgikon (280 pp.) as described in Charon 1908, pp. 565–575, table p. 591",
+          "evidence": [
+            {
+              "source_id": "eastern-expansion-2026-11:charon1908",
+              "locus": "Printed pp. 565–575, table p. 591",
+              "claim": "Enumerates papal commemoration addition, diptych removal, and communion-prayer conformity to Roman Greek in 1839."
+            }
+          ]
+        },
+        {
+          "component": "anaphoras",
+          "before": "Snagov 1701 intercession/commemoration structure reflected pre-1724 shared Antiochian usage.",
+          "after": "Rome 1839 adapts intercessory commemoration within the anaphoral framework to explicitly commemorate the Roman Pontiff while omitting the older diptychs.",
+          "locus_before": "Snagov 1701 as described in Charon 1908, pp. 555–565",
+          "locus_after": "Rome 1839 as described in Charon 1908, pp. 565–575",
+          "evidence": [
+            {
+              "source_id": "eastern-expansion-2026-11:charon1908",
+              "locus": "Printed pp. 565–575",
+              "claim": "Reports the 1839 commemoration and diptych modifications relative to 1701."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:charon1908",
+          "locus": "Printed pp. 555–575, table p. 591",
+          "claim": "Directly contrasts Snagov 1701 (and the 1743 correction project) with the printed 1839 Propaganda edition."
+        }
+      ],
+      "limitations": "Scholarly description by Charon; original 1701 and 1839 Arabic–Greek volumes were not directly collated by this project.",
+      "comparison_ids": [],
+      "historical_parentage": "established",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "eastern-expansion-2026-11:melkite-rome1839-to-vienna1862",
+      "from_stage": "eastern-expansion-2026-11:melkite-rome-1839",
+      "to_stage": "eastern-expansion-2026-11:melkite-vienna-1862",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "The 1862 Vienna Liturgikon deliberately reproduces Propaganda 1839 in identical typographic disposition for free Melkite distribution, without establishing a new textual recension.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:charon1908",
+          "locus": "Printed pp. 575–580, table p. 591",
+          "claim": "States that Vienna 1862 reprints 1839 in the same disposition and retains the Roman Euchologion text."
+        }
+      ],
+      "limitations": "Reprint succession described by Charon; not an independent leaf-by-leaf collation.",
+      "comparison_ids": [],
+      "historical_parentage": "established",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "eastern-expansion-2026-11:melkite-rome1839-to-beirut1900",
+      "from_stage": "eastern-expansion-2026-11:melkite-rome-1839",
+      "to_stage": "eastern-expansion-2026-11:melkite-beirut-rahme-1900",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "Rahmé's 1899–1900 Beirut Liturgikon restyles the 1839 Arabic rubrics, prints the diaconal litany in full, and inserts a new Pope–Patriarch–Bishop commemoration formula explicitly contrasted with Propaganda 1839.",
+      "components": [
+        "ordinary",
+        "rubrics"
+      ],
+      "changes": [
+        {
+          "component": "rubrics",
+          "before": "Propaganda 1839 carried older Arabic rubric phrasing and abbreviated diaconal litany layout.",
+          "after": "Rahmé 1900 restyles the Arabic rubrics (without altering sense), prints the diaconal litany in full, and appends a new preface and appendix.",
+          "locus_before": "Rome 1839 as described in Charon 1908, pp. 565–575",
+          "locus_after": "Beirut 1900 (343 pp.) as described in Charon 1908, pp. 584–591",
+          "evidence": [
+            {
+              "source_id": "eastern-expansion-2026-11:charon1908",
+              "locus": "Printed pp. 584–591",
+              "claim": "Describes restyled rubrics, full diaconal litany, and added editorial apparatus in Rahmé 1900."
+            }
+          ]
+        },
+        {
+          "component": "ordinary",
+          "before": "Propaganda 1839 lacked the combined Pope–Patriarch–Bishop commemoration formula printed by Rahmé.",
+          "after": "Rahmé 1900 adds at pp. 140–141 a commemoration formula for Pope, patriarch, and bishop with an explicit editorial note stating it is not in the Propaganda book.",
+          "locus_before": "Absence in Propaganda 1839 expressly noted in Rahmé 1900 pp. 140–141 (via Charon 1908)",
+          "locus_after": "Beirut 1900 pp. 140–141 as reported in Charon 1908, pp. 584–591",
+          "evidence": [
+            {
+              "source_id": "eastern-expansion-2026-11:charon1908",
+              "locus": "Printed pp. 584–591",
+              "claim": "Quotes Rahmé's explicit contrast between his pp. 140–141 commemoration formula and the Propaganda 1839 book."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:charon1908",
+          "locus": "Printed pp. 584–591, table p. 591",
+          "claim": "Compares Rahmé 1899/1900 directly against the 1839 Propaganda Liturgikon."
+        }
+      ],
+      "limitations": "Scholarly comparison by Charon; Charon observes he never heard the pp. 140–141 formula used aloud. Original 1839 and 1900 copies uncollated here.",
+      "comparison_ids": [],
+      "historical_parentage": "established",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "eastern-expansion-2026-11:melkite-choueir-to-moaqqad1883",
+      "from_stage": "eastern-expansion-2026-11:melkite-choueir-zakher-1759-1787",
+      "to_stage": "eastern-expansion-2026-11:melkite-menaia-horologion-1883",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "Mo'aqqad's 1883 patriarchally approved Horologion revises the Choueir Horologion line (1787–1879) by correcting Arabic, restoring Psalms 33 and 144 to the Typika, and adding proper Melkite Catholic troparia.",
+      "components": [
+        "propers"
+      ],
+      "changes": [
+        {
+          "component": "propers",
+          "before": "Choueir Horologion printings (1787, 1852, 1879) circulated unchanged without formal patriarchal revision, omitting Psalms 33 and 144 from the Typika and lacking the later Melkite Catholic proper troparia.",
+          "after": "Mo'aqqad's 1883 Horologion (736 pp., approved by Patriarch Gregory II Youssef) corrects the Arabic, restores Psalms 33 and 144 to the Typika, adds an appendix, and inserts troparia for offices proper to Melkite Catholics.",
+          "locus_before": "Choueir Horologion (1787, 1852, 1879), Charon 1908, p. 599",
+          "locus_after": "Mo'aqqad Horologion (1883), Charon 1908, pp. 599–602",
+          "evidence": [
+            {
+              "source_id": "eastern-expansion-2026-11:charon1908",
+              "locus": "Printed pp. 599–602 (image-checked p. 599)",
+              "claim": "Contrasts the identical Choueir Horologion printings (1852 examined in hand) with Mo'aqqad's 1883 revised edition."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:charon1908",
+          "locus": "Printed pp. 599–602",
+          "claim": "Documents the textual and proper-troparia revisions introduced in 1883 relative to the Choueir Horologia."
+        }
+      ],
+      "limitations": "Scholarly comparison of complementary proper books (Horologion/Menaia); originals unacquired.",
+      "comparison_ids": [],
+      "historical_parentage": "established",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "eastern-expansion-2026-11:melkite-choueir-to-badaouy1902",
+      "from_stage": "eastern-expansion-2026-11:melkite-choueir-zakher-1759-1787",
+      "to_stage": "eastern-expansion-2026-11:melkite-badaouy-propers-1900-1903",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "Badaouy's 1902 Apostolos replaces Abdallah Zakher's Choueir Arabic biblical text (1759–1859) with the Jesuit Arabic Bible and shortens Sunday prokeimena, alongside his 1900/1903 Catholic proper revisions.",
+      "components": [
+        "lectionary",
+        "propers"
+      ],
+      "changes": [
+        {
+          "component": "lectionary",
+          "before": "Choueir Apostolos (1759, 1770, 1792, 1813, 1859; 404 pp.) preserved Abdallah Zakher's Arabic biblical text without Roman imprimatur.",
+          "after": "Badaouy's 1902 Apostolos (302 pp., approved by Patriarch Peter IV Geraigiry) replaces Zakher's biblical text with the Jesuit Arabic Bible (with adjustments).",
+          "locus_before": "Choueir Apostolos 1759–1859, Charon 1908, pp. 594–597",
+          "locus_after": "Badaouy Apostolos 1902, Charon 1908, pp. 594–597",
+          "evidence": [
+            {
+              "source_id": "eastern-expansion-2026-11:charon1908",
+              "locus": "Printed pp. 594–597",
+              "claim": "Reports replacement of Zakher's Arabic Apostolos text with the Jesuit Arabic Bible in 1902."
+            }
+          ]
+        },
+        {
+          "component": "propers",
+          "before": "Choueir Apostolos printed fuller Sunday prokeimena; Melkite parishes previously relied on Orthodox Jerusalem Pentecostarion (1854) and Triodion (1856).",
+          "after": "Badaouy 1902 shortens Sunday prokeimena; companion 1900 Pentecostarion and 1903 Triodion remove synaxaria, add Corpus Christi, replace Gregory Palamas with Holy Relics, and omit the Synodikon of Orthodoxy.",
+          "locus_before": "Choueir Apostolos and Jerusalem 1854/1856, Charon 1908, pp. 594–597, 606–611",
+          "locus_after": "Badaouy 1900, 1902, 1903 editions, Charon 1908, pp. 594–597, 606–611",
+          "evidence": [
+            {
+              "source_id": "eastern-expansion-2026-11:charon1908",
+              "locus": "Printed pp. 594–597, 606–611 (image-checked pp. 597, 606, 609, 611)",
+              "claim": "Details shortened Sunday prokeimena (1902) and Catholic proper modifications (1900, 1903)."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:charon1908",
+          "locus": "Printed pp. 594–597, 606–611",
+          "claim": "Contrasts Zakher's Choueir Apostolos and older Jerusalem proper books with Badaouy's 1900–1903 patriarchally approved editions."
+        }
+      ],
+      "limitations": "Scholarly comparison; Charon did not inspect the 1900/1903 Badaouy books physically. Original copies unacquired.",
+      "comparison_ids": [],
+      "historical_parentage": "established",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "eastern-expansion-2026-11:melkite-rahme1900-to-reforms1956-1972",
+      "from_stage": "eastern-expansion-2026-11:melkite-beirut-rahme-1900",
+      "to_stage": "eastern-expansion-2026-11:melkite-reforms-1956-1972",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "Mid-20th-century Melkite synodal decrees modify the execution of the pre-existing Liturgikon by authorizing abbreviations (1969/1970), prescribing aloud presbyteral prayers and a post-epiclesis prostration (1970), and fixing the communion formula (1972).",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "changes": [
+        {
+          "component": "ordinary",
+          "before": "Traditional unabbreviated Liturgikon sequence (as in Rahmé 1900) with repeated petitions and variable local communion phrasing.",
+          "after": "1969 decree permits standardized abbreviations from early 1970 (while keeping the full old text permitted); 1972 decree affirms 'the servant of God' and forbids substituting 'the son of God' in the communion formula.",
+          "locus_before": "Prior full Liturgikon usage (e.g. Rahmé 1900) referenced in Patriarch Gregorios III's Letter on the Liturgy",
+          "locus_after": "Letter on the Liturgy, chapter 4 and Appendices III–V (1969 and 1972 decrees)",
+          "evidence": [
+            {
+              "source_id": "eastern-expansion-2026-11:melkite-letter-2011",
+              "locus": "Chapter 3 §2, chapter 4, and Appendices III–V",
+              "claim": "Official retrospective describes the 1969 permitted abbreviations (keeping full old text optional) and the 1972 communion-formula ruling."
+            }
+          ]
+        },
+        {
+          "component": "anaphoras",
+          "before": "Presbyteral anaphoral and liturgical prayers customarily recited silently/inaudibly.",
+          "after": "1970 synodal decree directs named presbyteral prayers (including key Eucharistic prayers) to be spoken aloud.",
+          "locus_before": "Silent presbyteral recitation practice referenced in Letter on the Liturgy",
+          "locus_after": "Letter on the Liturgy, 1970 synodal decree summary",
+          "evidence": [
+            {
+              "source_id": "eastern-expansion-2026-11:melkite-letter-2011",
+              "locus": "Chapter 4 and Appendix summary of 1970 synodal decree",
+              "claim": "Records the 1970 synodal decision ordering named presbyteral prayers to be proclaimed aloud."
+            }
+          ]
+        },
+        {
+          "component": "rubrics",
+          "before": "Pre-1970 rubrics lacked the synodal prescription for a unified post-epiclesis deep prostration and standardized aloud-recitation rubrics.",
+          "after": "1970 synodal decree prescribes a deep prostration after the epiclesis alongside vocal-delivery rules.",
+          "locus_before": "Pre-1970 rubric state referenced in Letter on the Liturgy",
+          "locus_after": "Letter on the Liturgy, 1970 synodal decree summary",
+          "evidence": [
+            {
+              "source_id": "eastern-expansion-2026-11:melkite-letter-2011",
+              "locus": "Chapter 4 and Appendix summary of 1970 synodal decree",
+              "claim": "Prescribes a deep prostration after the epiclesis."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:melkite-letter-2011",
+          "locus": "Chapter 3 §2, chapter 4, and Appendices III–V",
+          "claim": "Official patriarchal retrospective summarizing the 1956–1972 renewal decrees relative to earlier Melkite Liturgikon usage."
+        }
+      ],
+      "limitations": "Primary-description via an official English retrospective rather than signed Arabic decrees or collated intermediate mid-century printings; intervening 1900–1956 printings remain uncollated.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "eastern-expansion-2026-11:melkite-reforms-to-experimental1992",
+      "from_stage": "eastern-expansion-2026-11:melkite-reforms-1956-1972",
+      "to_stage": "eastern-expansion-2026-11:melkite-experimental-1992",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "The Patriarchal Liturgical Commission consolidates the 1956–1972 piecemeal decrees into the 1992 Experimental Book of the Divine Liturgies, introducing variable presbyteral prayers and unified rubrics.",
+      "components": [
+        "ordinary",
+        "rubrics"
+      ],
+      "changes": [
+        {
+          "component": "ordinary",
+          "before": "Separate 1969–1972 synodal modifications applied onto older Liturgikon printings without an integrated variable-prayer altar edition.",
+          "after": "1992 experimental book supplies a unified Arabic altar text incorporating variable presbyteral prayers.",
+          "locus_before": "1969–1972 piecemeal decree stage in Letter on the Liturgy",
+          "locus_after": "Letter on the Liturgy, Preface §§3–4 and chapter 4 §§1–2",
+          "evidence": [
+            {
+              "source_id": "eastern-expansion-2026-11:melkite-letter-2011",
+              "locus": "Preface §§3–4 and chapter 4 §§1–2",
+              "claim": "Describes the 1987–1988 commission studies and 1992 experimental Liturgikon introducing variable presbyteral prayers."
+            }
+          ]
+        },
+        {
+          "component": "rubrics",
+          "before": "Rubrical directives dispersed across the 1956, 1969, 1970, and 1972 acts.",
+          "after": "Unified liturgical directions printed within the 1992 experimental altar book under the 1991 use decree.",
+          "locus_before": "1956–1972 decrees in Letter on the Liturgy",
+          "locus_after": "Letter on the Liturgy, chapter 4 §§1–2",
+          "evidence": [
+            {
+              "source_id": "eastern-expansion-2026-11:melkite-letter-2011",
+              "locus": "Chapter 4 §§1–2",
+              "claim": "Reports unified liturgical directions in the experimental text authorized for use by Maximos V."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:melkite-letter-2011",
+          "locus": "Preface §§3–4 and chapter 4 §§1–2",
+          "claim": "Traces the transition from the 1956–1972 synodal acts to the 1992 experimental Liturgikon."
+        }
+      ],
+      "limitations": "Official retrospective description; original 1992 Arabic volume and 1991 decree not directly inspected.",
+      "comparison_ids": [],
+      "historical_parentage": "established",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "eastern-expansion-2026-11:melkite-experimental1992-to-definitive2006",
+      "from_stage": "eastern-expansion-2026-11:melkite-experimental-1992",
+      "to_stage": "eastern-local-round2:melkite-2006-2007",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "Following experimental trial use, the Holy Synod gave definitive approval in 2001 and published the two-part Book of the Divine Liturgy (Jounieh, 2006–2007), ordered into exclusive use by Patriarch Gregorios III.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:melkite-letter-2011",
+          "locus": "Chapter 4 §§2–4",
+          "claim": "Connects the 1992 experimental text directly to the definitive 2001 synodal approval and 2006 publication."
+        },
+        {
+          "source_id": "eastern-expansion-2026-11:dli-melkite-liturgy2006",
+          "locus": "DLI record 47966, parts 1–2",
+          "claim": "Catalogues the resulting 2006 Chrysostom and 2007 Basil/Presanctified volumes."
+        }
+      ],
+      "limitations": "Recorded as witness-succession rather than substantive revision because the 1992 experimental and 2006–2007 definitive Arabic bodies have not yet been collated side-by-side.",
+      "comparison_ids": [],
+      "historical_parentage": "established",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "eastern-expansion-2026-11:melkite-badaouy-to-office1997",
+      "from_stage": "eastern-expansion-2026-11:melkite-badaouy-propers-1900-1903",
+      "to_stage": "eastern-expansion-2026-11:melkite-office-corpus-1997-2000",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "The 1997–2000 four-volume/six-part Liturgical Prayer Books replace earlier separate Arabic proper books (Menaia, Triodion, Pentecostarion) with a unified translation corrected directly from the Greek original.",
+      "components": [
+        "propers",
+        "calendar"
+      ],
+      "changes": [
+        {
+          "component": "propers",
+          "before": "Separate late-19th/early-20th-century Arabic editions (Mo'aqqad 1883 Menaia/Horologion, Badaouy 1900 Pentecostarion and 1903 Triodion) with disparate editorial histories.",
+          "after": "Unified four-volume (six-part) Kitāb al-ṣalawāt al-taqdīsiyya translated and corrected directly on the basis of the Greek original, integrating Horologion, Paraklitike, Menaion, Triodion, and Pentecostarion.",
+          "locus_before": "1883–1903 Melkite proper corpus (Charon 1908, pp. 599–614)",
+          "locus_after": "DLI record 44455 ('corrected translation on the basis of the Greek original language') and Letter on the Liturgy ch. 4",
+          "evidence": [
+            {
+              "source_id": "eastern-expansion-2026-11:melkite-letter-2011",
+              "locus": "Chapter 4 §§1–5",
+              "claim": "Describes the new unified four-volume/six-part liturgical prayer corpus replacing older books from Pascha 1997."
+            },
+            {
+              "source_id": "eastern-expansion-2026-11:dli-melkite-office1997",
+              "locus": "DLI record 44455",
+              "claim": "Records the six parts (1997–2000) and explicit statement of corrected translation from the Greek original."
+            }
+          ]
+        },
+        {
+          "component": "calendar",
+          "before": "Separate fixed-cycle (Menaia) and movable-cycle (Triodion/Pentecostarion) volumes.",
+          "after": "Six seasonal/cycle-integrated volumes spanning the entire liturgical year (Vol. I.1–2, II.1–2, III, IV).",
+          "locus_before": "Separate Menaia/Triodion/Pentecostarion books (1883–1903)",
+          "locus_after": "DLI record 44455 per-volume date ranges and Letter on the Liturgy ch. 4",
+          "evidence": [
+            {
+              "source_id": "eastern-expansion-2026-11:melkite-letter-2011",
+              "locus": "Chapter 4",
+              "claim": "Sets out the integrated four-volume, six-part annual seasonal structure."
+            },
+            {
+              "source_id": "eastern-expansion-2026-11:dli-melkite-office1997",
+              "locus": "DLI record 44455",
+              "claim": "Confirms the six seasonal part divisions and publication years 1997–2000."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:melkite-letter-2011",
+          "locus": "Chapter 4 §§1–5",
+          "claim": "Official account of the 1996 exclusive-use mandate replacing earlier proper books with the 1997–2000 corpus."
+        },
+        {
+          "source_id": "eastern-expansion-2026-11:dli-melkite-office1997",
+          "locus": "DLI record 44455",
+          "claim": "Supplies exact catalogue proof of the Greek-original corrected translation across all six parts."
+        }
+      ],
+      "limitations": "Official retrospective and catalogue evidence; no side-by-side Arabic collation of individual hymns between 1900–1903 and 1997–2000.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "eastern-expansion-2026-11:romanian-1931-to-1996",
+      "from_stage": "romanian-blaj:1931-standardization",
+      "to_stage": "eastern-expansion-2026-11:romanian-rome-1996",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "The 1996 Rome Liturghier continues Metropolitan Vasile Suciu's 1931 linguistic line and stands alongside 1931 as an approved edition in circular 68/2009.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:ro-circular2015",
+          "locus": "Entire circular (20 May 2015)",
+          "claim": "Affirms that Rome 1996 retained the linguistic choices of Blaj 1931."
+        },
+        {
+          "source_id": "eastern-expansion-2026-11:theologos2020",
+          "locus": "Printed pp. 62–63, nn. 35–38",
+          "claim": "Reports circular 68/2009 recognizing both 1931 and 1996 as approved Liturghier editions."
+        }
+      ],
+      "limitations": "Recorded as witness-succession because original 1931 and 1996 books have not been collated for textual differences.",
+      "comparison_ids": [],
+      "historical_parentage": "established",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "eastern-expansion-2026-11:romanian-1996-to-2014",
+      "from_stage": "eastern-expansion-2026-11:romanian-rome-1996",
+      "to_stage": "romanian-blaj:2014-official-edition",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "The 2014 Blaj Liturghier (promulgated official 20 May 2015) revises Rome 1996 with Greek-checked language corrections, clarified typikon rubrics, and the printed 2006/2012 Pope and Major Archbishop commemoration formula.",
+      "components": [
+        "ordinary",
+        "rubrics"
+      ],
+      "changes": [
+        {
+          "component": "ordinary",
+          "before": "Rome 1996 preceded the 2005 erection of the Romanian Major Archiepiscopal Church (circular 723/2006 commemoration formula) and lacked the Greek-checked linguistic corrections of 2014.",
+          "after": "Blaj 2014 applies language corrections checked against the Greek text and theological usage while preserving 1931 linguistic continuity, and prints the canonical Pope/Major Archbishop ('cardinal') commemoration formula at pp. 80 and 104.",
+          "locus_before": "Rome 1996 named as previous edition in 20 May 2015 synodal circular",
+          "locus_after": "20 May 2015 circular; Băltăceanu & Broșteanu 2014 editors' note; Theologos 2020 p. 62 n. 35 (Blaj 2014 pp. 80, 104)",
+          "evidence": [
+            {
+              "source_id": "eastern-expansion-2026-11:ro-circular2015",
+              "locus": "Entire circular (20 May 2015)",
+              "claim": "Declares Blaj 2014 the official replacement for Rome 1996 with language corrections."
+            },
+            {
+              "source_id": "eastern-expansion-2026-11:ro-editors2014",
+              "locus": "Entire editors' note",
+              "claim": "Details the linguistic revision checked against the Greek text."
+            },
+            {
+              "source_id": "eastern-expansion-2026-11:theologos2020",
+              "locus": "Printed pp. 62–63, nn. 35–38",
+              "claim": "Locates the 2006/2012 Pope and Major Archbishop commemoration formula printed in Blaj 2014 at pp. 80 and 104."
+            }
+          ]
+        },
+        {
+          "component": "rubrics",
+          "before": "Rome 1996 rubrical formulations prior to the 2014 typikon clarification.",
+          "after": "Blaj 2014 introduces clarified typikon rubrics made official by the 20 May 2015 synodal circular.",
+          "locus_before": "Rome 1996 referenced as previous edition in 20 May 2015 circular",
+          "locus_after": "20 May 2015 synodal circular",
+          "evidence": [
+            {
+              "source_id": "eastern-expansion-2026-11:ro-circular2015",
+              "locus": "Entire circular (20 May 2015)",
+              "claim": "Explicitly cites clarified rubrics in promulgating Blaj 2014 over Rome 1996."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:ro-circular2015",
+          "locus": "Entire circular (20 May 2015)",
+          "claim": "Primary synodal promulgation establishing direct succession from Rome 1996 to Blaj 2014 with named language and rubric revisions."
+        },
+        {
+          "source_id": "eastern-expansion-2026-11:ro-editors2014",
+          "locus": "Entire editors' note",
+          "claim": "Confirms Greek-checked linguistic revision beyond a mere reprint."
+        }
+      ],
+      "limitations": "Primary-described revision via official promulgation and editors' note; original 1996 and 2014 volumes remain uncollated by this project.",
+      "comparison_ids": [],
+      "historical_parentage": "established",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "eastern-expansion-2026-11:malankara-1960-to-1965",
+      "from_stage": "eastern-expansion-2026-11:malankara-tiruvalla-1960",
+      "to_stage": "eastern-expansion-2026-11:malankara-tiruvalla-1965",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "Successive Catholic-approved Tiruvalla printings of the Syriac–Malayalam Mar Xystus Taksa under Benedict Mar Gregorios (1960 re-imprimatur, 1965 imprimatur), with no substantive textual revision established.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:malankara-tiruvalla1960",
+          "locus": "PDF pp. 1–2",
+          "claim": "Original 1960 Tiruvalla title and 11 May 1960 re-imprimatur inspected."
+        },
+        {
+          "source_id": "eastern-expansion-2026-11:malankara-tiruvalla1965",
+          "locus": "PDF pp. 2–3",
+          "claim": "Original 1965 Tiruvalla title and 2 February 1965 imprimatur inspected."
+        }
+      ],
+      "limitations": "Title and approval comparison only; Syriac prayer bodies not collated.",
+      "comparison_ids": [],
+      "historical_parentage": "established",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "eastern-expansion-2026-11:malankara-1934-to-1987-anaphoras",
+      "from_stage": "west-syriac-stages-pampakuda1934",
+      "to_stage": "eastern-expansion-2026-11:malankara-takso-1987",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "The Syro-Malankara Eucharistic repertoire expands from two anaphoras in Pampakuda 1934 (Xystus and short James) to nine anaphoras in the 1987 Teksod-Qurobo.",
+      "components": [
+        "anaphoras"
+      ],
+      "changes": [
+        {
+          "component": "anaphoras",
+          "before": "Pampakuda 1934 contained two anaphoras: Xystus and St. James in its short form.",
+          "after": "The 1987 Teksod-Qurobo contains nine anaphoras: Minor James, John the Apostle, Twelve Apostles, Dionysius, Ivanios, Peter, Xystus, Eustathius, and the Doctors.",
+          "locus_before": "Tisserant 1941, DTC 14.2 col. 3160 (1934 two-anaphora repertoire)",
+          "locus_after": "Paniker 1991, printed p. 48 / PDF p. 29 (1987 nine-anaphora repertoire)",
+          "evidence": [
+            {
+              "source_id": "eastern-expansion-2026-11:tisserant1941",
+              "locus": "Col. 3160, final missal paragraph",
+              "claim": "Establishes the two-anaphora repertoire (Xystus and short James) of Pampakuda 1934."
+            },
+            {
+              "source_id": "eastern-expansion-2026-11:malankara-paniker1991",
+              "locus": "Printed p. 48 / PDF p. 29",
+              "claim": "Enumerates the nine anaphoras of the 1987 Teksod-Qurobo then in active use."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:tisserant1941",
+          "locus": "Col. 3160",
+          "claim": "Before-state repertoire witness (1934)."
+        },
+        {
+          "source_id": "eastern-expansion-2026-11:malankara-paniker1991",
+          "locus": "Printed p. 48 / PDF p. 29",
+          "claim": "After-state repertoire witness (1987)."
+        }
+      ],
+      "limitations": "Repertoire-level scholarly comparison across a 53-year span; intermediate editions (including 1960/1965 Syriac and 1966 Malayalam Xystus Taksas) are not collapsed into a single linear parent chain, so historical parentage remains unestablished.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "eastern-expansion-2026-11:malankara-1987-to-2006-synod-revision",
+      "from_stage": "eastern-expansion-2026-11:malankara-takso-1987",
+      "to_stage": "eastern-expansion-2026-11:malankara-synod-2006-2007-taksa",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "The 2006 Holy Episcopal Synod revises the nine-anaphora Takso by conforming Malayalam anaphora translations to the Syriac, prescribing bilingual Syriac–Malayalam Institution Narrative and Epiclesis, and inserting St. Thomas into the intercessions.",
+      "components": [
+        "anaphoras",
+        "ordinary"
+      ],
+      "changes": [
+        {
+          "component": "anaphoras",
+          "before": "1987 nine-anaphora Teksod-Qurobo prior to the 2006 synodal conformity review.",
+          "after": "2006 Decision II.6 retains nine anaphoras in Malayalam conformed to the Syriac original, prints the Institution Narrative and Epiclesis in Syriac alongside Malayalam translations, and holds the Julius anaphora in abeyance.",
+          "locus_before": "Paniker 1991 p. 48 (1987 nine-anaphora repertoire)",
+          "locus_after": "Malankara Synodal Acts 2.2 (Jan 2007), pp. 30–31 and Decision II.6 p. 46; 2023 English preface PDF p. 4",
+          "evidence": [
+            {
+              "source_id": "eastern-expansion-2026-11:malankara-synod2006",
+              "locus": "Printed pp. 30–31 and Decision II.6 p. 46",
+              "claim": "Primary synodal act specifying Syriac conformity of Malayalam anaphora translations, bilingual Syriac/Malayalam Institution Narrative and Epiclesis, and deferral of Julius anaphora."
+            },
+            {
+              "source_id": "eastern-expansion-2026-11:malankara-english2023",
+              "locus": "PDF p. 4 / printed p. ii",
+              "claim": "Confirms nine printed anaphoras in the resulting 2007 Malayalam Takso."
+            }
+          ]
+        },
+        {
+          "component": "ordinary",
+          "before": "Prior Syro-Malankara ordinary intercessions and kukilion before the 2006 synodal decisions.",
+          "after": "2006 Synod adds St. Thomas explicitly in the intercessions and revises the kukilion while deferring longer proemion-sedro and additional huthomo.",
+          "locus_before": "Pre-2006 state referenced by the 2006 synod revision agenda (pp. 30–31)",
+          "locus_after": "Malankara Synodal Acts 2.2 (Jan 2007), pp. 30–31 and Decision II.6 p. 46",
+          "evidence": [
+            {
+              "source_id": "eastern-expansion-2026-11:malankara-synod2006",
+              "locus": "Printed pp. 30–31 and Decision II.6 p. 46",
+              "claim": "Primary synodal act documenting the St. Thomas intercession insertion and kukilion revision."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:malankara-synod2006",
+          "locus": "Printed pp. 30–31 and Decision II.6 p. 46",
+          "claim": "Primary synodal legislation defining the textual revisions of the Malayalam Takso."
+        },
+        {
+          "source_id": "eastern-expansion-2026-11:malankara-paniker1991",
+          "locus": "Printed p. 48 / PDF p. 29",
+          "claim": "Establishes the prior 1987 nine-anaphora edition in use."
+        }
+      ],
+      "limitations": "Primary-described synodal revisions; neither the 1987 book nor the October 2007 printed Malayalam Takso has been acquired or collated directly. Rubric deferral to the Thukasa is documented in the 2006 stage but excluded from this transition's changes because 1987 rubric scope is unattested.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "eastern-expansion-2026-11:belarusian-vilnius1617-to-suprasl1727",
+      "from_stage": "eastern-expansion-2026-11:belarusian-vilnius-1617",
+      "to_stage": "eastern-expansion-2026-11:belarusian-suprasl-1727-1732",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "Following the Synod of Zamość (1720), Supraśl 1727–1732 supersedes early unapproved 1617 Uniate printing by integrating post-Zamość commemorations (Pope, King, St. Josaphat at Proskomedia) and the Creed with Filioque within the Żochowski rubric tradition.",
+      "components": [
+        "ordinary",
+        "rubrics"
+      ],
+      "changes": [
+        {
+          "component": "ordinary",
+          "before": "Vilnius 1617 Mamonych predated St. Josaphat's martyrdom (1623) and the Synod of Zamość (1720) liturgical mandates.",
+          "after": "Supraśl 1727–1732 (RNB OR VII.3.15) prints the Creed with Filioque and explicit commemorations of the Pope and King.",
+          "locus_before": "Vilnius 1617 (Huculak 1990 App. II; Kniga Belarusi no. 80)",
+          "locus_after": "Supraśl 1727–1732, Senchenko 2022 pp. 43–45 and Huculak 1990 App. II",
+          "evidence": [
+            {
+              "source_id": "eastern-expansion-2026-11:senchenko2022",
+              "locus": "Printed pp. 43–45",
+              "claim": "Documents Filioque and papal/royal commemorations in RNB OR VII.3.15 (Supraśl 1727–1732)."
+            },
+            {
+              "source_id": "eastern-expansion-2026-11:huculak1990",
+              "locus": "Appendix II, pp. 384–401",
+              "claim": "Distinguishes the pre-Zamość 1617 Mamonych Sluzhebnik from the post-Zamość 1727–1732 Supraśl edition."
+            }
+          ]
+        },
+        {
+          "component": "rubrics",
+          "before": "Vilnius 1617 carried a priest's Nauka mixing Eastern and Latin practice without hierarchical codification.",
+          "after": "Supraśl 1727–1732 adopts the codified Żochowski rubric tradition and commemorates St. Josaphat in the Proskomedia.",
+          "locus_before": "Vilnius 1617 Nauka (Huculak 1990 App. II; scan images 4–7)",
+          "locus_after": "Supraśl 1727–1732 (Huculak 1990 App. II; Senchenko 2022 pp. 43–45)",
+          "evidence": [
+            {
+              "source_id": "eastern-expansion-2026-11:huculak1990",
+              "locus": "Appendix II, pp. 384–401",
+              "claim": "Contrasts 1617's unapproved mixed Nauka with Supraśl 1727–1732's post-Zamość Żochowski rubric framework."
+            },
+            {
+              "source_id": "eastern-expansion-2026-11:senchenko2022",
+              "locus": "Printed pp. 43–45",
+              "claim": "Reports St. Josaphat's commemoration at the Proskomedia in RNB OR VII.3.15."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:huculak1990",
+          "locus": "Appendix II, pp. 384–401",
+          "claim": "Traces the structural evolution across Vilnius 1617, Żochowski 1692–1695, and post-Zamość Supraśl 1727–1732."
+        },
+        {
+          "source_id": "eastern-expansion-2026-11:senchenko2022",
+          "locus": "Printed pp. 43–45",
+          "claim": "Supplies RNB OR VII.3.15 textual features for Supraśl 1727–1732."
+        }
+      ],
+      "limitations": "Scholarly comparison across a century with Żochowski 1692–1695 intervening (linked separately); direct full-text collation of 1617 and 1727–1732 not performed.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "eastern-expansion-2026-11:belarusian-vilnius1692-to-suprasl1727",
+      "from_stage": "byzantine-stages:vilnius1692",
+      "to_stage": "eastern-expansion-2026-11:belarusian-suprasl-1727-1732",
+      "kind": "reception",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "The post-Zamość Supraśl 1727–1732 Liturgikon receives and continues the Żochowski (Vilnius 1692 / Supraśl 1695) rubric tradition.",
+      "components": [
+        "rubrics"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:huculak1990",
+          "locus": "Appendix II, pp. 384–401",
+          "claim": "Explicitly identifies Supraśl 1727–1732 as following the 1692–1695 Żochowski tradition."
+        }
+      ],
+      "limitations": "Scoped strictly to the Żochowski rubric tradition reported by Huculak; full comparison of NBUV Кир. 5232 and RNB OR VII.3.15 remains unperformed.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "eastern-expansion-2026-11:belarusian-suprasl1727-to-suprasl1758",
+      "from_stage": "eastern-expansion-2026-11:belarusian-suprasl-1727-1732",
+      "to_stage": "byzantine-stages:suprasl1758",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "Supraśl 1758 adapts the Uniate Supraśl liturgical repertoire into a portable Chrysostom-only book expressly for private unsung and travelling celebration, incorporating extensive Latin-origin and Polish–Lithuanian patron propers.",
+      "components": [
+        "rubrics",
+        "propers"
+      ],
+      "changes": [
+        {
+          "component": "rubrics",
+          "before": "Supraśl 1727–1732 was a full-format post-Zamość Liturgikon.",
+          "after": "Supraśl 1758 expressly configures a Chrysostom-only portable manual for priests celebrating privately without singing and while travelling, appending a lay-communion admonition.",
+          "locus_before": "Supraśl 1727–1732 (Kniga Belarusi no. 209; Senchenko 2022 pp. 43–45)",
+          "locus_after": "Supraśl 1758 title image 3 and contents images 176–177 (RSL MK Кир. 2°)",
+          "evidence": [
+            {
+              "source_id": "eastern-expansion-2026-11:neb-suprasl1758",
+              "locus": "NEB images 3, 176–177",
+              "claim": "Title leaf explicitly states private unsung and travelling purpose; contents include lay-communion admonition."
+            },
+            {
+              "source_id": "eastern-expansion-2026-11:kniga-belarusi1986",
+              "locus": "Entries 209 and 231",
+              "claim": "Contrasts the 1727–1732 full Sluzhebnik with the 1758 176-page private-celebration Chrysostom Sluzhebnik."
+            }
+          ]
+        },
+        {
+          "component": "propers",
+          "before": "Supraśl 1727–1732 carried standard Uniate menaion/common services and St. Josaphat commemoration.",
+          "after": "Supraśl 1758 contents explicitly assemble votive and feast propers for Holy Eucharist, Most Sweet Name of Jesus, Passion, Conception/Visitation/Compassion/Rosary of the Mother of God, Bl. Josaphat, Francis, Dominic, Anthony of Padua, Ignatius Loyola, John Nepomucene, and Casimir.",
+          "locus_before": "Supraśl 1727–1732 (Kniga Belarusi no. 209; Senchenko 2022)",
+          "locus_after": "Supraśl 1758 NEB contents images 176–177",
+          "evidence": [
+            {
+              "source_id": "eastern-expansion-2026-11:neb-suprasl1758",
+              "locus": "NEB images 176–177",
+              "claim": "Directly inspected contents leaves enumerate each Latin-origin and Polish–Lithuanian patron proper."
+            },
+            {
+              "source_id": "eastern-expansion-2026-11:huculak1990",
+              "locus": "Appendix II, pp. 384–401",
+              "claim": "Places Supraśl 1758 within the Supraśl press's evolving Uniate Sluzhebnik series."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:neb-suprasl1758",
+          "locus": "NEB images 3, 176–177",
+          "claim": "Primary-image verification of 1758 private-use purpose and Western/patron proper repertoire."
+        },
+        {
+          "source_id": "eastern-expansion-2026-11:kniga-belarusi1986",
+          "locus": "Entries 209 and 231",
+          "claim": "Documents both Supraśl imprints in the Belarusian union catalogue."
+        }
+      ],
+      "limitations": "Portable component adaptation rather than a replacement of the full three-liturgy Supraśl book (reprinted in 1763); no direct prayer-body collation performed.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "eastern-expansion-2026-11:belarusian-greek1754-to-pochaiv1788",
+      "from_stage": "byzantine-stages:greek1754",
+      "to_stage": "byzantine-stages:pochaiv1788",
+      "kind": "reception",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "Huculak reports that the 1788 Pochaiv Liturgiarion incorporates selected rubrics similar to Benedict XIV's 1754 Roman Greek Euchologion while retaining the Żochowski base.",
+      "components": [
+        "rubrics"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:huculak1990",
+          "locus": "Appendix II, pp. 384–401",
+          "claim": "Notes rubrics in Pochaiv 1788 aligned with the 1754 Roman Greek Euchologion ('BEN')."
+        }
+      ],
+      "limitations": "Scholarly rubric observation by Huculak; bounded rubrical reception only, not direct translation or full collation.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "eastern-expansion-2026-11:krizevci-ruth1940-to-1970-printing",
+      "from_stage": "byzantine-stages:ruth1940-41",
+      "to_stage": "eastern-expansion-2026-11:krizevci-ruthenian-1970-printing",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "The 1970 Grottaferrata Recensio ruthena Chrysostom printing named by the 2018 Croatian book belongs to the same Roman Ruthenian Chrysostom line attested in 1940–1941, with no new textual recension established.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:croatian2018-book",
+          "locus": "PDF/printed p. 4",
+          "claim": "Names the Rome 1970 Grottaferrata Recensio ruthena Chrysostom printing as its source."
+        },
+        {
+          "source_id": "eastern-expansion-2026-11:kolupaev2012",
+          "locus": "Printed pp. 390–392",
+          "claim": "Documents Grottaferrata press photolithographic reissues of Roman Slavonic books."
+        }
+      ],
+      "limitations": "Original 1970 title verso/colophon not inspected; witness succession without claiming substantive textual revision.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "eastern-expansion-2026-11:krizevci-ruth1970-to-croatian2018",
+      "from_stage": "eastern-expansion-2026-11:krizevci-ruthenian-1970-printing",
+      "to_stage": "eastern-expansion-2026-11:krizevci-croatian-2018",
+      "kind": "reception",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "The 2018 official Croatian Chrysostom Liturgikon of the Križevci Eparchy explicitly receives the Rome 1970 Grottaferrata Recensio ruthena Chrysostom printing as its translated exemplar (Izvornik).",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:croatian2018-book",
+          "locus": "PDF/printed pp. 4–5",
+          "claim": "Directly inspected primary front matter names Rome 1970 as Izvornik alongside 2017 Congregation approval and decree 5/2018."
+        }
+      ],
+      "limitations": "Documents explicit source-edition reception into an official Croatian translation; full prayer-by-prayer collation against 1970 and post-2023 renewal remain open.",
+      "comparison_ids": [],
+      "historical_parentage": "established",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "eastern-expansion-2026-11:krizevci-ruth1942-to-slovenian2022",
+      "from_stage": "byzantine-stages:ruth1942",
+      "to_stage": "eastern-expansion-2026-11:krizevci-slovenian-2022-2023",
+      "kind": "reception",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "The official 2022–2023 Slovenian Služebnik of the Križevci Eparchy directly receives the Rome 1942 Church Slavonic Ruthenian Liturgikon as its source text.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "rubrics"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:bogataj2022",
+          "locus": "Printed pp. 259–261",
+          "claim": "Firsthand translator identifies the Rome 1942 Ruthenian Liturgikon as the direct exemplar."
+        },
+        {
+          "source_id": "eastern-expansion-2026-11:ika2023-slovenian",
+          "locus": "Entire report (27 May 2023)",
+          "claim": "Corroborates translation from the Rome 1942 Church Slavonic Ruthenian Liturgikon."
+        }
+      ],
+      "limitations": "Reception of a shared source recension into Slovenian for Križevci Eparchy faithful in Slovenia; does not prove universal 1942 adoption across Serbia or earlier decades.",
+      "comparison_ids": [],
+      "historical_parentage": "established",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "eastern-expansion-2026-11:krizevci-slovenian1965-to-2022",
+      "from_stage": "eastern-expansion-2026-11:krizevci-slovenian-1965",
+      "to_stage": "eastern-expansion-2026-11:krizevci-slovenian-2022-2023",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "The 2022–2023 official Slovenian Služebnik revises the 1965 Slovenian Božja liturgija by restoring abridged/omitted antiphons from Rome 1942 and adding named local Slovene first-millennium saints and St. Josaphat to the Proskomedia.",
+      "components": [
+        "propers",
+        "ordinary"
+      ],
+      "changes": [
+        {
+          "component": "propers",
+          "before": "The 1965 Slovenian edition abridged the festal and daily antiphons and omitted the Sunday antiphons entirely.",
+          "after": "The 2022–2023 Služebnik restores full festal, daily, and Sunday antiphons translated from the 1942 Rome Ruthenian Liturgikon.",
+          "locus_before": "1965 Trieste/Rome edition as analyzed in Bogataj 2022, p. 260",
+          "locus_after": "2022–2023 Služebnik as documented by its translator in Bogataj 2022, pp. 259–260",
+          "evidence": [
+            {
+              "source_id": "eastern-expansion-2026-11:bogataj2022",
+              "locus": "Printed pp. 259–260",
+              "claim": "Explicitly contrasts the 1965 abridged/absent antiphons with the restored festal, daily, and Sunday antiphons in 2022."
+            }
+          ]
+        },
+        {
+          "component": "ordinary",
+          "before": "The 1965 Slovenian edition lacked local Slovene saints and St. Josaphat in its Proskomedia commemorations.",
+          "after": "At the Dicastery for the Eastern Churches' recommendation, the 2022–2023 Služebnik inserts Maximilian of Celeia, Victorinus of Poetovio, Maximus of Emona, Jerome, and Josaphat Kuntsevych into the Proskomedia.",
+          "locus_before": "1965 Slovenian Proskomedia as contrasted in Bogataj 2022, pp. 259–260",
+          "locus_after": "2022–2023 Služebnik Proskomedia as documented in Bogataj 2022, pp. 259–260",
+          "evidence": [
+            {
+              "source_id": "eastern-expansion-2026-11:bogataj2022",
+              "locus": "Printed pp. 259–260",
+              "claim": "Names all five added saints and attributes the insertion to the Dicastery's recommendation."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:bogataj2022",
+          "locus": "Printed pp. 257, 259–261",
+          "claim": "Firsthand translator comparison detailing concrete antiphon and Proskomedia revisions over 1965."
+        }
+      ],
+      "limitations": "Firsthand scholarly translator report; original 1965 and 2022–2023 volumes were not independently collated side-by-side.",
+      "comparison_ids": [],
+      "historical_parentage": "established",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "eastern-expansion-2026-11:hungarian-1882-1890-to-1920",
+      "from_stage": "eastern-expansion-2026-11:hungarian-debrecen-1882-1890",
+      "to_stage": "hungarian-reception:1920-liturgikon",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "The 1920/1921 Hajdúdorog Liturgikon combines the unapproved 1882 Chrysostom and 1890 Basil/Presanctified volumes into one revised 311-page service book corrected against the Greek, adding parallel Greek canonical anaphora texts, daily offices, calendar, and a 1921–1960 paschalion.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "propers"
+      ],
+      "changes": [
+        {
+          "component": "ordinary",
+          "before": "1882 Debrecen Chrysostom (90+2 pp.) and 1890 Basil/Presanctified (103+2 pp.) were two separate unapproved Hungarian translations compiled from multiple Church Slavonic texts.",
+          "after": "1920 Nyíregyháza Liturgikon (311 pp., private-use permission 1235/1920, enforced in 1921 by circular 1021/1921) merges both volumes and revises the Hungarian wording against the Greek.",
+          "locus_before": "Dobos 2020 pp. 396–397; Ivancsó 2008 pp. 13, 23–24",
+          "locus_after": "Ivancsó 2008 pp. 19–21 (quoting Emlékezetül pp. 309–310); Ivancsó 2007 pp. 69–73",
+          "evidence": [
+            {
+              "source_id": "eastern-expansion-2026-11:ivancso2008",
+              "locus": "Printed pp. 19–21, 24",
+              "claim": "Quotes the 1920 preface stating consolidation of 1882/1890 and revision against the Greek."
+            },
+            {
+              "source_id": "eastern-expansion-2026-11:dobos2020",
+              "locus": "Printed pp. 396–397",
+              "claim": "Characterizes the unapproved Slavonic-compiled 1882/1890 volumes preceding 1920."
+            }
+          ]
+        },
+        {
+          "component": "anaphoras",
+          "before": "1882 and 1890 printed the anaphoras solely in Hungarian without parallel Greek canonical texts.",
+          "after": "1920 prints the canonical parts (anaphoras) of the liturgies in Greek alongside Hungarian so clergy could celebrate the essential parts in Greek until Greek liturgikons could be obtained from Rome.",
+          "locus_before": "Debrecen 1882 and 1890 descriptions in Dobos 2020 pp. 396–397 and Ivancsó 2008 p. 24",
+          "locus_after": "1920 Emlékezetül pp. 309–310 quoted in Ivancsó 2008, p. 20",
+          "evidence": [
+            {
+              "source_id": "eastern-expansion-2026-11:ivancso2008",
+              "locus": "Printed p. 20 (quoting Emlékezetül pp. 309–310)",
+              "claim": "Explicitly documents addition of Greek parallel canonical anaphora texts in the 1920 book."
+            }
+          ]
+        },
+        {
+          "component": "propers",
+          "before": "1882/1890 carried limited paschal rites, intention formularies, and Great Canon without a full annual calendar/Sunday-proper apparatus.",
+          "after": "1920 adds Sunday propers, dismissals, daily offices, full calendar, and a 1921–1960 paschalion.",
+          "locus_before": "Dobos 2020 pp. 396–397; Ivancsó 2008 pp. 13, 24",
+          "locus_after": "Ivancsó 2008 pp. 19–21, 24",
+          "evidence": [
+            {
+              "source_id": "eastern-expansion-2026-11:ivancso2008",
+              "locus": "Printed pp. 19–21, 24",
+              "claim": "Lists the newly added Sunday propers, dismissals, calendar, and 1921–1960 paschalion."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:ivancso2008",
+          "locus": "Printed pp. 19–21, 24",
+          "claim": "Directly contrasts 1882/1890 with the combined, Greek-revised 1920 Liturgikon."
+        },
+        {
+          "source_id": "eastern-expansion-2026-11:dobos2020",
+          "locus": "Printed pp. 396–397",
+          "claim": "Documents the 1882/1890 compilation base."
+        }
+      ],
+      "limitations": "Scholarly-described revision; original 1882, 1890, and complete 1920 copies remain unacquired and uncollated by this project.",
+      "comparison_ids": [],
+      "historical_parentage": "established",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "eastern-expansion-2026-11:hungarian-1916-calendar-into-1920",
+      "from_stage": "eastern-expansion-2026-11:hungarian-calendar-reform-1916",
+      "to_stage": "hungarian-reception:1920-liturgikon",
+      "kind": "reception",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "Hajdúdorog's 1916 Gregorian calendar reform feeds into the calendar and 1921–1960 paschalion incorporated in the 1920/1921 eparchial Liturgikon.",
+      "components": [
+        "calendar",
+        "propers"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:ivancso2007",
+          "locus": "Printed pp. 65–73",
+          "claim": "Traces Bishop Miklósy's liturgical enactments from the 1916 calendar reform to the 1920/1921 Liturgikon."
+        },
+        {
+          "source_id": "eastern-expansion-2026-11:ivancso2008",
+          "locus": "Printed pp. 19–21",
+          "claim": "Identifies the calendar and 1921–1960 paschalion included in the 1920 Liturgikon."
+        }
+      ],
+      "limitations": "Scholarly linkage; calendar pages of the 1920 book remain uninspected directly.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed",
+      "git_ancestry": false,
+      "text_inheritance": false
+    },
+    {
+      "id": "eastern-expansion-2026-11:hungarian-1918-1919-into-1920",
+      "from_stage": "eastern-expansion-2026-11:hungarian-post-habsburg-revisions-1918-1919",
+      "to_stage": "hungarian-reception:1920-liturgikon",
+      "kind": "reception",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "Bishop Miklósy's 1918–1919 post-Habsburg litany and Holy Cross directives precede and inform the standardized eparchial wording enforced with the 1920/1921 Liturgikon.",
+      "components": [
+        "ordinary",
+        "propers"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "eastern-expansion-2026-11:ivancso2007",
+          "locus": "Printed pp. 68–73",
+          "claim": "Documents circulars 4471/1918 and 808/1919 immediately before the 1920/1921 Liturgikon wording directives."
+        }
+      ],
+      "limitations": "Original 1920 prayer and Holy Cross pages not inspected directly to verify exact printed text of the 1918–1919 changes.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed",
+      "git_ancestry": false,
+      "text_inheritance": false
+    }
+  ],
+  "gaps": [
+    {
+      "id": "eastern-expansion-2026-11:albanian-elbasan-mission-books-1900-1946",
+      "tradition_id": "eastern-local-round2:albanian",
+      "period": "1900–1946 (Elbasan St. Peter mission, Pietro Scarpelli 1928–1929, Josif Papamihali 1936–1946, and Inter regiones 11 November 1939)",
+      "missing": "Zero authenticated Catholic Byzantine celebrant books, received exemplars, approbations, or sacristy book inventories for the Elbasan/Southern Albania Catholic community. Pius XII's 11 November 1939 constitution Inter regiones (AAS 32 (1940) 139–140) erected the Apostolic Administration of Southern Albania over both Latin and Byzantine faithful without identifying a service book. Orthodox Albanian books (e.g. Fan Noli) and Italo-Albanian books (Lungro 1967/1968, Piana, Grottaferrata) MUST NOT be transferred onto Albania proper without local receipt proof.",
+      "next_source": "Inspect ACCO Prot. 441/28 Nr. X (Scarpelli, Terza Relazione, 10 January 1930, pp. 37–50) and ACCO Rito bizantino / Albanesi dal 1928 (16 boxes, DGA 2007 p. 244), Greek College de Meester–Scarpelli correspondence (DGA p. 374), Grottaferrata mission holdings (DGA p. 496), AVPSJ Cordignano 1929 Elbasan report, and Ines Angeli Murzaku, Returning Home to Rome (Grottaferrata, 2009: https://books.google.com/books/about/Returning_Home_to_Rome.html?id=y2EPFRL-XJQC).",
+      "consequence": "Albanian Greek Catholic retains zero liturgical-book stages; bounded negative is preserved transparently without inventing a book or conflating Italo-Albanian/Orthodox editions."
+    },
+    {
+      "id": "eastern-expansion-2026-11:albanian-post-1991-southern-albania-liturgy",
+      "tradition_id": "eastern-local-round2:albanian",
+      "period": "1991–2026 (post-Communist Apostolic Administration of Southern Albania)",
+      "missing": "Local sacristy inventories, active liturgical-language evidence, and any post-1991 Byzantine-rite Catholic service book used in Elbasan (Shën Pjetri), Korçë, or Southern Albania. The 5 November 2021 AIDSSH bulletin visit to Shën Pjetri confirms church identity without documenting a Eucharistic celebration or book, and the 25 April 2026 appointment of Fr. Flavio Cavallini O.F.M. supplies no liturgical-book data.",
+      "next_source": "Direct archive/sacristy inventories of the Apostolic Administration of Southern Albania (Fier/Vlorë/Elbasan/Korçë) and any official Diocesan liturgical directives confirming whether Byzantine-rite services occur and which Greek, Arbëresh, or Albanian edition is used.",
+      "consequence": "Modern Albanian Greek Catholic book identity and present census classification remain explicitly unresolved."
+    },
+    {
+      "id": "eastern-expansion-2026-11:macedonian-printed-book-and-exemplar-gap",
+      "tradition_id": "eastern-local-round2:macedonian",
+      "period": "Before 2009 (Kukush/Križevci Slavonic usage) and 2009–2026 (printed Macedonian Liturgikon and operative use)",
+      "missing": "Original title, imprint, approval, and contents leaves of the reported Литургикон (2009) and companion books (unauthenticated Scribd upload 920700615/12 listing Литургикон 2009, Евангелие и Апостол 2009, Обредник 2009, Божествена литургија за народот 2010, Велигденско тродневие 2020, Тропари и кондаци 2022—potentially spanning both Latin and Byzantine rites under Bishop Stojanov); exact Greek or Church Slavonic exemplar (pre-2001 Križevci jurisdiction does not automatically prove Rome 1942 Ruthenian usage in Strumica/Bogdanci/Radovo); and dated operative celebration records tied to the 2009 approved wording.",
+      "next_source": "Acquire original pages of Goce Kostov and Zoran I. Stojanov, 25 години епископство на монсињор Стојанов (presented 5 September 2024; Издаваштво / Литургиски книги), Macedonian COBISS records (blocked by Anubis access denial in Oct 2026), and original title/approval/contents leaves of the 2009 Литургикон plus pre-2001 Strumica/Radovo/Bogdanci parish inventories.",
+      "consequence": "Only the 9 December 2009 Holy See approval/recognitio act is documented as a stage; no printed Macedonian book state, source-exemplar reception edge, or dated parish use can yet be plotted."
+    },
+    {
+      "id": "eastern-expansion-2026-11:melkite-18th-century-shuwayr-and-mid20c-harissa-gap",
+      "tradition_id": "eastern-local-round2:melkite",
+      "period": "1733–1843 (Choueir press & unverified 1843 Liturgikon) and 1900–1968 (Harissa Paulist editions & 1965/1968 works)",
+      "missing": "Clarification of whether any Choueir Liturgikon existed before the unverified 1843 Cheikho lead (Charon documents 18th-century Choueir lectionary/proper books 1759–1787, NOT a 1733, 1745, or 1764 Shuwayr Liturgikon); exact original bibliographic identification of any mid-20th-century Harissa Arabic Liturgikons (e.g. 1938 or 1959 claims remain unverified in Charon, DLI, and Gregorios III's Letter); and acquisition/collation of the 1839, 1865, 1900, 1968 Paulist Euchologion, 1992 experimental, and 2006–2007 Arabic volumes.",
+      "next_source": "Read Ioana Feodorov, Arabic Printing for the Christians in Ottoman Lands (2023, https://library.oapen.org/handle/20.500.12657/76898), Charbel Nassif, Le grand euchologe melkite de Jérusalem (1865) (2022, https://books.openedition.org/efr/46083), Nassif's 2017 ICP thesis on the Melkite Euchologion, and Jounieh/Harissa Paulist Press catalogues for 1900–1992.",
+      "consequence": "Substantive Melkite chronology is now documented across 13 stages (including existing 2006–2007), while unverified 18th-century Shuwayr Liturgikon dates and 1938/1959 Harissa printings are deliberately withheld from documented stages."
+    },
+    {
+      "id": "eastern-expansion-2026-11:romanian-blaj-originals-and-1937-control",
+      "tradition_id": "romanian-blaj:historical",
+      "period": "1807–2015 (unacquired Blaj/Rome originals and interwar 1937 distinction)",
+      "missing": "Original full scans and page-level collations of Blaj 1807, 1870, 1905, 1931, Rome 1996, and Blaj 2014, plus Acte Sinodale IV/4 (2009) pp. 59–60 and I/1 (2006) p. 13. Verification also confirms that Blaj 1931—not 1937—is the interwar Liturghier milestone (surrounded by 1929 Strastnic, 1934 Orologhion, and 1940 Molitfelnic). Separate Oradea Greek Catholic parish use of Orthodox printings (Târgovişte 1713, Râmnic 1733/1759, Sibiu 1798/1814, Kyiv 1629, Lviv 1712) still lacks dated receipt records.",
+      "next_source": "Acquire BCU Cluj / Romanian Academy / Blaj scans of 1807, 1870, 1905, 1931, 1996, and 2014 Liturghiers, plus Szmigelski (2008) on 1905, Magdău & Mastan-Magdău (2007), and Petroaia (2022).",
+      "consequence": "Blaj transitions from 1807 through 2014 remain scholarly-described or primary-described rather than independently text-collated; no spurious 1937 Liturghier stage is created."
+    },
+    {
+      "id": "eastern-expansion-2026-11:syro-malankara-scope-and-use-gap",
+      "tradition_id": "syro-malankara-catholic",
+      "period": "1934–2007 (original scans, §11 actual-use verification, and Syro-Malabar separation)",
+      "missing": "Original scans of Pampakuda 1934, 1987 nine-anaphora Teksod-Qurobo, February 2007 Qurbonokramam, and October 2007 printed Malayalam Takso; independent documentation of actual parish celebration with the 1966 and October 2007 Malayalam Taksas required by guidance/time-machine.md §11; and identification of the earlier approved edition behind Tiruvalla 1960's 're-imprimatur'. Note explicitly that 1957 and 1986 belong to the Syro-Malabar (East Syriac) Taksa history and MUST NOT be transferred into Syro-Malankara (West Syriac).",
+      "next_source": "SEERI / Malankara Catholic archives copies of Pampakuda 1934, 1987 Teksod-Qurobo, and October 2007 Malayalam Takso; John Madey, OS 22 (1973), pp. 55–58; eparchial circulars documenting parish commencement/use of the 1966 and 2007 Malayalam Taksas; Trivandrum MS 23 (1930) and Tiruvalla MS 30 (1931).",
+      "consequence": "Syro-Malankara now spans 1934, 1960, 1965, 1966, 1987, and 2006/2007 with clear repertoire and synodal revisions, while full Malayalam body collation and §11 parish-use proof remain explicitly open."
+    },
+    {
+      "id": "eastern-expansion-2026-11:belarusian-1796-1839-and-modern-approval-gap",
+      "tradition_id": "eastern-expansion-2026-11:belarusian-uniate",
+      "period": "1763–1839 (late Uniate printing) and 1930s–2026 (modern Belarusian Greek Catholic Church)",
+      "missing": "Direct inspection of RNB OR VII.3.15 (Supraśl 1727–1732) and RSL 1763 second edition (behind login); Uniate printing in Polotsk, Supraśl, and Vilnius between 1796 and the 1839 forced dissolution; and original copies, ecclesiastical approbations, and Greek/Slavonic exemplar statements for Fr. Alexander Nadson's modern Belarusian editions (London 1999/2005, Minsk 2004).",
+      "next_source": "RNB OR VII.3.15 and RSL 01008246407 (1763); Francis Skaryna Belarusian Library (London) holdings of Nadson's 1999 Боская літургія and 2005 Літургікон (https://casasloviec.co.uk/index.php?newsid=17) and the reported 2004 Minsk Sluzhebnik.",
+      "consequence": "Historical Vilnius–Supraśl–Pochaiv Slavonic states (1617–1788) are documented while modern Belarusian liturgy remains provisional pending copy and approval inspection."
+    },
+    {
+      "id": "eastern-expansion-2026-11:krizevci-pre1942-and-serbia-ruski-krstur-gap",
+      "tradition_id": "eastern-expansion-2026-11:croatia-serbia-krizevci",
+      "period": "Before 1942 (Križevci Slavonic editions), post-2023 Croatian renewal, and Serbia (Eparchy of St. Nicholas in Ruski Krstur)",
+      "missing": "Pre-1942 Križevci Church Slavonic altar books and dated local reception records (explicitly noting that Zagreb 1893/1894/1896 printings belong to Dragutin Parčić's Roman-rite Glagolitic Missal, NOT a Križevci Byzantine Sluzhebnik); verification of any post-2023 renewal of Bishop Kekić's five-year ad experimentum decree 5/2018; original 1970 Grottaferrata Chrysostom colophon; and ALL Serbian Greek Catholic (Ruski Krstur / Vojvodina Rusyn) celebrant editions, approvals, and dated altar use.",
+      "next_source": "Križevci Eparchy archival inventories (18th–20th c.) and post-2023 official decrees; Ruski Krstur Eparchy archives and publication lists; Serbian COBISS and Vojvodina library catalogues for Church Slavonic and Pannonian Rusyn Liturgikons.",
+      "consequence": "Croatian (2018) and Slovenian (1965, 2022–2023) Križevci developments are documented with verified Rome 1942/1970 reception, while pre-1942 Križevci books and Serbia (Ruski Krstur) remain explicit non-conflated gaps."
+    },
+    {
+      "id": "eastern-expansion-2026-11:bulgarian-vulgata-and-title-leaves-gap",
+      "tradition_id": "eastern-local-round2:bulgarian",
+      "period": "1940–2007 (Vulgata reception control, Eldarov 1985 front matter, and 2005/2007 Exarchate books)",
+      "missing": "Any primary proof that Bulgarian Greek Catholic parishes adopted the Roman Slavonic Recensio Vulgata (1940/1942/1953) despite its intended Bulgarian audience; title leaf, Exarch Methodius approbation leaf, and source-recension statement of Georgi Eldarov's Rome 1985 Служебник; and contents/source leaves of the Burgas 2005 composite and Sofia 2007 Holy Week volumes.",
+      "next_source": "Inspect a complete physical or digitized copy of Eldarov 1985 (title and imprimatur leaves), Sophia/Sofia Eparchy archives for 19th–20th-century Slavonic books, and the official Exarchate-listed 2005/2007 books (https://www.kae-bg.org/?act=content&rec=136).",
+      "consequence": "Eldarov 1985 is documented at the contents-witness level without fabricating a Vulgata reception edge."
+    },
+    {
+      "id": "eastern-expansion-2026-11:hungarian-post1954-modern-editions-gap",
+      "tradition_id": "hungarian-reception:hajdudorog",
+      "period": "Before 1882 (manuscripts & Slavonic reception) and after 1954 (1984 unchanged reprint & post-1989 Hungarian Metropolitan editions)",
+      "missing": "Original complete copies of Debrecen 1882/1890, Nyíregyháza 1920, 1949, and Dudás's 1954 instruction; original GMFL I–1–h circulars (1990/1916, 3150/1916, 4471/1918, 808/1919, 1021/1921, 1195/1921, 2351/1949, 819/1954); and official bibliographic/promulgation documentation of post-1984 operative Hungarian Greek Catholic Liturgikon revisions (the 1984 400-copy printing is expressly an unchanged photographic reprint of 1920 and not a new textual state).",
+      "next_source": "Szent Atanáz College Library OPAC holdings (bibNY56K501, bibNY56K11755), GMFL archive I–1–h circulars, and official decrees/editions of the Hungarian Greek Catholic Metropolitan Church (2015–present).",
+      "consequence": "Hungarian documented coverage expands to 1882–1954 (6 stages, 4 transitions) while keeping pre-1882 Slavonic reception and post-1954 modern editions honestly scoped."
+    },
+    {
+      "id": "eastern-expansion-2026-11:georgian-constantinople-press-books",
+      "tradition_id": "eastern-expansion-2026-11:georgian-byzantine",
+      "period": "1861–present (Constantinople Feriköy monastery press from 1870 and Montauban press; non-sui iuris historical community)",
+      "missing": "Individual bibliographic catalogue entries, title leaves, and rite identifications of Byzantine-rite Georgian Catholic liturgical books (Tsirva/Liturgikon, Euchologion, Horologion) printed at Fr. Petre Kharischirashvili's Constantinople (Feriköy, Notre-Dame de Lourdes) monastery press (operating from 1870) and Montauban press, distinguishing Byzantine-rite editions from Latin-rite and Armenian-rite Georgian Catholic books and Georgian Orthodox service books.",
+      "next_source": "Inspect Michel Tamarati, L'Église géorgienne des origines jusqu'à nos jours (Rome, 1910; National Library of Georgia Iverieli PDF: https://dspace.nplg.gov.ge/handle/1234/321677), Vatican/Constantinople Congregation of the Immaculate Conception catalogues, and Georgian National Library bibliography of Istanbul/Montauban imprints.",
+      "consequence": "Georgian Byzantine-rite Catholics are preserved strictly as a non-sui iuris historical community context with zero fabricated book stages and without altering the 23 canonical sui iuris Eastern Catholic census slots."
+    }
+  ]
+}

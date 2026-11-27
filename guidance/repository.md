@@ -118,7 +118,7 @@ metadata checks use those records without opening or fetching raw snapshots.
 contract. Historical evidence is preserved; generated browser caches remain
 disposable and are never substituted for that evidence.
 
-Generated documents retain a provider branch. The present providers are `gpt` (documents authored by OpenAI ChatGPT/Codex) and `claude` (documents authored by Anthropic Claude); do not flatten a provider from existing paths. Each provider branch uses this collection hierarchy:
+Generated documents retain a provider branch. The present providers are `gpt` (documents authored by OpenAI ChatGPT/Codex), `claude` (documents authored by Anthropic Claude), and `gemini` (documents authored by Google Gemini); do not flatten a provider from existing paths. Each provider branch uses this collection hierarchy:
 
 ```text
 src/common/                       provider-neutral typesetting primitives

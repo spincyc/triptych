@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-checked-greek-d37c9185"
+edition_id = "edition.holy-see.euchologion.1754-rome-propaganda"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Faithful bounded reading transcription of original-language liturgical text from Rome 1754 Propaganda Euchologion: complete strict Anaphora of St. John Chrysostom constituent, whose United States copyright term has expired by publication date (1754 Rome publication). Derived directly from tracked public-domain facsimile artifact.holy-see.euchologion.1754-rome-propaganda.google-pdf-32071a7a without modern translation or editorial reconstruction. Third-party historical text is excluded from Triptych's CC BY 4.0 license."
+provenance = "Pixel-verified primary-source transcription prepared by lane-t1-byz-arm and independently collated against rendered facsimile page images by independent-collator-v1-byz-arm on 2026-11-25. Not a glyph-diplomatic edition or human specialist critical apparatus; complete bounded constituent only."
+retrieved = "2026-11-25"
+sha256 = "d37c9185522e75a9f53255a7fc665fc76e43f9d307eb441898898b77af0e4c9c"
+byte_size = 14966
+path = "src/sources/works/holy-see/euchologion/editions/1754-rome-propaganda/artifacts/chrysostom-anaphora-checked-greek-d37c9185/text.txt"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.holy-see.euchologion.1754-rome-propaganda.google-pdf-32071a7a"
+transformation = "Unicode NFC polytonic Greek (grc) read directly from 240–400 DPI PNG renders of the tracked 1754 facsimile PDF.; 18th-century typographic ligatures and compendia (ϗ for καί, Ȣ for ου, ϛ for στ, and standard article/preposition/ending compendia such as τὸν, τῶν, κατὰ, μετὰ, παρὰ, ὑπὲρ, περὶ, εἶναι, Διάκονος, etc.) are expanded to standard polytonic Greek spelling while preserving exact printed accents, breathings, and iota subscripts.; Genuine printed abbreviations with period (Ὁ χορ., στίχ.) are preserved verbatim.; Decorative letter-spacing in uppercase red headings (e.g., Ἐ Κ Φ Ω ́ Ν Η Σ Ι Σ .) is collapsed to unspaced words (ἘΚΦΏΝΗΣΙΣ.); uppercase/small-cap second letters immediately following woodcut drop-caps (e.g., ἘΝ, ΜΝήσθητι, ΚΑὶ) are normalized to standard title case (Ἐν, Μνήσθητι, Καὶ).; Printed accents and breathings on all-caps Institution words (ΛΆΒΕΤΕ..., ΠΊΕΤΕ...) and authentic printed quirks verified at 400 DPI (μετὰ τό δειπνῆσαι with acute on τό on p. 51; καθ ἑαυτοὺς without apostrophe and παναγιόν without first acute on p. 52; μετὰ πάντων ἡμῶν on p. 50; ἀνάπαυσον αὐτὸν twice on p. 53) are faithfully preserved.; Words hyphenated across line breaks are joined; running headers, printed page numbers, signature marks (G, G 2), catchwords, and rubric/black ink color distinctions are excluded from the plain-text stream, with headings, rubrics, speaker utterances, and the p. 54 footnote placed on sequential logical physical lines.; Independent V1 collation at 450 DPI additionally preserved verified compositor omissions/punctuation verbatim: Ὑπερ (unaccented, p. 50), στεναγμὸς· (grave before raised dot, p. 53), φως (no circumflex, p. 53), and σε: (vertical colon, p. 54)."
+notes = "Complete strict Anaphora of St. John Chrysostom in original polytonic Greek from the Deacon's opening call (Ὁ ΔΙΆΚΟΝΟΣ. Στῶμεν καλῶς...) at printed p. 49 (PDF p. 65) through the concluding doxology (Καὶ δὸς ἡμῖν...) and final blessing (Καὶ ἔσται τὰ ἐλέη...) at printed p. 55 (PDF p. 71), immediately preceding the post-Anaphora litany rubric (Ὁ Διάκονος λαβὼν καιρὸν...). Includes all printed prayer text, ekphoneseis, red headings, action rubrics, choir responses where printed, and the printed Roman-communion footnote on p. 54, under declared reading normalization expanding 18th-century Greek typographic ligatures. Excludes pre-Anaphora liturgy (including Creed), post-Anaphora litanies and communion, Basil and Presanctified liturgies, all other Euchologion offices, and page furniture."

@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.coldrev-1962-ordinary-lasance-en"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Only the ordinary-page historical English of the 1946 printing of Lasance/Walsh 1945 revised edition (printed pp. 775, 778, 793, 809-810, outside excluded lettered inserts 1298a-n and 1302a-d), under the United States nonrenewal finding for A 110108 and A 192159 in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. Faithful transcription adds no authorship."
+provenance = "Registered Lasance 1946 PDF (sha256 4573991d962eb6a6391bc2555b8445bdfebd84de1ccffd7828f84e74d308ca77) rendered at 200 dpi at artifact pages 785, 788, 803, 819-820 (printed pp. 775, 778, 793, 809-810) and read directly on page images on 2026-11-25."
+retrieved = "2026-11-25"
+sha256 = "56e9cffe7238600d9e68138f3490620732d36d86597d0bd27a58a494b4b18ed0"
+byte_size = 2248
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/coldrev-1962-ordinary-lasance-en/text.tsv"
+encoding = "utf-8"
+indexable = true
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+transformation = "Join physical wraps and line-end hyphenation; normalize ornamental initials and opening small caps to sentence case; omit footnote superscript 1 on printed p. 793 as editorial apparatus; render barred response sign as R.; retain historical wording and pointing verbatim. Cut Communicantes on printed p. 778 at 'our God and our Lord:' to join the 1962 Canon St. Joseph continuation."
+notes = "Eight high-visibility Ordinary of the Mass English upgrades (Common Preface, Sanctus, Sanctus post Praefationem, Holy Spirit Preface opening and body, Common Communicantes head, final greeting/dismissal, and Requiem final greeting) from Lasance 1946 ordinary pages."

@@ -1,323 +1,683 @@
 # Reviewed narrower readings within already admitted natural commentary excerpts.
 # Offsets select unchanged parent text; each hash pins those exact boundaries.
 # This review establishes linkage and does not upgrade source evidence states.
-"schema": "triptych-catena-passage-snippets/v1"
-"numbering": "vulgate"
-"offset_unit": "unicode-code-point"
-"reviewed_on": "2026-11-08"
-"passages":
-- "passage_id": "passage.john-chrysostom.homilies-on-philippians.ccel-web-2026-09-17.3"
-  "text_sha256": "36b96f8e6047d610802d157b7f84d973d500c5eaf68f97db7f1a89927c626625"
-  "snippets":
-  - "id": "verse-21"
-    "start": 7302
-    "end": 12047
-    "extent":
-      "token": "Phil"
-      "first_chapter": 1
-      "first_verse": 21
-      "last_chapter": 1
-      "last_verse": 21
-    "locator": "Homily III, exposition of Philippians 1:21"
-    "basis": "The retained text explicitly heads this exposition with the verse number and its lemma.\
-      \ The excerpt includes the following explanation and stops before the next lemma."
-  - "id": "verse-22"
-    "start": 12049
-    "end": 14237
-    "extent":
-      "token": "Phil"
-      "first_chapter": 1
-      "first_verse": 22
-      "last_chapter": 1
-      "last_verse": 22
-    "locator": "Homily III, exposition of Philippians 1:22"
-    "basis": "The retained text explicitly heads this exposition with the verse number and its lemma.\
-      \ The excerpt includes the following explanation and stops before the next lemma."
-  - "id": "verse-23"
-    "start": 14239
-    "end": 14661
-    "extent":
-      "token": "Phil"
-      "first_chapter": 1
-      "first_verse": 23
-      "last_chapter": 1
-      "last_verse": 23
-    "locator": "Homily III, exposition of Philippians 1:23"
-    "basis": "The retained text explicitly heads this exposition with the verse number and its lemma.\
-      \ The excerpt includes the following explanation and stops before the next lemma."
-  - "id": "verse-24"
-    "start": 14663
-    "end": 15134
-    "extent":
-      "token": "Phil"
-      "first_chapter": 1
-      "first_verse": 24
-      "last_chapter": 1
-      "last_verse": 24
-    "locator": "Homily III, exposition of Philippians 1:24"
-    "basis": "The explicit verse 24 lemma and its immediate explanation are retained; the subsequent general\
-      \ exhortation concerning the dead remains in the full homily."
-- "passage_id": "passage.john-chrysostom.homilies-on-philippians.ccel-web-2026-09-17.4"
-  "text_sha256": "e3f2d2c4b30297da167bbd05676dcdf40a756f83ad99121c0e4b87e539cb49ca"
-  "snippets":
-  - "id": "verses-24-25"
-    "start": 6141
-    "end": 7909
-    "extent":
-      "token": "Phil"
-      "first_chapter": 1
-      "first_verse": 24
-      "last_chapter": 1
-      "last_verse": 25
-    "locator": "Homily IV, exposition of Philippians 1:24-25"
-    "basis": "The retained verse 24 heading introduces the commentary on remaining for the Philippians\
-      \ and explicitly continues through the quoted progress and joy of verse 25; the next heading is\
-      \ verse 26."
-  - "id": "verse-26"
-    "start": 7911
-    "end": 9008
-    "extent":
-      "token": "Phil"
-      "first_chapter": 1
-      "first_verse": 26
-      "last_chapter": 1
-      "last_verse": 26
-    "locator": "Homily IV, exposition of Philippians 1:26"
-    "basis": "The retained text explicitly heads this exposition with the verse number and its lemma.\
-      \ The following explanation is retained through the paragraph before the next lemma."
-  - "id": "verse-27"
-    "start": 9010
-    "end": 10928
-    "extent":
-      "token": "Phil"
-      "first_chapter": 1
-      "first_verse": 27
-      "last_chapter": 1
-      "last_verse": 27
-    "locator": "Homily IV, exposition of Philippians 1:27"
-    "basis": "The retained text explicitly heads this exposition with the verse number and its lemma.\
-      \ The following explanation is retained through the paragraph before the next lemma."
-  - "id": "verse-28"
-    "start": 10930
-    "end": 12135
-    "extent":
-      "token": "Phil"
-      "first_chapter": 1
-      "first_verse": 28
-      "last_chapter": 1
-      "last_verse": 28
-    "locator": "Homily IV, exposition of Philippians 1:28"
-    "basis": "The retained text explicitly heads this exposition with the verse number and its lemma.\
-      \ The following explanation is retained through the paragraph before the next lemma."
-  - "id": "verse-29"
-    "start": 12137
-    "end": 12985
-    "extent":
-      "token": "Phil"
-      "first_chapter": 1
-      "first_verse": 29
-      "last_chapter": 1
-      "last_verse": 29
-    "locator": "Homily IV, exposition of Philippians 1:29"
-    "basis": "The retained text explicitly heads this exposition with the verse number and its lemma.\
-      \ The following explanation is retained through the paragraph before the next lemma."
-  - "id": "verse-30"
-    "start": 12987
-    "end": 14625
-    "extent":
-      "token": "Phil"
-      "first_chapter": 1
-      "first_verse": 30
-      "last_chapter": 1
-      "last_verse": 30
-    "locator": "Homily IV, exposition of Philippians 1:30"
-    "basis": "The verse 30 lemma and its explanatory paragraph are retained. The ensuing extended exhortation\
-      \ beginning Seest thou the praises remains in the full homily."
-- "passage_id": "passage.john-chrysostom.homilies-on-colossians.ccel-web-2026-09-05.4.col-1.21-23"
-  "text_sha256": "6f0a78a8f617811a93bc4c541d4281f2acd7c63fa9654bffd99d89bb12a2dc3c"
-  "snippets":
-  - "id": "verses-21-22"
-    "start": 0
-    "end": 3762
-    "extent":
-      "token": "Col"
-      "first_chapter": 1
-      "first_verse": 21
-      "last_chapter": 1
-      "last_verse": 22
-    "locator": "Homily IV, exposition of Colossians 1:21-22"
-    "basis": "The opening lemma quotes verses 21-22; the following explanation treats alienation and reconciliation,\
-      \ ending before the objection introducing the verse 23 condition. Incidental citations in the explanation create no\
-      \ additional Scripture links."
-  - "id": "verse-23"
-    "start": 3763
-    "end": 5625
-    "extent":
-      "token": "Col"
-      "first_chapter": 1
-      "first_verse": 23
-      "last_chapter": 1
-      "last_verse": 23
-    "locator": "Homily IV, exposition of Colossians 1:23"
-    "basis": "The transition beginning But, since he ascribed the whole to Him introduces an objection\
-      \ answered by the Ver. 23 condition. Both objection and answer stay together with the explanation\
-      \ of continuing grounded in faith and the hope of the Gospel, through the end of this admitted excerpt."
-- "passage_id": "passage.john-chrysostom.homilies-on-colossians.ccel-web-2026-09-05.8.col-3.12-15"
-  "text_sha256": "40faed515a28255cc1b0c3940c5cb20ed83cd395c90f57c6b53b468c2ded3651"
-  "snippets":
-  - "id": "verses-12-13"
-    "start": 0
-    "end": 2082
-    "extent":
-      "token": "Col"
-      "first_chapter": 3
-      "first_verse": 12
-      "last_chapter": 3
-      "last_verse": 13
-    "locator": "Homily VIII, exposition of Colossians 3:12-13"
-    "basis": "The Ver. 12 heading is followed by the explicit quotation and explanation of forbearing\
-      \ and forgiving from verse 13; the next heading is verse 14."
-  - "id": "verse-14"
-    "start": 2084
-    "end": 3530
-    "extent":
-      "token": "Col"
-      "first_chapter": 3
-      "first_verse": 14
-      "last_chapter": 3
-      "last_verse": 14
-    "locator": "Homily VIII, exposition of Colossians 3:14"
-    "basis": "The Ver. 14 lemma and its explanation of love as the bond of perfectness end before the\
-      \ verse 15 heading."
-  - "id": "verse-15"
-    "start": 3532
-    "end": 6951
-    "extent":
-      "token": "Col"
-      "first_chapter": 3
-      "first_verse": 15
-      "last_chapter": 3
-      "last_verse": 15
-    "locator": "Homily VIII, exposition of Colossians 3:15"
-    "basis": "The Ver. 15 lemma introduces the exposition of peace ruling the heart and thankfulness,\
-      \ continuing to the end of the admitted excerpt."
-- "passage_id": "passage.john-chrysostom.homilies-on-colossians.ccel-web-2026-09-05.9.col-3.16-17"
-  "text_sha256": "f0579ca10db34d6e7885989aa28bd33b8283adb1d5a016e71fc9185a19d0c3a0"
-  "snippets":
-  - "id": "verse-16-opening"
-    "start": 307
-    "end": 2019
-    "extent":
-      "token": "Col"
-      "first_chapter": 3
-      "first_verse": 16
-      "last_chapter": 3
-      "last_verse": 16
-    "locator": "Homily IX, opening explanation of Colossians 3:16"
-    "basis": "This complete paragraph quotes and expounds Let the word of Christ dwell in you richly.\
-      \ The preceding combined lemma and subsequent further explanation remain in the full excerpt."
-  - "id": "verse-17"
-    "start": 13051
-    "end": 16758
-    "extent":
-      "token": "Col"
-      "first_chapter": 3
-      "first_verse": 17
-      "last_chapter": 3
-      "last_verse": 17
-    "locator": "Homily IX, exposition of Colossians 3:17"
-    "basis": "The explicit Ver. 17 heading introduces doing all in the name of the Lord, followed by its\
-      \ explanation and practical application to the end of this admitted excerpt. Other biblical citations\
-      \ remain supporting citations, not new commentary links."
-- "passage_id": "passage.nicene-and-post-nicene-fathers.series-2-volume-5.new-york-1893.gregory-de-hominis-opificio"
-  "text_sha256": "3085b487fa58d9bb293073ae0ceb3847c7533208696df0094961d8424c65e428"
-  "snippets":
-  - "id": "chapter-3"
-    "start": 16488
-    "end": 18375
-    "extent":
-      "token": "Gen"
-      "first_chapter": 1
-      "first_verse": 26
-      "last_chapter": 1
-      "last_verse": 26
-    "locator": "On the Making of Man III.1-2"
-    "basis": "Chapter III quotes Let us make man in our image and let them have dominion, and contrasts\
-      \ the counsel preceding human creation with the making of other creatures. The boundary follows\
-      \ the printed chapter heading, not the table of contents."
-  - "id": "chapter-4"
-    "start": 18376
-    "end": 20105
-    "extent":
-      "token": "Gen"
-      "first_chapter": 1
-      "first_verse": 26
-      "last_chapter": 1
-      "last_verse": 26
-    "locator": "On the Making of Man IV.1"
-    "basis": "The complete chapter expounds human royal power and likeness to the King of all, continuing\
-      \ the direct exposition of image and dominion from Genesis 1:26 in chapter III."
-  - "id": "chapter-5"
-    "start": 20106
-    "end": 22374
-    "extent":
-      "token": "Gen"
-      "first_chapter": 1
-      "first_verse": 26
-      "last_chapter": 1
-      "last_verse": 26
-    "locator": "On the Making of Man V.1-2"
-    "basis": "The complete chapter expounds the divine likeness through virtue, understanding and love.\
-      \ Its supporting citations from John and Paul are not treated as new commentary extents."
-  - "id": "chapter-16-sections-1-4"
-    "start": 84252
-    "end": 87500
-    "extent":
-      "token": "Gen"
-      "first_chapter": 1
-      "first_verse": 26
-      "last_chapter": 1
-      "last_verse": 26
-    "locator": "On the Making of Man XVI.1-4"
-    "basis": "The chapter heading and opening four numbered sections resume Let us make man in our image\
-      \ and discuss the meaning of the image. The following section introduces the additional Genesis\
-      \ 1:27 lemma."
-  - "id": "chapter-16-sections-5-9"
-    "start": 87501
-    "end": 90657
-    "extent":
-      "token": "Gen"
-      "first_chapter": 1
-      "first_verse": 26
-      "last_chapter": 1
-      "last_verse": 27
-    "locator": "On the Making of Man XVI.5-9"
-    "basis": "These complete numbered sections quote Genesis 1:26-27 and distinguish the creation in the\
-      \ image from male and female. Their shared extent is retained rather than assigning each sentence\
-      \ to one verse."
-  - "id": "chapter-16-sections-10-15"
-    "start": 90658
-    "end": 94673
-    "extent":
-      "token": "Gen"
-      "first_chapter": 1
-      "first_verse": 26
-      "last_chapter": 1
-      "last_verse": 27
-    "locator": "On the Making of Man XVI.10-15"
-    "basis": "These numbered sections continue the exposition of the image and the distinction of male\
-      \ and female. Section 15 retains the author's qualification of the interpretation as theoretical\
-      \ speculation."
-  - "id": "chapter-16-sections-16-18"
-    "start": 94674
-    "end": 96846
-    "extent":
-      "token": "Gen"
-      "first_chapter": 1
-      "first_verse": 27
-      "last_chapter": 1
-      "last_verse": 27
-    "locator": "On the Making of Man XVI.16-18"
-    "basis": "The final three numbered sections explicitly examine God created man and in the image of\
-      \ God created He him as referring to the human race, and retain the closing reference to male and\
-      \ female. The text remains an inspected web witness; this boundary review is not facsimile collation."
+schema: triptych-catena-passage-snippets/v1
+numbering: vulgate
+offset_unit: unicode-code-point
+reviewed_on: '2026-11-25'
+passages:
+- passage_id: passage.john-chrysostom.homilies-on-philippians.ccel-web-2026-09-17.3
+  text_sha256: 36b96f8e6047d610802d157b7f84d973d500c5eaf68f97db7f1a89927c626625
+  snippets:
+  - id: verse-21
+    start: 7302
+    end: 12047
+    extent:
+      token: Phil
+      first_chapter: 1
+      first_verse: 21
+      last_chapter: 1
+      last_verse: 21
+    locator: Homily III, exposition of Philippians 1:21
+    basis: The retained text explicitly heads this exposition with the verse number and its lemma. The
+      excerpt includes the following explanation and stops before the next lemma.
+  - id: verse-22
+    start: 12049
+    end: 14237
+    extent:
+      token: Phil
+      first_chapter: 1
+      first_verse: 22
+      last_chapter: 1
+      last_verse: 22
+    locator: Homily III, exposition of Philippians 1:22
+    basis: The retained text explicitly heads this exposition with the verse number and its lemma. The
+      excerpt includes the following explanation and stops before the next lemma.
+  - id: verse-23
+    start: 14239
+    end: 14661
+    extent:
+      token: Phil
+      first_chapter: 1
+      first_verse: 23
+      last_chapter: 1
+      last_verse: 23
+    locator: Homily III, exposition of Philippians 1:23
+    basis: The retained text explicitly heads this exposition with the verse number and its lemma. The
+      excerpt includes the following explanation and stops before the next lemma.
+  - id: verse-24
+    start: 14663
+    end: 15134
+    extent:
+      token: Phil
+      first_chapter: 1
+      first_verse: 24
+      last_chapter: 1
+      last_verse: 24
+    locator: Homily III, exposition of Philippians 1:24
+    basis: The explicit verse 24 lemma and its immediate explanation are retained; the subsequent general
+      exhortation concerning the dead remains in the full homily.
+- passage_id: passage.john-chrysostom.homilies-on-philippians.ccel-web-2026-09-17.4
+  text_sha256: e3f2d2c4b30297da167bbd05676dcdf40a756f83ad99121c0e4b87e539cb49ca
+  snippets:
+  - id: verses-24-25
+    start: 6141
+    end: 7909
+    extent:
+      token: Phil
+      first_chapter: 1
+      first_verse: 24
+      last_chapter: 1
+      last_verse: 25
+    locator: Homily IV, exposition of Philippians 1:24-25
+    basis: The retained verse 24 heading introduces the commentary on remaining for the Philippians and
+      explicitly continues through the quoted progress and joy of verse 25; the next heading is verse
+      26.
+  - id: verse-26
+    start: 7911
+    end: 9008
+    extent:
+      token: Phil
+      first_chapter: 1
+      first_verse: 26
+      last_chapter: 1
+      last_verse: 26
+    locator: Homily IV, exposition of Philippians 1:26
+    basis: The retained text explicitly heads this exposition with the verse number and its lemma. The
+      following explanation is retained through the paragraph before the next lemma.
+  - id: verse-27
+    start: 9010
+    end: 10928
+    extent:
+      token: Phil
+      first_chapter: 1
+      first_verse: 27
+      last_chapter: 1
+      last_verse: 27
+    locator: Homily IV, exposition of Philippians 1:27
+    basis: The retained text explicitly heads this exposition with the verse number and its lemma. The
+      following explanation is retained through the paragraph before the next lemma.
+  - id: verse-28
+    start: 10930
+    end: 12135
+    extent:
+      token: Phil
+      first_chapter: 1
+      first_verse: 28
+      last_chapter: 1
+      last_verse: 28
+    locator: Homily IV, exposition of Philippians 1:28
+    basis: The retained text explicitly heads this exposition with the verse number and its lemma. The
+      following explanation is retained through the paragraph before the next lemma.
+  - id: verse-29
+    start: 12137
+    end: 12985
+    extent:
+      token: Phil
+      first_chapter: 1
+      first_verse: 29
+      last_chapter: 1
+      last_verse: 29
+    locator: Homily IV, exposition of Philippians 1:29
+    basis: The retained text explicitly heads this exposition with the verse number and its lemma. The
+      following explanation is retained through the paragraph before the next lemma.
+  - id: verse-30
+    start: 12987
+    end: 14625
+    extent:
+      token: Phil
+      first_chapter: 1
+      first_verse: 30
+      last_chapter: 1
+      last_verse: 30
+    locator: Homily IV, exposition of Philippians 1:30
+    basis: The verse 30 lemma and its explanatory paragraph are retained. The ensuing extended exhortation
+      beginning Seest thou the praises remains in the full homily.
+- passage_id: passage.john-chrysostom.homilies-on-colossians.ccel-web-2026-09-05.4.col-1.21-23
+  text_sha256: 6f0a78a8f617811a93bc4c541d4281f2acd7c63fa9654bffd99d89bb12a2dc3c
+  snippets:
+  - id: verses-21-22
+    start: 0
+    end: 3762
+    extent:
+      token: Col
+      first_chapter: 1
+      first_verse: 21
+      last_chapter: 1
+      last_verse: 22
+    locator: Homily IV, exposition of Colossians 1:21-22
+    basis: The opening lemma quotes verses 21-22; the following explanation treats alienation and reconciliation,
+      ending before the objection introducing the verse 23 condition. Incidental citations in the explanation
+      create no additional Scripture links.
+  - id: verse-23
+    start: 3763
+    end: 5625
+    extent:
+      token: Col
+      first_chapter: 1
+      first_verse: 23
+      last_chapter: 1
+      last_verse: 23
+    locator: Homily IV, exposition of Colossians 1:23
+    basis: The transition beginning But, since he ascribed the whole to Him introduces an objection answered
+      by the Ver. 23 condition. Both objection and answer stay together with the explanation of continuing
+      grounded in faith and the hope of the Gospel, through the end of this admitted excerpt.
+- passage_id: passage.john-chrysostom.homilies-on-colossians.ccel-web-2026-09-05.8.col-3.12-15
+  text_sha256: 40faed515a28255cc1b0c3940c5cb20ed83cd395c90f57c6b53b468c2ded3651
+  snippets:
+  - id: verses-12-13
+    start: 0
+    end: 2082
+    extent:
+      token: Col
+      first_chapter: 3
+      first_verse: 12
+      last_chapter: 3
+      last_verse: 13
+    locator: Homily VIII, exposition of Colossians 3:12-13
+    basis: The Ver. 12 heading is followed by the explicit quotation and explanation of forbearing and
+      forgiving from verse 13; the next heading is verse 14.
+  - id: verse-14
+    start: 2084
+    end: 3530
+    extent:
+      token: Col
+      first_chapter: 3
+      first_verse: 14
+      last_chapter: 3
+      last_verse: 14
+    locator: Homily VIII, exposition of Colossians 3:14
+    basis: The Ver. 14 lemma and its explanation of love as the bond of perfectness end before the verse
+      15 heading.
+  - id: verse-15
+    start: 3532
+    end: 6951
+    extent:
+      token: Col
+      first_chapter: 3
+      first_verse: 15
+      last_chapter: 3
+      last_verse: 15
+    locator: Homily VIII, exposition of Colossians 3:15
+    basis: The Ver. 15 lemma introduces the exposition of peace ruling the heart and thankfulness, continuing
+      to the end of the admitted excerpt.
+- passage_id: passage.john-chrysostom.homilies-on-colossians.ccel-web-2026-09-05.9.col-3.16-17
+  text_sha256: f0579ca10db34d6e7885989aa28bd33b8283adb1d5a016e71fc9185a19d0c3a0
+  snippets:
+  - id: verse-16-opening
+    start: 307
+    end: 2019
+    extent:
+      token: Col
+      first_chapter: 3
+      first_verse: 16
+      last_chapter: 3
+      last_verse: 16
+    locator: Homily IX, opening explanation of Colossians 3:16
+    basis: This complete paragraph quotes and expounds Let the word of Christ dwell in you richly. The
+      preceding combined lemma and subsequent further explanation remain in the full excerpt.
+  - id: verse-17
+    start: 13051
+    end: 16758
+    extent:
+      token: Col
+      first_chapter: 3
+      first_verse: 17
+      last_chapter: 3
+      last_verse: 17
+    locator: Homily IX, exposition of Colossians 3:17
+    basis: The explicit Ver. 17 heading introduces doing all in the name of the Lord, followed by its
+      explanation and practical application to the end of this admitted excerpt. Other biblical citations
+      remain supporting citations, not new commentary links.
+- passage_id: passage.nicene-and-post-nicene-fathers.series-2-volume-5.new-york-1893.gregory-de-hominis-opificio
+  text_sha256: 3085b487fa58d9bb293073ae0ceb3847c7533208696df0094961d8424c65e428
+  snippets:
+  - id: chapter-3
+    start: 16488
+    end: 18375
+    extent:
+      token: Gen
+      first_chapter: 1
+      first_verse: 26
+      last_chapter: 1
+      last_verse: 26
+    locator: On the Making of Man III.1-2
+    basis: Chapter III quotes Let us make man in our image and let them have dominion, and contrasts the
+      counsel preceding human creation with the making of other creatures. The boundary follows the printed
+      chapter heading, not the table of contents.
+  - id: chapter-4
+    start: 18376
+    end: 20105
+    extent:
+      token: Gen
+      first_chapter: 1
+      first_verse: 26
+      last_chapter: 1
+      last_verse: 26
+    locator: On the Making of Man IV.1
+    basis: The complete chapter expounds human royal power and likeness to the King of all, continuing
+      the direct exposition of image and dominion from Genesis 1:26 in chapter III.
+  - id: chapter-5
+    start: 20106
+    end: 22374
+    extent:
+      token: Gen
+      first_chapter: 1
+      first_verse: 26
+      last_chapter: 1
+      last_verse: 26
+    locator: On the Making of Man V.1-2
+    basis: The complete chapter expounds the divine likeness through virtue, understanding and love. Its
+      supporting citations from John and Paul are not treated as new commentary extents.
+  - id: chapter-16-sections-1-4
+    start: 84252
+    end: 87500
+    extent:
+      token: Gen
+      first_chapter: 1
+      first_verse: 26
+      last_chapter: 1
+      last_verse: 26
+    locator: On the Making of Man XVI.1-4
+    basis: The chapter heading and opening four numbered sections resume Let us make man in our image
+      and discuss the meaning of the image. The following section introduces the additional Genesis 1:27
+      lemma.
+  - id: chapter-16-sections-5-9
+    start: 87501
+    end: 90657
+    extent:
+      token: Gen
+      first_chapter: 1
+      first_verse: 26
+      last_chapter: 1
+      last_verse: 27
+    locator: On the Making of Man XVI.5-9
+    basis: These complete numbered sections quote Genesis 1:26-27 and distinguish the creation in the
+      image from male and female. Their shared extent is retained rather than assigning each sentence
+      to one verse.
+  - id: chapter-16-sections-10-15
+    start: 90658
+    end: 94673
+    extent:
+      token: Gen
+      first_chapter: 1
+      first_verse: 26
+      last_chapter: 1
+      last_verse: 27
+    locator: On the Making of Man XVI.10-15
+    basis: These numbered sections continue the exposition of the image and the distinction of male and
+      female. Section 15 retains the author's qualification of the interpretation as theoretical speculation.
+  - id: chapter-16-sections-16-18
+    start: 94674
+    end: 96846
+    extent:
+      token: Gen
+      first_chapter: 1
+      first_verse: 27
+      last_chapter: 1
+      last_verse: 27
+    locator: On the Making of Man XVI.16-18
+    basis: The final three numbered sections explicitly examine God created man and in the image of God
+      created He him as referring to the human race, and retain the closing reference to male and female.
+      The text remains an inspected web witness; this boundary review is not facsimile collation.
+- passage_id: passage.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.1.1-5-luke-21
+  text_sha256: 1aa771e48c9a21a0524fed55e4e9d84d3a73532415427ea8263ed8db5ebaac42
+  snippets:
+  - id: section-1-verse-25
+    start: 0
+    end: 1667
+    extent:
+      token: Luke
+      first_chapter: 21
+      first_verse: 25
+      last_chapter: 21
+      last_verse: 25
+    locator: Homily I §1, exposition of Luke 21:25
+    basis: Section 1 introduces the Gospel lection, cites Luke 21:10 as preceding context, and explicitly
+      quotes and expounds the signs in sun, moon, stars, distress of nations, and roaring of sea and waves
+      (Luke 21:25), ending before section 2.
+  - id: section-2-verse-26
+    start: 1668
+    end: 2365
+    extent:
+      token: Luke
+      first_chapter: 21
+      first_verse: 26
+      last_chapter: 21
+      last_verse: 26
+    locator: Homily I §2a, exposition of Luke 21:26
+    basis: The opening of section 2 explicitly introduces (subjungitur) and expounds men withering away
+      for fear and the powers of heaven being moved (Luke 21:26), ending before the explicit transition
+      to verse 27.
+  - id: section-2-verse-27
+    start: 2366
+    end: 2688
+    extent:
+      token: Luke
+      first_chapter: 21
+      first_verse: 27
+      last_chapter: 21
+      last_verse: 27
+    locator: Homily I §2b, exposition of Luke 21:27
+    basis: Introduced by Ubi et subditur, this portion of section 2 quotes and expounds seeing the Son
+      of man coming in the clouds with great power and majesty (Luke 21:27) through the end of section
+      2.
+  - id: section-3-verse-28
+    start: 2689
+    end: 4570
+    extent:
+      token: Luke
+      first_chapter: 21
+      first_verse: 28
+      last_chapter: 21
+      last_verse: 28
+    locator: Homily I §3a, exposition of Luke 21:28
+    basis: Section 3 opens by turning to the consolation of the elect (Nam et subditur) and expounds looking
+      up and lifting up your heads because redemption draws near (Luke 21:28), ending before the fig-tree
+      comparison.
+  - id: section-3-verses-29-31
+    start: 4571
+    end: 5285
+    extent:
+      token: Luke
+      first_chapter: 21
+      first_verse: 29
+      last_chapter: 21
+      last_verse: 31
+    locator: Homily I §3b, exposition of Luke 21:29-31
+    basis: Introduced by cum protinus adjungit, the remainder of section 3 quotes and expounds the parable
+      of the fig tree and all trees announcing summer and the nearness of the kingdom of God (Luke 21:29-31).
+  - id: section-4-verses-32-33
+    start: 5286
+    end: 6097
+    extent:
+      token: Luke
+      first_chapter: 21
+      first_verse: 32
+      last_chapter: 21
+      last_verse: 33
+    locator: Homily I §4, exposition of Luke 21:32-33
+    basis: Section 4 explicitly quotes and expounds this generation not passing away and heaven and earth
+      passing away while Christ's words remain (Luke 21:32-33). The closing homiletic exhortation of sections
+      5-6 remains in the full homily.
+- passage_id: passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.01-02-03
+  text_sha256: c9082a21476b0152dc947f5c107a50bb96a8ef6f08b62579f59c31171892ad16
+  snippets:
+  - id: verse-2
+    start: 3228
+    end: 5092
+    extent:
+      token: Mark
+      first_chapter: 1
+      first_verse: 2
+      last_chapter: 1
+      last_verse: 2
+    locator: Catena Aurea on Mark 1:2 (Jerome, Bede, Theophylact, Pseudo-Jerome)
+    basis: Following the introductory discussion of the combined prophetic citation across verses 2-3,
+      this section explicitly expounds Malachi's messenger (angel), 'Before thy face', and 'Who will prepare
+      thy way before thee' (Mark 1:2), ending before the transition to the voice crying in the wilderness.
+  - id: verse-3
+    start: 5093
+    end: 8042
+    extent:
+      token: Mark
+      first_chapter: 1
+      first_verse: 3
+      last_chapter: 1
+      last_verse: 3
+    locator: Catena Aurea on Mark 1:3 (Bede, Pseudo-Jerome, Pseudo-Chrysostom, Theophylact)
+    basis: Opens with Bede's transition ('Wherefore there follows, "The voice of one crying, &c."') and
+      expounds the voice, the wilderness, and preparing the way and straightening the paths (Mark 1:3)
+      through the close of the section.
+- passage_id: passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.01-04-08
+  text_sha256: 25215ca8cd73766c0f5f6e09f3f588cb9cc3636d092db93a957876ff2cb68263
+  snippets:
+  - id: verse-4
+    start: 612
+    end: 3009
+    extent:
+      token: Mark
+      first_chapter: 1
+      first_verse: 4
+      last_chapter: 1
+      last_verse: 4
+    locator: Catena Aurea on Mark 1:4 (Pseudo-Jerome, Bede, Theophylact)
+    basis: Explicitly quotes and expounds 'John was in the wilderness', 'baptizing', and 'preaching the
+      baptism of repentance for the remission of sins' (Mark 1:4), stopping before the transition to verse
+      5.
+  - id: verse-5
+    start: 3010
+    end: 3871
+    extent:
+      token: Mark
+      first_chapter: 1
+      first_verse: 5
+      last_chapter: 1
+      last_verse: 5
+    locator: Catena Aurea on Mark 1:5 (Pseudo-Jerome, Bede)
+    basis: Explicitly introduces ('wherefore there follows, "And there went out to him all, &c."') and
+      expounds the crowds coming to Jordan and confessing their sins (Mark 1:5), stopping before Chrysostom
+      on verse 6.
+  - id: verse-6
+    start: 3872
+    end: 7211
+    extent:
+      token: Mark
+      first_chapter: 1
+      first_verse: 6
+      last_chapter: 1
+      last_verse: 6
+    locator: Catena Aurea on Mark 1:6 (Chrysostom, Bede, Pseudo-Jerome, Theophylact, Gregory)
+    basis: Introduces ('Wherefore there follow, "And John was clothed in camel’s hair"') and expounds
+      John's garment of camel's hair, girdle of skin, locusts, and wild honey (Mark 1:6), stopping before
+      the explicit transition to verse 7.
+  - id: verse-7
+    start: 7212
+    end: 10100
+    extent:
+      token: Mark
+      first_chapter: 1
+      first_verse: 7
+      last_chapter: 1
+      last_verse: 7
+    locator: Catena Aurea on Mark 1:7 (Gloss, Pseudo-Jerome, Pseudo-Chrysostom, Gregory, Theophylact)
+    basis: Explicitly headed by 'Whence there follows' on 'there cometh one mightier than I after me'
+      and continues through the patristic explanations of the shoe-latchet (Mark 1:7), stopping before
+      Bede's transition to verse 8.
+  - id: verse-8
+    start: 10101
+    end: 11253
+    extent:
+      token: Mark
+      first_chapter: 1
+      first_verse: 8
+      last_chapter: 1
+      last_verse: 8
+    locator: Catena Aurea on Mark 1:8 (Bede, Jerome)
+    basis: Bede introduces and quotes 'I baptize you with water, but he shall baptize you with the Holy
+      Ghost' (Mark 1:8), followed by Jerome and Bede through the end of the section.
+- passage_id: passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.01-09-11
+  text_sha256: e91e4b526e5e48a732203936f7fc50c0061bd4f565bcf979bf1517b01a34b9ea
+  snippets:
+  - id: verse-9
+    start: 341
+    end: 1650
+    extent:
+      token: Mark
+      first_chapter: 1
+      first_verse: 9
+      last_chapter: 1
+      last_verse: 9
+    locator: Catena Aurea on Mark 1:9 (Pseudo-Jerome, Pseudo-Chrysostom, Bede)
+    basis: Quotes 'And it came to pass in those days, &c.' and expounds Jesus coming from Nazareth and
+      being baptized by John in Jordan (Mark 1:9), ending before the explicit transition to verse 10.
+  - id: verse-10
+    start: 1651
+    end: 4165
+    extent:
+      token: Mark
+      first_chapter: 1
+      first_verse: 10
+      last_chapter: 1
+      last_verse: 10
+    locator: Catena Aurea on Mark 1:10 (Bede, Pseudo-Chrysostom, Pseudo-Jerome)
+    basis: Explicitly headed 'Whence there follows' on coming up out of the water, the heavens opened,
+      and the Spirit descending like a dove (Mark 1:10), ending before the transition to the voice from
+      heaven in verse 11.
+  - id: verse-11
+    start: 4166
+    end: 5467
+    extent:
+      token: Mark
+      first_chapter: 1
+      first_verse: 11
+      last_chapter: 1
+      last_verse: 11
+    locator: Catena Aurea on Mark 1:11 (Bede, Augustine)
+    basis: Introduces ('whence there follows') and expounds the voice from heaven, 'Thou art my beloved
+      Son, in thee I am well pleased' (Mark 1:11). Pseudo-Jerome's closing moral recapitulation of verses
+      9-11 remains in the full section.
+- passage_id: passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.01-23-28
+  text_sha256: 6533f72d76f4203accd1a9cc970a3416595cb954ad81085a2b8e03bf977b9b21
+  snippets:
+  - id: verse-23
+    start: 718
+    end: 1331
+    extent:
+      token: Mark
+      first_chapter: 1
+      first_verse: 23
+      last_chapter: 1
+      last_verse: 23
+    locator: Catena Aurea on Mark 1:23 (Bede, Pseudo-Chrysostom)
+    basis: Quotes 'And there was in their synagogue a man, &c.' and explains why the spirit is called
+      unclean (Mark 1:23), ending before Augustine's transition to verse 24.
+  - id: verse-24
+    start: 1332
+    end: 3415
+    extent:
+      token: Mark
+      first_chapter: 1
+      first_verse: 24
+      last_chapter: 1
+      last_verse: 24
+    locator: Catena Aurea on Mark 1:24 (Augustine, Bede, Pseudo-Chrysostom, Theophylact)
+    basis: Explicitly introduces ('For there follows') the unclean spirit's cry and 'I know that Thou
+      art the Holy One of God' (Mark 1:24), ending before Pseudo-Chrysostom's transition to verse 25.
+  - id: verse-25
+    start: 3416
+    end: 3704
+    extent:
+      token: Mark
+      first_chapter: 1
+      first_verse: 25
+      last_chapter: 1
+      last_verse: 25
+    locator: Catena Aurea on Mark 1:25 (Pseudo-Chrysostom)
+    basis: Explicitly introduces ('Wherefore there follows') Jesus rebuking the unclean spirit to hold
+      his peace (Mark 1:25), stopping before the explicit transition to verse 26.
+  - id: verse-26
+    start: 3705
+    end: 4849
+    extent:
+      token: Mark
+      first_chapter: 1
+      first_verse: 26
+      last_chapter: 1
+      last_verse: 26
+    locator: Catena Aurea on Mark 1:26 (Pseudo-Chrysostom, Theophylact, Bede)
+    basis: Explicitly headed 'It goes on' on the unclean spirit tearing the man and coming out (Mark 1:26),
+      ending cleanly at the sentence boundary before Bede's transition to the crowd's amazement in verse
+      27.
+  - id: verse-27
+    start: 4850
+    end: 5488
+    extent:
+      token: Mark
+      first_chapter: 1
+      first_verse: 27
+      last_chapter: 1
+      last_verse: 27
+    locator: Catena Aurea on Mark 1:27 (Bede)
+    basis: Opens with Bede's transition into 'Wherefore there follows, "And they all wondered, &c."' and
+      expounds the newness and authority of Christ's doctrine (Mark 1:27), ending before the transition
+      to verse 28.
+  - id: verse-28
+    start: 5489
+    end: 5684
+    extent:
+      token: Mark
+      first_chapter: 1
+      first_verse: 28
+      last_chapter: 1
+      last_verse: 28
+    locator: Catena Aurea on Mark 1:28 (Gloss)
+    basis: Explicitly headed 'It goes on' on Christ's fame spreading abroad (Mark 1:28). Pseudo-Jerome's
+      closing mystical summary of the whole Capernaum episode remains in the full section.
+- passage_id: passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.01-40-45
+  text_sha256: 513011fdc1a2b252309f0864aa688c8f980e5ef9aeac5e7516cff5c461152c66
+  snippets:
+  - id: verse-40
+    start: 833
+    end: 2536
+    extent:
+      token: Mark
+      first_chapter: 1
+      first_verse: 40
+      last_chapter: 1
+      last_verse: 40
+    locator: Catena Aurea on Mark 1:40 (Bede, Augustine, Theophylact)
+    basis: Introduces ('Whence it goes on') the leper coming and kneeling and ('For there follows') his
+      petition 'If Thou wilt, Thou canst make me clean' (Mark 1:40), stopping before the explicit transition
+      to verse 41.
+  - id: verse-41
+    start: 2537
+    end: 4076
+    extent:
+      token: Mark
+      first_chapter: 1
+      first_verse: 41
+      last_chapter: 1
+      last_verse: 41
+    locator: Catena Aurea on Mark 1:41 (Bede, Chrysostom)
+    basis: Explicitly headed 'It goes on' on Jesus moved with compassion, stretching out His hand, touching
+      the leper, and saying 'I will, be thou clean' (Mark 1:41), ending before the transition to verse
+      42.
+  - id: verse-42
+    start: 4077
+    end: 4306
+    extent:
+      token: Mark
+      first_chapter: 1
+      first_verse: 42
+      last_chapter: 1
+      last_verse: 42
+    locator: Catena Aurea on Mark 1:42 (Bede)
+    basis: Explicitly headed 'Wherefore there follows' on the leprosy departing immediately at Christ's
+      word (Mark 1:42), ending before the transition to verses 43-44.
+  - id: verses-43-44
+    start: 4307
+    end: 5843
+    extent:
+      token: Mark
+      first_chapter: 1
+      first_verse: 43
+      last_chapter: 1
+      last_verse: 44
+    locator: Catena Aurea on Mark 1:43-44 (Chrysostom, Bede, Theophylact)
+    basis: The transition paragraph joins verse 43 ('He straitly charged him, and forthwith') with the
+      opening of verse 44 ('See thou tell no man'), and the following commentary continues through showing
+      himself to the priest and offering Moses' gift (Mark 1:43-44).
+  - id: verse-45
+    start: 5844
+    end: 7372
+    extent:
+      token: Mark
+      first_chapter: 1
+      first_verse: 45
+      last_chapter: 1
+      last_verse: 45
+    locator: Catena Aurea on Mark 1:45 (Theophylact, Bede, Chrysostom)
+    basis: Explicitly expounds the leper publishing the cure, Jesus remaining in desert places, and the
+      crowds coming from all quarters (Mark 1:45). Pseudo-Jerome and Bede's closing mystical summary of
+      the whole episode remains in the full section.

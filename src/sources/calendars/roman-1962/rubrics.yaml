@@ -340,6 +340,16 @@ bases:
   commemoration_locus: RG 109 b
   why: a day within the octave of Easter or of Pentecost, which are first-class octaves
   locus: RG 66; RG 91 row 10
+- id: row-11-universal-first-class-feast-of-the-lord
+  label: a first-class feast of the Lord of the universal calendar
+  of_the_lord: true
+  row: 11
+  nature: feast
+  commemoration: privileged
+  commemoration_locus: RG 109 b
+  why: a first-class feast of the Lord of the universal Church not named in row 3;
+    occurring on a Sunday, it excludes commemoration of the Sunday under RG 112 b
+  locus: RG 39; RG 91 row 11; RG 112 b
 - id: row-11-universal-first-class-feast
   label: a first-class feast of the universal calendar
   row: 11
@@ -600,6 +610,7 @@ assignment:
     it a mass rather than a commemoration - see mass_choices seven-sorrows-where-devotions-are-held,
     which is where that permission goes, on the model this file already set at 16 July.'}
 - {basis: calendar-commemoration, dated: true, rank: Comm.}
+- {basis: row-11-universal-first-class-feast-of-the-lord, dated: true, rank: I, kind: christological}
 - {basis: row-11-universal-first-class-feast, dated: true, rank: I}
 - {basis: row-14-second-class-feast-of-the-lord, dated: true, rank: II, kind: christological}
 - {basis: row-16-universal-second-class-feast, dated: true, rank: II}
@@ -937,15 +948,19 @@ impediment:
     locus: RG 95 first paragraph
     applies_to: first-class feasts only
     destination:
-      locus: RG 96
+      locus: RG 96; RG 97-99
       rule: the next following day that is neither first nor second class
-      computed_here: false
-      why_not: >-
-        The destination depends on the class of every following day and on RG
-        97-98, which order several transferred feasts among themselves. This
-        repository does not compute it, and a page that guessed it would be
-        asserting an Ordo result it has not checked. The two destinations the
-        rubric fixes by name are computed, because the rubric states them.
+      computed_here: true
+      blocked_classes: [I, II]
+      max_search_days: 30
+      note: >-
+        Computed under RG 96-99 from the universal calendar: an impeded
+        first-class feast without a proper seat moves to the nearest following
+        day that is neither first nor second class, ordered by table row and
+        then by original date when more than one feast awaits a free day.
+        Particular calendars can add local first- or second-class feasts that
+        further defer the destination; this file computes the universal Roman
+        calendar result.
     proper_seats:
     - key: annuntiatio-beatae-mariae-virginis
       locus: RG 96 a
@@ -989,6 +1004,12 @@ impediment:
       A second- or third-class vigil is dropped altogether - penitus omittitur -
       if it falls on a Sunday or on a first-class feast, or if the feast it
       precedes is itself transferred or reduced to a commemoration.
+    feasts:
+      vigil-of-the-ascension: ascension
+      vigil-assumption: assumptione-beatae-mariae-virginis
+      vigil-nativity-saint-john-baptist: nativitate-s-ioannis-baptistae
+      vigil-saints-peter-paul: ss-petri-pauli-apostolorum
+      vigil-saint-lawrence: s-laurentii-martyris
 
 # ---------------------------------------------------------------------------
 # Commemoration: the part of the older system the 1960 code most drastically
@@ -1429,8 +1450,9 @@ not_decided_here:
   237-238, which the Missal does not print).
 - The Creed (RGMR 475-476), the Preface (RGMR 482-499), the colour (RG 117-132), the
   Last Gospel (RGMR 509-510) and the tone.
-- Whether a first-class feast transferred from an earlier date occupies this one,
-  except at the two proper seats RG 96 a-b names.
+- Transfers deferred further by particular first- or second-class feasts not
+  inscribed in the universal calendar; universal RG 96-99 transfers are computed
+  from the general Roman calendar.
 - Concurrence, which disposes of Vespers and never of the next morning's Mass (RG 103-105).
 
 divergences:
@@ -1817,4 +1839,173 @@ worked_cases:
     commemorated: [pentecost-23]
     orations_low_mass: 2
     orations_sung_non_conventual: 2
+    settled: true
+- id: bissextile-2028-feb-24-feria
+  source: Missale Romanum 1962, Kalendarium p. XLVI; AAS 52 (1960) p. 713
+  date: '2028-02-24'
+  why: >-
+    2028 is a leap year (anno bissextili). St Matthias moves from 24 February to
+    25 February, leaving Thursday 24 February as a fourth-class feria of
+    Septuagesima borrowing Sexagesima Sunday's Mass.
+  expect:
+    winner: implied:septuagesima-feria
+    winner_row: 28
+    formulary: sexagesima
+    settled: true
+- id: bissextile-2028-feb-25-st-matthias
+  source: Missale Romanum 1962, Kalendarium p. XLVI; AAS 52 (1960) p. 713
+  date: '2028-02-25'
+  why: >-
+    In leap year 2028, St Matthias the Apostle (second class) is celebrated on
+    25 February instead of 24 February.
+  expect:
+    winner: s-matthiae-apostoli
+    winner_row: 16
+    settled: true
+- id: bissextile-2028-feb-28-st-gabriel
+  source: Missale Romanum 1962, Kalendarium p. XLVI; AAS 52 (1960) p. 713
+  date: '2028-02-28'
+  why: >-
+    In leap year 2028, St Gabriel of Our Lady of Sorrows (third class) moves
+    from 27 February to 28 February.
+  expect:
+    winner: s-gabrielis-a-virgine-perdolente-confessoris
+    winner_row: 24
+    settled: true
+- id: precious-blood-on-sunday-2029
+  source: RG 39; RG 91 row 11; RG 112 b; Notandum 1 in Tabellas Occurrentiae
+  date: '2029-07-01'
+  why: >-
+    The Most Precious Blood (1 July) is a first-class feast of the Lord. When it
+    falls on a Sunday after Pentecost, RG 112 b excludes commemoration of the
+    Sunday at both Low and sung Masses.
+  expect:
+    winner: pretiosissimi-sanguinis-domini-nostri-iesu-christi
+    winner_row: 11
+    commemorated: []
+    omitted: [pentecost-6]
+    orations_low_mass: 1
+    orations_sung_non_conventual: 1
+    settled: true
+- id: vigil-of-nativity-on-sunday-2028
+  source: Missale Romanum 1962, p. 15; RG 91 row 5; RG 112 c
+  date: '2028-12-24'
+  why: >-
+    When 24 December falls on a Sunday, the Vigil of the Nativity (row 5,
+    de Tempore) takes the day without commemorating the Fourth Sunday of Advent
+    (row 6, de Tempore), excluded by RG 112 c and the Missal's own rubric.
+  expect:
+    winner: vigil-nativity-lord
+    winner_row: 5
+    commemorated: []
+    omitted: [advent-4]
+    orations_low_mass: 1
+    orations_sung_non_conventual: 1
+    settled: true
+- id: rg33-vigil-john-baptist-omitted-2038
+  source: RG 33
+  date: '2038-06-23'
+  why: >-
+    Corpus Christi falls on 24 June 2038 and transfers the Nativity of St John
+    the Baptist; under RG 33 its second-class vigil on 23 June is omitted
+    outright, leaving the fourth-class feria.
+  expect:
+    winner: implied:after-pentecost-feria
+    winner_row: 28
+    omitted: [vigil-nativity-saint-john-baptist]
+    orations_low_mass: 1
+    settled: true
+- id: rg33-vigil-st-lawrence-omitted-2025
+  source: RG 33; RG 78
+  date: '2025-08-09'
+  why: >-
+    10 August 2025 is a Sunday after Pentecost, reducing St Lawrence (second
+    class) to a commemoration; under RG 33 his third-class vigil on Saturday
+    9 August is omitted outright, leaving the Office of Our Lady on Saturday
+    with the commemoration of St Romanus.
+  expect:
+    winner: implied:after-pentecost-feria
+    winner_row: 27
+    formulary: missa-de-s-maria-in-sabbato-5
+    commemorated: [comm-s-romani-martyris]
+    omitted: [vigil-saint-lawrence]
+    orations_low_mass: 2
+    orations_sung_non_conventual: 1
+    settled: true
+- id: rg96-st-joseph-impeded-2028
+  source: RG 91 row 6; RG 95; RG 96
+  date: '2028-03-19'
+  why: >-
+    Third Sunday of Lent (row 6) impedes St Joseph (row 11), transferring him
+    under RG 96 to the next day neither first nor second class (Monday 20 March).
+  expect:
+    winner: lent-3
+    winner_row: 6
+    transferred: [s-ioseph-sponsi-beatae-mariae-virginis]
+    settled: true
+- id: rg96-st-joseph-arrives-2028
+  source: RG 96; RG 99; RG 109 e; RG 111 a
+  date: '2028-03-20'
+  why: >-
+    St Joseph arrives from Sunday 19 March on Monday of the Third Week of Lent
+    (third-class feria, free of first- and second-class days), keeping first
+    class and commemorating the Lenten feria.
+  expect:
+    winner: s-ioseph-sponsi-beatae-mariae-virginis
+    winner_row: 11
+    arrived: true
+    commemorated: [lent-3-monday]
+    orations_low_mass: 2
+    orations_sung_non_conventual: 2
+    settled: true
+- id: rg96-st-joseph-after-annunciation-2035
+  source: RG 96; RG 96 a; RG 97-99
+  date: '2035-04-03'
+  why: >-
+    Easter 2035 falls on 25 March. Both St Joseph (19 March, Holy Monday) and
+    the Annunciation (25 March, Easter Sunday) are impeded past Easter. The
+    Annunciation occupies its proper seat on Monday 2 April (RG 96 a, first
+    class), so St Joseph arrives on Tuesday 3 April (Easter + 9).
+  expect:
+    winner: s-ioseph-sponsi-beatae-mariae-virginis
+    winner_row: 11
+    arrived: true
+    settled: true
+- id: rg96-john-baptist-arrives-2038
+  source: RG 96; RG 99
+  date: '2038-06-25'
+  why: >-
+    Impeded by Corpus Christi on 24 June 2038, the Nativity of St John the
+    Baptist transfers under RG 96 to Friday 25 June, displacing St William
+    (third class).
+  expect:
+    winner: nativitate-s-ioannis-baptistae
+    winner_row: 11
+    arrived: true
+    omitted: [implied:after-pentecost-feria, s-gulielmi-abbatis]
+    settled: true
+- id: rg96-peter-paul-arrives-2057
+  source: RG 96; RG 99; RG 110
+  date: '2057-06-30'
+  why: >-
+    Impeded by the Sacred Heart on Friday 29 June 2057, Ss Peter and Paul
+    transfer under RG 96 to Saturday 30 June, displacing the Commemoration of
+    St Paul (third class) and its inseparable companion.
+  expect:
+    winner: ss-petri-pauli-apostolorum
+    winner_row: 11
+    arrived: true
+    settled: true
+- id: rg96-precious-blood-arrives-2095
+  source: RG 96; RG 99
+  date: '2095-07-04'
+  why: >-
+    Impeded by the Sacred Heart on Friday 1 July 2095, the Most Precious Blood
+    skips Saturday 2 July (Visitation, second class) and Sunday 3 July (second-
+    class Sunday) and arrives on Monday 4 July under RG 96 (RG 95 second
+    paragraph remaining stated_only in this universal model).
+  expect:
+    winner: pretiosissimi-sanguinis-domini-nostri-iesu-christi
+    winner_row: 11
+    arrived: true
     settled: true

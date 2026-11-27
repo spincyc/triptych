@@ -1,0 +1,76 @@
+schema_version = 1
+id = "pc-obj-amice"
+category = "vesture-and-ministry"
+sort_order = 603
+plate_id = "pc-plt-08-vesture-ordained"
+composition_plate_ids = []
+plate_position = "At collar of priest on left and folded with tie strings in upper right inset (Plate VIII)"
+preferred_english_name = "Amice"
+latin_headword = "Amictus"
+alternate_english_names = ["Shoulder Cloth"]
+alternate_latin_names = []
+pronunciation_key = "ah-MEEK-toos"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "required"
+scope_level = "universal-roman"
+territorial_note = ""
+
+[identification]
+summary = "The amice is a rectangular white linen shoulder cloth with long tie strings worn beneath a wide-necked alb whenever ordinary attire would otherwise show at the collar."
+appearance = "Resting neatly around the priest’s neck inside the chasuble collar at left in Plate VIII and shown folded in the upper right inset, the amice is an oblong hemmed white cloth sewn with two long flat cloth ribbons extending from its upper corners to tie around the waist."
+placement_and_use = "Universal Roman law directs that before putting on the alb, a minister is to wear an amice whenever the alb does not completely cover ordinary clothing at the neck (GIRM 336; RS 121–122; Caeremoniale Episcoporum 65). Draped across the shoulders, its tie strings pass under the arms, cross behind the back, and tie in front at the waist before the alb is slipped over it; the folded edge is then turned neatly over the neckline of the alb or chasuble so street or clerical collars remain concealed and outer vestments stay protected from perspiration."
+liturgical_colors = "Always white linen or cotton (GIRM 336)."
+
+[ministers_and_handling]
+ordinary_ministers = ["bishop", "priest", "deacon", "instituted-acolyte", "instituted-lector", "altar-server"]
+prepares = ["sacristan", "altar-server"]
+server_boundary = "handles"
+server_boundary_summary = "Servers wearing a wide-necked alb that exposes ordinary shirt collars put on an amice beforehand (or use a high-collared alb that fully conceals street attire per GIRM 336), and assist in vesting a priest or bishop in the sacristy only when requested."
+safety_warning = ""
+
+[audience_text]
+altar_server = "Look for the two long cloth tie strings sewn to the upper corners—they immediately distinguish a folded amice from an altar corporal or lavabo towel. If your alb has an open neckline that leaves your shirt collar showing, put on an amice first so ordinary street clothing is neatly covered (GIRM 336). Never lay an amice on the altar or credence table."
+sacristan = "Keep clean, ironed amices stacked flat in the vesting case beside any wide-necked albs, folding the cloth smoothly with its tie strings coiled neatly inside. Launder amices regularly with ordinary sacristy linens—unlike corporals and purificators, they do not come into contact with the Sacred Species and do not require sacrarium first-rinsing."
+general_reader = "Often noticed only as a crisp white linen fold framing the priest’s collar beneath the chasuble, the amice is a practical shoulder cloth fastened with long waist ties. Current Roman law calls for it whenever an alb’s neckline does not completely cover ordinary clothing at the neck (GIRM 336)."
+
+[relationships]
+confusable_with = ["pc-obj-corporal", "pc-obj-lavabo-towel"]
+related_objects = ["pc-obj-alb", "pc-obj-cincture", "pc-obj-chasuble", "pc-obj-dalmatic"]
+
+[symbolism]
+has_sourced_symbolism = true
+text = "The General Instruction assigns the amice a practical purpose—covering ordinary attire at the neck whenever the alb leaves it exposed (GIRM 336). Distinct from that practical rule, the traditional Roman sacristy vesting prayer—recalling the custom of resting the amice momentarily on the head before lowering it to the shoulders—prays for the helmet of salvation against demonic assaults, echoing St. Paul: “And take unto you the helmet of salvation and the sword of the Spirit (which is the word of God)” (Eph 6:17). Amalarius of Metz reads the cloth encircling the neck as a guard over speech, citing the Psalms, “I have set a guard to my mouth” (Ps 38:2 [Heb 39:1]) and “Set a watch, O Lord, before my mouth” (Ps 140:3 [Heb 141:3])."
+evidence_class = "devotional-tradition"
+attribution = "Practical norm: GIRM 336; devotional tradition: Roman sacristy vesting prayer (Ad Amictum); Eph 6:17; Ps 38:2 [Heb 39:1]; Ps 140:3 [Heb 141:3]; Amalarius of Metz, Liber Officialis II.17"
+
+[counterpart_1962]
+relationship = "optional"
+locus_1962 = "Missale Romanum (1962), Ritus Servandus I.3; Praeparatio ad Missam (Ad Amictum)"
+comparison = "In the 1962 Roman Missal, the amice was unconditionally required as the first Mass vestment for every bishop, priest, deacon, and subdeacon, kissed at its center cross and placed briefly upon the head before settling on the shoulders (RS I.3). Under the 2002/2008 GIRM, the amice is conditionally required only when the alb fails to cover ordinary attire at the neck (GIRM 336)."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N33"
+primary_loci = ["GIRM 336", "Redemptionis Sacramentum 121–122", "Caeremoniale Episcoporum (1984) 65"]
+source_bindings = [
+  "work.catholic-church.institutio-generalis-missalis-romani",
+  "work.catholic-church.missale-romanum",
+  "work.catholic-church.caeremoniale-episcoporum",
+  "work.amalarius-of-metz.liber-de-ordine-antiphonarii",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

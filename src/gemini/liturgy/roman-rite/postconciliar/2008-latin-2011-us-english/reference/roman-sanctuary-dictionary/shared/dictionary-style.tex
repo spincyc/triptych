@@ -1,0 +1,106 @@
+% Shared monochrome plate and dictionary typography for all four postconciliar
+% Roman Sanctuary Dictionary editions (comprehensive, altar-server, sacristan,
+% general-reader). Single style owner; imported by each leaf's format.tex.
+
+\usepackage{graphicx}
+
+% Enables monochrome graphite plates and monochrome color-pattern swatches in
+% native print builds. Web conversion (tools/web-edition) automatically ignores
+% this definition and renders the accessible \else textual equivalent branch.
+\def\TriptychPrintEdition{}
+
+% Subtle monochrome gray for hairlines and quiet metadata text.
+\definecolor{dictrule}{gray}{0.35}
+\definecolor{dictmuted}{gray}{0.28}
+\definecolor{dicttint}{gray}{0.95}
+
+% Crisp top hairline bar for each visual plate (left: plate title, right: scale notice).
+\newcommand{\PCDPlateHeader}[2]{%
+  \ifdefined\TriptychPrintEdition
+  \par\vspace{0.2em}%
+  {\small\noindent\textbf{#1}}\hfill{\footnotesize\textit{#2}}\par
+  \vspace{0.18em}%
+  {\color{dictrule}\hrule height 0.5pt}%
+  \vspace{0.45em}%
+  \else
+  \par\textbf{#1} (\textit{#2})\par
+  \fi
+}
+
+% Compact plate position key strip mapping label-free artwork to headwords.
+\newcommand{\PCDPositionKey}[1]{%
+  \ifdefined\TriptychPrintEdition
+  \par\vspace{0.25em}%
+  {\footnotesize\noindent\textbf{Plate key:} #1\par}%
+  \vspace{0.35em}%
+  {\color{dictrule}\hrule height 0.35pt}%
+  \vspace{0.45em}%
+  \else
+  \par\textbf{Plate key:} #1\par
+  \fi
+}
+
+% Compact monochrome disposition badge, rendered cleanly in print and web.
+\newcommand{\PCDTag}[1]{\textnormal{\footnotesize[\textsc{#1}]}}
+
+% Note key reference keeping dense citations off ordinary visual plates.
+\newcommand{\PCDNote}[1]{\textnormal{\footnotesize[#1]}}
+
+% Object entry header: English headword, Latin headword, disposition badge, note key.
+\newcommand{\PCDEntryHead}[4]{%
+  \Needspace{5\baselineskip}%
+  \par\vspace{0.45em}%
+  \noindent\textbf{#1}\ \textit{#2}\ \PCDTag{#3}\ \PCDNote{#4}\par
+  \vspace{0.12em}%
+}
+
+% Compact field line inside an object entry.
+\newcommand{\PCDField}[2]{%
+  \ifdefined\TriptychPrintEdition
+  {\footnotesize\noindent\textbf{#1:} #2\par}%
+  \vspace{0.08em}%
+  \else
+  \par\textbf{#1:} #2\par
+  \fi
+}
+
+% Immediate safety or reverence notice kept beside the affected object.
+\newcommand{\PCDSafety}[1]{%
+  \ifdefined\TriptychPrintEdition
+  \par\vspace{0.15em}%
+  {\footnotesize\noindent\textbf{Handling and safety:} #1\par}%
+  \vspace{0.18em}%
+  \else
+  \par\textbf{Handling and safety:} #1\par
+  \fi
+}
+
+% Thin separator between entries without card boxes.
+\newcommand{\PCDEntryRule}{%
+  \ifdefined\TriptychPrintEdition
+  \par\vspace{0.28em}%
+  {\color{dictrule}\hrule height 0.25pt}%
+  \vspace{0.18em}%
+  \else
+  \fi
+}
+
+% Historically superseded form header (strictly separated chronological section).
+\newcommand{\PCDHistHead}[4]{%
+  \ifdefined\TriptychPrintEdition
+  \Needspace{6\baselineskip}%
+  \par\vspace{0.55em}%
+  \noindent\textbf{#1}\ \textit{#2}\ \PCDTag{superseded}\ \PCDNote{#4}\par
+  {\footnotesize\noindent\textbf{Period and transition:} #3\par}%
+  \vspace{0.15em}%
+  \else
+  \par\textbf{#1} \textit{#2} \PCDTag{superseded} \PCDNote{#4}\par
+  \par\textbf{Period and transition:} #3\par
+  \fi
+}
+
+% Accessible monochrome liturgical-color pattern legend row (print uses TikZ pattern
+% swatch inside \ifdefined\TriptychPrintEdition; web renders explicit pattern description).
+\newcommand{\PCDColorRow}[3]{%
+  \textbf{#1} & #2 & #3 \\%
+}

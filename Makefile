@@ -199,6 +199,13 @@ ROMAN_SANCTUARY_DICTIONARY_BUILD_PDFS := $(filter \
 ROMAN_SANCTUARY_DICTIONARY_GENERATED := \
 	$(BUILD_ROOT)/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/generated
 ROMAN_SANCTUARY_DICTIONARY_GENERATOR := tools/tpt render-sanctuary-dictionary
+POSTCONCILIAR_SANCTUARY_DICTIONARY_ROOT := $(SOURCE_ROOT)/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary
+POSTCONCILIAR_SANCTUARY_DICTIONARY_SHARED := $(shell find $(POSTCONCILIAR_SANCTUARY_DICTIONARY_ROOT)/shared -type f \( \
+	-name '*.tex' -o -name '*.sty' -o -name '*.cls' -o -name '*.bib' -o \
+	-name '*.bst' -o -name '*.toml' -o -name '*.png' -o -name '*.jpg' -o \
+	-name '*.jpeg' -o -name '*.pdf' -o -name '*.eps' \) 2>/dev/null | sort)
+POSTCONCILIAR_SANCTUARY_DICTIONARY_BUILD_PDFS := $(filter \
+	$(BUILD_ROOT)/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/%,$(BUILD_PDFS))
 # 1962 proper full-text editions: each imports its study edition's sections and
 # format from the sibling leaf at the same id without the -full-text suffix.
 ROMAN_1962_FULL_TEXT_DOCUMENTS := $(filter \
@@ -746,7 +753,7 @@ check-curriculum-structure: \
 
 help:
 	@printf '%s\n' \
-		'Every build, review, list, and metadata target honors PROVIDER=<p> (default gpt; claude is the peer branch)' \
+		'Every build, review, list, and metadata target honors PROVIDER=<p> (default gpt; claude and gemini are peer branches)' \
 		'make          Validate sources and build the public website without PDFs' \
 		'make pdf      Explicitly build every document with at most $(PDF_JOBS) parallel jobs, or the current Make jobserver' \
 		'make review-pdfs  Build with at most $(PDF_JOBS) jobs, then raster PDFs changed since the last review-pdfs' \
@@ -1319,7 +1326,7 @@ endef
 $(foreach document,$(CANONICAL_DOCUMENTS),$(eval $(call REGISTER_DOCUMENT_SOURCES,$(document))))
 
 # Each provider's Four Last Things series imports its own shared format.
-ifneq ($(filter $(PROVIDER),gpt claude),)
+ifneq ($(filter $(PROVIDER),gpt claude gemini),)
 FOUR_LAST_THINGS_DOCUMENTS := $(addprefix articles/faith/four-last-things-,01-death 02-judgment 03-hell 04-heaven)
 $(addprefix $(BUILD_ROOT)/,$(addsuffix .pdf,$(FOUR_LAST_THINGS_DOCUMENTS))): \
 	$(SOURCE_ROOT)/articles/faith/four-last-things-shared/format.tex
@@ -1742,6 +1749,8 @@ generate-roman-sanctuary-dictionary:
 
 $(ROMAN_SANCTUARY_DICTIONARY_BUILD_PDFS): \
 	$(ROMAN_SANCTUARY_DICTIONARY_SHARED) generate-roman-sanctuary-dictionary
+$(POSTCONCILIAR_SANCTUARY_DICTIONARY_BUILD_PDFS): \
+	$(POSTCONCILIAR_SANCTUARY_DICTIONARY_SHARED)
 # A 1962 proper is published as a study edition at the bare leaf id and a
 # full-text edition at the same id with a -full-text suffix. The full-text leaf
 # owns only its own main.tex, format.tex, generation metadata and appointed-text

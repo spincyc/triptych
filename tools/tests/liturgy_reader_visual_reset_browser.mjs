@@ -1297,7 +1297,7 @@ async function runAssertions(cdp, base) {
         };
       })()`);
       assert.equal(value.outcome, 'unresolved');
-      assert.equal(value.title, 'Held territorial branches');
+      assert.match(value.title, /Regional Observances$/);
       assert.deepEqual(value.branches, ['epiphany-january-6', 'epiphany-transferred-to-sunday']);
       assert.deepEqual(value.semanticBranches, value.branches);
       assert.equal(new Set(value.headings).size, 2);

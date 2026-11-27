@@ -219,3 +219,22 @@ carries a locus read at its source; every grade has a stated basis; every
 quotation has an identified witness and locus; every received prayer
 reproduces an identified witness; and independent theological review is
 claimed only when recorded.
+
+### Schema and witness notes
+
+- **Content-schema conventions (`scripts/document_schema_checks/reference.py`):**
+  `research/question-inventory.md` tables must carry `Key`, `Determination`,
+  and `Grade` together with `Locus` (`I q. N a. M`) or `Question`/`Article`
+  columns; exactly one source file stem may contain `celestial-hierarchy` (give
+  an appendix concordance a distinct stem such as `dionysian-concordance`); the
+  *Celestial Hierarchy* exposition marks chapters 1--15 via
+  `\chchapter{...}{...}{...}{sec:chN}` or `\subsection{I: ...}` through
+  `\subsection{XV: ...}`; and the article census groups rows under
+  `\paragraph{I q.~N: ...}` or `\subsection{Question N}` in 3- or 5-column
+  tables whose first cell carries `\textbf{<article>}`. Generating both
+  `question-inventory.md` and `appendices/03-article-census.tex` from one
+  canonical structured master prevents drift across all 118 articles.
+- **Known Gutenberg *Summa* (`pg17611`) transcription defects:** Collate
+  against the Leonine Latin witness for `I q. 50 a. 2` (*"individual"* for
+  *"intellectual"*), misnumbered bracket headers at `I q. 60 a. 3`, `I q. 62
+  a. 9`, and `I q. 111 a. 2`, and `De Civ. Dei xii` for `XI` at `I q. 58 a. 6`.

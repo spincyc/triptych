@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-missae-checked-latin-76cd232c"
+edition_id = "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Faithful bounded reading transcription of original-language liturgical text from Gregorian Hadrianum (Wilson 1915): complete strict Canon Missae constituent, whose United States copyright term has expired by publication date (1915 critical edition (mediating ninth-century Hadrianum witnesses R, C, O)). Derived directly from tracked public-domain facsimile artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7 without modern translation or editorial reconstruction. Third-party historical text is excluded from Triptych's CC BY 4.0 license."
+provenance = "Pixel-verified primary-source transcription prepared by AI source transcriber (Lane T3, direct PNG inspection of Wilson 1915 PDF pp. 60-62) and independently collated against rendered facsimile page images by independent-collator-v3-alex-west on 2026-11-25. Not a glyph-diplomatic edition or human specialist critical apparatus; complete bounded constituent only."
+retrieved = "2026-11-25"
+sha256 = "76cd232cf08057cea6df20baa9fa746ea04e157570fafc177f583322529bfd7f"
+byte_size = 3981
+path = "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/canon-missae-checked-latin-76cd232c/text.txt"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7"
+transformation = "Direct reading from rendered PNG images of Wilson 1915 PDF pp. 60-62 (printed pp. 2-4). UTF-8 NFC, LF line endings. Two-letter display cap TE normalized to Te; italics (illo) flattened to plain text. Line wraps and line-end hyphens joined within each prayer paragraph; Wilson's paragraph break inside Communicantes (after uenerantes.) preserved as two lines. Native Latin orthography preserved verbatim (u/v, inlibata, Inprimis, incolomitatis, genetricis, thomę, taddei, xysti, celum, posteaquam, inmaculatam, patriarche, diuine, agne, cecilia, pręstas, e-caudata ę = U+0119). Printed baseline points serialized as standard '.' without leading space. Superscript apparatus numbers, marginal folio tags, inline folio slashes (/), apparatus footnotes, running heads, page numbers, signatures and non-printed pencil marks excluded. Main text omits Memento defunctorum (in apparatus note 14 only)."
+notes = "Complete strict Eucharistic Canon in H. A. Wilson's 1915 critical edition main text (base MS R = Vatican Reg. lat. 337, collated with C = Cambrai 164 and O = Vat. Ott. 313): printed pp. 2-4, PDF pp. 60-62, from Te igitur immediately after Sanctus through per omnia saecula saeculorum . amen. immediately before Oremus / Pater noster. Note that Wilson's main text of R omits Memento defunctorum (recorded only in apparatus note 14 for O and a 12th-century marginal addition in R); apparatus footnotes are excluded."

@@ -1,0 +1,80 @@
+schema_version = 1
+id = "pc-obj-communion-cup"
+category = "sacred-vessels"
+sort_order = 205
+plate_id = "pc-plt-03-vessels"
+composition_plate_ids = ["pc-plt-10-communion-sacramental"]
+plate_position = "Bottom center (Plate III); flanking the principal chalice beside folded purificators (Plate X)"
+preferred_english_name = "Communion Cup"
+latin_headword = "Calix"
+alternate_english_names = ["Communion Chalice", "Additional Chalice"]
+alternate_latin_names = ["Calix ad Communionem sub utraque specie"]
+pronunciation_key = "KAH-leeks"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "territorial adaptation"
+scope_level = "territorial-usccb"
+territorial_note = "Under GIRM 283 and the USCCB Norms for the Distribution and Reception of Holy Communion under Both Kinds in the Dioceses of the United States of America (2002; revised 2011), Communion from the chalice is broadly extended across United States dioceses. Liturgical law treats every Communion cup as a chalice governed by full sacred-vessel standards (GIRM 328, 330; RS 117)."
+
+[identification]
+summary = "A Communion cup is a supplementary footed chalice placed on the altar before the Eucharistic Prayer so that the Precious Blood of Christ may be distributed to the faithful when Holy Communion is given under both kinds."
+appearance = "Shown at bottom center of Plate III as a simpler footed metal goblet with a smooth flared rim for clean sipping and a weighted base; Plate X displays two Communion cups flanking the principal chalice on the unfolded corporal, each paired with a neatly folded white purificator."
+placement_and_use = "Every Communion cup is a true liturgical chalice and must be blessed before use and crafted with a nonabsorbent bowl—precious metal gilded inside if less precious than gold, never glass, earthenware, clay, or common domestic tableware (GIRM 328, 330, 333; RS 117–118; USCCB Norms 35). Wine is poured into all Communion chalices at the Preparation of the Gifts before the Eucharistic Prayer begins; pouring the Precious Blood from a flagon or from one chalice into another after consecration is strictly forbidden (RS 106; USCCB Norms 35–38). Each chalice is accompanied by a clean purificator to wipe the rim after each communicant (GIRM 286). After Communion, remaining Precious Blood is immediately consumed at the altar by the bishop, priest, deacon, or instituted acolyte—or by an extraordinary minister from his or her own chalice only with the diocesan bishop's permission—and all cups are purified strictly by the priest, deacon, or instituted acolyte (GIRM 279; RS 119; USCCB Norms 52–53)."
+liturgical_colors = "Precious metal with gilded or nonabsorbent noble interior (GIRM 328, 330); paired with white linen purificator."
+
+[ministers_and_handling]
+ordinary_ministers = ["bishop", "priest", "deacon", "instituted-acolyte", "extraordinary-minister"]
+prepares = ["sacristan", "deacon", "instituted-acolyte", "altar-server"]
+server_boundary = "prepares"
+server_boundary_summary = "Servers may set empty, clean Communion cups and folded purificators on the credence table before Mass and carry empty cups to the altar at the Preparation of the Gifts before consecration. Once the Eucharistic Prayer begins, servers never touch, carry, consume from, or purify Communion cups (GIRM 279; RS 119; USCCB Norms 53)."
+safety_warning = "Strict liturgical law: wine must be poured into Communion cups before consecration—never pour the consecrated Precious Blood from a flagon or between chalices (RS 106). Following the October 2006 non-renewal of the temporary U.S. indult, extraordinary ministers and altar servers never purify Communion cups; purification is reserved strictly to priest, deacon, or instituted acolyte (USCCB Norms 53)."
+
+[audience_text]
+altar_server = "Communion cups are smaller, simpler chalices used when the congregation receives the Precious Blood. You may place empty Communion cups and clean purificators on the credence table before Mass and carry empty cups to the altar at the Preparation of the Gifts so the priest or deacon can fill them with wine before the Eucharistic Prayer. Once Mass enters the Eucharistic Prayer, never touch any Communion cup, never pour wine or Precious Blood into one, and never wash or wipe them after Communion."
+sacristan = "Set out the exact number of blessed Communion chalices needed for the congregation, paired one-for-one with clean folded purificators (GIRM 286; USCCB Norms 35). Inspect interior gilding and verify no glass, ceramic, or clay cups are ever used (GIRM 330; RS 117). Estimate wine quantities carefully before Mass so all wine is poured into chalices before the Eucharistic Prayer without excess remaining Precious Blood afterward (RS 106). After Mass, leave unpurified cups covered on a corporal exclusively for the priest, deacon, or instituted acolyte (GIRM 279; USCCB Norms 53)."
+general_reader = "Because the postconciliar Roman Rite restored Communion under both kinds to the lay faithful, parishes regularly place additional chalices—commonly called Communion cups—beside the main chalice on the altar. Each cup meets the same sacred-vessel standard as the principal chalice, is filled before the consecration, and is paired with a white purificator so the rim is wiped reverently for every communicant (GIRM 285–286; USCCB Norms 32–36)."
+
+[relationships]
+confusable_with = ["pc-obj-chalice", "pc-obj-flagon", "pc-obj-ciborium"]
+related_objects = ["pc-obj-purificator", "pc-obj-corporal", "pc-obj-hist-fragile-vessels-pouring"]
+
+[symbolism]
+has_sourced_symbolism = true
+text = "Holy Communion takes on a fuller form as a sign when received under both kinds, manifesting more clearly the Eucharistic banquet and the new and eternal Covenant ratified in Christ's Blood (GIRM 281; USCCB Norms 32–33). It echoes 1 Cor 11:25–26 (“This chalice is the new testament in my blood. This do ye, as often as you shall drink, for the commemoration of me.”) and Matt 26:27–28 (“Drink ye all of this.”)."
+evidence_class = "liturgical-source"
+attribution = "GIRM 281; USCCB Norms for Holy Communion under Both Kinds (2011) 32–33; Matt 26:27–28; 1 Cor 10:16; 1 Cor 11:25–26"
+
+[counterpart_1962]
+relationship = "newly provided"
+locus_1962 = "Missale Romanum (1962), Rubricae Generales 503; Ritus Servandus X.6"
+comparison = "In the 1962 Roman Missal, lay faithful received Holy Communion exclusively under the species of bread (RG 503; RS X.6), so no supplementary Communion chalices existed. Following Sacrosanctum Concilium 55, GIRM 281–287 and the USCCB Norms newly provide for additional chalices governed by the full sacred-vessel standards of GIRM 328–330."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N12"
+primary_loci = [
+  "GIRM 279, 281–287, 327–330, 333",
+  "USCCB GIRM 283",
+  "USCCB Norms for Holy Communion under Both Kinds (2011) 32–38, 52–55",
+  "Redemptionis Sacramentum 100–107, 117–119",
+]
+source_bindings = [
+  "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002",
+  "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021",
+  "edition.catholic-church.missale-romanum.vatican-typica-1962",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

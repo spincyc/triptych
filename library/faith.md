@@ -24,16 +24,22 @@
 | **Against the Instrumentalists** | [PDF](../pdf/gpt/articles/faith/against-the-instrumentalists.pdf) · [Read](../web/gpt/articles/faith/against-the-instrumentalists.html) | [PDF](../pdf/claude/articles/faith/against-the-instrumentalists.pdf) · [Read](../web/claude/articles/faith/against-the-instrumentalists.html) | Why measurement alone cannot settle what is real or rationally knowable. |
 | **In Defense of the Particular** | [PDF](../pdf/gpt/articles/faith/in-defense-of-the-particular.pdf) · [Read](../web/gpt/articles/faith/in-defense-of-the-particular.html) | [PDF](../pdf/claude/articles/faith/in-defense-of-the-particular.pdf) · [Read](../web/claude/articles/faith/in-defense-of-the-particular.html) | How God's universal causality acts through concrete election, Incarnation, providence, sacraments, and neighbor. |
 
+## Philosophical Reading
+
+| Publication | ChatGPT | Claude | Gemini | Focus |
+| --- | --- | --- | --- | --- |
+| **Reading Metaphysics** | — | — | [PDF](../pdf/gemini/articles/faith/reading-metaphysics.pdf) · [Read](../web/gemini/articles/faith/reading-metaphysics.html) | A nine-lesson guide to interrogating classical Catholic metaphysical texts through six ordinary questions. |
+
 ## The Four Last Things
 
 Each meditation can be read on its own, including in preparation for death at the close of the liturgical year.
 
-| Subject | ChatGPT | Claude | Focus |
-| --- | --- | --- | --- |
-| **Death** | [The Hour That Cannot Be Delegated](../web/gpt/articles/faith/four-last-things-01-death.html) · [PDF](../pdf/gpt/articles/faith/four-last-things-01-death.pdf) | [The Debt of Nature](../web/claude/articles/faith/four-last-things-01-death.html) · [PDF](../pdf/claude/articles/faith/four-last-things-01-death.pdf) | Mortality, preparation, grief, and Christ's victory over death. |
-| **Judgment** | [The Truth of a Life](../web/gpt/articles/faith/four-last-things-02-judgment.html) · [PDF](../pdf/gpt/articles/faith/four-last-things-02-judgment.pdf) | [What Death Does Not Finish](../web/claude/articles/faith/four-last-things-02-judgment.html) · [PDF](../pdf/claude/articles/faith/four-last-things-02-judgment.pdf) | Particular and final judgment, justice, mercy, and purification. |
-| **Hell** | [Hell: Eternal Punishment and the Call to Conversion](../web/gpt/articles/faith/four-last-things-03-hell.html) · [PDF](../pdf/gpt/articles/faith/four-last-things-03-hell.pdf) | [The Fire That Is Not Extinguished](../web/claude/articles/faith/four-last-things-03-hell.html) · [PDF](../pdf/claude/articles/faith/four-last-things-03-hell.pdf) | Eternal punishment, the loss of God, repentance, and perseverance in grace. |
-| **Heaven** | [The End for Which We Were Made](../web/gpt/articles/faith/four-last-things-04-heaven.html) · [PDF](../pdf/gpt/articles/faith/four-last-things-04-heaven.pdf) | [Then Face to Face](../web/claude/articles/faith/four-last-things-04-heaven.html) · [PDF](../pdf/claude/articles/faith/four-last-things-04-heaven.pdf) | Communion with God and the saints, bodily resurrection, and renewed creation. |
+| Subject | ChatGPT | Claude | Gemini | Focus |
+| --- | --- | --- | --- | --- |
+| **Death** | [The Hour That Cannot Be Delegated](../web/gpt/articles/faith/four-last-things-01-death.html) · [PDF](../pdf/gpt/articles/faith/four-last-things-01-death.pdf) | [The Debt of Nature](../web/claude/articles/faith/four-last-things-01-death.html) · [PDF](../pdf/claude/articles/faith/four-last-things-01-death.pdf) | — | Mortality, preparation, grief, and Christ's victory over death. |
+| **Judgment** | [The Truth of a Life](../web/gpt/articles/faith/four-last-things-02-judgment.html) · [PDF](../pdf/gpt/articles/faith/four-last-things-02-judgment.pdf) | [What Death Does Not Finish](../web/claude/articles/faith/four-last-things-02-judgment.html) · [PDF](../pdf/claude/articles/faith/four-last-things-02-judgment.pdf) | — | Particular and final judgment, justice, mercy, and purification. |
+| **Hell** | [Hell: Eternal Punishment and the Call to Conversion](../web/gpt/articles/faith/four-last-things-03-hell.html) · [PDF](../pdf/gpt/articles/faith/four-last-things-03-hell.pdf) | [The Fire That Is Not Extinguished](../web/claude/articles/faith/four-last-things-03-hell.html) · [PDF](../pdf/claude/articles/faith/four-last-things-03-hell.pdf) | [Depart from Me](../web/gemini/articles/faith/four-last-things-03-hell.html) · [PDF](../pdf/gemini/articles/faith/four-last-things-03-hell.pdf) | Eternal punishment, the loss of God, repentance, and perseverance in grace. |
+| **Heaven** | [The End for Which We Were Made](../web/gpt/articles/faith/four-last-things-04-heaven.html) · [PDF](../pdf/gpt/articles/faith/four-last-things-04-heaven.pdf) | [Then Face to Face](../web/claude/articles/faith/four-last-things-04-heaven.html) · [PDF](../pdf/claude/articles/faith/four-last-things-04-heaven.pdf) | — | Communion with God and the saints, bodily resurrection, and renewed creation. |
 
 ## Sacraments, Virtue, and Spiritual Life
 
@@ -45,10 +51,10 @@ Each meditation can be read on its own, including in preparation for death at th
 
 ## Doctrine and Authority
 
-| Publication | ChatGPT | Claude | Focus |
-| --- | --- | --- | --- |
-| **Angelology** | [Angels and the Gift of Being](../pdf/gpt/theology/angelology.pdf) · [Read](../web/gpt/theology/angelology.html) | [The Angels: Nature, Knowledge, Will, Fall, Order, and Ministry](../pdf/claude/theology/angelology.pdf) | Two independent Thomistic treatises on the angels, with the Celestial Hierarchy, the Fathers, and the Church's teaching and prayer. |
-| **How the Catholic Church Teaches** | [PDF](../pdf/gpt/articles/faith/catholic-doctrinal-authority.pdf) · [Read](../web/gpt/articles/faith/catholic-doctrinal-authority.html) | — | Dogma, definitive doctrine, authentic teaching, discipline, theological opinion, their historical development, and the response proper to each. |
+| Publication | ChatGPT | Claude | Gemini | Focus |
+| --- | --- | --- | --- | --- |
+| **Angelology** | [Angels and the Gift of Being](../pdf/gpt/theology/angelology.pdf) · [Read](../web/gpt/theology/angelology.html) | [The Angels: Nature, Knowledge, Will, Fall, Order, and Ministry](../pdf/claude/theology/angelology.pdf) | [The City of Unseen Spirits](../pdf/gemini/theology/angelology.pdf) · [Read](../web/gemini/theology/angelology.html) | Three independent Thomistic treatises on the angels, with the Celestial Hierarchy, the Fathers, and the Church's teaching and prayer. |
+| **How the Catholic Church Teaches** | [PDF](../pdf/gpt/articles/faith/catholic-doctrinal-authority.pdf) · [Read](../web/gpt/articles/faith/catholic-doctrinal-authority.html) | — | — | Dogma, definitive doctrine, authentic teaching, discipline, theological opinion, their historical development, and the response proper to each. |
 
 ## Church, Liturgy, and Modern Controversies
 

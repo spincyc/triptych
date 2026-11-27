@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.maronite-church.qurbono.1908-beirut-maronite-press-second-printing.anaphora-checked-syriac-f15af92a"
+edition_id = "edition.maronite-church.qurbono.1908-beirut-maronite-press-second-printing"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Faithful bounded reading transcription of original-language liturgical text from Ketābā de-qurbānā (Beirut Maronite Press, 1908 second printing of Dibs 1888) — Anaphora of the Twelve Apostles Core, whose United States copyright term has expired by publication date (1908 (second printing of Dibs 1888)). Derived directly from tracked public-domain facsimile artifact.maronite-church.qurbono.1908-beirut-maronite-press-second-printing.pages-0224-0447-5b0fbb00 without modern translation or editorial reconstruction. Third-party historical text is excluded from Triptych's CC BY 4.0 license."
+provenance = "Pixel-verified primary-source transcription prepared by lane-t2-syriac and independently collated against rendered facsimile page images by independent-collator-v2-syriac on 2026-11-25. Not a glyph-diplomatic edition or human specialist critical apparatus; complete bounded constituent only."
+retrieved = "2026-11-25"
+sha256 = "f15af92a82ddfde1b4192524a37f1f3263561fc1ad102f894bc0e8d8cacb426b"
+byte_size = 1510
+path = "src/sources/works/maronite-church/qurbono/editions/1908-beirut-maronite-press-second-printing/artifacts/anaphora-checked-syriac-f15af92a/text.txt"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.maronite-church.qurbono.1908-beirut-maronite-press-second-printing.pages-0224-0447-5b0fbb00"
+transformation = "Pure consonantal Classical Syriac Unicode (U+0710..U+072C, UTF-8 NFC) with single ASCII spaces between words and single LF (\\n) line endings, one canonical liturgical unit per line.; All West Syriac vowel points, seyame (U+0308), qushshaya/rukkakha, punctuation marks, liturgical crosses (including inline red crosses splitting ܘܒܪܟ in 1594), kashidas, catchwords, running heads, border ornaments, and page numbers are omitted for scan-safe cross-edition diffing.; Rubrics (red Syriac or red Garshuni stage directions), speaker labels (priest/deacon/people), editorial 'etc.' cues (ܘܫܪ), intervening rubricated Trinitarian cross-blessings, and parallel Garshuni/Arabic columns are excluded.; Printed historical orthography (such as ܐܪܙܐ in 1594 vs ܪܐܙܐ in 1908, and ܒܐܝܕܝܐ in both Chalice preambles), abbreviations (such as abbreviated Dialogue incipits in 1594), omissions, and additions are preserved verbatim without harmonizing or supplying words from memory."
+notes = "Bounded constituent of the exact same five aligned core units of the Anaphora of the Twelve Apostles (printed inline in the Ordo Communis under running head 'ܡܢ ܢܐܦܘܪ ܐܠܬܠܡܝܕܗ ܐܠܬܢܐܥܫܪܝܗ') in Classical Syriac (syr), located in retained Part 2 (pages-0224-0447-5b0fbb00, PDF 127, 125-122; reversed RTL scan order), enabling a direct 1594 vs 1908 Maronite visual diff."

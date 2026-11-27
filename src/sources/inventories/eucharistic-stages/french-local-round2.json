@@ -359,14 +359,15 @@
       "scope": "Identified book witness and the Eucharistic components supported by the cited original leaves or edition-identified contents index; no complete reconstructed missal.",
       "components": [
         "propers",
-        "rubrics"
+        "rubrics",
+        "anaphoras"
       ],
       "witness_ids": [
         "western:paris-1481-dupre-huym"
       ],
       "witness_label": "1481 Paris Missale Parisiense",
       "summary": "The 1481 Paris-use missal has a checked original colophon and bounded Maundy Thursday folios. Neither a first composition date for those prayers nor a predecessor relationship follows.",
-      "text_coverage": "not-transcribed",
+      "text_coverage": "partial",
       "evidence": [
         {
           "source_id": "french-local-round2-paris:source",
@@ -375,7 +376,8 @@
         }
       ],
       "limitations": "The scan and selected leaves do not certify full physical or textual completeness; 1685, 1705 and 1738 originals are uncollated. GW M24596 cites Ursula Baurmeister's study under 'Zur Datierung'; its full title, '1481: a false landmark in the history of French illustration?', and its place in a bibliographical society's transactions, vol. 11 (1996/99), pp. 350–403, were identified on 2026-10-22 from a bibliography index, but the article itself could not be read (no open copy found). The title suggests that the question concerns the dating of the book's illustration; the colophon year is kept as printed and remains flagged.",
-      "reception": "The local-use designation identifies the intended book tradition; actual adoption by every church and any continuing-use interval have not been established."
+      "reception": "The local-use designation identifies the intended book tradition; actual adoption by every church and any continuing-use interval have not been established.",
+      "text_binding": "native-book:paris-1481-canon-missae"
     },
     {
       "id": "french-local-round2-rouen:book",

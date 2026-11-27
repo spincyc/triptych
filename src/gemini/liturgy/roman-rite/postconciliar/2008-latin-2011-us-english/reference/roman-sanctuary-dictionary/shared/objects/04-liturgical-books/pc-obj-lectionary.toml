@@ -1,0 +1,77 @@
+schema_version = 1
+id = "pc-obj-lectionary"
+category = "liturgical-books"
+sort_order = 402
+plate_id = "pc-plt-05-books"
+composition_plate_ids = []
+plate_position = "Top right, tall closed volume with cover cross (Plate V)"
+preferred_english_name = "Lectionary for Mass"
+latin_headword = "Lectionarium"
+alternate_english_names = ["Lectionary"]
+alternate_latin_names = ["Ordo lectionum Missae"]
+pronunciation_key = "lehk-tsee-oh-NAH-ree-oom"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "required"
+scope_level = "universal-roman"
+territorial_note = "In the Dioceses of the United States of America, Scripture readings at Mass are proclaimed from the approved Lectionary for Mass for Use in the Dioceses of the United States (Confraternity of Christian Doctrine), arranged according to the 1981 editio typica altera of the Ordo lectionum Missae; disposable booklets or parish missalettes never replace the ritual Lectionary on the ambo (GIRM 349; OLM 35--37)."
+
+[identification]
+summary = "The official ritual book of Sacred Scripture containing the appointed first and second readings, Responsorial Psalms, Gospel Acclamations, and Gospels organized across the three-year Sunday cycle (Years A, B, and C) and two-year weekday cycle (Years I and II)."
+appearance = "At top right of Plate V, the closed Lectionary stands upright as a tall, dignified hardcover ritual volume with a plain rectangular border and simple central cross stamped on the cover—stately in proportion, yet visibly less ornate than the metal-bossed Book of the Gospels directly below it."
+placement_and_use = "Placed open to the day's readings on the stationary ambo before Mass begins (GIRM 118b). Instituted lectors and deputed readers proclaim the first and second readings from it at the ambo, and the deacon or priest proclaims the Gospel from it whenever a separate Book of the Gospels is not employed. Under universal Roman rubrics (GIRM 120d, 194), the Lectionary is never carried in the entrance procession—only the Book of the Gospels receives that ceremonial procession."
+liturgical_colors = "Bound in dignified cloth or leather (commonly burgundy, deep red, brown, or forest tones); cover color does not change by liturgical season."
+
+[ministers_and_handling]
+ordinary_ministers = ["bishop", "priest", "deacon", "instituted-lector"]
+prepares = ["sacristan", "instituted-lector", "altar-server"]
+server_boundary = "prepares"
+server_boundary_summary = "Servers may confirm before Mass that the Lectionary lies open to the appointed day's readings on the ambo and may return it to the sacristy after Mass; servers never carry the Lectionary in the entrance procession and never proclaim Scripture from it unless separately deputed as readers."
+safety_warning = "Never carry the Lectionary in the entrance procession—GIRM 120d and 194 strictly reserve the entrance book procession to the Book of the Gospels. Never replace the ritual Lectionary on the ambo with disposable paper leaflets or pew missalettes (GIRM 349)."
+
+[audience_text]
+altar_server = "Compare top right and bottom left on Plate V: the Lectionary is the tall hardcover volume with a plain cover cross, distinct from the heavily embossed Book of the Gospels below it. Before Mass, you may help check that the Lectionary is already resting open on the ambo at the exact Sunday (Year A, B, or C) or weekday (Year I or II) reading (GIRM 118b). Remember one firm rule: never carry the Lectionary in the entrance procession (GIRM 120d, 194)—it waits quietly on the ambo before Mass begins."
+sacristan = "Confirm the exact volume and liturgical cycle before every Mass—Sunday Year A, B, or C; Weekday Year I or II; or Proper of Saints and Ritual Masses—mark the passages with the ribbon, and set the Lectionary open on the ambo before the entrance procession starts (GIRM 118b). Never substitute disposable paper booklets, loose sheets, or worn copies for the dignified ritual Lectionary at the ambo (GIRM 349; OLM 35--37)."
+general_reader = "Resting open on the ambo before Mass begins, the Lectionary unfolds a wide treasury of Old Testament, Psalm, Apostolic, and Gospel passages arranged over a three-year Sunday cycle and two-year weekday cycle. Together with the altar, the ambo and Lectionary present the table of God's Word from which Christ nourishes the Church before inviting the faithful to the table of his Body (GIRM 28, 349)."
+
+[relationships]
+confusable_with = ["pc-obj-book-of-the-gospels", "pc-obj-roman-missal"]
+related_objects = ["pc-obj-ambo", "pc-obj-book-of-the-gospels", "pc-obj-roman-missal"]
+
+[symbolism]
+has_sourced_symbolism = true
+text = "The General Instruction of the Roman Missal honors the Lectionary alongside the Book of the Gospels as a sign and symbol of heavenly realities serving the proclamation of God's Word, feeding the faithful at the table of God's Word before the table of Christ's Body. In the words of the psalmist, “Thy word is a lamp to my feet, and a light to my paths” (Ps 118:105 [119:105])."
+evidence_class = "liturgical-source"
+attribution = "GIRM 28, 349; Ordo lectionum Missae (1981) Praenotanda 35; Ps 118:105 [119:105]"
+
+[counterpart_1962]
+relationship = "materially changed"
+locus_1962 = "Missale Romanum (1962), Ritus Servandus VI.4"
+comparison = "In the 1962 Roman Missal, the one-year cycle of Epistles and Gospels was printed inside the Missal itself, with an optional separate Epistle book (liber Epistolarum) for the subdeacon at Solemn Mass (RS VI.4). The postconciliar reform established a dedicated multi-volume Lectionary spanning a three-year Sunday cycle (A, B, C) and two-year weekday cycle (I, II), placed open on the ambo for every Mass with a congregation (GIRM 118b; OLM 1981)."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N21"
+primary_loci = ["GIRM 28, 118b, 120d, 172, 194, 349", "Ordo lectionum Missae (1981) Praenotanda 35--37, 69, 103--107"]
+source_bindings = [
+  "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002",
+  "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021",
+  "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981",
+  "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.decretum-de-editione-typica-altera-1981",
+  "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-lectiones-et-offertorium",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

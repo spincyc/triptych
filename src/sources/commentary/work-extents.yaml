@@ -56,7 +56,7 @@
 # this project: chapters and verses are the Clementine Vulgate's, which is what
 # `_projection.CANONICAL` projects into.
 schema: triptych-commentary-work-extents/v1
-updated: '2026-11-07'
+updated: '2026-11-25'
 numbering: vulgate
 extents:
 - work_id: work.ambrose.hexameron
@@ -289,3 +289,158 @@ extents:
     leaf or verification and admission of the intervening OCR commentary
     bodies; the acquired English ending remains separately blocked from
     admission until its translator credit is established.
+- work_id: work.ambrose.expositio-evangelii-secundum-lucam
+  token: Luke
+  first_chapter: 1
+  first_verse: 1
+  last_chapter: 24
+  last_verse: 49
+  within: continuous
+  basis: >-
+    Continuous ten-book exposition of Luke (PL 15 coll. 1527-1850). Book I
+    opens on Luke 1:1 (held Wikisource witness wikisource-liber-i-a100c22c)
+    and Book X (held witness book-10-html-083e1630) closes at sections
+    180-184 on Luke 24:49 (headed Vers. 49, PL 15 col. 1850D, concluding with
+    a harmony of the resurrection appearances); Book X does not expound
+    Luke 24:50-53.
+- work_id: work.augustine.in-iohannis-evangelium-tractatus
+  token: John
+  first_chapter: 1
+  first_verse: 1
+  last_chapter: 21
+  last_verse: 25
+  within: continuous
+  basis: >-
+    One hundred twenty-four continuous tractates on the whole Gospel of John
+    (PL 35 coll. 1379-1976). Verified in the held NPNF1-7 CCEL witness
+    (ccel-text-266502c9): Tractate I (line 193) opens on John 1:1-5 and
+    Tractate CXXIV (line 36887) closes on John 21:19-25.
+- work_id: work.augustine.quaestiones-euangeliorum
+  token: Matt
+  first_chapter: 8
+  first_verse: 13
+  last_chapter: 26
+  last_verse: 74
+  within: selective
+  basis: >-
+    Augustine's prologue (PL 35 col. 1321; held wikisource-latin-text
+    quaestiones-euangeliorum.txt line 4) states these are selected questions
+    on difficult passages rather than a continuous commentary. Book I
+    (QQ. I-XLVII, PL 35 coll. 1323-1334, lines 5-52) treats selected Matthew
+    passages ranging from 8:13 (Q. XVIII, joined with 15:28) through 26:69-74
+    (Q. XLV; Q. XLVII treats 26:39-44).
+- work_id: work.augustine.quaestiones-euangeliorum
+  token: Luke
+  first_chapter: 1
+  first_verse: 13
+  last_chapter: 24
+  last_verse: 28
+  within: selective
+  basis: >-
+    Selective companion to Book I on Matthew (PL 35 col. 1321 prologue).
+    Book II (QQ. I-LI, PL 35 coll. 1333-1364; held wikisource-latin-text
+    quaestiones-euangeliorum.txt lines 53-125) treats selected Luke passages
+    from Q. I on Luke 1:13 and 1:20 through Q. LI on Luke 24:28.
+- work_id: work.bede.in-lucae-evangelium-expositio
+  token: Luke
+  first_chapter: 1
+  first_verse: 1
+  last_chapter: 24
+  last_verse: 53
+  within: continuous
+  basis: >-
+    Continuous verse-by-verse exposition of the whole Gospel of Luke in six
+    books (PL 92 coll. 301-634). Verified in the held PL 92 OCR witness
+    (ia-djvu-text-2681d6ae): Book I opens on Luke 1:1 (line 21975, col. 305)
+    and Book VI closes on Luke 24:50-53 (lines 45654-45740) immediately
+    before the heading for the commentary on John (line 45744).
+- work_id: work.bede.in-marci-evangelium-expositio
+  token: Mark
+  first_chapter: 1
+  first_verse: 1
+  last_chapter: 16
+  last_verse: 20
+  within: continuous
+  basis: >-
+    Continuous verse-by-verse exposition of the whole Gospel of Mark in four
+    books (PL 92 coll. 131-302). Verified in the held Latin text witness
+    (latin-text-b8197766/source.txt, 527 lines): following the preface
+    ({1.0}), section {1.1} opens on Mark 1:1 and section {1.16} closes on
+    Mark 16:20.
+- work_id: work.gregory-the-great.homiliae-in-evangelia
+  token: Matt
+  first_chapter: 2
+  first_verse: 1
+  last_chapter: 25
+  last_verse: 30
+  within: selective
+  basis: >-
+    Forty liturgical Gospel homilies on appointed station pericopes (PL 76
+    coll. 1075-1312; held complete-extracted-text-dc25dd69/gregory-whole.txt),
+    selective by liturgical design rather than continuous. Eleven homilies
+    expound Matthew pericopes, spanning from Homily X on Matthew 2:1-12 to
+    Homily IX on Matthew 25:14-30.
+- work_id: work.gregory-the-great.homiliae-in-evangelia
+  token: Mark
+  first_chapter: 16
+  first_verse: 1
+  last_chapter: 16
+  last_verse: 20
+  within: selective
+  basis: >-
+    Selective liturgical collection of forty Gospel homilies (PL 76 coll.
+    1075-1312; held complete-extracted-text-dc25dd69/gregory-whole.txt). Two
+    homilies expound Mark pericopes: Homily XXI on Mark 16:1-7 and Homily
+    XXIX on Mark 16:14-20.
+- work_id: work.gregory-the-great.homiliae-in-evangelia
+  token: Luke
+  first_chapter: 2
+  first_verse: 1
+  last_chapter: 24
+  last_verse: 35
+  within: selective
+  basis: >-
+    Selective liturgical collection of forty Gospel homilies (PL 76 coll.
+    1075-1312; held complete-extracted-text-dc25dd69/gregory-whole.txt).
+    Seventeen homilies expound Luke pericopes, spanning from Homily VIII on
+    Luke 2:1-14 through Homily XXIII on Luke 24:13-35.
+- work_id: work.gregory-the-great.homiliae-in-evangelia
+  token: John
+  first_chapter: 1
+  first_verse: 19
+  last_chapter: 21
+  last_verse: 14
+  within: selective
+  basis: >-
+    Selective liturgical collection of forty Gospel homilies (PL 76 coll.
+    1075-1312). Ten homilies expound John pericopes, spanning from Homily VII
+    on John 1:19-28 through Homily XXIV on John 21:1-14 (verified in held
+    complete-extracted-text-dc25dd69/gregory-whole.txt, with Homily XXVII on
+    John 15:12-16 confirmed in PL 76 OCR ia-djvu-text-13c0bbad lines
+    95725-95734 where the Wikisource dump duplicated Homily XXXII).
+- work_id: work.john-chrysostom.homilies-on-john
+  token: John
+  first_chapter: 1
+  first_verse: 1
+  last_chapter: 21
+  last_verse: 25
+  within: continuous
+  basis: >-
+    Eighty-eight continuous homilies covering the entire Gospel of John
+    (PG 59 coll. 23-482; NPNF Series I Vol. 14, held container
+    series-1-volume-14 with ia-facsimile-pdf-a09a5d18), running continuously
+    from Homily I on John 1:1 through Homilies LXXXV-LXXXVIII on John
+    20-21:25.
+- work_id: work.thomas-aquinas.super-evangelium-ioannis-lectura
+  token: John
+  first_chapter: 1
+  first_verse: 1
+  last_chapter: 21
+  last_verse: 25
+  within: continuous
+  basis: >-
+    Continuous twenty-one-chapter lecture course on the entire Gospel of
+    John. Verified in the held Venice 1745 Tomus 3 OCR witness
+    (ia-djvu-ocr-10aa155e): Chapter 1 opens on John 1:1 (In principio erat
+    Verbum, line 50299) and Chapter 21 closes on John 21:25 (lines
+    111004-111061, ending FINIS.).

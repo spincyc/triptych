@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-extent",
+  "book_id": "coptic-1736-basil-anaphora",
+  "title": "Tuki 1736 (Missale Copto-Arabicum): Bohairic Coptic St. Basil Anaphora core constituent — complete constituent extent and page account",
+  "status": "complete",
+  "unresolved": [],
+  "omitted": [],
+  "expected_unit_ids": [
+    "unit.tuki-1736.coptic.basil.opening-dialogue",
+    "unit.tuki-1736.coptic.basil.preface",
+    "unit.tuki-1736.coptic.basil.pre-sanctus-hymns",
+    "unit.tuki-1736.coptic.basil.sanctus",
+    "unit.tuki-1736.coptic.basil.post-sanctus",
+    "unit.tuki-1736.coptic.basil.institution-narrative",
+    "unit.tuki-1736.coptic.basil.anamnesis",
+    "unit.tuki-1736.coptic.basil.epiclesis"
+  ],
+  "scope": "Complete Bohairic Coptic column of the St. Basil Anaphora core in Raphael Tuki's 1736 Rome Missale Copto-Arabicum (ULB Bonn digital copy, Part II printed pp. 96-116 / PDF pp. 389-409): from the Anaphora heading ⲦⲀⲚⲀⲪⲞⲢⲀ ⲛ̀ⲧⲉ ⲡⲓⲁ̀ⲅⲓⲟⲥ ⲂⲀⲤⲒⲖⲒⲞⲤ ⲙ̀ Ⲫⲓⲱⲧ and Opening Dialogue on II.96 (PDF p. 389), through Preface, printed Pre-Sanctus hymns, Sanctus, Post-Sanctus, Institution Narrative of Bread and Cup (including Ⲁϥϫⲉⲙϯⲡⲓ 'He tasted' at II.110 / PDF p. 403), Anamnesis, and Epiclesis (including Tuki's printed Ⲡⲭ̅ⲥ̅ at II.114 / PDF p. 407) through the concluding communion-fruits petition Ⲁⲣⲓⲧⲉⲛ ⲛⲉⲙⲡ̀ϣⲁ ⲧⲏⲣⲉⲛ ... ⲓⲥϫⲉⲛ ⲡⲉⲛⲉϩ. on II.116 (PDF p. 409) immediately before the Great Intercessions (Ⲁⲣⲓⲫⲙⲉⲩⲓ̀ Ⲡϭ̅ⲥ̅...). Excludes the parallel Arabic translation column, Arabic-only rubrics, running heads, page numerals, catchwords, and later blue/purple manuscript reader annotations.",
+  "pages": [
+    {
+      "witness_id": "tuki-1736-bonn-pdf",
+      "ranges": [
+        [
+          1,
+          388
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Title, Part I incense offices, and Part II Ordo Communis (including Arabic Creed pp. 378-380) through II.95."
+    },
+    {
+      "witness_id": "tuki-1736-bonn-pdf",
+      "ranges": [
+        [
+          389,
+          389
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.tuki-1736.coptic.basil.opening-dialogue"
+      ],
+      "description": "II.96 (PDF p. 389): St. Basil Anaphora title and Opening Dialogue (Coptic left column only)."
+    },
+    {
+      "witness_id": "tuki-1736-bonn-pdf",
+      "ranges": [
+        [
+          390,
+          390
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.tuki-1736.coptic.basil.opening-dialogue",
+        "unit.tuki-1736.coptic.basil.preface"
+      ],
+      "description": "II.97 (PDF p. 390): Completion of Opening Dialogue and opening of Preface (Ⲫⲏ ⲉⲧϣⲟⲡ...)."
+    },
+    {
+      "witness_id": "tuki-1736-bonn-pdf",
+      "ranges": [
+        [
+          391,
+          391
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.tuki-1736.coptic.basil.preface"
+      ],
+      "description": "II.98 (PDF p. 391): Continuation of Preface (angelic choirs)."
+    },
+    {
+      "witness_id": "tuki-1736-bonn-pdf",
+      "ranges": [
+        [
+          392,
+          392
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.tuki-1736.coptic.basil.preface",
+        "unit.tuki-1736.coptic.basil.pre-sanctus-hymns"
+      ],
+      "description": "II.99 (PDF p. 392): End of Preface (cherubim/seraphim) and start of printed pre-Sanctus hymns."
+    },
+    {
+      "witness_id": "tuki-1736-bonn-pdf",
+      "ranges": [
+        [
+          393,
+          395
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.tuki-1736.coptic.basil.pre-sanctus-hymns"
+      ],
+      "description": "II.100-102 (PDF pp. 393-395): Printed pre-Sanctus hymns (Greek-in-Coptic and Bohairic Coptic alternatives)."
+    },
+    {
+      "witness_id": "tuki-1736-bonn-pdf",
+      "ranges": [
+        [
+          396,
+          396
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.tuki-1736.coptic.basil.sanctus",
+        "unit.tuki-1736.coptic.basil.post-sanctus"
+      ],
+      "description": "II.103 (PDF p. 396): Sanctus and opening of Post-Sanctus (Ⲭⲟⲩⲁⲃ ⲭⲟⲩⲁⲃ ⲭⲟⲩⲁⲃ...)."
+    },
+    {
+      "witness_id": "tuki-1736-bonn-pdf",
+      "ranges": [
+        [
+          397,
+          398
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.tuki-1736.coptic.basil.post-sanctus"
+      ],
+      "description": "II.104-105 (PDF pp. 397-398): Post-Sanctus salvation history (Fall, Incarnation, Cross, Resurrection, Ascension)."
+    },
+    {
+      "witness_id": "tuki-1736-bonn-pdf",
+      "ranges": [
+        [
+          399,
+          399
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.tuki-1736.coptic.basil.post-sanctus",
+        "unit.tuki-1736.coptic.basil.institution-narrative"
+      ],
+      "description": "II.106 (PDF p. 399): End of Post-Sanctus (Judgment, Kata to eleos) and opening of Institution Narrative (Ⲁϥⲭⲱ ⲇⲉ ⲛⲁⲛ...)."
+    },
+    {
+      "witness_id": "tuki-1736-bonn-pdf",
+      "ranges": [
+        [
+          400,
+          403
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.tuki-1736.coptic.basil.institution-narrative"
+      ],
+      "description": "II.107-110 (PDF pp. 400-403): Bread Institution Narrative (ⲪⲀⲒ ⲄⲀⲢ ⲠⲈ ⲠⲀⲤⲰⲘⲀ) and Cup preparation through Ⲁϥϫⲉⲙϯⲡⲓ ('He tasted')."
+    },
+    {
+      "witness_id": "tuki-1736-bonn-pdf",
+      "ranges": [
+        [
+          404,
+          404
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.tuki-1736.coptic.basil.institution-narrative",
+        "unit.tuki-1736.coptic.basil.anamnesis"
+      ],
+      "description": "II.111 (PDF p. 404): Cup Institution Narrative (ⲪⲀⲒ ⲄⲀⲢ ⲠⲈ ⲠⲀⲤⲚⲞϤ...) and start of Anamnesis (Ⲥⲟⲡ ⲅⲁⲣ ⲛⲓⲃⲉⲛ...)."
+    },
+    {
+      "witness_id": "tuki-1736-bonn-pdf",
+      "ranges": [
+        [
+          405,
+          406
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.tuki-1736.coptic.basil.anamnesis"
+      ],
+      "description": "II.112-113 (PDF pp. 405-406): Anamnesis dialogue (Ton thanaton sou / Se ainoumen), Ⲉⲛⲓⲣⲓ ⲟⲩⲛϩⲱⲛ, oblation, and Ⲧⲉⲛϩⲱⲥ ⲉ̀ⲣⲟⲕ."
+    },
+    {
+      "witness_id": "tuki-1736-bonn-pdf",
+      "ranges": [
+        [
+          407,
+          409
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.tuki-1736.coptic.basil.epiclesis"
+      ],
+      "description": "II.114-116 (PDF pp. 407-409): Epiclesis (Ⲟⲩⲟϩ ⲧⲉⲛϯϩⲟ ⲉ̀ⲣⲟⲕ Ⲡⲭ̅ⲥ̅...), bread/cup transformations, and communion-fruits petition ending before Ⲁⲣⲓⲫⲙⲉⲩⲓ̀ Ⲡϭ̅ⲥ̅."
+    },
+    {
+      "witness_id": "tuki-1736-bonn-pdf",
+      "ranges": [
+        [
+          410,
+          676
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "Great Intercessions, Fraction, Gregory and Cyril Anaphoras, errata leaves (pp. 667-671) and colophon (p. 672)."
+    }
+  ]
+}

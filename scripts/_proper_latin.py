@@ -813,7 +813,7 @@ def _source_library_cache_entry(root: Path) -> Path | None:
     sources = root / "src" / "sources"
     if not sources.is_dir():
         return None
-    roots = [sources, root / "src" / "gpt", root / "src" / "claude"]
+    roots = [sources, root / "src" / "gpt", root / "src" / "claude", root / "src" / "gemini"]
     fingerprint, counted = tree_fingerprint([r for r in roots if r.is_dir()])
     if counted < SOURCE_LIBRARY_CACHE_FLOOR:
         return None

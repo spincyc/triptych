@@ -1009,19 +1009,25 @@ class TitleCoverageTests(unittest.TestCase):
     """Rule 8, measured against the repository's own alias table."""
 
     def test_the_group_whose_title_still_names_less_than_it_reaches(self) -> None:
-        """One residual failure, and it is not one guidance/catena.md records.
-
-        The design named two: Aquinas's and Theophylact's Pauline commentaries,
-        each grouped correctly and each named after Romans. Both were fixed
-        while this check was being written — the harvest was re-promoted and
-        their canonical titles now name the whole Pauline corpus. Theodoret's
-        remains: his commentary covers Jeremiah, Baruch and Lamentations and is
-        filed under *Commentarius in Ieremiam*, so a catena would render his
-        comment on Baruch under a title naming Jeremiah.
+        """Rule 8: every tracked alias group now covers its reached books, and
+        the detector still rejects a canonical title naming only one book of a
+        multi-book group (such as Theodoret's former *Commentarius in Ieremiam*).
         """
-        failures = {(author, work) for author, work, _ in _catena.failing_groups(ROOT)}
-        self.assertIn(("Theodoret of Cyrus", "Commentarius in Ieremiam"), failures)
-        self.assertEqual(len(failures), 1)
+        self.assertEqual(_catena.failing_groups(ROOT), [])
+        forms = _catena.book_forms(ROOT)
+        narrow = {
+            "author": "Theodoret of Cyrus",
+            "work": "Commentarius in Ieremiam",
+            "titles": [
+                "commentarius in ieremiam",
+                "commentary on baruch",
+                "commentary on lamentations",
+            ],
+        }
+        reason = _catena.title_covers_group(narrow, forms)
+        self.assertIn("Jer", reason)
+        self.assertIn("Bar", reason)
+        self.assertIn("Lam", reason)
 
     def test_the_pauline_groups_the_design_named_now_pass(self) -> None:
         forms = _catena.book_forms(ROOT)
@@ -1553,6 +1559,235 @@ class StructureTests(CatenaFixture):
         model.write_text("module.exports = {};", encoding="utf-8")
         with self.assertRaises(_catena.CatenaError):
             self.emit()
+
+
+def _u16_slice(text: str, start: int, end: int) -> str:
+    return text.encode("utf-16-le")[2 * start : 2 * end].decode("utf-16-le")
+
+
+class TextStructureTests(unittest.TestCase):
+    """Additive UTF-16 `text_structure` projection never alters verbatim `text`."""
+
+    def test_mark_catena_aurea_lemmas_speakers_transitions_notes_and_edge_lines(self) -> None:
+        import tomllib
+
+        ed = ROOT / "src/sources/works/thomas-aquinas/catena-aurea-in-marcum/editions/1842-english-oxford-ccel"
+        artifact = tomllib.loads((ed / "artifacts/text-790ed587/artifact.toml").read_text(encoding="utf-8"))
+        work_id = "work.thomas-aquinas.catena-aurea-in-marcum"
+
+        # 01-02-03 has lemmas, speakers, and [ed. note: ...]
+        p01 = tomllib.loads((ed / "passages/01-02-03.toml").read_text(encoding="utf-8"))
+        ts01 = _catena.text_structure_for_passage(ROOT, p01, p01["text"], work_id=work_id, artifact=artifact)
+        self.assertIsNotNone(ts01)
+        self.assertEqual(ts01["version"], 1)
+        paras = ts01["paragraphs"]
+        self.assertEqual(len(paras), len(p01["transcription_segments"]))
+        self.assertTrue(any(p["kind"] == "lemma" for p in paras))
+        self.assertTrue(any("speaker" in p for p in paras))
+        self.assertTrue(any("notes" in p for p in paras))
+        for p in paras:
+            chunk = _u16_slice(p01["text"], p["start"], p["end"])
+            self.assertEqual(chunk, chunk.strip())
+            if "speaker" in p:
+                sp = _u16_slice(p01["text"], *p["speaker"])
+                self.assertFalse(sp.lower().startswith(("it goes on", "there follows", "wherefore")))
+            if "notes" in p:
+                for note in p["notes"]:
+                    nt = _u16_slice(p01["text"], *note)
+                    self.assertTrue(nt.startswith("[ed") and nt.endswith("]"))
+
+        # 01-35-39 has transitional cues (`It goes on:`, `There follows:`, `For there follows:`)
+        p35 = tomllib.loads((ed / "passages/01-35-39.toml").read_text(encoding="utf-8"))
+        ts35 = _catena.text_structure_for_passage(ROOT, p35, p35["text"], work_id=work_id, artifact=artifact)
+        transitions = [
+            _u16_slice(p35["text"], *p["transition"])
+            for p in ts35["paragraphs"] if "transition" in p
+        ]
+        self.assertTrue(transitions)
+        self.assertIn("It goes on:", transitions)
+        self.assertIn("There follows:", transitions)
+        for p in ts35["paragraphs"]:
+            if "transition" in p:
+                self.assertNotIn("speaker", p)
+
+        # Mark L2016 (Chrys.:) and L2867 (Theophylact:) were mis-tagged scripture in CCEL;
+        # L3147 (Amen.) is closing plain text, not a lemma.
+        for stem, target_line, expected_kind, expect_speaker in (
+            ("11-01-10", 2016, "commentary", True),
+            ("15-16-20", 2867, "commentary", True),
+            ("16-19-20", 3147, "plain", False),
+        ):
+            pas = tomllib.loads((ed / "passages" / f"{stem}.toml").read_text(encoding="utf-8"))
+            ts = _catena.text_structure_for_passage(ROOT, pas, pas["text"], work_id=work_id, artifact=artifact)
+            matched = [
+                para for seg, para in zip(pas["transcription_segments"], ts["paragraphs"])
+                if seg["line"] == target_line
+            ]
+            self.assertEqual(len(matched), 1)
+            self.assertEqual(matched[0]["kind"], expected_kind)
+            self.assertEqual("speaker" in matched[0], expect_speaker)
+
+    def test_pinned_gregory_and_severian_recover_paragraphs_without_moving_snippets(self) -> None:
+        import tomllib
+        import _catena_snippets
+
+        greg_path = ROOT / (
+            "src/sources/works/nicene-and-post-nicene-fathers/series-2-volume-5/"
+            "editions/new-york-1893/passages/gregory-de-hominis-opificio.toml"
+        )
+        greg = tomllib.loads(greg_path.read_text(encoding="utf-8"))
+        original_text = greg["text"]
+        ts = _catena.text_structure_for_passage(
+            ROOT, greg, original_text, work_id="work.gregory-of-nyssa.de-hominis-opificio"
+        )
+        self.assertIsNotNone(ts)
+        self.assertEqual(len(ts["paragraphs"]), 280)
+        self.assertEqual(greg["text"], original_text)
+        self.assertTrue(all(p["kind"] == "plain" for p in ts["paragraphs"]))
+        # Verify pinned snippet slices in passage-snippets.yaml remain valid against unchanged text
+        doc = _catena._load_yaml(ROOT / _catena_snippets.PATH)
+        row = next(r for r in doc["passages"] if r["passage_id"] == greg["id"])
+        for sn in _catena_snippets.project(original_text, row["snippets"]):
+            self.assertTrue(_u16_slice(original_text, sn["start"], sn["end"]).strip())
+
+        sev_path = ROOT / (
+            "src/sources/works/severian-of-gabala/in-cosmogoniam-homiliae/"
+            "editions/2010-pearse-bareille-sermon-1/passages/homilia-1.toml"
+        )
+        sev = tomllib.loads(sev_path.read_text(encoding="utf-8"))
+        ts_sev = _catena.text_structure_for_passage(
+            ROOT, sev, sev["text"], work_id="work.severian-of-gabala.in-cosmogoniam-homiliae"
+        )
+        self.assertIsNotNone(ts_sev)
+        self.assertEqual(len(ts_sev["paragraphs"]), 18)
+
+    def test_wrapped_lines_and_sentence_splits_are_excluded(self) -> None:
+        import tomllib
+
+        cases = (
+            (
+                "src/sources/works/augustine/de-civitate-dei/editions/dods-1871/passages/11.7.toml",
+                "work.augustine.de-civitate-dei",
+            ),
+            (
+                "src/sources/works/peter-chrysologus/sermones/editions/1894-garnier-migne-pl-52/passages/sermo-50.toml",
+                "work.peter-chrysologus.sermones",
+            ),
+            (
+                "src/sources/works/origen/homiliae-in-ezechielem/editions/2014-hooker/passages/homily-1-section-6.toml",
+                "work.origen.homiliae-in-ezechielem",
+            ),
+        )
+        for rel, work_id in cases:
+            with self.subTest(passage=rel):
+                pas = tomllib.loads((ROOT / rel).read_text(encoding="utf-8"))
+                self.assertIsNone(
+                    _catena.text_structure_for_passage(ROOT, pas, pas["text"], work_id=work_id)
+                )
+
+    def test_utf16_astral_offsets_speaker_transition_notes_and_minimal_emission(self) -> None:
+        # Astral character 😀 occupies 2 UTF-16 code units; offsets must match JS slice.
+        text = (
+            "Intro 😀 paragraph.\n\n"
+            "Bede: It goes on: “Word” [ed. note: gloss 😀 check].\n\n"
+            "Augustine [ed. note: ref]: Final comment."
+        )
+        ts = _catena.text_structure_for_passage(
+            ROOT, {}, text, work_id="work.thomas-aquinas.catena-aurea-in-marcum"
+        )
+        self.assertIsNotNone(ts)
+        p0, p1, p2 = ts["paragraphs"]
+        self.assertEqual(_u16_slice(text, p0["start"], p0["end"]), "Intro 😀 paragraph.")
+        self.assertEqual(_u16_slice(text, *p1["speaker"]), "Bede:")
+        self.assertEqual(_u16_slice(text, *p1["transition"]), "It goes on:")
+        self.assertEqual(_u16_slice(text, *p1["notes"][0]), "[ed. note: gloss 😀 check]")
+        # Speaker before [ed. note: ...] never overlaps its note span.
+        self.assertEqual(_u16_slice(text, *p2["speaker"]), "Augustine")
+        self.assertEqual(_u16_slice(text, *p2["notes"][0]), "[ed. note: ref]")
+        self.assertLess(p2["speaker"][1], p2["notes"][0][0])
+
+        # Minimal emission: single plain paragraph with no notes/speaker/lemma returns None.
+        self.assertIsNone(_catena.text_structure_for_passage(ROOT, {}, "Just one plain paragraph."))
+        # Single paragraph with literal [ed. note: ...] DOES emit.
+        noted = _catena.text_structure_for_passage(
+            ROOT, {}, "Single paragraph [ed. note: checked]."
+        )
+        self.assertIsNotNone(noted)
+        self.assertEqual(len(noted["paragraphs"]), 1)
+        self.assertEqual(len(noted["paragraphs"][0]["notes"]), 1)
+
+        # Invariant guard fails closed on invalid spans.
+        with self.assertRaises(_catena.CatenaError):
+            _catena._validate_text_structure(
+                {"version": 1, "paragraphs": [{"start": 0, "end": 10, "kind": "plain"}]}, 5
+            )
+
+
+class PipelineConsistencyTests(CatenaFixture):
+    """Caching, root propagation, segment edition_id resolution, and paragraph chapters."""
+
+    def test_index_bible_is_cached_and_absent_by_work_reuses_sources(self) -> None:
+        from unittest.mock import patch
+
+        self.assertIs(_catena._index_bible(ROOT), _catena._index_bible(ROOT))
+        sources = _catena.load_sources(self.root)
+        edges = _catena.load_edges(self.root)
+        with patch.object(_catena, "load_sources", side_effect=AssertionError("re-walked sources")):
+            self.assertEqual(_catena.absent_by_work(self.root, sources=sources, edges=edges), {})
+
+    def test_segment_backed_edition_id_resolved_in_fragments_and_english_versions(self) -> None:
+        sources = _catena.Sources(
+            works={},
+            editions={"ed-la": {"language": "la"}, "ed-en": {"language": "en"}},
+            artifacts={},
+            segments={"seg-en": {"edition_id": "ed-en"}},
+            passages={
+                "src": {"edition_id": "ed-la"},
+                "tgt": {"segment_id": "seg-en"},
+            },
+        )
+        self.assertEqual(_catena.passage_edition_id(sources, sources.passages["tgt"]), "ed-en")
+        extent = dict(token="Gen", first_chapter=1, first_verse=1, last_chapter=1, last_verse=2)
+        fragments = [
+            {
+                "passage_id": "src", "work_id": "w", "extent": extent,
+                "english_versions": [{"passage_id": "tgt", "coverage": "whole", "basis": "Matched."}],
+            },
+            {"passage_id": "tgt", "work_id": "w", "extent": extent},
+        ]
+        self.assertEqual(_catena._english_version_errors(sources, fragments), [])
+
+    def test_commentary_work_index_accepts_ecclesiastical_writer_role(self) -> None:
+        name = "_test_commentary_work_index"
+        loader = importlib.machinery.SourceFileLoader(
+            name, str(ROOT / "tools/commentary-work-index")
+        )
+        spec = importlib.util.spec_from_loader(name, loader)
+        module = importlib.util.module_from_spec(spec)
+        sys.modules[name] = module
+        try:
+            loader.exec_module(module)
+        finally:
+            sys.modules.pop(name, None)
+        self.assertEqual(module.SOURCE_ROLES.get("ecclesiastical-writer"), "ecclesiastical-writer")
+
+    def test_paragraph_index_emits_chapters_map_matching_emitted_files(self) -> None:
+        directory, files, _ = _catena._paragraph_files(ROOT, self.root / "out")
+        index = json.loads(files[directory / "index.json"])
+        self.assertTrue(index["editions"])
+        for edition, entry in index["editions"].items():
+            self.assertIn("chapters", entry)
+            emitted = {
+                (json.loads(body)["token"], json.loads(body)["chapter"])
+                for path, body in files.items()
+                if path != directory / "index.json" and path.relative_to(directory).parts[0] == edition
+            }
+            listed = {
+                (token, chapter)
+                for token, chapters in entry["chapters"].items()
+                for chapter in chapters
+            }
+            self.assertEqual(listed, emitted, edition)
 
 
 if __name__ == "__main__":

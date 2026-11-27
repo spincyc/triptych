@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.addai-mari-checked-syriac-bc5f80c3"
+edition_id = "edition.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Faithful bounded reading transcription of original-language liturgical text from Ordo Chaldaicus Malabaricae (Puttenpalli, 1906) — Anaphora of Addai and Mari Core, whose United States copyright term has expired by publication date (1906). Derived directly from tracked public-domain facsimile artifact.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.pages-0001-0257-51510073 without modern translation or editorial reconstruction. Third-party historical text is excluded from Triptych's CC BY 4.0 license."
+provenance = "Pixel-verified primary-source transcription prepared by lane-t2-syriac and independently collated against rendered facsimile page images by independent-collator-v2-syriac on 2026-11-25. Not a glyph-diplomatic edition or human specialist critical apparatus; complete bounded constituent only."
+retrieved = "2026-11-25"
+sha256 = "bc5f80c3368df904c823c41ec4759eddff8f5c45cd9b8b0b45f07dd95511318f"
+byte_size = 4684
+path = "src/sources/works/syro-malabar-catholic-church/ordo-chaldaicus/editions/1906-puttenpalli-mar-thoma-shliha/artifacts/addai-mari-checked-syriac-bc5f80c3/text.txt"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.syro-malabar-catholic-church.ordo-chaldaicus.1906-puttenpalli-mar-thoma-shliha.pages-0001-0257-51510073"
+transformation = "Pure consonantal Classical Syriac Unicode (U+0710..U+072C, UTF-8 NFC) with single ASCII spaces between words and single LF (\\n) line endings, one canonical liturgical unit per line.; All East Syriac and West Syriac vowel points, seyame (U+0308), qushshaya/rukkakha, linea occultans/marhetana, punctuation dots, liturgical crosses, quotation marks, kashidas, catchwords, running heads, signature marks, and page numbers are omitted for scan-safe cross-edition diffing.; Rubrics (red or black stage directions), section headers (e.g. Qanona, Gehanta), speaker labels (priest/deacon/people), abbreviated posture cues (e.g. gehanta bow marker), intervening private Kushapa prayers, diaconal calls outside the main dialogue, the intervening elevation adoration verse between Bread and Chalice in Puttenpalli 1906 (PDF 230), and parallel Garshuni/Arabic columns are excluded.; Printed historical orthography, abbreviations (such as single-word Sanctus incipit ܩܕܝܫ and abbreviated Qanona endings ܗܫܐ ܘܒܟܠܙܒܢ), omissions, and additions are preserved verbatim without harmonizing or supplying words from memory."
+notes = "Bounded constituent of the exact same eight aligned core units of the Anaphora of Addai and Mari in Classical Syriac (syr), preserving Puttenpalli 1906's Fraction-placed Romanized Institution Narrative (PDF 230-229) and enabling a direct 3-way East Syriac diff against Chaldean 1767 and Chaldean 1901."

@@ -1,0 +1,78 @@
+schema_version = 1
+id = "pc-obj-book-of-the-gospels"
+category = "liturgical-books"
+sort_order = 403
+plate_id = "pc-plt-05-books"
+composition_plate_ids = []
+plate_position = "Bottom left, ornate metal-bossed cover (Plate V)"
+preferred_english_name = "Book of the Gospels"
+latin_headword = "Evangeliarium"
+alternate_english_names = ["Evangeliary", "Gospel Book"]
+alternate_latin_names = ["Liber Evangeliorum"]
+pronunciation_key = "eh-vahn-jeh-lee-AH-ree-oom"
+
+[edition_disposition]
+edition_locale = "2008-latin-2011-us-english"
+as_of = "2026-11-25"
+disposition = "provided"
+scope_level = "universal-roman"
+territorial_note = "In the Dioceses of the United States of America, the approved Book of the Gospels contains the Sunday and feast-day Gospels in the Lectionary translation and is customarily bound in embossed metallic or richly ornamented covers honoring the dignity commended by GIRM 349 and OLM 36--37."
+
+[identification]
+summary = "A dedicated, richly ornamented ritual volume containing solely the liturgical Gospels, accorded supreme ceremonial honor among all sanctuary books through entrance procession, placement on the altar, escorted procession to the ambo with candles and incense, and reverent kissing after proclamation."
+appearance = "At bottom left of Plate V, the closed Book of the Gospels stands out immediately from the plainer Lectionary by its heavy embossed cover, sculpted metal corner bosses, raised spine bands, and prominent floriated cross in relief."
+placement_and_use = "Strongly commended for cathedrals and parishes (OLM 36). Carried slightly elevated in the entrance procession by the deacon—or, in the deacon's absence, by an instituted or deputed lector—and laid flat on the center of the altar, the sole book permitted upon the mensa from the beginning of Mass until the Gospel (GIRM 120d, 122, 172--173, 194, 306). At the Gospel Acclamation, the deacon (or priest, if no deacon serves) lifts it from the altar and carries it to the ambo accompanied by servers with lighted candles and incense; after three swings of incense (GIRM 277; executed as paired double swings in Roman ceremonial custom, Caeremoniale Episcoporum 92) and proclamation, the minister reverently kisses the book while praying quietly Per evangelica dicta (GIRM 134, 175)."
+liturgical_colors = "Rich metallic silver, gilded brass, or embroidered cloth bindings bearing Christ, the Cross, or the Four Evangelists; covers remain constant across liturgical seasons."
+
+[ministers_and_handling]
+ordinary_ministers = ["bishop", "priest", "deacon", "instituted-lector"]
+prepares = ["sacristan", "deacon", "instituted-lector"]
+server_boundary = "recognizes-only"
+server_boundary_summary = "Altar servers never carry the Book of the Gospels in the entrance procession (reserved strictly to the deacon, or to an instituted or deputed lector if no deacon is present) and never lift it from the altar for the Gospel procession; servers escort it with lighted candles and the thurible, flank the ambo during proclamation, and may reverently return the closed volume to the sacristy after Mass."
+safety_warning = "Never hand the Book of the Gospels to an altar server to carry in the entrance procession—GIRM 120d and 194 reserve that role strictly to the deacon or, in his absence, a lector. During the Gospel procession, candle-bearers hold flames well clear of the ornate cover and open pages."
+
+[audience_text]
+altar_server = "Look at bottom left of Plate V: the Book of the Gospels is unmistakably recognized by its heavy embossed cover, central cross in relief, and sculpted metal corner bosses. Keep this liturgical boundary clear: as an altar server, you never carry the Book of the Gospels in the entrance procession (that office belongs to the deacon, or to the lector if no deacon is present: GIRM 120d, 194) and never lift it off the altar before the Gospel. Your privilege is to escort the Gospel procession with lighted candles and the smoking thurible and stand attentively flanking the ambo while the Gospel is proclaimed (GIRM 133, 175)."
+sacristan = "Strongly commended by the Church (OLM 36), the Book of the Gospels should visibly surpass every other sanctuary volume in beauty and craftsmanship (GIRM 349). Before Mass, verify and ribbon-mark the appointed Gospel passage, check clasps or heavy metal covers so pages lie flat on the ambo without slipping, and place the closed volume ready for the deacon (or lector if no deacon serves) in the procession area—never pre-set on the ambo, since it enters in procession and rests on the altar until the Alleluia (GIRM 120d, 122, 306). After Mass, return it cleanly to its protective case or display stand."
+general_reader = "At Sunday and festive Masses, the deacon—or a reader when no deacon is present—carries this richly decorated volume slightly elevated in the entrance procession and lays it directly upon the altar, the only book placed on the altar table during the first half of Mass. Before the Gospel reading, ministers escort it from the altar to the ambo with lighted candles and incense, honoring Christ himself who speaks directly to his people in the proclamation of the Gospel (GIRM 62, 134, 349)."
+
+[relationships]
+confusable_with = ["pc-obj-lectionary", "pc-obj-roman-missal"]
+related_objects = ["pc-obj-ambo", "pc-obj-altar", "pc-obj-lectionary", "pc-obj-altar-candles", "pc-obj-thurible"]
+
+[symbolism]
+has_sourced_symbolism = true
+text = "First among all liturgical books as a sign and symbol of heavenly realities, the Book of the Gospels receives elevation in procession, placement upon the altar, escort with lights and incense, and a reverent kiss because Christ himself speaks directly to his Church in the Gospel. St. Thomas Aquinas similarly distinguishes the earlier readings as preparatory instruction from the Gospel, by which Christ's own teaching instructs the faithful perfectly."
+evidence_class = "liturgical-source"
+attribution = "GIRM 62, 134, 175, 349; St. Thomas Aquinas, Summa Theologiae III, q. 83, a. 4, corpus"
+
+[counterpart_1962]
+relationship = "changed use"
+locus_1962 = "Missale Romanum (1962), Ritus Servandus VI.5"
+comparison = "In the 1962 Roman Missal, a separate Gospel book (liber Evangeliorum) belonged to Solemn Mass, where it was placed on the altar only before the Gospel, carried by the deacon in the Gospel procession, held by the subdeacon between lighted candles, incensed, and brought to the celebrant to kiss (RS VI.5). Postconciliar rubrics integrate the Book of the Gospels into ordinary Sunday and festive celebrations, carrying it slightly elevated in the entrance procession and resting it on the altar from the start of Mass until the Gospel procession (GIRM 120d, 122, 133--134, 306)."
+
+[historical_transition]
+is_superseded = false
+period_range = ""
+controlling_act = ""
+current_status = ""
+
+[audiences]
+comprehensive = true
+altar_server = true
+sacristan = true
+general_reader = true
+
+[sources]
+note_key = "N22"
+primary_loci = ["GIRM 62, 117, 120d, 122, 133--134, 172--175, 194--195, 277, 306, 349", "Ordo lectionum Missae (1981) Praenotanda 36--37"]
+source_bindings = [
+  "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002",
+  "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021",
+  "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981",
+  "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-acolyte-candlesticks",
+  "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-thurible-service",
+  "work.thomas-aquinas.summa-theologiae",
+]
+verification_state = "checked-against-primary-and-official-witness"
+rights_note = "Original analytical description; no protected liturgical wording reproduced verbatim."

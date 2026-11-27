@@ -4,11 +4,11 @@
 
 ## Doctrine
 
-| Publication | ChatGPT | Claude | Focus |
-| --- | --- | --- | --- |
-| **The Ark of the Covenant and Mary** | [*The Ark and the Mother of the Lord: The Journey of the Covenant Presence*](../pdf/gpt/theology/mariology/ark-of-the-covenant.pdf) · [Read](../web/gpt/theology/mariology/ark-of-the-covenant.html) | [*The Ark of the Covenant: From Sinai to the Woman Clothed with the Sun*](../pdf/claude/theology/mariology/ark-of-the-covenant.pdf) | Two independent Catholic studies of the Ark's biblical journey and its fulfillment in Mary; each edition retains its own text, sources, and drawings. |
-| **The Marian Dogmas: Mother of God, Ever-Virgin, Immaculate, Assumed** | [PDF](../pdf/gpt/theology/mariology/marian-dogmas.pdf) · [Read](../web/gpt/theology/mariology/marian-dogmas.html) | [PDF](../pdf/claude/theology/mariology/marian-dogmas.pdf) · [Read](../web/claude/theology/mariology/marian-dogmas.html) | The four dogmas and their biblical, patristic, Thomistic, historical, liturgical, and magisterial boundaries. |
-| **Dogma, Doctrine, and Devotion in Mariology** | [PDF](../pdf/gpt/theology/mariology/doctrinal-authority.pdf) · [Read](../web/gpt/theology/mariology/doctrinal-authority.html) | — | Catholic authority and assent applied to Marian dogmas, doctrines, titles, devotion, and private revelation. |
+| Publication | ChatGPT | Claude | Gemini | Focus |
+| --- | --- | --- | --- | --- |
+| **The Ark of the Covenant and Mary** | [*The Ark and the Mother of the Lord: The Journey of the Covenant Presence*](../pdf/gpt/theology/mariology/ark-of-the-covenant.pdf) · [Read](../web/gpt/theology/mariology/ark-of-the-covenant.html) | [*The Ark of the Covenant: From Sinai to the Woman Clothed with the Sun*](../pdf/claude/theology/mariology/ark-of-the-covenant.pdf) | [*The Dwelling of the Living God: The Ark of the Covenant and the Mother of the Lord*](../pdf/gemini/theology/mariology/ark-of-the-covenant.pdf) · [Read](../web/gemini/theology/mariology/ark-of-the-covenant.html) | Three independent Catholic studies of the Ark's biblical journey and its fulfillment in Mary; each edition retains its own text, sources, and drawings. |
+| **The Marian Dogmas: Mother of God, Ever-Virgin, Immaculate, Assumed** | [PDF](../pdf/gpt/theology/mariology/marian-dogmas.pdf) · [Read](../web/gpt/theology/mariology/marian-dogmas.html) | [PDF](../pdf/claude/theology/mariology/marian-dogmas.pdf) · [Read](../web/claude/theology/mariology/marian-dogmas.html) | — | The four dogmas and their biblical, patristic, Thomistic, historical, liturgical, and magisterial boundaries. |
+| **Dogma, Doctrine, and Devotion in Mariology** | [PDF](../pdf/gpt/theology/mariology/doctrinal-authority.pdf) · [Read](../web/gpt/theology/mariology/doctrinal-authority.html) | — | — | Catholic authority and assent applied to Marian dogmas, doctrines, titles, devotion, and private revelation. |
 
 ## Prayer and Devotion
 

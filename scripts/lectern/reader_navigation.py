@@ -11,7 +11,14 @@ from textual.widgets import Static
 
 from . import bridge
 from .dialogs import JanuaryReading, MissalSource, Pick, Reading
-from .missal import event_source_readings, memorial_sources, witness_label, witness_readings
+from .missal import (
+    event_source_readings,
+    extract_scripture_citations,
+    extract_study_references,
+    memorial_sources,
+    witness_label,
+    witness_readings,
+)
 from .repo import ROOT, Refused
 from .surface import Surface, shown
 from .widgets import Ink
@@ -30,8 +37,21 @@ def share(surface, route: str) -> None:
     url = _site_url()(route)
     surface.app.copy_to_clipboard(url)
     ink = Ink().line("The canonical reader URL has been copied to the terminal clipboard.", "italic")
-    ink.line().line(url)
+    ink.line().line(url, f'underline $primary link="{url}"')
     surface.app.push_screen(Reading("Share this reading", ink.content(), walks=False))
+
+
+def _setting_row(label: str, value: str = "", hotkey: str = "", *, accent: str = "$primary",
+                 muted_value: bool = False):
+    """Build a crisp aligned settings row with high-contrast current state and right hotkey hint."""
+    ink = Ink()
+    ink(label.ljust(27))
+    val_style = "$text-muted" if muted_value else "bold"
+    shown_val = value if len(value) <= 32 else value[:31] + "…"
+    ink(shown_val.ljust(33), val_style)
+    if hotkey:
+        ink(f" [{hotkey}]", "bold $hotkey")
+    return ink.content()
 
 
 class MissalSurface(Surface):
@@ -44,9 +64,10 @@ class MissalSurface(Surface):
         selector = "#day-compare" if getattr(self, "comparing", False) else self.READING
         return self.query_one(selector)
 
-    def show_reading_pane(self) -> None:
+    def show_reading_pane(self, *, hide_nav: bool = False) -> None:
         self.remove_class("navigation")
-        self.add_class("focus")
+        if hide_nav:
+            self.add_class("focus")
         self.call_after_refresh(self.focus_reading_panel)
 
     def focus_reading_panel(self) -> None:
@@ -55,13 +76,27 @@ class MissalSurface(Surface):
             panel.focus(scroll_visible=False)
 
     def action_focus_reading(self) -> None:
-        browsing = self.has_class("navigation") if self.has_class("compact") else not self.has_class("focus")
+        compact = self.has_class("compact")
+        browsing = self.has_class("navigation") if compact else not self.has_class("focus")
         if browsing:
-            self.show_reading_pane()
+            self.show_reading_pane(hide_nav=not compact)
         else:
             self.remove_class("focus")
-            self.add_class("navigation")
+            if compact:
+                self.add_class("navigation")
             self.call_after_refresh(self.query_one(self.BROWSE).focus)
+
+    def pair_column_width(self) -> int:
+        """Available reading width for side-by-side bilingual/compare columns (>=110 cols)."""
+        width = self.size.width or (self.app.size.width if self.app else 0)
+        if width < 110:
+            return 0
+        # Account for panel borders (2), horizontal padding (6), scrollbar (1), and side rail when visible.
+        nav_shown = (not self.has_class("focus") and not self.has_class("compact")
+                     and not self.has_class("comparing"))
+        rail = 39 if nav_shown else 0
+        available = width - rail - 12
+        return min(128, max(0, available))
 
     def source_rows(self) -> list[dict]:
         raise NotImplementedError
@@ -205,11 +240,11 @@ class MissalSurface(Surface):
                         selection = feria["january"]
                         self.show_january_prayers(feria["mass"], selection["weekday"], selection["phase"], role)
                     elif role in feria.get("roles", []):
-                        self.open_prayer_source(feria["mass"], role)
+                        self.open_prayer_source(feria["mass"], role, return_from=row.get("title") or "")
                     elif feria.get("owners"):
                         options = [(owner["id"], owner["label"]) for owner in feria["owners"]]
                         self.app.push_screen(Pick(role, options, feria["name"]),
-                                             lambda owner: self.open_prayer_source(owner, role) if owner else None)
+                                             lambda owner: self.open_prayer_source(owner, role, return_from=row.get("title") or "") if owner else None)
                     else:
                         ink = Ink().line(role, "bold")
                         if feria:
@@ -222,7 +257,7 @@ class MissalSurface(Surface):
                     return
                 group = next(one for one in groups if one["id"] == identifier)
 
-                self.open_memorial_group(row["mass"]["key"], role, group)
+                self.open_memorial_group(row["mass"]["key"], role, group, return_from=row.get("title") or "")
 
             self.app.push_screen(Pick(role, options, "Open a source in Propers. The memorial keeps its own Collect."), source_chosen)
 
@@ -232,13 +267,16 @@ class MissalSurface(Surface):
             self.app.push_screen(Pick(role, [(i, row["title"]) for i, row in enumerate(rows)]),
                                  lambda i: choose_source(rows[i]) if i is not None else None)
 
-    def open_prayer_source(self, mass: str, role: str, form: str | None = None) -> None:
-        self.app.action_surface("propers", calendar=self.calendar, mass=mass, form=form,
-                                prayerRole=role, ordinary=False, replace=True, bible=self.bible,
-                                orations=self.orations, textDisplay=self.text_display, companion=self.companion)
+    def open_prayer_source(self, mass: str, role: str, form: str | None = None, *, return_from: str = "") -> None:
+        intent = dict(calendar=self.calendar, mass=mass, form=form,
+                      prayerRole=role, ordinary=False, replace=True, bible=self.bible,
+                      orations=self.orations, textDisplay=self.text_display, companion=self.companion)
+        if self.surface_id() == "day" and return_from:
+            intent["returnFromDay"] = return_from
+        self.app.action_surface("propers", **intent)
 
     @work(thread=True, exclusive=True, group="memorial-source")
-    def open_memorial_group(self, memorial: str, role: str, group: dict) -> None:
+    def open_memorial_group(self, memorial: str, role: str, group: dict, *, return_from: str = "") -> None:
         try:
             forms = bridge.call("liturgy", "memorialPrayerForms", self.calendar, memorial, role, group["id"])
         except Refused as error:
@@ -247,7 +285,7 @@ class MissalSurface(Surface):
 
         def open_form(form) -> None:
             if form is not None:
-                self.open_prayer_source(group["mass"], role, form)
+                self.open_prayer_source(group["mass"], role, form, return_from=return_from)
 
         if len(forms) == 1 and not group.get("qualification"):
             self.deliver(open_form, forms[0]["id"])
@@ -274,35 +312,120 @@ class MissalSurface(Surface):
         except Refused as error:
             self.app.call_from_thread(self.app.notify, str(error), severity="error")
 
+    def action_explore(self) -> None:
+        """Contextual cross-surface jumps: Catena, Scripture, Sources, History, Day."""
+        rows = self.source_rows()
+        current = None
+        if not getattr(self, "comparing", False) and self.navigation.entries:
+            panel = self.reading_panel()
+            current = self.navigation.current(panel, panel.query_one(Static))
+        citations = extract_scripture_citations(rows, current_event_id=current)
+        _, source_ids = extract_study_references(rows, [])
+        # Also collect witnesses held on the active mass(es).
+        for row in rows:
+            for witness in (row.get("mass") or {}).get("witnesses") or []:
+                wid = witness.get("id") or ""
+                if wid.startswith(("edition.", "artifact.", "passage.")) and wid not in source_ids:
+                    source_ids.append(wid)
+        options: list[tuple[object, object]] = []
+        sections: dict[int, str] = {}
+        if self.surface_id() == "propers" and getattr(self, "reading", None):
+            sections[len(options)] = "Calendar"
+            options.append((("day-dates", None), "See dates this Mass occurs in Day  [1]"))
+        if citations:
+            sections[len(options)] = "Scripture & Fathers"
+            for slot, ref in citations[:8]:
+                options.append((("catena", ref), f"Catena ({slot}): {ref}  [3]"))
+                options.append((("scripture", ref), f"Scripture ({slot}): {ref}  [4]"))
+        if source_ids:
+            sections[len(options)] = "Source Library"
+            for ident in source_ids[:8]:
+                options.append((("sources", ident), f"Inspect {ident}  [6]"))
+        sections[len(options)] = "History"
+        options.append((("history", None), "How the Missal Changed  [7]"))
+
+        def picked(choice) -> None:
+            if not choice:
+                return
+            kind, target = choice
+            if kind == "catena":
+                self.app.action_surface("catena", ref=target)
+            elif kind == "scripture":
+                self.app.action_surface("scripture", ref=target)
+            elif kind == "sources":
+                if target.startswith("passage."):
+                    self.app.action_surface("sources", passage=target)
+                else:
+                    self.app.action_surface("sources", edition=target)
+            elif kind == "history":
+                self.app.action_surface("history", view="timeline")
+            elif kind == "day-dates" and hasattr(self, "action_calendar_dates"):
+                self.action_calendar_dates()
+
+        self.app.push_screen(
+            Pick("Related & Cross-Surface Links", options,
+                 "Jump to patristic commentary, Scripture, Source Library, or Missal history.",
+                 sections=sections, initial_highlight=True),
+            picked,
+        )
+
+    def _current_witness_summary(self) -> tuple[str, bool]:
+        selected = (self.selection() or {}).get("witness") if hasattr(self, "selection") else None
+        if not selected:
+            return "open", True
+        for row in self.source_rows():
+            for witness in (row.get("mass") or {}).get("witnesses") or []:
+                if witness.get("id") == selected:
+                    label = witness.get("label") or selected
+                    short = label.split(" — ")[0]
+                    return short, False
+        return selected, False
+
     def action_settings(self) -> None:
+        accent = f"${self.surface_id()}-color"
         edition = next((one["short"] for one in self.calendars if one["id"] == self.calendar), self.calendar)
         bible = next((one["label"] for one in self.bibles if one["id"] == self.bible), self.bible)
-        options = [("calendar", f"Missal   {edition}"), ("missal", "Mode   " + ("Missal" if self.ordinary else "Read")),
-                   ("choose", "Mass, form and source options")]
-        sections = {0: "Celebration", len(options): "Prayers"}
         names = {"en": "English", "la": "Latin"}
-        options.extend([("orations", "Oration language   " + names.get(self.orations, self.orations)),
-                        ("bilingual", "Parallel Latin   " + ("on" if self.text_display == "latin-and-selected" else "off")),
-                        ("witness", "Translation witness")])
+        witness_text, witness_muted = self._current_witness_summary()
+        companion_label = next((one["label"] for one in self.bibles if one["id"] == self.companion), self.companion) if self.companion else "none"
+        options = [
+            ("calendar", _setting_row("Missal", edition, "c", accent=accent)),
+            ("missal", _setting_row("Mode", "Missal" if self.ordinary else "Read", "m", accent=accent)),
+            ("choose", _setting_row("Mass, form & options", "", "s", accent=accent)),
+        ]
+        sections = {0: "Celebration", len(options): "Prayers"}
+        options.extend([
+            ("orations", _setting_row("Oration language", names.get(self.orations, self.orations), "o", accent=accent)),
+            ("bilingual", _setting_row("Parallel Latin", "on" if self.text_display == "latin-and-selected" else "off", "B",
+                                       accent=accent, muted_value=self.text_display != "latin-and-selected")),
+            ("witness", _setting_row("Translation witness", witness_text, "w", accent=accent, muted_value=witness_muted)),
+        ])
         if self.ordinary:
-            options.extend([("ordinary_language", "Ordinary language   " + names.get(self.ordinary_language, self.ordinary_language)),
-                            ("rubrics", "Ordinary rubrics   " + ("shown" if self.rubrics else "hidden"))])
+            options.extend([
+                ("ordinary_language", _setting_row("Ordinary language", names.get(self.ordinary_language, self.ordinary_language), "L", accent=accent)),
+                ("rubrics", _setting_row("Ordinary rubrics", "shown" if self.rubrics else "hidden", "r",
+                                         accent=accent, muted_value=not self.rubrics)),
+            ])
         if any(row.get("votiveChants") for row in self.source_rows()):
-            options.append(("votive_chants", "Seasonal and votive chants"))
+            options.append(("votive_chants", _setting_row("Seasonal & votive chants", "available", accent=accent)))
         if self.january_rows():
-            options.append(("january_prayers", "January weekday prayers"))
+            options.append(("january_prayers", _setting_row("January weekday prayers", "available", accent=accent)))
         roles = dict.fromkeys(role for row in self.source_rows() for role in memorial_sources(row).get("roles", []))
-        options.extend(("memorial/" + role, role + "   Sources") for role in roles)
+        options.extend(("memorial/" + role, _setting_row(role, "Sources", accent=accent)) for role in roles)
         sections[len(options)] = "Scripture"
-        options.extend([("bible", f"Bible   {bible}"), ("companion", "Latin companion   " + (self.companion or "none"))])
+        options.extend([
+            ("bible", _setting_row("Bible", bible, "b", accent=accent)),
+            ("companion", _setting_row("Latin companion", companion_label, "K",
+                                       accent=accent, muted_value=not self.companion)),
+        ])
 
         if any(link for row in self.source_rows() for _, link in witness_readings(row)):
             sections[len(options)] = "Sources"
             if any(link.get("rite_opening") for row in self.source_rows() for _, link in witness_readings(row)):
-                options.append(("rite_source", "Complete rite in facsimile"))
+                options.append(("rite_source", _setting_row("Complete rite in facsimile", "", accent=accent)))
             if any(link.get("prayer_roles") for row in self.source_rows() for _, link in witness_readings(row)):
-                options.append(("prayer_source", "English missal prayers   Ctrl+O"))
-            options.append(("missal_source", "Read source texts"))
+                options.append(("prayer_source", _setting_row("English missal prayers", "", "Ctrl+O", accent=accent)))
+            options.append(("missal_source", _setting_row("Read source texts", "", accent=accent)))
 
         def picked(action) -> None:
             if action in ("calendar", "bible"):
@@ -312,9 +435,11 @@ class MissalSurface(Surface):
                     if value is None:
                         return
                     if action == "calendar":
+                        self.app.remember_pref("calendar", value)
                         self.follow(calendar=value, browse=self.surface_id() == "propers")
                     else:
                         self.bible = value
+                        self.app.remember_pref("bible", value)
                         self.reload_reading()
                 self.app.push_screen(Pick("Missal" if action == "calendar" else "Bible", choices), apply)
             elif action and action.startswith("memorial/"):
@@ -322,7 +447,7 @@ class MissalSurface(Surface):
             elif action:
                 getattr(self, "action_" + action)()
 
-        self.app.push_screen(Pick("Reading settings", options, sections=sections), picked)
+        self.app.push_screen(Pick("Reading settings", options, sections=sections, initial_highlight=True), picked)
 
 
 class ReadingNavigation:
@@ -348,11 +473,24 @@ class ReadingNavigation:
         return max(0, prefix.get_height(text.styles, max(1, text.content_size.width)) - 1)
 
     def current(self, box, text) -> str | None:
+        if not self.entries:
+            return None
         if self.focused and abs(self.focused[1] - box.scroll_y) < 0.5:
             return self.focused[0]
         self.focused = None
+        if box.scroll_y <= 0.5:
+            return self.entries[0][0]
         index = bisect_right(self.entries, box.scroll_y, key=lambda entry: self._height(entry[2], text))
-        return self.entries[index - 1][0] if index else None
+        return self.entries[index - 1][0] if index else self.entries[0][0]
+
+    def current_label(self, box, text) -> str:
+        ident = self.current(box, text)
+        if not ident:
+            return ""
+        for entry_id, label, _ in self.entries:
+            if entry_id == ident:
+                return label.strip()
+        return ""
 
     def begin(self, identity: tuple, box, text) -> None:
         self.saved = (self.current(box, text), box.scroll_y) if identity == self.identity else None
@@ -389,8 +527,18 @@ class ReadingNavigation:
             surface.app.notify("There are no liturgical units in this reading yet.")
             return
         current = self.current(box, text)
-        options = [(ident, label + ("  ·  here" if ident == current else ""))
-                   for ident, label, _ in self.entries]
+        accent = f"${surface.surface_id()}-color"
+        options = []
+        for ident, label, _ in self.entries:
+            ink = Ink()
+            is_section = not label.startswith("  ") and ident.startswith("ordinary-section/")
+            if ident == current:
+                ink(label, f"bold {accent}")("  · here", f"bold {accent}")
+            elif is_section:
+                ink(label, f"bold {accent}")
+            else:
+                ink(label)
+            options.append((ident, ink.content()))
 
         def picked(ident) -> None:
             if ident is None:
@@ -405,4 +553,4 @@ class ReadingNavigation:
             surface.call_after_refresh(move)
             box.focus()
 
-        surface.app.push_screen(Pick("Contents", options, "Source events in their liturgical order."), picked)
+        surface.app.push_screen(Pick("Contents", options, "Liturgical units in order · enter to jump."), picked)

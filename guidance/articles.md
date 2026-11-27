@@ -92,7 +92,11 @@ being one.
 Work the original language, the Septuagint and the Vulgate where they
 bear, and the reception in both the Jewish and the Christian traditions
 where both are relevant — reading each witness at its own locus, never
-through a quotation in a later author. Preserve disagreement among them
+through a quotation in a later author. Summarizing a commentator's reading
+from a catalog-only metadata record (`edition.toml`) without inspecting the
+text at its locus does not satisfy this requirement; either inspect a
+witness at the locus or keep the study bounded to witnesses actually read.
+Preserve disagreement among them
 instead of harmonizing it. Report material negative results as findings:
 that the Fathers did not notice a difficulty, or that a widely repeated
 claim has no source behind it, is worth more to a reader than another

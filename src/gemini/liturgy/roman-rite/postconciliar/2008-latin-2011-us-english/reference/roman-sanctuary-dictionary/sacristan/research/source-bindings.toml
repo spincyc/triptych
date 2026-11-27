@@ -1,0 +1,45 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/sacristan"
+
+[[bindings]]
+source_id = "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002"
+loci = ["105", "117", "118", "118(c)", "119", "279", "287", "304", "307", "327", "335", "336", "346"]
+role = "official-control"
+states = ["cataloged"]
+context = "Universal Latin IGMR norms governing sacristy preparation, altar cloths, credence arrangement, sacred vessels, linens, books, candles, and seasonal vestments."
+
+[[bindings]]
+source_id = "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021"
+loci = ["105", "117", "118", "118(c)", "119", "279", "287", "301", "304", "329", "339", "346"]
+role = "official-control"
+states = ["cataloged"]
+context = "United States GIRM (2011; emended 2021) controlling U.S. adaptations for colored under-cloths (304), sacred vessel materials (329), server attire (339), and funeral/solemn vestment colors (346e, 346h)."
+
+[[bindings]]
+source_id = "edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008"
+loci = ["2008 emended reprint"]
+role = "currentness-control"
+states = ["cataloged"]
+context = "Declared Latin typical reprint (2008), collated via Notitiae 44 (2008) nos. 503--504."
+
+[[bindings]]
+source_id = "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981"
+loci = ["Praenotanda 32-37, 69, 103-107"]
+role = "official-control"
+states = ["cataloged"]
+context = "Controls Lectionary cycle preparation (Years A/B/C and I/II) and placement of the Lectionary vs. Book of the Gospels."
+
+[[bindings]]
+source_id = "edition.catholic-church.codex-iuris-canonici-1983.english-vatican-web-codex-2026-07-25"
+loci = ["canon-847", "canon-858", "canon-938", "canon-939", "canon-940", "canon-1235", "canon-1236", "canon-1237", "canon-1238", "canon-1239"]
+role = "official-control"
+states = ["cataloged"]
+context = "Governs annual renewal and safekeeping of holy oils (847), tabernacle key security and sanctuary lamp (938--940), and altar/font care."
+
+[[bindings]]
+source_id = "work.united-states-conference-of-catholic-bishops.guidelines-publication-liturgical-books"
+loci = ["title-and-copyright-pages"]
+role = "rights-control"
+states = ["cataloged"]
+context = "Rights and non-verbatim-reproduction control for this use-derived edition (2025 printing, eff. 29 Nov 2026)."
