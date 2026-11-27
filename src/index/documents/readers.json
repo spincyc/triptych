@@ -1,5 +1,5 @@
 {
- "generation_commit": "ba9e768eb6c98ea03572bebc4f495c472cf9ab3a",
+ "generation_commit": "2e03fa096d4ac0ddb6f85d90a5f5e2d964b2b389",
  "readers": {
   "claude/articles/canon-law/clerical-celibacy-chastity-and-continence": {
    "canonical": "articles/canon-law/clerical-celibacy-chastity-and-continence",
@@ -4980,6 +4980,523 @@
    "release_status": "alpha",
    "source_format": "latex",
    "title": "The Holy Rosary: Form, Mysteries, History, and Teaching"
+  },
+  "gemini/articles/faith/four-last-things-03-hell": {
+   "canonical": "articles/faith/four-last-things-03-hell",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gemini/articles/faith/four-last-things-03-hell"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "contents": true,
+    "document": "articles/faith/four-last-things-03-hell",
+    "eligibility": "eligible",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-25",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gemini/articles/faith/four-last-things-03-hell/generation-metadata.tex",
+    "src/gemini/articles/faith/four-last-things-03-hell/main.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gemini/articles/faith/four-last-things-03-hell",
+    "src/common"
+   ],
+   "document": "articles/faith/four-last-things-03-hell",
+   "edition": "main",
+   "entrypoint": "src/gemini/articles/faith/four-last-things-03-hell/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gemini/articles/faith/four-last-things-03-hell",
+   "kind": "article-faith",
+   "provider": "gemini",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "The Four Last Things, III: Depart from Me"
+  },
+  "gemini/articles/faith/reading-metaphysics": {
+   "canonical": "articles/faith/reading-metaphysics",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gemini/articles/faith/reading-metaphysics"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "contents": true,
+    "document": "articles/faith/reading-metaphysics",
+    "eligibility": "eligible",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-25",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gemini/articles/faith/reading-metaphysics/generation-metadata.tex",
+    "src/gemini/articles/faith/reading-metaphysics/main.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gemini/articles/faith/reading-metaphysics",
+    "src/common"
+   ],
+   "document": "articles/faith/reading-metaphysics",
+   "edition": "main",
+   "entrypoint": "src/gemini/articles/faith/reading-metaphysics/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gemini/articles/faith/reading-metaphysics",
+   "kind": "article-faith",
+   "provider": "gemini",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "Reading Metaphysics: What Is Being Claimed, and Why Should I Believe It?"
+  },
+  "gemini/articles/scripture/abraham-and-the-daylight-stars": {
+   "canonical": "articles/scripture/abraham-and-the-daylight-stars",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gemini/articles/scripture/abraham-and-the-daylight-stars"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "contents": true,
+    "document": "articles/scripture/abraham-and-the-daylight-stars",
+    "eligibility": "eligible",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-25",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gemini/articles/scripture/abraham-and-the-daylight-stars/generation-metadata.tex",
+    "src/gemini/articles/scripture/abraham-and-the-daylight-stars/main.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gemini/articles/scripture/abraham-and-the-daylight-stars",
+    "src/common"
+   ],
+   "document": "articles/scripture/abraham-and-the-daylight-stars",
+   "edition": "main",
+   "entrypoint": "src/gemini/articles/scripture/abraham-and-the-daylight-stars/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gemini/articles/scripture/abraham-and-the-daylight-stars",
+   "kind": "article-scripture",
+   "provider": "gemini",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "Abraham and the Daylight Stars"
+  },
+  "gemini/articles/scripture/the-linen-cloths-at-the-empty-tomb": {
+   "canonical": "articles/scripture/the-linen-cloths-at-the-empty-tomb",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gemini/articles/scripture/the-linen-cloths-at-the-empty-tomb"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "contents": true,
+    "document": "articles/scripture/the-linen-cloths-at-the-empty-tomb",
+    "eligibility": "eligible",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-25",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gemini/articles/scripture/the-linen-cloths-at-the-empty-tomb/generation-metadata.tex",
+    "src/gemini/articles/scripture/the-linen-cloths-at-the-empty-tomb/main.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gemini/articles/scripture/the-linen-cloths-at-the-empty-tomb",
+    "src/common"
+   ],
+   "document": "articles/scripture/the-linen-cloths-at-the-empty-tomb",
+   "edition": "main",
+   "entrypoint": "src/gemini/articles/scripture/the-linen-cloths-at-the-empty-tomb/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gemini/articles/scripture/the-linen-cloths-at-the-empty-tomb",
+   "kind": "article-scripture",
+   "provider": "gemini",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "The Linen Cloths at the Empty Tomb"
+  },
+  "gemini/liturgy/roman-rite/1962/seasons/advent": {
+   "canonical": "liturgy/roman-rite/1962/seasons/advent",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gemini/liturgy/roman-rite/1962/seasons/advent"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "contents": true,
+    "document": "liturgy/roman-rite/1962/seasons/advent",
+    "eligibility": "eligible",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-25",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gemini/liturgy/roman-rite/1962/seasons/advent/generation-metadata.tex",
+    "src/gemini/liturgy/roman-rite/1962/seasons/advent/main.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gemini/liturgy/roman-rite/1962/seasons/advent",
+    "src/common"
+   ],
+   "document": "liturgy/roman-rite/1962/seasons/advent",
+   "edition": "main",
+   "entrypoint": "src/gemini/liturgy/roman-rite/1962/seasons/advent/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gemini/liturgy/roman-rite/1962/seasons/advent",
+   "kind": "seasonal-handbook-1962",
+   "provider": "gemini",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "Keeping Advent: A Companion to the 1962 Roman Rite"
+  },
+  "gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/altar-server": {
+   "canonical": "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/altar-server",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/altar-server"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "contents": true,
+    "document": "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/altar-server",
+    "eligibility": "eligible",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-25",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/altar-server/generation-metadata.tex",
+    "src/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/altar-server/main.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/altar-server",
+    "src/common"
+   ],
+   "document": "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/altar-server",
+   "edition": "main",
+   "entrypoint": "src/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/altar-server/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/altar-server",
+   "kind": "pictorial-dictionary-postconciliar",
+   "provider": "gemini",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "The Illustrated Dictionary of the Postconciliar Roman Sanctuary: Altar Server Visual Dictionary"
+  },
+  "gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/comprehensive": {
+   "canonical": "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/comprehensive",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/comprehensive"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "contents": true,
+    "document": "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/comprehensive",
+    "eligibility": "eligible",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-25",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/comprehensive/generation-metadata.tex",
+    "src/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/comprehensive/main.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/comprehensive",
+    "src/common"
+   ],
+   "document": "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/comprehensive",
+   "edition": "main",
+   "entrypoint": "src/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/comprehensive/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/comprehensive",
+   "kind": "pictorial-dictionary-postconciliar",
+   "provider": "gemini",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "The Illustrated Dictionary of the Postconciliar Roman Sanctuary: Comprehensive Adult Reference"
+  },
+  "gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/general-reader": {
+   "canonical": "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/general-reader",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/general-reader"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "contents": true,
+    "document": "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/general-reader",
+    "eligibility": "eligible",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-25",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/general-reader/generation-metadata.tex",
+    "src/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/general-reader/main.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/general-reader",
+    "src/common"
+   ],
+   "document": "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/general-reader",
+   "edition": "main",
+   "entrypoint": "src/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/general-reader/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/general-reader",
+   "kind": "pictorial-dictionary-postconciliar",
+   "provider": "gemini",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "The Illustrated Dictionary of the Postconciliar Roman Sanctuary: General Reader Visual Dictionary"
+  },
+  "gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/sacristan": {
+   "canonical": "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/sacristan",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/sacristan"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "contents": true,
+    "document": "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/sacristan",
+    "eligibility": "eligible",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-25",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/sacristan/generation-metadata.tex",
+    "src/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/sacristan/main.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/sacristan",
+    "src/common"
+   ],
+   "document": "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/sacristan",
+   "edition": "main",
+   "entrypoint": "src/gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/sacristan/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/sacristan",
+   "kind": "pictorial-dictionary-postconciliar",
+   "provider": "gemini",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "The Illustrated Dictionary of the Postconciliar Roman Sanctuary: Sacristan Visual Dictionary"
+  },
+  "gemini/theology/angelology": {
+   "canonical": "theology/angelology",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gemini/theology/angelology"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "contents": true,
+    "document": "theology/angelology",
+    "eligibility": "eligible",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-26",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gemini/theology/angelology/generation-metadata.tex",
+    "src/gemini/theology/angelology/main.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gemini/theology/angelology",
+    "src/common"
+   ],
+   "document": "theology/angelology",
+   "edition": "main",
+   "entrypoint": "src/gemini/theology/angelology/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gemini/theology/angelology",
+   "kind": "angelology",
+   "provider": "gemini",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "The City of Unseen Spirits: Catholic Angelology in Scripture, the Fathers, the Celestial Hierarchy, and St. Thomas Aquinas"
+  },
+  "gemini/theology/mariology/ark-of-the-covenant": {
+   "canonical": "theology/mariology/ark-of-the-covenant",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gemini/theology/mariology/ark-of-the-covenant"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "contents": true,
+    "document": "theology/mariology/ark-of-the-covenant",
+    "eligibility": "eligible",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-25",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gemini/theology/mariology/ark-of-the-covenant/generation-metadata.tex",
+    "src/gemini/theology/mariology/ark-of-the-covenant/main.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gemini/theology/mariology/ark-of-the-covenant",
+    "src/common"
+   ],
+   "document": "theology/mariology/ark-of-the-covenant",
+   "edition": "main",
+   "entrypoint": "src/gemini/theology/mariology/ark-of-the-covenant/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gemini/theology/mariology/ark-of-the-covenant",
+   "kind": "marian-monograph",
+   "provider": "gemini",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "The Dwelling of the Living God: The Ark of the Covenant and the Mother of the Lord"
   },
   "gpt/articles/canon-law/clerical-celibacy-chastity-and-continence": {
    "canonical": "articles/canon-law/clerical-celibacy-chastity-and-continence",
