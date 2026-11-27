@@ -1,0 +1,18 @@
+{
+  "artifact_path": "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/synthesis.tex",
+  "artifacts": [
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/synthesis.tex",
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/10-concise-inventory.tex",
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/11-concise-overview.tex",
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/12-concise-themes.tex",
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/13-concise-commentary.tex",
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/14-concise-apparatus.tex",
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/production-review.md"
+  ],
+  "disposition": "PASS",
+  "finding_dispositions": [],
+  "iteration": 3,
+  "notes": "Aligned 100% with study-review iteration 4 (which touched only web-fidelity markup in sections/01..06). Markup scan across sections/10..14 found 0 bare \\ref{...}, 0 \\textbf inside italic environments/macros, and 1 bare \\dots followed by a word (sections/14-concise-apparatus.tex:13, \\work{Missale Romanum\\dots editio typica}), repaired to \\dots{} editio. Synthesis web-conversion probe (build/tpt-runs/1166cebbde68c425/artifacts/derive-synthesis-3/web-probe/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-synthesis.md, 7,716 words / 49,031 bytes; rendered HTML via scripts/_markdown_render.py 58,217 bytes) confirmed 0 bare numeric links, 0 </em><em> emphasis splits, 0 \u2026[A-Za-z] missing spaces, 0 residual backslashes, 0 unconverted braces, and 0 raw asterisks. Disposable print-document and 3-pass pdflatex probes (deleted after inspection) confirmed 12 physical pages, 0 warnings/overfulls, all 13 triptych:concise:* zref physical-page markers on target pages (p. 1 inventory+overview+4 senses, p. 2 chronology, pp. 3-4 themes, p. 5 commentary:start), and page 12 References + derived revision timestamp + colophon with zero spill page. Substantive word count (sections/10..13): 5,943 whitespace words (6,664 total authored sections/10..14). SHA-256 verification confirmed ONLY sections/14-concise-apparatus.tex and research/production-review.md changed; all 37 other leaf files remain byte-identical.",
+  "stage": "derive-synthesis",
+  "summary": "Re-verified the concise study (synthesis.tex and sections/10-concise-inventory.tex through 14-concise-apparatus.tex) against the accepted iteration-4 expansive study, fixed the sole synthesis web-rendering ellipsis-spacing defect in sections/14-concise-apparatus.tex line 13 (\\dots editio -> \\dots{} editio) while preserving sections/10..13 byte-identical, updated research/production-review.md, and verified all synthesis preflight checks, the synthesis web-conversion HTML probe, and 12-page zref pagination."
+}

@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v20
+WORKFLOW_DIGEST: 9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec
+RUN_ID: 1166cebbde68c425
+COMMIT: 0f8fb307cde69819014f3d26a7f0cd77cb6ce9a9
+STAGE: research-preflight
+ITERATION: 4
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-11-29","proper":"liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent","provider":"gemini","research_handoff":"none"}
+DOCUMENT_ROOT: src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"RES-014","location":"research/scope.md:77; research/source-bindings.toml:874; research/source-dispositions.toml:1333","problem":"The research locator records for John Beleth, Summa de ecclesiasticis officiis, Caput LV (ia-djvu-ocr-22b781bf, OCR lines 4080-4084 attesting Ad te levavi animam meam) omit its printed Migne PL 202 column number (col. 62, verified directly at OCR line 4003 above lines 4080-4084), whereas Caput LXIV is given with PL 202 cols. 71-72; omitting col. 62 from the research record leaves downstream authoring without the exact PL column needed for unified references (as flagged in STU-002 item 3).","required_result":"Add 'PL 202 col. 62' alongside OCR lines 4080-4084 for Beleth Caput LV in research/scope.md:77, research/source-bindings.toml:874, and research/source-dispositions.toml:1333 (updating the corresponding binding_sha256 digest in source-dispositions.toml if source-bindings.toml is touched).","severity":"advisory"},{"id":"STU-007","location":"sections/04-lane-eschatological.tex:28; sections/05-lane-incarnational.tex:42; sections/06-lane-conversion.tex:22; sections/07-comparison.tex:8; sections/08-scope.tex:13","problem":"Minor markup, inline-translation, and scope-wording slips: (1) sections/05-lane-incarnational.tex:42 and sections/07-comparison.tex:8 wrap the English words 'all the trees' in \\latin{all the trees}; (2) sections/04-lane-eschatological.tex:28 wraps transliterated Greek komos in \\latin{komos}; (3) sections/06-lane-conversion.tex:22 prints \\latin{Dirige me in veritate tua, et doce me} without an inline English translation; and (4) sections/08-scope.tex:13 writes that Bernard's standing-inventory row 'remains pending', which reads like an internal deferred-maintenance placeholder (guidance/editorial.md, 'No side in what is described' / public-alpha bounds).","required_result":"Replace \\latin{all the trees} with plain English quotes ('all the trees') or Latin \\latin{et omnes arbores} at 05:42 and 07:8; change \\latin{komos} to \\emph{komos} at 04:28; translate \\latin{Dirige me in veritate tua, et doce me} inline ('Direct me in thy truth, and teach me') at 06:22; and reword 08:13 factually ('is cited from verified tracked editions as a supporting Doctor; every interpretation already rests on at least two distinct carrying authors registered in the standing inventory').","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

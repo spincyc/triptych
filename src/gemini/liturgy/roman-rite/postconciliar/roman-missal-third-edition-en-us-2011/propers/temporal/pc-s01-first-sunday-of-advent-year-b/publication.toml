@@ -1,0 +1,69 @@
+evidence_inputs = [
+  "guidance/liturgy/postconciliar-propers-registry.md",
+  "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/README.md",
+  "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/formula-dispositions.md",
+  "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/occurrences-2026.md",
+  "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/formularies/pc-s01-first-sunday-of-advent/propers/verified.md",
+]
+
+[[structure]]
+role = "retrieved-source"
+source = "propers/retrieved.txt"
+
+[document]
+type = "proper-study-v1"
+running-head = "First Sunday of Advent, Year B"
+
+[document.main]
+pdftitle = "First Sunday of Advent, Year B: Expansive Study"
+pdfsubject = "Postconciliar Roman Rite (U.S. English, 2011) First Sunday of Advent, Year B"
+title = "First Sunday of Advent, Year B"
+subtitle = "Expansive Liturgical and Exegetical Study"
+source-line = "Roman Missal, Third Edition (2008 Latin / 2011 U.S. English) --- U.S. Lectionary No.~2"
+occasion-line = "Sunday, November 29, 2026 --- Liturgical Year 2027 (Year B, Weekday Cycle I)"
+body = [
+  { component = "opening" },
+  { component = "appointed-text" },
+  { component = "proper-treatment" },
+  { component = "lane-hidden-presence" },
+  { component = "lane-covenant-fidelity" },
+  { component = "lane-vigilant-stewardship" },
+  { component = "comparison" },
+]
+apparatus = [
+  { component = "liturgical-resolution" },
+  { component = "scope-qualifications" },
+  { component = "references" },
+]
+
+[document.synthesis]
+pdftitle = "First Sunday of Advent, Year B: Concise Study"
+pdfsubject = "Postconciliar Roman Rite (U.S. English, 2011) First Sunday of Advent, Year B --- Concise Study"
+title = "First Sunday of Advent, Year B"
+subtitle = "Concise Liturgical and Exegetical Study"
+source-line = "Roman Missal, Third Edition (2008 Latin / 2011 U.S. English) --- U.S. Lectionary No.~2"
+occasion-line = "Sunday, November 29, 2026 --- Liturgical Year 2027 (Year B, Weekday Cycle I)"
+opening = [
+  { component = "concise-inventory" },
+  { component = "concise-overview" },
+]
+body = [
+  { component = "concise-themes" },
+  "\\clearpage",
+  { component = "concise-commentary" },
+  { component = "concise-apparatus" },
+]
+
+[document.homily]
+pdftitle = "First Sunday of Advent, Year B: Homily"
+pdfsubject = "Postconciliar Roman Rite (U.S. English, 2011) First Sunday of Advent, Year B --- Homily"
+title = "First Sunday of Advent, Year B"
+subtitle = "Homily"
+source-line = "Roman Missal, Third Edition (2008 Latin / 2011 U.S. English) --- U.S. Lectionary No.~2"
+occasion-line = "Sunday, November 29, 2026 --- Liturgical Year 2027 (Year B, Weekday Cycle I)"
+homily = [
+  { component = "homily-spoken" },
+]
+apparatus = [
+  { component = "homily-note" },
+]

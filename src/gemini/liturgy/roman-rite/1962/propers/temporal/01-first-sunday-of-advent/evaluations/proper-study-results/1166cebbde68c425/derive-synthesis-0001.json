@@ -1,0 +1,21 @@
+{
+  "artifact_path": "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/synthesis.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "SYN-001",
+      "outcome": "repaired"
+    },
+    {
+      "id": "SYN-002",
+      "outcome": "repaired"
+    },
+    {
+      "id": "SYN-003",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "stage": "derive-synthesis",
+  "summary": "Repaired all three blocking synthesis findings (SYN-001: all seven factual, chronological, and attribution corrections across sections/12-concise-themes.tex and sections/13-concise-commentary.tex; SYN-002: clause-exact author attribution in sections/11-concise-overview.tex lines 6-7; SYN-003: broke all semicolon-chained author stacks and overloaded sentences across sections/12-concise-themes.tex and sections/13-concise-commentary.tex into crisp one-idea plain prose) and cleared both advisories (SYN-004: expanded AAS, RG, and RGMR at first use in 14:4, replaced bare RGMR 507 in 13:75 with plain prose, and trimmed unreferenced rubric numbers; SYN-005: updated comparison table labels at 13:81 and 13:85 and split the Gueranger quotation cleanly). Updated research/production-review.md; all source, component, preflight (12/12, including references-used 21/21 entries and 9/9 held loci), provenance, metadata, SHA-256 seal, and 12-page scratch pdflatex layout checks (all 13 triptych:concise:* markers on target pages, 0 overfull warnings) passed."
+}

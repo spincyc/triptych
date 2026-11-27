@@ -1,0 +1,25 @@
+{
+  "artifact_path": "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/synthesis.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "SYN-001",
+      "outcome": "repaired"
+    },
+    {
+      "id": "SYN-002",
+      "outcome": "repaired"
+    },
+    {
+      "id": "SYN-003",
+      "outcome": "repaired"
+    },
+    {
+      "id": "SYN-004",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "stage": "derive-synthesis",
+  "summary": "Repaired all four blocking synthesis findings (SYN-001 through SYN-004) and cleared all four items of advisory SYN-005 exclusively inside sections/synthesis/*.tex and research/production-review.md without modifying any of the 33 sealed research, expansive-study, manifest, chronology, generated, or source files. All synthesis source-mode verification checks (document-types refresh --check, _proper_study.py check --edition synthesis, all 12 check-content-preflight --edition synthesis checks, check-generation-metadata, and check-web-edition) passed with exit code 0, and an unretained scratch-only pdflatex sanity check confirmed the settled 4-page opening (pp. 1, 2, 3-4, commentary p. 5) and 12-page total."
+}

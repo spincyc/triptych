@@ -1,0 +1,15 @@
+{
+  "artifact_path": "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/homily.tex",
+  "artifacts": [
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/homily.tex",
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/20-homily.tex",
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/21-homily-note.tex",
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/production-review.md"
+  ],
+  "disposition": "PASS",
+  "finding_dispositions": [],
+  "iteration": 2,
+  "notes": "Aligned 100% with study-review iteration 4 (strictly web-fidelity markup repairs WEB-001..WEB-003 in sections/01..06) and synthesis-review iteration 3 (1-line \\dots{} repair in sections/14-concise-apparatus.tex:13), adding zero new evidence-dependent claims. Markup audit across homily.tex, sections/20-homily.tex, and sections/21-homily-note.tex found 0 bare \\ref{...}, 0 \\textbf inside italic environments or macros, and 0 \\dots/\\ldots/ellipses; homily.tex, sections/20-homily.tex, and sections/21-homily-note.tex remain byte-identical. Spoken body (sections/20-homily.tex): 1,374 spoken words (1,363 raw whitespace tokens across 12 continuous paragraphs), word-count delivery estimate ~10.6-11.5 minutes at 120-130 wpm (~11.0-11.9 minutes at 115-125 wpm; estimate only, not a timed human delivery); terminal note (sections/21-homily-note.tex): 1,000 raw whitespace tokens with 9 used References entries. Homily web-conversion probe (build/tpt-runs/1166cebbde68c425/artifacts/derive-homily-2/web-probe/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-homily.md, 16,466 bytes / 2,615 words; rendered HTML via scripts/_markdown_render.py 17,284 bytes) confirmed 0 bare numeric links, 0 </em><em> emphasis splits, 0 <strong> nested inside <em>, 0 \u2026[A-Za-z] missing spaces, 0 residual backslashes, 0 raw braces, 0 raw asterisks, and 0 residual TeX command names. SHA-256 verification confirmed ONLY research/production-review.md changed inside the leaf; all 38 other leaf files remain byte-identical.",
+  "stage": "derive-homily",
+  "summary": "Re-verified the homily companion (homily.tex, sections/20-homily.tex, sections/21-homily-note.tex) against the accepted iteration-4 expansive study and iteration-3 concise synthesis, confirmed zero web-rendering markup defects so all homily TeX files remain byte-identical, updated research/production-review.md, and passed all homily preflight checks and the homily web-conversion HTML probe."
+}

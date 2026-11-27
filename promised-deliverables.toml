@@ -1,6 +1,74 @@
 schema_version = 1
 
 [[deliverables]]
+id = "gemini-advent-1-propers-2026-11-29"
+owner = "PROJECT-WORK.md"
+promise = "Add a Gemini column to the propers tables in both library/traditional-latin-mass.md and library/novus-ordo-liturgy.md (consolidating the postconciliar table to one row per week), drive proper-study v20 runs to terminal ACCEPTED for Sunday 29 November 2026 in both 1962 Roman Rite (01-first-sunday-of-advent) and U.S. postconciliar Roman Rite (pc-s01-first-sunday-of-advent-year-b), cold review all work, and publish validated commits to main."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "gemini-propers-catalog-columns"
+  criterion = "Both library/traditional-latin-mass.md and library/novus-ordo-liturgy.md carry a Gemini column across their propers tables (with library/novus-ordo-liturgy.md consolidated to one row per week), supported by mobile CSS and publication checks, and link both completed Gemini First Sunday of Advent three-document editions."
+  status = "pass"
+  evidence = [
+    "library/traditional-latin-mass.md",
+    "library/novus-ordo-liturgy.md",
+    "release/public-alpha/assets/site.css",
+    "tools/public-alpha",
+    "tools/tests/test_public_alpha.py",
+    "tools/tests/test_calendar_computation_guidance.py",
+    "PROJECT-WORK.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "gemini-1962-advent-1-accepted"
+  criterion = "An independent proper-study v20 run for provider gemini, identity liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent, date 2026-11-29 reaches terminal ACCEPTED with all fresh cold reviews, archived run evidence, cycles record, and verified native print proofs."
+  status = "pass"
+  evidence = [
+    "guidance/liturgy/propers-production-plan.md",
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/publication.toml",
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/web-edition.toml",
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/1166cebbde68c425/record.md",
+    "workflows/reviews/gemini-1962-01-advent-2026-11-29/CYCLES.md",
+    "release/publications/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent.json",
+    "release/publications/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-synthesis.json",
+    "release/publications/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-homily.json",
+    "PROJECT-WORK.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "gemini-postconciliar-advent-1-accepted"
+  criterion = "An independent proper-study v20 run for provider gemini, identity liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b, date 2026-11-29 reaches terminal ACCEPTED with its own edition-locale registry and shared formulary owner, all fresh cold reviews, archived run evidence, cycles record, and verified native print proofs."
+  status = "pass"
+  evidence = [
+    "guidance/liturgy/propers-production-plan.md",
+    "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/README.md",
+    "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/formularies/pc-s01-first-sunday-of-advent/propers/verified.md",
+    "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/publication.toml",
+    "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/web-edition.toml",
+    "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/6360bf57cd7d36ba/record.md",
+    "workflows/reviews/gemini-postconciliar-pc-s01-b-advent-2026-11-29/CYCLES.md",
+    "release/publications/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b.json",
+    "release/publications/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b-synthesis.json",
+    "release/publications/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b-homily.json",
+    "PROJECT-WORK.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "cold-review-gates-and-main"
+  criterion = "An independent cold review audits the full integrated work, all browser-product, release-binding, source-inventory, corpus-index, public-site, and unit-test gates pass on clean HEAD, and validated commits are published to origin/main."
+  status = "pass"
+  evidence = [
+    "release/browser-products.json",
+    "release/public-alpha.json",
+    "release/rights/public-alpha-2026-07-15.md",
+    "src/sources/inventories/gemini-publications-v1.toml",
+    "src/sources/inventories/gemini-classification-review-v1.toml",
+    "src/index/corpus/index.json",
+    "PROJECT-WORK.md",
+  ]
+
+[[deliverables]]
 id = "gemini-wave-two-showcase-2026-11-27"
 owner = "PROJECT-WORK.md"
 promise = "Deliver six parallel Gemini Wave 2 tracks with independent read-only cold reviews, full remediation, warranted guidance updates, and publication to main: (1) interactive postconciliar sanctuary picture dictionary gallery and provider source-inventory hygiene; (2) 1962 Christmas Seasonal Handbook; (3) Postconciliar Advent Seasonal Handbook; (4) Four Last Things quartet completion (Death, Judgment, Heaven); (5) The Seven Sacraments and At a Glance; and (6) canonical biographies of Saint Ambrose of Milan and Pope Saint Gregory the Great."
@@ -3335,7 +3403,8 @@ state = "complete"
   evidence = ["library/novus-ordo-liturgy.md", "guidance/repository.md", "PROJECT-WORK.md"]
   check = "contains"
   path = "library/novus-ordo-liturgy.md"
-  needle = "| Sunday | Cycle | ChatGPT | Claude |"
+  needle = "| Sunday | ChatGPT | Claude | Gemini |"
+  note = "On 2026-11-25 the maintainer requested a Gemini column and one row per week with inline Year A/B/C cycle labels; provider column separation and cycle distinctions remain preserved."
 
   [[deliverables.requirements]]
   id = "validated-checkpoint"
@@ -3520,8 +3589,8 @@ state = "complete"
   evidence = ["library/novus-ordo-liturgy.md", "scripts/_proper_study.py", "tools/tests/test_workflow_proper_study.py"]
   check = "contains"
   path = "library/novus-ordo-liturgy.md"
-  needle = "| Sunday | Cycle | ChatGPT | Claude |"
-  note = "On 2026-09-28 the maintainer requested separate GPT and Claude columns. That presentation supersedes provider names repeated inside cycle cells; the attribution requirement and both gate regressions remain."
+  needle = "| Sunday | ChatGPT | Claude | Gemini |"
+  note = "On 2026-09-28 the maintainer requested separate GPT and Claude columns, and on 2026-11-25 requested a Gemini column and one row per week with inline Year A/B/C cycle labels. Provider column attribution and both gate regressions remain."
 
   [[deliverables.requirements]]
   id = "pc-s51-catalog-live"

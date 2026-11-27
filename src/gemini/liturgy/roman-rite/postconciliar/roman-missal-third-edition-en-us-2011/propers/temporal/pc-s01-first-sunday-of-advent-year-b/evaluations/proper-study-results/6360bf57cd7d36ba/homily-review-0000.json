@@ -1,0 +1,274 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "HOM-001",
+      "location": "sections/homily/10-homily.tex:3, 5, 7, 9, 11, 13, 17, 21",
+      "problem": "A recurring lecture-register pattern hands exegetical points repeatedly to named patristic authorities instead of carrying the Fathers' arguments primarily in the preacher's own plain speech (proper-study/homily-review.md; guidance/liturgy/propers-three-documents.md, 'The homily'; guidance/editorial.md, 'Say what the texts say, plainly'). Ten explicit authority hand-offs occur across eight of the ten body paragraphs \u2014 including six consecutive paragraphs (P2-P7) \u2014 using seminar/commentary verbs: line 3 ('St.~Jerome refuses to let that daring accusation turn God into the author of sin, tracing Israel's complaint to God's great forbearance'), line 5 ('St.~Jerome stops at that sudden shift from wish to accomplished fact:'), line 7 ('On that complaint about God's hidden face, St.~Jerome turns straight to the refrain of today's psalm'), line 9 ('St.~Augustine wondered how the face of God could ever grow dark. His answer goes straight to the mystery of Christ:'), line 11 ('St.~John Chrysostom fastens on that word:'), line 13 ('Yet Chrysostom catches a quiet warning... Chrysostom remarks'), line 17 ('St.~Augustine answered that objection plainly:... St.~Gregory the Great gives three plain marks'), and line 21 ('St.~Augustine also hears goodness as interior sweetness:'). Contrast line 15 (P8), where the preacher carries Bede's, Gregory's, and Hilary's arguments naturally in preaching voice without naming them.",
+      "repair_target": "homily",
+      "required_result": "Rewrite the body of sections/homily/10-homily.tex so the preacher's own plain voice carries the exegetical argument across the readings, retaining at most two or three natural, earned patristic mentions across the whole homily while recording all exact patristic sources in sections/homily/90-note.tex. Plain rewrites illustrating the required preaching register: (1) line 3: replace 'St.~Jerome refuses to let that daring accusation turn God into the author of sin, tracing Israel's complaint to God's great forbearance.' with 'Isaiah is not blaming God for sin; he is describing how God's great patience feels to a sinner.'; (2) line 5: replace 'St.~Jerome stops at that sudden shift from wish to accomplished fact: the prayer is answered before it has even finished...' with 'The prayer is answered almost before it leaves the prophet's lips. In the Incarnation, the Word already came down, took our flesh, and dwelt among us, melting every proud height raised against God.'; (3) line 13: replace 'Yet Chrysostom catches a quiet warning inside that reassurance... God keeps his promise to bring us to the good things in store, Chrysostom remarks, if we are not impatient of his rein.' with 'Inside that reassurance sits a quiet warning: you only need to strengthen someone who is still wavering. God keeps his promise to bring us to the blessings prepared for us, provided we do not pull against his hand.' Keep all rewritten attributions accurate against the checked sources and terminal note.",
+      "severity": "blocking"
+    },
+    {
+      "id": "HOM-002",
+      "location": "sections/homily/10-homily.tex:1, 3, 9, 13, 17, 19, 23",
+      "problem": "A recurring spoken-clarity and study-compression register pattern impedes one-hearing oral comprehension for an adult parish assembly (guidance/liturgy/propers-three-documents.md: 'Write for one hearing: a sentence carries one idea a listener can hold, and a paragraph one step'; guidance/editorial.md, 'Say what the texts say, plainly'): (1) line 1 repeats 'opens' across its first two sentences ('A new Church year opens today... the Church opens this Sunday') and packs omitted Gloria, Entrance Antiphon, and a 22-word Isaiah quotation into a single 57-word sentence; (2) line 3 splits a 34-word causal sentence down the middle with a 14-word em-dash parenthesis ('--- holding back his hand like a father withholding the rod or a physician delaying the knife ---'); (3) line 9 leaves the Vulgate/Douay-Rheims phrase 'perfects it upon the Son of man' unexplained for a listener hearing it once; (4) line 13 slips unquoted archaic 19th-century NPNF diction ('the good things in store... if we are not impatient of his rein') into spoken prose and closes with a restating maxim closer ('His faithfulness never overrides a heart that refuses to yield.') that adds nothing beyond the preceding sentence; (5) line 17 packs 151 words and four distinct steps (porter/pastors, universal heart-guarding, personal death, date-guessing, and Gregory's three marks) into one dense paragraph and writes 'St.~Augustine answered that objection plainly' when no objection has been stated in the speech; (6) line 19 opens with 'We bring what we have heard in Scripture straight to the altar in the prayers of this Mass' and then immediately cites the pre-Gospel Alleluia verse ('Before the Gospel we asked...'), which precedes the Gospel rather than the altar presentation; and (7) line 23 packs 46 words and four mixed metaphors ('sluggishness', 'stained deeds', 'clay in the Potter's hands', 'hard soil of your heart', 'what you believe show in what you do') into one closing application sentence.",
+      "repair_target": "homily",
+      "required_result": "Revise these sentences in sections/homily/10-homily.tex for crisp one-hearing oral rhythm, ordinary contemporary American parish diction, one step per paragraph, and zero restating maxim closers. Plain rewrites illustrating the required standard: (1) line 1: break S2 and remove the repeated verb, e.g., 'A new Church year begins today without the \\emph{Gloria}. Instead of that song of praise, we start by lifting our souls to the Lord in a psalm, and then Isaiah puts a startling complaint on our lips: ``Why hast thou made us to err...'''; (2) line 9: explain the vineyard-and-Son-of-man image plainly in one hearing, e.g., 'When the Shepherd visits his ravaged vineyard and builds it anew upon the Son of man, Christ himself, the psalm ends with the very vow Isaiah feared had died out: ``and we will call upon thy name.'''; (3) line 13: render Chrysostom's image in plain spoken English ('provided we do not fight his hand' or 'pull against his rein') and cut the restating final sentence ('His faithfulness never overrides a heart that refuses to yield.'); (4) line 17: split into two clear one-step paragraphs and state the question explicitly before answering it ('Does Jesus speak only to the final generation alive at the end of time? No: the day of the Lord meets each of us on the day we leave this life...'); (5) line 19: align the transition accurately with both the pre-Gospel acclamation and the altar prayers; (6) line 23: split the 46-word application into two clean, unmixed sentences spoken directly in ordinary words, e.g., 'Bring your sluggishness and stained deeds honestly to the Sacrament of Penance early in Advent, putting aside excuses like clay in the Potter's hands. Let his mercy break open what has grown hard in you, so that what you believe begins to show in how you live.'",
+      "severity": "blocking"
+    },
+    {
+      "id": "HOM-003",
+      "location": "sections/homily/10-homily.tex:7, 19",
+      "problem": "Two passages in the spoken body overstate their checked source attributions and offline verification bounds (proper-study/homily-review.md: refuse unsupported attribution; guidance/liturgy/propers-three-documents.md: preserve verse-level patristic attribution and honest liturgical bounds): (1) Line 7 states 'On that complaint about God's hidden face, St.~Jerome turns straight to the refrain of today's psalm, pleading with God to convert us and show us his face so that we may be saved.' Direct inspection of Jerome, Commentarii in Isaiam XVII, PL 24 col. 650 (ia-djvu-ocr-7be28ebd, lines 44871-44872) shows that Jerome quotes only 'Ostende faciem tuam, et salvi erimus' (Ps. 79[80]:4) \u2014 not 'Deus, converte nos' ('convert us') \u2014 and Jerome did not turn to 'the refrain of today's psalm' (a postconciliar Year B Lectionary arrangement). (2) Line 19 states 'In a few moments, bread and wine will be carried to this altar; an ancient Roman prayer for this Sunday reminds us that we offer back to God gifts from his own generosity, asking that our earthly devotion become the reward of eternal redemption.' Direct inspection of Sacramentarium Veronense XXVIIII.372 (passage...all-1-source.toml, Feltoe p. 74) and the shared Missal owner (propers/verified.md \u00a72.3) confirms that Veronense XXVIIII.372 is an unclassified 'Item alia' offering prayer with no First-Sunday-of-Advent heading, and that correspondence with the printed 2002 and printed 2008 Missale Romanum for Dominica I Adventus remains unverified offline; calling it 'an ancient Roman prayer for this Sunday' both injects awkward provenance hedging into the pulpit and contradicts 90-note.tex:19 ('cited strictly as an ancient Roman prayer rather than a substitute for the modern Missal prayer').",
+      "repair_target": "homily",
+      "required_result": "Repair both lines in sections/homily/10-homily.tex without breaching offline bounds or attributing postconciliar compilation choices to ancient witnesses: (1) at line 7, keep the link between Isaiah 64:7 and today's psalm refrain accurate in the preacher's voice (either moving straight to today's psalm refrain without crediting Jerome with 'convert us' or 'today's psalm,' or, if Jerome is mentioned, quoting only 'show us thy face, and we shall be saved' as the words of Psalm 80 that today's refrain takes up); (2) at line 19, remove 'for this Sunday' and cast the reference naturally as an ancient prayer of the Roman Church (e.g., 'In a few moments, bread and wine will be carried to this altar. As an ancient prayer of the Roman Church reminds us, we offer back to God gifts drawn from his own generosity, asking that our earthly devotion become the reward of eternal redemption.'), keeping the exact Veronense XXVIIII.372 and secondary-2002 bounds in 90-note.tex.",
+      "severity": "blocking"
+    },
+    {
+      "id": "HOM-004",
+      "location": "sections/homily/10-homily.tex:21, 25",
+      "problem": "The homily twice uses imprecise Eucharistic language that obscures transubstantiation (proper-study/homily-review.md: 'precise theological claims'): line 21 writes 'Today Christ, the fruit of Mary, comes to us hidden under bread and wine' and line 25 writes 'he gives himself to us at this altar under bread and wine'. In Catholic Eucharistic doctrine, after consecration the substance of bread and wine no longer remains; Christ is present under the appearances (or signs/forms) of bread and wine, not hidden beneath remaining bread and wine.",
+      "repair_target": "homily",
+      "required_result": "Revise lines 21 and 25 in sections/homily/10-homily.tex to state Catholic Eucharistic presence precisely in natural parish speech \u2014 e.g., 'comes to us hidden under the appearances of bread and wine' (or 'under the signs of bread and wine') at line 21, and 'gives himself to us at this altar under the signs [or appearances] of bread and wine' at line 25.",
+      "severity": "blocking"
+    },
+    {
+      "id": "HOM-005",
+      "location": "sections/homily/90-note.tex:9, 11, 31, 35, 39 (and matching summary in research/production-review.md:138)",
+      "problem": "The terminal Note on Sources and Delivery and its References list contain one factual classification error and three unpruned section loci carried over from the companion studies without being used in the homily (proper-study/homily-review.md: 'Check the source-and-delivery note for exact loci and truthful review facts'): (1) line 11 labels the exegetical divergence between St. Jerome and St. Thomas Aquinas 'A genuine patristic disagreement', misclassifying St. Thomas Aquinas (a 13th-century medieval Doctor of the Church, standing 'doctor' in author-standing-v1.toml) as a Church Father; (2) lines 11 and 35 cite St. Cyril of Jerusalem, Catechesis 15 \u00a7\u00a71--2, 4, whereas \u00a72 (expounding Malachi 3:1-2) is never used in the homily (only \u00a7\u00a71 and 4 are used); (3) lines 9 and 31 cite St. Augustine, Enarrationes in Psalmos, Ps. 79 \u00a7\u00a71--3, 9, 11, whereas \u00a72 (Cherubim as charity; Jacob wrestling) and \u00a711 (loving God gratis) are not used in the homily (only \u00a71's Shepherd/vineyard frame, \u00a73's cloud of flesh, and \u00a79's vineyard perfected upon the Son of man are used); and (4) lines 9 and 39 cite St. Hilary of Poitiers, De Trinitate IX.65, 67, whereas IX.65 (Matt. 7:23 and Matt. 25:12-13 foolish virgins) is not used in the homily (line 15 draws strictly on IX.67's argument that uncertainty stretches the mind while certainty breeds negligence).",
+      "repair_target": "homily",
+      "required_result": "Update sections/homily/90-note.tex (and keep research/production-review.md \u00a77 synchronized after revision): (1) replace 'A genuine patristic disagreement' at line 11 with 'A genuine exegetical disagreement' (or 'A genuine disagreement between St. Jerome and St. Thomas Aquinas'); (2) prune unused section loci in both the prose note and the References list so every named locus matches what the revised homily actually uses (Cyril Catechesis 15 \u00a7\u00a71, 4; Augustine Enarr. Ps. 79 \u00a7\u00a71, 3, 9 [or \u00a7\u00a73, 9]; Hilary De Trinitate IX.67, noting Aquinas's Catena Aurea application to Mark 13:33); and (3) recompute and update the exact spoken word count, raw source token count, and estimated speaking duration in both 90-note.tex:5 and research/production-review.md \u00a77 after revising 10-homily.tex.",
+      "severity": "blocking"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "homily-spoken",
+          "kind": "homily",
+          "path": "sections/homily/10-homily.tex"
+        },
+        {
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-note.tex"
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+      "element_keys": [
+        "entrance-antiphon",
+        "collect",
+        "first-reading",
+        "responsorial-psalm",
+        "second-reading",
+        "gospel-acclamation",
+        "gospel",
+        "prayer-over-the-offerings",
+        "preface",
+        "communion-antiphon",
+        "prayer-after-communion",
+        "concluding-blessing"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Jerome",
+            "John Chrysostom",
+            "Bede",
+            "Hilary of Poitiers",
+            "Augustine",
+            "Cyril of Jerusalem",
+            "Gregory the Great",
+            "Bernard of Clairvaux"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "John Chrysostom",
+            "Bede",
+            "Hilary of Poitiers"
+          ],
+          "component_keys": [
+            "lane-hidden-presence"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "hidden-presence-and-forbearing-patience",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Thomas Aquinas",
+            "Augustine",
+            "Robert Bellarmine",
+            "John Chrysostom",
+            "Bede",
+            "Jerome",
+            "Cornelius a Lapide"
+          ],
+          "carrying_authors": [
+            "Thomas Aquinas",
+            "Augustine",
+            "Robert Bellarmine",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "lane-covenant-fidelity"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "covenant-fidelity-and-human-plasticity",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Bede",
+            "Gregory the Great",
+            "Augustine",
+            "Cyril of Jerusalem",
+            "Leo the Great",
+            "Thomas Aquinas",
+            "Theophylact of Ohrid",
+            "Robert Bellarmine"
+          ],
+          "carrying_authors": [
+            "Bede",
+            "Gregory the Great",
+            "Augustine",
+            "Cyril of Jerusalem",
+            "Leo the Great"
+          ],
+          "component_keys": [
+            "lane-vigilant-stewardship"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "vigilant-stewardship-between-two-advents",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+    "files": {
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/homily.tex": "4d9165072a2213a9929b9f564eb1ef54d616b4d40ae8081f07d4ec82400f8bd3",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/homily/10-homily.tex": "61a7d6d07b8bfd4e8ce59457bb512941b54ee10b3d182f7c4f36b177405d3bbc",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/homily/90-note.tex": "c1aae0f3abadd9d8c1b78ea1a70166d13a2b201deb520fea65d233c2a0f6b83f"
+    },
+    "generation_provenance": {
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "20",
+            "9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec",
+            "6360bf57cd7d36ba",
+            "0f8fb307cde69819014f3d26a7f0cd77cb6ce9a9",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gemini",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Independent cold review of the First Sunday of Advent, Year B homily (src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/homily.tex, sections/homily/10-homily.tex, and sections/homily/90-note.tex, alongside research/production-review.md and the reviewed studies). Directly verified all 14 English Scripture quotations verbatim against tracked public-domain Douay-Rheims (Challoner) artifacts with zero copyrighted ICEL 2011, CCD/NABRE, Abbey Psalms, or protected modern Latin Missal wording; verified the spoken word count (1,441 spoken words / 1,438 raw source tokens; ~10.3-11.5 min at 125-140 wpm, honestly bounded as a written pace estimate); confirmed clean postconciliar isolation, absence of invented anecdotes/clerical persona/composed prayer, and direct primary-witness support in src/sources/ (Jerome PL 24 cols. 642-651 OCR, Aquinas Super Isaiam Parma Vol. 14 OCR and Catena Aurea in Marcum 13:32-37, Augustine Enarrationes Ps. 79 and Ps. 84, Chrysostom Hom. II on 1 Cor. \u00a7\u00a76-8, Hilary De Trinitate IX.65/67, Bede In Marcum IV.13, Gregory Hom. 9 and 13, Cyril Catechesis 15 \u00a7\u00a71-2/4, Bellarmine Ps. 84 expl. 12, and Sacramentarium Veronense XXVIIII.372). The homily passes the text-substitution test because its exegetical movement depends concretely on Isaiah 63:17's hardening complaint, Isaiah 64:1->3b's wish-to-past-tense leap, Isaiah 64:7's lament matched by Psalm 80:4/19, 1 Corinthians 1:7-9's apokalupsis and wavering reassurance, Mark 13:33-37's absent householder and porter, and Psalm 85:8/13. Offline verification boundaries from the reviewed research remain in force (uncollated 2008 printed Missal correspondence, Entrance Antiphon cue/truncation, raw OCR Jerome/Aquinas witnesses, non-print-collated Bede Wikisource transcription, and Catena Aurea mediation of Augustine Ep. 199 \u00a73). Verdict: CHANGES_REQUIRED on five homily-owned blocking defects: (HOM-001) recurring lecture register handing ten consecutive exegetical pivots across eight of ten body paragraphs to named authorities; (HOM-002) recurring study-compression and un-oral one-hearing syntax, including an unquoted archaic NPNF idiom, a restating maxim closer, an unposed 'objection,' and a 46-word four-metaphor closing application; (HOM-003) overstated source/liturgical attributions at 10-homily.tex:7 (crediting Jerome with 'convert us' and 'the refrain of today's psalm') and 10-homily.tex:19 ('an ancient Roman prayer for this Sunday'); (HOM-004) repeated imprecise Eucharistic phrasing ('under bread and wine' without 'appearances/signs') at 10-homily.tex:21, 25; and (HOM-005) terminal note inaccuracies in 90-note.tex (calling Jerome vs. Aquinas a 'patristic disagreement' and retaining unused section loci Cyril Cat. 15 \u00a72, Augustine Ps. 79 \u00a7\u00a72 and 11, and Hilary De Trin. IX.65)."
+}

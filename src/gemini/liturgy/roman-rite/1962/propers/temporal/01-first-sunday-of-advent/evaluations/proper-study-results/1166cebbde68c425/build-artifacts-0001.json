@@ -1,0 +1,16 @@
+{
+  "artifact_path": "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/publication.toml",
+  "artifacts": [
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/publication.toml",
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/proper-components.toml",
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/main.tex",
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/synthesis.tex",
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/homily.tex",
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/production-review.md"
+  ],
+  "disposition": "PASS",
+  "finding_dispositions": [],
+  "iteration": 1,
+  "stage": "build-artifacts",
+  "summary": "Validated all three declared outputs of publication.toml (liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent, -synthesis, and -homily) in source/HTML mode with no print export requested; confirmed intact upstream review closure with exact seal parity against disk (research-review iter 6 PASS: 1961 files; study-review iter 4 PASS: 19 files; synthesis-review iter 3 PASS: 12 files; homily-review iter 2 PASS: 7 files; 0 mismatches; evaluations/blocking-findings-v1.toml already synchronized by tpt with accepted STU-012, SYN-006, SYN-007 and advisories STU-013, SYN-008, HOM-006 while retaining pre-repair web-review iter 0 entries until web-review iter 1) and exit-0 passes on tools/document-schema check (--phase content --run-gates, all 3 external gates passed), tools/document-schema identities (content faa47e6161a30d826769f0a8d3c59a8dba8099f2d32c251d8423a4e799660361, evidence a211a3423477c5b491dea2dde8e3e7dda349bd8a75db8e27704b39bfbaf5e98a, render b397471ef847c436f038dbf4d355bfa3e71b68faa9cc291d9f33b6bf1733cee2; outputs canonical 24a3d3503562dc3177cafd0c0e661b4477f45aaf26154cabf488e35d97409a66, synthesis 2ab61893d23feaf61846ce8523d793f93577d972af8d861c2c1c5b310855e43d, homily d16cc06179b532b019a7eaeb02242f45ad35723de5419120e6af9317fe1ca206), both artifact-gates commands (_proper_study.py check --phase artifacts --mode source and document-types refresh --check), _proper_study.py check --phase content, check-proper-components, check-content-preflight (leaf, per-edition, and provenance-matches-run), check-generation-metadata, check-web-edition, and check-proper-identity. Updated research/production-review.md with homily-review iter 2 and build-artifacts iter 1 receipts; confirmed all 38 other leaf files byte-identical and zero tracked PDFs, rasters, or machine/scratch paths."
+}

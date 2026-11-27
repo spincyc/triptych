@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v20
+WORKFLOW_DIGEST: 9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec
+RUN_ID: 1166cebbde68c425
+COMMIT: 0f8fb307cde69819014f3d26a7f0cd77cb6ce9a9
+STAGE: research-preflight
+ITERATION: 6
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-11-29","proper":"liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent","provider":"gemini","research_handoff":"none"}
+DOCUMENT_ROOT: src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"HOM-004","location":"sections/20-homily.tex:3, 5, 13, 15","problem":"While the homily maintains the preacher's own voice across its opening, prayer, and closing paragraphs and avoids reading as a lecture assembled from quotations, the repeated surname cadence in paragraphs 2-3 ('St. Gregory the Great notes... Gregory asks... Gregory reverses... Two days before Gregory preached... Gregory asked his people') and paragraphs 7-8 ('St. John Chrysostom sees... Chrysostom compares... Chrysostom pictures... Chrysostom points out') sounds slightly reportorial when heard aloud once.","required_result":"Keep the initial attribution of each Father and his specific scene or quotation, and smooth redundant surname repetitions into natural pronouns or plain preaching clauses\u2014for example, in line 5 replace 'Gregory asked his people what will happen' with 'He asked his people what will happen,' and in line 13 replace 'Chrysostom compares believers to runners... Chrysostom pictures neighbors' with 'He compares believers to runners... When Paul adds, ``The night is passed, and the day is at hand,'' he pictures neighbors.'","severity":"advisory"},{"id":"HOM-005","location":"sections/20-homily.tex:5, 19; sections/21-homily-note.tex:10, 23","problem":"Three minor source-precision details slightly exceed or drift from the cited witnesses: (1) sections/20-homily.tex:5 writes that Gregory asked if the Judge can 'overturn stone buildings,' whereas Gregory (Hom. in Evang. 1 sec. 6, Wikisource Latin) writes 'tot aedificiorum fundamenta concussit' / 'tot aedificia stravit' ('foundations of so many buildings' / 'so many buildings') without specifying 'stone'; (2) sections/20-homily.tex:19 adds 'empty' in 'one who loved empty shows delights in prayer,' whereas St. Augustine (Enarr. in Ps. 84 sec. 15 / Coxe sec. 12) writes simply 'quem delectabat spectare, delectet orare' ('whom shows delighted, shalt delight in prayer'); and (3) sections/21-homily-note.tex:10, 23 lists Bute 1908 among the Gregory witnesses used even though no wording from Bute's sec. 1 extract is quoted in the homily.","required_result":"Tighten line 5 to 'overturn whole buildings' (or 'shake the foundations of buildings') and line 19 to 'loved public shows' (or 'delighted in shows'), and remove Bute 1908 from sections/21-homily-note.tex:10, 23 unless the revised homily actually quotes Bute's sec. 1 wording.","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

@@ -1,0 +1,20 @@
+{
+  "artifact_path": "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/main.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "WEB-001",
+      "note": "Replaced all eight bare \\ref{sec:date-location} references in sections/01-opening.tex (line 10, removing the redundant parenthetical), sections/03-detailed-commentary.tex (lines 6, 18, 28, 34), sections/04-lane-eschatological.tex (line 43), sections/05-lane-incarnational.tex (line 35), and sections/06-lane-conversion.tex (line 39) with \\hyperref[sec:date-location]{\\work{Scriptural Date and Location}}; confirmed zero remaining bare \\ref{ across sections/01..09 and verified all eight links render as [*Scriptural Date and Location*](#sec:date-location) / <a href=\"#sec:date-location\"><em>Scriptural Date and Location</em></a> with zero bare numeric internal links.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "WEB-002",
+      "note": "Replaced all six \\textbf{Ps.}, \\textbf{V.}, and \\textbf{R.} cues inside \\begin{latinproper} in sections/02-appointed-text.tex (lines 10, 21, 43, 54, 87) with \\textnormal{Ps.}, \\textnormal{V.}, and \\textnormal{R.}, and wrapped the Introit editorial cue in \\textnormal{[Antiphon repeated: Ad te levavi\\dots{} non confundentur.]}; verified all seven cues emit <span class=\"nodecor\">...</span> inside <em>...</em> in scripts/_markdown_render.py HTML with zero </em><em> emphasis splits, zero ** inside *...* blockquotes, and zero stray backslashes.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 4,
+  "notes": "Also cleared advisory WEB-003 at sections/02-appointed-text.tex:29 and sections/03-detailed-commentary.tex:18,40,52 using \\dots{} (zero ellipses immediately followed by a letter across web-probe Markdown and HTML). Web probe written to build/tpt-runs/1166cebbde68c425/artifacts/author-study-4/web-probe/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent.md (16,848 words, 109,316 bytes; exit 0). All study-preflight gates passed (document-types refresh --check, scripts/_proper_study.py check --edition research, check-proper-components, all 12 check-content-preflight checks plus provenance-matches-run, check-generation-metadata, check-web-edition, document-schema check --phase content) and disposable 2-pass pdflatex compile succeeded with 0 errors and 0 undefined references. SHA-256 verification confirmed only sections/01..06 and research/production-review.md changed; all 32 other leaf files (sealed research, propers/*, sections/07..21, manifests, generated/*) remain byte-identical.",
+  "stage": "author-study",
+  "summary": "Repaired both routed blocking web-review findings (WEB-001, WEB-002) and cleared advisory WEB-003 across study-owned files sections/01-opening.tex through sections/06-lane-conversion.tex, updated research/production-review.md, and verified complete resolution in the canonical web-edition probe (both Markdown and scripts/_markdown_render.py HTML), all study-preflight checks, and a disposable two-pass pdflatex compile."
+}

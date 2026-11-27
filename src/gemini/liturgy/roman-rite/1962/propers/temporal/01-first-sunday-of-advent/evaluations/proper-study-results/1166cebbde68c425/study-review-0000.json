@@ -1,0 +1,463 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "STU-001",
+      "location": "research/scope.md:34, 53-60; research/interpretations.md:74; research/source-bindings.toml:732",
+      "problem": "Upstream research records record false page loci and inaccurate witness summaries for four bound sources, which propagated directly into the expansive study: (1) Dom Prosper Gueranger, The Liturgical Year, vol. 1 (Dublin: Duffy, 1870, ia-djvu-text-45b59caa): scope.md:34 dates the edition 1867 instead of 1870, and scope.md:53-60 shift almost every Mass element by 1-4 pages -- citing p. 129 for the Collect (actually p. 131; p. 129 is Matins/Isaiah 1, and Gueranger on p. 131 does not remark that the Collect is addressed directly to Christ, rendering Qui vivis in the third person), pp. 129-130 for the Epistle (actually pp. 133-134), p. 131 for the Alleluia (actually p. 134), pp. 131-133 for the Gospel (actually pp. 134-136), p. 134 for the Secret (actually p. 136; p. 134 is the Epistle), and p. 136 for Communion and Postcommunion (actually p. 137; p. 136 is Offertory and Secrets, and on p. 137 Gueranger calls Mary 'made fruitful by the dew of heaven' after Isaiah rather than citing the Holy Spirit, and writes only 'Then follow the concluding Prayers of thanksgiving' before the Postcommunion). (2) Cornelius a Lapide, Commentaria in omnes Divi Pauli Epistolas (Antwerp, 1614, ia-djvu-text-197365b2): scope.md:55 cites p. 191 for Lapide's commentary on Rom. 13:11-14 (komos/comessatio and arma lucis against world, flesh, and devil), whereas p. 191 prints only the chapter text of Rom. 13:8-14 and begins the commentary on v. 1 (Omnis anima); the commentary on Rom. 13:11-14 stands on pp. 195-198 (v. 11 on p. 195, arma lucis against world, flesh, and devil on p. 196, and Non in comessationibus / komos and Induimini on pp. 197-198). (3) St. Bernard of Clairvaux, In laudibus Virginis Matris (Missus est), Homily 1 (Browne & Nolan, 1921, ia-djvu-text-a66ad9a3): scope.md:59, interpretations.md:74, and source-bindings.toml:732 cite 'pp. 56, 60', omitting p. 59 (and the paragraph opening at the bottom of p. 58), where the seed, Nazareth blossom, Christ as Fruit, Ps. 84:13, and Ps. 131:11 exposition actually stands; moreover, p. 59 quotes Ps. 131:11 as God's promise to David without explicitly equating 'our earth' with Mary's womb on that page (Mary's womb as an unploughed field appears in Bernard's Second Sermon for Advent, p. 19). (4) Bl. Ildefonso Schuster, The Sacramentary, vol. 1 (1924, isidore-machine-text-e78f3515): scope.md:53 begins First Sunday in Advent at p. 320 (p. 320 is the general Advent introduction; First Sunday in Advent, St. Mary Major, and the Introit 'cast down, yet full of hope' stand on p. 321), and scope.md:58 cites p. 323 for the Secret (actually p. 322).",
+      "repair_target": "research",
+      "required_result": "Correct the false page loci and witness summaries in research/scope.md, research/interpretations.md, and research/source-bindings.toml (line 732) to match the bound tracked witnesses exactly: Gueranger (Dublin: Duffy, 1870) Introit p. 131, Collect p. 131 (without claiming commentary on direct Christological address), Epistle pp. 133-134, Gradual/Alleluia p. 134, Gospel pp. 134-136, Offertory p. 136, Secret p. 136, Communion p. 137 ('made fruitful by the dew of heaven'), and Postcommunion p. 137 (noting brief introductory transition only); Lapide Antwerp 1614 commentary on Rom. 13:11-14 at pp. 195-198 (arma lucis p. 196, comessationibus/komos p. 197); Bernard Missus est Homily 1 at pp. 56 and 58-60 (especially p. 59, describing accurately how he pairs Ps. 84:13 and Ps. 131:11 without overstating p. 59); and Schuster Vol. 1 First Sunday in Advent at pp. 321-323 (Introit and Collect p. 321, Offertory and Secret p. 322, Communion and Postcommunion p. 323, distinguishing the general Advent introduction on p. 320).",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-002",
+      "location": "sections/03-detailed-commentary.tex:10, 14, 46, 50, 54, 58; sections/04-lane-eschatological.tex:28; sections/05-lane-incarnational.tex:14, 24, 26; sections/06-lane-conversion.tex:14, 30; sections/09-references.tex:21, 24, 30, 37, 41",
+      "problem": "Multiple study citations, attributions, and quotations misstate or silently alter the checked witnesses: (1) sections/05-lane-incarnational.tex:26 cites Bernard's Sermones in Adventu 1.1 and 4.1 alongside Missus est Hom. 1 as tracing Ps. 84:13 across salvation history; neither checked passage (bernard-in-adventu-1.1-opening.toml, bernard-in-adventu-4.1-two-advents.toml) mentions Ps. 84:13, seed, blossom, Nazareth, or Mary's womb, and sections/09-references.tex:24 retains Sermons 1 and 4 only through this false locus (while omitting p. 59 of Missus est Hom. 1 and page numbers for the Advent sermons). (2) sections/06-lane-conversion.tex:30 credits Bl. Ildefonso Schuster (pp. 320-323) with 'locat[ing] that Middle Coming concretely at the Eucharist'; Schuster never invokes Bernard's Middle Coming (adventus medius) on pp. 320-323 -- joining Bernard's Middle Coming to Schuster's Eucharistic exposition is the study's own synthesis, and Schuster's actual Collect and Offertory remarks do not match the paraphrase immediately attributed to him. (3) sections/03-detailed-commentary.tex:58 attributes to John Beleth (Summa LXIV) the claim that Gloria in excelsis is silent for 'Old Testament waiting for peace'; Beleth LXIV (lxiv-omitted.toml; PL 202 col. 71) instead states that Gloria (Nativity) and Ite, missa est (Resurrection) are omitted because both mysteries are eagerly awaited (quod tunc utrumque avide exspectetur) in a season partly of gladness; and sections/09-references.tex:41 cites 'LV and LXIV (PL 202, cols. 71-72)', omitting Caput LV's actual column (col. 62). (4) sections/06-lane-conversion.tex:14 quotes Coxe's English of Augustine, Enarr. in Ps. 84.15 (psalm-84-15.toml) while silently deleting a 29-word intermediate clause ('and thou who didst at first rejoice in theft, so as to take from another man what thou hadst not, shalt seek to give to him that hath not that which thou hast:') without an ellipsis and changing 'shall rejoice' to 'shalt rejoice'. (5) sections/05-lane-incarnational.tex:24 calls Augustine's Christmas Day Sermo 185.1 ('Natalis Domini dicitur') 'an Advent wake-up cry' and silently omits two parallel Veritas clauses and the intervening question and answer (Cujus bono...) inside quotation marks without ellipses. (6) sections/05-lane-incarnational.tex:14 quotes Ambrose, Exp. in Luc. X.42 (vidit enim propheta sicut nubem venire ab Oriente) as 'coming as upon a cloud from the East', inserting 'upon' not in Ambrose's sicut nubem ('like a cloud' / 'as a cloud'), and sections/09-references.tex:21 cites PL 15 cols. 1813-1815 instead of the actual range cols. 1812-1814 (1812D-1814D; col. 1815A begins section 46 on Luke 22:10). (7) Study prose and References propagate the upstream page and attribution errors of STU-001 for Gueranger (03:14, 46, 50, 54; 05:26 -- including conflating Sicard's 'goodness of the Holy Spirit... God and man' with Gueranger's 'dew of heaven' and citing Gueranger on the Collect and Postcommunion where he offers no matching commentary), Lapide (04:28; 09:37 citing p. 191 instead of pp. 195-198 / 196-197), Bernard (05:26; 09:24 omitting p. 59), and Schuster (03:10 citing p. 320 instead of p. 321; 03:14 crediting Schuster/Gueranger with the Father-vs.-Son Roman Collect contrast).",
+      "repair_target": "study",
+      "required_result": "Correct every citation, attribution, and quotation across sections/03, 04, 05, 06, and 09 against the verified sources (incorporating the repaired research loci from STU-001): (1) remove the false citation of Bernard's Sermones in Adventu 1.1 and 4.1 at 05:26 (and remove Sermons 1 and 4 from 09:24 unless actually used for what they say), cite Missus est Homily 1 accurately at pp. 56 and 58-60 (with p. 59 for the seed/blossom/Fruit/Ps. 84:13/Ps. 131:11 argument, without attributing the phrase 'Mary's womb' to p. 59's Ps. 84:13 gloss), and give exact page loci for Sermons 3 and 5 in References; (2) state the link between Bernard's Middle Coming and Schuster's Eucharistic exposition at 06:30 as the study's own synthesis rather than Schuster's claim, and attribute only Schuster's actual remarks to him; (3) separate Beleth's reason for omitting Gloria (Summa LXIV, PL 202 col. 71) from Rupert's, Honorius's, and Amalarius's Old Testament explanation at 03:58, and add PL 202 col. 62 for Beleth Caput LV at 09:41; (4) restore exact Coxe wording and an explicit ellipsis in Augustine's Ps. 84.15 quote at 06:14; (5) identify Augustine's Sermo 185.1 at 05:24 accurately as a Christmas sermon whose wake-up call echoes Advent's summons and insert ellipses for every omitted clause in the quotation; (6) render Ambrose's sicut nubem accurately ('as a cloud' / 'like a cloud') at 05:14 and correct PL 15 cols. 1812-1814 at 09:21; and (7) update all Gueranger (pp. 131, 136, 137, separating Gueranger's 'dew of heaven' from Sicard's 'goodness of the Holy Spirit' and removing unsupported Gueranger Collect/Postcommunion claims), Lapide (pp. 195-198; pp. 196-197 for arma lucis and komos), and Schuster (p. 321 for Introit; attributing the direct-address observation on the Collect to the prayer's own Qui vivis ending rather than Gueranger).",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-003",
+      "location": "sections/03-detailed-commentary.tex:8, 42; sections/06-lane-conversion.tex:22, 26",
+      "problem": "Four sentences assert unsupported historic compositional intent for the 1962 compilation rather than distinguishing textual observation and theological synthesis from compositional history (propers-three-documents.md, 'The formulary is a compilation'; study-review.md, 'Historic compositional intent needs evidence'): (1) 03-detailed-commentary.tex:8 asserts that 'The Roman Missal shapes the opening verses into the entrance chant of the new liturgical year through four deliberate textual choices' -- including dropping Domine 'so the opening phrase rises immediately to God' and cutting v. 4a 'keeping the entrance chant focused on confident expectation rather than condemnation' -- even though combining Old Roman exspectant with Gallican demonstra mihi reflects layered historical transmission rather than one compiler's four deliberate choices; (2) 03-detailed-commentary.tex:42 calls the Offertory's repetition of Ad te levavi 'this deliberate return to the entrance chant' in the study's own voice; (3) 06-lane-conversion.tex:22 claims 'Aquinas's distinction shows why the liturgy repeats Psalm 24:4 twice before the Gospel', attributing the ancient chant repetition to a 13th-century scholastic distinction; and (4) 06-lane-conversion.tex:26 asserts that 'the 1962 Roman Missal omits verse 14b so that the Epistle closes directly on Christ's name', asserting an unsourced compositional purpose.",
+      "repair_target": "study",
+      "required_result": "Rewrite all four passages to state verifiable textual facts, attributed reception, and theological inference without claiming unsourced compositional intent. For example: at 03:8, state plainly what the Introit keeps and omits ('In four places the Introit departs from the Gallican Vulgate of Psalm 24:1-4: it omits the psalm title and the vocative Domine in verse 1, retains the older Roman Psalter reading qui te exspectant in verse 3a, omits the imprecatory half-verse 4a, and sings the Gallican demonstra mihi in the psalm verse'); at 03:42, attribute the theological reading strictly to Rupert ('Rupert of Deutz, De divinis officiis III.2, points out this return to the entrance antiphon'); at 06:22, replace 'shows why the liturgy repeats Psalm 24:4 twice' with an inference ('Read through Aquinas's distinction, hearing Psalm 24:4 twice before the Gospel sets both the common road of the commandments and the narrower paths of the counsels before the assembly'); and at 06:26, replace 'omits verse 14b so that' with 'ends at verse 14a, closing directly on Christ's name'.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-004",
+      "location": "sections/03-detailed-commentary.tex:4, 10, 20, 22, 26, 32, 38, 50",
+      "problem": "Recurring register defect (editorial self-narration and template forward-pointers violating guidance/editorial.md, 'Let the work disappear', 'State the finding, not the process that produced it', and 'Say it once'). Section 03 opens by narrating the document's own plan and editorial policy ('Before turning to the three patristic interpretations of the Mass, it helps to examine... The fuller doctrinal reasoning of the Fathers and Doctors on each passage is developed once, in its proper home, in the three interpretive sections that follow', line 4) and then closes almost every subsection with a repetitive signpost previewing the following interpretations: line 10 ('are examined in the first and third interpretations below'), line 20 ('even though---as the third interpretation notes'), line 22 ('is developed in the first interpretation below'), line 26 ('is worked out in the third interpretation below'), line 32 ('stand at the center of the second and third interpretations below'), line 38 ('in the first interpretation below... in the second'), and line 50 ('explored in the second and third interpretations').",
+      "repair_target": "study",
+      "required_result": "Remove the editorial self-narration and recurring 'below' signpost template across sections/03-detailed-commentary.tex (lines 4, 10, 20, 22, 26, 32, 38, 50) so each subsection ends when its textual and liturgical facts end without pointing at the study's plan or rehearsing previews already given in section 01. Plain rewrites for at least two instances: (1) Replace line 4 entirely or begin directly with the texts, e.g., delete the self-narrating opening paragraph and open straight into the Introit subsection, or replace it with one factual orientation sentence about the Mass's texts without mentioning 'three patristic interpretations', 'proper home', or 'sections that follow'; (2) At line 10, cut the closing signpost sentence ('The deeper patristic and scholastic expositions... are examined in the first and third interpretations below') so the paragraph ends cleanly on Schuster's connection of Ad te levavi to the station at St. Mary Major; (3) At line 26, end the Gradual subsection cleanly on 'The liturgical repertoire thus preserves two Latin strata side by side in a single Mass', deleting 'How St. Augustine... is worked out in the third interpretation below'.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-005",
+      "location": "sections/02-appointed-text.tex:62; sections/03-detailed-commentary.tex:10, 20, 22, 26, 32, 36, 38, 42, 46, 50, 58; sections/04-lane-eschatological.tex:6, 26, 28, 32, 34, 38; sections/05-lane-incarnational.tex:4, 6, 10, 14, 26, 30; sections/06-lane-conversion.tex:6, 18, 22, 28; sections/07-comparison.tex:15",
+      "problem": "Recurring register defect across sections 02-07 violating guidance/editorial.md ('Use the reader's words', 'State the finding, not the process that produced it', 'Show significance; do not assert it', and 'A text does what texts do'): (1) Production vocabulary used in reader-facing body prose -- 'witness'/'witnesses' (02:62; 03:22, 36, 58; 04:6; 05:6; 06:6), 'register' (03:38; 04:6; 05:6, 10), 'incipit' (02:62; 03:36), 'glosses' (04:28), 'governs' as metaphor (06:18), and 'horizon'/'plane'/'key' (04:26, 38; 05:26, 30; 06:6) -- along with inaccurate author counts in two of those opening lines (04:6 says 'Six patristic and Doctoral witnesses' and names seven authors; 06:6 says 'Four major witnesses' and names six). (2) Audit/compliance narration leaking into body prose: 'cited here solely as historical witness' (03:22), 'cited here strictly for historical evidence' (03:58), 'without forcing every line into catastrophe' (04:34), and 'and remain genuinely distinct rather than collapsing into one summary' (07:15). (3) Asserted significance and text-agency verbs crediting liturgical texts with editorial actions: 'keynote' (03:10), 'Ending on Christ's own name sharpens the positive call of the lesson' (03:20), 'More revealing is' (03:26), 'frames the presentation' (03:42), 'moves the Mass from moral preparation to sacramental purification' (03:46), 'opens the parting of ways' (03:50), 'frame these ten proper texts' (03:58), 'supply the posture' (04:32), 'anchor the liturgy' (05:4), 'Ambrose's central move' and 'reaches his climax' (05:14), 'reinforce this Incarnational horizon' (05:30), 'Aquinas's sharpest contribution' (06:22), 'classic name' (06:28), and 'The sharpest patristic disagreements' (07:15).",
+      "repair_target": "study",
+      "required_result": "Replace the recurring production vocabulary, compliance narration, asserted significance, and text-agency verbs with plain reader-facing prose that names authors and texts directly, preserves Amalarius's required 838 Kiersy censure factually, and fixes the author counts at 04:6 and 06:6. Plain rewrites for at least three instances: (1) Replace 04-lane-eschatological.tex:6 ('Six patristic and Doctoral witnesses address these texts in an eschatological register. St. Gregory...') with 'Seven Fathers and Doctors read these texts in the light of the Last Judgment: St. Gregory...' (and similarly replace 'witnesses' and 'register'/'plane' at 05:6 and 06:6 with plain wording and accurate counts); (2) Replace 03-detailed-commentary.tex:22 ('by Amalarius of Metz (Liber de ordine antiphonarii XXX---a writer censured by a synod held at Kiersy [Quierzy] in 838 for his opinion concerning the signification of the parts of the divided Host at Mass, cited here solely as historical witness to the Advent Epistle)') with 'by Amalarius of Metz (Liber de ordine antiphonarii XXX; censured by a synod at Kiersy [Quierzy] in 838 for his opinion on the signification of the parts of the divided Host at Mass), who records its use in Advent'; (3) Replace 05-lane-incarnational.tex:14 ('Then comes Ambrose's central move, on verse 27's venientem in nube... and then Ambrose reaches his climax:') with 'On verse 27, venientem in nube (\"coming in a cloud,\" X.41-42), Ambrose asks... Every prophet is a cloud in which Christ comes, and above all the Virgin Mary:'; (4) Replace 07-comparison.tex:15 ('The sharpest patristic disagreements sit in two places and remain genuinely distinct rather than collapsing into one summary.') with 'The Fathers diverge directly on two passages.'",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-006",
+      "location": "sections/04-lane-eschatological.tex:30-34; sections/05-lane-incarnational.tex:28-32, 36; sections/06-lane-conversion.tex:26; sections/07-comparison.tex:17",
+      "problem": "Recurring register defect violating propers-three-documents.md (lines 340-349), study-review.md (lines 727-730), and guidance/editorial.md ('Each sentence adds something'): (1) Both Interpretation 1 (04:30-34) and Interpretation 2 (05:28-32) append a catch-all closing subsection right before Tensions and Limits that sweeps through the remaining chants and prayers to certify whole-Mass coverage -- culminating at 04:34 in a literal semicolon-chained roll call ('The remaining prayers sustain that watchfulness without forcing every line into catastrophe: the Credo confesses...; the Secret asks...; the Preface of the Most Holy Trinity joins...; and the Communion and Postcommunion nourish...') and at 05:30-32 in an element-by-element sweep introduced by 'the Roman liturgy's station and prayers reinforce this Incarnational horizon' and marching in liturgical order through Introit/Gradual/Offertory, Collect, Epistle, Gloria, Secret, Preface, Communion, and Postcommunion. (2) Three closing sentences merely restate their paragraph or section as a tidy wrap-up without adding a new fact or step of inference: 05:36 ('Holding the Marian fulfillment of Bethlehem together with the dread of the Last Day keeps Advent expectation balanced.'), 06:26 ('Augustine's experience reveals the Epistle's interior demand: waking from moral sleep calls for a concrete break with entrenched vice clothed in Christ Himself.'), and 07:17 ('Held together in the liturgy of the First Sunday of Advent, these three patristic lines keep historical gratitude for Bethlehem, daily repentance at the altar, and sober readiness for the Last Day in their proper relation.').",
+      "repair_target": "study",
+      "required_result": "Eliminate the closing coverage roll calls in Interpretations 1 and 2 by showing each prayer or chant briefly where the exegetical argument actually uses it (giving lightly touched texts a plain clause rather than a catch-all sweep of 'the remaining prayers'), and cut the restating closer sentences at 05:36, 06:26, and 07:17 so each section ends when its substantive argument ends. Plain rewrites for at least two instances: (1) In 04-lane-eschatological.tex:32-34, fold Bellarmine's Ps. 24:1-3 detachment and the Collect's 'approaching dangers of our sins' directly into the argument alongside Chrysostom and Gregory (or keep a concise paragraph focused on those real exegetical links), and replace the semicolon roll call at line 34 with plain clauses tied to the specific texts where the argument actually bears on them (e.g., 'In the same watchfulness, the Credo confesses Christ coming in glory to judge the living and the dead, the Secret asks the Mysteries to purify worshippers before their Source, and the Trinity Preface joins the congregation to the angelic choirs whose hosts Gregory saw in Luke 21:26; the Communion and Postcommunion keep the coming feast in view alongside judgment', cutting 'The remaining prayers sustain that watchfulness without forcing every line into catastrophe'); (2) At 05-lane-incarnational.tex:36, delete the final sentence ('Holding the Marian fulfillment of Bethlehem together with the dread of the Last Day keeps Advent expectation balanced.') so the paragraph ends cleanly on '...whereas Ambrose's treatment works predominantly through christological and ecclesial allegory'; (3) At 07-comparison.tex:17, delete the final sentence ('Held together in the liturgy...') so the comparison closes cleanly on the threefold coming of Christ summarized by Beleth and St. Bernard.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-007",
+      "location": "sections/04-lane-eschatological.tex:28; sections/05-lane-incarnational.tex:42; sections/06-lane-conversion.tex:22; sections/07-comparison.tex:8; sections/08-scope.tex:13",
+      "problem": "Minor markup, inline-translation, and scope-wording slips: (1) sections/05-lane-incarnational.tex:42 and sections/07-comparison.tex:8 wrap the English words 'all the trees' in \\latin{all the trees}; (2) sections/04-lane-eschatological.tex:28 wraps transliterated Greek komos in \\latin{komos}; (3) sections/06-lane-conversion.tex:22 prints \\latin{Dirige me in veritate tua, et doce me} without an inline English translation; and (4) sections/08-scope.tex:13 writes that Bernard's standing-inventory row 'remains pending', which reads like an internal deferred-maintenance placeholder (guidance/editorial.md, 'No side in what is described' / public-alpha bounds).",
+      "required_result": "Replace \\latin{all the trees} with plain English quotes ('all the trees') or Latin \\latin{et omnes arbores} at 05:42 and 07:8; change \\latin{komos} to \\emph{komos} at 04:28; translate \\latin{Dirige me in veritate tua, et doce me} inline ('Direct me in thy truth, and teach me') at 06:22; and reword 08:13 factually ('is cited from verified tracked editions as a supporting Doctor; every interpretation already rests on at least two distinct carrying authors registered in the standing inventory').",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/01-opening.tex",
+          "references": []
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "appointed-text",
+          "kind": "appointed-text",
+          "path": "sections/02-appointed-text.tex",
+          "references": []
+        },
+        {
+          "depends_on": [
+            "appointed-text"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "proper-treatment",
+          "kind": "proper-treatment",
+          "path": "sections/03-detailed-commentary.tex",
+          "references": []
+        },
+        {
+          "depends_on": [
+            "appointed-text",
+            "proper-treatment"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "lane-eschatological",
+          "kind": "interpretive-lane",
+          "path": "sections/04-lane-eschatological.tex",
+          "references": []
+        },
+        {
+          "depends_on": [
+            "appointed-text",
+            "proper-treatment"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "lane-incarnational",
+          "kind": "interpretive-lane",
+          "path": "sections/05-lane-incarnational.tex",
+          "references": []
+        },
+        {
+          "depends_on": [
+            "appointed-text",
+            "proper-treatment"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "lane-conversion",
+          "kind": "interpretive-lane",
+          "path": "sections/06-lane-conversion.tex",
+          "references": []
+        },
+        {
+          "depends_on": [
+            "lane-eschatological",
+            "lane-incarnational",
+            "lane-conversion"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "comparison",
+          "kind": "terminal-apparatus",
+          "path": "sections/07-comparison.tex",
+          "references": []
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "study-chronology",
+          "kind": "terminal-apparatus",
+          "path": "generated/scriptural-date-location.tex",
+          "references": [
+            "research/chronology-annotations.tex",
+            "research/chronology-table.tex"
+          ]
+        },
+        {
+          "depends_on": [
+            "appointed-text"
+          ],
+          "element_keys": [],
+          "key": "study-scope",
+          "kind": "terminal-apparatus",
+          "path": "sections/08-scope.tex",
+          "references": []
+        },
+        {
+          "depends_on": [
+            "proper-treatment",
+            "lane-eschatological",
+            "lane-incarnational",
+            "lane-conversion",
+            "comparison",
+            "study-scope"
+          ],
+          "element_keys": [],
+          "key": "study-references",
+          "kind": "terminal-apparatus",
+          "path": "sections/09-references.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Gregory the Great",
+            "John Chrysostom",
+            "Cyril of Alexandria",
+            "Bede",
+            "Augustine of Hippo",
+            "Leo the Great",
+            "Robert Bellarmine",
+            "Cornelius a Lapide",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Gregory the Great",
+            "John Chrysostom",
+            "Cyril of Alexandria",
+            "Bede",
+            "Augustine of Hippo",
+            "Leo the Great",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "lane-eschatological"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "eschatological-detachment",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Ambrose of Milan",
+            "Robert Bellarmine",
+            "Augustine of Hippo",
+            "Bernard of Clairvaux",
+            "Sicard of Cremona",
+            "Prosper Gu\u00e9ranger",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Ambrose of Milan",
+            "Robert Bellarmine",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "lane-incarnational"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "incarnational-marian",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Alfredo Ildefonso Schuster",
+            "Leo the Great",
+            "Ambrose of Milan",
+            "Bernard of Clairvaux",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Alfredo Ildefonso Schuster",
+            "Leo the Great",
+            "Ambrose of Milan"
+          ],
+          "component_keys": [
+            "lane-conversion"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "interior-conversion",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "files": {
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generated/scriptural-date-location.tex": "b534d32ad5906b7deeb78605881b958831286227f4c35a98052d00899a039678",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/main.tex": "0d158f39c138ac6c0978bf4341a97c967436fedde1ed822774f6dc423b6be5fb",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/chronology-annotations.tex": "e9dabcb7bd4f1415d26bb65e182a6b2f5184c1e0b1e124f2b4f3217510700d4f",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/chronology-table.tex": "fb450dfe4a03a78ae3977a9b48a700082a03ca4a316627c628706e3b4947438e",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/interpretations.md": "2a0f3fb317cf9a487e47d799b4b7c939074a82a2e5ca12c41da7b817c02fa4ea",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/scope.md": "fc79e0bec156251914b6956afdb7480f29eaf85a96c2d7deaef14e93ae175607",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/source-bindings.toml": "3c98c4698ad637ddc8355143233afebe4118a248188ac3edfea9de82a63b2e38",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/01-opening.tex": "ac827060da16bcbc14a3301f712ebfd029f0a20358aee6f51aafe281c3d76fab",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/02-appointed-text.tex": "5c4d7775f7a92c76319f7a6568ce9134c4f81985229b0172c5de921c3bf47051",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/03-detailed-commentary.tex": "44a202bf298bf460f6d1c6cc0c6d0ef6e787ee02c24187c2d714a6f8a4c3eb33",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/04-lane-eschatological.tex": "ff502936b7f4ae28d810e81f3580afe37741cd63b49a089d7a38df85f44643c6",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/05-lane-incarnational.tex": "4b69947ac90aca37bc65f2563e09d96912f705e7581df1593da5f5193b3b21fc",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/06-lane-conversion.tex": "54e0492f208fb262be2c9f15baa2ea8aca08f09ccec631c5a10199f8c64515e4",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/07-comparison.tex": "fbe04b1eb4f1cb02f0eeb65ef0b95adb842eaf8fac628e0b7b5b711ea99b88ef",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/08-scope.tex": "167a8b92fd8fef57932cae04530fbd101b58ada64140d0c9b1987d26cb1c19ff",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/09-references.tex": "1fb3f19c5d07802efb80ea3f97b1d8d73b465e1b16aecd9a8070a042073b2f00"
+    },
+    "generation_provenance": {
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "20",
+            "9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec",
+            "1166cebbde68c425",
+            "0f8fb307cde69819014f3d26a7f0cd77cb6ce9a9",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gemini",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "Independent cold review of the Gemini 1962 First Sunday of Advent expansive study (src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent: main.tex, sections/01-opening.tex through sections/09-references.tex, publication.toml, proper-components.toml, generation-metadata.tex, web-edition.toml) against propers/verified.md, research/context.md, research/scope.md, research/interpretations.md, research/source-bindings.toml, generated/scriptural-date-location.tex, and direct source loci in src/sources/. Complete-text mode matches the production plan and all eleven Latin/English liturgical blocks in sections/02-appointed-text.tex match verified witnesses verbatim with exact proper-* anchors and zero hand-authored biblical dates. The three whole-formulary interpretations are genuinely distinct, doctrinally sound, anchored in two or more eligible carrying authors each, and carry distinct four-sense profiles. Consequential-difficulty witness tests passed in substance: (1) St. Ambrose, Expositio Evangelii secundum Lucam X.37-45 (book-10-html-083e1630 and luke-21-29.toml) on Luke 21:25-30 (virtutes caelorum moved by augmentum gratiae, nube = prophets and the Virgin Mary via Isa 19:1 and Luke 1:35, and Luke's unique et omnes arbores as a double figure of Israel and the nations vs. barren fig leaves) is taught clearly and accurately in sections/05-lane-incarnational.tex (aside from rendering sicut nubem as 'as upon a cloud' and citing PL 15 cols. 1813-1815 instead of 1812-1814); (2) St. Gregory the Great, Homiliae in Evangelia 1.1-6 (1.1-5-luke-21.toml) and St. Bede, In Lucae Evangelium Expositio VI (luke-21-33.toml) with St. Augustine, De civitate Dei XX.24 on Luke 21:28-33 (levate capita = exhilarate corda, fructus mundi ruina est, and renewal per imaginem) are taught accurately and persuasively; (3) St. Augustine, Enarrationes in Psalmos 84.9, 14-16 (psalm-84-9/14/15/16.toml) and St. Thomas Aquinas, Postilla super Psalmos Ps. 24 (ia-complete-ocr-02c6dc25, Parma vol. 14, pp. 229-230) on prevenient grace, Old Latin suavitatem, and viae (praecepta) vs. semitae (consilia) are taught intelligibly (aside from a 29-word unindicated omission in the Coxe quotation at 06:14). Limits: review is source- and evidence-level only (no PDF compiled; remote/restricted holdings remain uninspected offline as documented in scope.md). Verdict: CHANGES_REQUIRED on six blocking findings: one research-owned finding for false page loci and misstated witness summaries in research/scope.md, research/interpretations.md, and research/source-bindings.toml (Gueranger, Cornelius a Lapide, Bernard Missus est Hom. 1, Schuster), and five study-owned findings for false locus citations, misattributions, and unindicated quotation omissions; unsupported historic compositional-intent claims; recurring editorial self-narration in section 03; recurring production vocabulary, compliance narration, asserted significance, and text-agency metaphors across sections 02-07; and closing element roll-calls and restatement closers in sections 04-07 (plus one advisory finding for minor markup and gloss slips)."
+}

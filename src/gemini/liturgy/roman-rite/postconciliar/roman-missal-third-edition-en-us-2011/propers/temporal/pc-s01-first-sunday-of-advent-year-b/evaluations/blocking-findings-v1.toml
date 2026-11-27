@@ -1,0 +1,135 @@
+# Blocking findings standing against this publication, the
+# verdicts its evaluation lanes reached, and the observations
+# they recorded outside their own criteria. Written by tpt after
+# each evaluation of this leaf.
+#
+# One record, several stages. Every entry names the stage that
+# raised it, [[stages]] says what each stage last said, and an
+# evaluation replaces its own stage's entries and leaves every
+# other stage's alone -- so what the content evaluation found
+# still stands here after the synthesis evaluation has spoken. A
+# stage that looked and found nothing leaves an empty list
+# rather than no entry: "evaluated, nothing stands" and
+# "nobody has looked" are different facts, per stage.
+#
+# The keys directly below these comments describe the write that
+# last touched this file, and count every stage's entries
+# together. They are its summary line. What a given stage found
+# is in that stage's [[stages]] entry and in the entries naming
+# it -- reading the top-level stage as the record's one stage is
+# the mistake this schema exists to stop.
+#
+# It exists because a run's own results live under build/, which
+# is ignored, which `make clean` and `wt tidy` delete without
+# asking, and which nothing preserves between productions.
+#
+# Nothing reads this back into a run. Carrying findings from one
+# production into the next wants doing where the run's identity
+# can cover it -- a committed record, or this file's hash in the
+# run id and the acceptance audit -- and until then this is a
+# record for people.
+#
+# Escalations -- defects in artifacts no stage of the run may
+# write: guidance, the source library, the tools, the workflow --
+# are written here too, from the run's whole ledger, so that the
+# decision they ask of a maintainer outlives the run directory.
+#
+# Accepted findings are true defects a lane judged not worth a
+# repair round, with the reason it judged so. Advisories are
+# defects that did not merit blocking. Both are here because a
+# verdict that dies with the run is met again by the next cold
+# read as though nobody had ever weighed it, and weighed again --
+# which is how a document in good shape spends a whole iteration
+# budget. A later evaluation reads these before it raises.
+
+standing_findings_schema = 4
+record_type = "standing-blocking-findings"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"
+provider = "gemini"
+run_id = "6360bf57cd7d36ba"
+workflow = "proper-study"
+workflow_version = 20
+stage = "web-review"
+iteration = 2
+disposition = "PASS"
+standing = 0
+accepted_count = 1
+advisory_count = 1
+observation_count = 0
+
+[[stages]]
+stage = "homily-review"
+iteration = 3
+disposition = "PASS"
+run_id = "6360bf57cd7d36ba"
+workflow = "proper-study"
+workflow_version = 20
+standing = 0
+accepted_count = 0
+advisory_count = 0
+observation_count = 0
+
+[[stages]]
+stage = "research-review"
+iteration = 1
+disposition = "PASS"
+run_id = "6360bf57cd7d36ba"
+workflow = "proper-study"
+workflow_version = 20
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 0
+
+[[stages]]
+stage = "study-review"
+iteration = 3
+disposition = "PASS"
+run_id = "6360bf57cd7d36ba"
+workflow = "proper-study"
+workflow_version = 20
+standing = 0
+accepted_count = 0
+advisory_count = 0
+observation_count = 0
+
+[[stages]]
+stage = "synthesis-review"
+iteration = 2
+disposition = "PASS"
+run_id = "6360bf57cd7d36ba"
+workflow = "proper-study"
+workflow_version = 20
+standing = 0
+accepted_count = 1
+advisory_count = 0
+observation_count = 0
+
+[[stages]]
+stage = "web-review"
+iteration = 2
+disposition = "PASS"
+run_id = "6360bf57cd7d36ba"
+workflow = "proper-study"
+workflow_version = 20
+standing = 0
+accepted_count = 0
+advisory_count = 0
+observation_count = 0
+
+[[accepted]]
+stage = "synthesis-review"
+id = "SYN-007"
+severity = "accepted"
+location = "sections/synthesis/30-themes.tex:21 (parallel in sections/synthesis/10-inventory.tex:12)"
+problem = "The parenthetical rubric citation for the Profession of Faith ('Nicene Creed, or Apostles' Creed permitted, GIRM~68' at 30-themes.tex:21; 'Nicene Creed required, or Apostles' Creed permitted, GIRM~68' at 10-inventory.tex:12) cites GIRM 68 alone for both the Sunday obligation and the Apostles' Creed alternative. As recorded in the held source passages (GIRM 68 and Missale Romanum 2002 Ordo Missae nn. 1-20), instance/manifest.md:58, and sections/80-liturgical-resolution.tex:19, GIRM 68 establishes the Sunday requirement of the Creed, whereas the permission to use the Apostles' Creed in place of the Nicene Creed stands in the Ordo Missae rubric."
+required_result = "Pair GIRM~68 with the Order of Mass rubric (e.g., 'GIRM~68; \\work{Ordo Missae}') whenever the concise study cites authority for both the Sunday obligation of the Profession of Faith and the Apostles' Creed alternative."
+accepted_because = "Both substantive liturgical facts are accurate (the Profession of Faith is required on Sundays and the Apostles' Creed is permitted in place of the Nicene Creed), sections/synthesis/90-apparatus.tex:18 already lists both Missale Romanum Ordo Missae and GIRM 68, and a reader who never notices the compressed parenthetical source tag is not misled; adding words to settled page-1 inventory and page-3-4 themes prose would risk shifting print pagination to save a reader nothing."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-009"
+severity = "advisory"
+location = "research/source-bindings.toml:571-577 (Binding 74, artifact.bede.in-marci-evangelium-expositio.2026-10-13-latin-wikisource-migne.latin-text-b8197766)"
+problem = "Binding 74 lists 'verified' in states for Bede's In Marci Evangelium Expositio Lib. IV, cap. 13 (lines 402-405), whereas the controlling artifact manifest notes 'Complete searchable transcription, not a critical edition or facsimile. Only the stated locus [Book III] was collated' and research/source-dispositions.toml honestly defers Book IV cap. 13 partly for 'migne-pl-92-facsimile-collation'. Because the wording was cleanly read from a non-OCR digital transcription and the uncollated status is already transparently disclosed in the binding notes, source-dispositions.toml, and scope.md, this does not mislead readers or block drafting, but trimming the state to 'inspected' or maintaining explicit Wikisource/Corpus Corporum attribution without claiming PL 92 facsimile collation keeps the record aligned with guidance/sources.md ('inspection of a transcription is not image collation')."
+required_result = "During study drafting, attribute any verbatim Latin or English wording from Bede In Marcum IV.13 strictly to the inspected Wikisource/Corpus Corporum digital transcription without claiming Migne PL 92 facsimile collation; if research/source-bindings.toml is later touched, optionally align Binding 74's states to ['cataloged', 'acquired', 'inspected']."

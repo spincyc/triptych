@@ -1,0 +1,396 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 2,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/10-opening.tex"
+        },
+        {
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "appointed-text",
+          "kind": "appointed-text",
+          "path": "sections/20-appointed-texts.tex"
+        },
+        {
+          "depends_on": [
+            "appointed-text"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "proper-treatment",
+          "kind": "proper-treatment",
+          "path": "sections/30-detailed-commentary.tex"
+        },
+        {
+          "depends_on": [
+            "proper-treatment"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "lane-hidden-presence",
+          "kind": "interpretive-lane",
+          "path": "sections/40-lane-hidden-presence.tex"
+        },
+        {
+          "depends_on": [
+            "proper-treatment"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "lane-covenant-fidelity",
+          "kind": "interpretive-lane",
+          "path": "sections/50-lane-covenant-fidelity.tex"
+        },
+        {
+          "depends_on": [
+            "proper-treatment"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "lane-vigilant-stewardship",
+          "kind": "interpretive-lane",
+          "path": "sections/60-lane-vigilant-stewardship.tex"
+        },
+        {
+          "depends_on": [
+            "lane-hidden-presence",
+            "lane-covenant-fidelity",
+            "lane-vigilant-stewardship"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "comparison",
+          "kind": "front-matter",
+          "path": "sections/70-comparison.tex"
+        },
+        {
+          "key": "chronology-appendix",
+          "kind": "terminal-apparatus",
+          "path": "generated/scriptural-date-location.tex",
+          "references": [
+            "research/chronology-annotations.tex",
+            "research/chronology-table.tex"
+          ]
+        },
+        {
+          "key": "liturgical-resolution",
+          "kind": "terminal-apparatus",
+          "path": "sections/80-liturgical-resolution.tex"
+        },
+        {
+          "key": "scope-qualifications",
+          "kind": "terminal-apparatus",
+          "path": "sections/90-scope.tex"
+        },
+        {
+          "key": "references",
+          "kind": "terminal-apparatus",
+          "path": "sections/95-references.tex"
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+      "element_keys": [
+        "entrance-antiphon",
+        "collect",
+        "first-reading",
+        "responsorial-psalm",
+        "second-reading",
+        "gospel-acclamation",
+        "gospel",
+        "prayer-over-the-offerings",
+        "preface",
+        "communion-antiphon",
+        "prayer-after-communion",
+        "concluding-blessing"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Jerome",
+            "John Chrysostom",
+            "Bede",
+            "Hilary of Poitiers",
+            "Augustine",
+            "Cyril of Jerusalem",
+            "Gregory the Great",
+            "Bernard of Clairvaux"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "John Chrysostom",
+            "Bede",
+            "Hilary of Poitiers"
+          ],
+          "component_keys": [
+            "lane-hidden-presence"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "hidden-presence-and-forbearing-patience",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Thomas Aquinas",
+            "Augustine",
+            "Robert Bellarmine",
+            "John Chrysostom",
+            "Bede",
+            "Jerome",
+            "Cornelius a Lapide"
+          ],
+          "carrying_authors": [
+            "Thomas Aquinas",
+            "Augustine",
+            "Robert Bellarmine",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "lane-covenant-fidelity"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "covenant-fidelity-and-human-plasticity",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Bede",
+            "Gregory the Great",
+            "Augustine",
+            "Cyril of Jerusalem",
+            "Leo the Great",
+            "Thomas Aquinas",
+            "Theophylact of Ohrid",
+            "Robert Bellarmine"
+          ],
+          "carrying_authors": [
+            "Bede",
+            "Gregory the Great",
+            "Augustine",
+            "Cyril of Jerusalem",
+            "Leo the Great"
+          ],
+          "component_keys": [
+            "lane-vigilant-stewardship"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "vigilant-stewardship-between-two-advents",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+    "files": {
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/generated/scriptural-date-location.tex": "0dbbf5c376642bcc9177dbbb20387bf2a55f5871b151c82809baedc37340f352",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/main.tex": "bea968edd0c631735eec787fb9c48e1e023951a3c8dcbbff8103b8b212e90fd5",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/chronology-annotations.tex": "97ae99a8f055064d6b6c0af6747564df86fc13735e69e700f1c50338e5dde946",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/chronology-table.tex": "4d5cb5222089bde74dfaf4c6b7a0c8a0f71b7188401de871ac66f80f0e93a8a4",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/interpretations.md": "88348cd07b40f1f1bff15d0a83e684e777fd785789b702d263553832f1b71e39",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/scope.md": "f23284b1c030712eebc817ee037110f8769dd58c5cf3be93eb9eb5e4dc586733",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/source-bindings.toml": "e6c9cf9480510ba283f767824f09d9189f94b12124773d681a511bc049d495fb",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/10-opening.tex": "0a9efafe9817846b002289e1abc2bbd3d2e4b752cf02b2cd43b2ff53a0ca5a6f",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/20-appointed-texts.tex": "524367f2bc5a0877046ba7150566fb05e67c49e114e61224f2db61d6a96dd585",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/30-detailed-commentary.tex": "6b8570e0d7658f7a3ad9ff8019efc239d55310bdad40ee2131a72abedc7f905b",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/40-lane-hidden-presence.tex": "caa9747168768245f353c022c65761dadc30c20d87aed8283790720381507545",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/50-lane-covenant-fidelity.tex": "7676cd88eb07ace15e31cc316e10ec714c9fb932b3185c0d9b7839d81fff331b",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/60-lane-vigilant-stewardship.tex": "eeedc622188420037afa23e13808d02b59b8456fa5a046fa32b9fcb731aeeb4d",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/70-comparison.tex": "4d62410d56444e587ecb568a512dea468dc3cb23fa4c7c8505cb8f5392801dd0",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/80-liturgical-resolution.tex": "7c9f841cb4fb79aaa20281e5069b951a45d5bebc9ae369c3f006978b66566f6f",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/90-scope.tex": "197b611abb9cf216e74fbc908306bf07a19e3755ad384b3c74d24a8cdb8d1edc",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/95-references.tex": "a4e5ef96d7493ff4dc32134f9ef55b08146006e6bca6ca1aa5df0da9b2813025"
+    },
+    "generation_provenance": {
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "20",
+            "9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec",
+            "6360bf57cd7d36ba",
+            "0f8fb307cde69819014f3d26a7f0cd77cb6ce9a9",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gemini",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "Independent cold review (iteration 2) of the canonical postconciliar expansive study for the First Sunday of Advent, Year B (src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/main.tex and sections/10-95, 10,563 substantive exposition words across sections 10, 30, 40, 50, 60, and 70; 15,441 total authored section words) passes with zero blocking findings. Verified all 20 sealed REVIEW_INPUTS file hashes (0 mismatches), proper-components.toml (schema 2, rights-limited, orientation-v3, authority-standing-v1), publication.toml, generation-metadata.tex, web-edition.toml, canonical shared Missal owner (PC-S01), author-standing-v1.toml, postconciliar-latin-rights-v1.toml, and primary held witnesses under src/sources/ directly (Jerome PL 24 cols. 642-651, Aquinas Super Isaiam Parma Vol. 14 pp. 370-371 and Catena Aurea in Marcum 13:32-37, Chrysostom Hom. in 1 Cor. II \u00a7\u00a71-8, Hilary De Trinitate IX.65-67, Bede In Marcum IV.13, Gregory the Great Hom. 1, 9, and 13, Augustine Enarrationes in Psalmos Ps. 24, 79, 84 and De gratia et libero arbitrio ch. 45, Bellarmine Explanatio Ps. 24, 79, 84, Cornelius a Lapide In 1 Cor. 1:3-9, Cyril of Jerusalem Cat. 15 \u00a7\u00a71-2, 4, 26, Leo the Great Sermon 19 \u00a7\u00a71-3, Bernard Sermones in Adventu 3.4 and 5.1, Sacramentarium Gelasianum Vetus II.lxxxiv, Sacramentarium Veronense XXVIIII.372 and MR 2002 bounded comparison, GIRM 90, Clementine Vulgate, and Douay-Rheims Challoner). Confirmed complete repair of all iteration-1 findings across REVIEW_SCOPE without introducing new source, attribution, qualification, or register defects: STU-009 cleanly separates Bede's exposition of Mark 13:34-37 (clerical janitor vs. universal heart-watchfulness) from Gregory's Homily 9 (Matt. 25:14-30 Ascension image) and Homily 13 (Luke 12:35-40 threefold Vigilat definition and three night watches mapped to human ages) at 60:4, 8, 10, 31 and 40:30; STU-010 restores the secondary-2002 digital reproduction bound on the Veronense XXVIIII.372 comparison at 30:83 and removes all eight erroneous 'withheld under copyright' claims on modern Latin Missal texts across 30:16, 83, 87, 103, 105 and 40:22, 50:24, 60:22 in alignment with postconciliar-latin-rights-v1.toml; STU-011 separates source text from cross-passage editorial inference at 40:8 (Gelasianum II.lxxxiv) and 60:18 (1 Cor. 1:7-8 / Chrysostom Hom. II read alongside Mark 13:34); and advisory STU-012 is cleared at 10:11 and 70:12. Consequential-difficulty test PASS at three verified loci: (1) Isa. 63:17 and 64:1->64:3b (Jerome PL 24 cols. 643-646 nimia patientia and immediate Incarnational Descendisti vs. Aquinas Parma Vol. 14 pp. 370-371 permissive non-infusion of grace and literal Exodus 4 / Arnon Num. 21 covenant proof, checked at 30:22-26, 40:10, 24, 50:10, and 70:6, 12, 14); (2) 1 Cor. 1:4-9 (Chrysostom Hom. II \u00a7\u00a74-8 on pastoral economy, apokalupsis as unveiling an already-present Lord, and conditional perseverance with Lapide/Trent, checked at 30:48-54, 40:16, 50:16, 60:18); and (3) Mark 13:32-37 (Hilary IX.65, 67 economy of suspense, Bede IV.13 / Gregory Hom. 9 and 13, and Augustine Ep. 199 \u00a73 via Catena Aurea, checked at 30:64-79, 40:18, 50:18, 60:4-12). All three interpretations are distinguishable, engage all twelve appointed elements organically without roll calls, carry distinct four-senses distillations, and are each supported by four to five eligible Fathers or Doctors making substantive, compatible contributions. Register audit across sections 10-70 confirms plain, accurate reader-facing prose free of production jargon, process narration, asserted significance, maxim closers, or chronological restatement/contradiction. Meaningful limits preserved transparently in sections 20, 80, 90, and 95: rights-limited postconciliar mode omitting ICEL/NABRE and modern Missal prayer bodies with Douay-Rheims study-English notices; declared open offline verification boundaries (printed 2008 altar book, Entrance Antiphon cue/truncation, modern Missal prayer/Preface/solemn-blessing bodies, USCCB 2027 day-entry and Common Psalm refrains, Appendix EPs, unextracted GIRM articles); uncollated OCR locating copies (Jerome PL 24, Aquinas Parma 14, Lapide Vol. 7 vv. 3-4, 6, 8-9, Gelasianum Vetus II.lxxxiv); Bede Wikisource/Corpus Corporum transcription without PL 92 print-facsimile collation; and mediated Catena Aurea citations."
+}

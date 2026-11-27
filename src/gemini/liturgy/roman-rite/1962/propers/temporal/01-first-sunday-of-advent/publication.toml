@@ -1,0 +1,72 @@
+[[structure]]
+role = "context"
+source = "research/context.md"
+
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[[structure]]
+role = "source-dispositions"
+source = "research/source-dispositions.toml"
+
+[[structure]]
+role = "review-dependencies"
+source = "research/review-dependencies.toml"
+
+[document]
+type = "proper-study-v1"
+running-head = "First Sunday of Advent (1962)"
+
+[document.main]
+pdftitle = "First Sunday of Advent: 1962 Roman Missal Study"
+pdfsubject = "Expansive source-first proper study for Dominica prima Adventus in the 1962 Missale Romanum (Sunday, 29 November 2026)"
+title = "First Sunday of Advent"
+subtitle = "Expansive Study of the Proper of the Mass"
+source-line = "1962 \\textit{Missale Romanum} --- \\textit{Dominica prima Adventus}, I classis (\\textit{Statio ad S. Mariam maiorem})"
+occasion-line = "Sunday, 29 November 2026 --- Universal General Roman Calendar"
+body = [
+  { component = "opening" },
+  { component = "appointed-text" },
+  { component = "proper-treatment" },
+  { component = "lane-eschatological" },
+  { component = "lane-incarnational" },
+  { component = "lane-conversion" },
+  { component = "comparison" },
+]
+apparatus = [
+  { component = "study-scope" },
+  { component = "study-references" },
+]
+
+[document.synthesis]
+pdftitle = "First Sunday of Advent: Concise Study (1962 Roman Missal)"
+pdfsubject = "Concise comparative proper study for Dominica prima Adventus in the 1962 Missale Romanum (Sunday, 29 November 2026)"
+title = "First Sunday of Advent"
+subtitle = "Concise Study of the Proper of the Mass"
+source-line = "1962 \\textit{Missale Romanum} --- \\textit{Dominica prima Adventus}, I classis (\\textit{Statio ad S. Mariam maiorem})"
+occasion-line = "Sunday, 29 November 2026 --- Universal General Roman Calendar"
+opening = [
+  { component = "concise-inventory" },
+  { component = "concise-overview" },
+]
+body = [
+  { component = "concise-themes" },
+  "\\clearpage",
+  { component = "concise-commentary" },
+  { component = "concise-apparatus" },
+]
+
+[document.homily]
+pdftitle = "First Sunday of Advent: Homily (1962 Roman Missal)"
+pdfsubject = "Spoken homily and source note for Dominica prima Adventus in the 1962 Missale Romanum (Sunday, 29 November 2026)"
+title = "First Sunday of Advent"
+subtitle = "Homily for an Adult Parish Assembly"
+source-line = "1962 \\textit{Missale Romanum} --- \\textit{Dominica prima Adventus}, I classis (\\textit{Statio ad S. Mariam maiorem})"
+occasion-line = "Sunday, 29 November 2026 --- Universal General Roman Calendar"
+homily = [
+  { component = "homily-spoken" },
+]
+apparatus = [
+  { component = "homily-note" },
+]

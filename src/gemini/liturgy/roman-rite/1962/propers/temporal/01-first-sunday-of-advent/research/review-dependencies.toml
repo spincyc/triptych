@@ -1,0 +1,17 @@
+# Repository-relative external controlling evidence files under src/ read outside
+# this leaf and not already bound by source_id in research/source-bindings.toml.
+
+paths = [
+  "src/sources/calendars/roman-1962/propers.yaml",
+  "src/sources/calendars/roman-1962/rubrics.yaml",
+  "src/sources/inventories/author-standing-v1.toml",
+  "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml",
+  "src/sources/inventories/lasance-new-roman-missal-rights-v1.toml",
+  "src/sources/inventories/missal-expected-targets-v1.toml",
+  "src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml",
+  "src/sources/inventories/roman-1962-advent-ferial-chant-appointments-v1.toml",
+  "src/sources/inventories/roman-1962-finding-aid-coverage-v1.toml",
+  "src/sources/inventories/roman-1962-ordo-missae-v1.toml",
+  "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+  "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+]

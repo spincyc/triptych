@@ -1,0 +1,9 @@
+schema = 1
+record_type = "web-edition"
+document = "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"
+eligibility = "eligible"
+blocking_constructs = []
+reviewed = "2026-11-25"
+inspected = "2026-11-26"
+inspected_by = "gemini (proper-study v20 run 1166cebbde68c425, cold web-review iteration 1)"
+inspection = "Independent cold web-review (iteration 1, PASS, 0 findings) verified the full converted Markdown (109,294 bytes, 16,846 words; sha256:9df4339dcf1678ad492c589dc401687ff583ebb203d897b07a39b59147e24315) and its in-memory scripts/_markdown_render.py HTML (122,952 bytes, checked with scripts/_web_reader_markup.expand and site.css/publication-reader.css selectors; no live browser viewport render) against canonical TeX sources (main.tex, sections/01-09, generated/scriptural-date-location.tex, research/chronology-table.tex, research/chronology-annotations.tex, propers/verified.md); synthesis and homily companions remain converter-verified only."

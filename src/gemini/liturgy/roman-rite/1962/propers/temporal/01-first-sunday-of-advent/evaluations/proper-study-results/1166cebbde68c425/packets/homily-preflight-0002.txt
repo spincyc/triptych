@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v20
+WORKFLOW_DIGEST: 9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec
+RUN_ID: 1166cebbde68c425
+COMMIT: 0f8fb307cde69819014f3d26a7f0cd77cb6ce9a9
+STAGE: homily-preflight
+ITERATION: 2
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-11-29","proper":"liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent","provider":"gemini","research_handoff":"none"}
+DOCUMENT_ROOT: src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"WEB-003","location":"build/web/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent.md lines 70, 214, 226 (source: sections/02-appointed-text.tex line 29; sections/03-detailed-commentary.tex lines 18, 40, 52)","problem":"Four occurrences of \\dots followed by a bare space before a word (\\latin{Et hoc\\dots tempus} at sections/02-appointed-text.tex line 29 and sections/03-detailed-commentary.tex line 18; \\latin{Ad te levavi animam meam\\dots etenim universi...} at sections/03-detailed-commentary.tex line 40; and ``and\\dots of our reparation'' at sections/03-detailed-commentary.tex line 52) lose their trailing space under TeX control-sequence parsing, rendering without spaces around the ellipsis ('Et hoc\u2026tempus', 'animam meam\u2026etenim', 'and\u2026of our reparation') unlike the spaced ellipses at lines 222 and 312.","required_result":"Use \\dots{} (or \\dots\\ ) before the following word at those four loci during source editing so ellipsis spacing is consistent in both LaTeX and web output.","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

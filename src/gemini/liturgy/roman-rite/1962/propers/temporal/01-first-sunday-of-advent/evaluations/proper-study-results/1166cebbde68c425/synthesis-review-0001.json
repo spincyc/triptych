@@ -1,0 +1,320 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 1,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-inventory",
+          "kind": "front-matter",
+          "path": "sections/10-concise-inventory.tex",
+          "references": []
+        },
+        {
+          "depends_on": [
+            "concise-inventory"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-overview",
+          "kind": "front-matter",
+          "path": "sections/11-concise-overview.tex",
+          "references": []
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "concise-chronology",
+          "kind": "front-matter",
+          "path": "generated/scriptural-date-location-page.tex",
+          "references": [
+            "research/chronology-annotations.tex",
+            "research/chronology-table.tex"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-inventory",
+            "concise-overview"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-themes",
+          "kind": "front-matter",
+          "path": "sections/12-concise-themes.tex",
+          "references": []
+        },
+        {
+          "depends_on": [
+            "concise-themes"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-commentary",
+          "kind": "integrated-commentary",
+          "path": "sections/13-concise-commentary.tex",
+          "references": []
+        },
+        {
+          "depends_on": [
+            "concise-commentary"
+          ],
+          "element_keys": [],
+          "key": "concise-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/14-concise-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Gregory the Great",
+            "John Chrysostom",
+            "Cyril of Alexandria",
+            "Bede",
+            "Augustine of Hippo",
+            "Leo the Great",
+            "Robert Bellarmine",
+            "Cornelius a Lapide",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Gregory the Great",
+            "John Chrysostom",
+            "Cyril of Alexandria",
+            "Bede",
+            "Augustine of Hippo",
+            "Leo the Great",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "lane-eschatological"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "eschatological-detachment",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Ambrose of Milan",
+            "Robert Bellarmine",
+            "Augustine of Hippo",
+            "Bernard of Clairvaux",
+            "Sicard of Cremona",
+            "Prosper Gu\u00e9ranger",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Ambrose of Milan",
+            "Robert Bellarmine",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "lane-incarnational"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "incarnational-marian",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Alfredo Ildefonso Schuster",
+            "Leo the Great",
+            "Ambrose of Milan",
+            "Bernard of Clairvaux",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Alfredo Ildefonso Schuster",
+            "Leo the Great",
+            "Ambrose of Milan"
+          ],
+          "component_keys": [
+            "lane-conversion"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "interior-conversion",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "files": {
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generated/scriptural-date-location-page.tex": "3f86da982f378890791b4eb9efefb80e22e3cc244eaf6cf1a22eda233b4b98a5",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/chronology-annotations.tex": "e9dabcb7bd4f1415d26bb65e182a6b2f5184c1e0b1e124f2b4f3217510700d4f",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/chronology-table.tex": "fb450dfe4a03a78ae3977a9b48a700082a03ca4a316627c628706e3b4947438e",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/10-concise-inventory.tex": "8c451cf9f7468da4214508fa626faa6e5a4702c48c763a6aaa049cfc43bc4bb5",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/11-concise-overview.tex": "95e90db9b4ebdab31160b5ce9b184030f65f9ea0f4aaed9d83c5579f49061629",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/12-concise-themes.tex": "75109daf9d9d645503d88ab21950b374e8bef9c0f20f42600cc1281bae0195f0",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/13-concise-commentary.tex": "cca493c79f71acab8562b85be06c5bb385f96a7ba8a1b1ca9a26dcd54293282b",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/14-concise-apparatus.tex": "5336e1ffb037179e1a90400da246532db42e861aaba109a5c97b93ea86048f2a",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/synthesis.tex": "a5555d4afec1c119d391fc0a3d7d284388dcb0508b73b0fc569ae16dd8e6dac5"
+    },
+    "generation_provenance": {
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "20",
+            "9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec",
+            "1166cebbde68c425",
+            "0f8fb307cde69819014f3d26a7f0cd77cb6ce9a9",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gemini",
+    "review": "synthesis",
+    "schema": 1
+  },
+  "stage": "synthesis-review",
+  "summary": "Independent cold review of the concise study for liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent (provider gemini; synthesis.tex, sections/10-concise-inventory.tex through sections/14-concise-apparatus.tex, generated/scriptural-date-location-page.tex, research/chronology-table.tex, research/chronology-annotations.tex, and research/production-review.md) passes with zero blocking findings. Reading the concise study alone before opening sections/01-09 recovered all three distinct whole-formulary interpretations and their concrete divergences across Luke 21:25-33 (Gregory's literal heralds and ironic 'fruit of the world is its ruin' balanced by Cyril's bodily incorruption and Bede/Augustine's renewal per imaginem, versus Ambrose's symbolic Marian 'light cloud' and Gentile 'all the trees' and interior in singulis), Psalm 84:8 & 13 (Bellarmine/Sicard/Gueranger's Marian virgin earth and Bernard's Christ-as-Fruit, versus Augustine's Old Latin suavitas ploughing confessed hearts and Schuster's Eucharistic pledge), Romans 13:11-14a (Chrysostom's stadium runners and glittering armour of light, Durandus's Incarnational exchange, and Augustine's Confessions VIII.12.29 with the 1962 omission of v. 14b), Psalm 24:1-4 (Bellarmine's earthly briers, Beleth/Schuster's Nativity longing, and Augustine's totus Christus plus Aquinas's precepts-vs-counsels ascent), and the altar prayers paired with Bernard's Middle Coming. Concrete Page-2 orientation-v3 lookup on generated/scriptural-date-location-page.tex and research/chronology-annotations.tex succeeded: (1) Gospel Luke 21:25-33 pairs directly to Narrated event 'Jesus teaches in Jerusalem about the coming of the Son of Man' (Date unresolved) and Composition 'The Gospel of St Luke' (Disputed: c. A.D. 70; Before Acts and the end of Paul's Roman imprisonment); (2) Introit Ps. 24:1-3, 4 (Vg.; Heb. 25) pairs Traditional attribution ('David's reign in the usual chronology; Hebron, then Jerusalem' -> c. 1055-1015 B.C. with Corbett's 30-50-year note), Historical setting (Occasion date unresolved), and Composition (Before c. 165 B.C.); (3) Alleluia Ps. 84:8 (Vg.; Heb. 85) and Epistle Rom. 13:11-14 pair cleanly to their Korahite (c. 740-536 B.C.) and Romans (Proposals span A.D. 57-58) composition dates with Vg./Heb. explained once (the shared projection omits composition place on Rom. 13:11-14, a shared-projection fact rather than a synthesis defect). Direct verification against the accepted expansive study (sections/01-09), research records, and primary witnesses in src/sources/ (Durandus VI.2-3, Beleth LV & LXIV, Rupert III.2, Gregory Hom. 1.1-6, Ambrose Exp. in Luc. X.37-45, Cyril Sermon CXXXIX, Bede VI, Augustine Enarr. in Ps. 84 & Sermo 185.1, Bellarmine on Pss. 24/84, Bernard Missus est Hom. 1 & In Adventu 2-5, Schuster I pp. 321-323, Gueranger I p. 137, Sicard V.2, and Aquinas Postilla Ps. 24) confirmed that all standing defects from iteration 0 (SYN-001's seven factual/chronological/attribution errors, SYN-002's Page-1 author bundling, and SYN-003's recurring semicolon-chained author stacks and overloaded sentences) are resolved without introducing new source-dependent claims or dropping qualifications, and advisories SYN-004 and SYN-005 are also cleared. Read-only mechanical validation (check-content-preflight --edition synthesis, check-proper-components --edition synthesis, document-types refresh --check, and _proper_study.py check --edition synthesis) passed cleanly. Meaningful limit: this is a source-level cold review; no PDF was compiled or visually inspected, so physical-page placement beyond source-level zref markers and component structure remains unverified until an optional print export is inspected. Verdict: PASS."
+}

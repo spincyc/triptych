@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v20
+WORKFLOW_DIGEST: 9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec
+RUN_ID: 1166cebbde68c425
+COMMIT: 0f8fb307cde69819014f3d26a7f0cd77cb6ce9a9
+STAGE: research-preflight
+ITERATION: 2
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-11-29","proper":"liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent","provider":"gemini","research_handoff":"none"}
+DOCUMENT_ROOT: src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"RES-010","location":"research/context.md lines 121, 139, 153, 157, 168, 172","problem":"Several passages in research/context.md retain stale pre-research future tense and run-scratch staging language ('collation receipt archived in run scratch for source-registration passage creation' at line 121; 'The research stage must check...' at line 139; 'will be produced mechanically' at line 153; 'the research stage will inspect' at line 157; 'staged in run scratch for source-registration' at line 168; 'prepared for source-registration (iter 1)' at line 172), although chronology generation, Douay-Rheims verification, patristic inspection, and source-registration passage creation (temporal-advent-1-scriptural-propers-and-rubrics-collation-2026-11-25) are already completed.","required_result":"Update research/context.md lines 121, 139, 153, 157, 168, and 172 to completed past tense and cite passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-advent-1-scriptural-propers-and-rubrics-collation-2026-11-25 directly in place of run-scratch staging language.","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

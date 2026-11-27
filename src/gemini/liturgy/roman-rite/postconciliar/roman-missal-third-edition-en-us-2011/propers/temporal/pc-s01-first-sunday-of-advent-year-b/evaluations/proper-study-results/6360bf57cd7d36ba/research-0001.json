@@ -1,0 +1,29 @@
+{
+  "artifact_path": "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-001",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-002",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-003",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-004",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-005",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "stage": "research",
+  "summary": "Repaired all five blocking research findings (RES-001 through RES-005) and cleared all three advisory findings (RES-006 through RES-008) for First Sunday of Advent, Year B (PC-S01-B): purged copyrighted U.S. Lectionary refrains and all unverified/recalled Missal body paraphrases, titles, date ranges, and unbacked rubrics across shared/.../verified.md, instance/manifest.md, propers/verified.md, propers/retrieved.txt, context.md, scope.md, interpretations.md, registry/occurrences-2026.md, and chronology-inputs.toml, then regenerated chronology.toml, chronology-annotations.tex, and chronology-table.tex; corrected every misdescribed binding/disposition scope against direct primary .toml reads and downgraded Binding 3 (offline metadata-only segment) and raw OCR locating witnesses (Bindings 45, 57, 58, 71) to 'inspected'; achieved complete 1-to-1 reconciliation across all 117 bindings and 121 disposition entries (including OLM praenotanda 69/70-71/76/80, WEB-C Mark & 1 Cor, Aquinas Dessain Vol. 2 negative search, Corpus Thomisticum lead, Ordo Missae/Notitiae/GIRM controls, and all cited leads); corrected Jerome on Isa 64:4 (excluding Vallarsi's Origen footnote), Chrysostom Hom. II \u00a78 (quoting 1 Cor 2:9 echoing Isa 64:4), and Aquinas Super Isaiam 64:3a/3b (Exod. 20 on 64:3a; Exod. 4 & Num. 21 on 64:3b); brought instance/manifest.md, propers/retrieved.txt, occurrences-2026.md, and shared/.../verified.md into full postconciliar-propers.md compliance; added postconciliar-ordo-missae-v1.toml, mass-commentary-corpus.yaml, and propers/shared/README.md to review-dependencies.toml, added the Vulgate/NABRE drafting cross-walk note in scope.md \u00a75, and normalized all cross-element tags in interpretations.md. Verified with proper-chronology record --check, proper-chronology annotations --presentation orientation-v3 --check, check-content-preflight --check bindings-valid (117 bindings), scripts/_proper_study.py source-dispositions --mode source, and zero-hit forbidden-string greps. Binding digests receipt saved in .scratch/driver-no/research-1/binding-digests.txt."
+}

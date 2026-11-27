@@ -1,0 +1,17 @@
+{
+  "artifact_path": "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/main.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "WEB-002",
+      "outcome": "repaired"
+    },
+    {
+      "id": "WEB-003",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 3,
+  "stage": "author-study",
+  "summary": "Surgically repaired WEB-002 in sections/20-appointed-texts.tex (removing redundant inner brackets in \\notread{...} cues and correcting line 34's unprinted span to 64:1 Heb. omitted before the printed 64:2a Heb. carrier clause) and WEB-003 across sections/{30,40,50,60,70}.tex (dual-numbering all bare Vulgate Psalm citations Hebrew-first, flipping all four reversed dual Psalm citations to Hebrew-first, and explicitly marking every Vulgate Isaiah 64 verse citation with Vg. and paired Hebrew verse numbers where helpful), updated research/production-review.md, and verified exit 0 across document-types refresh --check, _proper_study.py check, all 12 research-edition check-content-preflight checks, check-web-edition, check-generation-metadata, and the author-study-3 web-probe (0 double-bracket hits, 0 nested *\\[*...*\\] emphasis hits, 12/12 proper-* anchors, 3/3 lane-* anchors, 0 raw TeX tokens)."
+}

@@ -1,0 +1,22 @@
+{
+  "artifact_path": "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-002",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-008",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-009",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 2,
+  "notes": "Handoff for source-registration (iter 2): see .scratch/driver-tlm/research-receipts-2/handoff.md (with 400 dpi CMAA 1962 PDF pp. 82-83 verification crops in .scratch/driver-tlm/research-receipts-1/ and .scratch/driver-tlm/cmaa-p82-p83/, strictly outside Git). Required source-registration actions: (1) edit line 11 of src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/temporal-advent-1-scriptural-propers-and-rubrics-collation-2026-11-25.toml to record uniform accented s\u01fdcula s\u00e6cul\u00f3rum across Introit unit 1, Collect unit 2, and Secret unit 8, then refresh binding 6 source_fingerprint in research/source-bindings.toml and row 6 in research/source-dispositions.toml; (2) update research/source-dispositions.toml row 39 (hadrianum-wilson-1915-advent-1-secret-postcommunion) locus and binding_sha256 (7d98a72a0a9a094aaa4fb9df5be9c4df7a0673400ff51877c8d079b042093d6e); (3) update all six Amalarius rows (bindings 107-112) in research/source-dispositions.toml with the 838 Synod of Kiersy (Quierzy) censure disclosure, structural/contextual-only restriction, and refreshed binding_sha256 digests; (4) run source-dispositions, bindings-valid, source-library validate, source-reader structure --strict/--check, and make check-sources.",
+  "stage": "research",
+  "summary": "Completed surgical repair pass (iteration 2) addressing all three blocking research-review findings (RES-002, RES-008, RES-009) and clearing advisory RES-010 across DOCUMENT_ROOT for 1962 First Sunday of Advent (gemini). Verified Hadrianum pdf-text-layout-6ca97fd7/source.txt directly (1,063,448 bytes; 432 U+000C form-feed page breaks): Dominica prima Adventus stands on printed p. 113 / PDF p. 171 (page lines 12-18), at lines 7981-7987 under Python splitlines() (7981-7983 Super oblata, 7984-7987 Ad complendum) and LF-only physical lines 7811-7813 / 7814-7817 excluding the 170 preceding form-feed breaks, and updated propers/verified.md, research/scope.md, and research/source-bindings.toml binding 39 (RES-002). Verified Amalarius of Metz's 838 Synod of Kiersy (Quierzy) censure regarding his opinion on the signification of the parts of the divided Host at Mass in src/sources/inventories/author-standing-v1.toml (lines 457-473) and recorded the censure and structural/contextual-only restriction across research/scope.md (\u00a7\u00a73.2, 4, 5), research/context.md (line 162), and all six Amalarius bindings 107-112 in research/source-bindings.toml (RES-008). Verified directly on 400 dpi CMAA 1962 page-image crops (PDF pp. 82-83) that Introit unit 1, Collect unit 2, and Secret unit 8 all uniformly print accented s\u01fdcula s\u00e6cul\u00f3rum, repaired propers/verified.md line 54, and documented the exact line-11 fix for the shared passage TOML plus binding 6 fingerprint refresh and source-dispositions.toml reconciliation (bindings 6, 39, 107-112) in .scratch/driver-tlm/research-receipts-2/handoff.md for source-registration (iter 2) (RES-009). Updated all six stale future-tense/scratch-staging lines in research/context.md to completed past tense citing the registered 1962 collation passage directly (RES-010). Passed check-content-preflight bindings-valid (129 bindings) and scripts/_proper_study.py check --phase research --mode source."
+}

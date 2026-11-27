@@ -1,0 +1,13 @@
+{
+  "artifact_path": "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/homily.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "HOM-007",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 3,
+  "stage": "derive-homily",
+  "summary": "Repaired blocking finding HOM-007 in sections/homily/10-homily.tex lines 21 and 23 by identifying the pre-Gospel acclamation (Ps. 85[84]:8) as a psalm ('we prayed in a psalm') and anchoring Paragraph 12 explicitly to 'the psalm we heard before the Gospel' for the Communion Antiphon (Ps. 85[84]:13), and cleared advisory finding HOM-008 in line 1 ('With that festive song of praise set aside, the Mass opens by lifting our souls to the Lord in a psalm.'). Synchronized the updated counts (1,478 spoken words, 1,474 raw source tokens, 10.6 to 11.8 minutes at 125-140 wpm, about 11.4 minutes at 130 wpm) in sections/homily/90-note.tex and research/production-review.md, verified all 12 homily-preflight checks, document-types refresh --check, _proper_study.py check --edition homily --mode source, check-generation-metadata, and check-web-edition (all exit 0), and confirmed all 40 sealed leaf files remained byte-identical."
+}

@@ -7,6 +7,77 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-11-27.
 
+## Gemini First Sunday of Advent (1962 and U.S. Postconciliar) — 29 November 2026
+
+<!-- promised-deliverable: gemini-advent-1-propers-2026-11-29 -->
+
+**Complete locally; reconciled onto `origin/main` (`04f2c69d15`) and validated for push to `main` (2026-11-27).** The maintainer
+requested adding a `Gemini` column to the propers lists in both
+[library/traditional-latin-mass.md](library/traditional-latin-mass.md) and
+[library/novus-ordo-liturgy.md](library/novus-ordo-liturgy.md) (later
+consolidating `library/novus-ordo-liturgy.md` to one row per week with inline
+`Year A:` / `Year B:` / `Year C:` tags), driving independent `proper-study` v20
+runs to completion for Sunday, 29 November 2026 in both the 1962 Roman Rite
+(`01-first-sunday-of-advent`) and the U.S. postconciliar Roman Rite
+(`pc-s01-first-sunday-of-advent-year-b`) each in its own dedicated subagent
+driver with fresh child subagents, conducting an independent cold review of all
+integrated work, and publishing the validated branch to `main`. During
+reconciliation with `origin/main` (`2acae0db07` and subsequently `04f2c69d15`),
+the maintainer elected to retain `origin/main`'s published *Keeping Advent*
+1962 seasonal handbook (`af8667c92c`, part of
+`gemini-six-showcase-publications-2026-11-25`) alongside Wave 2 and Claude's
+postconciliar Advent Year B study, landing our Gemini Advent 1 propers, catalog
+consolidation, mobile CSS, and tooling fixes linearly on top of `04f2c69d15`.
+
+- **1962 Roman Rite (`01-first-sunday-of-advent`):** Run `1166cebbde68c425`
+  (`proper-study` v20, seed `0f8fb307cd`, full-text mode) reached terminal
+  **`ACCEPTED`** across 76 packets and 76 results (`0` standing findings, `0`
+  interventions, `0` escalations). Archived under
+  [evaluations/proper-study-results/1166cebbde68c425](src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/evaluations/proper-study-results/1166cebbde68c425/record.md)
+  with `--redact-user-home` (receipt schema 5, clearing three bare home-prefix
+  hygiene-grep tokens in mid-run summaries with zero machine-path leaks);
+  full cycle account in
+  [CYCLES.md](workflows/reviews/gemini-1962-01-advent-2026-11-29/CYCLES.md).
+  Native print proofs verified locally via `tools/print-document build` and
+  `tools/native-print-compile` (`wasmtex-2026-47ff73bab1a2e548`, after removing
+  nested italic wrappers inside small-caps `\begin{englishwitness}` labels to
+  eliminate `T1/lmr/m/scit` warnings): expansive study `29` pages, concise
+  study `12` pages (settled 4-page opening), homily `4` pages (all Letter, zero
+  errors).
+- **U.S. Postconciliar Roman Rite (`pc-s01-first-sunday-of-advent-year-b`):**
+  Run `6360bf57cd7d36ba` (`proper-study` v20, seed `0f8fb307cd`, `rights-limited`
+  mode, with Gemini's own edition-locale registry and shared `PC-S01` Missal
+  owner) reached terminal **`ACCEPTED`** across 57 packets and 57 results (`0`
+  standing findings, `0` interventions, `0` escalations). Archived byte-exact
+  under
+  [evaluations/proper-study-results/6360bf57cd7d36ba](src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/6360bf57cd7d36ba/record.md);
+  full cycle account in
+  [CYCLES.md](workflows/reviews/gemini-postconciliar-pc-s01-b-advent-2026-11-29/CYCLES.md).
+  Native print proofs verified locally via `tools/print-document build` and
+  `tools/native-print-compile` (`wasmtex-2026-47ff73bab1a2e548`, after
+  making `POSTCONCILIAR_US_FORMAT` optional via `$(wildcard ...)` in `Makefile`
+  and adding `\phantomsection` before `\section*{References}` in
+  `sections/95-references.tex`): expansive study `32` pages, concise study `12`
+  pages (settled 4-page opening), homily `5` pages (all Letter, zero errors).
+- **Shared tooling & independent cold review:** Fixed nested emphasis flattening
+  and added a narrowed italic-inside-italic audit in `tools/web-edition`
+  (`WEB-001`), added HTML closing-tag recognition and `--redact-user-home`
+  (schema 5) in `tools/proper-study-run-archive`, and ran an independent
+  read-only top-level cold review over the full diff and built site. The cold
+  review caught one mobile CSS regression (`<= 760px` wide-ID `PC-R01`–`PC-R09`
+  track width after removing the `Cycle` column from
+  `library/novus-ordo-liturgy.md`), fixed via `.catalogue-propers-id-wide`
+  (`3.7rem`) in `tools/public-alpha` and `release/public-alpha/assets/site.css`
+  with unit-test coverage, alongside advisory hardening in
+  `tools/proper-study-run-archive`, `tools/document-library`, and
+  `tools/tests/test_check_proper_identity.py`. All fixed-point refreshes
+  (`browser-products`, `release-bindings`, `corpus-index`, and 22-publication
+  Gemini source inventories), `make check-deployment-sources`,
+  `make public-site`,
+  `tools/tpt public-alpha verify --deployment-target github-pages`, pinned
+  `wasmtex` native-print verification, and unit tests passed prior to pushing
+  to `origin/main`.
+
 ## Gemini Wave 2 showcase publications and postconciliar pictorial gallery, 2026-11-27
 
 <!-- promised-deliverable: gemini-wave-two-showcase-2026-11-27 -->

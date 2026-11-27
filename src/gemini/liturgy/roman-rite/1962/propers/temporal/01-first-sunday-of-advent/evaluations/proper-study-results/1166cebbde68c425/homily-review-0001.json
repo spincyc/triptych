@@ -1,0 +1,232 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 1,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-spoken",
+          "kind": "homily",
+          "path": "sections/20-homily.tex",
+          "references": []
+        },
+        {
+          "depends_on": [
+            "homily-spoken"
+          ],
+          "element_keys": [],
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/21-homily-note.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Gregory the Great",
+            "John Chrysostom",
+            "Cyril of Alexandria",
+            "Bede",
+            "Augustine of Hippo",
+            "Leo the Great",
+            "Robert Bellarmine",
+            "Cornelius a Lapide",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Gregory the Great",
+            "John Chrysostom",
+            "Cyril of Alexandria",
+            "Bede",
+            "Augustine of Hippo",
+            "Leo the Great",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "lane-eschatological"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "eschatological-detachment",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Ambrose of Milan",
+            "Robert Bellarmine",
+            "Augustine of Hippo",
+            "Bernard of Clairvaux",
+            "Sicard of Cremona",
+            "Prosper Gu\u00e9ranger",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Ambrose of Milan",
+            "Robert Bellarmine",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "lane-incarnational"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "incarnational-marian",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Alfredo Ildefonso Schuster",
+            "Leo the Great",
+            "Ambrose of Milan",
+            "Bernard of Clairvaux",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Alfredo Ildefonso Schuster",
+            "Leo the Great",
+            "Ambrose of Milan"
+          ],
+          "component_keys": [
+            "lane-conversion"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "interior-conversion",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "files": {
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/homily.tex": "dfa414d4360dd9dad29837d1b693699813b1c4789ac9cab88a1e5bcc23d63ad2",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/20-homily.tex": "9f775c049b0bdbc701b94adc8b870f6bdc19aa07932972296edbf250159756df",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/21-homily-note.tex": "ba5aa55bef2655bdd8438ef19372011e707db0e1527dc5a00ad05617c774f828"
+    },
+    "generation_provenance": {
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "20",
+            "9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec",
+            "1166cebbde68c425",
+            "0f8fb307cde69819014f3d26a7f0cd77cb6ce9a9",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gemini",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Independent cold review of the 1962 First Sunday of Advent homily deliverable (src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/homily.tex, sections/20-homily.tex, and sections/21-homily-note.tex) for an adult parish assembly (Sunday, 29 November 2026) passes with zero blocking, accepted, or advisory findings. Continuous listening read of sections/20-homily.tex confirmed clear, vivid, verbatim-speakable adult-parish prose across 12 paragraphs (67 sentences, mean 20.5 words, maximum 36 words) with no footnotes, headings, editorial instructions, unexplained Latin, excluded rhetorical devices (maxim closers, recurring motifs, relatable inventories, slogans, stock calls, emphatic fragments, or questions answered in the next breath), invented anecdotes, clerical persona, newly composed liturgical prayer, or postconciliar bleed. The text-substitution test passes decisively: replacing Luke 21:25-33, Rom. 13:11-14a, Pss. 24 and 84, and the Advent I orations collapses every step of the argument's actual movement\u2014from Luke 21:28-30's reversal of cosmic fear into lifting up heads and the fig tree's fruit ('the fruit of the world is its ruin,' balanced by Cyril on bodily resurrection and Augustine on cosmic renewal), through the Collect's inward turn from Ps. 79:3's external foes to 'approaching dangers brought on by our sins' and Ps. 24's Introit/Gradual/Offertory pattern, to Rom. 13:12-14a's shift from 'works of darkness' to 'armour of light' and putting on Christ Himself, Ps. 84:8's anti-Pelagian mercy, Ps. 84:13's confession-plough ('sweetness' vs. 'goodness'), and the Secret/Postcommunion altar preparation issuing in one text-grounded second-person call to Confession\u2014and the speech states what the texts change in the listener's understanding plainly as what the texts say. Verified spoken word count is exactly 1,374 spoken words (1,363 raw whitespace tokens), yielding an estimated 10.6-11.5 minutes at an unhurried 120-130 wpm (11.0-11.9 minutes at 115-125 wpm), matching sections/21-homily-note.tex and research/production-review.md and honestly qualified as a written word-count estimate only, not a timed human delivery. All three standing blocking findings from iteration 0 (HOM-001 on Augustine De civitate Dei XX.14, 16 and Bede on Luke 21:33; HOM-002 on 1962 Ps. 24 Introit/Gradual/Offertory boundaries; HOM-003 on refocusing paragraph 11 without the roll call/Trinity Preface and removing unexplained Latin doublets) and both prior advisories (HOM-004 surname cadence; HOM-005 'shake the foundations of buildings,' 'delighted in shows,' and removal of unused Bute 1908 / Hom. 1 sec. 1) are verified resolved against the accepted studies (sections/01-14), propers/verified.md, research records, and primary witnesses in src/sources/ (Douay-Rheims 1899, Lasance/Walsh 1945, Gregory Hom. 1 secs. 3, 5-6 in Wikisource Latin and Migne PL 76, Cyril Sermon CXXXIX pp. 653-654, Augustine De civitate Dei XX.14, 16 in NPNF I.2, Bede In Lucam VI on Luke 21:33, Chrysostom Hom. 24 on Romans, and Augustine Enarr. in Ps. 84 secs. 9, 14-15 in Latin and Coxe 1888), with all 22 inline quotations verified verbatim and read-only preflight, component, document-type, metadata, and schema checks passing cleanly. Meaningful limits: this source-and-exegesis review does not evaluate a compiled print PDF or a timed audible performance; the speaking duration remains a written word-count estimate only; and upstream evidence bounds noted in the apparatus remain in force (including CC BY-SA 3.0 attribution for the Wikisource Latin witness of Gregory alongside public-domain editions, and violet vestment color attested via registered FSSP Ordo metadata because RG 128 is not tracked locally). Verdict: PASS."
+}

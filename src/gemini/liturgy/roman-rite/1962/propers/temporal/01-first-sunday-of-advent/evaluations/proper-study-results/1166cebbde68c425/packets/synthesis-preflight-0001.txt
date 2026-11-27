@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v20
+WORKFLOW_DIGEST: 9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec
+RUN_ID: 1166cebbde68c425
+COMMIT: 0f8fb307cde69819014f3d26a7f0cd77cb6ce9a9
+STAGE: synthesis-preflight
+ITERATION: 1
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-11-29","proper":"liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent","provider":"gemini","research_handoff":"none"}
+DOCUMENT_ROOT: src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"SYN-004","location":"sections/13-concise-commentary.tex:75; sections/14-concise-apparatus.tex:4, 13","problem":"The concise study uses unexpanded rubrical abbreviations ('RGMR 507' in reader-facing body prose at 13:75; 'AAS', 'RG', and 'RGMR' at 14:4, 13) without ever defining them anywhere in the standalone concise document, and 14:4 lists rubric numbers (RG 137 for dalmatics/folded chasubles, RGMR 424--425 for Prayers at the Foot of the Altar, and RGMR 500--501 for the Roman Canon) for matters not mentioned in the concise study.","required_result":"Spell out Acta Apostolicae Sedis (AAS), Rubricae generales (RG), and Rubricae generales Missalis romani (RGMR) at first use in 14:4, replace bare '(RGMR 507)' in 13:75 with plain prose (keeping the citation in 14:4), and trim rubric numbers in 14:4 to those actually governing items discussed in the concise study.","severity":"advisory"},{"id":"SYN-005","location":"sections/12-concise-themes.tex:29; sections/13-concise-commentary.tex:36, 81, 85","problem":"Three minor presentation and quotation-precision blemishes remain: (1) the comparison table row labeled 'Luke 21:25--30' at 13:81 includes St. Bede and St. Augustine's exposition of Luke 21:33 ('renewal per imaginem'); (2) the row labeled 'Four Senses' at 13:85 lists only Allegorical, Moral, and Anagogical senses without noting the shared Literal sense above; and (3) 12:29 and 13:36 render Dom Prosper Gueranger (The Liturgical Year I, p. 137) as '\"our Earth ... made fruitful by the dew of heaven\"', splicing across a sentence boundary ('whom our Earth is going to bring forth... This Earth, which is ours, is the Blessed Virgin Mary made fruitful by the dew of heaven').","required_result":"Change the row label at 13:81 to 'Luke 21:25--33', clarify the row label or note at 13:85 ('Spiritual Senses' or 'Four Senses (Literal shared above)'), and split the Gueranger quotation at 12:29 and 13:36 into two separate short phrases ('\"our Earth\"' and '\"made fruitful by the dew of heaven\"', matching sections/05-lane-incarnational.tex:26).","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

@@ -1,0 +1,464 @@
+schema = 2
+appointed_text_completeness = "complete"
+format_contract = "propers-format-v1"
+presentation_contract = "interpretive-pagination-v1"
+authority_contract = "authority-standing-v1"
+chronology_presentation = "orientation-v3"
+element_keys = [
+  "introit",
+  "collect",
+  "epistle",
+  "gradual",
+  "alleluia",
+  "gospel",
+  "offertory",
+  "secret",
+  "communion",
+  "postcommunion",
+]
+
+[presentation]
+inventory = "concise-inventory"
+overview = "concise-overview"
+chronology = "concise-chronology"
+themes = "concise-themes"
+commentary = "concise-commentary"
+
+[[components]]
+key = "opening"
+kind = "front-matter"
+path = "sections/01-opening.tex"
+modes = ["research"]
+element_keys = [
+  "introit",
+  "collect",
+  "epistle",
+  "gradual",
+  "alleluia",
+  "gospel",
+  "offertory",
+  "secret",
+  "communion",
+  "postcommunion",
+]
+depends_on = []
+references = []
+
+[[components]]
+key = "appointed-text"
+kind = "appointed-text"
+path = "sections/02-appointed-text.tex"
+modes = ["research"]
+element_keys = [
+  "introit",
+  "collect",
+  "epistle",
+  "gradual",
+  "alleluia",
+  "gospel",
+  "offertory",
+  "secret",
+  "communion",
+  "postcommunion",
+]
+depends_on = []
+references = []
+
+[[components]]
+key = "proper-treatment"
+kind = "proper-treatment"
+path = "sections/03-detailed-commentary.tex"
+modes = ["research"]
+element_keys = [
+  "introit",
+  "collect",
+  "epistle",
+  "gradual",
+  "alleluia",
+  "gospel",
+  "offertory",
+  "secret",
+  "communion",
+  "postcommunion",
+]
+depends_on = ["appointed-text"]
+references = []
+
+[[components]]
+key = "lane-eschatological"
+kind = "interpretive-lane"
+path = "sections/04-lane-eschatological.tex"
+modes = ["research"]
+element_keys = [
+  "introit",
+  "collect",
+  "epistle",
+  "gradual",
+  "alleluia",
+  "gospel",
+  "offertory",
+  "secret",
+  "communion",
+  "postcommunion",
+]
+depends_on = ["appointed-text", "proper-treatment"]
+references = []
+
+[[components]]
+key = "lane-incarnational"
+kind = "interpretive-lane"
+path = "sections/05-lane-incarnational.tex"
+modes = ["research"]
+element_keys = [
+  "introit",
+  "collect",
+  "epistle",
+  "gradual",
+  "alleluia",
+  "gospel",
+  "offertory",
+  "secret",
+  "communion",
+  "postcommunion",
+]
+depends_on = ["appointed-text", "proper-treatment"]
+references = []
+
+[[components]]
+key = "lane-conversion"
+kind = "interpretive-lane"
+path = "sections/06-lane-conversion.tex"
+modes = ["research"]
+element_keys = [
+  "introit",
+  "collect",
+  "epistle",
+  "gradual",
+  "alleluia",
+  "gospel",
+  "offertory",
+  "secret",
+  "communion",
+  "postcommunion",
+]
+depends_on = ["appointed-text", "proper-treatment"]
+references = []
+
+[[components]]
+key = "comparison"
+kind = "terminal-apparatus"
+path = "sections/07-comparison.tex"
+modes = ["research"]
+element_keys = [
+  "introit",
+  "collect",
+  "epistle",
+  "gradual",
+  "alleluia",
+  "gospel",
+  "offertory",
+  "secret",
+  "communion",
+  "postcommunion",
+]
+depends_on = ["lane-eschatological", "lane-incarnational", "lane-conversion"]
+references = []
+
+[[components]]
+key = "study-chronology"
+kind = "terminal-apparatus"
+path = "generated/scriptural-date-location.tex"
+modes = ["research"]
+element_keys = [
+  "introit",
+  "epistle",
+  "gradual",
+  "alleluia",
+  "gospel",
+  "offertory",
+  "communion",
+]
+depends_on = []
+references = [
+  "research/chronology-annotations.tex",
+  "research/chronology-table.tex",
+]
+
+[[components]]
+key = "study-scope"
+kind = "terminal-apparatus"
+path = "sections/08-scope.tex"
+modes = ["research"]
+element_keys = []
+depends_on = ["appointed-text"]
+references = []
+
+[[components]]
+key = "study-references"
+kind = "terminal-apparatus"
+path = "sections/09-references.tex"
+modes = ["research"]
+element_keys = []
+depends_on = [
+  "proper-treatment",
+  "lane-eschatological",
+  "lane-incarnational",
+  "lane-conversion",
+  "comparison",
+  "study-scope",
+]
+references = []
+
+[[components]]
+key = "concise-inventory"
+kind = "front-matter"
+path = "sections/10-concise-inventory.tex"
+modes = ["synthesis"]
+element_keys = [
+  "introit",
+  "collect",
+  "epistle",
+  "gradual",
+  "alleluia",
+  "gospel",
+  "offertory",
+  "secret",
+  "communion",
+  "postcommunion",
+]
+depends_on = []
+references = []
+
+[[components]]
+key = "concise-overview"
+kind = "front-matter"
+path = "sections/11-concise-overview.tex"
+modes = ["synthesis"]
+element_keys = [
+  "introit",
+  "collect",
+  "epistle",
+  "gradual",
+  "alleluia",
+  "gospel",
+  "offertory",
+  "secret",
+  "communion",
+  "postcommunion",
+]
+depends_on = ["concise-inventory"]
+references = []
+
+[[components]]
+key = "concise-chronology"
+kind = "front-matter"
+path = "generated/scriptural-date-location-page.tex"
+modes = ["synthesis"]
+element_keys = [
+  "introit",
+  "epistle",
+  "gradual",
+  "alleluia",
+  "gospel",
+  "offertory",
+  "communion",
+]
+depends_on = []
+references = [
+  "research/chronology-annotations.tex",
+  "research/chronology-table.tex",
+]
+
+[[components]]
+key = "concise-themes"
+kind = "front-matter"
+path = "sections/12-concise-themes.tex"
+modes = ["synthesis"]
+element_keys = [
+  "introit",
+  "collect",
+  "epistle",
+  "gradual",
+  "alleluia",
+  "gospel",
+  "offertory",
+  "secret",
+  "communion",
+  "postcommunion",
+]
+depends_on = ["concise-inventory", "concise-overview"]
+references = []
+
+[[components]]
+key = "concise-commentary"
+kind = "integrated-commentary"
+path = "sections/13-concise-commentary.tex"
+modes = ["synthesis"]
+element_keys = [
+  "introit",
+  "collect",
+  "epistle",
+  "gradual",
+  "alleluia",
+  "gospel",
+  "offertory",
+  "secret",
+  "communion",
+  "postcommunion",
+]
+depends_on = ["concise-themes"]
+references = []
+
+[[components]]
+key = "concise-apparatus"
+kind = "terminal-apparatus"
+path = "sections/14-concise-apparatus.tex"
+modes = ["synthesis"]
+element_keys = []
+depends_on = ["concise-commentary"]
+references = []
+
+[[components]]
+key = "homily-spoken"
+kind = "homily"
+path = "sections/20-homily.tex"
+modes = ["homily"]
+element_keys = [
+  "introit",
+  "collect",
+  "epistle",
+  "gradual",
+  "alleluia",
+  "gospel",
+  "offertory",
+  "secret",
+  "communion",
+  "postcommunion",
+]
+depends_on = []
+references = []
+
+[[components]]
+key = "homily-note"
+kind = "terminal-apparatus"
+path = "sections/21-homily-note.tex"
+modes = ["homily"]
+element_keys = []
+depends_on = ["homily-spoken"]
+references = []
+
+[[lanes]]
+key = "eschatological-detachment"
+authors = [
+  "Gregory the Great",
+  "John Chrysostom",
+  "Cyril of Alexandria",
+  "Bede",
+  "Augustine of Hippo",
+  "Leo the Great",
+  "Robert Bellarmine",
+  "Cornelius a Lapide",
+  "William Durandus",
+]
+carrying_authors = [
+  "Gregory the Great",
+  "John Chrysostom",
+  "Cyril of Alexandria",
+  "Bede",
+  "Augustine of Hippo",
+  "Leo the Great",
+  "Robert Bellarmine",
+]
+sources = [
+  "research/interpretations.md",
+  "research/scope.md",
+  "research/source-bindings.toml",
+]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+element_keys = [
+  "introit",
+  "collect",
+  "epistle",
+  "gradual",
+  "alleluia",
+  "gospel",
+  "offertory",
+  "secret",
+  "communion",
+  "postcommunion",
+]
+component_keys = ["lane-eschatological"]
+
+[[lanes]]
+key = "incarnational-marian"
+authors = [
+  "Ambrose of Milan",
+  "Robert Bellarmine",
+  "Augustine of Hippo",
+  "Bernard of Clairvaux",
+  "Sicard of Cremona",
+  "Prosper Guéranger",
+  "William Durandus",
+]
+carrying_authors = [
+  "Ambrose of Milan",
+  "Robert Bellarmine",
+  "Augustine of Hippo",
+]
+sources = [
+  "research/interpretations.md",
+  "research/scope.md",
+  "research/source-bindings.toml",
+]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+element_keys = [
+  "introit",
+  "collect",
+  "epistle",
+  "gradual",
+  "alleluia",
+  "gospel",
+  "offertory",
+  "secret",
+  "communion",
+  "postcommunion",
+]
+component_keys = ["lane-incarnational"]
+
+[[lanes]]
+key = "interior-conversion"
+authors = [
+  "Augustine of Hippo",
+  "Thomas Aquinas",
+  "Alfredo Ildefonso Schuster",
+  "Leo the Great",
+  "Ambrose of Milan",
+  "Bernard of Clairvaux",
+  "William Durandus",
+]
+carrying_authors = [
+  "Augustine of Hippo",
+  "Thomas Aquinas",
+  "Alfredo Ildefonso Schuster",
+  "Leo the Great",
+  "Ambrose of Milan",
+]
+sources = [
+  "research/interpretations.md",
+  "research/scope.md",
+  "research/source-bindings.toml",
+]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+element_keys = [
+  "introit",
+  "collect",
+  "epistle",
+  "gradual",
+  "alleluia",
+  "gospel",
+  "offertory",
+  "secret",
+  "communion",
+  "postcommunion",
+]
+component_keys = ["lane-conversion"]

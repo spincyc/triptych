@@ -1,0 +1,29 @@
+{
+  "artifact_path": "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/homily.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "HOM-001",
+      "outcome": "repaired"
+    },
+    {
+      "id": "HOM-002",
+      "outcome": "repaired"
+    },
+    {
+      "id": "HOM-003",
+      "outcome": "repaired"
+    },
+    {
+      "id": "HOM-004",
+      "outcome": "repaired"
+    },
+    {
+      "id": "HOM-005",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "stage": "derive-homily",
+  "summary": "Repaired all five blocking homily findings (HOM-001 through HOM-005) exclusively inside sections/homily/10-homily.tex, sections/homily/90-note.tex, and research/production-review.md without modifying any sealed research, expansive-study, concise-study, manifest, or generated file. Reworked the 14-paragraph spoken homily (1,469 spoken words / 1,465 raw tokens; estimated 10.5-11.8 minutes at 125-140 wpm) so the preacher's plain voice carries the exegetical argument with exactly three natural patristic mentions (St. John Chrysostom, St. Gregory the Great, and St. Augustine), repaired all seven one-hearing oral-clarity issues, corrected Jerome PL 24 col. 650 and Veronense XXVIIII.372 attribution bounds, replaced bare 'under bread and wine' with precise Catholic Eucharistic phrasing ('under the appearances of bread and wine' and 'under the sacramental signs of bread and wine'), fixed 'patristic' to 'exegetical' for Jerome vs. St. Thomas Aquinas, pruned all unused loci from 90-note.tex and its References list, and verified all source-mode preflight, metadata, web-edition, scratch pdflatex, and seal-immutability checks with exit code 0."
+}

@@ -1,0 +1,233 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 3,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "homily-spoken",
+          "kind": "homily",
+          "path": "sections/homily/10-homily.tex"
+        },
+        {
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-note.tex"
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+      "element_keys": [
+        "entrance-antiphon",
+        "collect",
+        "first-reading",
+        "responsorial-psalm",
+        "second-reading",
+        "gospel-acclamation",
+        "gospel",
+        "prayer-over-the-offerings",
+        "preface",
+        "communion-antiphon",
+        "prayer-after-communion",
+        "concluding-blessing"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Jerome",
+            "John Chrysostom",
+            "Bede",
+            "Hilary of Poitiers",
+            "Augustine",
+            "Cyril of Jerusalem",
+            "Gregory the Great",
+            "Bernard of Clairvaux"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "John Chrysostom",
+            "Bede",
+            "Hilary of Poitiers"
+          ],
+          "component_keys": [
+            "lane-hidden-presence"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "hidden-presence-and-forbearing-patience",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Thomas Aquinas",
+            "Augustine",
+            "Robert Bellarmine",
+            "John Chrysostom",
+            "Bede",
+            "Jerome",
+            "Cornelius a Lapide"
+          ],
+          "carrying_authors": [
+            "Thomas Aquinas",
+            "Augustine",
+            "Robert Bellarmine",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "lane-covenant-fidelity"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "covenant-fidelity-and-human-plasticity",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Bede",
+            "Gregory the Great",
+            "Augustine",
+            "Cyril of Jerusalem",
+            "Leo the Great",
+            "Thomas Aquinas",
+            "Theophylact of Ohrid",
+            "Robert Bellarmine"
+          ],
+          "carrying_authors": [
+            "Bede",
+            "Gregory the Great",
+            "Augustine",
+            "Cyril of Jerusalem",
+            "Leo the Great"
+          ],
+          "component_keys": [
+            "lane-vigilant-stewardship"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "vigilant-stewardship-between-two-advents",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+    "files": {
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/homily.tex": "4d9165072a2213a9929b9f564eb1ef54d616b4d40ae8081f07d4ec82400f8bd3",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/homily/10-homily.tex": "fc2feac78fde758837f4616c2718a8b675e950726abd236915715be2aa1f7c90",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/homily/90-note.tex": "b5d8442ef55fe938e47d164593d094217d54e5439f50e7e3d488cc63d08d6158"
+    },
+    "generation_provenance": {
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "20",
+            "9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec",
+            "6360bf57cd7d36ba",
+            "0f8fb307cde69819014f3d26a7f0cd77cb6ce9a9",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gemini",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "PASS for the standalone postconciliar homily deliverable of First Sunday of Advent, Year B (PC-S01-B, 2026-11-29; homily.tex [sha256 4d9165072a22], sections/homily/10-homily.tex [sha256 fc2feac78fde], sections/homily/90-note.tex [sha256 b5d8442ef55f], and research/production-review.md \u00a712). Read sections/homily/10-homily.tex continuously first as an adult parish listener, then verified all 14 direct Douay-Rheims study-English quotations verbatim against sections/20-appointed-texts.tex, cross-checked consistency with the accepted expansive and concise studies and sealed research records, and independently verified cited loci in held src/sources/ primary witnesses (Jerome In Isaiam XVII PL 24 cols. 642-651 raw OCR; Aquinas Super Isaiam ch. 63-64 Parma Vol. 14 raw OCR; Augustine Enarr. Ps. 79 \u00a7\u00a71, 3, 9 and Ps. 84 \u00a7\u00a76, 12; Chrysostom Hom. in 1 Cor. II \u00a7\u00a76-8; Hilary De Trinitate IX.67; Bede In Marcum IV.13 Wikisource/Corpus Corporum; Gregory Hom. 9 and 13; Aquinas Catena Aurea in Marcum 13:32-37 mediating Augustine Ep. 199 \u00a73; Cyril of Jerusalem Catechesis 15 \u00a7\u00a71, 4; Bellarmine Ps. 84 expl. 12; Sacramentarium Veronense XXVIIII.372). The homily passes the text-substitution test decisively: its governing movement turns directly on Isaiah 63:17's complaint and 64:1->3b Vg. (Heb. 63:19b->64:2b) wish-to-past tense shift, the Isa. 64:7 to Ps. 80(79):19 verbal reversal, Paul's Greek apokalupsis in 1 Cor. 1:7, Mark 13:33-37's departing householder and universal charge, and the Mass's prayer arc (Ps. 25[24]:1-3, Ps. 85[84]:8, Veronense XXVIIII.372, Ps. 85[84]:13), leading to precise Eucharistic theology and a single text-earned second-person response (Sacrament of Penance early in Advent) without excluded rhetorical devices, lecture-style authority stacking, invented anecdotes, clerical persona, or a newly composed prayer. Both iteration-2 findings are cleanly resolved: line 1 recasts the Gloria/Entrance opening as a tonal Advent contrast without implying liturgical substitution (HOM-008), and lines 21 and 23 explicitly identify the pre-Gospel acclamation as a psalm and anchor the Communion Antiphon to 'the psalm we heard before the Gospel' across the offering sentences (HOM-007). Spoken word count (1,478 spoken words; 1,474 raw source tokens across 14 paragraphs of 72-143 words; estimated 10.6-11.8 min at 125-140 wpm, ~11.4 min at 130 wpm) and 90-note.tex token count (1,376) match sections/homily/90-note.tex and research/production-review.md \u00a712 exactly. Meaningful limits honestly preserved without overstatement: delivery duration is a written word-count pace estimate rather than a timed human delivery; Douay-Rheims quotations remain public-domain study English rather than the copyrighted proclaimed U.S. Lectionary; protected modern Missal prayers remain withheld; Jerome, Aquinas (Super Isaiam), Bede (IV.13), Augustine (Ep. 199 \u00a73), and the secondary-2002 Missal comparisons carry their stated copy-quality and offline verification bounds; and the Jerome-Aquinas exegetical disagreement on Isa. 63:17 and 64:3b Vg. is transparently recorded in the terminal note."
+}

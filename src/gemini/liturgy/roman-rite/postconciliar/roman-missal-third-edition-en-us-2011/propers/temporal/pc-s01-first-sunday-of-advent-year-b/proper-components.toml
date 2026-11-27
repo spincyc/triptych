@@ -1,0 +1,447 @@
+schema = 2
+appointed_text_completeness = "rights-limited"
+format_contract = "propers-format-v1"
+presentation_contract = "interpretive-pagination-v1"
+authority_contract = "authority-standing-v1"
+chronology_presentation = "orientation-v3"
+
+element_keys = [
+  "entrance-antiphon",
+  "collect",
+  "first-reading",
+  "responsorial-psalm",
+  "second-reading",
+  "gospel-acclamation",
+  "gospel",
+  "prayer-over-the-offerings",
+  "preface",
+  "communion-antiphon",
+  "prayer-after-communion",
+  "concluding-blessing",
+]
+
+[[components]]
+key = "opening"
+kind = "front-matter"
+path = "sections/10-opening.tex"
+modes = ["research"]
+element_keys = [
+  "entrance-antiphon",
+  "collect",
+  "first-reading",
+  "responsorial-psalm",
+  "second-reading",
+  "gospel-acclamation",
+  "gospel",
+  "prayer-over-the-offerings",
+  "preface",
+  "communion-antiphon",
+  "prayer-after-communion",
+  "concluding-blessing",
+]
+
+[[components]]
+key = "appointed-text"
+kind = "appointed-text"
+path = "sections/20-appointed-texts.tex"
+modes = ["research"]
+element_keys = [
+  "entrance-antiphon",
+  "collect",
+  "first-reading",
+  "responsorial-psalm",
+  "second-reading",
+  "gospel-acclamation",
+  "gospel",
+  "prayer-over-the-offerings",
+  "preface",
+  "communion-antiphon",
+  "prayer-after-communion",
+  "concluding-blessing",
+]
+
+[[components]]
+key = "proper-treatment"
+kind = "proper-treatment"
+path = "sections/30-detailed-commentary.tex"
+modes = ["research"]
+element_keys = [
+  "entrance-antiphon",
+  "collect",
+  "first-reading",
+  "responsorial-psalm",
+  "second-reading",
+  "gospel-acclamation",
+  "gospel",
+  "prayer-over-the-offerings",
+  "preface",
+  "communion-antiphon",
+  "prayer-after-communion",
+  "concluding-blessing",
+]
+depends_on = ["appointed-text"]
+
+[[components]]
+key = "lane-hidden-presence"
+kind = "interpretive-lane"
+path = "sections/40-lane-hidden-presence.tex"
+modes = ["research"]
+element_keys = [
+  "entrance-antiphon",
+  "collect",
+  "first-reading",
+  "responsorial-psalm",
+  "second-reading",
+  "gospel-acclamation",
+  "gospel",
+  "prayer-over-the-offerings",
+  "preface",
+  "communion-antiphon",
+  "prayer-after-communion",
+  "concluding-blessing",
+]
+depends_on = ["proper-treatment"]
+
+[[components]]
+key = "lane-covenant-fidelity"
+kind = "interpretive-lane"
+path = "sections/50-lane-covenant-fidelity.tex"
+modes = ["research"]
+element_keys = [
+  "entrance-antiphon",
+  "collect",
+  "first-reading",
+  "responsorial-psalm",
+  "second-reading",
+  "gospel-acclamation",
+  "gospel",
+  "prayer-over-the-offerings",
+  "preface",
+  "communion-antiphon",
+  "prayer-after-communion",
+  "concluding-blessing",
+]
+depends_on = ["proper-treatment"]
+
+[[components]]
+key = "lane-vigilant-stewardship"
+kind = "interpretive-lane"
+path = "sections/60-lane-vigilant-stewardship.tex"
+modes = ["research"]
+element_keys = [
+  "entrance-antiphon",
+  "collect",
+  "first-reading",
+  "responsorial-psalm",
+  "second-reading",
+  "gospel-acclamation",
+  "gospel",
+  "prayer-over-the-offerings",
+  "preface",
+  "communion-antiphon",
+  "prayer-after-communion",
+  "concluding-blessing",
+]
+depends_on = ["proper-treatment"]
+
+[[components]]
+key = "comparison"
+kind = "front-matter"
+path = "sections/70-comparison.tex"
+modes = ["research"]
+element_keys = [
+  "entrance-antiphon",
+  "collect",
+  "first-reading",
+  "responsorial-psalm",
+  "second-reading",
+  "gospel-acclamation",
+  "gospel",
+  "prayer-over-the-offerings",
+  "preface",
+  "communion-antiphon",
+  "prayer-after-communion",
+  "concluding-blessing",
+]
+depends_on = [
+  "lane-hidden-presence",
+  "lane-covenant-fidelity",
+  "lane-vigilant-stewardship",
+]
+
+[[components]]
+key = "chronology-appendix"
+kind = "terminal-apparatus"
+path = "generated/scriptural-date-location.tex"
+modes = ["research"]
+references = [
+  "research/chronology-annotations.tex",
+  "research/chronology-table.tex",
+]
+
+[[components]]
+key = "liturgical-resolution"
+kind = "terminal-apparatus"
+path = "sections/80-liturgical-resolution.tex"
+modes = ["research"]
+
+[[components]]
+key = "scope-qualifications"
+kind = "terminal-apparatus"
+path = "sections/90-scope.tex"
+modes = ["research"]
+
+[[components]]
+key = "references"
+kind = "terminal-apparatus"
+path = "sections/95-references.tex"
+modes = ["research"]
+
+[[components]]
+key = "concise-inventory"
+kind = "front-matter"
+path = "sections/synthesis/10-inventory.tex"
+modes = ["synthesis"]
+element_keys = [
+  "entrance-antiphon",
+  "collect",
+  "first-reading",
+  "responsorial-psalm",
+  "second-reading",
+  "gospel-acclamation",
+  "gospel",
+  "prayer-over-the-offerings",
+  "preface",
+  "communion-antiphon",
+  "prayer-after-communion",
+  "concluding-blessing",
+]
+
+[[components]]
+key = "concise-overview"
+kind = "front-matter"
+path = "sections/synthesis/20-overview.tex"
+modes = ["synthesis"]
+element_keys = [
+  "entrance-antiphon",
+  "collect",
+  "first-reading",
+  "responsorial-psalm",
+  "second-reading",
+  "gospel-acclamation",
+  "gospel",
+  "prayer-over-the-offerings",
+  "preface",
+  "communion-antiphon",
+  "prayer-after-communion",
+  "concluding-blessing",
+]
+
+[[components]]
+key = "concise-chronology"
+kind = "front-matter"
+path = "generated/scriptural-date-location-page.tex"
+modes = ["synthesis"]
+references = [
+  "research/chronology-annotations.tex",
+  "research/chronology-table.tex",
+]
+
+[[components]]
+key = "concise-themes"
+kind = "front-matter"
+path = "sections/synthesis/30-themes.tex"
+modes = ["synthesis"]
+element_keys = [
+  "entrance-antiphon",
+  "collect",
+  "first-reading",
+  "responsorial-psalm",
+  "second-reading",
+  "gospel-acclamation",
+  "gospel",
+  "prayer-over-the-offerings",
+  "preface",
+  "communion-antiphon",
+  "prayer-after-communion",
+  "concluding-blessing",
+]
+
+[[components]]
+key = "concise-commentary"
+kind = "integrated-commentary"
+path = "sections/synthesis/40-commentary.tex"
+modes = ["synthesis"]
+element_keys = [
+  "entrance-antiphon",
+  "collect",
+  "first-reading",
+  "responsorial-psalm",
+  "second-reading",
+  "gospel-acclamation",
+  "gospel",
+  "prayer-over-the-offerings",
+  "preface",
+  "communion-antiphon",
+  "prayer-after-communion",
+  "concluding-blessing",
+]
+
+[[components]]
+key = "concise-apparatus"
+kind = "terminal-apparatus"
+path = "sections/synthesis/90-apparatus.tex"
+modes = ["synthesis"]
+
+[[components]]
+key = "homily-spoken"
+kind = "homily"
+path = "sections/homily/10-homily.tex"
+modes = ["homily"]
+element_keys = [
+  "entrance-antiphon",
+  "collect",
+  "first-reading",
+  "responsorial-psalm",
+  "second-reading",
+  "gospel-acclamation",
+  "gospel",
+  "prayer-over-the-offerings",
+  "preface",
+  "communion-antiphon",
+  "prayer-after-communion",
+  "concluding-blessing",
+]
+
+[[components]]
+key = "homily-note"
+kind = "terminal-apparatus"
+path = "sections/homily/90-note.tex"
+modes = ["homily"]
+
+[presentation]
+inventory = "concise-inventory"
+overview = "concise-overview"
+chronology = "concise-chronology"
+themes = "concise-themes"
+commentary = "concise-commentary"
+
+[[lanes]]
+key = "hidden-presence-and-forbearing-patience"
+authors = [
+  "Jerome",
+  "John Chrysostom",
+  "Bede",
+  "Hilary of Poitiers",
+  "Augustine",
+  "Cyril of Jerusalem",
+  "Gregory the Great",
+  "Bernard of Clairvaux",
+]
+carrying_authors = [
+  "Jerome",
+  "John Chrysostom",
+  "Bede",
+  "Hilary of Poitiers",
+]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+element_keys = [
+  "entrance-antiphon",
+  "collect",
+  "first-reading",
+  "responsorial-psalm",
+  "second-reading",
+  "gospel-acclamation",
+  "gospel",
+  "prayer-over-the-offerings",
+  "preface",
+  "communion-antiphon",
+  "prayer-after-communion",
+  "concluding-blessing",
+]
+component_keys = ["lane-hidden-presence"]
+sources = [
+  "research/interpretations.md",
+  "research/scope.md",
+  "research/source-bindings.toml",
+]
+
+[[lanes]]
+key = "covenant-fidelity-and-human-plasticity"
+authors = [
+  "Thomas Aquinas",
+  "Augustine",
+  "Robert Bellarmine",
+  "John Chrysostom",
+  "Bede",
+  "Jerome",
+  "Cornelius a Lapide",
+]
+carrying_authors = [
+  "Thomas Aquinas",
+  "Augustine",
+  "Robert Bellarmine",
+  "John Chrysostom",
+]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+element_keys = [
+  "entrance-antiphon",
+  "collect",
+  "first-reading",
+  "responsorial-psalm",
+  "second-reading",
+  "gospel-acclamation",
+  "gospel",
+  "prayer-over-the-offerings",
+  "preface",
+  "communion-antiphon",
+  "prayer-after-communion",
+  "concluding-blessing",
+]
+component_keys = ["lane-covenant-fidelity"]
+sources = [
+  "research/interpretations.md",
+  "research/scope.md",
+  "research/source-bindings.toml",
+]
+
+[[lanes]]
+key = "vigilant-stewardship-between-two-advents"
+authors = [
+  "Bede",
+  "Gregory the Great",
+  "Augustine",
+  "Cyril of Jerusalem",
+  "Leo the Great",
+  "Thomas Aquinas",
+  "Theophylact of Ohrid",
+  "Robert Bellarmine",
+]
+carrying_authors = [
+  "Bede",
+  "Gregory the Great",
+  "Augustine",
+  "Cyril of Jerusalem",
+  "Leo the Great",
+]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+element_keys = [
+  "entrance-antiphon",
+  "collect",
+  "first-reading",
+  "responsorial-psalm",
+  "second-reading",
+  "gospel-acclamation",
+  "gospel",
+  "prayer-over-the-offerings",
+  "preface",
+  "communion-antiphon",
+  "prayer-after-communion",
+  "concluding-blessing",
+]
+component_keys = ["lane-vigilant-stewardship"]
+sources = [
+  "research/interpretations.md",
+  "research/scope.md",
+  "research/source-bindings.toml",
+]

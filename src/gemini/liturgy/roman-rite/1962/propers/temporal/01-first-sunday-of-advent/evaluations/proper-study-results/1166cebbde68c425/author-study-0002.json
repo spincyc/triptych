@@ -1,0 +1,7 @@
+{
+  "artifact_path": "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/main.tex",
+  "disposition": "PASS",
+  "iteration": 2,
+  "stage": "author-study",
+  "summary": "Repaired carried blocking finding STU-009 across sections/01-opening.tex (lines 15, 21), sections/02-appointed-text.tex (lines 7, 13, 73, 79, 106), sections/03-detailed-commentary.tex (lines 4, 6, 38, 52), and sections/04-lane-eschatological.tex (line 30), updating all Introit/Offertory citations to Ps.~24:1--3, 4b (Heb.~25:1--3a, 4) and Ps.~24:1--3 (Heb.~25:1--3a), correcting both Old Latin qui te exspectant vs. Gallican qui sustinent te adaptation statements to v.~3b / verse~3b, and correcting both Postcommunion Ps.~47:10 echo citations to Heb.~48:10; modern English~48:9. Aligned advisory STU-010 in sections/06-lane-conversion.tex (line 22) with repaired research/interpretations.md:125 and Aquinas's Parma vol. 14 text so both intellect and affections modify 'these ways' under Vias tuas before turning under Et semitas to the evangelical counsels and verse 5, and logged iteration 2 in research/production-review.md with all sealed research files verified byte-identical. All pre-submission checks (document-types refresh --check, scripts/_proper_study.py check, check-proper-components, check-content-preflight including provenance-matches-run, check-generation-metadata, check-web-edition, and the author-study-2 web-edition probe) passed with exit code 0 and zero remaining defective patterns."
+}

@@ -1,0 +1,460 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "STU-001",
+      "location": "sections/30-detailed-commentary.tex:50",
+      "problem": "The prose attributes the verbatim double-quoted phrase ``like men who are inflamed with a fever,'' to St. John Chrysostom's Homilies on First Corinthians, Homily II, to explain why Paul repeats the Name of Jesus Christ across 1 Cor. 1:1-10. Direct inspection of the bound primary witness (artifact.nicene-and-post-nicene-fathers.series-1-volume-12.ccel-web-2026-09-28.ccel-text-10a3454d, Homily II \u00a77, lines 791-812, plus a full search of the file) establishes that this phrase does not occur in Homily II. Chrysostom's actual similes at lines 793-794 and 809-812 are that Paul sets himself ``as it were to arouse those who were heavy-headed after some debauch'' and applies the Name incessantly ``to foment their inflammation, and purge out the corruption of the disease.'' Presenting an invented paraphrase inside quotation marks as a Father's own words violates guidance/editorial.md ('Evidence and claims') and guidance/sources.md.",
+      "repair_target": "study",
+      "required_result": "Remove the unattested quotation ``like men who are inflamed with a fever,'' from sections/30-detailed-commentary.tex:50 and replace it with an accurate paraphrase or verbatim checked phrase from Chrysostom, Homily II \u00a77 (ccel-text-10a3454d lines 791-812), such as applying Christ's Name incessantly so that Paul may ``foment their inflammation, and purge out the corruption of the disease'' (or rousing ``those who were heavy-headed after some debauch'').",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-002",
+      "location": "sections/30-detailed-commentary.tex:67; sections/40-lane-hidden-presence.tex:29; sections/95-references.tex:25",
+      "problem": "sections/30-detailed-commentary.tex:67 claims that in De Trinitate IX.67, St. Hilary of Poitiers 'explains the pastoral reason Christ immediately turns from 13:32 to ``Take ye heed, watch and pray'',' and sections/40-lane-hidden-presence.tex:29 and sections/95-references.tex:25 likewise cite Hilary IX.67 as expounding 'Mark 13:32--33.' Direct inspection of the bound witness (artifact.nicene-and-post-nicene-fathers.series-2-volume-9.1898-edinburgh-ccel.ccel-complete-859ba34c, De Trinitate IX.58-68, lines 21361-21620) shows that Hilary never quotes Mark 13:33 ('Take ye heed, watch and pray') in IX.67 or anywhere in IX.58-68: after addressing Mark 13:32 / Matt. 24:36, Hilary cites Matt. 25:13 ('Watch therefore, for ye know not the day nor the hour,' IX.65, lines 21545-21546) and then in IX.67 cites Matt. 24:44 ('Therefore be ye also ready...,' lines 21600-21602) and Matt. 24:46 ('Blessed is that servant...,' lines 21602-21603). The explicit substitution of Mark 13:33 ('Take ye heed, watch and pray, for ye know not when the time is') into Hilary's IX.65 transition comes from St. Thomas Aquinas's Catena Aurea in Marcum (13:32-37, line 2466), not from Hilary's own text in IX.67.",
+      "repair_target": "study",
+      "required_result": "Revise sections/30-detailed-commentary.tex:67, sections/40-lane-hidden-presence.tex:29, and sections/95-references.tex:25 so Hilary's De Trinitate IX.58-68 (especially IX.65 and IX.67) is accurately described as expounding Mark 13:32 / Matt. 24:36 alongside Christ's Matthean watchfulness sayings (Matt. 25:13; Matt. 24:44, 46), noting separately if desired that Aquinas's Catena Aurea in Marcum applies Hilary's reasoning directly to Mark 13:33.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-003",
+      "location": "sections/30-detailed-commentary.tex:26, 54, 91; sections/50-lane-covenant-fidelity.tex:14; sections/60-lane-vigilant-stewardship.tex:24",
+      "problem": "Four concrete witness-wording and citation inaccuracies occur against the held primary artifacts: (1) sections/30-detailed-commentary.tex:54 and sections/50-lane-covenant-fidelity.tex:14 attribute the italicized Latin phrase 'quantum in se est' ('so far as his part is') to Cornelius a Lapide on 1 Cor. 1:8-9, yet the only bound and cited witness (artifact.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.1908-grant-cobb.volume-7-ocr-c9d11cbf, line 457) is the 1908 English translation ('Who shall also confirm you, so far as His part is') and contains no Latin 'quantum in se est'; (2) sections/60-lane-vigilant-stewardship.tex:24 quotes the Veronense antecedent of the Prayer over the Offerings as 'devotioni... temporali,' contradicting sections/20-appointed-texts.tex:81, 83, sections/30-detailed-commentary.tex:83, and the verified Feltoe 1896 passage, where Veronense reads 'temporalis' while 'temporali' is the secondary-2002 Missal inflection; (3) sections/30-detailed-commentary.tex:26 puts quotation marks around ``The Word was made flesh, and dwelt among us, truly Emmanuel.'' as St. Jerome's continuation of Descendisti in PL 24 col. 646, silently changing Jerome's second-person direct address ('Verbum caro factum es, et habitasti in nobis, vere Emmanuel,' pl-24-1865-djvu.txt line 44583) into third-person John 1:14; (4) sections/30-detailed-commentary.tex:91 cites 'Sermo 5.1, citing John 14:23 and Ps. 67:14' for St. Bernard of Clairvaux, whereas the checked PL 183 witnesses place John 14:23 in Sermo 3.4 (bernard-in-adventu-3.4-triplicem-adventum.txt) and Ps. 67:14 in Sermo 5.1 (bernard-in-adventu-5.1.txt, which does not cite John 14:23).",
+      "repair_target": "study",
+      "required_result": "Correct all four source-fidelity defects: (1) remove unattested Latin 'quantum in se est' from sections/30-detailed-commentary.tex:54 and sections/50-lane-covenant-fidelity.tex:14, quoting the checked 1908 English wording ('so far as His part is') plainly; (2) correct 'devotioni... temporali' in sections/60-lane-vigilant-stewardship.tex:24 to the verified Veronense reading 'devotioni... temporalis' (or state the sense in English without attributing the 2002 inflection to the Veronense); (3) render Jerome PL 24 col. 646 in sections/30-detailed-commentary.tex:26 accurately in second person (e.g., ``Thou, the Word, wast made flesh, and didst dwell among us, truly Emmanuel'' or paraphrase without quotation marks); and (4) assign John 14:23 to Bernard's Sermo 3.4 and Ps. 67:14 to Sermo 5.1 in sections/30-detailed-commentary.tex:91.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-004",
+      "location": "sections/40-lane-hidden-presence.tex:8-22; sections/50-lane-covenant-fidelity.tex:8-24; sections/60-lane-vigilant-stewardship.tex:4, 8-24",
+      "problem": "All three interpretations violate proper-study/study-review.md ('Check that each element's treatment is shown where the argument uses it, and that no interpretation opens or closes with a claim or roll call that every element takes its place in one movement; such a roll call is a register defect, not coverage'), guidance/liturgy/propers-three-documents.md (lines 235-238, 340-351, 362), and guidance/editorial.md ('Say it once'): (1) Every lane carries an identically titled closing roll-call subsection '\\subsection{Reading the Twelve Parts of the Mass Together}' (40:14-22, 50:16-24, 60:16-24), each opened by a blanket claim that all twelve parts cohere under one movement (40:16: 'the whole Sunday celebration unfolds with quiet coherence across its Missal and Lectionary parts'; 50:18: 'From opening chant to dismissal, this covenant-and-grace line traces...'; 60:18: 'the prayers and readings of the Mass take on an active, vocational edge'), followed by the same mechanical three-paragraph march through Introductory Rites, Liturgy of the Word, and Liturgy of the Eucharist/Concluding Rites; (2) each roll call manufactures repetitive thematic roles for the withheld Prayer after Communion (Prosint nobis) and uninspected Advent Concluding Blessing (40:22, 50:24, 60:24), and 40:22 erroneously writes that the Concluding Blessing on the First Sunday of Advent 'sends the assembly back into ordinary time,' colliding with the liturgical season Ordinary Time; (3) the opening subsections of 40, 50, and 60 recycle verbatim quotations and paraphrases already given in full in sections/30-detailed-commentary.tex (e.g., Chrysostom on 1 Cor. 1:7 at 30:52 and 40:10; Hilary IX.67 at 30:67 and 40:12; Bede/Gregory's three-clause Latin 'Vigilat' block verbatim at 30:72 and 60:8; Augustine Ep. 199 verbatim at 30:79 and 60:12; and repeated Gelasian/Veronense summaries across 20, 30, 40, 50, and 60) rather than giving each substantial argument one fullest home; and (4) sections/60-lane-vigilant-stewardship.tex:4 credits five named Fathers collectively ('St. Bede, St. Gregory the Great, St. Augustine, St. Cyril of Jerusalem, and St. Leo the Great') with answering all three Mark 13 questions and framing watchfulness between the two Advents, whereas Cyril (Cat. 15) and Leo (Sermo 19) do not answer Mark 13's questions and Bede/Gregory on Mark 13 do not expound Cyril's/Augustine's two-Advent contrast.",
+      "repair_target": "study",
+      "required_result": "Eliminate the three '\\subsection{Reading the Twelve Parts of the Mass Together}' roll-call sections and their blanket coherence openers (40:14-22, 50:16-24, 60:16-24). Restructure each interpretation so its argument advances directly through the texts that bear on its controlling question, showing every appointed element strictly where the reasoning uses it and giving lightly touched or withheld texts (such as Prosint nobis and the Concluding Blessing) a concise, honest clause rather than a manufactured role; remove 'ordinary time' at 40:22 (write 'daily life' or 'the week ahead'). Give each major patristic exposition and extended quotation one fullest home across sections 30 and 40-60, cross-referencing succinctly instead of copying verbatim blocks. Revise 60:4 (and check 50:4) so each named Father is credited only with the specific passage or argument he actually states.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-005",
+      "location": "sections/10-opening.tex:6, 8, 11-22; sections/30-detailed-commentary.tex:16, 20, 44, 54, 70, 75, 87, 91, 103, 105; sections/40-lane-hidden-presence.tex:4, 12, 22; sections/50-lane-covenant-fidelity.tex:4, 14, 22; sections/60-lane-vigilant-stewardship.tex:4, 8, 10; sections/70-comparison.tex:4",
+      "problem": "A recurring register pattern of process narration, editorial-synthesis self-disclosure, and production/audit jargon runs throughout the reader-facing body, violating guidance/editorial.md ('State the finding, not the process that produced it,' 'Use the reader's words,' 'Write to a person,' 'Cite like a book') and guidance/liturgy/propers-three-documents.md ('The formulary is a compilation,' lines 187-194): (1) Reader prose explicitly disclaims patristic whole-Mass preaching and labels its own editorial synthesis or rubric compliance at 10:6 ('No Church Father preached on this exact combination as one pre-existing sermon'), 40:4 ('Grouping their verse-level answers into one account of the whole postconciliar Mass is an editorial synthesis rather than a pre-existing patristic homily'), 50:4 ('brought together here as a source-grounded editorial synthesis across the twelve parts of the Mass'), 60:4 ('Bringing their verified verse-level and seasonal teachings together... yields a vocational, parish-wide synthesis'), and 70:4 ('yet they are genuinely distinct accounts rather than three labels for one theme'); (2) production, offline-research, OCR, and internal author-standing vocabulary clutters body prose instead of staying in terminal Scope and References: 'rights-safe locators' (10:8); raw audit tags in the opening map (10:11, 12, 18, 19, 21, 22: 'cataloged biblical basis; exact Missal cue uncollated offline,' 'uninspected offline,' 'no ancient sacramentary ancestor located in held collections'); repeated inline copy-quality disclaimers ('inspected in an uncollated raw OCR copy' at 30:16, 20, 54; 'inspected in the Wikisource and Corpus Corporum digital transcription' repeated verbatim four times at 30:70, 40:12, 50:22, 60:8; 'checked against PL 76' at 30:75; 'were not reopened offline' / 'held in verified texts' / 'held ancient sacramentary collections' at 30:44, 87, 103, 105); and internal author-standing-v1.toml tier tags leaked onto Saints and commentators ('consulted as a supporting spiritual writer' for St. Bernard at 30:91, 'a supporting medieval writer' at 40:22, 'supporting ecclesiastical writer' at 50:14, 'a supporting Eastern commentator' at 60:10).",
+      "repair_target": "study",
+      "required_result": "Remove all editorial-synthesis self-labels, compiler disclaimers, internal author-standing tier tags, and repeated offline/OCR/transcription boilerplate from reader-facing prose in sections 10, 30, 40, 50, 60, and 70, confining edition/copy qualifications and offline verification bounds to sections/90-scope.tex and sections/95-references.tex (plus concise local text notices in sections/20-appointed-texts.tex where a modern prayer is withheld). Plain rewrites for representative instances: (a) sections/40-lane-hidden-presence.tex:4: replace 'Grouping their verse-level answers into one account of the whole postconciliar Mass is an editorial synthesis rather than a pre-existing patristic homily, yet each link rests directly on what those Fathers wrote about the biblical texts before us.' with 'St. Jerome on Isaiah, St. John Chrysostom on 1 Corinthians, and St. Hilary of Poitiers and St. Bede on Mark each address a passage where God appears silent or absent; taken together, their arguments illuminate the Advent Mass as a vigil before a Lord who is already present.'; (b) sections/30-detailed-commentary.tex:91: replace 'Centuries later, St. Bernard of Clairvaux (Sermones in Adventu 3.4 and 5.1, consulted as a supporting spiritual writer) articulates an intermediate coming...' with 'St. Bernard of Clairvaux (Sermons for Advent 3.4 and 5.1) describes a middle coming between the Incarnation and the Final Judgment...'; (c) sections/40-lane-hidden-presence.tex:12 (and 50:22, 60:8): replace 'Bede (In Marci Evangelium Expositio IV.13, inspected in the Wikisource and Corpus Corporum digital transcription) preserves Hilary's phrase...' with 'St. Bede (Exposition of the Gospel of Mark IV.13) keeps Hilary's phrase...,' retaining the Wikisource/Corpus Corporum transcription qualification once in sections/90-scope.tex and sections/95-references.tex; (d) sections/10-opening.tex:11 (and parallel maptable rows 12, 18, 19, 21, 22): replace 'Lifts the soul to God in steadfast trust so that those who wait upon him are not put to shame (cataloged biblical basis; exact Missal cue uncollated offline).' with 'Lifts the soul to God in trust that those who wait on him will not be put to shame (Ps. 25[24]:1--3).'",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-006",
+      "location": "sections/10-opening.tex:4, 6; sections/30-detailed-commentary.tex:8, 40, 48; sections/40-lane-hidden-presence.tex:8, 18, 20, 35; sections/50-lane-covenant-fidelity.tex:12, 20, 22, 24; sections/60-lane-vigilant-stewardship.tex:4, 8, 20, 22, 24",
+      "problem": "A recurring register pattern credits biblical and liturgical texts with editorial actions ('answering' other texts, 'bridging,' 'guarding,' 'stripping away,' 'dismantling,' 'diagnosing,' 'summing up,' 'joining'), asserts significance instead of showing it, and sets up unmotivated 'not X, but Y' antitheses, violating guidance/editorial.md ('Say what the texts say, plainly'): (1) Texts credited with editorial inferences or ledger-style 'answering': 10:4 ('The psalm that answers him takes up the same cry'), 30:40 ('That closing vow directly answers Isaiah 64:7's lament'), 40:18 ('the Entrance Antiphon ... answers the temptation to give up'), 40:20 ('That lifting of the veil bridges straight to Chrysostom's exposition'; 'Mark 13:33--37 then guards against misreading Christ's hiddenness'), 50:12 ('Ps. 80[79]:19, answering Isa. 64:7'), 50:20 ('the Entrance Antiphon ... strips away self-reliance'; 'its historical Gelasian antecedent ... underscores the priority of grace'), 50:22 ('Isaiah 63:16b--64:8 (Vg.) dismantles moral self-confidence'; 'The Responsorial Psalm ... responds by moving from clay to vine'; 'Even Mark 13:33--37 joins this account of grace and plasticity'), 60:4 ('lets its closing command shape how the rest of the Mass is heard'), 60:20 ('the Entrance Antiphon ... pulls the mind free'; 'its historical Gelasian antecedent ... sums up the active posture'), 60:22 ('the First Reading ... diagnoses the exact spiritual drowsiness Mark warns against'; 'The Gospel Acclamation ... voices the watchful Church'); (2) Asserted significance and self-evaluating closers: 10:6 ('confront a parish assembly with a real tension'), 30:48 ('creates the central exegetical puzzle'), 40:8 ('The first turning point lies in Isaiah 63:17'), 40:35 ('uniting ... into a coherent theological fabric'), 50:24 ('the images of clay and vine reach their Eucharistic climax'); (3) Strawman antitheses against positions nobody holds: 10:4 ('is not a song of triumph but an accusation mixed with pleading'), 30:8 ('The prayer does not pretend to stand above struggle'), 60:8 ('Bede defines watching not as nervous speculation about the calendar, but as three active habits').",
+      "repair_target": "study",
+      "required_result": "Rewrite these recurring sentences so texts take only verbs of what texts do (say, ask, pray, sing, warn, promise), cross-text connections are stated plainly as inferences or attributed to the Father who makes them, significance is shown through textual detail rather than asserted, and unmotivated 'not X, but Y' contrasts are cut. Plain rewrites for representative instances: (a) sections/30-detailed-commentary.tex:40: replace 'That closing vow directly answers Isaiah 64:7's lament that no one calls upon God's name.' with 'Where Isaiah 64:7 laments that no one calls upon God's name, Psalm 80(79):19 ends with the vow that the quickened people will call upon his name again.'; (b) sections/50-lane-covenant-fidelity.tex:22: replace 'Isaiah 63:16b--64:8 (Vg.) dismantles moral self-confidence through Aquinas's four stains on human justice (64:6)... Even Mark 13:33--37 joins this account of grace and plasticity...' with 'In Isaiah 64:6--8, Israel confesses that its righteous deeds are stained -- tainted, as St. Thomas explains, by mortal sin, negligence, twisted intention, or pride -- and places itself before God as clay before a potter. Taken alongside that confession, the authority the householder gives his servants in Mark 13:34 is not an unsupported command: St. Bede identifies it as the grace of the Holy Spirit enabling every good work.'; (c) sections/60-lane-vigilant-stewardship.tex:8: replace 'Borrowing Gregory's words from Homily 13 (on Luke 12:35--40), Bede defines watching not as nervous speculation about the calendar, but as three active habits...' with 'Quoting St. Gregory the Great's Homily 13 (on Luke 12:35--40), St. Bede defines watching by three habits...'",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-007",
+      "location": "sections/40-lane-hidden-presence.tex:27",
+      "problem": "In Interpretation 1's Literal sense, the sentence 'Postexilic Israel cries out from perceived divine silence and begs God to come down and shine his face upon his ruined vineyard (Isa. 63:16b--64:8 Vg.; Ps. 80[79])' contradicts the generated Scriptural Date and Location appendix (generated/scriptural-date-location.tex:25-29, 40-44): (1) it assigns a postexilic historical setting to Psalm 80(79), whose historical setting the generated chronology table explicitly records as undated ('No date: the chronology corpus has not yet dated this (research pending)'), and (2) it collapses Isaiah 63-64's two preferred entries (traditional Isaian ministry, 740-701 B.C., alongside critical postexilic composition for Isaiah 56-66) into 'Postexilic Israel' alone. proper-study/study-review.md expressly requires reporting any authored sentence outside the generated appendix that contradicts its dates or unresolved states.",
+      "repair_target": "study",
+      "required_result": "Revise sections/40-lane-hidden-presence.tex:27 so it does not assign a postexilic date to Psalm 80(79) or flatten Isaiah 63-64's dual chronological horizon -- for example: 'Israel cries out from perceived divine silence and begs God to rend the heavens (Isa. 63:16b--64:8 Vg.), while the psalmist pleads for the Shepherd of Israel to shine his face upon his ravaged vineyard (Ps. 80[79])' (matching the clean formulation already used in sections/50-lane-covenant-fidelity.tex:29).",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-008",
+      "location": "sections/40-lane-hidden-presence.tex:33-35; sections/50-lane-covenant-fidelity.tex:35-37; sections/60-lane-vigilant-stewardship.tex:35-37; sections/70-comparison.tex:4-17",
+      "problem": "All three interpretations close with an identical formulaic '\\subsection{Strengths and Limits}' scorecard (40:33-35, 50:35-37, 60:35-37), and sections/70-comparison.tex then repeats those exact same cruxes, strengths, and risks once in prose (70:6-8) and a third time in comparisontable (70:10-17). Under guidance/editorial.md ('Say it once,' 'Teach in order': 'A closing template repeated section after section is a form, not teaching' and 'A closing comparison compares; it does not re-argue each section'), folding each reading's chief exegetical difficulty or counter-argument directly into its exposition and tightening sections/70-comparison.tex so the prose and table complement rather than duplicate each other would sharpen the study's pacing.",
+      "required_result": "Fold the strongest objection or counter-reading into each interpretation's argument rather than repeating an identical 'Strengths and Limits' template across all three lanes, and trim sections/70-comparison.tex so the opening prose states the decisive points of divergence without duplicating every row of the comparison table.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/10-opening.tex"
+        },
+        {
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "appointed-text",
+          "kind": "appointed-text",
+          "path": "sections/20-appointed-texts.tex"
+        },
+        {
+          "depends_on": [
+            "appointed-text"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "proper-treatment",
+          "kind": "proper-treatment",
+          "path": "sections/30-detailed-commentary.tex"
+        },
+        {
+          "depends_on": [
+            "proper-treatment"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "lane-hidden-presence",
+          "kind": "interpretive-lane",
+          "path": "sections/40-lane-hidden-presence.tex"
+        },
+        {
+          "depends_on": [
+            "proper-treatment"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "lane-covenant-fidelity",
+          "kind": "interpretive-lane",
+          "path": "sections/50-lane-covenant-fidelity.tex"
+        },
+        {
+          "depends_on": [
+            "proper-treatment"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "lane-vigilant-stewardship",
+          "kind": "interpretive-lane",
+          "path": "sections/60-lane-vigilant-stewardship.tex"
+        },
+        {
+          "depends_on": [
+            "lane-hidden-presence",
+            "lane-covenant-fidelity",
+            "lane-vigilant-stewardship"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "comparison",
+          "kind": "front-matter",
+          "path": "sections/70-comparison.tex"
+        },
+        {
+          "key": "chronology-appendix",
+          "kind": "terminal-apparatus",
+          "path": "generated/scriptural-date-location.tex",
+          "references": [
+            "research/chronology-annotations.tex",
+            "research/chronology-table.tex"
+          ]
+        },
+        {
+          "key": "liturgical-resolution",
+          "kind": "terminal-apparatus",
+          "path": "sections/80-liturgical-resolution.tex"
+        },
+        {
+          "key": "scope-qualifications",
+          "kind": "terminal-apparatus",
+          "path": "sections/90-scope.tex"
+        },
+        {
+          "key": "references",
+          "kind": "terminal-apparatus",
+          "path": "sections/95-references.tex"
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+      "element_keys": [
+        "entrance-antiphon",
+        "collect",
+        "first-reading",
+        "responsorial-psalm",
+        "second-reading",
+        "gospel-acclamation",
+        "gospel",
+        "prayer-over-the-offerings",
+        "preface",
+        "communion-antiphon",
+        "prayer-after-communion",
+        "concluding-blessing"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Jerome",
+            "John Chrysostom",
+            "Bede",
+            "Hilary of Poitiers",
+            "Augustine",
+            "Cyril of Jerusalem",
+            "Gregory the Great",
+            "Bernard of Clairvaux"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "John Chrysostom",
+            "Bede",
+            "Hilary of Poitiers"
+          ],
+          "component_keys": [
+            "lane-hidden-presence"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "hidden-presence-and-forbearing-patience",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Thomas Aquinas",
+            "Augustine",
+            "Robert Bellarmine",
+            "John Chrysostom",
+            "Bede",
+            "Jerome",
+            "Cornelius a Lapide"
+          ],
+          "carrying_authors": [
+            "Thomas Aquinas",
+            "Augustine",
+            "Robert Bellarmine",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "lane-covenant-fidelity"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "covenant-fidelity-and-human-plasticity",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Bede",
+            "Gregory the Great",
+            "Augustine",
+            "Cyril of Jerusalem",
+            "Leo the Great",
+            "Thomas Aquinas",
+            "Theophylact of Ohrid",
+            "Robert Bellarmine"
+          ],
+          "carrying_authors": [
+            "Bede",
+            "Gregory the Great",
+            "Augustine",
+            "Cyril of Jerusalem",
+            "Leo the Great"
+          ],
+          "component_keys": [
+            "lane-vigilant-stewardship"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "vigilant-stewardship-between-two-advents",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+    "files": {
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/generated/scriptural-date-location.tex": "0dbbf5c376642bcc9177dbbb20387bf2a55f5871b151c82809baedc37340f352",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/main.tex": "bea968edd0c631735eec787fb9c48e1e023951a3c8dcbbff8103b8b212e90fd5",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/chronology-annotations.tex": "97ae99a8f055064d6b6c0af6747564df86fc13735e69e700f1c50338e5dde946",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/chronology-table.tex": "4d5cb5222089bde74dfaf4c6b7a0c8a0f71b7188401de871ac66f80f0e93a8a4",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/interpretations.md": "88348cd07b40f1f1bff15d0a83e684e777fd785789b702d263553832f1b71e39",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/scope.md": "f23284b1c030712eebc817ee037110f8769dd58c5cf3be93eb9eb5e4dc586733",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/source-bindings.toml": "e6c9cf9480510ba283f767824f09d9189f94b12124773d681a511bc049d495fb",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/10-opening.tex": "fdc5cc191f7ab49a064900d4f8ec2cbccfd455b002c8fb595ae7a2f52214d262",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/20-appointed-texts.tex": "524367f2bc5a0877046ba7150566fb05e67c49e114e61224f2db61d6a96dd585",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/30-detailed-commentary.tex": "184aee8ba4811875cb4e88e08033d5e938991010b5ba3f506a97355acc56be20",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/40-lane-hidden-presence.tex": "083057fbdd78979723dd10e8f485c9b0117619ba3f259bcbe05a54a920622284",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/50-lane-covenant-fidelity.tex": "59faad418b116ab3b401e346dccd45ebc99fe63f525c58fa05b7003781f94467",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/60-lane-vigilant-stewardship.tex": "e4ba098e960c14ac2a5419bc4a372ffd56bef4a7f53a396248359ce8f55ba20c",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/70-comparison.tex": "2e02074ab543a93be649dfcbdc946b4807ebd4a424847fa8625796cde4cf9ccd",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/80-liturgical-resolution.tex": "7c9f841cb4fb79aaa20281e5069b951a45d5bebc9ae369c3f006978b66566f6f",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/90-scope.tex": "e4f4070ca644c0d731126286e1e8aefeab830142b312e275bd56891d445474f1",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/95-references.tex": "4b517f9e2985950cb2f158c2637b03ce43ab109da0abee43507a3c2cb47fcede"
+    },
+    "generation_provenance": {
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "20",
+            "9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec",
+            "6360bf57cd7d36ba",
+            "0f8fb307cde69819014f3d26a7f0cd77cb6ce9a9",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gemini",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "Cold review of the canonical expansive study for the First Sunday of Advent, Year B (src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b: main.tex, publication.toml, proper-components.toml, generation-metadata.tex, and sections/10-opening.tex through sections/95-references.tex), independently cross-checked against sealed research records and primary held witnesses in src/sources/ (Clementine Vulgate and Douay-Rheims Challoner TSVs; Jerome PL 24 cols. 642-651; Aquinas Parma Vol. 14 pp. 370-371 and Catena Aurea in Marcum 13:32-37; Chrysostom NPNF1-12 Hom. II; Hilary NPNF2-9 De Trinitate IX.58-68; Bede In Marcum IV.13; Gregory Hom. 1, 9, 13; Augustine Enarrationes Ps. 24, 79, 84 and De gratia ch. 45; Bellarmine Explanatio Ps. 24, 79, 84; Cornelius a Lapide Vol. 7 1908 English; Cyril Cat. 15; Leo Sermo 19; Bernard In Adventu 3.4, 5.1; Gelasianum Vetus II.lxxxiv and Veronense XXVIIII.372). Rights-limited compliance, calendar/postconciliar isolation, 12-element web anchor coverage, standing notices, and the three distinct interpretations with 4-5 verified carrying Fathers/Doctors each are sound. Consequential-difficulty tests: (1) Isa. 63:17 and 64:1->3b in Jerome (PL 24 lines 44462-44586) vs. Aquinas (Parma Vol. 14 lines 90963-91106) passed on core reasoning and intelligible exposition of their disagreement (with one minor second-person quotation alteration in Jerome at 30:26); (2) 1 Cor. 1:4-9 in Chrysostom Hom. II (NPNF1-12 lines 654-851) and Mark 13:32-33 in Hilary De Trinitate IX.58-68 (NPNF2-9 lines 21361-21620) verified the core arguments (oikonomikos, apokalupsis, dispensatio of suspense) but uncovered a fabricated verbatim quotation attributed to Chrysostom (30:50) and a misattributed Mark 13:33 lemma in Hilary IX.67 (30:67). Verdict: CHANGES_REQUIRED with 7 blocking findings (all repair_target='study') covering primary-source quotation/attribution errors, forbidden 12-part closing roll calls with verbatim recycling across lanes, recurring process/audit register leaks, recurring text-agency/significance register defects, and a chronology contradiction on Ps. 80(79) in Lane 1's Literal sense, plus 1 advisory finding."
+}

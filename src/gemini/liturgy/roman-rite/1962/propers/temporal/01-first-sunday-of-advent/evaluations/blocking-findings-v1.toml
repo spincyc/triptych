@@ -1,0 +1,169 @@
+# Blocking findings standing against this publication, the
+# verdicts its evaluation lanes reached, and the observations
+# they recorded outside their own criteria. Written by tpt after
+# each evaluation of this leaf.
+#
+# One record, several stages. Every entry names the stage that
+# raised it, [[stages]] says what each stage last said, and an
+# evaluation replaces its own stage's entries and leaves every
+# other stage's alone -- so what the content evaluation found
+# still stands here after the synthesis evaluation has spoken. A
+# stage that looked and found nothing leaves an empty list
+# rather than no entry: "evaluated, nothing stands" and
+# "nobody has looked" are different facts, per stage.
+#
+# The keys directly below these comments describe the write that
+# last touched this file, and count every stage's entries
+# together. They are its summary line. What a given stage found
+# is in that stage's [[stages]] entry and in the entries naming
+# it -- reading the top-level stage as the record's one stage is
+# the mistake this schema exists to stop.
+#
+# It exists because a run's own results live under build/, which
+# is ignored, which `make clean` and `wt tidy` delete without
+# asking, and which nothing preserves between productions.
+#
+# Nothing reads this back into a run. Carrying findings from one
+# production into the next wants doing where the run's identity
+# can cover it -- a committed record, or this file's hash in the
+# run id and the acceptance audit -- and until then this is a
+# record for people.
+#
+# Escalations -- defects in artifacts no stage of the run may
+# write: guidance, the source library, the tools, the workflow --
+# are written here too, from the run's whole ledger, so that the
+# decision they ask of a maintainer outlives the run directory.
+#
+# Accepted findings are true defects a lane judged not worth a
+# repair round, with the reason it judged so. Advisories are
+# defects that did not merit blocking. Both are here because a
+# verdict that dies with the run is met again by the next cold
+# read as though nobody had ever weighed it, and weighed again --
+# which is how a document in good shape spends a whole iteration
+# budget. A later evaluation reads these before it raises.
+
+standing_findings_schema = 4
+record_type = "standing-blocking-findings"
+document = "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"
+provider = "gemini"
+run_id = "1166cebbde68c425"
+workflow = "proper-study"
+workflow_version = 20
+stage = "web-review"
+iteration = 1
+disposition = "PASS"
+standing = 0
+accepted_count = 3
+advisory_count = 3
+observation_count = 0
+
+[[stages]]
+stage = "homily-review"
+iteration = 2
+disposition = "PASS"
+run_id = "1166cebbde68c425"
+workflow = "proper-study"
+workflow_version = 20
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 0
+
+[[stages]]
+stage = "research-review"
+iteration = 6
+disposition = "PASS"
+run_id = "1166cebbde68c425"
+workflow = "proper-study"
+workflow_version = 20
+standing = 0
+accepted_count = 0
+advisory_count = 0
+observation_count = 0
+
+[[stages]]
+stage = "study-review"
+iteration = 4
+disposition = "PASS"
+run_id = "1166cebbde68c425"
+workflow = "proper-study"
+workflow_version = 20
+standing = 0
+accepted_count = 1
+advisory_count = 1
+observation_count = 0
+
+[[stages]]
+stage = "synthesis-review"
+iteration = 3
+disposition = "PASS"
+run_id = "1166cebbde68c425"
+workflow = "proper-study"
+workflow_version = 20
+standing = 0
+accepted_count = 2
+advisory_count = 1
+observation_count = 0
+
+[[stages]]
+stage = "web-review"
+iteration = 1
+disposition = "PASS"
+run_id = "1166cebbde68c425"
+workflow = "proper-study"
+workflow_version = 20
+standing = 0
+accepted_count = 0
+advisory_count = 0
+observation_count = 0
+
+[[accepted]]
+stage = "study-review"
+id = "STU-012"
+severity = "accepted"
+location = "sections/04-lane-eschatological.tex:30, 45"
+problem = "Line 30 cites St. Leo the Great's Sermon 19.1 alone for the Advent discipline 'fasting, prayer, and almsgiving keep the heart from being weighed down by gluttony and worldly cares before that sudden Day,' and line 45 (Moral sense) repeats 'prayer, fasting, and almsgiving ... (Rom. 13:13; Leo, Serm. 19.1).' Direct inspection of the bound checked passage (passage.nicene-and-post-nicene-fathers.series-2-volume-12.new-york-1895.leo-sermo-19.1) and the full CCEL text of Sermon XIX.1 (ccel-text-7bb1db6e) confirms that Sermon 19.1 expounds Luke 21:34 against gluttony, drunkenness, and worldly cares and commends bodily self-restraint without mentioning prayer or almsgiving (fasting and almsgiving appear in unbound sections XIX.2-3). The tenth-month triad 'prayer, fasting, and almsgiving' comes from bound Sermon 12.4 (leo-sermo-12.4.toml), which research/interpretations.md:24 cited beside 19.1 as '(Sermons 19.1, 12.4)' and sections/09-references.tex:28 already lists."
+required_result = "If sections/04-lane-eschatological.tex is reopened in a future edit, cite both loci ('Sermon 19.1; cf. Sermon 12.4' at line 30 and 'Leo, Serm. 12.4, 19.1' at line 45) or narrow line 30 to Sermon 19.1's own call to self-restraint against gluttony and worldly cares."
+accepted_because = "This compressed citation stands in settled prose untouched in iteration 4 (where only line 43 moved to replace a bare chronology reference), repairing it would reopen settled study prose and trigger unnecessary downstream re-reviews, and a reader is not misled about St. Leo's Advent teaching because Sermon 19.1 genuinely expounds Luke 21:34 against gluttony and worldly cares while Sermon 12.4 (already cited at sections/06-lane-conversion.tex:14, 41 and sections/09-references.tex:28) supplies the tenth-month triad of prayer, fasting, and almsgiving."
+
+[[accepted]]
+stage = "synthesis-review"
+id = "SYN-006"
+severity = "accepted"
+location = "sections/13-concise-commentary.tex:21; sections/14-concise-apparatus.tex:19"
+problem = "At sections/13-concise-commentary.tex:21, compression of sections/04-lane-eschatological.tex:22 omitted the clause stating that St. Bede transmits St. Gregory's exposition of Luke 21:28-29 while retaining the opening scope phrase 'On vv.~28--29 and~32--33, St.~Bede (\\work{In Lucae Evangelium Expositio}~VI) notes that \\latin{Amen}...' ahead of a sentence whose content comes from v. 32 (followed by a separate sentence 'On verse~33...'). Consequently, vv. 28-29 (also listed in sections/14-concise-apparatus.tex:19 as 'on Luke~21:28--29, 32--33') receives no explicit exposition in the concise study."
+required_result = "If sections/13-concise-commentary.tex:21 is reopened in a future edit, either add a brief clause noting that Bede transmits Gregory on vv. 28-29 before explaining Amen and generatio haec on v. 32, or narrow the lead-in to 'On verse~32' and trim '28--29,' from sections/14-concise-apparatus.tex:19."
+accepted_because = "This standing minor compression slip (already accepted at synthesis-review iteration 2) stands in settled prose untouched in iteration 3; repairing it would disturb settled text on a tightly balanced concise layout while a reader who never learns that Bede transmitted Gregory on vv. 28-29 is not misled about Gregory's exposition of vv. 28-29 (already summarized at lines 11 and 19) or Bede's actual teaching on Luke 21:32-33."
+
+[[accepted]]
+stage = "synthesis-review"
+id = "SYN-007"
+severity = "accepted"
+location = "sections/13-concise-commentary.tex:53"
+problem = "Line 53 carries over the expansive study's compressed citation (sections/04-lane-eschatological.tex:30) attributing 'Advent fasting, prayer, and almsgiving to keep hearts from gluttony and worldly cares before that sudden Day' to St. Leo the Great's Sermon 19.1 alone. Direct verification of passage.nicene-and-post-nicene-fathers.series-2-volume-12.new-york-1895.leo-sermo-19.1 and leo-sermo-12.4 confirms that Sermon 19.1 expounds Luke 21:34 against surfeiting, drunkenness, gluttony, and worldly cares without naming prayer or almsgiving, while the tenth-month triad of prayer, fasting, and almsgiving stands in Sermon 12.4 (already cited at sections/13-concise-commentary.tex:44 and listed at sections/14-concise-apparatus.tex:28)."
+required_result = "If sections/13-concise-commentary.tex:53 is reopened in a future edit, cite both loci ('\\work{Sermon}~19.1; cf.~\\work{Sermon}~12.4') or narrow the clause to Sermon 19.1's own call to self-restraint against gluttony and worldly cares."
+accepted_because = "This compressed citation stands in settled prose outside REVIEW_SCOPE and mirrors upstream study-review accepted finding STU-012; repairing it would reopen settled synthesis prose without changing substance, and a reader is not misled about St. Leo's Advent teaching because bound Sermon 19.1 directly expounds Luke 21:34 against gluttony and worldly cares while bound Sermon 12.4 (already cited at line 44 and in References at 14:28) supplies the triad of prayer, fasting, and almsgiving."
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-006"
+severity = "advisory"
+location = "sections/21-homily-note.tex:10, 20"
+problem = "Both the source note (line 10) and the Holy Scripture reference entry (line 20) name the secondary Douay-Rheims textual control 'Challoner Gutenberg~1581' immediately beside '1899 American edition'. Per edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581 (edition.toml), '1581' is Project Gutenberg eBook number 1581 (released 1998 from Challoner's 1749-1752 revision), not a 1581 printing; placing 'Gutenberg 1581' beside '1899 American edition' mirrors advisories STU-013 and SYN-008 and risks reading like a publication year (one year before the 1582 Rheims New Testament), though it does not appear in the spoken homily or mislead a listener."
+required_result = "In any future edit touching sections/21-homily-note.tex, expand 'Challoner Gutenberg~1581' at lines 10 and 20 to 'Project Gutenberg eBook~1581 of the Challoner revision' so the catalog number cannot be misread as a printing year."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-013"
+severity = "advisory"
+location = "sections/02-appointed-text.tex:62; sections/03-detailed-commentary.tex:34; sections/08-scope.tex:10; sections/09-references.tex:16"
+problem = "Four passages name the secondary Douay-Rheims textual control 'the Challoner Gutenberg 1581 edition' (sections/02-appointed-text.tex:62; sections/03-detailed-commentary.tex:34) or 'the Challoner Gutenberg 1581 witness' (sections/08-scope.tex:10; sections/09-references.tex:16). Per edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581 (edition.toml), '1581' is Project Gutenberg eBook number 1581 (released 1998 from Challoner's 1749-1752 revision), not a 1581 printing; placing 'Gutenberg 1581 edition' beside '1899 American Douay-Rheims edition' carries internal slug shorthand into reader prose and risks reading like a publication year (one year before the 1582 Rheims New Testament), though generated/scriptural-date-location.tex in the same study prints 'Project Gutenberg eBook 1581' unambiguously."
+required_result = "In any future edit touching these passages, replace 'the Challoner Gutenberg 1581 edition' and 'the Challoner Gutenberg 1581 witness' with 'Project Gutenberg eBook 1581 of the Challoner revision' so the catalog number cannot be misread as a publication year."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-008"
+severity = "advisory"
+location = "sections/14-concise-apparatus.tex:6, 16"
+problem = "Both the scope note (line 6) and the Holy Scripture reference entry (line 16) refer to the secondary Douay-Rheims textual control as 'Gutenberg~1581' immediately beside 'Challoner 1899 American ed.'. Per edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581 (edition.toml), '1581' is Project Gutenberg eBook number 1581 (released 1998 from Challoner's 1749-1752 revision), not a 1581 printing; placing 'Gutenberg 1581' beside '1899 American ed.' mirrors advisory STU-013 and risks reading like a publication year."
+required_result = "In any future edit to sections/14-concise-apparatus.tex, expand 'Gutenberg~1581' at lines 6 and 16 to 'Project Gutenberg eBook~1581' so the catalog number cannot be mistaken for a printing year."

@@ -1,0 +1,13 @@
+{
+  "artifact_path": "build/web/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "STALE-WEB-REVIEW",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 2,
+  "stage": "generate-web",
+  "summary": "Confirmed uncommitted: false across all three outputs (bare, -synthesis, and -homily) at commit d721fd26d6b6c2a61049cc5af968fad30ad5eda6 (derived revision 2026-11-26T10:01:14Z; closures 1659, 1654, and 2 files); reconverted only the canonical study with current tools/web-edition at HEAD commit 2f96ab50c1 via tools/tpt web-edition; verified the generated Markdown (116,881 bytes, 600 lines, sha256 61307d96607693a402126bf71103f2c2f3775fdf915bb10c578b2ebeb850e9d0, unchanged byte-for-byte) and its rendered HTML via scripts/_markdown_render.py (11 H2 sections, 12 unique proper-* anchors, 3 unique lane-* anchors, 0 duplicate IDs, 18 intact internal links, 3 four-senses definition lists, 0 trailing whitespace lines, 0 nested/adjacent emphasis artifacts, 0 raw TeX or model leaks, and intact 2026-11-26T10:01:14Z revision timestamp and rights colophon); and refreshed research/web-artifact.json via scripts/_proper_study.py snapshot-web so the next independent web review runs against the current converter inputs and bytes (repaired STALE-WEB-REVIEW). No tracked source, release, catalog, or web-edition.toml files were modified and no Git mutations were performed."
+}

@@ -1,0 +1,13 @@
+{
+  "artifact_path": "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "STU-008",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 5,
+  "stage": "research",
+  "summary": "Repaired blocking finding STU-008 across research/context.md (lines 72, 78, 81), research/scope.md (lines 53, 60, 134), research/interpretations.md (lines 32, 35, 38, 85, 88, 91, 94, 140, 143, 146), and propers/verified.md (lines 52, 60, 61, 118, 120, 123, 124, 151) after direct re-verification in bound Clementine Vulgate (ebible-latvuc, 21-psalms.tsv), Douay-Rheims 1899 (american-1899-ebible, 21-psalms.tsv), WEB Catholic (21-psalms.tsv), and scripts/_psalms.py: Introit is now cited as Ps 24:1-3, 4b (Heb. Ps 25:1-3a, 4), Offertory as Ps 24:1-3 (Heb. Ps 25:1-3a), the Old Latin 'qui te exspectant' vs. Gallican 'qui sustinent te' adaptation sits in Vulgate v. 3b (Heb. 25:3a) matching the Gradual, and the Postcommunion echo is aligned to Ps 47:10 (Heb. 48:10; modern English 48:9). Also cleared advisory STU-010 in research/interpretations.md (lines 125, 143) directly from Aquinas's Postilla super Psalmos on Ps 24:4 (Parma Vol. 14, p. 230) so 'Has vias ... ostende eas mihi, et quantum ad intellectum, et quantum ad affectum' stays wholly under Vias tuas while Et semitas returns to the precepts-vs.-counsels division, and cleaned prior advisory RES-015 on binding index 84 (bernard-in-adventu-3.4-three-comings, line 692 of research/source-bindings.toml) to keep III.3-4's 'to men / into men / against men' triad distinct from V.1's 'flesh / spirit / glory' triad. Verified exit code 0 on bindings-valid (129 bindings), _proper_study.py check --phase research --mode source, proper-chronology record --check, proper-chronology annotations --presentation orientation-v3 --check, and hygiene grep (zero occurrences of 24:1-3a, 24:1–3a, Heb. 48:9, <user-home>, or .scratch); updated binding_sha256 digest for binding 84 (2447d36ec712588a4f18ac63a900be5571d4cba7e832746a84755a75fb1db895) recorded in .scratch/driver-tlm/research-receipts-5/handoff.md for source-registration iteration 5."
+}

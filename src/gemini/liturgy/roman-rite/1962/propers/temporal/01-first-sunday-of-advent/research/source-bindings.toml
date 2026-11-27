@@ -1,0 +1,1056 @@
+# Source bindings for First Sunday of Advent (1962 Missale Romanum).
+# All source_id values and source_fingerprint digests resolved mechanically
+# against tools/source-library on 2026-11-25.
+
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Proprium de tempore, Dominica prima Adventus, printed pp. 1-2 (PDF pp. 82-83, units 1-10, opening headings, and printed rubrics)"]
+context = "Controlling 1962 Vatican typical edition facsimile PDF (SHA-256 648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a, 82,815,941 bytes; storage = remote, rights unresolved). Visually collated at 300 dpi and 400 dpi on PDF pp. 82-83 on 2026-11-25 covering all ten proper bodies (units 1-10), opening headings, and rubrics; no PDF/PNG bytes tracked in Git; text-free collation control registered at passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-advent-1-scriptural-propers-and-rubrics-collation-2026-11-25."
+source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
+verified_on = "2026-11-25"
+notes = "Visual collation control only; publication rights for the preexisting Latin propers travel under 17 U.S.C. 103(b) paired with registered pre-1931 public-domain Missals."
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-advent-1-orations"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "200/400 dpi CMAA 1962 page-image collation verifying the Collect, Secret, and Postcommunion on printed pp. 1-2 (PDF pp. 82-83, units 2, 8, 10)."
+source_fingerprint = "sha256:e61eebeb0768ad1a5cf1779419470f3c351baa2dec6f33ed39f693b038f40f40"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.advent-1-lasance-three-orations-collation-2026-10-21"
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "1962 collation confirming Lasance/Walsh 1945 English Collect, Secret, and Postcommunion against the 1962 Latin orations."
+source_fingerprint = "sha256:7bf92de774ce91ce15a69432eca75be93825ef28363b6a16dc6be12d43bd03db"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.primary-advent-1-epistle-word-collation-2026-10-20"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "200/400 dpi CMAA 1962 page-image collation of the 57-word Epistle (Rom 13:11-14a, marginal unit 3) against Tours Mame 1922."
+source_fingerprint = "sha256:bce284b5deb8cb26cd0cdd3656cd08c3ce008c51c1093ae8e623e9580a194e56"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.advent-primer-20261119-advent-christmas-stations"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "1962 CMAA page-image verification of the stational heading Statio ad S. Mariam Maiorem for Dominica I Adventus (printed p. 1, PDF p. 82)."
+source_fingerprint = "sha256:9507fce3b0e7a1a1674561f6bbbb04a5d71e560d795e7f76b772dd60c1b6cd2b"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-advent-1-scriptural-propers-and-rubrics-collation-2026-11-25"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Text-free 300/400 dpi CMAA 1962 page-image collation verifying the opening title/rank/station block, printed rubrics, and all six scriptural proper bodies (Introit, Gradual, Alleluia body, Gospel, Offertory, Communion) on printed pp. 1-2 (PDF pp. 82-83, units 1, 4, 5, 6, 7, 9), corroborated word-for-word against Tournai 1889, Pustet 1862, and Clementine Vulgate (confirming uniform accented sǽcula sæculórum across Introit unit 1, Collect unit 2, and Secret unit 8)."
+source_fingerprint = "sha256:d6e1e1fe86a58bfa75d64e0c98fcdda5925eb5b3d61e60fc8b831a0d78700f7a"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.rubricae-generales-missalis"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "1962 Missal front-matter rubrics (exact passage locus nn. 424-432 and 466-510, explicitly omitting nn. 433-465): governs Prayers at Foot of Altar, Gloria Patri, Gloria omission, Credo, Secret count/tone, Roman Canon, dismissal, and Last Gospel. RGMR 434, 454, 457 d and 482, 494 b, 498, 505 come from src/sources/calendars/roman-1962/rubrics.yaml and roman-1962-ordo-missae-v1.toml."
+source_fingerprint = "sha256:33a6853806d9d65ee4a5e322277e7656ca592fb02d9b995f655c2767f992ce84"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.phase2-comm-s-saturnini-martyris-orations-recheck-2026-10-22"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Identifies the occurring fixed commemoration Comm. S. Saturnini Martyris on 29 November (omitted in Mass on 2026-11-29 under RG 109 and RG 111 a)."
+source_fingerprint = "sha256:133e22b39a66d826a9419232a9b09d038e7bff885a6b74c443978281114cbe11"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.advent-1-collect"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Lawful public-domain editorial projection of the 1962 Collect Excita, quaesumus paired with Pustet 1862 under 17 U.S.C. 103(b)."
+source_fingerprint = "sha256:b2b3aacd5fa1e349a7a2f488f3e909a463f844c53657a69f3a973339eb9fa667"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.advent-1-secret"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Lawful public-domain editorial projection of the 1962 Secret Haec sacra nos paired with Pustet 1862 under 17 U.S.C. 103(b)."
+source_fingerprint = "sha256:ce9ab77f09b4c581bf7b5c112185f48b49b349683f3ce2d639ce1014ce5f4cc0"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.advent-1-postcommunion"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Lawful public-domain editorial projection of the 1962 Postcommunion Suscipiamus, Domine paired with Pustet 1862 under 17 U.S.C. 103(b)."
+source_fingerprint = "sha256:0298372b31045d2310cb1c8648054da94bc6b7cc10e09d0c70beb84a4b8d6b9e"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.primary-advent-1-epistle"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Lawful public-domain editorial projection of the 1962 57-word Epistle (Rom 13:11-14a) collated against Tours Mame 1922."
+source_fingerprint = "sha256:b8dd9bde3255b257f46b039d578e9371ead50e3b128ec73296d038de17a4d1ce"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+loci = ["Proprium Missarum de Tempore, Dominica I Adventus, printed pp. 1-3 (text lines 13185-13470)"]
+context = "Tracked public-domain 1862 liturgical antecedent corroborating all three orations and the six scriptural proper bodies under 17 U.S.C. 103(b) alongside Tournai 1889 (noting its Introit OCR dropout of 'Deus meus, in' and older spellings expectant/Alleluja/coelorum/Coelum/expectatione), as well as the abolished pre-1955 seasonal orations."
+source_fingerprint = "sha256:efd4426beabe5385be4e5df4542255c488fe460dee069ab999231255702d5b0f"
+notes = "Corroborated word-for-word against 1889 Tournai Desclee and visually collated against CMAA 1962 PDF pp. 82-83 on 2026-11-25."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.1889-tournai-desclee-leo-xiii-recognitum.ia-djvu-ocr-715f57fd"
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+loci = ["Dominica I Adventus, text lines 10746-10995"]
+context = "Tracked public-domain 1889 Tournai Desclee Missal corroborating all six scriptural proper bodies (including 'Deus meus in te confido' dropped by Pustet 1862 OCR, plus 'exspectant', 'Alleluia', 'exspectatione') and the three orations under 17 U.S.C. 103(b), visually collated against CMAA 1962 PDF pp. 82-83 (differing only in consonantal j and oe/ae spelling)."
+source_fingerprint = "sha256:1e2fa64e68288f89f1e52927076ec6f28c9bbf68e9feabcb6ed4ba4235d194ce"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.adapted-primary-readings-la-checked-e3a67098"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Dominica I Adventus Epistle (Rom 13:11-14a), printed p. 2, PDF p. 116, physical lines 145-150"]
+context = "Tracked public-domain Tours Mame 1922 checked Latin witness for the adapted 57-word Epistle."
+source_fingerprint = "sha256:73b8db18243b8ce0fa2442202f4639612183e4288252f83d9dc54ce15876a5e6"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["praefatio-communis", "praefatio-de-ss-trinitate"]
+context = "Tracked public-domain Latin witness for the governed Preface of the Most Holy Trinity, collated to 1962 n. 1082 per roman-1962-ordo-missae-v1.toml."
+source_fingerprint = "sha256:4dd570d15a594e4ab3b870a81e16e96c4802adaf6907f2f26dd29b76fdaae4ff"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.publish-advent-1--main--collect--all--1"
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Public-domain Lasance/Walsh 1945 checked English translation of the Advent I Collect (printed p. 103)."
+source_fingerprint = "sha256:d1992438db68e71cef52684ab5aff515f177835234827d118af26e791f63d35b"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.publish-advent-1--main--secret--all--1"
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Public-domain Lasance/Walsh 1945 checked English translation of the Advent I Secret (printed p. 105)."
+source_fingerprint = "sha256:1c8845eacfc79b98288b353489788f1141b843dbe10a9ed8439f3915f8e5fe41"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.publish-advent-1--main--postcommunion--all--1"
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Public-domain Lasance/Walsh 1945 checked English translation of the Advent I Postcommunion (printed p. 106)."
+source_fingerprint = "sha256:68994856684d6094f44e2ec35b73ac13099f4a8429a2701a94fab14120e46571"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-complete-a-en"
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["row 1, praefatio-de-ss-trinitate, printed pp. 773-774 (PDF pp. 772-773)"]
+context = "Public-domain Lasance/Walsh 1945 page-image-checked English translation of the governed Preface of the Most Holy Trinity."
+source_fingerprint = "sha256:2d885558f4839ec03bb1cb2c25e440b4eb60564badf28151b0f75eadc7116f07"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "segment.catholic-church.rubricae-breviarii-et-missalis-romani.latin-aas-52-1960.aas-52-1960-pages-597-740"
+role = "official-control"
+states = ["cataloged", "acquired"]
+loci = ["11", "15", "20", "24", "25", "71", "91", "109", "111", "131", "137", "299", "494", "507"]
+context = "Promulgated 1960 Codex rubricarum segment in AAS 52 (acquired and hash-pinned in library over restricted Vatican OCR PDF; raw PDF not re-opened offline; individual checked articles bound separately below)."
+source_fingerprint = "sha256:99b9d84223f3698f1d43229d0b0e28b639070ce3f4be3c6dad3b841212af8650"
+
+[[bindings]]
+source_id = "passage.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-n-11"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verifies 1st-class Sunday rank (Dominicae I classis) for the Sundays of Advent."
+source_fingerprint = "sha256:2e532db18520e09220660589cc9f884013594095145c3ddd201ea90b28108994"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-n-15"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verifies occurrence precedence of 1st-class Sundays over feasts (noting the Immaculate Conception exception for occurring Advent Sundays)."
+source_fingerprint = "sha256:f2d23dea01ef2313547285ec663d0c2cb798587609a9b3cc0a6ec26992939cc8"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-n-20"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verifies the calendar anchor of the First Sunday of Advent (Sunday on or nearest 30 November -> 29 November 2026)."
+source_fingerprint = "sha256:8743e239509513b90235f4459a2e7cd71c155c471796d31663e372d81ac6bca5"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-nn-24-25"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verifies classification of Advent ferias (3rd class through 16 December; 2nd class on 17-23 December and Ember Days) governing weekday resumption of Advent I Mass."
+source_fingerprint = "sha256:93272fbb1357d0facfe30dace275fe8343799dad47a7288eb1e2f5d2436f4bbb"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-n-71"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verifies the liturgical extent of Advent (from I Vespers of Advent I through None of the Vigil of the Nativity)."
+source_fingerprint = "sha256:ea51ae0e3415f72558bc2af42dbae005775d533d4e562e753b4dce2eec25ac27"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-n-91-tabella"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verifies Table of Precedence row 6 (Sundays of Advent) defeating ordinary sanctoral commemorations."
+source_fingerprint = "sha256:481f0e79f6d8a63ff2e9e97c9c6c2da1c522327ccf6cbff1582c5fb45cdd56c7"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-n-109"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verifies privileged vs. ordinary commemorations (classifying St. Saturninus on 29 November as an ordinary commemoration)."
+source_fingerprint = "sha256:616918d69863262b141ac58be07855fe25091fdebe569306754e14496ab4de0e"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-n-111-a"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verifies that 1st-class liturgical days admit only privileged commemorations (omitting St. Saturninus on 2026-11-29)."
+source_fingerprint = "sha256:69435d78b9b5e513062ff3e93539a3e41f383a77fdfc4298ed06719dfeeff32c"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-n-131"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verifies rose vestments permitted on Gaudete Sunday (Advent III) and Laetare Sunday (Lent IV), contrasting with Advent I violet."
+source_fingerprint = "sha256:be44965aafdfd303cad3bc6848db14fa9c8c66406a1f9a86d38114411a856186"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-n-137"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verifies abolition of folded chasubles and retention of dalmatic and tunicle in penitential seasons including Advent."
+source_fingerprint = "sha256:efeba9361129f692653ca8f52bd0be548cfbf32d5b09ca68c5165d44f35f3af6"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-missalis-n-299"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verifies ferial resumption of the preceding Sunday Mass on Advent weekdays (triggering the Alleluia omission and Common Preface branch)."
+source_fingerprint = "sha256:ba322ea0a01a577dc7bc8136adc20aeef38de4e529b9bbfb48897b4e76a70d9c"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.holy-see.acta-apostolicae-sedis.volume-52-1960.rubricae-generales-missalis-n-507"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verifies verbatim 1960 dismissal rule (AAS 52, pp. 680-681, artifact rubricae-generales-missalis-n-507-checked-text-990c303a): Ite, missa est is said at the end of Mass (including Advent Sundays without Gloria); Benedicamus Domino applies only to Holy Thursday evening Mass followed by solemn reposition of the Most Blessed Sacrament and other Masses followed by a procession (aliqua processio), with Easter octave double Alleluia and Requiem Requiescant in pace."
+source_fingerprint = "sha256:b98b470c11092ed4a9ce240f8e7d67e68e33ad60bd21443966c35eee6b999935"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.patrick-l-murphy.new-rubrics-of-the-roman-breviary-and-missal.sydney-1960.rgmr-509-510-translation"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Contemporary 1960 rubrical translation confirming ordinary Last Gospel (John 1:1-14) on Advent I."
+source_fingerprint = "sha256:42851b34fc9368c96d255473619cd87e48cb7fe89bed6319c2b6c68fe7264dcd"
+
+[[bindings]]
+source_id = "passage.patrick-l-murphy.new-rubrics-of-the-roman-breviary-and-missal.sydney-1960.commentary-preface-and-last-gospel"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Contemporary 1960 rubrical commentary on Preface selection and Last Gospel."
+source_fingerprint = "sha256:1366989af1a66073d473402aa4023e79e148207bcb8df87de976f183cffd3eb8"
+
+[[bindings]]
+source_id = "artifact.fssp-france.ordo-du-mois.2026-11-22-web.ordo-2404c50f"
+role = "currentness-control"
+states = ["cataloged", "acquired"]
+loci = ["29 November 2026 (First Sunday of Advent, 1st class, violet)"]
+context = "Registered metadata of dated 2026 FSSP France 1962 Ordo acquired and SHA-256 hashed 2026-11-22 (storage = restricted; raw HTML bytes not re-opened offline)."
+source_fingerprint = "sha256:49f53c4ba80e2c8846cd999f70e4d97f21fe26e7b9b0d2a1bd032e30c93989c6"
+
+[[bindings]]
+source_id = "artifact.icrsp-france.ordo.2026-11-22-web.ordo-973580cb"
+role = "currentness-control"
+states = ["cataloged", "acquired"]
+loci = ["29 November 2026 (First Sunday of Advent, no Gloria, Credo, Trinity Preface)"]
+context = "Registered metadata of dated 2026 ICRSP France 1962 Ordo acquired and SHA-256 hashed 2026-11-22 (storage = restricted; raw HTML bytes not re-opened offline; notes institutional papal prayer outside universal calendar)."
+source_fingerprint = "sha256:952915df8799fa6c04f8c9b0ccfd3fdcd3b3b940486d55497459800dbb32cf78"
+
+[[bindings]]
+source_id = "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.advent-sundays-a3"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Early Roman liturgical witness attesting the Advent I Collect (Excita domine quaesumus potentiam tuam et ueni...) at Dominica prima (Wilson 1915, p. 113; Secret and Postcommunion stand in bound artifact pdf-text-layout-6ca97fd7 below)."
+source_fingerprint = "sha256:a3f85dd3a13af74b00126f8bcfe2a5e484f094225491532387e297af33219590"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.pdf-text-layout-6ca97fd7"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+loci = ["Mense Decembrio, Dominica prima, printed p. 113, PDF p. 171 (page lines 12-18), source.txt lines 7981-7987 form-feed-split (lines 7981-7983 Super oblata 'Haec sacra nos...'; lines 7984-7987 Ad complendum 'Suscipiamus... et reparationis...'; LF-only physical lines 7811-7813 and 7814-7817 excluding the 170 preceding U+000C form-feed page breaks)"]
+context = "Early Roman liturgical witness (Wilson 1915, printed p. 113 / PDF p. 171) attesting the Advent I Secret (Super oblata: Haec sacra nos) and Postcommunion (Ad complendum: Suscipiamus with early variant et reparationis)."
+source_fingerprint = "sha256:0da5f3259e645fa4908aa632beef47483824fccf4e5b83ddc7e60b0f313fe9bb"
+
+[[bindings]]
+source_id = "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.advent-five-missae-a3"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Early Roman sacramentary witness (Book II, sections LXXX-LXXXIV, printed pp. 214-218) showing the five pre-Gregorian Advent formularies."
+source_fingerprint = "sha256:091980ed3c68fbbb1abccba128dc3bdab93d9de8c87b37f8c0f963d79bfe5f80"
+
+[[bindings]]
+source_id = "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.intro-five-advent-missae-a3"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Wilson 1894 Introduction (printed p. lxxi) explaining the five pre-Gregorian Advent missae of V. answered by five Sunday missae before Christmas in R. and S."
+source_fingerprint = "sha256:d2979455475ec33c0ee5dc2ae893bd84932f4002cb6ac0f8ff9abcf13a52c695"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-21-psalms-d20e21f8"
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Ps.24.1-4", "Ps.84.8", "Ps.84.13", "Ps.79.1-4", "Ps.47.9-12"]
+context = "Clementine Vulgate biblical control for Introit, Gradual, Alleluia, Offertory, Communion, and prayer psalm echoes."
+source_fingerprint = "sha256:1481d71b5253d2bf9644408f82c40a7cd90fce2191d6586d9fa24b0f62d49130"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-52-romans-b5092f0e"
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Rom.13.1-14"]
+context = "Clementine Vulgate biblical control showing full biblical context and liturgical truncations of Rom 13:11a and 13:14b."
+source_fingerprint = "sha256:ea1ee4fa64e6aba7f80af9f1c6ef053bdfaaed70f99b318dbe7d10ed2db4b697"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-49-luke-28ae5d9a"
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Luke.21.1-38"]
+context = "Clementine Vulgate biblical control for the appointed Gospel and full Passion-Week Temple discourse context."
+source_fingerprint = "sha256:c5eb7131bf4e265eeb034ea4bcbceb09f8cddff2c696746f2b4545321b823993"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.american-1899-ebible.verse-text-21-psalms-6d114c22"
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Ps.24.1-4", "Ps.84.8", "Ps.84.13"]
+context = "Public-domain Douay-Rheims (Challoner, 1899 American edition) English biblical text for appointed Psalm chants (character-identical to Gutenberg 1581 across appointed verses)."
+source_fingerprint = "sha256:2c0c07bbac7a7e547fc0be807dfbb67f9a1746ea5ae62bd07c6f7e3015eaa05b"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.american-1899-ebible.verse-text-52-romans-829e0fe9"
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Rom.13.11-14"]
+context = "Public-domain Douay-Rheims (Challoner, 1899 American edition) clean English biblical text for Rom 13:11-14 (avoiding Gutenberg 1581 capitalization typo at v. 12)."
+source_fingerprint = "sha256:460742d893fed41497653f5d21e2640f0ad09c77d26c72dd233c0dc232566aad"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.american-1899-ebible.verse-text-49-luke-734de028"
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Luke.21.25-33"]
+context = "Public-domain Douay-Rheims (Challoner, 1899 American edition) English biblical text for Luke 21:25-33 (disclosing v. 29 'in a similitude' vs Gutenberg 'a similitude')."
+source_fingerprint = "sha256:0d2fbee99d25a5610081eef3026a8aee10125f32bdb754754996f38460ef5aee"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.american-edition-divergences-a814cbcb"
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Luke.21.29"]
+context = "Cross-edition divergence ledger verifying the single textual difference at Luke 21:29 between Gutenberg 1581 and American 1899."
+source_fingerprint = "sha256:aa7e3d0c2f9121d818e1c4bc123ade5bbd1b5ac049dc18480aa4cf125e7aab36"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Ps.24.1-22", "Ps.84.1-14"]
+context = "Challoner Gutenberg control verifying Ps 24 and Ps 84 full chapters (catching 1899 OCR typo at non-appointed Ps 84:4)."
+source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-52-romans-4d45c497"
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Rom.13.11-14"]
+context = "Challoner Gutenberg 1581 textual control for Rom 13:11-14 (directly verifying the v. 12 transcription error 'The night is passed And the day is at hand. Let us, therefore cast off' against clean american-1899-ebible)."
+source_fingerprint = "sha256:1b6036a02c7bcc743d143f4f4e17bb6927cb1f4d8dfff9115aeb3250cf287c64"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-49-luke-d8269c33"
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Luke.21.25-33"]
+context = "Challoner Gutenberg 1581 textual control for Luke 21:25-33 (directly verifying v. 29 'And he spoke to them a similitude.' against american-1899-ebible 'in a similitude')."
+source_fingerprint = "sha256:b6acab91674d3bbe04726da30c835175a133104d3db53fcf3f8e45b1d5b4ba6e"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.1.1-5-luke-21"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Gregory the Great, Homily 1 §§1-6 on Luke 21:25-33 (original heading Dominica secunda Adventus, Luke 21:25-32, expounding v. 33 in §4; §2 virtutes coelorum, §3 levate capita & fructus mundi ruina est, §5 nudius tertius / subito turbine, §6 sequentis irae praecones; CC BY-SA 3.0 Latin text)."
+source_fingerprint = "sha256:10ea6f9bd6c4202b893416ad9054f94b6355362d4b93f55783820b29c90c23c3"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.1.1"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Public-domain Migne PL 76 col. 1077 C checked Latin for Gregory Homily 1 §1 opening two sentences (world grown old, blows preceding judgment; heading Dominica secunda Adventus, Lateran codex note ad praesepe)."
+source_fingerprint = "sha256:8fe4b7f83462549cbcd2bd54d63813193b33908f18b2b3f024434e7ba0875c3c"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.1.5"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Public-domain Migne PL 76 col. 1080 C-D checked Latin for Gregory Homily 1 §5 opening (Rome's calamities and the world grown old like an aging body)."
+source_fingerprint = "sha256:f6141548700309f22ba242674d96fa700ad63f8da8c578b151ae444724313d84"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.gregory-the-great.homiliae-in-evangelia.1908-bute-winter.advent-opening"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Public-domain English Roman Breviary (Marquess of Bute 1908) witness to Gregory Homily 1 opening."
+source_fingerprint = "sha256:915e76aaa13807dffc0541fd783b94290936710eaa577dc7cbd85ab66fff8c29"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.gregory-the-great.homiliae-in-evangelia.1843-oxford-catena-luke.gregory-on-luke-21-28"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Public-domain English witness to Gregory Homily 1 §3 on Luke 21:28 (levate capita = gladden your hearts)."
+source_fingerprint = "sha256:898f4c1f50a670b025060066b94e5eebefad27f4557d4b10b131133b285f1a5d"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.gregory-on-luke-21-28"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Thomas Aquinas, Catena Aurea in Lucam (Oxford 1865 checked text): patristic compilation witness to Gregory Homily 1 §3 on Luke 21:28, cross-checked directly in Gregory's Latin text above."
+source_fingerprint = "sha256:5df6a89ed3985cb6eaa5b677e431d8278bf78c492a75210db6869bee0ccbecfe"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "artifact.ambrose.expositio-evangelii-secundum-lucam.latin-wikisource-web-2026-09-05.book-10-html-083e1630"
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+loci = ["10.37", "10.38", "10.39", "10.40", "10.41", "10.42", "10.43", "10.44", "10.45"]
+context = "St. Ambrose of Milan's direct christological, ecclesial, and Marian exegesis of Luke 21:25-30 (contrasting sharply with Gregory)."
+source_fingerprint = "sha256:775b63694d5f5c751be556ca29c8a0fb6fddbfd39995bf111c1ac3c7e5ebf80c"
+
+[[bindings]]
+source_id = "passage.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-web-2026-07-25.luke-21-29"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage of Ambrose Book X on Luke 21:29 (fig tree and all trees double figure)."
+source_fingerprint = "sha256:4ba3d50dc85dd210cc63282c9aabc070de4b4ae9b9ad05053e656cbc62f404a9"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "artifact.cyril-of-alexandria.commentary-on-luke.english-payne-smith-pearse-web-2026-09-05.cyril-on-luke-13-sermons-135-145-9939da72"
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+loci = ["Sermon CXXXIX on Luke 21:25-28, Payne Smith pp. 653-654 (vv. 29-33 unexpounded)"]
+context = "Greek patristic direct exegesis of Luke 21:25-28 reading 'redemption is near' as bodily resurrection into incorruption and cosmic renewal."
+source_fingerprint = "sha256:6f29963409a110759436e50e8ea28d6f47f95be2e0e594f96d9b9be244ff9210"
+
+[[bindings]]
+source_id = "passage.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.luke-21-28"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Bede Book VI on Luke 21:28 (transmitting Gregory Hom. 1 §3)."
+source_fingerprint = "sha256:99cb19a087ce2a7a94e9603f8c25366a3c8f27f8dbbbcf8ea6239e37371e85d9"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.luke-21-29"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Bede Book VI on Luke 21:29 (transmitting Gregory Hom. 1 §3)."
+source_fingerprint = "sha256:45f7af1d54d2de2c34fbab2f6d3058aa32ddbef6f8e1da516af53afa76b7daea"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.luke-21-32"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Bede Book VI on Luke 21:32 (Amen untranslated; generatio haec = human race or Jewish people)."
+source_fingerprint = "sha256:a7fc419a90ba2002a27b990fa90f84cf26d755df8c358b236661790ffac0e5eb"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.luke-21-33"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Bede Book VI on Luke 21:33 (heaven and earth pass per imaginem, not per essentiam, reconciling with Eccl 1:4)."
+source_fingerprint = "sha256:50036d44434fe094277fe9f5911d57f31a7d41dbd22c90d40c259e4c8a2158d1"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-2.ccel-web-2026-09-17.ccel-text-5c973fed"
+role = "analogue"
+states = ["cataloged", "acquired", "inspected"]
+loci = [
+  "St. Augustine, De civitate Dei XX.14 (CCEL NPNF1-2 lines 37271-37339, trans. Marcus Dods: world passes 'by transmutation, not by absolute destruction' and 'The figure, therefore, passes away, not the nature', expounding Apoc 20:9-13 [esp. v. 11], anticipating Apoc 21:1, and quoting 1 Cor 7:31-32)",
+  "St. Augustine, De civitate Dei XX.16 (CCEL NPNF1-2 lines 37406-37450, trans. Marcus Dods: 'then shall the figure of this world pass away in a conflagration of universal fire... so that, as the world itself is renewed to some better thing, it is fitly accommodated to men, themselves renewed in their flesh to some better thing', expounding Apoc 21:1 with Apoc 20:11 and 1 Cor 7:31)",
+  "St. Augustine, De civitate Dei XX.24 (CCEL NPNF1-2 lines 38160-38338, trans. Marcus Dods: anti-Porphyry exposition of Ps 101:26-28 [Heb. 102:25-27] correlating 1 Cor 7:31, 1 John 2:17, and Matt 24:35 [not Luke 21:33] as milder expressions and 2 Pet 3:6-11 / the Flood to argue only the lower atmospheric heavens perish while the starry firmament remains safe; followed by Ps 49:3-5 [Heb. 50:3-5] on Christ's manifest judgment)"
+]
+context = "Patristic analogue witness (trans. Marcus Dods, NPNF1-2) underlying St. Bede's direct Luke 21:33 synthesis: XX.14 teaches transmutation rather than destruction (figure passes away, not nature); XX.16 teaches renewal through universal fire to something better; XX.24 argues against Porphyry from Ps 101:26-28 and 2 Pet 3:6-11 (citing Matt 24:35, not Luke 21:33, in passing) that only the lower atmospheric heavens perish as in the Flood. St. Bede (In Lucae Evangelium Expositio VI on Luke 21:33, passage.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.luke-21-33) directly applies these threads to Luke 21:33 with his own wording (per imaginem vs. per essentiam; per ignem tergetur)."
+source_fingerprint = "sha256:d48d0173d4a33ee386cf96d9ed5275e8d78c8871b318188acd35db8860611a11"
+
+[[bindings]]
+source_id = "passage.john-chrysostom.homilies-on-romans.ccel-web-2026-09-17.24.rom-13.11"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Greek patristic direct exegesis of Rom 13:11 (resurrection/judgment near; runners increasing effort near the prize)."
+source_fingerprint = "sha256:b179ca25b06c807e501da2bf56f4bfa7c0670f0cf654d4cbff0f991f63248b3b"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.john-chrysostom.homilies-on-romans.ccel-web-2026-09-17.24.rom-13.12"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Greek patristic direct exegesis of Rom 13:12 (dawn waking; works of darkness vs glittering arms of light making the Christian soldier and bridegroom)."
+source_fingerprint = "sha256:2cfcd0c116cd08a29658662adff2ed3b7ce911ad61546ce574d81ebf576f76f9"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.john-chrysostom.homilies-on-romans.ccel-web-2026-09-17.24.rom-13.13"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Greek patristic direct exegesis of Rom 13:13 (shift to 'already day'; drunkenness as root of lust and wrath)."
+source_fingerprint = "sha256:289ba87157e57026d2ff96194e5e7b165232a871e0ea7105d51647dbbb68a994"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.john-chrysostom.homilies-on-romans.ccel-web-2026-09-17.24.rom-13.14"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Greek patristic direct exegesis of Rom 13:14 (three-step ascent culminating in putting on the King Himself within and without)."
+source_fingerprint = "sha256:5a82c7eb670764552c9248193d52126e5e6e1a38a1538b7ca609c4ae3f339d67"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.nicene-and-post-nicene-fathers.series-1-volume-1.new-york-1886.augustine-confessiones-8.12.29"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Augustine, Confessions VIII.12.29: classic Latin reception of Rom 13:13-14 in personal conversion (noting inclusion of v. 14b omitted by the 1962 Epistle)."
+source_fingerprint = "sha256:6143c6ee3a95d37f07ba91a965cd63ef381bb5ba0af9949a6d54f8d0e01d90f1"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.augustine.enarrationes-in-psalmos.1888-english-npnf-anonymous-first-thirty.24.1-2"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Augustine on Ps 24:1-2 (totus Christus; lifting soul from carnal longings; pride's shame)."
+source_fingerprint = "sha256:e8e35174b2d63db0ccdd0ab215ff85bed5a13ec02c2f523eaa0e936dcbf293ed"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.augustine.enarrationes-in-psalmos.1888-english-npnf-anonymous-first-thirty.24.3"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Augustine on Ps 24:3 (serpent-like enemy suggestions; unashamed waiting on God)."
+source_fingerprint = "sha256:f156d9faa7af95febcbf82f9756c8500e8c3454575a04ed639bfb4062dac8daf"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.augustine.enarrationes-in-psalmos.1888-english-npnf-anonymous-first-thirty.24.4"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Augustine on Ps 24:4 (narrow semitae of Matt 7:14 known to few)."
+source_fingerprint = "sha256:58513e9071faa2042ade59a407f380c0bb34fddd1a301fe3c9928218ef222cb8"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["85.6", "85.10", "85.11", "85.12", "85.13"]
+context = "Direct patristic English exposition (Oxford Library of the Fathers / Coxe NPNF I.8 on Psalm LXXXV = Vulgate Ps 84:8, 12, 13, 14) registered as five verified Catena passages under edition.augustine.enarrationes-in-psalmos.1888-oxford-coxe (psalm-84-9, 13, 14, 15, 16) via segment.augustine.enarrationes-in-psalmos.1888-oxford-coxe.psalm-lxxxv."
+source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-part-9-latin-text"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["84.9", "84.13", "84.14", "84.15", "84.16"]
+context = "Latin witness to St. Augustine's Enarratio on Ps 84 (verifying Old Latin suavitatem at v. 13 and praeibit at v. 14) registered as five verified Catena passages (84-9, 84-13, 84-14, 84-15, 84-16) linked to their checked Coxe 1888 English counterparts."
+source_fingerprint = "sha256:4ec924c6b55bfe5458a51ad4efa23e437507b846582d1d62cca86f8d68cc730d"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.augustine.sermo-185.1845-migne-pl38.185.1"
+role = "analogue"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Augustine, Sermo 185.1 on Ps 84:12 (Veritas de terra orta est of the Incarnation from Virgin flesh, paired with Expergiscere, homo / Surge, qui dormis)."
+source_fingerprint = "sha256:b65d5ec10cf3f85e96f17b0f941a4291e6dbe54d2047451dfea66a322618777c"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.opera-omnia-volume-14.1863-parma.ia-complete-ocr-02c6dc25"
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+loci = ["Postilla super Psalmos, Ps 24:1-4, Parma Vol. 14, printed pp. 229-230 (also verifying Postilla ends before Ps 84)"]
+context = "St. Thomas Aquinas's direct exegesis of Ps 24:1-4 (prayer as ascensus intellectus in Deum, longanimity via Hab 2:3, twofold confusio, viae = commandments vs semitae = evangelical counsels)."
+source_fingerprint = "sha256:31b59669c8b760c4cdad3cd9e682a73e60b6f9f94fda17edb12e01095c3ae5cc"
+
+[[bindings]]
+source_id = "passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-24-verses-1-3"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Robert Bellarmine on Ps 24:1-3 (detachment from earthly briers, visible and demonic enemies, certain hope)."
+source_fingerprint = "sha256:2efdbe7f29f9997b17219eb13e7f836f68975f8e76468aaa4cb3a03af77d9154"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-24-verses-4-5"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Robert Bellarmine on Ps 24:4-5 (practical grace vs speculative knowledge; God as Physician of the soul)."
+source_fingerprint = "sha256:87555f99251a028bc2100fbaa59926d8429fd2738a0e827ff501470370b442c0"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-79-verses-2-4"
+role = "analogue"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Robert Bellarmine on Ps 79:2-4 illuminating the Collect's verbal echo Excita potentiam tuam, et veni."
+source_fingerprint = "sha256:c8dd33737cc3e0c5e04b0e7faf222bb8bc48c5a7882d635af198efe6db88859c"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-84-verse-8"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Robert Bellarmine on Ps 84:8 (Alleluia: Christological salutare via Titus 2:11, 3:4 alongside Augustine's moral reading)."
+source_fingerprint = "sha256:0fd361933dd54fbebaeec4a1fefeb0875c15954abb49cd45afab6714bf92f5ab"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-84-verse-13"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Robert Bellarmine on Ps 84:13 (Communion: Incarnational/Marian exegesis — benignitas = Holy Spirit, untouched virgin terra nostra = Mary yielding Christ)."
+source_fingerprint = "sha256:9839f6d8153620dcd60f3a2a65fe800538b27aad61c6b2fcf100eb2b40f305d8"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.bernard-of-clairvaux.st-bernards-sermons-for-the-seasons-volume-1.1921-dublin-browne-and-nolan.bernard-in-adventu-1.1-opening"
+role = "analogue"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Bernard of Clairvaux, In Adventu I.1 (Advent mystery opening; note author-standing-v1.toml registration gap flagged in scope.md)."
+source_fingerprint = "sha256:3d2c56bf817718dde50a5159ba986e36d744b4186fe5d9d446bbea1a379ce1f2"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.bernard-of-clairvaux.st-bernards-sermons-for-the-seasons-volume-1.1921-dublin-browne-and-nolan.bernard-in-adventu-3.4-three-comings"
+role = "analogue"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Bernard of Clairvaux, In Adventu III.3-4 (Three Comings: to men, into men [spiritual and invisible, citing John 14:23], and against men; distinct from V.1's flesh/spirit/glory triad)."
+source_fingerprint = "sha256:952908152fc81e2a0e470884d2cdb9cb129e29557d09adff729cb59f61e51b81"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.bernard-of-clairvaux.st-bernards-sermons-for-the-seasons-volume-1.1921-dublin-browne-and-nolan.bernard-in-adventu-4.1-two-advents"
+role = "analogue"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Bernard of Clairvaux, In Adventu IV.1 (relation of First and Last Comings)."
+source_fingerprint = "sha256:4b3de0fecbbabefead16b3dd7b307eb25bd19de87660b29c6d464afadd9e58bf"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.bernard-of-clairvaux.st-bernards-sermons-for-the-seasons-volume-1.1921-dublin-browne-and-nolan.bernard-in-adventu-5.1"
+role = "analogue"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Bernard of Clairvaux, In Adventu V.1 (Middle Coming as bridge, repose, and consolation)."
+source_fingerprint = "sha256:81a882e73b8fdc6c5d83b2c991aa5888225cd356ae0f870461d4c18272a437e5"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.bernard-of-clairvaux.st-bernards-sermons-for-the-seasons-volume-1.1921-dublin-browne-and-nolan.bernard-in-adventu-5.2"
+role = "analogue"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Bernard of Clairvaux, In Adventu V.2 (keeping the Word by inner assimilation like eaten bread)."
+source_fingerprint = "sha256:9a96496bb91b2bd65f571481529b1a4966d5c49ad6f6b01e114873a30ad3df98"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.bernard-of-clairvaux.st-bernards-sermons-for-the-seasons-volume-1.1921-dublin-browne-and-nolan.bernard-in-adventu-5.3"
+role = "analogue"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Bernard of Clairvaux, In Adventu V.3 (interior path from Redemption to Glory)."
+source_fingerprint = "sha256:4aab383ab75dfca4b8563bd57ca4a509185b8241bbbba728e03a4d119b8be1ee"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "artifact.bernard-of-clairvaux.st-bernards-sermons-for-the-seasons-volume-1.1921-dublin-browne-and-nolan.ia-djvu-text-a66ad9a3"
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+loci = [
+  "In laudibus Virginis Matris (Missus est), Homily 1, printed pp. 56, 58-60 (especially p. 59: patriarchal promises as seed, Old Testament figures as Nazareth's blossom, Christ as Fruit, pairing Ps 84:13 with Ps 131:11 as God's promise to David without explicitly equating 'our earth' with Mary's womb on p. 59)",
+  "Second Sermon for Advent (In Adventu II), printed p. 19 (Mary's inviolate womb as an unploughed, unsown field yielding the divine Flower of Isa 11:1 and Song 2:1)"
+]
+context = "St. Bernard's Incarnational exposition of Ps 84:13 paired with Ps 131:11 (Missus est Hom. 1, pp. 56, 58-60, esp. p. 59) alongside his Marian unploughed-field image on Isa 11:1 / Song 2:1 (Second Sermon for Advent, p. 19)."
+source_fingerprint = "sha256:7d7edebc95dca1e4cf1a7074359b2be96f8752ec435a17537ea6a4d303e02219"
+
+[[bindings]]
+source_id = "passage.nicene-and-post-nicene-fathers.series-2-volume-12.new-york-1895.leo-sermo-12.4"
+role = "analogue"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Leo the Great, Sermon XII.4 (December fast: prayer, fasting, and alms renewing God's image)."
+source_fingerprint = "sha256:c1bbd40e3745d1c757b7f35f6193e5cd0fa5e3f9db3d35ad5d6a4aa01ed0501b"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.nicene-and-post-nicene-fathers.series-2-volume-12.new-york-1895.leo-sermo-17.1"
+role = "analogue"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Leo the Great, Sermon XVII.1 (Advent fasting/almsgiving cultivating the 'ground of our heart' to yield fruit of righteousness and love)."
+source_fingerprint = "sha256:60b8559212f0c86f81875bb7b0a79e3bc864d900639e71df3acb6a8c7f5e1691"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.nicene-and-post-nicene-fathers.series-2-volume-12.new-york-1895.leo-sermo-19.1"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Leo the Great, Sermon XIX.1 directly expounding Luke 21:34 (immediately following our Gospel) on Advent vigilance against surfeiting, drunkenness, and worldly cares."
+source_fingerprint = "sha256:eaba6dbf0aaea7ba7678947e30397b94536bbaaf1b0d7a7940fa84a27e81ef63"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "artifact.ildefonso-schuster.the-sacramentary.1924-burns-oates-washbourne-volume-1-english.isidore-machine-text-e78f3515"
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+loci = [
+  "Vol. 1, general Advent introduction, printed pp. 319-321 top (especially p. 320)",
+  "Vol. 1, First Sunday in Advent (Station at St. Mary Major), printed pp. 321-323 (Station, Introit, Collect p. 321; Epistle pp. 321-322; Gradual, Alleluia, Gospel, Offertory, Secret p. 322; Communion pp. 322-323, exposition p. 323; Postcommunion p. 323; all 10 elements match 1962)"
+]
+context = "Bl. Ildefonso Schuster (eligible carrying blessed): whole-formulary liturgical commentary on pp. 321-323 (following the general Advent introduction on pp. 319-321 top, esp. p. 320) matching all 10 1962 elements (noting and excluding his slip on p. 322 calling Gregory's storm an earthquake)."
+source_fingerprint = "sha256:ba1999084cfbd51b025743c26d07fc6b441d12c5bdd506f9d5ce07c875628280"
+
+[[bindings]]
+source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1870-volume-1.ia-djvu-text-45b59caa"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+loci = ["vol-i-p-127", "vol-i-p-130", "vol-i-p-131", "vol-i-p-133", "vol-i-p-134", "vol-i-p-135", "vol-i-p-136", "vol-i-p-137", "vol-i-p-138"]
+context = "Dom Prosper Gueranger, Vol. 1 (Dublin: Duffy, 1870, 2nd ed.; servant-of-god, supporting only): First Sunday of Advent pp. 127-138 (Station at St. Mary Major p. 127; Matins/Isaiah 1 pp. 127-130; Mass pp. 130-138: Introit p. 131 [intro. p. 130], Collect p. 131 [no commentary on direct Christological address; Shepherd renders Qui vivis in third person], Epistle pp. 133-134, Gradual and Alleluia p. 134, Gospel pp. 134-136 [commentary p. 135], Offertory p. 136 [transition p. 135], Secret p. 136, Communion p. 137 ['made fruitful by the dew of heaven' after Isaiah], Postcommunion p. 137 [brief transition 'Then follow the concluding Prayers of thanksgiving' only]; also prints abolished pre-1955 seasonal orations on pp. 131-132, 136-137, 138, excluded from 1962 use)."
+source_fingerprint = "sha256:1d8034d8c49335cfa0b95c6473da3bab76378c97bf83cf22648ab1410635864c"
+
+[[bindings]]
+source_id = "passage.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.vi.2-gloria"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "William Durandus (ecclesiastical-writer, supporting): explains silence of Gloria in excelsis during Advent."
+source_fingerprint = "sha256:e5cf17e0ea116bf99fc8b2f5165f04ed8cc8ce01158ddf5186dd9c40be408de7"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.vi.2-alleluia"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "William Durandus (supporting): solves why Alleluia is sung while Gloria is silent (partim exultationis, et partim moeroris)."
+source_fingerprint = "sha256:5bca80680b06a7e561d0a46a87f4188384f479be2cfa0dbc72f94ef6bb8d592c"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "artifact.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.ia-djvu-ocr-b9b266dd"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+loci = ["Book VI, cap. 2-3 (fols. 255v-261v: Cap. 2 De tempore Adventus, fols. 255v-258v; Cap. 3 De prima Dominica Adventus Domini, fols. 258v-261v, including explicit Postcommunion Suscipiamus on fol. 259r [OCR lines 907-910] and Mass commentary on Ad te levavi rising melody, Rom 13:11-14, generic Orationes remark, Gradual, Alleluia Ostende, three medieval Gospels including Luke 21:25-33 Erunt signa, Offertory, and Communion Dominus dabit on fols. 261r-261v [OCR lines 1100-1173]; Cap. 3's Excita potentiam tuam on fol. 260r [line 996] is a Matins responsory verse)"]
+context = "Medieval liturgical commentary inspected element by element against 1962 (supporting only)."
+source_fingerprint = "sha256:5be12620687e1829e19de144d3c79009d8b9dce221c126174799a60e3facbb4a"
+
+[[bindings]]
+source_id = "passage.sicard-of-cremona.mitrale.latin-migne-pl-213.v.1-duplex"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Sicard of Cremona (ecclesiastical-writer, supporting): seasonal theology of Advent in Mitrale V.1."
+source_fingerprint = "sha256:1ea96114bb0d07f13603487e69a8f9ac3b8405271b9189e35172c315232284bc"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "artifact.sicard-of-cremona.mitrale.latin-migne-pl-213.ia-djvu-ocr-ea9fd813"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+loci = ["Book V, cap. 1-2, PL 213 cols. 192, 204-206 (matches chants & Rom 13:11; primary Gospel Matt 21:1-9 while noting other churches read Luke 21:25-33 Erunt signa; Marian reading of Ps 84:13)"]
+context = "Medieval liturgical commentary audited element by element (supporting only; per guidance/liturgy/propers-three-documents.md cited in reader-facing prose solely for shared elements without mentioning his differing Gospel or connecting to Luke 21)."
+source_fingerprint = "sha256:f7ef227833c6454f7bea588021ba7c000d14f6dc1220746e710f6f3d8a19f761"
+
+[[bindings]]
+source_id = "passage.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170.iii.1"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Rupert of Deutz, De divinis officiis III.1 (PL 170 col. 55): single opening etymological sentence explaining why the pre-Nativity season is called adventus."
+source_fingerprint = "sha256:4684be0f8f588e9eff3bc05b5e9cc3deb1c53bdc6001d6130eee59457f01880b"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170.iii.2-gloria"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Rupert of Deutz, De divinis officiis III.2 (PL 170 col. 58): omission of both Gloria in excelsis and pre-1960 Ite, missa est during Advent."
+source_fingerprint = "sha256:6b9581e11ff5d8cca0737845ad28104bc91347e133ca9f16a71117d3507cd2e3"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "artifact.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170.ia-djvu-ocr-2e2ca850"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+loci = ["Book I, cap. 37, PL 170 col. 33, OCR lines 1966-1984 (Matt 21:1-9 Cum appropinquasset)", "Book III, cap. 2, PL 170 col. 58, OCR lines 3749-3825 (Rom 13:11-14 Scientes quia hora and Introit/Offertory pairing)"]
+context = "Rupert of Deutz, De divinis officiis (full PL 170 OCR): establishes element comparison against 1962 (matches Rom 13:11-14 and Introit/Offertory Ad te levavi in III.2; differs on Gospel Matt 21:1-9 in I.37 and III.2; supporting only, Matt 21 confined to scope.md and at most one clause of expansive scope appendix)."
+source_fingerprint = "sha256:7ec56124e31762f147f8aed197516894e92dc2d5ec7de99bcc91a9f11d1a98d3"
+
+[[bindings]]
+source_id = "passage.honorius-augustodunensis.gemma-animae.1854-migne-pl-172.iii.1"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Honorius Augustodunensis (ecclesiastical-writer, supporting): three causes of Advent and omission of Gloria and Te Deum."
+source_fingerprint = "sha256:f8f67849b68d4bd70105cc867604f312aeb2af6c513fc68ea220ceca4148e9da"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.john-beleth.summa-de-ecclesiasticis-officiis.latin-migne-pl-202.lxiv-triplex"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "John Beleth, Summa cap. LXIV (PL 202 col. 72): threefold coming of Christ (triplex adventus: in carne, in mente, in majestate; Ad te levavi stands in Caput LV of bound artifact ia-djvu-ocr-22b781bf below)."
+source_fingerprint = "sha256:fccc8df9c6cac89c81afc7194afeb3c5dc6437545a81d29bb5619bdc364cc464"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.john-beleth.summa-de-ecclesiasticis-officiis.latin-migne-pl-202.lxiv-omitted"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "John Beleth, Summa cap. LXIV (PL 202 col. 71): Advent omissions of Te Deum, Gloria in excelsis, and pre-1960 Ite, missa est alongside retained Alleluia (partim laetitiae)."
+source_fingerprint = "sha256:d6abecc1fc8e607d5e55e14e69e5122a486711a6d41349472a6169b611524bee"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "artifact.john-beleth.summa-de-ecclesiasticis-officiis.latin-migne-pl-202.ia-djvu-ocr-22b781bf"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+loci = ["Caput LV De diversitatibus officiorum, PL 202 col. 62, OCR lines 4080-4084 (Introit Ad te levavi animam meam)"]
+context = "John Beleth, Summa de ecclesiasticis officiis (full PL 202 OCR): Caput LV attests the opening Advent Introit Ad te levavi animam meam (Ps 24)."
+source_fingerprint = "sha256:8364cabda52e3c0490a6ba2aced518d8ebe2c2b59f25ad29727ddb7cd4156904"
+
+[[bindings]]
+source_id = "passage.amalarius-of-metz.liber-officialis.latin-migne-pl-105.iii.40-gloria"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Amalarius of Metz, Liber officialis III.40 (PL 105 col. 1159): omission of Gloria in excelsis in Advent signifying Old Testament expectation. Standing restriction (author-standing-v1.toml): censured by a synod held at Kiersy (Quierzy) in 838 for his opinion concerning the signification of the parts of the divided Host at Mass; supplies structural and contextual evidence only, the censure must be recorded wherever he is cited, and he must never be cited on the censured Eucharistic point."
+source_fingerprint = "sha256:2ffa6ca7f4d4f5b73a9df498da7424a1cc25245076269603034ef88056977d49"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.amalarius-of-metz.liber-officialis.latin-migne-pl-105.iii.40-five-weeks"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Amalarius of Metz, Liber officialis III.40 (PL 105 col. 1158): older Missals and Lectionaries marking five weeks before Christmas. Standing restriction (author-standing-v1.toml): censured by a synod held at Kiersy (Quierzy) in 838 for his opinion concerning the signification of the parts of the divided Host at Mass; supplies structural and contextual evidence only, the censure must be recorded wherever he is cited, and he must never be cited on the censured Eucharistic point."
+source_fingerprint = "sha256:475de50c75319e43ba1ea82c89aa16e75e6b635028cf0f49758f842b7d5cd8c3"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.amalarius-of-metz.liber-officialis.latin-migne-pl-105.iii.40-four-weeks"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Amalarius of Metz, Liber officialis III.40 (PL 105 col. 1158): four-week Advent arrangement of the Missal and Antiphoner. Standing restriction (author-standing-v1.toml): censured by a synod held at Kiersy (Quierzy) in 838 for his opinion concerning the signification of the parts of the divided Host at Mass; supplies structural and contextual evidence only, the censure must be recorded wherever he is cited, and he must never be cited on the censured Eucharistic point."
+source_fingerprint = "sha256:0ebe8c940549babdf8c63fee5b7047a5cb82dba657491e311e9b3f2056d1cab6"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.amalarius-of-metz.liber-officialis.latin-migne-pl-105.iii.40-gregorialis"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Amalarius of Metz, Liber officialis III.40 (PL 105 col. 1158): five-week Lectionary vs. Gregorian Missal and Antiphoner fourfold proclamation. Standing restriction (author-standing-v1.toml): censured by a synod held at Kiersy (Quierzy) in 838 for his opinion concerning the signification of the parts of the divided Host at Mass; supplies structural and contextual evidence only, the censure must be recorded wherever he is cited, and he must never be cited on the censured Eucharistic point."
+source_fingerprint = "sha256:7dcff683042ae9c64ecd16ffd170ef5d029c382089b594b87223b9955822da3b"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.amalarius-of-metz.liber-de-ordine-antiphonarii.latin-migne-pl-105.xxx-gregory"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Amalarius of Metz, Liber de ordine antiphonarii XXX (PL 105 col. 1219): beginning Advent in the fifth or fourth week, following Lectionary, Antiphoner, and Gregorian Missal (Rom 13:11 stands in bound OCR artifact ia-djvu-ocr-f6438466 below). Standing restriction (author-standing-v1.toml): censured by a synod held at Kiersy (Quierzy) in 838 for his opinion concerning the signification of the parts of the divided Host at Mass; supplies structural and contextual evidence only, the censure must be recorded wherever he is cited, and he must never be cited on the censured Eucharistic point."
+source_fingerprint = "sha256:271e24e66b3e6afd4a0cada14b893170cf6b27c5f8af82c878ea9a4742321b7c"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "artifact.amalarius-of-metz.liber-de-ordine-antiphonarii.latin-migne-pl-105.ia-djvu-ocr-f6438466"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+loci = ["Caput XXX, OCR lines 132034-132040 (citing Epistola Rom 13:11 Scientes quia hora est jam nos de somno surgere)"]
+context = "Amalarius of Metz, Liber de ordine antiphonarii (full PL 105 OCR): Caput XXX cites the Epistle Rom 13:11 (Scientes quia hora) appointed for the fourth week before Christmas. Standing restriction (author-standing-v1.toml): censured by a synod held at Kiersy (Quierzy) in 838 for his opinion concerning the signification of the parts of the divided Host at Mass; supplies structural and contextual evidence only, the censure must be recorded wherever he is cited, and he must never be cited on the censured Eucharistic point."
+source_fingerprint = "sha256:fee49e6e75127cc9264d6a1d1194669c283f53418d51dcb74c97df395e0e8481"
+
+[[bindings]]
+source_id = "artifact.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.antwerp-1614.ia-djvu-text-197365b2"
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+loci = ["Rom.13.11-14"]
+context = "Cornelius a Lapide (ecclesiastical-writer, supporting): Antwerp 1614 commentary on Rom 13:11-14 stands on printed pp. 195-198 (v. 11 p. 195; arma lucis against world, flesh, and devil plus Cyprian, Ambrose, Augustine, and Theodoret p. 196; Non in comessationibus / komos, Augustine Confessions VIII.12.29, and start of Induimini p. 197; completion of v. 14 p. 198; p. 191 prints chapter text vv. 13-14 and begins commentary on v. 1)."
+source_fingerprint = "sha256:aa41c60535fe74b07ae88130bf2c70aba39ae301cac11cc10b42d19bc717db58"
+
+[[bindings]]
+source_id = "artifact.cornelius-a-lapide.commentaria-in-quatuor-evangelia.1908-grant-mossman.volume-4-ocr-4597e03c"
+role = "corpus-boundary"
+states = ["cataloged", "acquired", "inspected"]
+loci = ["St. Luke ch. XXI, printed pp. 471-475 (verified negative result: prints text of vv. 1-38 but omits commentary on vv. 20-33, jumping from v. 19 to v. 34)"]
+context = "Direct inspection establishing that Lapide's Luke volume skips commentary on Luke 21:20-33."
+source_fingerprint = "sha256:b3e8ee8ed7e1edb5a0cb785f6824c0b79d5feacb24a37aba3eab32416b22bd9e"
+
+[[bindings]]
+source_id = "work.augustine.epistula-199"
+role = "lead"
+states = ["cataloged"]
+context = "Uninspected lead on eschatological signs in Luke 21 (held artifact is storage = restricted and not tracked locally)."
+
+[[bindings]]
+source_id = "work.hilary-of-poitiers.tractatus-super-psalmos"
+role = "lead"
+states = ["cataloged"]
+context = "Uninspected remote lead for Psalms 24 and 84 (CSEL 22 full text is storage = remote)."
+
+[[bindings]]
+source_id = "work.cassiodorus.expositio-psalmorum"
+role = "lead"
+states = ["cataloged"]
+context = "Uninspected remote lead for Psalms 24 and 84 (tracked Cassiodorus leaves hold Ps 85 Inclina Domine, not Vulgate Ps 84; full PL 70 is storage = remote)."
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Chronology corpus witness for Ps 24 latest composition boundary (before c. 165 B.C.)."
+source_fingerprint = "sha256:9d846d7a068a2f4ff21fbe83aa4460c0a7c96864afb26ad6692af23b96ab63df"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Chronology corpus witness for traditional Davidic attribution of Ps 24 (reigned 1055-1015 B.C., disputed)."
+source_fingerprint = "sha256:30d1a361aacee847739689e156a7295bac16a72c00c0840ff4991950cd2a5af0"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05485a-66d722ae"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+loci = ["Epistle to the Romans composition date proposal (A.D. 58)"]
+context = "Chronology corpus witness for Rom 13:11-14 composition date (A.D. 58)."
+source_fingerprint = "sha256:bbcdca954f4a180c33006965ca005db2ec0cb7a806fd248fbb46b620aab60e21"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+loci = ["Epistle to the Romans composition date proposal (A.D. 57)"]
+context = "Chronology corpus witness for Rom 13:11-14 composition date (A.D. 57)."
+source_fingerprint = "sha256:8cfc6ed92e4e3a2b5adfde15bf732276a529799b74311cdd8aaef65ea407f469"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+loci = ["Psalms of the Sons of Korah composition estimate (between days of Isaias and return from exile)"]
+context = "Chronology corpus witness for Ps 84 (Alleluia and Communion) composition window."
+source_fingerprint = "sha256:a45edaa02c597859c21897168d5ad908a5553f79b45d2ae027503d3af827ea8b"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-13.new-york-1912.newadvent-13156a-dd2f7a55-article-text"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+loci = ["Epistle to the Romans, section 'Date and circumstances of composition', line 69"]
+context = "Historical-geography witness attesting that St. Paul wrote the Epistle to the Romans from Corinth at the close of his third missionary journey shortly before departing for Macedonia (citing Rom 16:1, 23 and 1 Cor 1:14)."
+source_fingerprint = "sha256:fedd118877912cde7fb28425f92cb308549496c23f3024e1e745c7b1974dc51e"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+loci = ["Gospel of St. Luke composition date proposal (about A.D. 70)"]
+context = "Chronology corpus witness for Luke 21:25-33 composition estimate (about A.D. 70)."
+source_fingerprint = "sha256:72ff1c7fff77b396328a616ee182353295403d927a4943dea9aae7de2863a792"
+
+[[bindings]]
+source_id = "passage.pontifical-biblical-commission.de-auctore-tempore-et-veritate-evangeliorum-marci-et-lucae.latin-aas-4-1912.responsa-i-ix"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Chronology corpus witness for Luke composition before Acts and end of Paul's Roman imprisonment."
+source_fingerprint = "sha256:bfd0d8ccb0b19b093c81145ef7a767e5ceca93476dff495d146e0d8c0672631f"
+verified_on = "2026-11-25"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.in-omnes-pauli-epistolas-commentaria.dessain-volume-2-1857.book-ocr-2b7b11dc"
+role = "corpus-boundary"
+states = ["cataloged", "acquired", "inspected"]
+loci = ["Tomus II title and epistle headings, lines 1-160, 15386, 26717, 38415, 42833 (2 Corinthians through Colossians)"]
+context = "Direct inspection establishing that this tracked Dessain 1857 Vol. II OCR covers 2 Corinthians through Colossians and contains no Romans commentary."
+source_fingerprint = "sha256:fc0fe651fc1f34b1d124831a6538442a81cd47acb7ec6161c19a7bfb4269aadf"
+
+[[bindings]]
+source_id = "artifact.maximus-of-turin.homiliae.1862-migne-pl-57.ia-djvu-ocr-acb74efb"
+role = "corpus-boundary"
+states = ["cataloged", "acquired", "inspected"]
+context = "Bounded negative probe over full tracked PL 57 OCR layer (lines 1-70917): no direct exposition of the Advent I proper incipits or pericopes identified in this uncorrected optical layer."
+source_fingerprint = "sha256:4cd7edb567c931394e3993576de080a3bbaae91fade2ff4e9de64060945f8719"
+
+[[bindings]]
+source_id = "artifact.peter-chrysologus.sermones.1894-garnier-migne-pl-52.ia-djvu-ocr-098e5136"
+role = "corpus-boundary"
+states = ["cataloged", "acquired", "inspected"]
+context = "Bounded negative probe over full tracked PL 52 OCR layer (lines 1-104221): no direct exposition of the Advent I proper incipits or pericopes identified in this uncorrected optical layer."
+source_fingerprint = "sha256:cf3fe93db1088721e4a0f1b975f3eb4e23db8d5a474062927077878c1fdab2f3"
+
+[[bindings]]
+source_id = "artifact.alphonsus-liguori.the-incarnation-birth-and-infancy-of-jesus-christ.grimm-1886.ia-djvu-text-571b32b3"
+role = "corpus-boundary"
+states = ["cataloged", "acquired", "inspected"]
+loci = ["Vol. IV OCR corpus probe (lines 1-22430)"]
+context = "Bounded negative probe over tracked Grimm 1886 Vol. IV OCR layer: ascetical meditations on the Incarnation and Nativity with no direct Advent I Mass formulary exposition identified."
+source_fingerprint = "sha256:d2f5ccc31fcef24345024de7e8cfaa8c5e256a4ce96461c4a14e2b044b996118"

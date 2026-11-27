@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v20
+WORKFLOW_DIGEST: 9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec
+RUN_ID: 6360bf57cd7d36ba
+COMMIT: 0f8fb307cde69819014f3d26a7f0cd77cb6ce9a9
+STAGE: study-preflight
+ITERATION: 1
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-11-29","proper":"liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b","provider":"gemini","research_handoff":"none"}
+DOCUMENT_ROOT: src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"STU-008","location":"sections/40-lane-hidden-presence.tex:33-35; sections/50-lane-covenant-fidelity.tex:35-37; sections/60-lane-vigilant-stewardship.tex:35-37; sections/70-comparison.tex:4-17","problem":"All three interpretations close with an identical formulaic '\\subsection{Strengths and Limits}' scorecard (40:33-35, 50:35-37, 60:35-37), and sections/70-comparison.tex then repeats those exact same cruxes, strengths, and risks once in prose (70:6-8) and a third time in comparisontable (70:10-17). Under guidance/editorial.md ('Say it once,' 'Teach in order': 'A closing template repeated section after section is a form, not teaching' and 'A closing comparison compares; it does not re-argue each section'), folding each reading's chief exegetical difficulty or counter-argument directly into its exposition and tightening sections/70-comparison.tex so the prose and table complement rather than duplicate each other would sharpen the study's pacing.","required_result":"Fold the strongest objection or counter-reading into each interpretation's argument rather than repeating an identical 'Strengths and Limits' template across all three lanes, and trim sections/70-comparison.tex so the opening prose states the decisive points of divergence without duplicating every row of the comparison table.","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

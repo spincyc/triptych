@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v20
+WORKFLOW_DIGEST: 9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec
+RUN_ID: 1166cebbde68c425
+COMMIT: 0f8fb307cde69819014f3d26a7f0cd77cb6ce9a9
+STAGE: study-preflight
+ITERATION: 2
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-11-29","proper":"liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent","provider":"gemini","research_handoff":"none"}
+DOCUMENT_ROOT: src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"STU-010","location":"sections/06-lane-conversion.tex:22; research/interpretations.md:125","problem":"In summarizing St. Thomas Aquinas's Postilla super Psalmos on Ps. 24:4 (Parma Vol. 14, p. 230), sections/06-lane-conversion.tex:22 (following research/interpretations.md:125) writes that the psalmist asks God to show these paths ('ostende eas mihi') 'both to the intellect (under Vias tuas) and to the affections (under Et semitas)'. In the Parma 14 text, however, 'Has vias ego non cognosco; et ideo ostende eas mihi, et quantum ad intellectum, et quantum ad affectum' belongs wholly within the exposition of 'Vias tuas' (the precepts), while the subsequent 'Quantum ad secundum dicit, Et semitas' returns to the outer division of the active life ('communis per praeceptum, specialis per consilia') and expounds 'Et semitas' solely as the narrower footpath of the evangelical counsels without mentioning 'affectus'. Although Parma 14's reportatio creates this surface ambiguity by jumping from 'Quantum ad primum dicitur Isa. 50' straight to 'Quantum ad secundum dicit, Et semitas', assigning 'intellect' to 'Vias tuas' and 'affections' to 'Et semitas' slightly mis-maps Aquinas's division.","required_result":"While already editing sections/06-lane-conversion.tex and research/interpretations.md, drop the parenthetical mappings '(under \\latin{Vias tuas})' and '(under \\latin{Et semitas})' and write 'these ways' instead of 'these paths' -- e.g., 'Because man cannot even discern these ways on his own, the psalmist asks God to show them (\\latin{ostende eas mihi}) both to the intellect and to the affections, before turning to the contemplative guidance of verse~5...' -- and align research/interpretations.md:125 accordingly.","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

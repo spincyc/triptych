@@ -1,0 +1,13 @@
+{
+  "artifact_path": "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "STU-001",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 3,
+  "stage": "research",
+  "summary": "Repaired STU-001 by directly re-verifying all four bound tracked artifacts in src/sources/ and updating edition dates, page loci, and witness summaries across research/scope.md, research/interpretations.md, research/context.md, and research/source-bindings.toml (bindings 89, 93, 94, 113): Gueranger Vol. 1 dated Dublin: Duffy, 1870 (2nd ed.) with exact Mass loci (Introit p. 131, Collect p. 131 without direct-address commentary, Epistle pp. 133-134, Gradual/Alleluia p. 134, Gospel pp. 134-136, Offertory p. 136, Secret p. 136, Communion p. 137 'made fruitful by the dew of heaven' after Isaiah, Postcommunion p. 137 brief transition only); Lapide Antwerp 1614 Rom 13:11-14 commentary corrected from p. 191 to pp. 195-198 (v. 11 p. 195, arma lucis p. 196, comessationibus/komos and Induimini pp. 197-198); Bernard Missus est Hom. 1 corrected to pp. 56 and 58-60 (esp. p. 59 pairing Ps 84:13 and Ps 131:11 as God's promise to David without explicitly equating 'our earth' with Mary's womb on that page, noting Second Sermon for Advent p. 19 for Mary's womb as an unploughed field); and Schuster Vol. 1 First Sunday in Advent separated at pp. 321-323 (Station/Introit/Collect p. 321, Epistle pp. 321-322, Gradual/Alleluia/Gospel/Offertory/Secret p. 322, Communion pp. 322-323, Postcommunion p. 323) from the general Advent introduction on pp. 319-321 top (esp. p. 320). Passed bindings-valid (129 bindings) and _proper_study.py check --phase research --mode source, with zero machine paths in tracked files; handoff receipt with updated binding_sha256 digests written to .scratch/driver-tlm/research-receipts-3/handoff.md for source-registration iteration 3 to reconcile research/source-dispositions.toml."
+}

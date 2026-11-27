@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v20
+WORKFLOW_DIGEST: 9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec
+RUN_ID: 6360bf57cd7d36ba
+COMMIT: 0f8fb307cde69819014f3d26a7f0cd77cb6ce9a9
+STAGE: synthesis-preflight
+ITERATION: 1
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-11-29","proper":"liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b","provider":"gemini","research_handoff":"none"}
+DOCUMENT_ROOT: src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"SYN-005","location":"sections/synthesis/20-overview.tex:5; sections/synthesis/30-themes.tex:23; sections/synthesis/40-commentary.tex:64, 68","problem":"Four minor compression slips slightly blur standalone clarity without altering any controlling argument: (1) 40-commentary.tex:64 notes that St. Bernard 'expounds Psalm 67(68):14 in Sermo 5.1' without stating the verse's phrase ('sleep among the midst of lots', given in sections/30-detailed-commentary.tex:91), leaving a standalone reader unsure how that psalm connects to Bernard's middle coming; (2) 30-themes.tex:23 compresses Mark 13:34-35 into 'charges the doorkeeper (janitor) to watch across the four Roman night watches,' folding v. 35's direct address to the disciples ('Watch ye therefore...') into v. 34's parable charge to the porter; (3) 20-overview.tex:5 abbreviates Aquinas's first stain on Isa. 64:6 Vg. (mortalis maculae, given accurately as 'mortal sin' at 40-commentary.tex:17) to bare 'sin'; and (4) 40-commentary.tex:68 states that the Prayer after Communion and Concluding Blessing 'dismiss the assembly,' collapsing the close of the Communion Rite with the concluding blessing and dismissal.","required_result":"While revising the synthesis files, add a brief phrase naming the image Bernard expounds in Ps. 68(67):14 ('sleep among the midst of lots') at 40-commentary.tex:64, separate the parable's charge to the doorkeeper (v. 34) from Jesus' direct command to the disciples across the four Roman night watches (v. 35) at 30-themes.tex:23, restore 'mortal sin' at 20-overview.tex:5, and phrase 40-commentary.tex:68 so the Prayer after Communion closes the Communion Rite and the Concluding Blessing precedes the dismissal.","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

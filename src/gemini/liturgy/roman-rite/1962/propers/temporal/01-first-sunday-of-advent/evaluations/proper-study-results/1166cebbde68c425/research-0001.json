@@ -1,0 +1,30 @@
+{
+  "artifact_path": "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-001",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-002",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-003",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-004",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-005",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "notes": "Handoff for source-registration (iter 1): text-free visual-collation receipt at .scratch/driver-tlm/research-receipts-1/cmaa-1962-advent-1-collation.md with 400 dpi CMAA PDF pp. 82-83 column crops in .scratch/driver-tlm/research-receipts-1/ (strictly outside Git; cmaa-facsimile-pdf stays storage=remote, rights_status=unresolved). Register text-free 1962 collation passage(s) under src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/, bind the new passage ID(s) in research/source-bindings.toml, and reconcile research/source-dispositions.toml across all 128+ bindings.",
+  "stage": "research",
+  "summary": "Repaired all five blocking research-review findings (RES-001 through RES-005) and cleared both advisories (RES-006, RES-007) for 1962 First Sunday of Advent (gemini). Verified RGMR 507 verbatim from AAS 52 (pp. 680-681, artifact rubricae-generales-missalis-n-507-checked-text-990c303a) and corrected all shorthand IDs and RGMR 434/454/457 d attribution (RES-001); bound all 14 newly added existing tracked witnesses (128 total valid bindings, zero duplicates) and aligned every passage-level context/locus claim (RES-002); enforced guidance/liturgy/propers-three-documents.md lines 288-296 verbatim in scope.md and interpretations.md so commentators' differing Gospels/chants never enter the readings, concise study, or homily (RES-003); corrected St. Gregory Homily 1 section loci across all research files and bindings (RES-004); visually collated all six previously Tier-B scriptural proper bodies (Introit, Gradual, Alleluia, Gospel, Offertory, Communion) plus opening headings and rubrics at 300/400 dpi on CMAA 1962 facsimile PDF pp. 82-83 (printed pp. 1-2), corroborated word-for-word against tracked public-domain Pustet 1862 and Tournai Desclee 1889 (RES-005); and cleared Aquinas Ps 24:4 Gallican lemma, Challoner Rom 13:12 comma note, and Catholic Encyclopedia Vol. 13 Corinth attribution (RES-006, RES-007). Staged 400 dpi crops and text-free visual-collation handoff receipt in .scratch/driver-tlm/research-receipts-1/ for source-registration (iter 1)."
+}

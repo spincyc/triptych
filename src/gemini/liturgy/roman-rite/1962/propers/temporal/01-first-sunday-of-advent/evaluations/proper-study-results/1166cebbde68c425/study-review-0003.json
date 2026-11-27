@@ -1,0 +1,416 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "accepted_because": "This minor wording coloring ('stone buildings' for tot aedificia following \u00a75's destructae domus, atque Ecclesiae a fundamentis eversae sunt) stands in settled prose untouched in iteration 3, does not mislead the reader about Gregory's argument or scene, and does not justify a further repair round.",
+      "id": "STU-011",
+      "location": "sections/04-lane-eschatological.tex:16",
+      "problem": "In summarizing St. Gregory the Great's reflection on the Roman windstorm (Homiliae in Evangelia 1.6), line 16 asks, 'If the invisible Judge can overturn stone buildings by stirring a single breath of wind and a thin cloud, Gregory asks, what will happen when He appears in person?' Direct verification of the bound Wikisource Latin witness (gregory-whole.txt, line 19, Hom. 1.6) shows Gregory writes 'casura tot aedificiorum fundamenta concussit' and 'tot aedificia stravit' ('shook the foundations of so many buildings' / 'leveled so many buildings') without specifying 'stone'.",
+      "required_result": "If sections/04-lane-eschatological.tex:16 is reopened in a future edit, replace 'overturn stone buildings' with 'overturn so many buildings' or 'shake the foundations of so many buildings' to match Gregory's Latin wording.",
+      "severity": "accepted"
+    }
+  ],
+  "iteration": 3,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/01-opening.tex",
+          "references": []
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "appointed-text",
+          "kind": "appointed-text",
+          "path": "sections/02-appointed-text.tex",
+          "references": []
+        },
+        {
+          "depends_on": [
+            "appointed-text"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "proper-treatment",
+          "kind": "proper-treatment",
+          "path": "sections/03-detailed-commentary.tex",
+          "references": []
+        },
+        {
+          "depends_on": [
+            "appointed-text",
+            "proper-treatment"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "lane-eschatological",
+          "kind": "interpretive-lane",
+          "path": "sections/04-lane-eschatological.tex",
+          "references": []
+        },
+        {
+          "depends_on": [
+            "appointed-text",
+            "proper-treatment"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "lane-incarnational",
+          "kind": "interpretive-lane",
+          "path": "sections/05-lane-incarnational.tex",
+          "references": []
+        },
+        {
+          "depends_on": [
+            "appointed-text",
+            "proper-treatment"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "lane-conversion",
+          "kind": "interpretive-lane",
+          "path": "sections/06-lane-conversion.tex",
+          "references": []
+        },
+        {
+          "depends_on": [
+            "lane-eschatological",
+            "lane-incarnational",
+            "lane-conversion"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "comparison",
+          "kind": "terminal-apparatus",
+          "path": "sections/07-comparison.tex",
+          "references": []
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "study-chronology",
+          "kind": "terminal-apparatus",
+          "path": "generated/scriptural-date-location.tex",
+          "references": [
+            "research/chronology-annotations.tex",
+            "research/chronology-table.tex"
+          ]
+        },
+        {
+          "depends_on": [
+            "appointed-text"
+          ],
+          "element_keys": [],
+          "key": "study-scope",
+          "kind": "terminal-apparatus",
+          "path": "sections/08-scope.tex",
+          "references": []
+        },
+        {
+          "depends_on": [
+            "proper-treatment",
+            "lane-eschatological",
+            "lane-incarnational",
+            "lane-conversion",
+            "comparison",
+            "study-scope"
+          ],
+          "element_keys": [],
+          "key": "study-references",
+          "kind": "terminal-apparatus",
+          "path": "sections/09-references.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Gregory the Great",
+            "John Chrysostom",
+            "Cyril of Alexandria",
+            "Bede",
+            "Augustine of Hippo",
+            "Leo the Great",
+            "Robert Bellarmine",
+            "Cornelius a Lapide",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Gregory the Great",
+            "John Chrysostom",
+            "Cyril of Alexandria",
+            "Bede",
+            "Augustine of Hippo",
+            "Leo the Great",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "lane-eschatological"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "eschatological-detachment",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Ambrose of Milan",
+            "Robert Bellarmine",
+            "Augustine of Hippo",
+            "Bernard of Clairvaux",
+            "Sicard of Cremona",
+            "Prosper Gu\u00e9ranger",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Ambrose of Milan",
+            "Robert Bellarmine",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "lane-incarnational"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "incarnational-marian",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Alfredo Ildefonso Schuster",
+            "Leo the Great",
+            "Ambrose of Milan",
+            "Bernard of Clairvaux",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Alfredo Ildefonso Schuster",
+            "Leo the Great",
+            "Ambrose of Milan"
+          ],
+          "component_keys": [
+            "lane-conversion"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "interior-conversion",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "files": {
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generated/scriptural-date-location.tex": "b534d32ad5906b7deeb78605881b958831286227f4c35a98052d00899a039678",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/main.tex": "0d158f39c138ac6c0978bf4341a97c967436fedde1ed822774f6dc423b6be5fb",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/chronology-annotations.tex": "e9dabcb7bd4f1415d26bb65e182a6b2f5184c1e0b1e124f2b4f3217510700d4f",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/chronology-table.tex": "fb450dfe4a03a78ae3977a9b48a700082a03ca4a316627c628706e3b4947438e",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/interpretations.md": "89de72d0aff9cfe63a7226e5b699c15797425b29c470b6cce853b27e1d924c3a",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/scope.md": "d6c79031c1ad7c4f57f85c20e8b4072dda29f868ef3b28d5d305b32c04b29140",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/source-bindings.toml": "e54669f5b176e9f04a7aff2620ff597143b448aa58109041bb40c267a24c03c5",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/01-opening.tex": "45519577b9eecef05fb8a9df4dddc05b96211f37fbde0314b74f18730bda30cf",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/02-appointed-text.tex": "db23ad2c2b713078cae69c701c9dc1c3ab9ff04e5affa7679eeeccde43081d54",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/03-detailed-commentary.tex": "7a57fe466cd4da8c97f9fe60651d5dd27af59bd8961f1dbeff6295bb67c285fe",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/04-lane-eschatological.tex": "2b6f0dcc7f71247921d6eea56eca4f9c2cc07a147bd573e584eaa7e4b7fa63ed",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/05-lane-incarnational.tex": "57627a61da5c94ff5ad2d5c653dbecd33206ac189cd08da23d9e2976aad7da83",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/06-lane-conversion.tex": "16d804f59b5f82b843f632b0fc74a18a2575d8b413014843a405a9f4de066da7",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/07-comparison.tex": "e88820d08aefa19cc867d7093b070819e5fe821200773ae31a9e0514a617793c",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/08-scope.tex": "c9f8a870ac4383c80620ed879e5f3a2295323677955f688062903511cf4cdfb4",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/09-references.tex": "7e37178acb797a3ae252b7d4f9ee2a058635199d6aaedd6d36eaae3110c15840"
+    },
+    "generation_provenance": {
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "20",
+            "9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec",
+            "1166cebbde68c425",
+            "0f8fb307cde69819014f3d26a7f0cd77cb6ce9a9",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gemini",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "Independent cold review of the Gemini 1962 Roman Rite First Sunday of Advent expansive study (src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/main.tex, sections/01-opening.tex through sections/09-references.tex, proper-components.toml, and publication.toml) returns PASS with zero blocking findings and one accepted minor wording note (STU-011). Cross-checked appointed_text_completeness = \"complete\" against guidance/liturgy/propers-production-plan.md (authorized 2026-11-25, no reference-only scope), research/context.md, research/scope.md, propers/verified.md, and sections/02-appointed-text.tex; verified strict 1962 liturgical isolation, carrying-author standing in src/sources/inventories/author-standing-v1.toml across all three interpretations (7, 3, and 5 registered Fathers/Doctors/Blesseds respectively, with St. Bernard kept outside carrying_authors), and read-only preflight/component/document-type checks (all 12 preflight checks, check-proper-components, and document-types refresh --check exited 0). Verified the REVIEW_SCOPE upstream synchronization (sections/01, 04, 07, 09) directly against the tracked witnesses in src/sources/: St. Augustine, De civitate Dei XX.14 (NPNF I.2 ccel-text-5c973fed lines 37271-37339), XX.16 (lines 37406-37450), and XX.24 (lines 38160-38338), Clementine Vulgate Ps. 101:26-28 and Apoc. 20:9-13, and St. Bede, In Lucae Evangelium Expositio VI on Luke 21:28-29, 32-33 (luke-21-checked-cd9a5956), plus spot-checks of St. Gregory (Hom. 1.1-6 Wikisource Latin, Bute 1908, Oxford 1843), St. Cyril of Alexandria (Sermon CXXXIX, Payne Smith pp. 653-654), St. Ambrose (Exp. in Luc. X.37-45), St. John Chrysostom (Hom. in Rom. 24), St. Robert Bellarmine (Ps. 24, 79, 84), St. Augustine (Enarr. in Ps. 84.15 Coxe), St. Bernard (Missus est Hom. 1 p. 59; In Adventu 2 p. 19, 3.4, 4.1, 5.1), St. Leo (Serm. 12.4, 17.1, 19.1), Bl. Ildefonso Schuster (Sacramentary I pp. 321-323), William Durandus (Rationale VI.2-3 fols. 256r-v, 261r-v), John Beleth (Summa LXIV), and Cornelius a Lapide (Rom. 13:12-13, pp. 196-197). Consequential-difficulty test: (1) Luke 21:33 at Bede luke-21-33.toml, Augustine De civ. Dei XX.14/16/24 (ccel-text-5c973fed), and Gregory Hom. 1.4 (gregory-whole.txt line 18) \u2014 PASS: sections/04-lane-eschatological.tex:22-24, 46 and sections/01:6, 07:8, 09:22 teach the paradox and Eccl. 1:4 / 2 Pet. 3:5-7 resolution clearly, quote Augustine verbatim, and keep Bede's direct Luke 21:33 synthesis distinct from Augustine's three Book XX chapters without claiming Augustine expounds Luke 21:33; (2) Luke 21:27-30 at Gregory 1.2-3, Cyril Sermon CXXXIX, and Ambrose X.37-45 \u2014 PASS: real patristic divergence (fructus mundi ruina est vs. bodily resurrection vs. Marian cloud and blossoming nations with duplex figura) is clearly argued; (3) Ps. 84:13 at Bellarmine psalm-84-verse-13.toml, Bernard Missus est Hom. 1 p. 59 / In Adventu 2 p. 19, and Augustine psalm-84-15.toml \u2014 PASS: Old Latin suavitatem vs. Gallican benignitatem is disclosed and each inference is intelligible. Prose across sections/01-09 meets guidance/editorial.md plain-prose and tradition-inhabiting standards without production jargon, closing roll calls, compositional-intent claims, or authored biblical dates contradicting generated/scriptural-date-location.tex. Limits: this stage reviews canonical study sources and evidence only (no PDF visual review or canonical web inspection); downstream concise-study and homily re-synchronization remain for their own stages, and offline remote/restricted holdings disclosed in sections/08-scope.tex remain uninspected."
+}

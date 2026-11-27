@@ -1,0 +1,898 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"
+
+[[bindings]]
+source_id = "edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008"
+role = "lead"
+states = ["cataloged"]
+context = "Target Latin typical Missal edition (2008 emended reprint); printed altar-book pages for Dominica I Adventus not held offline (catalog-only lead; verified 2008 currentness rests on Notitiae 44 [2008] in bindings 2 and 96)."
+
+[[bindings]]
+source_id = "passage.holy-see.reimpressio-emendata-missalis-romani-notice-2008.italian-notitiae-503-504.edition-status"
+role = "currentness-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Official Notitiae 44 (2008) notice establishing the 2008 Missale Romanum as an emended reprint."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:2b6afb5f0ceae280b31d66ef7f53b6520ba156439d7991acb69e6b2d3e1e9f14"
+
+[[bindings]]
+source_id = "segment.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.notitiae-pages-368-387"
+role = "currentness-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Offline metadata-only inspection of the registered Notitiae 44 (2008) nn. 503-504 variation-list segment (printed pp. 368-387 / PDF pp. 50-69); direct page inspection for Dominica I Adventus inside the restricted PDF remains unresolved offline."
+source_fingerprint = "sha256:395f4b1fe8b9422dc93be2ca7eaa0930af88620c5ce8a8735d20a625ddeaae7e"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.historical-antiphon-advent-1-main-communion-antiphon-1"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified collation of Communion Antiphon Dominus dabit benignitatem (Ps 84[85]:13) against secondary 2002 digital Missal PDF p. 83; 2008 correspondence unverified."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:fb1fa4e92d4a18c198dfcc1b3c531578947e0bac08549d749376edcd9bc964e8"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.english-completion-20261029-postconciliar-phase3-temporal-advent-1-main-prayer-over-the-offerings-all-1-comparison"
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Bounded comparison of Prayer over the Offerings (Suscipe, quaesumus, Domine, PDF pp. 82-83) against Sacramentarium Veronense XXVIIII.372; modern protected body omitted."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:f69d91a2c9fce26bd16fd3a2da3ead948e96afde9e0e9f11716fb5cfbe7fadc7"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.ordo-missae-praefationes"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verifies Praefationes enumeration in Missale Romanum 2002 (PDF pp. 311-346), recording fifty prefaces including two of Advent; specific Advent Preface subtitles, date-range rubrics, and bodies are not recorded in this passage."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:1510b3329da044329e3650fbd1471a2d340762e33b1f143353f893161e1ecff9"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.ordo-missae-prex-eucharistica-i"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Order of Mass Eucharistic Prayer I (Roman Canon, nn. 83-98, PDF pp. 347-354) structure control, confirming proper Communicantes only for Christmas, Epiphany, Easter, Ascension, and Pentecost (none for Advent)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:b38af5e9dcf6ed152a3f4ac51f812e6a0e98a13aa821346d14f486c7be3f6a46"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.ordo-missae-preces-eucharisticae-ii-iv"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Order of Mass Eucharistic Prayers II-IV (nn. 99-123, PDF pp. 354-366) structure control, including Prayer IV's unchangeable preface."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:515211715135fc5df2a02ac56b05a97a42acef4d0317d8f209126ad3cb4b1df1"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.ordo-missae-ritus-communionis-et-conclusionis"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Order of Mass Communion and Concluding Rites (nn. 124-146, PDF pp. 366-370) structure control: Pater noster through Prayer after Communion and concluding rites in which the blessing precedes the dismissal Ite, missa est (does not record optional Solemn Blessings or Prayers over the People)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:d5f83769b23e8b066b785242b6f1720f769f6477bac7c946d9495b7ecd77bc8c"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
+role = "lead"
+states = ["cataloged"]
+context = "Cataloged 2010 ICEL Antiphonary PDF (remote/restricted, not reopened offline; catalog-only lead under rights-limited discipline)."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.australian-liturgy-us-emissal-2021.publisher-html-4ea52314"
+role = "lead"
+states = ["cataloged"]
+context = "Cataloged U.S. eMissal 2021 metadata (restricted/untracked, not reopened offline; catalog-only lead under rights-limited discipline)."
+
+[[bindings]]
+source_id = "artifact.united-states-conference-of-catholic-bishops.divine-worship-newsletter-2021-02.2021-february-official-pdf.official-pdf-e06d7b65"
+role = "lead"
+states = ["cataloged"]
+context = "Cataloged official USCCB Feb. 2021 Newsletter metadata governing the U.S. Collect conclusion emendation (effective 17 Feb. 2021; restricted PDF not reopened offline; catalog-only lead)."
+
+[[bindings]]
+source_id = "artifact.united-states-conference-of-catholic-bishops.commentary-on-the-proper-prayers-of-advent.2026-11-23-english-usccb-web.advent-prayers-12d482ed"
+role = "lead"
+states = ["cataloged"]
+context = "Cataloged USCCB Advent proper prayers commentary metadata (restricted/untracked; not reopened offline)."
+
+[[bindings]]
+source_id = "artifact.united-states-conference-of-catholic-bishops.daily-readings.2026-11-23-page-for-2026-11-29.lectionary-2-27c3cb63"
+role = "lead"
+states = ["cataloged"]
+context = "Cataloged USCCB daily readings metadata for 2026-11-29 (Lectionary No. 2, 112926.cfm; restricted HTML not reopened offline)."
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.liturgical-calendar-dioceses-united-states.2026.principal-celebrations-and-cycles"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verifies 2026-11-29 as the First Sunday of Advent closing the 2026 USCCB liturgical calendar."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:de37a5abe41f8ce4d266781ea631cd79b904bd3e1fcc59281dd8d96ff64952ed"
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.liturgical-calendar-dioceses-united-states.2027.principal-celebrations-and-cycles"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verifies 2026-11-29 as opening Liturgical Year 2027 with Sunday Cycle Year B and Weekday Cycle Year I in the Dioceses of the United States."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:c4b83aaf906a33ee73f62e5854bf15be38e5fb0bcc0a9538f1c2bfccd91220ef"
+
+[[bindings]]
+source_id = "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
+role = "lead"
+states = ["cataloged"]
+context = "Cataloged OLM 1981 editio typica altera PDF (restricted/untracked, not reopened offline; catalog-only lead; Praenotanda verified via passages in bindings 18-21 and 91-94)."
+
+[[bindings]]
+source_id = "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.praenotanda-65"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Latin OLM Praenotanda n. 65 (printed p. XXXII, De electione textuum): independence of the three-year Sunday/festive cycle and two-year ferial cycle, each proceeding separately."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:7b894f3e99d80cec0ac5aef7a8ef902f21068368ce35cc67ef4b53850b0195a7"
+
+[[bindings]]
+source_id = "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.praenotanda-66"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Latin OLM Praenotanda n. 66 paragraph 2 and footnote 102 (printed p. XXXII): three-year Sunday/festive cycle fixing Years A, B, and C by divisibility by three and opening with the First Week of Advent in the preceding civil year."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:cd47bd917a8d3777aba5c9446db2d705efe55db6fcb0b868489dc78c90679ec9"
+
+[[bindings]]
+source_id = "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.praenotanda-77"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Latin OLM Praenotanda n. 77 (printed p. XXXV, De omissione aliquorum versiculorum): pastoral tradition of omitting certain verses in Scripture readings while keeping the essential sense intact."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:c9c447087489051d9df4338e2805fbbef07d430f83ef12ab6e386214c7c28f72"
+
+[[bindings]]
+source_id = "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.praenotanda-82-84"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Latin OLM Praenotanda nn. 82-84 (printed pp. XXXVII-XXXVIII): proper/common memorial readings, weekday reading courses, and selection from Commons (inspected and noted as outside Sunday Advent readings)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:e0ccba06650e29541f5cee6a2be8971c590996f9328abb0a6a841e159933d70f"
+
+[[bindings]]
+source_id = "passage.catholic-church.ordo-lectionum-missae.english-liturgy-office-web-2026-07-25.praenotanda-65-69"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "English OLM Praenotanda nn. 65-69 governing independent 3-year Sunday and 2-year weekday cycles, 3 Sunday readings, harmony vs. semi-continuous principles (nn. 66-67), non-imposition of organic Sunday themes (n. 68), and Year I/II odd/even weekday assignment (n. 69)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:2d613a473494518b02c4d9be99c72588407a7f9d93544e1d7f40793aea6066b4"
+
+[[bindings]]
+source_id = "passage.catholic-church.ordo-lectionum-missae.english-liturgy-office-web-2026-07-25.praenotanda-74-77"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "English OLM Praenotanda nn. 74-77 reserving Isaiah to Advent (n. 74), longer/shorter length criteria (n. 75), pastoral criteria for difficult texts (n. 76), and pastoral omission of verses keeping essential sense intact (n. 77)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:1b4cd4c0dc68fe628740d75af7b76fc6e017184498b1b4a1b13bd0f536112d3f"
+
+[[bindings]]
+source_id = "artifact.catholic-church.ordo-lectionum-missae.2026-11-23-modern-psalter-us-common-psalms.psalm-25-html-7c1bbedd"
+role = "lead"
+states = ["cataloged"]
+context = "Cataloged Modern Psalter U.S. Lectionary No. 174 Advent Common Psalm 25(24) metadata (restricted HTML not reopened offline; exact U.S. refrain wording and verse span unresolved)."
+
+[[bindings]]
+source_id = "artifact.catholic-church.ordo-lectionum-missae.2026-11-23-modern-psalter-us-common-psalms.psalm-85-html-1447f8f2"
+role = "lead"
+states = ["cataloged"]
+context = "Cataloged Modern Psalter U.S. Lectionary No. 174 Advent Common Psalm 85(84) metadata (restricted HTML not reopened offline; exact U.S. refrain wording and verse span unresolved)."
+
+[[bindings]]
+source_id = "passage.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-missale-romanum-typica-tertia-2002.complete-text"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "NUALC complete text governing Advent onset (n. 40), liturgical-year boundary (n. 44), Table of Liturgical Days Part I place 2 (n. 59), and precedence/transfer without commemoration (n. 60)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:1948ec8437574493ad66c9a7245df102242a2e05442f3d192dbc3a3fe316a7e0"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.48"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "U.S. GIRM 48 governing the four United States Entrance Chant options and recitation of the Missal Entrance Antiphon when there is no singing."
+source_fingerprint = "sha256:1c4e998ab16caffc29376658c96e0aee4d4f67e2065f6fdd26eec15f2ee6637e"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.53"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "U.S. GIRM 53 omitting the Gloria on Sundays of Advent (sung or said on Sundays outside Advent and Lent)."
+source_fingerprint = "sha256:a613129176ca755b2df5fa6d04629b8fba192c0e3192a84e540c2099af9b6548"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.61"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "U.S. GIRM 61 governing the Responsorial Psalm, seasonal substitutes when sung, and U.S. approved collections (excluding songs or hymns)."
+source_fingerprint = "sha256:11ce929f4eec5ab84fcabd8001ce5cff34106b8788a2dfaa1b691ddbe3a2ecac"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.62"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "U.S. GIRM 62 governing the acclamation before the Gospel: outside Lent, the Alleluia with verses from the Lectionary or Graduale."
+source_fingerprint = "sha256:6f4fe2fe0fc2fa3f6e9154be1d1028ed5a5870c04d43ce99cf83bc1afc6643ba"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.63"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "U.S. GIRM 63 summary record covering provisions that apply when there is only one reading before the Gospel (does not record the unsung-omission sub-clause)."
+source_fingerprint = "sha256:a9e8a1228e14283a0735a66962700da0f6adb42abcacd027337a6f693c9fff24"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.64"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "U.S. GIRM 64 confirming the Sequence is optional except on Easter Sunday and Pentecost Day (not applicable in Advent)."
+source_fingerprint = "sha256:57be8b985ebbd147da949ea488505c409b3b4cac721d6c86d5d5c75e70cd8e6d"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.68"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "U.S. GIRM 68 directing that the Creed is sung or said by the Priest with the people on Sundays and Solemnities (does not record the Apostles' Creed option or Lent/Easter clause; see binding 95 for Ordo Missae Apostles' Creed permission)."
+source_fingerprint = "sha256:e270749a69ae8b09b8b341569717188efba1c015718261f05250200b4b4d6d4e"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.74"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "U.S. GIRM 74 governing the Offertory chant under the norms for the Entrance chant, including singing without a procession."
+source_fingerprint = "sha256:c5ee5ad97103e81dada06b906685e5ce02d241ffab5731b4df32538831dfde47"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.87"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "U.S. GIRM 87 governing the four United States options for singing at Communion (parallel to no. 48) and recitation of the Missal antiphon where there is no singing."
+source_fingerprint = "sha256:b535cac724fb5a4cebadd8ec9b5bb827a07e6a4925cc5008a5840d7f7237962a"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.90"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "U.S. GIRM 90 governing the Concluding Rites: announcements, greeting and blessing (enriched on certain days and occasions by a solemn blessing or prayer over the people), dismissal to go back to doing good works, and altar veneration."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:b999adee24a73e5a07e7798b19c1474f79118bf36123e5c422bf5631c0ecdf2d"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.364"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "U.S. GIRM 364 stating the purpose of the Missal's many Prefaces: bringing out motives for thanksgiving and facets of the mystery of salvation."
+source_fingerprint = "sha256:5536f40f7871974896739cf5e5f08c21775eb73c4cd00aee43444be90009f0f2"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-a"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "U.S. GIRM 365a permitting Eucharistic Prayer I (Roman Canon) on Sundays."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:9c6183bc680379bd89d1f53e6118200439049345c236e8cf55a0efe93732852a"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-b"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "U.S. GIRM 365b permitting Eucharistic Prayer II with qualifying other Prefaces."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:55ff9568ce6ec9c09c8c9633c8371955dde89062888e95394f91657579a65420"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-c"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "U.S. GIRM 365c commending Eucharistic Prayer III on Sundays and festive days with a Preface."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:f37ecd39631a88df3048669a071f590b9221cf3f6ba3ef00b2a62bb9f1136314"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-d"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "U.S. GIRM 365d excluding Eucharistic Prayer IV when a Mass has a Preface of its own because its Preface is invariable."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:7197153b7137a151997474608d070bb179b73f5c08f22be4c8b6a3c6842bb70d"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.53"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Latin IGMR 53 omitting the Gloria on Sundays of Advent."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:7e53c076d942ad2eac21f273f1678f8be9e3e2907c5cecf396cbe7117f3a1a8e"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.68"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Latin IGMR 68 directing the Creed to be sung or said by priest and people on Sundays and solemnities."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:1008310127b4cd5b07e3d260a4d7d1844a303162d1e07c469b9d307e26eb9569"
+
+[[bindings]]
+source_id = "passage.catholic-church.sacramentarium-veronense.feltoe-1896.english-completion-20261029-postconciliar-phase3-temporal-advent-1-main-prayer-over-the-offerings-all-1-source"
+role = "analogue"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Historical antecedent of the Prayer over the Offerings (Veronense XXVIIII.372, Feltoe 1896 p. 74 / PDF p. 98); studied strictly as historical antecedent."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:6abc0bc6464fa479167a5950a6831ad8f3ea95f9ddf6804697a35bd9f45156f9"
+
+[[bindings]]
+source_id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.historical-book-ocr-e4500b54"
+role = "analogue"
+states = ["cataloged", "acquired", "inspected"]
+context = "Wilson (1894) raw uncollated OCR locating witness, lines 20493-20499 (Book II.lxxxiv, Postcommunio 683, p. 218): historical antecedent of the Advent Collect (uncollated OCR with corrupted token '^^^' on line 20495 preserved honestly)."
+source_fingerprint = "sha256:2d64972c72d09c7bfef6a319f05023a9752ba6eb5a5da0a57c90829339f3f5b2"
+
+[[bindings]]
+source_id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.advent-missae-a3-checked-text-d4a8d64a"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Checked transcription of Wilson (1894) Advent Missae headings (pp. 214-218), verifying section LXXXIV heading on p. 218."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:064101d0f1e91eb3478348ed662161dc60605a9b1f9b5e6bb4a371ef2c77b724"
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-21-psalms-d20e21f8"
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Ps.24.1-3", "Ps.79.2-4", "Ps.79.15-16", "Ps.79.18-19", "Ps.84.8", "Ps.84.13"]
+context = "Clementine Vulgate study Latin control for Ps 24(25):1-3, Ps 79(80):1-20, and Ps 84(85):1-14."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:1481d71b5253d2bf9644408f82c40a7cd90fce2191d6586d9fa24b0f62d49130"
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-27-isaias-0eb1c68d"
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Is.63.16-17", "Is.64.1", "Is.64.3-8"]
+context = "Clementine Vulgate study Latin control for full chapters Is 63-64, verifying Vg 63:16b-17; 64:1, 3b-8 alignment against NABRE 63:16b-17, 19b; 64:2b-7."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:c8ebe298666fd689c0132d046e7f8fa2dfd6c20878929f328179eceec44e8ef5"
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-48-mark-ab7b8b95"
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Mark.13.32-37"]
+context = "Clementine Vulgate study Latin control for full chapter Mark 13 (esp. omitted 13:32 and appointed 13:33-37)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:b735f8e604c3e75982f2a5b38d3f9340c60bf3764ae851e54be2a26cc50846fe"
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-53-1-corinthians-82f86d50"
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["1Cor.1.3-9"]
+context = "Clementine Vulgate study Latin control for full chapter 1 Corinthians 1 (esp. appointed 1:3-9 and faction context 1:10-17)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:c82beb331c7ee02b49e217eb826eb024d8c87614af17bbb662f8374cd5880b74"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Ps.24.1-3", "Ps.79.2-4", "Ps.79.15-16", "Ps.79.18-19", "Ps.84.8", "Ps.84.13"]
+context = "Public-domain Douay-Rheims (Challoner) study English for Ps 24(25):1-3, Ps 79(80):2-19, Ps 84(85):8, 13 (not approved U.S. Lectionary)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-27-isaias-7c9a1228"
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Is.63.16-17", "Is.64.1", "Is.64.3-8"]
+context = "Public-domain Douay-Rheims (Challoner) study English for Is 63:16-17; 64:1, 3-8 (not approved U.S. Lectionary)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:41639d5457be3a0a6446fe59d3c59c7561aacfef7bc43089f650a7353452bbf8"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-48-mark-69b4cb75"
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Mark.13.33-37"]
+context = "Public-domain Douay-Rheims (Challoner) study English for Mark 13:33-37 (not approved U.S. Lectionary)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:2b4848908df9163a705b6532d1b80e55d35bc75bf2826f2ba03cb69b9f7ff025"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-53-1-corinthians-ffc4f260"
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["1Cor.1.3-9"]
+context = "Public-domain Douay-Rheims (Challoner) study English for 1 Corinthians 1:3-9 (not approved U.S. Lectionary)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:86aa4aafa5cb1a66218d81b3f7735715d33eac0a1b62c9c471499728c0838a11"
+
+[[bindings]]
+source_id = "artifact.ebible-org.world-english-bible.catholic-eng-web-c.verse-text-21-psalms-220b12de"
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Ps.25.1-3", "Ps.80.1-3", "Ps.80.14-18", "Ps.85.7", "Ps.85.12"]
+context = "Public-domain WEB-C Hebrew-aligned comparison control for Psalms 25, 80, and 85 verse numbering."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:87458ee31e9d0c3986bf61ab34e3660cc0390df427e53b3d20aea35cbf2d3ed0"
+
+[[bindings]]
+source_id = "artifact.ebible-org.world-english-bible.catholic-eng-web-c.verse-text-27-isaias-ba3986d7"
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Is.63.16-17", "Is.64.1-8"]
+context = "Public-domain WEB-C Hebrew-aligned comparison control for Isaiah 63-64 verse boundaries."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:58f752ad6bb50391926ac7f42fab786d86e7eb40f88d7b3339f396b6b6d5880e"
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-24.paris-1865.ia-djvu-ocr-7be28ebd"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+loci = ["column-642", "column-643", "column-644", "column-645", "column-646", "column-647", "column-648", "column-649", "column-650", "column-651"]
+context = "St. Jerome, Commentarii in Isaiam Lib. XVII (PL 24 cols. 642-651, raw uncollated two-column interleaved DjVu OCR locating witness, lines 44340-44985): direct exegesis of Isa 63:16-64:8 (nimia patientia, Descendisti = Incarnation, 64:4 rejecting apocryphal Ascensio Isaiae / Apocalypsis Eliae and Gnostics [Vallarsi footnote on Origen kept distinct], ordo praeposterus, cross-reference to Ps 79:4, clay/Potter)."
+source_fingerprint = "sha256:80a89a5452671287575c7cc8f44008906ff16cbcc370048c23fe2db70bff2284"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.opera-omnia-volume-14.1863-parma.ia-complete-ocr-02c6dc25"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+loci = ["Super Isaiam ch. 63-64, pp. 370-371 (lines 90930-91220)"]
+context = "St. Thomas Aquinas, Expositio super Isaiam ad litteram ch. 63-64 (Parma Vol. 14 pp. 370-371, raw uncollated DjVu OCR locating witness, lines 90930-91220): permissive non-infusion of grace on 63:17, Sinai terror (Exod. 20) on 64:3a, literal deliverance from Egypt (Exod. 4) and cliffs of Arnon (Num. 21) on 64:3b with Incarnation/Judgment mystically, fourfold defilement of righteous works on 64:6, Potter/clay."
+source_fingerprint = "sha256:31b59669c8b760c4cdad3cd9e682a73e60b6f9f94fda17edb12e01095c3ae5cc"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-5.ccel-web-2026-09-17.ccel-text-bf3dd167"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Augustine, De gratia et libero arbitrio ch. 45 [XXIII] (NPNF1-5 lines 46111-46195): doctrinal control on God's two advents and divine hardening concurring with human free will."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:2faecd3dc73e33988e6c7ac3abd9fc216c3cce4161daa677940ab8a88e44baef"
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["24.1-3,10", "79.1-19", "84.7-14"]
+context = "St. Augustine, Enarrationes in Psalmos (NPNF1-8): direct exegesis of Ps 24(25) (lines 6850-6925), Ps 79(80) (lines 39602-39986: Advent of Christ and His vineyard, Cherubim = charity, lifting veil of flesh, Son of Man foundation), and Ps 84(85) (lines 41518-41952: grant us Thy Christ, confession from earth, benignitas = sweetness)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
+
+[[bindings]]
+source_id = "passage.augustine.enarrationes-in-psalmos.1888-english-npnf-anonymous-first-thirty.24.1-2"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Admitted L3 passage: St. Augustine on Ps 24(25):1-2 (lifting up the soul in Christ's person; trust vs. shame)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:e8e35174b2d63db0ccdd0ab215ff85bed5a13ec02c2f523eaa0e936dcbf293ed"
+
+[[bindings]]
+source_id = "passage.augustine.enarrationes-in-psalmos.1888-english-npnf-anonymous-first-thirty.24.3"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Admitted L3 passage: St. Augustine on Ps 24(25):3 (none who wait on the Lord shall be confounded)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:f156d9faa7af95febcbf82f9756c8500e8c3454575a04ed639bfb4062dac8daf"
+
+[[bindings]]
+source_id = "passage.augustine.enarrationes-in-psalmos.1888-english-npnf-anonymous-first-thirty.24.10"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Admitted L3 passage: St. Augustine on Ps 24(25):10 identifying 'all the ways of the Lord are mercy and truth' with the two Advents of the Son of God."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:5ddb389f8bc6cf79e015c8ce7526f13be6491bef07ea1c96bcb38a7858d5c0a4"
+
+[[bindings]]
+source_id = "passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-24-verses-1-3"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Admitted L3 passage: St. Robert Bellarmine on Ps 24(25):1-3 (tearing the soul from earthly briers; steadfast waiting)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:2efdbe7f29f9997b17219eb13e7f836f68975f8e76468aaa4cb3a03af77d9154"
+
+[[bindings]]
+source_id = "passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-79-verses-2-4"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Admitted L3 passage: St. Robert Bellarmine on Ps 79(80):2-4 (geography of Ephraim/Benjamin/Manasseh; Shepherd shining forth)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:c8dd33737cc3e0c5e04b0e7faf222bb8bc48c5a7882d635af198efe6db88859c"
+
+[[bindings]]
+source_id = "passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-79-verses-15-19"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Admitted L3 passage: St. Robert Bellarmine on Ps 79(80):15-19 (literal messianic reference to Christ; Luke 1:35, 1:68, 19:44)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:a25d3e334fe2cad1358e5780494048fa8a831b8a6638f7dd4506d4d800cff009"
+
+[[bindings]]
+source_id = "passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-84-verse-8"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Admitted L3 passage: St. Robert Bellarmine on Ps 84(85):8 (explicit prayer for the coming Savior, Titus 2:11, 3:4)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:0fd361933dd54fbebaeec4a1fefeb0875c15954abb49cd45afab6714bf92f5ab"
+
+[[bindings]]
+source_id = "passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-84-verse-13"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Admitted L3 passage: St. Robert Bellarmine on Ps 84(85):13 (Holy Spirit overshadowing the unploughed Virgin Mary so earth yields Christ her fruit)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:9839f6d8153620dcd60f3a2a65fe800538b27aad61c6b2fcf100eb2b40f305d8"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-12.ccel-web-2026-09-28.ccel-text-10a3454d"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Chrysostom, Hom. in 1 Cor. II on 1 Cor 1:4-9 (lines 654-851; context to 920)"]
+context = "St. John Chrysostom, Homilies on First Corinthians, Homily II (NPNF1-12 lines 654-851, read with free-will digression to 920): direct exegesis of 1 Cor 1:4-9 (opening at v. 4 and quoting v. 3 in §7 proem recapitulation: pastoral economy, hammering Name of Christ, apokalupsis = present even now, non-coercive Fidelis Deus, quoting 1 Cor 2:9 ['eye hath not seen, nor ear heard', echoing Isa 64:4])."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:c72d9f88324042269c8b3ece8011d4a9732317bb6ce9105acd5d3690f1794509"
+
+[[bindings]]
+source_id = "passage.john-chrysostom.homilies-on-first-corinthians.ccel-web-2026-09-28.2.1cor-1.4-6"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Admitted L3 passage: St. John Chrysostom, Hom. II on 1 Cor 1:4-6."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:48e3f8958bea6cd368af836d1e176959c5a7615bce56df99d0cfd0e6543f00ee"
+
+[[bindings]]
+source_id = "artifact.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.1908-grant-cobb.volume-7-ocr-c9d11cbf"
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Cornelius a Lapide, In 1 Cor. 1:3-9 (Vol. 7 raw uncollated Google Books OCR locating witness, lines 418-510; ecclesiastical-writer): conditional perseverance under Trent Sess. VI cc. 11, 13 after Augustine (vv. 5 and 7 separately verified via facsimile-checked passages in bindings 72-73)."
+source_fingerprint = "sha256:ad235207e7389b004138504101a8bac7c14e65cc3bdbd536ae8032b139b6c77b"
+
+[[bindings]]
+source_id = "passage.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.1908-grant-cobb.1cor-1-5"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Admitted L3 passage: Cornelius a Lapide on 1 Cor 1:5 (ecclesiastical-writer)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:d20b50c13f8b9dc85acdc5aca2837b61b1c4cc4b5000c253743e475d447f37d8"
+
+[[bindings]]
+source_id = "passage.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.1908-grant-cobb.1cor-1-7"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Admitted L3 passage: Cornelius a Lapide on 1 Cor 1:7 (ecclesiastical-writer)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:b5dc40c59058707a213d762d33c569465e57060784abc85bae34f54448f2c882"
+
+[[bindings]]
+source_id = "artifact.bede.in-marci-evangelium-expositio.2026-10-13-latin-wikisource-migne.latin-text-b8197766"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Bede, In Marci Evangelium Expositio IV.13 (lines 402-405): direct exegesis of Mark 13:32-37 (pendulae exspectationis incerto, bodily Ascension vs. divine safeguard, authority = grace of Spirit, janitor = pastors, universal doorkeeping of heart)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:838ec2d9bdd3872f40f104399e97325542dc20fc47dd3b1b4d576e018c618fc2"
+notes = "Directly read lines 402-405 (Lib. IV, cap. 13 on Mark 13:32-37). Retained with role='reception' because work.bede.in-marci-evangelium-expositio currently restricts locus_pattern to Book III / Mark 10 and modifying work.toml would alter pinned downstream fingerprints without coordinated consumer review; deferred honestly in research/source-dispositions.toml."
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.13-32-37"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Admitted L3 passage: St. Thomas Aquinas, Catena Aurea in Marcum 13:32-37, mediating Augustine Ep. 199 §3 (personal death = Lord's Day), Theophylact (four watches = four life stages), Pseudo-Jerome, Hilary, Bede, and Gregory."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:7d753e2131335e14c32e211f5ad23573f0940033b94338c4a6833d260698b1ee"
+
+[[bindings]]
+source_id = "artifact.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.complete-extracted-text-dc25dd69"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["1", "9", "13"]
+context = "St. Gregory the Great, Homiliae in Evangelia Hom. 1 (lines 14-19), Hom. 9 (lines 90-97: flesh carried into far country of heaven), and Hom. 13 (lines 139-145: night watches = ages of human life, patiens redditor, threefold vigilance)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:dd03fd6ff09944af5ba01e741418ae3278e9bc68a08acb4d0cd4538129984eea"
+
+[[bindings]]
+source_id = "passage.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.1.1"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Checked Latin PL 76 passage: St. Gregory the Great, Hom. 1.1 on Advent expectation."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:8fe4b7f83462549cbcd2bd54d63813193b33908f18b2b3f024434e7ba0875c3c"
+
+[[bindings]]
+source_id = "passage.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.1.5"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Checked Latin PL 76 passage: St. Gregory the Great, Hom. 1.5 on a world grown old."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:f6141548700309f22ba242674d96fa700ad63f8da8c578b151ae444724313d84"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-9.1898-edinburgh-ccel.ccel-complete-859ba34c"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Hilary, De Trinitate IX.58-68 (lines 21361-21620)"]
+context = "St. Hilary of Poitiers, De Trinitate IX.58-68 (NPNF2-9 lines 21361-21620): direct exegesis of Mark 13:32-33 (economy of silence; withheld date keeps faith on the stretch in suspense)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:4b493efcadaaaffe58256d8c1f349d082079813a8d8450d43610fc5f97fb4d6d"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894.cyril-catechesis-15.1-checked-text-d027e7e3"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Cyril of Jerusalem, Catechesis 15.1: contrast between Christ's first coming (patience, swaddling clothes in the manger, unobserved like rain on a fleece, enduring the Cross) and second coming (crown of a divine kingdom, clothed with light, attended by angels in glory)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:65b233b572ea0766a4b0bce4131470c3b86f3b072c393990a9112272cc0d06f2"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894.cyril-catechesis-15.2-checked-text-ad047b6f"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Cyril of Jerusalem, Catechesis 15.2: exposition of Malachi 3:1-2 concerning Christ's two comings (the Lord coming suddenly to His temple; the Messenger of the covenant and the day of His appearing)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:3f74021c628d1944302f5431ddd5e49bb9a13649fd172202b49b74896a094032"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894.cyril-catechesis-15.4-checked-text-714df80a"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Cyril of Jerusalem, Catechesis 15.4: forbidding curiosity about the time (Acts 1:7) and warning against slumber (Matt 24:42-44)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:4390cf3c8dfd1c97eb47bcfd85cdfde9f2bce360c051ddb10e26c168d3b3e3c5"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894.cyril-catechesis-15.26-checked-text-d0b6052c"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Cyril of Jerusalem, Catechesis 15.26: Advent watchfulness, burning lamps, and works of mercy (Matt 25:35-41)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:229985d068ffb528eb33e4cf2190ef8b0f859244dca7819fa507786cafe5708b"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-12.new-york-1895.leo-sermo-19.1-checked-text-120c73de"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Leo the Great, Sermon 19.1: Roman December/Advent fast guarding against surfeiting and worldly cares (Luke 21:34)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:0aa326eba260d1f079eb5c8519aea9d15fa278a86ddd12d9e4fdb5387aebd5f2"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-12.new-york-1895.leo-sermo-19.2-mind-fast-checked-text-e84769f5"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Leo the Great, Sermon 19.2: uniting bodily temperance with fasting of the mind from vice."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:90b9af4d4e02199be49981b2eed791afc80a5c29a3e1890f822f559a35f83c1f"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-12.new-york-1895.leo-sermo-19.3-checked-text-e80febf6"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Leo the Great, Sermon 19.3: Advent almsgiving and works of mercy."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:576f4fcae579f03ac0033f28edf98ef8a9f91d5dca2eda5895f6f6a4bd7bf3cd"
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-183.1854-paris.bernard-in-adventu-3.4-triplicem-adventum-checked-text-83c9a85d"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Bernard of Clairvaux, In Adventu Domini Sermo 3.3-4 (Latin PL 183; supplementary spiritual witness, not a carrying author): threefold coming ad homines, in homines, contra homines, quoting John 14:23 on the hidden spiritual coming."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:eca7aa5a77abb61817d53314cf3a812a67af1aaa3807e80426da33fd719ebdbe"
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-183.1854-paris.bernard-in-adventu-5.1-checked-text-3ba65d87"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Bernard of Clairvaux, In Adventu Domini Sermo 5.1 (Latin PL 183; supplementary spiritual witness, not a carrying author): the hidden middle coming (flesh/weakness, spirit/power, glory/majesty; Ps 67:14) bridging first and last advents."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:3ab0475425ce23dd8df96b7998a4e604193a299ee8d678686697d0fa6d70c57a"
+
+[[bindings]]
+source_id = "artifact.bernard-of-clairvaux.st-bernards-sermons-for-the-seasons-volume-1.1921-dublin-browne-and-nolan.bernard-in-adventu-3.4-three-comings-checked-text-f6dac49c"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Bernard of Clairvaux, Advent Sermon 3.3-4 (1921 English; supplementary spiritual witness, not a carrying author): threefold coming to men, into men, against men, quoting John 14:23."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:0f26efb15dd99c036cbb69090cf69abd60843a41970fc6fba280fad49f0701bf"
+
+[[bindings]]
+source_id = "artifact.bernard-of-clairvaux.st-bernards-sermons-for-the-seasons-volume-1.1921-dublin-browne-and-nolan.bernard-in-adventu-5.1-checked-text-b444a4d8"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "St. Bernard of Clairvaux, Advent Sermon 5.1 (1921 English; supplementary spiritual witness, not a carrying author): hidden intermediate advent (Ps 67:14) bridging first coming in flesh and third in glory."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:e56ca05a459b676de0b7a0588587bda4b6fac9ef806bf78fa53db614f66aa6fe"
+
+[[bindings]]
+source_id = "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.praenotanda-69"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Latin OLM Praenotanda n. 69 (printed p. XXXIII, De ordinatione lectionum pro feriis): Ordinary Time weekday Gospels repeat annually while first readings run on a two-year cycle (Year I in odd years, Year II in even years)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:decb97fc41c60bdc58686b2780de9104007ef269b445e329c7350a90edab0736"
+
+[[bindings]]
+source_id = "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.praenotanda-70-71"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Latin OLM Praenotanda nn. 70-71 distinguishing Proper and Common series and leaving source-permitted selection to pastoral judgment unless otherwise directed."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:15d213e75f7150f57c6c64105d2a5574395aafc288e4b1334995c2ad8f13daa6"
+
+[[bindings]]
+source_id = "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.praenotanda-76"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Latin OLM Praenotanda n. 76 (printed p. XXXV, De textibus difficilioribus): pastoral avoidance of objectively difficult texts on Sundays and solemnities without withholding spiritual riches due to inadequate catechesis."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:f86e2c085861f6e15634507d116d17cfebee591f484962c5c42c8166121828ed"
+
+[[bindings]]
+source_id = "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.praenotanda-80"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Latin OLM Praenotanda n. 80 (printed p. XXXVI, Circa formam longiorem vel breviorem, text-layer inspected): pastoral criterion guiding choice between longer and shorter forms where appointed."
+source_fingerprint = "sha256:78cf666668ce1d80426a0677b783843894fa3b50507489fdb83959a483a82b05"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.ordo-missae-ritus-initiales-et-liturgia-verbi"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Order of Mass Introductory Rites and Liturgy of the Word (nn. 1-20, PDF pp. 303-308) verifying Sunday sprinkling permission, homily obligation on Sundays, Nicene Creed with the Apostles' Creed permitted in its place, and universal prayer."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:d6153b6020191437ba020eadb3fe528f63811b6e0e6ee1688e0e9b955383787e"
+
+[[bindings]]
+source_id = "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.ordo-missae"
+role = "currentness-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Official Notitiae 44 (2008) Ordo Missae variations (printed pp. 371-372, 384-385 / PDF pp. 53-54, 66-67) verifying the six 2008 Order-of-Mass updates including three added dismissal formulas at n. 144 and the solemn-blessing rubric 'dicit invitationem: Inclinate vos ad benedictionem.' at Missal p. 616."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:2adbe473be8db34ca022017182eb56cf39a82dfc18936922ef12bf7931a2bb34"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.51"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "U.S. GIRM 51 governing the Penitential Act and optional Sunday blessing and sprinkling of water."
+source_fingerprint = "sha256:18c72b3b3e8d7d9f61ee36adb54dc67598ed6edb5755c05ce783920c636e8421"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.79"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "U.S. GIRM 79 defining the eight chief elements of the Eucharistic Prayer, beginning with thanksgiving expressed especially in the Preface."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:e31e2a9acc2b329acaca95b7efea24b2637fd3240a5ae6df962cfacc4c5b183e"
+
+[[bindings]]
+source_id = "passage.triptych.postconciliar-latin-proper-editorial-projection.2026-11-24-historical-antiphons.dominus-dabit-benignitatem-et-terra-ac58ce43-la"
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Clementine Vulgate transcription of the public-domain Latin Communion Antiphon Dominus dabit benignitatem, et terra nostra dabit fructum suum. (Ps 84:13)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:553e89c6ca4af8e9a570a6df08a090b00118820b8683702b9d58a86f43970928"
+
+[[bindings]]
+source_id = "artifact.ebible-org.world-english-bible.catholic-eng-web-c.verse-text-48-mark-524ad183"
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Mark.13.1-37"]
+context = "Public-domain WEB-C Greek-aligned comparison control for full chapter Mark 13 (verifying zero verse-numbering divergence across Mark 13:32-37)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:fc453f827eb2ef4499bd50389ea33ed8ea8f5c8650defadcd378242a093f470d"
+
+[[bindings]]
+source_id = "artifact.ebible-org.world-english-bible.catholic-eng-web-c.verse-text-53-1-corinthians-b0f0a1e3"
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["1Cor.1.1-31"]
+context = "Public-domain WEB-C Greek-aligned comparison control for full chapter 1 Corinthians 1 (verifying zero verse-numbering divergence across 1 Cor 1:3-9 and faction context 1:10-31)."
+verified_on = "2026-11-25"
+source_fingerprint = "sha256:c0ee5dd3af13b50fcc58a09c2e7be9023bcb57f33279ffbb2907ef4f7d437052"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.in-omnes-pauli-epistolas-commentaria.dessain-volume-2-1857.book-ocr-2b7b11dc"
+role = "negative-search"
+states = ["cataloged", "acquired", "searched", "inspected"]
+context = "Negative search and direct inspection (lines 1-120) of tracked Dessain 1857 Vol. 2 OCR confirming it opens with Expositio super Secundam Epistolam ad Corinthios and contains no commentary on I Corinthians."
+search_scope = "Complete tracked OCR of Aquinas, In omnes Pauli epistolas commentaria, Tomus II (Dessain, 1857)"
+searched_on = "2026-11-25"
+search_mode = "raw-line-literal-casefold-v1"
+query = "SUPER PRIMAM EPISTOLAM"
+method = "Case-insensitive raw-line literal search across the complete tracked OCR plus direct visual reading of title page and prologue (lines 1-120), confirming Vol. 2 opens with II Corinthians."
+matching_line_count = 0
+source_fingerprint = "sha256:fc0fe651fc1f34b1d124831a6538442a81cd47acb7ec6161c19a7bfb4269aadf"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.super-i-ad-corinthios.latin-corpusthomisticum-web-2026-07-26.c1c-html-8be5b71c"
+role = "lead"
+states = ["cataloged"]
+context = "Cataloged Corpus Thomisticum HTML for Aquinas Super I ad Corinthios ch. 1-7:10 (restricted/untracked; not reopened offline)."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.bibliaclerus-gk5-f9dc3741"
+role = "lead"
+states = ["cataloged"]
+context = "Cataloged Biblia Clerus Dominica I Adventus web page (remote/restricted; not reopened offline)."
+
+[[bindings]]
+source_id = "artifact.catholic-church.ordo-lectionum-missae.english-liturgy-office-web-2026-07-25.liturgy-office-pdf-d286cb13"
+role = "lead"
+states = ["cataloged"]
+context = "Cataloged complete English OLM Liturgy Office PDF (remote/untracked, not reopened offline; verified Praenotanda nn. 65-69 and 74-77 are bound individually in bindings 22-23)."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.2011-english-us-catholic-book-publishing.publisher-sample-pdf-ab44fd0a"
+role = "lead"
+states = ["cataloged"]
+context = "Cataloged Catholic Book Publishing U.S. 2011 Missal sample PDF (General Index only; restricted/untracked, not reopened offline)."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.2011-english-us-unidentified-digital-printing.third-party-pdf-1cf11339"
+role = "lead"
+states = ["cataloged"]
+context = "Cataloged unidentified U.S. 2011 Missal third-party PDF (restricted/untracked, not reopened offline and not used)."
+
+[[bindings]]
+source_id = "artifact.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects.collect-mystogogy-advent"
+role = "lead"
+states = ["cataloged"]
+context = "Cataloged FDLC 2012-2013 Advent Collect reflections PDF (remote/unresolved rights, not reopened offline)."
+
+[[bindings]]
+source_id = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.presidential-tones"
+role = "lead"
+states = ["cataloged"]
+context = "Cataloged ICEL 2010 Presidential Tones PDF (remote/restricted, not reopened offline)."
+
+[[bindings]]
+source_id = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.solemn-blessing"
+role = "lead"
+states = ["cataloged"]
+context = "Cataloged ICEL 2010 Solemn Blessing PDF (remote/restricted, not reopened offline)."
+
+[[bindings]]
+source_id = "artifact.dicastery-for-divine-worship-and-the-discipline-of-the-sacraments.calendarium-romanum-web-index.2026-10-25-english-web.official-html-4531f6b6"
+role = "lead"
+states = ["cataloged"]
+context = "Cataloged Dicastery for Divine Worship Calendarium Romanum variations web index (restricted HTML not reopened offline; metadata notes 8 entries through Jan. 2021 without exhaustive claim)."
+
+[[bindings]]
+source_id = "artifact.united-states-conference-of-catholic-bishops.liturgical-calendar-publication-index.2026-11-05-web.official-html-9939c12b"
+role = "lead"
+states = ["cataloged"]
+context = "Cataloged USCCB Liturgical Calendar publication index HTML (restricted HTML not reopened offline)."
+
+[[bindings]]
+source_id = "artifact.united-states-conference-of-catholic-bishops.liturgical-calendar-dioceses-united-states.2026.usccb-pdf-4bd9add0"
+role = "lead"
+states = ["cataloged"]
+context = "Cataloged complete USCCB 2026 Liturgical Calendar PDF (restricted/untracked, not reopened offline; verified cycle table bound individually in binding 15)."
+
+[[bindings]]
+source_id = "artifact.united-states-conference-of-catholic-bishops.liturgical-calendar-dioceses-united-states.2027.usccb-pdf-d7997b57"
+role = "lead"
+states = ["cataloged"]
+context = "Cataloged complete USCCB 2027 Liturgical Calendar PDF (restricted/untracked, not reopened offline for Nov. 29 day entry; verified cycle table bound individually in binding 16)."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+role = "lead"
+states = ["cataloged"]
+context = "Cataloged complete secondary 2002 digital Missale Romanum PDF (restricted/untracked, not reopened offline; individually verified passages are bound in bindings 4-9 and 95)."
+
+[[bindings]]
+source_id = "artifact.holy-see.notitiae.volume-44-numbers-503-504-2008.official-pdf-74c8d174"
+role = "lead"
+states = ["cataloged"]
+context = "Cataloged complete Notitiae 44 (2008) nn. 503-504 PDF (restricted/untracked, not reopened offline; verified notice and Ordo Missae passages bound in bindings 2 and 96, segment metadata inspected in binding 3)."
+
+[[bindings]]
+source_id = "corpus.catholic-church.ancient-sacramentaries-2026-08-01"
+role = "lead"
+states = ["cataloged"]
+context = "Declared ancient Latin sacramentaries search boundary referenced by postconciliar-proper-translations-v1.toml for the bounded negative on Prosint nobis (not newly searched directly in this offline session)."

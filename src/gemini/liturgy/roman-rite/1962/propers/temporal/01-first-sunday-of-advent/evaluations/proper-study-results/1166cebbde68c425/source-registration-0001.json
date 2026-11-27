@@ -1,0 +1,7 @@
+{
+  "artifact_path": "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/source-dispositions.toml",
+  "disposition": "PASS",
+  "iteration": 1,
+  "stage": "source-registration",
+  "summary": "Registered text-free 1962 visual-collation control passage passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-advent-1-scriptural-propers-and-rubrics-collation-2026-11-25 (fingerprint sha256:1cceb2e63b5784b9c4d78ee7b4a0675323fb42839d966910e13609a43cb62a4f) after directly re-verifying the 400 dpi CMAA PDF pp. 82-83 column images (keeping cmaa-facsimile-pdf storage=remote and rights_status=unresolved, and correcting Introit unaccented s\u00e6cula in propers/verified.md). Bound the passage in research/source-bindings.toml (129 valid bindings total), cited it in propers/verified.md and research/scope.md, reconciled research/source-dispositions.toml across all 129 bindings / 135 rows (29 admitted covering 31 unique Catena passages across 23 bindings, 21 deferred, 1 rejected, 81 not-commentary, 3 lead) with exact binding_sha256 digests and corrected RES-001/RES-002 loci, refreshed gemini-publications-v1.toml and source-family-migration-v1.toml, and verified exit 0 on _proper_study.py source-dispositions, _proper_study.py check --phase research --require-source-dispositions, check-content-preflight bindings-valid, source-library validate, _catena.py check, source-family-migration check, and source-reader structure --strict --check."
+}

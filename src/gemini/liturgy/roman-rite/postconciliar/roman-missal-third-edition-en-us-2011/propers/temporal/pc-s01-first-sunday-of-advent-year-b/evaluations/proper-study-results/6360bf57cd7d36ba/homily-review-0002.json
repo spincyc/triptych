@@ -1,0 +1,249 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "HOM-007",
+      "location": "sections/homily/10-homily.tex:21, 23 (Paragraphs 11-12)",
+      "problem": "Paragraph 12 opens verbatim with 'When we come forward for Holy Communion, the Church prays another line from that same psalm: ``The Lord will give goodness: and our earth shall yield her fruit.''' (Ps. 85[84]:13), intending to refer back to the Gospel Acclamation verse (Ps. 85[84]:8) quoted in the first half of Paragraph 11 ('Before the Gospel, we prayed that the Lord would show us his mercy and ``grant us thy salvation,'''). However, Paragraph 11 never identifies the pre-Gospel acclamation as a psalm at all\u2014it introduces it under 'the prayers of this Mass' and then spends its final two sentences on bread and wine at the altar and 'an ancient prayer of the Roman Church' (Sacramentarium Veronense XXVIIII.372, not a psalm). Because the only psalm previously called 'today's psalm' (line 7) and 'the same psalm' (line 9) in the speech is Psalm 80(79), an adult parish listener hearing the homily once\u2014and a preacher reading it verbatim from the ambo\u2014meets an orphaned 'that same psalm' immediately after a non-psalm offering prayer and is either tripped up mid-transition or actively misled into taking Ps. 85(84):13 as a line from Psalm 80(79).",
+      "repair_target": "homily",
+      "required_result": "Revise sections/homily/10-homily.tex lines 21 and 23 so the spoken transition is unambiguous in one hearing and factually accurate: identify the pre-Gospel acclamation as a psalm verse in line 21 (for example, 'Before the Gospel, we prayed a psalm asking the Lord to show us his mercy and ``grant us thy salvation,'' asking God to give us Christ himself.') and anchor line 23 explicitly to that pre-Gospel psalm across the intervening offering sentences (for example, 'When we come forward for Holy Communion, the Church prays another line from the psalm we sang before the Gospel: ``The Lord will give goodness: and our earth shall yield her fruit.'''). Recompute and synchronize the exact spoken word count, raw source token count, and estimated speaking duration in sections/homily/90-note.tex and research/production-review.md.",
+      "severity": "blocking"
+    },
+    {
+      "id": "HOM-008",
+      "location": "sections/homily/10-homily.tex:1 (Paragraph 1)",
+      "problem": "The opening two sentences ('A new Church year begins today without the \\emph{Gloria}. Instead of that song of praise, the Mass starts by lifting our souls to the Lord in a psalm.') use 'Instead of that song of praise' in a way that can slightly suggest the Entrance Antiphon (Ps. 25[24]:1-3) replaces the omitted Gloria, whereas the Entrance Antiphon opens the Introductory Rites ahead of the Penitential Act and the Gloria is simply omitted after the Penitential Act on Sundays of Advent (GIRM 53).",
+      "required_result": "While editing sections/homily/10-homily.tex, recast the second sentence so the contrast is tonal rather than implying liturgical substitution (for example, 'Without that festive song of praise, the Mass opens quietly by lifting our souls to the Lord in a psalm.').",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 2,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "homily-spoken",
+          "kind": "homily",
+          "path": "sections/homily/10-homily.tex"
+        },
+        {
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-note.tex"
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+      "element_keys": [
+        "entrance-antiphon",
+        "collect",
+        "first-reading",
+        "responsorial-psalm",
+        "second-reading",
+        "gospel-acclamation",
+        "gospel",
+        "prayer-over-the-offerings",
+        "preface",
+        "communion-antiphon",
+        "prayer-after-communion",
+        "concluding-blessing"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Jerome",
+            "John Chrysostom",
+            "Bede",
+            "Hilary of Poitiers",
+            "Augustine",
+            "Cyril of Jerusalem",
+            "Gregory the Great",
+            "Bernard of Clairvaux"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "John Chrysostom",
+            "Bede",
+            "Hilary of Poitiers"
+          ],
+          "component_keys": [
+            "lane-hidden-presence"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "hidden-presence-and-forbearing-patience",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Thomas Aquinas",
+            "Augustine",
+            "Robert Bellarmine",
+            "John Chrysostom",
+            "Bede",
+            "Jerome",
+            "Cornelius a Lapide"
+          ],
+          "carrying_authors": [
+            "Thomas Aquinas",
+            "Augustine",
+            "Robert Bellarmine",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "lane-covenant-fidelity"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "covenant-fidelity-and-human-plasticity",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Bede",
+            "Gregory the Great",
+            "Augustine",
+            "Cyril of Jerusalem",
+            "Leo the Great",
+            "Thomas Aquinas",
+            "Theophylact of Ohrid",
+            "Robert Bellarmine"
+          ],
+          "carrying_authors": [
+            "Bede",
+            "Gregory the Great",
+            "Augustine",
+            "Cyril of Jerusalem",
+            "Leo the Great"
+          ],
+          "component_keys": [
+            "lane-vigilant-stewardship"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-the-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "concluding-blessing"
+          ],
+          "key": "vigilant-stewardship-between-two-advents",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+    "files": {
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/homily.tex": "4d9165072a2213a9929b9f564eb1ef54d616b4d40ae8081f07d4ec82400f8bd3",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/homily/10-homily.tex": "1427304601657fabe57fb038faf2e3bfb35dfe3cfa8669be7df029ee1893f9b8",
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/homily/90-note.tex": "220f83e6c92a20875df6d0aa7d1339f4949d6eab13e99228a372b319e3966252"
+    },
+    "generation_provenance": {
+      "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "20",
+            "9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec",
+            "6360bf57cd7d36ba",
+            "0f8fb307cde69819014f3d26a7f0cd77cb6ce9a9",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gemini",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Independent cold review of homily.tex, sections/homily/10-homily.tex (sha256 142730460165...), sections/homily/90-note.tex (sha256 220f83e6c92a...), and research/production-review.md (Section 11) for the First Sunday of Advent, Year B (2026-11-29; adult parish assembly). Continuous listening confirms a strong, text-specific exegetical homily that passes the text-substitution test (turning on Isa. 63:17 and 64:1->3b Vg. / 63:19b->64:2b Heb., Ps. 80[79], 1 Cor. 1:7 apokalupsis, Mark 13:33-37, and Ps. 85[84]:8, 13), maintains a plain, dignified spoken register free of forbidden homiletic devices, clears prior advisory HOM-006 at line 17, aligns all 14 Douay-Rheims study-English quotes and Isaiah 64/Psalm numbering with the updated studies, and checks out against held primary witnesses in src/sources/ (Jerome PL 24, Aquinas Super Isaiam and Catena Aurea, Augustine Enarr. Ps. 79 and 84, Chrysostom 1 Cor. Hom. II, Hilary De Trinitate IX.67, Bede In Marcum IV.13, Gregory Hom. 9 and 13, Cyril Cat. 15, Bellarmine Ps. 84:13, Veronense XXVIIII.372). Spoken count is 1,469 spoken words (1,465 raw tokens; ~10.5-11.8 min estimate at 125-140 wpm, with no timed human performance or print PDF export claimed). Verdict is CHANGES_REQUIRED for one blocking oral-transition and scriptural-antecedent defect (HOM-007) where line 23 opens 'another line from that same psalm' without line 21 ever identifying the pre-Gospel acclamation as a psalm, plus one minor liturgical-phrasing advisory (HOM-008)."
+}

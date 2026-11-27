@@ -1,0 +1,20 @@
+{
+  "artifact_path": "release/publications/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent.json",
+  "artifacts": [
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/web-edition.toml",
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/production-review.md",
+    "release/publications/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent.json",
+    "release/publications/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-synthesis.json",
+    "release/publications/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-homily.json",
+    "library/traditional-latin-mass.md",
+    "src/sources/inventories/gemini-publications-v1.toml",
+    "release/browser-products.json",
+    "release/public-alpha.json",
+    "release/rights/public-alpha-2026-07-15.md"
+  ],
+  "disposition": "PASS",
+  "finding_dispositions": [],
+  "iteration": 0,
+  "stage": "install-publication",
+  "summary": "Installed the reviewed Gemini 1962 First Sunday of Advent three-output source/HTML publication family (main, synthesis, homily; no PDFs generated or installed). Confirmed byte-for-byte conversion parity (sha256 9df4339dcf1678ad492c589dc401687ff583ebb203d897b07a39b59147e24315) against current sources and recorded the passed cold web-review iteration 1 inspection in web-edition.toml (preserving reviewed=2026-11-25 and leaving companions converter-verified only). Created the 3 minimal alpha release records under release/publications/gemini/liturgy/roman-rite/1962/propers/temporal/ (status=alpha, authorization=perpetual-public-repository-2026), surgically wired only the Gemini cell of row 01 and added the single provider-qualified canonical marker in library/traditional-latin-mass.md, updated research/production-review.md and refreshed src/sources/inventories/gemini-publications-v1.toml before recording complete two-cold-build browser products (13 products, 30,422 files, products_identity ae83cc79641ddd97fb6ffa678a67aca9d203868cf0842052129dc3f97a7fedfd; verified via tools/browser-products check), and refreshed reader-facing site authorization bindings (make refresh-release-bindings ADOPT=1; 265 changes, 0 unrelated uncommitted files). Verified all 5 publication-gates checks (three-document-publication, make check-release-bindings [exact: 0 stale binding(s)], tools/tpt public-alpha check [314 publications], document-library check + structure --check [163 works, 230 documents, 314 issues, corpus.json current], and web-edition check --leaf [3 reader outputs, 0 figures]) and exact parity of all 5 review seals (research iter 6: 1961 files, study iter 4: 19 files, synthesis iter 3: 12 files, homily iter 2: 7 files, web iter 1: 0 files + web + source_publication) against state.json on final disk state (all exit 0)."
+}

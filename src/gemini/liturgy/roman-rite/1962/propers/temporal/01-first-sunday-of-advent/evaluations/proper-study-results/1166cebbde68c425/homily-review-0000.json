@@ -1,0 +1,271 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "HOM-001",
+      "location": "sections/20-homily.tex:7; sections/21-homily-note.tex:6, 10, 21 (root binding at research/source-bindings.toml:538 and research/interpretations.md:19)",
+      "problem": "At sections/20-homily.tex:7, the homily states on Luke 21:33 that 'As St. Augustine teaches, heaven and earth pass away in their outward form, not in their substance, purified by judgment rather than destroyed,' and sections/21-homily-note.tex:6, 10, 21 cites solely St. Augustine, De civitate Dei XX.24 (NPNF I.2) in support (dropping St. Bede). Direct verification of the bound NPNF I.2 witness (artifact.nicene-and-post-nicene-fathers.series-1-volume-2.ccel-web-2026-09-17.ccel-text-5c973fed, Book XX, Chapter 24) shows that Chapter 24 does not contain this teaching: it argues against Porphyry from Ps. 101:26-28 ('they shall perish'), quotes 1 Cor. 7:31, 1 John 2:17, and Matt. 24:35 (not Luke 21:33) only in passing as milder expressions, and argues from 2 Pet. 3 and the Flood that only the lower atmospheric heavens perish\u2014never contrasting outward form against substance/nature or teaching fiery purification/renewal (zero occurrences of substance, nature, outward, form, purification, renewal, or transmutation in XX.24). Augustine's actual teaching that the world passes 'by transmutation, not by absolute destruction' ('The figure, therefore, passes away, not the nature') stands in De civitate Dei XX.14, and his teaching that the figure passes 'in a conflagration of universal fire... so that... the world itself is renewed to some better thing' stands in De civitate Dei XX.16 (both present in the same tracked NPNF I.2 artifact), while the direct Luke 21:33 wording (per imaginem vs. per essentiam, per ignem tergetur) belongs to St. Bede (In Lucae Evangelium Expositio VI on Luke 21:33, already bound at research/source-bindings.toml:527). Because research/source-bindings.toml:538 ('St. Augustine, De civitate Dei XX.24 (on heaven and earth passing in outward figure, 1 Cor 7:31 and 2 Pet 3)'), research/interpretations.md:19, research/scope.md:57, and research/context.md:159 bind only XX.24 with that inaccurate summary\u2014propagating into sections/04-lane-eschatological.tex:22, 44, sections/09-references.tex:22, sections/13-concise-commentary.tex:21, sections/14-concise-apparatus.tex:18, and sections/21-homily-note.tex:10, 21\u2014the unsupported citation originates in research.",
+      "repair_target": "research",
+      "required_result": "In research/source-bindings.toml:538, research/interpretations.md:19, research/scope.md:57, and research/context.md:159 (and across the affected downstream study, concise study, and homily records on re-sync), inspect and bind St. Augustine, De civitate Dei XX.14 and XX.16 from the tracked NPNF I.2 artifact alongside XX.24, accurately distinguishing XX.14 (transmutation rather than destruction; figure passes away, not nature) and XX.16 (universal fire renewing the world to something better) from XX.24 (anti-Porphyry correlation of Ps. 101:26-28, 1 Cor. 7:31, Matt. 24:35, and 2 Pet. 3 lower atmospheric heavens), so that sections/20-homily.tex:7 and sections/21-homily-note.tex:6, 10, 21 cite the actual supporting locus (Augustine, De civitate Dei XX.14, 16, and/or St. Bede, In Lucae Evangelium Expositio VI on Luke 21:33) rather than XX.24 alone.",
+      "severity": "blocking"
+    },
+    {
+      "id": "HOM-002",
+      "location": "sections/20-homily.tex:11; sections/21-homily-note.tex:10",
+      "problem": "Two factual errors misstate the 1962 Psalm 24 chants. First, sections/20-homily.tex:11 reads: 'For that reason the Church opens her year with Ad te levavi animam meam, \"To thee have I lifted up my soul.\" We sang those words at the entrance, echoed them after the Epistle, and will sing them again at the Offertory.' Because 'those words' and 'them' refer directly to Ad te levavi animam meam (Ps. 24:1), saying we 'echoed them after the Epistle' is factually wrong: in the 1962 Missale Romanum (propers/verified.md:86-96), the Gradual sung after the Epistle begins at Ps. 24:3b ('Universi, qui te exspectant, non confundentur, Domine') and repeats the Introit's closing promise and verse ('Vias tuas...'), never Ad te levavi animam meam. Second, sections/21-homily-note.tex:10 combines the Introit and Offertory as 'Introit and Offertory, Ps. 24:1--3, 4b (Heb. 25:1--3a, 4),' falsely attributing verse 4b ('Vias tuas...') to the Offertory, which in the 1962 Missal consists solely of Ps. 24:1-3 (Heb. 25:1-3a) with no psalm verse (propers/verified.md:118-125).",
+      "repair_target": "homily",
+      "required_result": "Rewrite sections/20-homily.tex:11 so that Ad te levavi animam meam ('To thee have I lifted up my soul') is attributed only to the entrance (Introit) and Offertory, while the chant after the Epistle (Gradual) is linked strictly to what it actually repeats (the promise 'none of them that wait on thee shall be confounded' and the verse 'Shew, O Lord, thy ways to me, and teach me thy paths')\u2014for example: 'We sang those words at the entrance and will sing them again at the Offertory. Weighed down by earthly desires, we hold to the promise we sang at the entrance and again after the Epistle: \"none of them that wait on thee shall be confounded.\"' In sections/21-homily-note.tex:10, separate the two loci accurately: 'Introit, Ps. 24:1--3, 4b (Heb. 25:1--3a, 4)' and 'Offertory, Ps. 24:1--3 (Heb. 25:1--3a).'",
+      "severity": "blocking"
+    },
+    {
+      "id": "HOM-003",
+      "location": "sections/20-homily.tex:9, 21",
+      "problem": "Two linked oral-craft and register defects violate guidance/liturgy/propers-three-documents.md ('The homily') and guidance/editorial.md ('Say what the texts say, plainly'). First, sections/20-homily.tex:21 turns the paragraph immediately before the closing appeal into a five-item liturgical roll call marching through the rest of the Mass\u2014Creed, repeated Offertory (Ad te levavi, already named at line 11), Secret, Preface of the Most Holy Trinity, and Postcommunion\u2014so the speech ticks off all ten propers and four Ordinary variables instead of carrying one step per paragraph without reciting an inventory of every minor proper. In particular, sentence 5 ('In today's Preface of the Most Holy Trinity we will join the angels, archangels, cherubim, and seraphim praising the eternal God') has no organic link to the paragraph's topic ('That cleansing meets us at this altar') or to anything earlier in the homily (which never discusses the Trinity or identifies Luke 21:26's shaken powers as angelic choirs). Second, lines 9 and 21 drop Latin words with scholar-style double glosses without doing any spoken exegetical work on the Latin itself, violating 'a Latin word appears only when the speech explains it': line 9 prints 'Its opening plea---\\latin{Excita}, ``Bestir'' or ``Stir up'' Thy might, and come---echoes a psalm' (a spoken translator's hedge between Lasance and Douay-Rheims), and line 21 prints 'before God, their \\latin{principium}---their Source and Author.'",
+      "repair_target": "homily",
+      "required_result": "Focus sections/20-homily.tex:21 on the single sacramental step of cleansing and preparation at the altar (the Secret and Postcommunion, with at most a brief natural transition through the Creed), cutting the orphaned Trinity Preface sentence and duplicate Offertory mention (and updating sections/21-homily-note.tex accordingly if the Trinity Preface is omitted from the speech, or keeping it only if the speech actually develops an exegetical link to it). Replace both unexplained Latin doublets with plain spoken English (or explain the Latin word if retained). Plain rewrites: (1) line 9: 'Its opening plea---``Bestir, O Lord, Thy might, we pray Thee and come''---echoes a psalm in which Israel begged God for rescue from invading enemies outside.' (2) line 21: 'Over the offerings the priest will pray silently that these Holy Mysteries, cleansing us by their mighty power, may bring us more pure before God, their Author.'",
+      "severity": "blocking"
+    },
+    {
+      "id": "HOM-004",
+      "location": "sections/20-homily.tex:3, 5, 13, 15",
+      "problem": "While the homily maintains the preacher's own voice across its opening, prayer, and closing paragraphs and avoids reading as a lecture assembled from quotations, the repeated surname cadence in paragraphs 2-3 ('St. Gregory the Great notes... Gregory asks... Gregory reverses... Two days before Gregory preached... Gregory asked his people') and paragraphs 7-8 ('St. John Chrysostom sees... Chrysostom compares... Chrysostom pictures... Chrysostom points out') sounds slightly reportorial when heard aloud once.",
+      "required_result": "Keep the initial attribution of each Father and his specific scene or quotation, and smooth redundant surname repetitions into natural pronouns or plain preaching clauses\u2014for example, in line 5 replace 'Gregory asked his people what will happen' with 'He asked his people what will happen,' and in line 13 replace 'Chrysostom compares believers to runners... Chrysostom pictures neighbors' with 'He compares believers to runners... When Paul adds, ``The night is passed, and the day is at hand,'' he pictures neighbors.'",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-005",
+      "location": "sections/20-homily.tex:5, 19; sections/21-homily-note.tex:10, 23",
+      "problem": "Three minor source-precision details slightly exceed or drift from the cited witnesses: (1) sections/20-homily.tex:5 writes that Gregory asked if the Judge can 'overturn stone buildings,' whereas Gregory (Hom. in Evang. 1 sec. 6, Wikisource Latin) writes 'tot aedificiorum fundamenta concussit' / 'tot aedificia stravit' ('foundations of so many buildings' / 'so many buildings') without specifying 'stone'; (2) sections/20-homily.tex:19 adds 'empty' in 'one who loved empty shows delights in prayer,' whereas St. Augustine (Enarr. in Ps. 84 sec. 15 / Coxe sec. 12) writes simply 'quem delectabat spectare, delectet orare' ('whom shows delighted, shalt delight in prayer'); and (3) sections/21-homily-note.tex:10, 23 lists Bute 1908 among the Gregory witnesses used even though no wording from Bute's sec. 1 extract is quoted in the homily.",
+      "required_result": "Tighten line 5 to 'overturn whole buildings' (or 'shake the foundations of buildings') and line 19 to 'loved public shows' (or 'delighted in shows'), and remove Bute 1908 from sections/21-homily-note.tex:10, 23 unless the revised homily actually quotes Bute's sec. 1 wording.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-spoken",
+          "kind": "homily",
+          "path": "sections/20-homily.tex",
+          "references": []
+        },
+        {
+          "depends_on": [
+            "homily-spoken"
+          ],
+          "element_keys": [],
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/21-homily-note.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Gregory the Great",
+            "John Chrysostom",
+            "Cyril of Alexandria",
+            "Bede",
+            "Augustine of Hippo",
+            "Leo the Great",
+            "Robert Bellarmine",
+            "Cornelius a Lapide",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Gregory the Great",
+            "John Chrysostom",
+            "Cyril of Alexandria",
+            "Bede",
+            "Augustine of Hippo",
+            "Leo the Great",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "lane-eschatological"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "eschatological-detachment",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Ambrose of Milan",
+            "Robert Bellarmine",
+            "Augustine of Hippo",
+            "Bernard of Clairvaux",
+            "Sicard of Cremona",
+            "Prosper Gu\u00e9ranger",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Ambrose of Milan",
+            "Robert Bellarmine",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "lane-incarnational"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "incarnational-marian",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Alfredo Ildefonso Schuster",
+            "Leo the Great",
+            "Ambrose of Milan",
+            "Bernard of Clairvaux",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Alfredo Ildefonso Schuster",
+            "Leo the Great",
+            "Ambrose of Milan"
+          ],
+          "component_keys": [
+            "lane-conversion"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "interior-conversion",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "files": {
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/homily.tex": "dfa414d4360dd9dad29837d1b693699813b1c4789ac9cab88a1e5bcc23d63ad2",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/20-homily.tex": "c9f3be0e2724c6296b70693981483130f464775e5484444b72190e1ab3be66d0",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/21-homily-note.tex": "49e45d4e93ea140f120b6c3b6c0d71d77381d70f4ef2cacefa8e35e09d96e0ca"
+    },
+    "generation_provenance": {
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "20",
+            "9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec",
+            "1166cebbde68c425",
+            "0f8fb307cde69819014f3d26a7f0cd77cb6ce9a9",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gemini",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Independent cold review of the Gemini 1962 First Sunday of Advent homily (homily.tex, sections/20-homily.tex, sections/21-homily-note.tex) for an adult parish assembly (29 November 2026). Evaluated first by continuous cold reading of the spoken body, then against propers/verified.md, research records, the accepted expansive and concise studies, read-only homily preflight (12/12 checks passed), and direct primary witnesses in src/sources/ (St. Gregory the Great Hom. in Evang. 1; St. Cyril of Alexandria Comm. on Luke Sermon CXXXIX; St. Bede In Luc. Evang. VI on Luke 21:33; St. Augustine De civitate Dei XX.14, 16, 18, 24 and Enarr. in Ps. 84 secs. 9, 14-15 Latin and Coxe English; St. John Chrysostom Hom. in Rom. 24; Douay-Rheims 1899; Lasance/Walsh 1945). Text-substitution test: PASS; the argument's movement from Luke 21:25-30's reversal of cosmic terror through the Collect's inward naming of sin, Rom. 13:12's shift from 'works of darkness' to 'armour of light,' and Ps. 84:8/13's humility and 'plough of confession' to early-Advent Confession depends structurally on this Sunday's texts and states the shift as what the texts say, avoiding maxim closers, recurring tags, stock calls, relatable inventories, fragments, invented anecdotes, clerical persona, or composed prayer. Spoken word count and pace: independently verified at 1,402 spoken words (1,392 raw whitespace tokens), yielding ~10.8-11.7 minutes at 120-130 wpm (~11.2-12.2 minutes at 115-125 wpm), fitting the 10-12-minute target; the terminal note and audit truthfully report this as a written word-count estimate without certifying a timed human performance. Meaningful limits: source, liturgical, exegesis, and oral-prose cold review only; no PDF visual inspection or audible human rehearsal was performed. Verdict: CHANGES_REQUIRED for three blocking defects (one research-owned wrong primary locus for St. Augustine's De civitate Dei XX.24 propagating into the homily [HOM-001]; two homily-owned defects covering factual 1962 Gradual/Offertory errors [HOM-002] and paragraph 11's five-element liturgical roll call plus two unexplained Latin doublets [HOM-003]) alongside two oral/precision advisories (HOM-004, HOM-005)."
+}

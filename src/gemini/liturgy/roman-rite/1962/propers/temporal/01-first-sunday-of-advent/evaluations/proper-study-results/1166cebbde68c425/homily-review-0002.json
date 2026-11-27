@@ -1,0 +1,240 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "HOM-006",
+      "location": "sections/21-homily-note.tex:10, 20",
+      "problem": "Both the source note (line 10) and the Holy Scripture reference entry (line 20) name the secondary Douay-Rheims textual control 'Challoner Gutenberg~1581' immediately beside '1899 American edition'. Per edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581 (edition.toml), '1581' is Project Gutenberg eBook number 1581 (released 1998 from Challoner's 1749-1752 revision), not a 1581 printing; placing 'Gutenberg 1581' beside '1899 American edition' mirrors advisories STU-013 and SYN-008 and risks reading like a publication year (one year before the 1582 Rheims New Testament), though it does not appear in the spoken homily or mislead a listener.",
+      "required_result": "In any future edit touching sections/21-homily-note.tex, expand 'Challoner Gutenberg~1581' at lines 10 and 20 to 'Project Gutenberg eBook~1581 of the Challoner revision' so the catalog number cannot be misread as a printing year.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 2,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-spoken",
+          "kind": "homily",
+          "path": "sections/20-homily.tex",
+          "references": []
+        },
+        {
+          "depends_on": [
+            "homily-spoken"
+          ],
+          "element_keys": [],
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/21-homily-note.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Gregory the Great",
+            "John Chrysostom",
+            "Cyril of Alexandria",
+            "Bede",
+            "Augustine of Hippo",
+            "Leo the Great",
+            "Robert Bellarmine",
+            "Cornelius a Lapide",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Gregory the Great",
+            "John Chrysostom",
+            "Cyril of Alexandria",
+            "Bede",
+            "Augustine of Hippo",
+            "Leo the Great",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "lane-eschatological"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "eschatological-detachment",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Ambrose of Milan",
+            "Robert Bellarmine",
+            "Augustine of Hippo",
+            "Bernard of Clairvaux",
+            "Sicard of Cremona",
+            "Prosper Gu\u00e9ranger",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Ambrose of Milan",
+            "Robert Bellarmine",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "lane-incarnational"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "incarnational-marian",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Alfredo Ildefonso Schuster",
+            "Leo the Great",
+            "Ambrose of Milan",
+            "Bernard of Clairvaux",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Alfredo Ildefonso Schuster",
+            "Leo the Great",
+            "Ambrose of Milan"
+          ],
+          "component_keys": [
+            "lane-conversion"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "interior-conversion",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "files": {
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/homily.tex": "dfa414d4360dd9dad29837d1b693699813b1c4789ac9cab88a1e5bcc23d63ad2",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/20-homily.tex": "9f775c049b0bdbc701b94adc8b870f6bdc19aa07932972296edbf250159756df",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/21-homily-note.tex": "ba5aa55bef2655bdd8438ef19372011e707db0e1527dc5a00ad05617c774f828"
+    },
+    "generation_provenance": {
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "20",
+            "9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec",
+            "1166cebbde68c425",
+            "0f8fb307cde69819014f3d26a7f0cd77cb6ce9a9",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gemini",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Independent cold review of the 1962 First Sunday of Advent homily (homily.tex, sections/20-homily.tex, sections/21-homily-note.tex, publication.toml, proper-components.toml) and all REVIEW_SCOPE changes since iteration 1 (sections/01-06, sections/14-concise-apparatus.tex, research/production-review.md, research/web-artifact.json). Verified via git diff that upstream edits in sections/01-06 and 14 were strictly web-fidelity markup repairs (WEB-001 to WEB-003) introducing no substantive change to claims, attributions, or loci, and that homily.tex, sections/20-homily.tex, and sections/21-homily-note.tex contain zero bare \\ref{} links, zero \\textbf{} inside italic contexts, and zero \\dots spacing issues. Read sections/20-homily.tex continuously as a listener first, then checked every quotation, attribution, and liturgical detail against the accepted studies and cited primary source loci under src/sources/ (Douay-Rheims 1899 American ed., Lasance/Walsh 1945 pp. 103/105/106, St. Gregory the Great Hom. in Evang. 1 \u00a7\u00a73, 5-6, St. Cyril of Alexandria Comm. on Luke Sermon CXXXIX pp. 653-654, St. Augustine De civitate Dei XX.14, 16 and Enarr. in Ps. 84 \u00a7\u00a79, 14-15 [Coxe Ps. 85 \u00a7\u00a76, 11-12], St. Bede In Lucae Evangelium Expositio VI on Luke 21:33, and St. John Chrysostom Homilies on Romans 24); all match their sources accurately with strict 1962 liturgical isolation. Independently verified the spoken body at 1,374 spoken words (1,363 raw whitespace tokens), yielding a written word-count estimate of approximately 10.6-11.5 minutes at 120-130 wpm (11.0-11.9 minutes at 115-125 wpm), truthfully qualified in both sections/21-homily-note.tex and research/production-review.md as a word-count estimate only rather than a timed human delivery. Text-substitution test passed decisively: replacing this Sunday's appointed readings and prayers with unrelated Sunday texts destroys the argument's actual movement at every hinge\u2014Luke 21:25-30's immediate pivot from men withering for fear to lifting up heads and the fig tree's fruit ('the fruit of the world is its ruin', balanced by Cyril's bodily resurrection and Augustine's renewal of the world's figure through fire), the Collect's inversion of Ps. 79:3's external foes into 'approaching dangers brought on by our sins' paired with Ps. 24:1-4, Paul's lexical shift from 'works of darkness' to 'armour of light' and putting on Christ where the 1962 Epistle stops at Rom. 13:14a, and Ps. 84:8 and 13's humility and Old Latin 'sweetness' / 'plough of confession' leading into the Creed, Secret, Communion, Postcommunion, and a concrete second-person call to early Advent Confession. The speech states what each text changes in the listener's understanding directly as what the texts say, with plain adult-parish prose free of maxim closers, recurring motifs, relatable modern-life inventories, stock calls, verbless fragments, or newly composed prayer. Limits: the second interpretation's Marian readings of Luke 21:27 and Ps. 84:13 are intentionally left to the two studies to preserve one continuous oral argument; the delivery figure remains a written word-count estimate; and one minor apparatus bibliographic shorthand ('Challoner Gutenberg 1581' in sections/21-homily-note.tex:10, 20, mirroring advisories STU-013 and SYN-008) is recorded as advisory HOM-006. Verdict: PASS with zero blocking findings."
+}

@@ -1,0 +1,13 @@
+{
+  "artifact_path": "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "HOM-001",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 6,
+  "stage": "research",
+  "summary": "Repaired blocking finding HOM-001 after direct inspection of St. Augustine, De civitate Dei Book XX, Chapters 14 (lines 37271-37339), 16 (lines 37406-37450), and 24 (lines 38160-38338) in the tracked CCEL NPNF I.2 witness (artifact.nicene-and-post-nicene-fathers.series-1-volume-2.ccel-web-2026-09-17.ccel-text-5c973fed, trans. Marcus Dods) alongside St. Bede, In Lucae Evangelium Expositio VI on Luke 21:33 (passage.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.luke-21-33). Updated binding index 65 in research/source-bindings.toml (role updated to analogue; loci and context expanded; new binding_sha256 73518b2a920785c224d186282fe3b58df00d2a2ba83c50348251d78e937b9af3; all other 128 bindings unchanged), research/interpretations.md (lines 19-20, 28, 30, 49, 52, 169), research/scope.md (lines 57, 87, 131, 135), and research/context.md (line 159) so that XX.14 is cited for the world passing 'by transmutation, not by absolute destruction' ('The figure, therefore, passes away, not the nature', expounding Apoc 20:9-13 [esp. v. 11], anticipating Apoc 21:1, and quoting 1 Cor 7:31-32), XX.16 is cited for the figure passing 'in a conflagration of universal fire... so that, as the world itself is renewed to some better thing, it is fitly accommodated to men, themselves renewed in their flesh to some better thing' (expounding Apoc 21:1 with Apoc 20:11 and 1 Cor 7:31), XX.24 is cited for its anti-Porphyry exposition of Ps 101:26-28 correlating 1 Cor 7:31, 1 John 2:17, and Matt 24:35 (not Luke 21:33) in passing as milder expressions with 2 Pet 3:6-11 and the Flood to argue only the lower atmospheric heavens perish (followed by Ps 49:3-5), and St. Bede remains cleanly distinguished for his direct Luke 21:33 wording (per imaginem vs. per essentiam, per ignem tergetur). Verified exit code 0 on bindings-valid (129 bindings), _proper_study.py check --phase research --mode source, and research/ hygiene grep (zero <user-home> or .scratch paths; zero bare inaccurate XX.24 figure-vs.-nature claims). Wrote handoff receipt with the updated binding index 65 digest and exact canonical Vulgate Scripture extents for XX.14, XX.16, and XX.24 to .scratch/driver-tlm/research-receipts-6/handoff.md for source-registration iteration 6."
+}

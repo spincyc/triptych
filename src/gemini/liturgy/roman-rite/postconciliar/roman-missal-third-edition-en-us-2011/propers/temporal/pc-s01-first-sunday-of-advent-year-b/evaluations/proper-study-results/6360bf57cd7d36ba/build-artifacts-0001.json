@@ -1,0 +1,7 @@
+{
+  "artifact_path": "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/publication.toml",
+  "disposition": "PASS",
+  "iteration": 1,
+  "stage": "build-artifacts",
+  "summary": "Validated all three declared source outputs (canonical study, synthesis, homily) under publication.toml in source/HTML mode with zero PDFs built or tracked: document-schema check --run-gates, document-schema identities (content eb3f4587be69..., evidence 1e16c6ae15d3... unchanged, render c0eea3935c8a..., canonical 46d50bf986a1..., synthesis b5c3bda4c3cb..., homily 49ac2368e941...), _proper_study.py check --phase artifacts, and document-types refresh --check all exited 0; verified upstream review closure and byte-for-byte seal immutability of all 42 sealed leaf files; recorded full identities in scratch and appended Section 13 to research/production-review.md."
+}

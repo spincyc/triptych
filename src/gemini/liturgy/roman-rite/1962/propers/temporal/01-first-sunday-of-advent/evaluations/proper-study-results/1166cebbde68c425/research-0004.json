@@ -1,0 +1,21 @@
+{
+  "artifact_path": "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-011",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-012",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-013",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 4,
+  "stage": "research",
+  "summary": "Repaired blocking findings RES-011, RES-012, and RES-013 (and addressed advisory RES-014) by directly re-verifying the bound tracked witnesses in src/sources/ and updating research/interpretations.md, research/scope.md, and research/source-bindings.toml (binding indices 97 and 106): (RES-011) revised research/interpretations.md (lines 130, 137, 149, 154) and scope.md (line 60) to credit Bl. Ildefonso Schuster (The Sacramentary I, pp. 321-323) strictly with his actual Eucharistic exposition of Secret (p. 322), Communion (pp. 322-323, exposition p. 323), and Postcommunion (p. 323) without attributing St. Bernard's Middle Coming schema to him, explicitly marking the link to Bernard's Middle Coming as editorial synthesis within Interpretation 3; (RES-012) verified bernard-in-adventu-1.1-opening.toml, bernard-in-adventu-4.1-two-advents.toml, and bernard-in-adventu-5.1.toml directly, dropped Sermon 1 from Interpretation 2 (interpretations.md lines 74, 79), stated accurately that In Adventu 4.1 exhorts meditating on both first and second advents together as the Bridegroom's two arms and cited In Adventu 5.1 specifically for coming first 'in the flesh and in weakness' and third 'in glory and majesty', and aligned scope.md line 59; (RES-013) verified Durandus Rationale VI.2-3 (ia-djvu-ocr-b9b266dd) directly, corrected the folio range in source-bindings.toml (binding index 97, line 802) and scope.md (lines 53, 54, 59, 60, 73) to fols. 255v-261v (Cap. 2 fols. 255v-258v, Cap. 3 fols. 258v-261v, Mass commentary on fols. 261r-261v), and replaced 'Mentions Excita / Advent prayers' with Cap. 3's actual Mass-oration testimony (explicit Postcommunion Suscipiamus on fol. 259r, OCR lines 907-910, and generic Mass Orationes remark on fol. 261r, OCR lines 1120-1121, noting Cap. 3's Excita potentiam tuam on fol. 260r line 996 is a Matins responsory verse); (advisory RES-014) verified PL 202 col. 62 in Beleth Summa (ia-djvu-ocr-22b781bf, OCR line 4003) and added PL 202 col. 62 alongside OCR lines 4080-4084 in scope.md (lines 53, 77) and source-bindings.toml (binding index 106, line 874). Passed bindings-valid (129 bindings), _proper_study.py check --phase research --mode source, and hygiene grep (zero matches); handoff receipt with updated binding_sha256 digests written to .scratch/driver-tlm/research-receipts-4/handoff.md for source-registration iteration 4 to reconcile research/source-dispositions.toml."
+}

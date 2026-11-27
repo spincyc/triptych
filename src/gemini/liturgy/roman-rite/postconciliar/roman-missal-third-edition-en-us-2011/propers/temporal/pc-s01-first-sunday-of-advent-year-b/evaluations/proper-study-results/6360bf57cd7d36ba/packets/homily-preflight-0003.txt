@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v20
+WORKFLOW_DIGEST: 9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec
+RUN_ID: 6360bf57cd7d36ba
+COMMIT: 0f8fb307cde69819014f3d26a7f0cd77cb6ce9a9
+STAGE: homily-preflight
+ITERATION: 3
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-11-29","proper":"liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b","provider":"gemini","research_handoff":"none"}
+DOCUMENT_ROOT: src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"HOM-008","location":"sections/homily/10-homily.tex:1 (Paragraph 1)","problem":"The opening two sentences ('A new Church year begins today without the \\emph{Gloria}. Instead of that song of praise, the Mass starts by lifting our souls to the Lord in a psalm.') use 'Instead of that song of praise' in a way that can slightly suggest the Entrance Antiphon (Ps. 25[24]:1-3) replaces the omitted Gloria, whereas the Entrance Antiphon opens the Introductory Rites ahead of the Penitential Act and the Gloria is simply omitted after the Penitential Act on Sundays of Advent (GIRM 53).","required_result":"While editing sections/homily/10-homily.tex, recast the second sentence so the contrast is tonal rather than implying liturgical substitution (for example, 'Without that festive song of praise, the Mass opens quietly by lifting our souls to the Lord in a psalm.').","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

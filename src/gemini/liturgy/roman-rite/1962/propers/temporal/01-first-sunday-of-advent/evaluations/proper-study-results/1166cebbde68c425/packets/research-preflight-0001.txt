@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v20
+WORKFLOW_DIGEST: 9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec
+RUN_ID: 1166cebbde68c425
+COMMIT: 0f8fb307cde69819014f3d26a7f0cd77cb6ce9a9
+STAGE: research-preflight
+ITERATION: 1
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-11-29","proper":"liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent","provider":"gemini","research_handoff":"none"}
+DOCUMENT_ROOT: src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"RES-006","location":"research/interpretations.md line 125; propers/verified.md line 80","problem":"Two minor textual-lemma and punctuation inversions appear in checked controls: (1) research/interpretations.md line 125 attributes the parenthetical Old Latin chant lemma 'notas fac' and 'edoce' to St. Thomas Aquinas's intellect-vs.-affection distinction in Postilla super Psalmos Ps 24:4 (Parma Vol. 14, p. 230), whereas Aquinas comments on the Gallican lemma 'Vias tuas Domine, demonstra mihi' (never 'notas fac'), assigns 'quantum ad intellectum' to 'Vias tuas... ostende' and 'quantum ad affectum' to 'Et semitas', and expounds 'et doce me' under v. 5 ('Dirige me in veritate tua, et doce me'); (2) propers/verified.md line 80 states that challoner-gutenberg-1581 at Rom 13:12 'omits commas around \"therefore\"', reversing the actual witnesses: challoner-gutenberg-1581 prints 'Let us, therefore cast off' (with a comma before 'therefore'), while american-1899-ebible prints 'Let us therefore cast off' without commas.","required_result":"In research/interpretations.md line 125, align the parenthetical Latin with Aquinas's actual Gallican lemma ('demonstra mihi' / 'ostende' and 'Et semitas') rather than projecting the Gradual's 'notas fac' into Aquinas's Postilla; in propers/verified.md line 80, correct the Rom 13:12 comma note to state accurately that challoner-gutenberg-1581 prints 'Let us, therefore cast off' whereas american-1899-ebible prints 'Let us therefore cast off'.","severity":"advisory"},{"id":"RES-007","location":"research/scope.md line 106","problem":"research/scope.md line 106 states that St. Paul wrote Romans 'traditionally from Corinth' alongside the Catholic Encyclopedia Vols. 11 and 5 chronology citations, but direct inspection of both tracked articles (newadvent-11567b-bff0dda8-article-text.txt and newadvent-05485a-66d722ae-article-text.txt) shows neither bound witness states that Romans was written from Corinth.","required_result":"Either bind a checked source witness in research/source-bindings.toml that explicitly attests Corinth as the traditional place of composition of Romans, or remove 'traditionally from Corinth' from research/scope.md line 106 so no unsourced geographic detail enters study prose.","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

@@ -1,0 +1,7 @@
+{
+  "artifact_path": "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/synthesis.tex",
+  "disposition": "PASS",
+  "iteration": 2,
+  "stage": "derive-synthesis",
+  "summary": "Audited all five concise-study components under sections/synthesis/ against the updated expansive study (WEB-002 and WEB-003 repairs), confirming zero bare Vulgate secondary Psalm citations, zero reversed dual Psalm citations, zero unlabeled Vulgate Isaiah 64 verse citations, and zero rights/bracket defects, and applied a surgical one-line polish at sections/synthesis/30-themes.tex:19 clearing prior advisory SYN-006 while preserving settled pagination (pages 1-4 opening, 12 pages total). Updated research/production-review.md, verified all 37 sealed files byte-identical via SHA-256, and passed document-types refresh --check, _proper_study.py check (--edition synthesis --mode source), all 12 check-content-preflight checks, check-generation-metadata, and check-web-edition with exit code 0."
+}

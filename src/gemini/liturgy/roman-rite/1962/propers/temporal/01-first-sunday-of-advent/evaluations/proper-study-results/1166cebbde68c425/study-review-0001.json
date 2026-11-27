@@ -1,0 +1,432 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "STU-008",
+      "location": "research/context.md:72, 78, 81; research/scope.md:53; research/interpretations.md:32, 38, 85, 91, 140, 146; propers/verified.md:52, 60, 61, 118, 124, 151",
+      "out_of_scope_reason": "research/context.md, research/scope.md, and research/interpretations.md are in REVIEW_SCOPE and propers/verified.md is included alongside them because verifying the newly rewritten Introit sentence in sections/03-detailed-commentary.tex:6 ('In verse 3a, it retains the older Roman Psalter phrase qui te exspectant') against the bound Clementine Vulgate 21-psalms.tsv exposed that the same Hebrew-on-Vulgate cross-numbering originates in all four upstream records, which iteration 0 had not audited at the verse-half level.",
+      "problem": "Upstream research and formulary records cross Hebrew Psalm 25 verse-half divisions onto Clementine Vulgate Psalm 24, creating a false Vulgate locus and an internal contradiction with the Gradual record: in the bound Clementine Vulgate (ebible-latvuc, 21-psalms.tsv) and Douay-Rheims 1899 (american-1899-ebible, 21-psalms.tsv), Vulgate Ps 24:3 reads 'Neque irrideant me inimici mei:' (v. 3a) 'etenim universi qui sustinent te, non confundentur.' (v. 3b). Because the Introit and Offertory antiphons sing all of Vulgate verse 3 (both 3a and 3b), their Vulgate extent is Ps 24:1-3, 4b (Introit) and Ps 24:1-3 (Offertory) -- matching the 1962 Missal's own printed citation 'Ps. 24, 1-3' and generated/scriptural-date-location.tex -- and the Old Latin reading 'qui te exspectant' replaces Gallican 'qui sustinent te' in Vulgate v. 3b (Heb. 25:3a), NOT v. 3a. Calling the Introit/Offertory 'Ps 24:1-3a' and placing 'qui te exspectant' in 'v. 3a' directly contradicts the records' own Gradual locus 'Ps 24:3b, 4b (Heb. 25:3a, 4)' (research/context.md:75, research/scope.md:53, propers/verified.md:86) for the exact same clause. In addition, the Postcommunion echo Ps 47:10 ('Suscepimus, Deus, misericordiam tuam in medio templi tui') is labeled '(Heb. 48:9)' at research/context.md:81 and propers/verified.md:151, printing modern English 48:9 under the 'Heb.' label instead of Masoretic Hebrew 48:10 (where the superscription is v. 1, matching the records' own convention at Ps 84:8 = 'Heb. 85:8; modern English 85:7' and Ps 84:13 = 'Heb. 85:13; modern English 85:12').",
+      "repair_target": "research",
+      "required_result": "Correct the Vulgate Psalm 24 verse-half citations across research/context.md (lines 72, 78), research/scope.md (line 53), research/interpretations.md (lines 32, 38, 85, 91, 140, 146), and propers/verified.md (lines 52, 60, 61, 118, 124) so the Introit is cited as 'Ps 24:1-3, 4b (Heb. Ps 25:1-3a, 4)', the Offertory as 'Ps 24:1-3 (Heb. Ps 25:1-3a)', and the Old Latin adaptation 'qui te exspectant' vs. Gallican 'qui sustinent te' is placed in Vulgate 'v. 3b' (matching the Gradual's 'Ps 24:3b, 4b [Heb. 25:3a, 4]'). Also align the Postcommunion echo at research/context.md:81 and propers/verified.md:151 to 'Ps 47:10 (Heb. 48:10; modern English 48:9)' to match the Masoretic/modern-English distinction used for Ps 84:8 and Ps 84:13.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-009",
+      "location": "sections/01-opening.tex:15, 21; sections/02-appointed-text.tex:7, 13, 73, 79, 106; sections/03-detailed-commentary.tex:4, 6, 38, 52; sections/04-lane-eschatological.tex:30",
+      "problem": "Propagating STU-008 into the reader-facing expansive study, ten citations in sections 01-04 label the Introit and Offertory 'Ps. 24:1--3a, 4b' / 'Ps. 24:1--3a', and two prose sentences explicitly state that the Introit retains Old Latin 'qui te exspectant' in 'v. 3a' (02-appointed-text.tex:7) / 'verse 3a' (03-detailed-commentary.tex:6, rewritten in iteration 1). In the Clementine Vulgate and Douay-Rheims Bible, Ps. 24:3a is 'Neque irrideant me inimici mei:' ('Neither let my enemies laugh at me:') and Ps. 24:3b is 'etenim universi qui sustinent te, non confundentur.' ('for none of them that wait on thee shall be confounded.'). Printing 'Ps. 24:1--3a' for the Introit and Offertory right beside 'Ps. 24:3b' for the Gradual (01:18, 02:40, 02:46, 03:22) misleads readers into thinking the Introit stops before 'qui te exspectant' and contradicts the study's own Gradual citations on the same page, risking propagation onto Page 1 of the upcoming concise study. Likewise, sections/02-appointed-text.tex:106 and sections/03-detailed-commentary.tex:52 label the Postcommunion's Ps. 47:10 echo '(Heb. 48:9)' rather than '(Heb. 48:10; modern English 48:9)', conflicting with the study's Masoretic Hebrew numbering at Ps. 84:8 (Heb. 85:8; modern English 85:7), Ps. 84:13 (Heb. 85:13; modern English 85:12), and Ps. 79:3 (Heb. 80:3).",
+      "repair_target": "study",
+      "required_result": "Update all ten Introit/Offertory citations and both textual-adaptation statements in sections/01-opening.tex (lines 15, 21), sections/02-appointed-text.tex (lines 7, 13, 73, 79), sections/03-detailed-commentary.tex (lines 4, 6, 38), and sections/04-lane-eschatological.tex (line 30) to 'Ps.~24:1--3, 4b (Heb.~25:1--3a, 4)' (Introit), 'Ps.~24:1--3 (Heb.~25:1--3a)' (Offertory), and 'v.~3b' / 'verse~3b' for 'qui te exspectant' vs. 'qui sustinent te'. Update sections/02-appointed-text.tex:106 and sections/03-detailed-commentary.tex:52 from 'Heb.~48:9' to 'Heb.~48:10; modern English 48:9' (or 'Heb.~48:10') consistent with the study's Masoretic numbering elsewhere.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-010",
+      "location": "sections/06-lane-conversion.tex:22; research/interpretations.md:125",
+      "problem": "In summarizing St. Thomas Aquinas's Postilla super Psalmos on Ps. 24:4 (Parma Vol. 14, p. 230), sections/06-lane-conversion.tex:22 (following research/interpretations.md:125) writes that the psalmist asks God to show these paths ('ostende eas mihi') 'both to the intellect (under Vias tuas) and to the affections (under Et semitas)'. In the Parma 14 text, however, 'Has vias ego non cognosco; et ideo ostende eas mihi, et quantum ad intellectum, et quantum ad affectum' belongs wholly within the exposition of 'Vias tuas' (the precepts), while the subsequent 'Quantum ad secundum dicit, Et semitas' returns to the outer division of the active life ('communis per praeceptum, specialis per consilia') and expounds 'Et semitas' solely as the narrower footpath of the evangelical counsels without mentioning 'affectus'. Although Parma 14's reportatio creates this surface ambiguity by jumping from 'Quantum ad primum dicitur Isa. 50' straight to 'Quantum ad secundum dicit, Et semitas', assigning 'intellect' to 'Vias tuas' and 'affections' to 'Et semitas' slightly mis-maps Aquinas's division.",
+      "required_result": "While already editing sections/06-lane-conversion.tex and research/interpretations.md, drop the parenthetical mappings '(under \\latin{Vias tuas})' and '(under \\latin{Et semitas})' and write 'these ways' instead of 'these paths' -- e.g., 'Because man cannot even discern these ways on his own, the psalmist asks God to show them (\\latin{ostende eas mihi}) both to the intellect and to the affections, before turning to the contemplative guidance of verse~5...' -- and align research/interpretations.md:125 accordingly.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 1,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/01-opening.tex",
+          "references": []
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "appointed-text",
+          "kind": "appointed-text",
+          "path": "sections/02-appointed-text.tex",
+          "references": []
+        },
+        {
+          "depends_on": [
+            "appointed-text"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "proper-treatment",
+          "kind": "proper-treatment",
+          "path": "sections/03-detailed-commentary.tex",
+          "references": []
+        },
+        {
+          "depends_on": [
+            "appointed-text",
+            "proper-treatment"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "lane-eschatological",
+          "kind": "interpretive-lane",
+          "path": "sections/04-lane-eschatological.tex",
+          "references": []
+        },
+        {
+          "depends_on": [
+            "appointed-text",
+            "proper-treatment"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "lane-incarnational",
+          "kind": "interpretive-lane",
+          "path": "sections/05-lane-incarnational.tex",
+          "references": []
+        },
+        {
+          "depends_on": [
+            "appointed-text",
+            "proper-treatment"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "lane-conversion",
+          "kind": "interpretive-lane",
+          "path": "sections/06-lane-conversion.tex",
+          "references": []
+        },
+        {
+          "depends_on": [
+            "lane-eschatological",
+            "lane-incarnational",
+            "lane-conversion"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "comparison",
+          "kind": "terminal-apparatus",
+          "path": "sections/07-comparison.tex",
+          "references": []
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "study-chronology",
+          "kind": "terminal-apparatus",
+          "path": "generated/scriptural-date-location.tex",
+          "references": [
+            "research/chronology-annotations.tex",
+            "research/chronology-table.tex"
+          ]
+        },
+        {
+          "depends_on": [
+            "appointed-text"
+          ],
+          "element_keys": [],
+          "key": "study-scope",
+          "kind": "terminal-apparatus",
+          "path": "sections/08-scope.tex",
+          "references": []
+        },
+        {
+          "depends_on": [
+            "proper-treatment",
+            "lane-eschatological",
+            "lane-incarnational",
+            "lane-conversion",
+            "comparison",
+            "study-scope"
+          ],
+          "element_keys": [],
+          "key": "study-references",
+          "kind": "terminal-apparatus",
+          "path": "sections/09-references.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Gregory the Great",
+            "John Chrysostom",
+            "Cyril of Alexandria",
+            "Bede",
+            "Augustine of Hippo",
+            "Leo the Great",
+            "Robert Bellarmine",
+            "Cornelius a Lapide",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Gregory the Great",
+            "John Chrysostom",
+            "Cyril of Alexandria",
+            "Bede",
+            "Augustine of Hippo",
+            "Leo the Great",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "lane-eschatological"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "eschatological-detachment",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Ambrose of Milan",
+            "Robert Bellarmine",
+            "Augustine of Hippo",
+            "Bernard of Clairvaux",
+            "Sicard of Cremona",
+            "Prosper Gu\u00e9ranger",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Ambrose of Milan",
+            "Robert Bellarmine",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "lane-incarnational"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "incarnational-marian",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Alfredo Ildefonso Schuster",
+            "Leo the Great",
+            "Ambrose of Milan",
+            "Bernard of Clairvaux",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Alfredo Ildefonso Schuster",
+            "Leo the Great",
+            "Ambrose of Milan"
+          ],
+          "component_keys": [
+            "lane-conversion"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "interior-conversion",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "files": {
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generated/scriptural-date-location.tex": "b534d32ad5906b7deeb78605881b958831286227f4c35a98052d00899a039678",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/main.tex": "0d158f39c138ac6c0978bf4341a97c967436fedde1ed822774f6dc423b6be5fb",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/chronology-annotations.tex": "e9dabcb7bd4f1415d26bb65e182a6b2f5184c1e0b1e124f2b4f3217510700d4f",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/chronology-table.tex": "fb450dfe4a03a78ae3977a9b48a700082a03ca4a316627c628706e3b4947438e",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/interpretations.md": "30407ef4506620e1533a89b96ecb1943d2d9f6f50a736ef8fbbfa74d25026737",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/scope.md": "ead7515a3834bb5dc228b6d524416b5d77443f43de81a090e875a093fc9e90d5",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/research/source-bindings.toml": "35dca13c77e1b7097e7a8d2929d5970846262e7d56fa29e89e04ef3b5e8961c9",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/01-opening.tex": "d31e4eea8c8fbda8da62f2b309001893d6955ecc34a2b2366b7dd16bd9f4d590",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/02-appointed-text.tex": "de59e445dff0a02617affd1ce82c154927ba5b5fe9b67dde3c4d3e02540b2dd5",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/03-detailed-commentary.tex": "7838e6a1bc058c9e4f8d8e3412235f90a142b5951f6e3188fad906feb8f87eea",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/04-lane-eschatological.tex": "a51a4d77bb6702b201f1a25db4b902d59b8a07d2d5bd49376c723c1595866512",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/05-lane-incarnational.tex": "57627a61da5c94ff5ad2d5c653dbecd33206ac189cd08da23d9e2976aad7da83",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/06-lane-conversion.tex": "125989d5326ab52e5c0336b8f74a029fd0c0df9ae3853eb09ba580c7e0a4f94d",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/07-comparison.tex": "e9434aba0cb9dffb173a2fd34a56f900ce5d13be0de2092acc177a1957082fba",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/08-scope.tex": "c9f8a870ac4383c80620ed879e5f3a2295323677955f688062903511cf4cdfb4",
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/sections/09-references.tex": "3c8d9e8f408f062f546c90e3455e6f1c4dee08608fb5c033e936d37846bc00c3"
+    },
+    "generation_provenance": {
+      "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "20",
+            "9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec",
+            "1166cebbde68c425",
+            "0f8fb307cde69819014f3d26a7f0cd77cb6ce9a9",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gemini",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "Independent cold review of the canonical 1962 First Sunday of Advent expansive study (src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent: main.tex, sections/01-opening.tex through sections/09-references.tex, manifests, and reviewed research records). Confirmed that appointed_text_completeness = \"complete\" agrees with the 2026-11-25 production-plan authorization (no reference-only authorization), that all six prior blocking findings (STU-001 through STU-006) and prior advisory (STU-007) have been genuinely repaired without attribution or register regressions, and that read-only document-types, component-manifest, content-preflight (all 12 checks), generation-metadata, and web-edition checks pass. Direct verification against bound witnesses in src/sources/ confirmed the appointed Latin/English texts (Clementine Vulgate, Douay-Rheims 1899, Lasance 1945), patristic/Doctoral quotations and loci (Gregory Hom. in Evang. 1.1-6, Bute 1908, Oxford 1843, Cyril Sermon CXXXIX, Bede In Luc. VI, Augustine Enarr. in Ps. 24 and 84 [Coxe 85.6, 10-13], Sermo 185.1, Confessions VIII.12.29, De civ. Dei XX.24, Chrysostom Hom. in Rom. 24, Ambrose Exp. in Luc. X.37-45, Bellarmine Expl. in Ps. 24/79/84, Bernard Missus est Hom. 1 pp. 56, 58-60 and In Adventu 2 p. 19, 3.3-4, 4.1, 5.1-3, Aquinas Postilla Ps. 24 Parma 14 pp. 229-230, Leo Sermons 12.4, 17.1, 19.1, Schuster I pp. 321-323, Gueranger I p. 137, Lapide Antwerp 1614 pp. 195-198, Durandus Rationale VI.2-3 fols. 255v-261v, Beleth Summa LV PL 202 col. 62 and LXIV cols. 71-72, Rupert III.2, Sicard V.2, Honorius III.1, Amalarius III.40 and XXX PL 105 col. 1219). Consequential-difficulty test passed across all three interpretations: (1) Gregory Hom. in Evang. 1.2-3 (wikisource-web-2026-09-17.1.1-5-luke-21) on Luke 21:26-30 (virtutes caelorum as angelic ministers, levate capita = exhilarate corda via Jas. 4:4, ironic fructus mundi ruina est) paired with Cyril Sermon CXXXIX (pp. 653-654) and Bede In Luc. VI (luke-21-33) is taught clearly and intelligibly in sections/04-lane-eschatological.tex; (2) Ambrose Exp. in Luc. X.41-45 (book-10-html-083e1630, PL 15 cols. 1813D-1814D) on venientem in nube (Isa. 19:1 and Luke 1:35) and Luke's unique et omnes arbores (duplicem figuram) paired with Bellarmine on Ps. 84:8, 13 is faithfully reasoned in sections/05-lane-incarnational.tex; (3) Augustine Enarr. in Ps. 84.9, 14-16 (Coxe 85.6, 11-13, psalm-84-9/14/15/16) on prevenient grace and Old Latin suavitatem paired with Aquinas Postilla Ps. 24:4 (Parma 14 p. 230) is substantively developed in sections/06-lane-conversion.tex. Limits: remote CMAA 1962 facsimile PDF pp. 82-83 were audited via the registered text-free visual-collation passage and pre-1931 public-domain antecedents rather than re-rendered offline; restricted 2026 institutional Ordo HTML bytes and remote works remain uninspected locally; no PDF build was performed under the source/HTML contract. Verdict: CHANGES_REQUIRED for one cross-cutting scriptural verse-numbering defect discovered when checking the rewritten Introit commentary at 03:6 against the bound Clementine Vulgate and Douay-Rheims 21-psalms.tsv -- Hebrew Ps. 25:1-3a / v. 3a was transferred onto Vulgate Ps. 24:1-3 / v. 3b (contradicting the leaf's own Gradual citation Ps. 24:3b for the same clause qui te exspectant) alongside Ps. 47:10 labeled Heb. 48:9 instead of Heb. 48:10 (modern English 48:9) in upstream research records (STU-008, research) and reader-facing study sections (STU-009, study) -- plus one non-blocking advisory (STU-010) on Aquinas's Ps. 24:4 reportatio mapping."
+}
