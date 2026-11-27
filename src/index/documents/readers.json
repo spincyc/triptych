@@ -1,5 +1,5 @@
 {
- "generation_commit": "e19dd20cd17c3360dccc531f68f52806e142258c",
+ "generation_commit": "f80765f2ac981b8187cac19a1f87121430993599",
  "readers": {
   "claude/articles/canon-law/clerical-celibacy-chastity-and-continence": {
    "canonical": "articles/canon-law/clerical-celibacy-chastity-and-continence",
@@ -4702,6 +4702,53 @@
    "release_status": "alpha",
    "source_format": "latex",
    "title": "The Liturgical Calendar of the Roman Missal, Third Edition"
+  },
+  "claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent": {
+   "canonical": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "contents": true,
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent",
+    "eligibility": "eligible",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-26",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/generation-metadata.tex",
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/main.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent",
+    "src/common"
+   ],
+   "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent",
+   "edition": "main",
+   "entrypoint": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent",
+   "kind": "seasonal-handbook-postconciliar",
+   "provider": "claude",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "Advent: A Handbook for the Season of the Lord's Coming"
   },
   "claude/theology/angelology": {
    "canonical": "theology/angelology",
