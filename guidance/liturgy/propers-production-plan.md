@@ -269,6 +269,10 @@ nothing else. Publication to main is not part of this decision.
 
 - Authorized 2026-11-26: provider `claude`, identity `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b`.
 
+The maintainer's request of 27 November 2026 authorizes publication of that
+accepted Claude three-document set to main. The branch is reconciled with main
+and the deploy gates pass locally before the push. It authorizes nothing else.
+
 ### Reference-only publication scope
 
 An additional authorization here replaces full appointed-text reproduction
