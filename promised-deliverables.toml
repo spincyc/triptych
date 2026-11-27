@@ -1,6 +1,48 @@
 schema_version = 1
 
 [[deliverables]]
+id = "gemini-wave-two-showcase-2026-11-27"
+owner = "PROJECT-WORK.md"
+promise = "Deliver six parallel Gemini Wave 2 tracks with independent read-only cold reviews, full remediation, warranted guidance updates, and publication to main: (1) interactive postconciliar sanctuary picture dictionary gallery and provider source-inventory hygiene; (2) 1962 Christmas Seasonal Handbook; (3) Postconciliar Advent Seasonal Handbook; (4) Four Last Things quartet completion (Death, Judgment, Heaven); (5) The Seven Sacraments and At a Glance; and (6) canonical biographies of Saint Ambrose of Milan and Pope Saint Gregory the Great."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "wave2-lane-1-postconciliar-gallery-and-hygiene"
+  criterion = "tools/public-alpha generates and verifies library/postconciliar-sanctuary-picture-dictionary.html without altering the 1962 gallery, tools/source-inventory supports the postconciliar sanctuary dictionary owner for gemini, catalog/docs links are updated, and cold review + unit/site tests pass."
+  status = "pass"
+  evidence = ["tools/public-alpha", "tools/tests/test_pictorial_gallery.py", "tools/source-inventory", "tools/tests/test_source_inventory.py", "library/novus-ordo-liturgy.md", "library/liturgy.md", "PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "wave2-lane-2-1962-christmas-handbook"
+  criterion = "src/gemini/liturgy/roman-rite/1962/seasons/christmas passes schema, metadata, 100+ year calendar audit, house-voice, references-used, web-edition, pinned wasmtex native-print-compile, and independent cold review."
+  status = "pass"
+  evidence = ["src/gemini/liturgy/roman-rite/1962/seasons/christmas/publication.toml", "src/gemini/liturgy/roman-rite/1962/seasons/christmas/research/calendar-verification.md", "src/gemini/liturgy/roman-rite/1962/seasons/christmas/research/cold-review.md", "release/publications/gemini/liturgy/roman-rite/1962/seasons/christmas.json", "library/traditional-latin-mass.md", "PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "wave2-lane-3-postconciliar-advent-handbook"
+  criterion = "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent passes schema, metadata, copyright policy, calendar audit, house-voice, references-used, web-edition, pinned wasmtex native-print-compile, and independent cold review."
+  status = "pass"
+  evidence = ["src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/publication.toml", "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/research/calendar-verification.md", "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/research/cold-review.md", "release/publications/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent.json", "library/novus-ordo-liturgy.md", "PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "wave2-lane-4-four-last-things-quartet"
+  criterion = "src/gemini/articles/faith/four-last-things-{01-death,02-judgment,04-heaven} pass schema, metadata, house-voice, references-used, web-edition, pinned wasmtex native-print-compile, and independent cold review, and update catalog links and calendar-guidance tests."
+  status = "pass"
+  evidence = ["src/gemini/articles/faith/four-last-things-01-death/publication.toml", "src/gemini/articles/faith/four-last-things-02-judgment/publication.toml", "src/gemini/articles/faith/four-last-things-04-heaven/publication.toml", "library/faith.md", "library/traditional-latin-mass.md", "tools/tests/test_calendar_computation_guidance.py", "PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "wave2-lane-5-seven-sacraments"
+  criterion = "src/gemini/theology/sacraments and src/gemini/theology/sacraments-at-a-glance pass schema, metadata, 24-Church initiation verification, exact one-page summary boundaries, house-voice, references-used, web-edition, pinned wasmtex native-print-compile, and independent cold review."
+  status = "pass"
+  evidence = ["src/gemini/theology/sacraments/publication.toml", "src/gemini/theology/sacraments/sections/14-churches-initiation.tex", "src/gemini/theology/sacraments-at-a-glance/publication.toml", "release/publications/gemini/theology/sacraments.json", "release/publications/gemini/theology/sacraments-at-a-glance.json", "library/faith.md", "PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "wave2-lane-6-biographies-ambrose-gregory"
+  criterion = "src/gemini/biographies/saint-ambrose-of-milan and src/gemini/biographies/saint-gregory-the-great pass schema, metadata, four-record biography discipline, house-voice, references-used, web-edition, pinned wasmtex native-print-compile, and independent cold review, and update library/biographies.md and guidance/biography-production-plan.md."
+  status = "pass"
+  evidence = ["src/gemini/biographies/saint-ambrose-of-milan/publication.toml", "src/gemini/biographies/saint-gregory-the-great/publication.toml", "release/publications/gemini/biographies/saint-ambrose-of-milan.json", "release/publications/gemini/biographies/saint-gregory-the-great.json", "library/biographies.md", "guidance/biography-production-plan.md", "PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "claude-pc-s01-advent-year-b-2026-11-29"
 owner = "PROJECT-WORK.md"
 promise = "Complete the Claude U.S. postconciliar First Sunday of Advent, Year B (pc-s01) proper-study workflow for Sunday 29 November 2026: produce the expansive study, concise study and homily with independent cold reviews and their web readers, committed on the workspace branch and, as the maintainer authorized on 27 November 2026, published to main."

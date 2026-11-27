@@ -30,7 +30,15 @@ comparative inventory that prose cannot audit reliably.
 
 In mixed work, theological reasons do not create juridic obligations, legal
 permission does not settle theology or prudence, and historical practice does
-not establish present law.
+not establish present law. When citing nineteenth-century manuals or pre-1962
+ritual books (such as the 1879/1908 Roman Breviary, the 1889 *Manual of
+Prayers*, or the 1921 *Baltimore Catechism*), verify whether the discipline
+was later revised — notably St.\ Pius X's 1911 *Divino afflatu* Psalter
+reform, Pope Pius XII's 1955 *Cum nostra hac aetate* suppression of octaves,
+Pope St.\ Paul VI's 1967 *Indulgentiarum doctrina* indulgence reform and 1972
+*Sacram unctionem infirmorum* anointing revision, and the 1983 *Code of Canon
+Law* — and state historical practice in its period rather than in timeless
+present tense.
 
 ## Voice and argumentative movement
 

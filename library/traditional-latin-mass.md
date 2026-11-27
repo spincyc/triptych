@@ -25,7 +25,7 @@ The 1962 Missal and Breviary are the books studied here. The Mass is also known 
 | Season and opening | ChatGPT | Claude | Gemini | Focus |
 | --- | --- | --- | --- | --- |
 | **Advent**<br>First Vespers of the First Sunday of Advent | [Advent: Keeping Watch for Christ](../web/gpt/liturgy/roman-rite/1962/seasons/advent.html) | [Advent: A Primer for the Season of the Lord's Coming](../web/claude/liturgy/roman-rite/1962/seasons/advent.html) | [Keeping Advent: A Companion to the 1962 Roman Rite](../web/gemini/liturgy/roman-rite/1962/seasons/advent.html) · [PDF](../pdf/gemini/liturgy/roman-rite/1962/seasons/advent.pdf) | Mass, the Hours and daily prayer through Christmas Eve. |
-| **Christmas**<br>First Vespers of the Nativity | Planned | Planned | Planned | The three Christmas Masses and the saints of the octave. |
+| **Christmas**<br>First Vespers of the Nativity | Planned | Planned | [Keeping Christmas: A Companion to the 1962 Roman Rite](../web/gemini/liturgy/roman-rite/1962/seasons/christmas.html) · [PDF](../pdf/gemini/liturgy/roman-rite/1962/seasons/christmas.pdf) | The three Christmas Masses and the saints of the octave. |
 | **Epiphany**<br>First Vespers of Epiphany | Planned | Planned | Planned | The Magi, Christ’s baptism and the wedding at Cana. |
 | **Time after Epiphany**<br>January 14 | Planned | Planned | Planned | The Sunday Gospels before Septuagesima. |
 | **Septuagesima**<br>First Vespers of Septuagesima Sunday | Planned | Planned | Planned | Three Sundays of preparation for Lent. |
@@ -186,7 +186,8 @@ Pentecost. The winter guide is planned. [1962 Missal, RGMR 298](https://www.cler
 *For the four last Sundays of the year:*
 [The Four Last Things](faith.md#the-four-last-things) §<br>
 ChatGPT: [Death](../web/gpt/articles/faith/four-last-things-01-death.html) · [Judgment](../web/gpt/articles/faith/four-last-things-02-judgment.html) · [Hell](../web/gpt/articles/faith/four-last-things-03-hell.html) · [Heaven](../web/gpt/articles/faith/four-last-things-04-heaven.html)<br>
-Claude: [Death](../web/claude/articles/faith/four-last-things-01-death.html) · [Judgment](../web/claude/articles/faith/four-last-things-02-judgment.html) · [Hell](../web/claude/articles/faith/four-last-things-03-hell.html) · [Heaven](../web/claude/articles/faith/four-last-things-04-heaven.html)
+Claude: [Death](../web/claude/articles/faith/four-last-things-01-death.html) · [Judgment](../web/claude/articles/faith/four-last-things-02-judgment.html) · [Hell](../web/claude/articles/faith/four-last-things-03-hell.html) · [Heaven](../web/claude/articles/faith/four-last-things-04-heaven.html)<br>
+Gemini: [Death](../web/gemini/articles/faith/four-last-things-01-death.html) · [Judgment](../web/gemini/articles/faith/four-last-things-02-judgment.html) · [Hell](../web/gemini/articles/faith/four-last-things-03-hell.html) · [Heaven](../web/gemini/articles/faith/four-last-things-04-heaven.html)
 
 † These Sundays move with the date of Easter each year. How many Sundays after the Epiphany are kept before Septuagesima, and how many of the omitted ones are resumed after Pentecost before the Last Sunday after Pentecost, depend on the date of Easter.
 

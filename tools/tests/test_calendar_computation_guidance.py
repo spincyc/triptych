@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[2]
 
 LAST_THINGS_READERS = [
   (subject, provider, f"articles/faith/four-last-things-{number:02d}-{subject.lower()}")
-  for provider in ("gpt", "claude")
+  for provider in ("gpt", "claude", "gemini")
   for number, subject in enumerate(("Death", "Judgment", "Hell", "Heaven"), 1)
 ]
 
@@ -181,10 +181,11 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     self.assertNotIn("](../pdf/", block)
     # The series names its home and takes the mark; each provider's four
     # essays stand on a line of their own.
-    lead, chatgpt, claude = block.split("<br>\n")
+    lead, chatgpt, claude, gemini = block.split("<br>\n")
     self.assertTrue(lead.endswith("\n[The Four Last Things](faith.md#the-four-last-things) §"), lead)
-    self.assertTrue(chatgpt.startswith("ChatGPT: ") and "/claude/" not in chatgpt)
-    self.assertTrue(claude.startswith("Claude: ") and "/gpt/" not in claude)
+    self.assertTrue(chatgpt.startswith("ChatGPT: ") and "/claude/" not in chatgpt and "/gemini/" not in chatgpt)
+    self.assertTrue(claude.startswith("Claude: ") and "/gpt/" not in claude and "/gemini/" not in claude)
+    self.assertTrue(gemini.startswith("Gemini: ") and "/gpt/" not in gemini and "/claude/" not in gemini)
 
     linked = re.findall(r"\[([^\]]+)\]\(\.\./web/([a-z]+)/([^)]+)\.html\)", block)
     self.assertEqual(linked, LAST_THINGS_READERS)

@@ -139,7 +139,15 @@ Latin *Qui tecum vivit et regnat in unitate*, whereas Lefebvre 1925 p. 339
 renders it accurately). Likewise collate Breviary canticles offered for
 vocal prayer against a Breviary witness rather than electronic Bible feeds
 alone (`eBible.org latVUC` Luke 1:70 prints the corruption *sicut locutum
-est* for *sicut locutus est*).
+est* for *sicut locutus est*). When consulting pre-1960 Breviaries such as
+Pustet (1888) or Bute (1908) for historical texts, never import pre-1960
+rubrics into the 1962 Office: under the 1960 *Codex Rubricarum*, ordinary
+commemorations are never made at Vespers (`RG 108--109`), II-class feasts of
+saints have no First Vespers (`RG 15`, `RG 111 a`), Sunday Matins outside
+exempt feasts uses three lessons where Lesson III is strictly the former
+Lesson VII (`RGBR 220 b`), and saints downgraded to commemorations (such as
+St.\ Thomas of Canterbury on 29 December and St.\ Sylvester on 31 December)
+retain no Second or Third Nocturn in the universal 1962 Breviary.
 
 Every statement about fasting, abstinence, precept or closed times needs
 a body of law, territory and date. State what applied in the historical

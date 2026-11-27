@@ -13,10 +13,12 @@ These lives distinguish contemporary evidence from later tradition.
 
 ## Church Fathers
 
-| Biography | ChatGPT | Claude | Focus |
-| --- | --- | --- | --- |
-| **Saint Jerome** | [PDF](../pdf/gpt/biographies/saint-jerome.pdf) · [Read](../web/gpt/biographies/saint-jerome.html) | [PDF](../pdf/claude/biographies/saint-jerome.pdf) · [Read](../web/claude/biographies/saint-jerome.html) | Ascetic life, scholarship, translations, controversies, Bethlehem, cult, and iconography. |
-| **Saint Augustine of Hippo** | [PDF](../pdf/gpt/biographies/saint-augustine-of-hippo.pdf) · [Read](../web/gpt/biographies/saint-augustine-of-hippo.html) | [PDF](../pdf/claude/biographies/saint-augustine-of-hippo.pdf) · [Read](../web/claude/biographies/saint-augustine-of-hippo.html) | Self-witness, episcopate, controversies, intellectual development, cult, and contested legacy. |
+| Biography | ChatGPT | Claude | Gemini | Focus |
+| --- | --- | --- | --- | --- |
+| **Saint Ambrose of Milan** | — | — | [PDF](../pdf/gemini/biographies/saint-ambrose-of-milan.pdf) · [Read](../web/gemini/biographies/saint-ambrose-of-milan.html) | Magistracy, Nicene defense, exegesis, hymnody, Altar of Victory, basilica crisis, Augustine, Callinicum, Thessalonica, and reception. |
+| **Saint Jerome** | [PDF](../pdf/gpt/biographies/saint-jerome.pdf) · [Read](../web/gpt/biographies/saint-jerome.html) | [PDF](../pdf/claude/biographies/saint-jerome.pdf) · [Read](../web/claude/biographies/saint-jerome.html) | — | Ascetic life, scholarship, translations, controversies, Bethlehem, cult, and iconography. |
+| **Saint Augustine of Hippo** | [PDF](../pdf/gpt/biographies/saint-augustine-of-hippo.pdf) · [Read](../web/gpt/biographies/saint-augustine-of-hippo.html) | [PDF](../pdf/claude/biographies/saint-augustine-of-hippo.pdf) · [Read](../web/claude/biographies/saint-augustine-of-hippo.html) | — | Self-witness, episcopate, controversies, intellectual development, cult, and contested legacy. |
+| **Pope Saint Gregory the Great** | — | — | [PDF](../pdf/gemini/biographies/saint-gregory-the-great.pdf) · [Read](../web/gemini/biographies/saint-gregory-the-great.html) | Monastic conversion, Constantinople, 590 plague, *Regula Pastoralis*, governance, English mission, *Moralia*, homilies, liturgical legacy, and reception. |
 
 ## Doctors of the Church
 

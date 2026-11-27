@@ -31,7 +31,9 @@ than used as authorities are outside this ledger.
 | Tertullian | Father / theologian | published | `biographies/tertullian` |
 | Origen | Father / theologian | published | `work.origen.*`; `biographies/origen` |
 | Saint Jerome | Father / Doctor | published | `work.jerome.*`; `biographies/saint-jerome` |
+| Saint Ambrose of Milan | Father / Doctor | published | `work.ambrose.*`; `biographies/saint-ambrose-of-milan` |
 | Saint Augustine of Hippo | Father / Doctor | published | `work.augustine.*`; `biographies/saint-augustine-of-hippo` |
+| Pope Saint Gregory the Great | Father / Doctor / pope | published | `work.gregory-the-great.*`; `biographies/saint-gregory-the-great` |
 | Saint Thomas Aquinas | Doctor | published | `work.thomas-aquinas.*`; `biographies/saint-thomas-aquinas` |
 | Saint Robert Bellarmine | Doctor | published | `work.robert-bellarmine.*`; `biographies/saint-robert-bellarmine` |
 
@@ -41,7 +43,6 @@ than used as authorities are outside this ledger.
 | --- | --- | --- | --- |
 | Abraham ibn Ezra | Jewish exegete | pending | `work.abraham-ibn-ezra.*` |
 | Adrian Fortescue | theologian / liturgist | pending | `work.adrian-fortescue.*` |
-| Saint Ambrose of Milan | Father / Doctor | pending | `work.ambrose.*` |
 | Aristotle | major philosophical authority | pending | `work.aristotle.*` |
 | Bahya ben Asher | Jewish exegete | pending | `work.bahya-ben-asher.*` |
 | Saint Bede the Venerable | Father / Doctor | pending | `work.bede.*` |
@@ -62,7 +63,6 @@ than used as authorities are outside this ledger.
 | Gratian | canonist / theologian | pending | `work.gratian.*` |
 | Saint Gregory of Nyssa | Father | pending | `work.gregory-of-nyssa.*` |
 | Saint Gregory Palamas | theologian / bishop | pending | `work.gregory-palamas.*` |
-| Pope Saint Gregory the Great | Father / Doctor / pope | pending | `work.gregory-the-great.*` |
 | Hezekiah ben Manoah | Jewish exegete | pending | `work.hezekiah-ben-manoah.*` |
 | Saint Irenaeus of Lyon | Father / Doctor | pending | `work.irenaeus.*` |
 | Isaac Abarbanel | Jewish exegete | pending | `work.isaac-abarbanel.*` |

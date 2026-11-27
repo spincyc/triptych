@@ -18,14 +18,14 @@ The Mass commonly called the *Novus Ordo*, studied in the 2008 Latin Roman Missa
 
 ## Seasonal Handbooks
 
-| Season and opening | ChatGPT | Claude | Focus |
-| --- | --- | --- | --- |
-| **Advent**<br>Evening Prayer I of the First Sunday of Advent | [Advent: Come, Lord Jesus](../web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent.html) | Planned | Christ’s return and the approach of the Nativity. |
-| **Christmas Time**<br>Evening Prayer I of the Nativity | Planned | Planned | The Nativity, Epiphany and Baptism of the Lord. |
-| **Ordinary Time**<br>After the Baptism of the Lord and again on the Monday after Pentecost | Planned | Planned | The Sunday Gospels before Lent and after Easter Time. |
-| **Lent**<br>Ash Wednesday | Planned | Planned | Conversion, baptism and preparation for Easter. |
-| **Sacred Paschal Triduum**<br>Evening Mass of the Lord’s Supper | Planned | Planned | Holy Thursday through Evening Prayer on Easter Sunday. |
-| **Easter Time**<br>Easter Sunday of the Resurrection | Planned | Planned | The fifty days from the Resurrection through Pentecost. |
+| Season and opening | ChatGPT | Claude | Gemini | Focus |
+| --- | --- | --- | --- | --- |
+| **Advent**<br>Evening Prayer I of the First Sunday of Advent | [Advent: Come, Lord Jesus](../web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent.html) | Planned | [The Watch of the Coming Lord: A Handbook for Advent in the Postconciliar Roman Rite](../web/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent.html) · [PDF](../pdf/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent.pdf) | Christ’s return and the approach of the Nativity. |
+| **Christmas Time**<br>Evening Prayer I of the Nativity | Planned | Planned | Planned | The Nativity, Epiphany and Baptism of the Lord. |
+| **Ordinary Time**<br>After the Baptism of the Lord and again on the Monday after Pentecost | Planned | Planned | Planned | The Sunday Gospels before Lent and after Easter Time. |
+| **Lent**<br>Ash Wednesday | Planned | Planned | Planned | Conversion, baptism and preparation for Easter. |
+| **Sacred Paschal Triduum**<br>Evening Mass of the Lord’s Supper | Planned | Planned | Planned | Holy Thursday through Evening Prayer on Easter Sunday. |
+| **Easter Time**<br>Easter Sunday of the Resurrection | Planned | Planned | Planned | The fifty days from the Resurrection through Pentecost. |
 
 [The liturgical year in the United States](https://www.usccb.org/prayer-worship/liturgical-year)
 

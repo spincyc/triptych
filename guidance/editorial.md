@@ -547,7 +547,15 @@ every raster plate automatically. For Pandoc web-edition fidelity, never place
 a braced group immediately after `\noindent` (`\noindent{\footnotesize ...}`,
 which Pandoc consumes as an argument of `\noindent` and silently drops), and
 never place `\addlinespace[...]` after a `longtable`'s final `\\` before
-`\end{longtable}` (which Pandoc reads as an empty row).
+`\end{longtable}` (which Pandoc reads as an empty row). Avoid defining a
+custom macro with `\providecommand` under a name already taken by
+`scripts/web-shim.tex` (notably `\term`, which `web-shim.tex` defines as a
+one-argument macro — a two-argument `\providecommand{\term}[2]` silently
+collapses table rows in Pandoc), guard print-only `\thesection` appendix
+prefixes with `\ifdefined\TriptychPrintEdition` so Pandoc does not emit empty
+`Appendix :` headings, and begin every `\item` in a `References` section at
+column 0 so `tools/check-content-preflight --check references-used` parses
+every bibliographic entry.
 
 ## Evidence and claims
 
