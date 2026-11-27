@@ -1,5 +1,5 @@
 {
- "generation_commit": "98916eaa7b553da04d0e2da379caacd3ad0248ce",
+ "generation_commit": "78f3f34d3667ff57c6f0a1514f4a0110e4043e58",
  "readers": {
   "claude/articles/canon-law/clerical-celibacy-chastity-and-continence": {
    "canonical": "articles/canon-law/clerical-celibacy-chastity-and-continence",
@@ -5131,6 +5131,100 @@
    "source_format": "latex",
    "title": "The Holy Rosary: Form, Mysteries, History, and Teaching"
   },
+  "gemini/articles/faith/four-last-things-01-death": {
+   "canonical": "articles/faith/four-last-things-01-death",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gemini/articles/faith/four-last-things-01-death"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "contents": true,
+    "document": "articles/faith/four-last-things-01-death",
+    "eligibility": "eligible",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-27",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gemini/articles/faith/four-last-things-01-death/generation-metadata.tex",
+    "src/gemini/articles/faith/four-last-things-01-death/main.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gemini/articles/faith/four-last-things-01-death",
+    "src/common"
+   ],
+   "document": "articles/faith/four-last-things-01-death",
+   "edition": "main",
+   "entrypoint": "src/gemini/articles/faith/four-last-things-01-death/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gemini/articles/faith/four-last-things-01-death",
+   "kind": "article-faith",
+   "provider": "gemini",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "The Four Last Things, I: Into Thy Hands"
+  },
+  "gemini/articles/faith/four-last-things-02-judgment": {
+   "canonical": "articles/faith/four-last-things-02-judgment",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gemini/articles/faith/four-last-things-02-judgment"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "contents": true,
+    "document": "articles/faith/four-last-things-02-judgment",
+    "eligibility": "eligible",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-27",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gemini/articles/faith/four-last-things-02-judgment/generation-metadata.tex",
+    "src/gemini/articles/faith/four-last-things-02-judgment/main.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gemini/articles/faith/four-last-things-02-judgment",
+    "src/common"
+   ],
+   "document": "articles/faith/four-last-things-02-judgment",
+   "edition": "main",
+   "entrypoint": "src/gemini/articles/faith/four-last-things-02-judgment/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gemini/articles/faith/four-last-things-02-judgment",
+   "kind": "article-faith",
+   "provider": "gemini",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "The Four Last Things, II: The Books Were Opened"
+  },
   "gemini/articles/faith/four-last-things-03-hell": {
    "canonical": "articles/faith/four-last-things-03-hell",
    "command": [
@@ -5177,6 +5271,53 @@
    "release_status": "alpha",
    "source_format": "latex",
    "title": "The Four Last Things, III: Depart from Me"
+  },
+  "gemini/articles/faith/four-last-things-04-heaven": {
+   "canonical": "articles/faith/four-last-things-04-heaven",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gemini/articles/faith/four-last-things-04-heaven"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "contents": true,
+    "document": "articles/faith/four-last-things-04-heaven",
+    "eligibility": "eligible",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-27",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gemini/articles/faith/four-last-things-04-heaven/generation-metadata.tex",
+    "src/gemini/articles/faith/four-last-things-04-heaven/main.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gemini/articles/faith/four-last-things-04-heaven",
+    "src/common"
+   ],
+   "document": "articles/faith/four-last-things-04-heaven",
+   "edition": "main",
+   "entrypoint": "src/gemini/articles/faith/four-last-things-04-heaven/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gemini/articles/faith/four-last-things-04-heaven",
+   "kind": "article-faith",
+   "provider": "gemini",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "The Four Last Things, IV: Come, Ye Blessed"
   },
   "gemini/articles/faith/reading-metaphysics": {
    "canonical": "articles/faith/reading-metaphysics",
@@ -5319,6 +5460,100 @@
    "source_format": "latex",
    "title": "The Linen Cloths at the Empty Tomb"
   },
+  "gemini/biographies/saint-ambrose-of-milan": {
+   "canonical": "biographies/saint-ambrose-of-milan",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gemini/biographies/saint-ambrose-of-milan"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "contents": true,
+    "document": "biographies/saint-ambrose-of-milan",
+    "eligibility": "eligible",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-27",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gemini/biographies/saint-ambrose-of-milan/generation-metadata.tex",
+    "src/gemini/biographies/saint-ambrose-of-milan/main.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gemini/biographies/saint-ambrose-of-milan",
+    "src/common"
+   ],
+   "document": "biographies/saint-ambrose-of-milan",
+   "edition": "main",
+   "entrypoint": "src/gemini/biographies/saint-ambrose-of-milan/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gemini/biographies/saint-ambrose-of-milan",
+   "kind": "biography",
+   "provider": "gemini",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "Saint Ambrose of Milan: Magistrate, Bishop, and Doctor of the Church"
+  },
+  "gemini/biographies/saint-gregory-the-great": {
+   "canonical": "biographies/saint-gregory-the-great",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gemini/biographies/saint-gregory-the-great"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "contents": true,
+    "document": "biographies/saint-gregory-the-great",
+    "eligibility": "eligible",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-27",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gemini/biographies/saint-gregory-the-great/generation-metadata.tex",
+    "src/gemini/biographies/saint-gregory-the-great/main.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gemini/biographies/saint-gregory-the-great",
+    "src/common"
+   ],
+   "document": "biographies/saint-gregory-the-great",
+   "edition": "main",
+   "entrypoint": "src/gemini/biographies/saint-gregory-the-great/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gemini/biographies/saint-gregory-the-great",
+   "kind": "biography",
+   "provider": "gemini",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "Pope Saint Gregory the Great: Monk, Pastor, and Consul of God"
+  },
   "gemini/liturgy/roman-rite/1962/seasons/advent": {
    "canonical": "liturgy/roman-rite/1962/seasons/advent",
    "command": [
@@ -5365,6 +5600,53 @@
    "release_status": "alpha",
    "source_format": "latex",
    "title": "Keeping Advent: A Companion to the 1962 Roman Rite"
+  },
+  "gemini/liturgy/roman-rite/1962/seasons/christmas": {
+   "canonical": "liturgy/roman-rite/1962/seasons/christmas",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gemini/liturgy/roman-rite/1962/seasons/christmas"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "contents": true,
+    "document": "liturgy/roman-rite/1962/seasons/christmas",
+    "eligibility": "eligible",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-27",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gemini/liturgy/roman-rite/1962/seasons/christmas/generation-metadata.tex",
+    "src/gemini/liturgy/roman-rite/1962/seasons/christmas/main.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gemini/liturgy/roman-rite/1962/seasons/christmas",
+    "src/common"
+   ],
+   "document": "liturgy/roman-rite/1962/seasons/christmas",
+   "edition": "main",
+   "entrypoint": "src/gemini/liturgy/roman-rite/1962/seasons/christmas/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gemini/liturgy/roman-rite/1962/seasons/christmas",
+   "kind": "seasonal-handbook-1962",
+   "provider": "gemini",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "Keeping Christmas: A Companion to the 1962 Roman Rite"
   },
   "gemini/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/altar-server": {
    "canonical": "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/reference/roman-sanctuary-dictionary/altar-server",
@@ -5554,6 +5836,53 @@
    "source_format": "latex",
    "title": "The Illustrated Dictionary of the Postconciliar Roman Sanctuary: Sacristan Visual Dictionary"
   },
+  "gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent": {
+   "canonical": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "contents": true,
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent",
+    "eligibility": "eligible",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-27",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/generation-metadata.tex",
+    "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/main.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent",
+    "src/common"
+   ],
+   "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent",
+   "edition": "main",
+   "entrypoint": "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent",
+   "kind": "seasonal-handbook-postconciliar",
+   "provider": "gemini",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "The Watch of the Coming Lord: A Handbook for Advent in the Postconciliar Roman Rite"
+  },
   "gemini/theology/angelology": {
    "canonical": "theology/angelology",
    "command": [
@@ -5647,6 +5976,57 @@
    "release_status": "alpha",
    "source_format": "latex",
    "title": "The Dwelling of the Living God: The Ark of the Covenant and the Mother of the Lord"
+  },
+  "gemini/theology/sacraments": {
+   "canonical": "theology/sacraments",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gemini/theology/sacraments"
+   ],
+   "declaration": {
+    "basis": "wide-matrix",
+    "blocking_constructs": [
+     "landscape"
+    ],
+    "contents": true,
+    "document": "theology/sacraments",
+    "eligibility": "conditional",
+    "rationale": "Three landscape tables across Appendices A--C hold the metaphysical and sacramental lexicon, the seven-sacrament comparative matrix, and the twenty-four-Church initiation table; the web reader renders them as scrollable wide tables.",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-27",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gemini/theology/sacraments/generation-metadata.tex",
+    "src/gemini/theology/sacraments/main.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gemini/theology/sacraments",
+    "src/common"
+   ],
+   "document": "theology/sacraments",
+   "edition": "main",
+   "entrypoint": "src/gemini/theology/sacraments/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gemini/theology/sacraments",
+   "kind": "sacraments",
+   "provider": "gemini",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "The Seven Sacraments"
   },
   "gpt/articles/canon-law/clerical-celibacy-chastity-and-continence": {
    "canonical": "articles/canon-law/clerical-celibacy-chastity-and-continence",
