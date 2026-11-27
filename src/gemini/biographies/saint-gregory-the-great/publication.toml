@@ -1,0 +1,31 @@
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[document]
+type = 'biography-v1'
+
+[document.main]
+pdftitle = 'Pope Saint Gregory the Great: Monk, Pastor, and Consul of God'
+pdfsubject = 'A source-first historical biography of Pope Saint Gregory the Great'
+title = 'Pope Saint Gregory the Great'
+subtitle = 'Monk, Pastor, and Consul of God'
+kind-line = 'A source-first historical biography'
+body = [
+  'sections/00-question',
+  'sections/10-rome-and-family',
+  'sections/20-conversion-and-constantinople',
+  'sections/30-flood-plague-election',
+  'sections/40-regula-pastoralis',
+  'sections/50-shepherd-and-statesman',
+  'sections/60-mission-to-the-english',
+  'sections/70-exegete-preacher-hagiographer',
+  'sections/80-liturgy-and-chant',
+  'sections/90-death-and-reception',
+  'sections/100-tradition-audit',
+  'sections/110-conclusion',
+]
+appendix = [
+  { source = 'sections/120-scope-chronology-evidence', roles = ['scope-appendix'] },
+  { source = 'sections/130-references', roles = ['references'] },
+]

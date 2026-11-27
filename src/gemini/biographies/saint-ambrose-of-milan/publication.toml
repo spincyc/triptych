@@ -1,0 +1,30 @@
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[document]
+type = 'biography-v1'
+
+[document.main]
+pdftitle = 'Saint Ambrose of Milan: Magistrate, Bishop, and Doctor of the Church'
+pdfsubject = 'A source-first historical biography of Saint Ambrose of Milan'
+title = 'Saint Ambrose of Milan'
+subtitle = 'Magistrate, Bishop, and Doctor of the Church'
+kind-line = 'A source-first historical biography'
+body = [
+  'sections/00-question',
+  'sections/10-rome-and-magistracy',
+  'sections/20-election-and-formation',
+  'sections/30-brother-pastor-teacher',
+  'sections/40-scripture-mystagogy-song',
+  'sections/50-victory-and-basilicas',
+  'sections/60-ambrose-and-augustine',
+  'sections/70-theodosius-callinicum-thessalonica',
+  'sections/80-final-years-death-reception',
+  'sections/90-tradition-audit',
+  'sections/100-conclusion',
+]
+appendix = [
+  { source = 'sections/110-scope-chronology-evidence', roles = ['scope-appendix'] },
+  { source = 'sections/120-references', roles = ['references'] },
+]

@@ -1,0 +1,194 @@
+schema = 2
+record_type = "bindings"
+document = "biographies/saint-gregory-the-great"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-12.ccel-web-2026-09-28.ccel-text-7bb1db6e"
+loci = [
+  "Prolegomena (Barmby)",
+  "Regula Pastoralis I.1-7; II.1, 4-6; III Prol., 1-2; IV",
+  "Selected Epistles I.5-7, 10, 16-17, 25, 35-36, 43-44, 47, 74",
+  "Selected Epistles II.46, 54; III.65; IV.26, 30",
+  "Selected Epistles V.18-21, 39-43, 49",
+  "Selected Epistles VI.5, 7, 14-17, 51-59; VII.33-34, 38, 40; VIII.30",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Unrevised CCEL printing of NPNF Series 2, Vol. 12 (trans. James Barmby, 1895; Gregory section begins at line 20973). Inspected directly on 2026-11-27 across Barmby's Prolegomena (lines 20973-22764), complete Regula Pastoralis (lines 22777-28786), and Selected Epistles Books I-VIII in Maurist/PL 77 numbering (lines 28795-45196; Book VIII ends at line 45196; exact per-epistle line ranges logged in research/source-audit.md). Serves both as direct Class A witness for Regula Pastoralis and Epistles I-VIII and as named Class K reporting carrier for untracked works (Dialogi, Epistles IX-XIV, Whitby/Bede/Paul/John Vitae)."
+source_fingerprint = "sha256:f46e21f750c46c8eabc5db09be985f0f6bbee42101c20dcdea2fc47b044e24bd"
+
+[[bindings]]
+source_id = "artifact.gregory-the-great.moralia-in-iob.2026-10-12-library-of-fathers-lectionarycentral.complete-text-d9f9ed86"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete Oxford Library of the Fathers English text of Moralia in Iob (1844-1850). Inspected directly on 2026-11-27 across the Preface (sections 1-21, lines 1-490) and Epistle Dedicatory to Leander of Seville (sections 1-5, lines 506-728) for Gregory's autobiographical account of his delayed conversion, monastic retreat, Constantinople embassy, oral genesis of the Moralia, threefold exegetical method, and chronic bodily infirmities. Bound under role = 'context' without machine loci because the work's registered locus_pattern covers only numbered book.chapter loci."
+source_fingerprint = "sha256:f86bcd2a0e74aedfede4a2a00415c5e8a1a545c525df8ba06e480a9fd97a0e42"
+
+[[bindings]]
+source_id = "artifact.gregory-the-great.moralia-in-iob.2026-10-12-library-of-fathers-lectionarycentral.complete-text-d9f9ed86"
+loci = ["1.1", "14.56"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete Oxford Library of the Fathers English text of Moralia in Iob (1844-1850). Inspected directly on 2026-11-27 at Book I opening (lines 732-950) and Book XIV.56 (sections 72-77, lines 23210-23320) for Gregory's firsthand Constantinople dispute with Patriarch Eutychius on the palpable risen body before Emperor Tiberius II."
+source_fingerprint = "sha256:f86bcd2a0e74aedfede4a2a00415c5e8a1a545c525df8ba06e480a9fd97a0e42"
+
+[[bindings]]
+source_id = "artifact.gregory-of-tours.historia-francorum.1927-dalton-oxford-volume-2.ia-djvu-text-f9e8d1d2"
+loci = ["Book X.1 (pp. 425-428)"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "O. M. Dalton's 1927 Oxford English translation of Gregory of Tours, Historia Francorum, vol. 2. Inspected directly on 2026-11-27 at lines 20040-20308 for the contemporary eyewitness account by the deacon of Tours of the November 589 Tiber flood, 590 lues inguinaria plague, death of Pelagius II, Gregory's reluctant election and intercepted letter to Maurice, Oratio de mortalitate, sevenfold litany to St. Mary Major (with zero mention of Archangel Michael), flight, and consecration."
+source_fingerprint = "sha256:75194f255ec1682a4dfbfa54af329001b34bd5d560c34a69331b62f422bc4aa4"
+
+[[bindings]]
+source_id = "artifact.gregory-of-tours.historia-francorum.1884-mgh-ss-rer-merov-1-arndt.ia-djvu-text-c3507e0b"
+loci = ["Book X.1 (pp. 406-409)"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "W. Arndt's 1884 MGH Latin critical edition of Gregory of Tours, Historia Francorum. Inspected directly on 2026-11-27 at lines 31960-32116 to verify Latin terminology (lues inguinaria, litania septiformis, serica vestis) and confirm absence of the Castel Sant'Angelo apparition in the eyewitness report."
+source_fingerprint = "sha256:db2008993ed2e00710fdc4b1c4b3e3e256f7796cfc275965dc6dc4969041e1ea"
+
+[[bindings]]
+source_id = "artifact.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.complete-extracted-text-dc25dd69"
+loci = ["1.1", "1.5", "8.1", "20", "37.7-9", "38.15-16", "40.7", "40.11-12"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete tracked Latin text of Homiliae XL in Evangelia (Wikisource extraction). Inspected directly on 2026-11-27 across the Preface to Secundinus (lines 3-8), Homilies 1-5 (lines 10-60), Homily 37.7-9 (lines 523-526, captive's weekly Masses and Bishop Cassius of Narni), Homily 38.15-16 (line 547, firsthand family testimony naming Tharsilla, Gordiana, Aemiliana, Pope Felix III as atavus meus, mother at Tharsilla's deathbed, and monastery beside SS. John and Paul), and Homily 40.7, 11-12 (lines 570-575, irreversibility of hell and Romula)."
+source_fingerprint = "sha256:dd03fd6ff09944af5ba01e741418ae3278e9bc68a08acb4d0cd4538129984eea"
+
+[[bindings]]
+source_id = "artifact.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.1.1-opening-checked-text-d5bae2e1"
+loci = ["1.1"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Checked Migne PL 76 (Garnier 1878) Latin excerpt for Homily 1.1 opening, inspected directly on 2026-11-27."
+source_fingerprint = "sha256:2200a8f7f375e979e9b078dac0dd0acd0daf9c1174dabe21bfce8a46b745f8dc"
+
+[[bindings]]
+source_id = "artifact.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.1.5-world-grown-old-checked-text-7989f99e"
+loci = ["1.5"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Checked Migne PL 76 (Garnier 1878) Latin excerpt for Homily 1.5 ('world grown old' / mundus senescens), inspected directly on 2026-11-27."
+source_fingerprint = "sha256:bdb1e8a0ce204232e802af75c91acaaf14f6a0b39d9d677cc101ab635ef8ba0c"
+
+[[bindings]]
+source_id = "artifact.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.8.1-bethlehem-checked-text-3f9b22a4"
+loci = ["8.1"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Checked Migne PL 76 (Garnier 1878) Latin excerpt for Homily 8.1 (Bethlehem as domus panis), inspected directly on 2026-11-27."
+source_fingerprint = "sha256:7c1df577bd538c2962971ce23d75526a9512ca0be7ba9f65fff054f14f643aff"
+
+[[bindings]]
+source_id = "artifact.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.8.1-manger-checked-text-2849e39d"
+loci = ["8.1"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Checked Migne PL 76 (Garnier 1878) Latin excerpt for Homily 8.1 (Christ in the manger, fenum nostrum vertit in frumentum), inspected directly on 2026-11-27."
+source_fingerprint = "sha256:6373d8d7811f5d202ef21727c7ff98c160bb076f026f4a24e9420943237d2bee"
+
+[[bindings]]
+source_id = "artifact.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.8.1-masses-and-census-checked-text-8312ebef"
+loci = ["8.1"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Checked Migne PL 76 (Garnier 1878) Latin excerpt for Homily 8.1 (three Christmas Masses in Rome and Luke 2 census), inspected directly on 2026-11-27."
+source_fingerprint = "sha256:f9a342f6f6d5fd8a3b75cde9dcebdc20cf8bee0b6cc1b7eb1674f3f55c52ed2c"
+
+[[bindings]]
+source_id = "artifact.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.20-heading-checked-text-93a35bf5"
+loci = ["20"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Checked Migne PL 76 (Garnier 1878) Latin stational heading for Homily 20, inspected directly on 2026-11-27."
+source_fingerprint = "sha256:d124cf6a00d10e46c683a22bc4e0889579b4a83259b9ca821b9d1c89dd2a44fc"
+
+[[bindings]]
+source_id = "artifact.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.ia-djvu-text-13c0bbad"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Full Migne PL 76 (Garnier 1878) DjVu OCR text. Inspected directly on 2026-11-27 at lines 104420-104543 for the appended Oratio ad plebem de mortalitate (cols. 1311-1314), which lies outside the 40 numbered Gospel homilies and is therefore bound under role = 'context' without machine loci."
+source_fingerprint = "sha256:d6e97546a3f4c28ab085c1a9ee0b1610fa5f9ad5380e1139335c24538542c9c2"
+
+[[bindings]]
+source_id = "artifact.gregory-the-great.homiliae-in-hiezechihelem-prophetam.1849-migne-pl-76-corpus-corporum.wikisource-raw-wikitext-16854df0"
+loci = ["II.6.1", "II.6.22", "II.6.23", "II.7.7", "II.7.8", "II.7.9", "II.10.24"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete tracked Latin text of Homiliae in Hiezechihelem Prophetam (Migne PL 76, 1849). Inspected directly on 2026-11-27 at Book II Homily 6.1, 22-23 ('Ubi enim senatus? Ubi jam populus? ... jam vacua ardet Roma'), Homily 7.7-9 (lines 565-568: seven gifts of the Spirit, humility, and faith as threshold), and Homily 10.24 (breaking off preaching during King Agilulf's 593 siege of Rome)."
+source_fingerprint = "sha256:eef2e45be4261088b0f3ede88ae172bac8ff3c4f12787d8433f85b82b81b6079"
+
+[[bindings]]
+source_id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.pdf-text-layout-6ca97fd7"
+loci = [
+  "Introduction (pp. xv-xxxii)",
+  "Natale Sancti Gregorii Papae (p. 25)",
+  "Hucusque Preface (pp. 145-146)",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "H. A. Wilson's 1915 Henry Bradshaw Society edition of the Hadrianum Gregorian Sacramentary. Inspected directly on 2026-11-27 at lines 642-1529 (Introduction on Hadrian I's transmission to Charlemagne c. 784-791 and liturgical stratification), lines 3393-3404 (Mass for Gregory's own feast on 12 March, p. 25), and lines 9245-9316 (Carolingian Hucusque preface marking Gregory's feast with virgulae as added by successors)."
+source_fingerprint = "sha256:0da5f3259e645fa4908aa632beef47483824fccf4e5b83ddc7e60b0f313fe9bb"
+
+[[bindings]]
+source_id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-hanc-igitur-checked-latin-b46e0e89"
+loci = ["Canon Actionis: Hanc igitur"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Checked Latin text of the Roman Canon Hanc igitur clause ('diesque nostros in tua pace disponas, atque ab aeterna damnatione nos eripi, et in electorum tuorum iubeas grege numerari') from Wilson's 1915 Hadrianum. Inspected directly on 2026-11-27."
+source_fingerprint = "sha256:d5b86f98f1a32ab576dac5de73b0e932e7a6b5be1d6c3c0aaa486f9933032636"
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-78.latin-migne-pl-78.ia-djvu-ocr-301707e7"
+loci = [
+  "Praefatio in Librum Sacramentorum & Hadrian I letter (cols. 17-26)",
+  "Ad Antiphonarium Praefatio & John the Deacon Vita II.6-9 (cols. 649-652)",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Migne Patrologia Latina vol. 78 (Benedictine edition of Gregorian liturgical books). Inspected directly on 2026-11-27 at lines 640-1050 (Sacramentary prefaces and Hadrian I's letter to Charlemagne) and lines 56362-56500 (Antiphonary preface and Pierre de Goussainville quoting John the Deacon's Vita S. Gregorii II.6-9 on the Antiphonarium centonem, schola cantorum, sickbed, and flagellum)."
+source_fingerprint = "sha256:6a3bb5db35fdc14ee466c319914ba22c6f18ac2eefe4d3e314365d9748b90237"
+
+[[bindings]]
+source_id = "passage.adrian-fortescue.the-mass-a-study-of-the-roman-liturgy.longmans-1922.p-172"
+loci = ["p-172"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Verified passage record for Adrian Fortescue, The Mass (1922), p. 172, summarizing Gregory's three liturgical changes (Kyrie eleison, addition to Hanc igitur, and insertion of the Pater noster before Communion) and citing Benedict XIV (De ss. Missae Sacrificio II.xii.12) on the Roman Canon. Inspected directly on 2026-11-27."
+source_fingerprint = "sha256:07379bf425cd56740571331d4efa4a33daeaf683b379428ec7f7ac6301cd8f39"
+
+[[bindings]]
+source_id = "passage.adrian-fortescue.the-mass-a-study-of-the-roman-liturgy.longmans-1922.p-234-235"
+loci = ["p-234-235"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Verified passage record for Adrian Fortescue, The Mass (1922), pp. 234-235, quoting Gregory's Ep. IX.12 on Roman daily Kyrie eleison and Christe eleison usage and rejecting John the Deacon's claim that Gregory introduced the Kyrie by citing the Council of Vaison (529). Inspected directly on 2026-11-27."
+source_fingerprint = "sha256:31603732cf8091ee1fc6e7d0d77d61a9065973d47ac091f10b119600b186cea8"
+
+[[bindings]]
+source_id = "artifact.catholic-church.martyrologium-romanum.rome-propaganda-fide-1902.ia-djvu-text-a536fca7"
+loci = ["12 March (p. 36)", "3 September (p. 132)"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Tracked DjVu text of the 1902 Leonine Martyrologium Romanum (Propaganda Fide). Inspected directly on 2026-11-27 at lines 9241-9301 (12 March, p. 36: Gregory 'Magnus est dictus, et Anglorum Apostolus appellatus') and lines 16790-16844 (3 September, p. 132: 'ordinatio in Summum Pontificem')."
+source_fingerprint = "sha256:41317544b690f2a7b48fc64cf64639ae32df4b5976e5cc8461c3c65bb8f1e9e0"
+
+[[bindings]]
+source_id = "artifact.benedict-of-nursia.regula-benedicti.latin-wikisource-web-2026-09-05.regula-latin-text"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Tracked Latin text of the Rule of St. Benedict, consulted directly on 2026-11-27 as sixth-century Italian cenobitic context alongside reported accounts of Gregory's Dialogi Book II; bound under role = 'context' without overclaiming that Gregory's Caelian monastery observed the Benedictine Rule."
+source_fingerprint = "sha256:7437374ba0f7d381913f9581217e7f4d5d89a11a6b9475f572c4f23d2949cc27"
+
+[[bindings]]
+source_id = "work.gregory-the-great.dialogi"
+role = "context"
+states = ["cataloged"]
+context = "Catalog-only binding: no edition or artifact of Gregory's Dialogi is tracked locally. Cited strictly at reported ceiling (Book II on St. Benedict, Book III.33, and Book IV.55/57 on monk Justus) through James Barmby's Prolegomena in NPNF2-12 and editorial cross-references in Migne PL 76."
+
+[[bindings]]
+source_id = "work.bede.historia-ecclesiastica-gentis-anglorum"
+role = "reception"
+states = ["cataloged"]
+context = "Catalog-only binding: no edition or artifact of Bede's Historia Ecclesiastica is tracked locally. Cited strictly at reported ceiling (I.23-32, II.1 on Non Angli and Gregory's epitaph, V.24) through James Barmby's Prolegomena and notes in NPNF2-12."
