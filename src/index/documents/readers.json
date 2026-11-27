@@ -1,5 +1,5 @@
 {
- "generation_commit": "78f3f34d3667ff57c6f0a1514f4a0110e4043e58",
+ "generation_commit": "e19dd20cd17c3360dccc531f68f52806e142258c",
  "readers": {
   "claude/articles/canon-law/clerical-celibacy-chastity-and-continence": {
    "canonical": "articles/canon-law/clerical-celibacy-chastity-and-continence",
@@ -5554,6 +5554,156 @@
    "source_format": "latex",
    "title": "Pope Saint Gregory the Great: Monk, Pastor, and Consul of God"
   },
+  "gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent": {
+   "canonical": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "eligibility": "eligible",
+    "inspected": "2026-11-26",
+    "inspected_by": "gemini (proper-study v20 run 1166cebbde68c425, cold web-review iteration 1)",
+    "inspection": "Independent cold web-review (iteration 1, PASS, 0 findings) verified the full converted Markdown (109,294 bytes, 16,846 words; sha256:9df4339dcf1678ad492c589dc401687ff583ebb203d897b07a39b59147e24315) and its in-memory scripts/_markdown_render.py HTML (122,952 bytes, checked with scripts/_web_reader_markup.expand and site.css/publication-reader.css selectors; no live browser viewport render) against canonical TeX sources (main.tex, sections/01-09, generated/scriptural-date-location.tex, research/chronology-table.tex, research/chronology-annotations.tex, propers/verified.md); synthesis and homily companions remain converter-verified only.",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-25",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generation-metadata.tex",
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/main.tex",
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/proper-components.toml"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "src/common"
+   ],
+   "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+   "edition": "main",
+   "entrypoint": "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+   "kind": "proper-1962",
+   "provider": "gemini",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "First Sunday of Advent: 1962 Roman Missal Study"
+  },
+  "gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-homily": {
+   "canonical": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-homily"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "eligibility": "eligible",
+    "inspected": "2026-11-26",
+    "inspected_by": "gemini (proper-study v20 run 1166cebbde68c425, cold web-review iteration 1)",
+    "inspection": "Independent cold web-review (iteration 1, PASS, 0 findings) verified the full converted Markdown (109,294 bytes, 16,846 words; sha256:9df4339dcf1678ad492c589dc401687ff583ebb203d897b07a39b59147e24315) and its in-memory scripts/_markdown_render.py HTML (122,952 bytes, checked with scripts/_web_reader_markup.expand and site.css/publication-reader.css selectors; no live browser viewport render) against canonical TeX sources (main.tex, sections/01-09, generated/scriptural-date-location.tex, research/chronology-table.tex, research/chronology-annotations.tex, propers/verified.md); synthesis and homily companions remain converter-verified only.",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-25",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generation-metadata.tex",
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/homily.tex",
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/proper-components.toml"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "src/common"
+   ],
+   "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-homily",
+   "edition": "homily",
+   "entrypoint": "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/homily.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-homily",
+   "kind": "proper-1962",
+   "provider": "gemini",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "First Sunday of Advent: Homily (1962 Roman Missal)"
+  },
+  "gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-synthesis": {
+   "canonical": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-synthesis"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "eligibility": "eligible",
+    "inspected": "2026-11-26",
+    "inspected_by": "gemini (proper-study v20 run 1166cebbde68c425, cold web-review iteration 1)",
+    "inspection": "Independent cold web-review (iteration 1, PASS, 0 findings) verified the full converted Markdown (109,294 bytes, 16,846 words; sha256:9df4339dcf1678ad492c589dc401687ff583ebb203d897b07a39b59147e24315) and its in-memory scripts/_markdown_render.py HTML (122,952 bytes, checked with scripts/_web_reader_markup.expand and site.css/publication-reader.css selectors; no live browser viewport render) against canonical TeX sources (main.tex, sections/01-09, generated/scriptural-date-location.tex, research/chronology-table.tex, research/chronology-annotations.tex, propers/verified.md); synthesis and homily companions remain converter-verified only.",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-25",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/generation-metadata.tex",
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/proper-components.toml",
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/synthesis.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent",
+    "src/common"
+   ],
+   "document": "liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-synthesis",
+   "edition": "synthesis",
+   "entrypoint": "src/gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent/synthesis.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gemini/liturgy/roman-rite/1962/propers/temporal/01-first-sunday-of-advent-synthesis",
+   "kind": "proper-1962",
+   "provider": "gemini",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "First Sunday of Advent: Concise Study (1962 Roman Missal)"
+  },
   "gemini/liturgy/roman-rite/1962/seasons/advent": {
    "canonical": "liturgy/roman-rite/1962/seasons/advent",
    "command": [
@@ -5835,6 +5985,156 @@
    "release_status": "alpha",
    "source_format": "latex",
    "title": "The Illustrated Dictionary of the Postconciliar Roman Sanctuary: Sacristan Visual Dictionary"
+  },
+  "gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b": {
+   "canonical": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+    "eligibility": "eligible",
+    "inspected": "2026-11-26",
+    "inspected_by": "gemini (gemini-4-neon, proper-study v20 run 6360bf57cd7d36ba, web-review iteration 2)",
+    "inspection": "Independent cold web review of canonical expansive study conversion (sha256:61307d96607693a402126bf71103f2c2f3775fdf915bb10c578b2ebeb850e9d0, converter commit 2f96ab50c1, source commit d721fd26d6, derived revision 2026-11-26T10:01:14Z): full Markdown and in-memory locked Python-Markdown HTML audit via scripts/_markdown_render.py with CSS selector checks against canonical TeX sources, retrieved Scripture, and rights-limited records (PASS, 0 findings; no live browser visual or multi-viewport review claimed). Synthesis and homily companion readers remain converter-verified only.",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-25",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/generation-metadata.tex",
+    "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/main.tex",
+    "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/proper-components.toml"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+    "src/common"
+   ],
+   "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+   "edition": "main",
+   "entrypoint": "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+   "kind": "proper-postconciliar",
+   "provider": "gemini",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "First Sunday of Advent, Year B: Expansive Study"
+  },
+  "gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b-homily": {
+   "canonical": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b-homily"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+    "eligibility": "eligible",
+    "inspected": "2026-11-26",
+    "inspected_by": "gemini (gemini-4-neon, proper-study v20 run 6360bf57cd7d36ba, web-review iteration 2)",
+    "inspection": "Independent cold web review of canonical expansive study conversion (sha256:61307d96607693a402126bf71103f2c2f3775fdf915bb10c578b2ebeb850e9d0, converter commit 2f96ab50c1, source commit d721fd26d6, derived revision 2026-11-26T10:01:14Z): full Markdown and in-memory locked Python-Markdown HTML audit via scripts/_markdown_render.py with CSS selector checks against canonical TeX sources, retrieved Scripture, and rights-limited records (PASS, 0 findings; no live browser visual or multi-viewport review claimed). Synthesis and homily companion readers remain converter-verified only.",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-25",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/generation-metadata.tex",
+    "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/homily.tex",
+    "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/proper-components.toml"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+    "src/common"
+   ],
+   "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b-homily",
+   "edition": "homily",
+   "entrypoint": "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/homily.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b-homily",
+   "kind": "proper-postconciliar",
+   "provider": "gemini",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "First Sunday of Advent, Year B: Homily"
+  },
+  "gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b-synthesis": {
+   "canonical": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b-synthesis"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+    "eligibility": "eligible",
+    "inspected": "2026-11-26",
+    "inspected_by": "gemini (gemini-4-neon, proper-study v20 run 6360bf57cd7d36ba, web-review iteration 2)",
+    "inspection": "Independent cold web review of canonical expansive study conversion (sha256:61307d96607693a402126bf71103f2c2f3775fdf915bb10c578b2ebeb850e9d0, converter commit 2f96ab50c1, source commit d721fd26d6, derived revision 2026-11-26T10:01:14Z): full Markdown and in-memory locked Python-Markdown HTML audit via scripts/_markdown_render.py with CSS selector checks against canonical TeX sources, retrieved Scripture, and rights-limited records (PASS, 0 findings; no live browser visual or multi-viewport review claimed). Synthesis and homily companion readers remain converter-verified only.",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-25",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/generation-metadata.tex",
+    "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/proper-components.toml",
+    "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/synthesis.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+    "src/common"
+   ],
+   "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b-synthesis",
+   "edition": "synthesis",
+   "entrypoint": "src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/synthesis.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b-synthesis",
+   "kind": "proper-postconciliar",
+   "provider": "gemini",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "First Sunday of Advent, Year B: Concise Study"
   },
   "gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent": {
    "canonical": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent",
