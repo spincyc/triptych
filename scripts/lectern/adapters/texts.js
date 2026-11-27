@@ -173,7 +173,7 @@ module.exports = function texts(realm) {
       controls: { // texts.js:469-495
         author: [{ value: M.ANY, label: 'Any author' }].concat(
           models.map((model) => ({ value: model.id, label: model.id + ' (' + model.documents + ')' }))),
-        edition: [{ value: M.ANY, label: 'Both treatments' }].concat( // page: 'Both editions'
+        edition: [{ value: M.ANY, label: 'All treatments' }].concat( // page: 'All editions'
           (file.providers || []).map((one) => ({ value: one.id, label: one.label + ' (' + one.documents + ')' }))),
         section: [{ value: M.ANY, label: 'Every section' }].concat(
           (file.sections || []).map((one) => ({ value: one.id, label: T.titleCase(one.id) + ' (' + one.works + ')' }))),

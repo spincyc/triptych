@@ -49,6 +49,8 @@ _REVIEW_RECORDS = [
     "src/sources/inventories/classification-review-v1.toml",
     "src/sources/inventories/claude-classification-review-v1.toml",
     "src/sources/inventories/claude-publications-v1.toml",
+    "src/sources/inventories/gemini-classification-review-v1.toml",
+    "src/sources/inventories/gemini-publications-v1.toml",
     "src/sources/inventories/publications-v1.toml",
     "src/sources/inventories/source-family-migration-v1.toml",
 ]

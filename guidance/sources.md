@@ -898,7 +898,8 @@ For an ordinary source-bearing change, refresh and review in this order:
    publication or its owned source surface changes;
 2. review any new or unresolved publication in
    the provider's classification review (`classification-review-v1.toml` for
-   GPT or `claude-classification-review-v1.toml` for Claude), then rerun
+   GPT, `claude-classification-review-v1.toml` for Claude, or
+   `gemini-classification-review-v1.toml` for Gemini), then rerun
    `tools/tpt source-inventory classify --review PATH` when its broad source
    strata change;
 3. run `tools/tpt source-family-migration refresh --audited-on YYYY-MM-DD`, and

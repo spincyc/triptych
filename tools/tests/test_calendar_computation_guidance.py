@@ -221,7 +221,11 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     before_table, table_and_after = main.split("\n| ID | Sunday |", 1)
     cue = before_table.rstrip("\n").rsplit("\n", 1)[-1]
     self.assertTrue(cue.startswith("*Advent handbook*"))
-    for provider, label, prefix in (("gpt", "ChatGPT", ""), ("claude", "Claude", "claude:")):
+    for provider, label, prefix in (
+      ("gpt", "ChatGPT", ""),
+      ("claude", "Claude", "claude:"),
+      ("gemini", "Gemini", "gemini:"),
+    ):
       self.assertIn(f"[{label}](../web/{provider}/{leaf}.html)", cue)
       marker = f"<!-- triptych-publication-reference: {prefix}{leaf} -->"
       self.assertIn(marker, cue)
@@ -240,7 +244,7 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
       "Lent", "Passiontide", "Easter", "Ascensiontide", "Octave of Pentecost",
       "Time after Pentecost",
     ])
-    for provider in ("gpt", "claude"):
+    for provider in ("gpt", "claude", "gemini"):
       self.assertIn(f"](../web/{provider}/{leaf}.html)", rows[0])
     self.assertIn("[Seasonal handbooks](#seasonal-handbooks)", landing.split("## Core and Reference Works", 1)[0])
 
@@ -254,7 +258,7 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     primary, providers = tool.declared_providers(manifest)
     publications = tool.publication_map(manifest)
     occurrences = tool.catalog_occurrences(primary, providers, publications)[0]
-    for provider in ("gpt", "claude"):
+    for provider in ("gpt", "claude", "gemini"):
       self.assertEqual(publications[(provider, leaf)]["catalog"], "library/traditional-latin-mass.md")
       self.assertEqual(occurrences[(provider, leaf)], ["library/traditional-latin-mass.md"])
 
@@ -280,7 +284,7 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
       r"^\| (PC-S\d{2}) \| `[^`]+` \| [^|]+ \|$", registry, re.MULTILINE
     )
     rows = re.findall(
-      r"^\| \*\*(.+?)\*\* \| ([ABC](?:, [ABC])*) \|.*\|.*\|$",
+      r"^\| \*\*(.+?)\*\* \| .*\|$",
       landing.split("## Sunday Propers Calendar")[1].split("### Sunday replacements")[0],
       re.MULTILINE,
     )
@@ -293,14 +297,11 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
       )
     ]
     self.assertEqual(parents, [f"PC-S{n:02d}" for n in range(1, 61)])
-    # 59fe23257 separated provider columns and split published cycles into
-    # their own rows; the 60 parents plus three Triduum entries are unchanged.
-    cycles_by_title = {}
-    for title, cycles in rows:
-      cycles_by_title.setdefault(title, []).extend(cycles.split(", "))
-    self.assertEqual(len(cycles_by_title), 63)
-    for title, cycles in cycles_by_title.items():
-      self.assertCountEqual(cycles, ["A", "B", "C"], title)
+    # One row per week (60 parents plus three Triduum entries, never repeating
+    # a Sunday title across consecutive A/B/C rows); published cycles are tagged
+    # inline (`Year A:`, `Year B:`, `Year C:`) inside each provider column.
+    self.assertEqual(len(rows), 63)
+    self.assertEqual(len(set(rows)), 63)
     self.assertEqual(sum(counts), 184)
     self.assertIn(
       "| PC-T01 | `pc-t01-evening-mass-of-the-lords-supper` | "
@@ -324,16 +325,16 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
       "### Sunday replacements", 1
     )[0]
     self.assertIn(
-      "| **Evening Mass of the Lord's Supper** | A, B, C | Planned | Planned |",
+      "| **Evening Mass of the Lord's Supper** | Planned | Planned | Planned |",
       calendar,
     )
     self.assertIn(
-      "| **Celebration of the Lord's Passion** | A, B, C | Planned | Planned |",
+      "| **Celebration of the Lord's Passion** | Planned | Planned | Planned |",
       calendar,
     )
     self.assertIn(
-      "| **Easter Vigil** | A, B, C | Planned with Easter Sunday | "
-      "Planned with Easter Sunday |",
+      "| **Easter Vigil** | Planned with Easter Sunday | "
+      "Planned with Easter Sunday | Planned with Easter Sunday |",
       calendar,
     )
     # Verify Triduum ordering: Palm Sunday < Supper < Passion < Vigil < Easter
@@ -350,13 +351,13 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     # The production plan no longer restates the registry's counts, so there
     # is no totals table to assert on; the registry above is the one source.
     self.assertIn(
-      "| **Nativity of the Lord** | A, B, C | Planned | Planned |",
+      "| **Nativity of the Lord** | Planned | Planned | Planned |",
       landing,
     )
     self.assertNotRegex(landing, r"\b\d+ planned\b")
     self.assertIn(
       "| PC-R08 | **Commemoration of All the Faithful Departed** | "
-      "A, B, C | Unresolved | Unresolved |",
+      "Unresolved | Unresolved | Unresolved |",
       landing,
     )
 
@@ -495,7 +496,7 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
         self.assertIn("../web/claude/", row.group())
       else:
         self.assertTrue(row.group().endswith("| Planned |"))
-    self.assertIn("| 38 | **Pentecost Sunday** | Planned | Planned |", traditional)
+    self.assertIn("| 38 | **Pentecost Sunday** | Planned | Planned | Planned |", traditional)
 
     postconciliar = (ROOT / "library/novus-ordo-liturgy.md").read_text()
     for name in (

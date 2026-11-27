@@ -147,12 +147,29 @@ local function unmark(block)
   return count
 end
 
-local function flatten(element)
+local INLINE_CONTAINERS = {
+  Emph = true, Strong = true, SmallCaps = true, Underline = true,
+  Strikeout = true, Superscript = true, Subscript = true,
+  Quoted = true, Link = true, Span = true, Cite = true,
+}
+
+local function unwrap_kind(inlines, kind)
   local out = pandoc.Inlines{}
-  for _, inline in ipairs(element.content) do
-    if inline.t == "Strong" then out:extend(inline.content) else out:insert(inline) end
+  for _, inline in ipairs(inlines) do
+    if inline.t == kind then
+      out:extend(unwrap_kind(inline.content, kind))
+    else
+      if INLINE_CONTAINERS[inline.t] and inline.content then
+        inline.content = unwrap_kind(inline.content, kind)
+      end
+      out:insert(inline)
+    end
   end
-  element.content = out
+  return out
+end
+
+local function flatten(element)
+  element.content = unwrap_kind(element.content, "Strong")
   return element
 end
 
@@ -237,6 +254,16 @@ return {
     Pandoc = function(doc)
       io.stderr:write("triptych-table-spans: " .. table.concat(SPANS, " ") .. "\\n")
       return doc
+    end,
+  },
+  {
+    Emph = function(element)
+      element.content = unwrap_kind(element.content, "Emph")
+      return element
+    end,
+    Strong = function(element)
+      element.content = unwrap_kind(element.content, "Strong")
+      return element
     end,
   },
 }
@@ -3135,6 +3162,14 @@ def audit_output(
     nested = len(re.findall(r"\*\*\*\*(?=[^\s*|])|<strong><strong>", markdown))
     if nested:
         failures.append(f"{nested} bold-inside-bold run(s) left in output")
+    nested_emph = len(re.findall(r"<em>\s*<em>", markdown))
+    if not nested_emph and r"\[" in markdown and "*" in markdown:
+        nested_emph = len(re.findall(
+            r"<em>\[</em>|\[</em>[^<]+<em>\]",
+            rendered_on_site("emphasis"),
+        ))
+    if nested_emph:
+        failures.append(f"{nested_emph} italic-inside-italic run(s) left in output")
     stray = re.findall(r"<span>([^<]*)</span>", markdown)
     if stray:
         failures.append("unattributed span(s) left in output: " + "; ".join(sorted(set(stray))))

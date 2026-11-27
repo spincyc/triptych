@@ -8,6 +8,7 @@ from importlib.metadata import PackageNotFoundError
 import re
 import runpy
 import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -2498,6 +2499,59 @@ class WebEditionAuditTests(unittest.TestCase):
         self.assertIn("1 empty emphasis element(s) left in output", failures)
         self.assertIn("1 bold-inside-bold run(s) left in output", failures)
         self.assertIn("collapsed-span mark left in output", failures)
+
+    def test_nested_italic_in_markdown_or_rendered_html_is_reported_and_flattened(self) -> None:
+        failures = DRIVER.audit_output(
+            "Prose.",
+            self.minimal_markdown()
+            + "\n> *\\[*In finem.*\\] Ad te, Domine, \\[*qui deducis*\\] levavi.*\n",
+        )
+        self.assertTrue(
+            any("italic-inside-italic run(s) left in output" in item for item in failures),
+            failures,
+        )
+        mid_failures = DRIVER.audit_output(
+            "Prose.",
+            self.minimal_markdown()
+            + "\n> *Qui regis Israel, intende; \\[*qui deducis velut ovem Joseph.*\\] Qui sedes.*\n",
+        )
+        self.assertTrue(
+            any("italic-inside-italic run(s) left in output" in item for item in mid_failures),
+            mid_failures,
+        )
+        # Italic inside bold ending at a bracket (`*W:*\]**`) is valid Markdown, not nested italic.
+        self.assertEqual(
+            DRIVER.audit_output(
+                "Prose.",
+                self.minimal_markdown() + "\n**Lead *label:*\\]** text.\n",
+            ),
+            [],
+        )
+        with tempfile.NamedTemporaryFile("w", suffix=".lua", encoding="utf-8") as lua, \
+             tempfile.NamedTemporaryFile("w", suffix=".tex", encoding="utf-8") as tex:
+            lua.write(DRIVER.TABLE_FILTER)
+            lua.flush()
+            tex.write(
+                "\\newcommand{\\notread}[1]{[\\textit{#1}]}\n"
+                "\\begin{document}\n"
+                "\\begin{quote}\\itshape \\notread{In finem.} Ad te, \\notread{qui deducis} levavi.\\end{quote}\n\n"
+                "\\begin{quote}\\notread{Unto the end.} To thee, Lord.\\end{quote}\n"
+                "\\end{document}\n"
+            )
+            tex.flush()
+            result = subprocess.run(
+                [DRIVER.pandoc_binary(), "-f", "latex", "-t", DRIVER.PROPER_STUDY_MARKDOWN_DIALECT,
+                 "--wrap=none", f"--lua-filter={lua.name}", tex.name],
+                capture_output=True, text=True, check=True,
+            )
+        self.assertNotIn("*\\[*", result.stdout)
+        self.assertIn("*\\[In finem.\\] Ad te, \\[qui deducis\\] levavi.*", result.stdout)
+        self.assertIn("\\[*Unto the end.*\\] To thee, Lord.", result.stdout)
+        rendered = DRIVER.render_markdown(result.stdout, DRIVER.ROOT)
+        self.assertNotIn("<em>[</em>", rendered)
+        self.assertNotIn("[</em>", rendered)
+        self.assertIn("<em>[In finem.] Ad te, [qui deducis] levavi.</em>", rendered)
+        self.assertIn("[<em>Unto the end.</em>] To thee, Lord.", rendered)
 
     def test_unattributed_span_is_reported(self) -> None:
         failures = DRIVER.audit_output(

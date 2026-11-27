@@ -539,7 +539,17 @@ option is reproduced by passing the same DIR again. The test suite's
 committed-archive reproduction covers schemas 1 to 3 only.
 
 The privacy audit treats an angle-bracketed template root such as
-`<document_root>/` or `<worker scratch>/` as prose, not as a machine path.
+`<document_root>/` or `<worker scratch>/` as prose, and HTML/XML closing tags
+such as `</em>`, `</a>`, or `</span>` as markup, not as machine paths.
+
+`--redact-user-home` is a fifth, independent opt-in (receipt schema 5). Where a
+retained result string quotes the bare current user home directory token (for
+example in a hygiene-grep report, never a subpath with a trailing `/`), it
+becomes `<user-home>` outside source URLs; subpaths under home still refuse.
+The receipt records every changed JSON pointer and original/archived hashes
+without recording the home directory itself. This option was added after run
+`1166cebbde68c425` reached ACCEPTED, for the bare home-prefix grep terms left
+in three research/source-registration summaries.
 
 Archive tooling changes belong after terminal acceptance, not inside a live
 sealed run. The worker-scratch option was added after run `77c1ca91ef2d5e93`

@@ -460,6 +460,28 @@ class PublicDerivativeTests(Fixture):
         self.write_json("state.json", self.state)
         self.assertIn("private absolute filesystem path", self.refusal(redact_repository_paths=True))
 
+    def test_html_closing_tags_in_results_and_packets_are_not_filesystem_paths(self) -> None:
+        path, _ = self.retained_result(
+            summary="Eliminated <em>[</em>...<em>]</em> emphasis toggles and verified </span> and </a>.",
+            findings=[{"id": "WEB-001", "problem": "Rendered as <em>[</em>64:2<em>]</em>."}])
+        packet = self.run_dir / "packets/scope-gate-0000.txt"
+        finding = {"problem": "Check <em>...</em> and <a href=\"#sec\">link</a>."}
+        packet.write_text("STAGE: scope-gate\nPRIOR_FINDINGS: " + json.dumps([finding]) + "\n")
+        self.state["packet_hashes"][0]["hash"] = sha(packet.read_bytes())
+        self.write_json("state.json", self.state)
+        dest = self.archived()
+        self.assertEqual((dest / path.name).read_bytes(), path.read_bytes())
+        self.assertEqual((dest / "packets/scope-gate-0000.txt").read_bytes(), packet.read_bytes())
+
+    def test_filesystem_paths_inside_or_beside_html_closing_tags_still_refuse(self) -> None:
+        for text in ("See </home/user/evidence.json>.",
+                     "Fixed </em> in /tmp/evidence.json.",
+                     "Adjacent word</em>/etc/passwd must still refuse."):
+            with self.subTest(text=text):
+                self.build()
+                self.retained_result(summary=text)
+                self.assertIn("private absolute filesystem path", self.refusal())
+
     def test_derivative_still_verifies_original_hash_before_any_replacement(self) -> None:
         path, _ = self.retained_result(notes=f"Inspect {self.root}/research/evidence.md")
         path.write_bytes(path.read_bytes() + b"\n")
@@ -909,6 +931,54 @@ class OperationHandleTests(Fixture):
         # Captured from the preceding exporter; only the temporary-root-dependent
         # native result hash is normalized. Other tests verify that hash exactly.
         self.assertEqual(sha(normalized), "b174ffbad3cac4480dd3bfde9662eb10f5e4df0e9d034066720c368748024ba2")
+
+
+class UserHomeTests(Fixture):
+    """Bare user-home tokens in retained result strings, never subpaths."""
+
+    def test_existing_options_refuse_bare_user_home(self) -> None:
+        home = Path.home().resolve().as_posix()
+        self.retained_result(summary=f"Hygiene grep found zero {home} or .scratch paths.")
+        for options in ({}, {"redact_repository_paths": True}):
+            with self.subTest(options=options):
+                self.assertIn("private absolute filesystem path", self.refusal(**options))
+
+    def test_bare_user_home_becomes_placeholder_with_schema_5_receipt(self) -> None:
+        home = Path.home().resolve().as_posix()
+        path, original = self.retained_result(
+            summary=f"Confirmed zero {home}, or .scratch occurrences; https://example.test{home}/doc.")
+        native, original_bytes = tree(self.run_dir), path.read_bytes()
+        dest = self.archived(redact_user_home=True)
+        self.assertEqual(json.loads((dest / path.name).read_text()), {
+            **original,
+            "summary": f"Confirmed zero <user-home>, or .scratch occurrences; https://example.test{home}/doc."})
+        self.assertEqual(tree(self.run_dir), native)
+        receipt = json.loads((dest / ARCHIVER.REDACTION_RECEIPT).read_text())
+        self.assertEqual((receipt["schema"], receipt["run_id"]), (5, RUN))
+        self.assertEqual(receipt["operations"], [
+            {"policy": ARCHIVER.USER_HOME_POLICY, "operation": ARCHIVER.USER_HOME_OPERATION}])
+        row = next(item for item in receipt["files"] if item["path"] == path.name)
+        self.assertEqual(row["native_sha256"], sha(original_bytes))
+        self.assertEqual(row["archived_sha256"], sha((dest / path.name).read_bytes()))
+        self.assertEqual(row["changes"], [
+            {"json_pointer": "/summary", "replacements": 1, "policy": ARCHIVER.USER_HOME_POLICY}])
+        record = (dest / "record.md").read_text()
+        self.assertIn("`<user-home>`", record)
+        self.assertNotIn(home, record)
+        self.assertNotIn(home, (dest / ARCHIVER.REDACTION_RECEIPT).read_text())
+
+    def test_subpaths_under_user_home_still_refuse(self) -> None:
+        home = Path.home().resolve().as_posix()
+        self.retained_result(summary=f"Read {home}/private/notes.txt.")
+        self.assertIn("private absolute filesystem path", self.refusal(redact_user_home=True))
+
+    def test_packets_with_bare_user_home_still_refuse(self) -> None:
+        home = Path.home().resolve().as_posix()
+        packet = self.run_dir / "packets/scope-gate-0000.txt"
+        packet.write_text(f"Check {home}\n")
+        self.state["packet_hashes"][0]["hash"] = sha(packet.read_bytes())
+        self.write_json("state.json", self.state)
+        self.assertIn("private absolute filesystem path", self.refusal(redact_user_home=True))
 
 
 class PluralTests(Fixture):

@@ -65,7 +65,7 @@ EXAMPLES = {
         Example(
             "tools/document-library check-render --help",
             (
-                "usage: document-library check-render [-h] [--provider {claude,gpt}]",
+                "usage: document-library check-render [-h] [--provider {claude,gemini,gpt}]",
                 "                                     [--document DOCUMENT] [--section SECTION]",
                 "                                     [--eligibility {eligible,conditional,ineligible}]",
                 "                                     [--author AUTHOR]",
@@ -78,7 +78,7 @@ EXAMPLES = {
                 "",
                 "options:",
                 "  -h, --help            show this help message and exit",
-                "  --provider {claude,gpt}",
+                "  --provider {claude,gemini,gpt}",
                 "                        one edition's leaves only",
                 "  --document DOCUMENT   one leaf, as it is written under src/<provider>",
                 "  --section SECTION     one top-level section: articles, liturgy, ...",
@@ -114,7 +114,7 @@ EXAMPLES = {
         Example(
             "tools/document-library check-render --provider gpt --help",
             (
-                "usage: document-library check-render [-h] [--provider {claude,gpt}]",
+                "usage: document-library check-render [-h] [--provider {claude,gemini,gpt}]",
                 "                                     [--document DOCUMENT] [--section SECTION]",
                 "                                     [--eligibility {eligible,conditional,ineligible}]",
                 "                                     [--author AUTHOR]",
@@ -127,7 +127,7 @@ EXAMPLES = {
                 "",
                 "options:",
                 "  -h, --help            show this help message and exit",
-                "  --provider {claude,gpt}",
+                "  --provider {claude,gemini,gpt}",
                 "                        one edition's leaves only",
                 "  --document DOCUMENT   one leaf, as it is written under src/<provider>",
                 "  --section SECTION     one top-level section: articles, liturgy, ...",
@@ -287,8 +287,8 @@ DEFAULT_OUT = str(working_data_root(ROOT))
 # repository keeps being bitten by. `check` runs that file instead.
 BROWSER_MODEL = Path("src/web/browser/texts/catalogue-model.js")
 
-# The two editions, named as ABOUT.md names them: "one by GPT and one by
-# Claude". The label is here and nowhere else, so a page cannot invent a third
+# Provider editions, named as ABOUT.md names them: GPT, Claude, and Gemini.
+# The label is here and nowhere else, so a page cannot invent a different
 # spelling of an edition the repository already calls something.
 PROVIDER_LABELS = {"claude": "Claude", "gemini": "Gemini", "gpt": "GPT"}
 

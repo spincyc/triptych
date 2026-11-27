@@ -5984,12 +5984,24 @@ def mark_catalogue_tables(rendered_html: str) -> str:
             "Contents", "Stable lessons and focus",
         }:
             classes.append("catalogue-table-notes")
-        proper = headers[-2:] == ["ChatGPT", "Claude"] and any(
+        proper_three = headers[-3:] == ["ChatGPT", "Claude", "Gemini"] and any(
             label in headers for label in ("Sunday", "Celebration"))
+        proper = proper_three or (headers[-2:] == ["ChatGPT", "Claude"] and any(
+            label in headers for label in ("Sunday", "Celebration")))
         if proper:
             classes.append("catalogue-propers")
+        if proper_three:
+            classes.append("catalogue-propers-3")
         if proper and has_id:
             classes.append("catalogue-propers-id")
+            first_cells = [
+                html.unescape(re.sub(r"<[^>]*>", "", cell)).strip()
+                for cell in re.findall(
+                    r"<tr\b[^>]*>\s*<td\b[^>]*>(.*?)</td>", match.group(3), re.DOTALL
+                )
+            ]
+            if any(len(cell) > 3 for cell in first_cells):
+                classes.append("catalogue-propers-id-wide")
         if proper and "Cycle" in headers:
             classes.append("catalogue-propers-cycle")
         return ('<table class="' + " ".join(classes) + '">' + match.group(2)
@@ -6002,17 +6014,22 @@ def mark_catalogue_tables(rendered_html: str) -> str:
 # A provider cell with no admitted edition says so in words (`Planned`, or a
 # dash); the class sets that status apart from the links beside it.
 CATALOGUE_ABSENT_CELL_RE = re.compile(r"<td([^>]*)>\s*(Planned|—)\s*</td>")
+CATALOGUE_CYCLE_LABEL_RE = re.compile(r"(<td>|<br\s*/?>\s*)(Year [ABC]):\s*")
 
 
 def label_catalogue_cells(body: str) -> str:
-    """Mark absent editions and quiet the separators between a cell's links.
+    """Mark absent editions, inline cycle labels, and link separators.
 
     The middle dot stays in the text, so a page without the stylesheet still
     reads `Full Study Guide · Synthesis`; the class only sets its colour.
+    Inline `Year A:` / `Year B:` / `Year C:` prefixes keep one row per week in
+    the postconciliar Sunday calendar while distinguishing each Lectionary cycle.
     """
     body = CATALOGUE_ABSENT_CELL_RE.sub(
         lambda found: f'<td{found.group(1)} class="catalogue-absent">{found.group(2)}</td>'
         if "class=" not in found.group(1) else found.group(0), body)
+    body = CATALOGUE_CYCLE_LABEL_RE.sub(
+        r'\1<span class="catalogue-cycle">\2</span> ', body)
     return re.sub(r"</a>\s*·\s*<a\b",
                   '</a><span class="catalogue-sep"> · </span><a', body)
 

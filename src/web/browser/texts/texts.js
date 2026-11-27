@@ -556,7 +556,7 @@
         return { value: model.id, label: model.id + ' (' + model.documents + ')' };
       })
     ));
-    T.fillSelect(editionSelect, [{ value: M.ANY, label: 'Both editions' }].concat(
+    T.fillSelect(editionSelect, [{ value: M.ANY, label: 'All editions' }].concat(
       (catalogue.providers || []).map(function (provider) {
         return { value: provider.id, label: provider.label + ' (' + provider.documents + ')' };
       })

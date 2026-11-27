@@ -43,7 +43,7 @@ SPEC.loader.exec_module(CHECKER)
 
 CALENDAR = "roman-1962"
 COLLECTION = "liturgy/roman-rite/1962/propers"
-PROVIDERS = ("gpt", "claude")
+PROVIDERS = ("gpt", "claude", "gemini")
 
 
 def leaf(klass: str, slug: str) -> str:

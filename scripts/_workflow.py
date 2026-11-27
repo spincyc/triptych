@@ -2305,7 +2305,7 @@ class WorkflowEngine:
                                    _gate_substitutions(workflow, state), quote=True)
         try:
             proc = subprocess.run(command, shell=True, capture_output=True,
-                                  text=True, cwd=self.repo_root, timeout=240)
+                                  text=True, cwd=self.repo_root, timeout=600)
             if proc.returncode:
                 raise ValueError(self._portable_output(proc.stderr or proc.stdout))
             value = json.loads(proc.stdout)

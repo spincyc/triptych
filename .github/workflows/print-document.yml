@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       document:
-        description: "One ID: publication:gpt/<leaf>, publication:claude/<leaf>, bible:<edition>, reading-plan:<volume>, or papal:<selection>/<lang>"
+        description: "One ID: publication:gpt/<leaf>, publication:claude/<leaf>, publication:gemini/<leaf>, bible:<edition>, reading-plan:<volume>, or papal:<selection>/<lang>"
         type: string
         required: true
       edition:

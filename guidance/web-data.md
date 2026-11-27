@@ -226,9 +226,9 @@ stales the family. Its bytes, and everything beneath a directory, do not. The
 audit holds a producer to the same line: it fails a family that opens or lists
 an excluded path or touches anything beneath one.
 
-Every family whose trees contain `src/sources/inventories` excludes the five
+Every family whose trees contain `src/sources/inventories` excludes the
 provider review and bookkeeping records there (`publications-v1.toml`,
-`classification-review-v1.toml`, their `claude-` counterparts, and
+`classification-review-v1.toml`, their `claude-` and `gemini-` counterparts, and
 `source-family-migration-v1.toml`), which change with nearly every
 publication. No code closure names them, and on 2026-11-12 the audit found no
 producer opening them: the source library's tree walk only lists and probes

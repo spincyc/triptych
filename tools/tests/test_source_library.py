@@ -1151,7 +1151,7 @@ class SourceLibraryTests(unittest.TestCase):
         library = SOURCE_LIBRARY.load_library(self.root)
         self.assertEqual(
             library.errors,
-            ["src/gpt, src/claude: no publication root exists"],
+            ["src/gpt, src/claude, src/gemini: no publication root exists"],
         )
 
     def test_common_typesetting_tree_is_ignored(self) -> None:

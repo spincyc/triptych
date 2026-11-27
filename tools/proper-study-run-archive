@@ -88,11 +88,21 @@ WORKER_SCRATCH_OPERATION = (
     "replace the declared worker scratch directory, which lies outside the repository, "
     "with <worker-scratch> where it begins a path token in any retained result string"
 )
+USER_HOME_POLICY = "bare-user-home-in-result-strings-v1"
+USER_HOME_PLACEHOLDER = "<user-home>"
+USER_HOME_OPERATION = (
+    "replace the bare current user home directory token (never a subpath) with "
+    "<user-home> in any retained result string"
+)
 OPERATION_HANDLE = re.compile(r"\baggregate\s+session\s*[0-9]+\b", re.I)
 HTTP_URL = re.compile(r"https?://[^\s<>\"'`]+", re.I)
 # A template root such as <repo>/ or <worker scratch>/ is prose, not a machine
 # path; single spaces between name words are allowed, nothing else.
 PLACEHOLDER_PATH = re.compile(r"<[A-Za-z_][A-Za-z0-9_-]*(?: [A-Za-z0-9_-]+)*>/[^\s<>\"'`]*")
+# An HTML/XML closing tag such as </em>, </a>, or </span> quoted in web-review
+# findings is markup, not a POSIX root path; any slash inside the tag (such as
+# </home/user>) still fails the path scan.
+HTML_CLOSING_TAG = re.compile(r"</[A-Za-z][A-Za-z0-9:-]*>")
 FILESYSTEM_PATH = re.compile(
     r"(?<![\w./\\])/+[^/\s\"'`<>()[\]{},;|\\][^\s\"'`<>()[\]{},;|\\]*"
     r"|(?<!\w)[A-Za-z]:[\\/]"
@@ -417,7 +427,8 @@ def public_files(files: dict[str, bytes], root: Path) -> None:
             # Keep wrapped raw tokens visible alongside decoded header values.
             operation_strings = [*strings, text]
         if any(root.resolve().as_posix() in value
-               or FILESYSTEM_PATH.search(PLACEHOLDER_PATH.sub("", HTTP_URL.sub("", value)))
+               or FILESYSTEM_PATH.search(
+                   HTML_CLOSING_TAG.sub(" ", PLACEHOLDER_PATH.sub(" ", HTTP_URL.sub(" ", value))))
                for value in strings):
             raise ArchiveError(f"private absolute filesystem path in {name}; "
                                "only result notes support --redact-repository-paths")
@@ -546,17 +557,51 @@ def redact_worker_scratch_tree(value, pointer: str, directory: str, changed: lis
     return value
 
 
+def redact_bare_user_home(value: str, home: str) -> tuple[str, int]:
+    """Replace only the bare user home directory token (not a subpath) outside URLs."""
+    pattern = re.compile(r"(?<![\w./\\])" + re.escape(home)
+                         + r"(?=$|[\s\"'`<>()[\]{},;|\\])")
+    pieces, count, start = [], 0, 0
+    for match in HTTP_URL.finditer(value):
+        text, changed = pattern.subn(USER_HOME_PLACEHOLDER, value[start:match.start()])
+        pieces.extend((text, match.group()))
+        count += changed
+        start = match.end()
+    text, changed = pattern.subn(USER_HOME_PLACEHOLDER, value[start:])
+    return "".join([*pieces, text]), count + changed
+
+
+def redact_user_home_tree(value, pointer: str, home: str, changed: list) -> object:
+    """Apply the bare user-home policy to every string of a result, recording pointers."""
+    if isinstance(value, str):
+        redacted, count = redact_bare_user_home(value, home)
+        if count:
+            changed.append({"json_pointer": pointer, "replacements": count,
+                            "policy": USER_HOME_POLICY})
+        return redacted
+    if isinstance(value, list):
+        return [redact_user_home_tree(item, f"{pointer}/{index}", home, changed)
+                for index, item in enumerate(value)]
+    if isinstance(value, dict):
+        return {key: redact_user_home_tree(
+                    item, pointer + "/" + key.replace("~", "~0").replace("/", "~1"),
+                    home, changed)
+                for key, item in value.items()}
+    return value
+
+
 def derivative(root: Path, archive: Archive, files: dict[str, bytes], *,
                redact_repository_paths: bool = True,
                redact_operation_handles: bool = False,
                relativize_artifact_paths: bool = False,
-               worker_scratch: str | None = None) -> tuple[dict[str, bytes], dict]:
+               worker_scratch: str | None = None,
+               user_home: str | None = None) -> tuple[dict[str, bytes], dict]:
     """An explicit public derivative of verified native bytes, never a new verdict."""
     output = dict(files)
     changes = {}
     prefix = root.resolve().as_posix() + "/"
     per_policy = (redact_operation_handles or relativize_artifact_paths
-                  or worker_scratch is not None)
+                  or worker_scratch is not None or user_home is not None)
     operations = []
     if redact_repository_paths:
         operations.append((REDACTION_POLICY, PATH_OPERATION,
@@ -597,6 +642,8 @@ def derivative(root: Path, archive: Archive, files: dict[str, bytes], *,
                                 "policy": ARTIFACT_PATH_POLICY})
         if worker_scratch is not None:
             data = redact_worker_scratch_tree(data, "", worker_scratch, changed)
+        if user_home is not None:
+            data = redact_user_home_tree(data, "", user_home, changed)
         if changed:
             output[row.result_file] = (json.dumps(data, ensure_ascii=False, sort_keys=True,
                                                  indent=2) + "\n").encode("utf-8")
@@ -611,7 +658,8 @@ def derivative(root: Path, archive: Archive, files: dict[str, bytes], *,
                   for name in sorted(files)],
     }
     if per_policy:
-        receipt["schema"] = (4 if worker_scratch is not None
+        receipt["schema"] = (5 if user_home is not None
+                             else 4 if worker_scratch is not None
                              else 3 if relativize_artifact_paths else 2)
         del receipt["policy"], receipt["operation"]
         receipt["operations"] = [{"policy": policy, "operation": description}
@@ -622,6 +670,9 @@ def derivative(root: Path, archive: Archive, files: dict[str, bytes], *,
         if worker_scratch is not None:
             receipt["operations"].append(
                 {"policy": WORKER_SCRATCH_POLICY, "operation": WORKER_SCRATCH_OPERATION})
+        if user_home is not None:
+            receipt["operations"].append(
+                {"policy": USER_HOME_POLICY, "operation": USER_HOME_OPERATION})
     return output, receipt
 
 
@@ -652,7 +703,7 @@ def record_text(archive: Archive, cycles: str, receipt: dict | None = None) -> s
         scopes.append("removal of current-repository-root prefixes in canonical "
                       "top-level `artifact_path` strings")
         redaction_note = "The only permitted changes are " + "; ".join(scopes) + ". "
-    elif receipt is not None and receipt["schema"] == 4:
+    elif receipt is not None and receipt["schema"] in (4, 5):
         policies = {operation["policy"] for operation in receipt["operations"]}
         scopes = []
         if REDACTION_POLICY in policies:
@@ -663,9 +714,13 @@ def record_text(archive: Archive, cycles: str, receipt: dict | None = None) -> s
         if ARTIFACT_PATH_POLICY in policies:
             scopes.append("removal of current-repository-root prefixes in canonical "
                           "top-level `artifact_path` strings")
-        scopes.append("replacement of the driver's declared worker scratch directory, outside "
-                      "the repository, with `<worker-scratch>` where it begins a path in any "
-                      "result string")
+        if WORKER_SCRATCH_POLICY in policies:
+            scopes.append("replacement of the driver's declared worker scratch directory, outside "
+                          "the repository, with `<worker-scratch>` where it begins a path in any "
+                          "result string")
+        if USER_HOME_POLICY in policies:
+            scopes.append("replacement of bare current user home directory tokens (never subpaths) "
+                          "in result strings with `<user-home>`")
         redaction_note = "The only permitted changes are " + "; ".join(scopes) + ". "
     lines = [
         "# Actual engine results",
@@ -787,7 +842,8 @@ def archive_run(root: Path, run_id: str, cycles: str, output: str | None,
                 *, redact_repository_paths: bool = False,
                 redact_operation_handles: bool = False,
                 relativize_artifact_paths: bool = False,
-                redact_worker_scratch: str | None = None) -> tuple[Path, Archive]:
+                redact_worker_scratch: str | None = None,
+                redact_user_home: bool = False) -> tuple[Path, Archive]:
     if Path(cycles).is_absolute() or ".." in PurePosixPath(cycles).parts or not cycles:
         raise ArchiveError(
             "--cycles must be a repository-relative path, because record.md is "
@@ -795,6 +851,7 @@ def archive_run(root: Path, run_id: str, cycles: str, output: str | None,
         )
     scratch = (worker_scratch_directory(root, redact_worker_scratch)
                if redact_worker_scratch is not None else None)
+    home = Path.home().resolve().as_posix() if redact_user_home else None
     archive = collect(root, run_id)
     dest = destination(root, archive, output)
     files = dict(archive.files)
@@ -806,12 +863,13 @@ def archive_run(root: Path, run_id: str, cycles: str, output: str | None,
         )
     receipt = None
     if (redact_repository_paths or redact_operation_handles or relativize_artifact_paths
-            or scratch is not None):
+            or scratch is not None or home is not None):
         files, receipt = derivative(root, archive, files,
                                     redact_repository_paths=redact_repository_paths,
                                     redact_operation_handles=redact_operation_handles,
                                     relativize_artifact_paths=relativize_artifact_paths,
-                                    worker_scratch=scratch)
+                                    worker_scratch=scratch,
+                                    user_home=home)
         files[REDACTION_RECEIPT] = (json.dumps(receipt, ensure_ascii=False, sort_keys=True,
                                             indent=2) + "\n").encode("utf-8")
     else:
@@ -857,6 +915,10 @@ def main(argv: list[str] | None = None) -> int:
             "Where DIR begins a path token in any retained result string it becomes\n"
             "<worker-scratch>; traversal out of DIR refuses, and other absolute paths\n"
             "still refuse. Receipt schema 4 records every changed JSON pointer.\n\n"
+            "--redact-user-home is a fifth opt-in: only bare tokens equal to the current\n"
+            "user's home directory (never a subpath) in retained result strings become\n"
+            "<user-home>; subpaths under home still refuse. Receipt schema 5 records\n"
+            "every changed JSON pointer without recording the home directory itself.\n\n"
             "--output DIR writes the same archive to DIR instead of the leaf, which\n"
             "is how an archive is checked: archive an already-archived run to a\n"
             "scratch directory and `diff -r` it against the committed copy."
@@ -898,6 +960,11 @@ def main(argv: list[str] | None = None) -> int:
         "per-policy JSON pointers and hashes",
     )
     parser.add_argument(
+        "--redact-user-home", action="store_true",
+        help="replace bare current user home directory tokens (never subpaths) with "
+        "<user-home> in retained result strings; record per-policy JSON pointers and hashes",
+    )
+    parser.add_argument(
         "--root",
         metavar="DIR",
         default=str(ROOT),
@@ -912,7 +979,8 @@ def main(argv: list[str] | None = None) -> int:
                                     redact_repository_paths=args.redact_repository_paths,
                                     redact_operation_handles=args.redact_operation_handles,
                                     relativize_artifact_paths=args.relativize_artifact_paths,
-                                    redact_worker_scratch=args.redact_worker_scratch)
+                                    redact_worker_scratch=args.redact_worker_scratch,
+                                    redact_user_home=args.redact_user_home)
     except ArchiveError as error:
         print(f"{ERROR}{error}", file=sys.stderr)
         return 1

@@ -384,12 +384,19 @@ def source_dispositions(root: Path, provider: str, document: str, *,
                 pending.extend(library_tool._dependency_ids(library.records[current]))
         return found
 
+    vulgata_book_indexes: list[Path] | None = None
+
     def canonical_evidence(extent) -> None:
+        nonlocal vulgata_book_indexes
         # These exact canonical bytes bound candidate and admitted Scripture
         # endpoints, including analogues outside this leaf's appointments.
-        paths.update(path for path in (root / "src/sources/works").glob(
-            "*/*/editions/*/artifacts/book-index-*/book-index.tsv")
-                     if "vulgata-clementina" in path.as_posix())
+        if vulgata_book_indexes is None:
+            vulgata_book_indexes = [
+                path for path in (root / "src/sources/works").glob(
+                    "*/*/editions/*/artifacts/book-index-*/book-index.tsv")
+                if "vulgata-clementina" in path.as_posix()
+            ]
+        paths.update(vulgata_book_indexes)
         for chapter in (extent.first_chapter, extent.last_chapter):
             path = root / _catena.BIBLES_RELATIVE / _catena.CANONICAL_BIBLE / "chapters" / extent.token / f"{chapter}.json"
             if path.is_file():

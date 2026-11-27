@@ -105,7 +105,7 @@ Provider-neutral source editions use their own identities:
 
 | Identity | Selects |
 | --- | --- |
-| `publication:gpt/<leaf>` or `publication:claude/<leaf>` | One provider publication and its selected edition. |
+| `publication:gpt/<leaf>`, `publication:claude/<leaf>`, or `publication:gemini/<leaf>` | One provider publication and its selected edition. |
 | `bible:<id>` | One publishable Bible edition under its own rights. |
 | `reading-plan:<volume>` | One declared reading-plan volume. |
 | `papal:<id>/<language>` | One admitted papal source reading selection. |

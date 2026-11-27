@@ -167,7 +167,10 @@ def _id(value: str) -> tuple[str, str]:
     value = _relative(value, "id")
     provider, separator, leaf = value.partition("/")
     if provider not in PROVIDERS or not separator or not leaf:
-        raise SchemaError("id must be provider-qualified: gpt/<leaf> or claude/<leaf>")
+        raise SchemaError(
+            "id must be provider-qualified: "
+            + ", ".join(f"{name}/<leaf>" for name in PROVIDERS)
+        )
     if any(not KEY.fullmatch(p) for p in leaf.split("/")):
         raise SchemaError(f"id contains a non-kebab-case component: {value}")
     return provider, leaf

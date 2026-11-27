@@ -3525,7 +3525,7 @@ def _preflight_tree(
 
 
 LIBRARY_CACHE_DIR = ROOT / "build" / "source-library"
-LIBRARY_CACHE_VERSION = "4"
+LIBRARY_CACHE_VERSION = "5"
 # A sandbox library is a handful of manifests; the real one is over 22,000
 # files. Below this the load is already cheap and the entry would never be read
 # twice, so the suite's throwaway trees leave nothing behind.

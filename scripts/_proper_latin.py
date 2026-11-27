@@ -801,7 +801,7 @@ def _source_library_cache_entry(root: Path) -> Path | None:
 
     The key must cover every tree the projection is derived from, and that is
     all three roots `load_library` reads --- `src/sources` for the records and
-    `src/gpt`/`src/claude` for the publication bindings --- not the sources
+    `src/gpt`/`src/claude`/`src/gemini` for the publication bindings --- not the sources
     alone. Keyed on the sources only, a binding added under a publication root
     left this serving the registry from before it, and a ledger row naming the
     new artifact was reported as "not registered": a stale answer that looked

@@ -675,6 +675,17 @@ html:has(.page-catalog, .page-home) { scroll-behavior: auto; }
 }
 /* The links of one cell, in source order, separated by a quiet middle dot. */
 .catalogue-sep { color: var(--hairline-strong); }
+/* Inline Lectionary cycle tag (`Year A`, `Year B`, `Year C`) keeps one row per
+   Sunday in the postconciliar table without repeating the Sunday title. */
+.catalogue-cycle {
+  display: inline-block;
+  margin-right: 0.35em;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
 /* Planned or absent editions are a status, set apart from the links in words
    and in tone, never by colour alone. */
 .catalogue-table .catalogue-absent { color: var(--muted); font-size: 0.88rem; font-style: italic; }
@@ -1004,6 +1015,9 @@ a.footnote-backref { text-decoration: none; }
      wrapping around their separators. */
   .catalogue-table td:has(> .catalogue-sep) > a { display: block; width: fit-content; margin-block: 0.1rem 0.3rem; }
   .catalogue-table td > .catalogue-sep { display: none; }
+  .catalogue-table td > .catalogue-cycle { display: block; margin-top: 0.4rem; margin-right: 0; }
+  .catalogue-table td > .catalogue-cycle:first-child { margin-top: 0; }
+  .catalogue-table td > br:has(+ .catalogue-cycle) { display: none; }
   /* The reflowed head is a compact key to the row below, not a second row. */
   :is(.catalogue-details-2, .catalogue-details-3, .catalogue-details-4) thead tr { padding-block: 0.3rem; }
   :is(.catalogue-details-2, .catalogue-details-3, .catalogue-details-4) thead th { padding-block: 0.15rem; }
@@ -1020,6 +1034,13 @@ a.footnote-backref { text-decoration: none; }
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .catalogue-table-notes.catalogue-details-3 tr > :last-child {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+  .catalogue-table-notes.catalogue-details-4 tr {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .catalogue-table-notes.catalogue-details-4 tr > :last-child {
     grid-column: 1 / -1;
     grid-row: 3;
   }
@@ -1048,6 +1069,34 @@ a.footnote-backref { text-decoration: none; }
   }
   .catalogue-propers-id.catalogue-propers-cycle tr > :nth-child(3) {
     grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+  }
+  .catalogue-propers-3.catalogue-propers-cycle tr { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .catalogue-propers-3 tr > :nth-last-child(3) { grid-column: 1; }
+  .catalogue-propers-3 tr > :nth-last-child(2) { grid-column: 2; }
+  .catalogue-propers-3 tr > :last-child { grid-column: 3; }
+  .catalogue-propers-3.catalogue-propers-id tr { grid-template-columns: 2.1rem repeat(3, minmax(0, 1fr)); }
+  .catalogue-propers-3.catalogue-propers-id tr > :nth-last-child(3) { grid-column: 2; }
+  .catalogue-propers-3.catalogue-propers-id tr > :nth-last-child(2) { grid-column: 3; }
+  .catalogue-propers-3.catalogue-propers-id tr > :last-child { grid-column: 4; }
+  .catalogue-propers-id.catalogue-propers-id-wide tr {
+    grid-template-columns: 3.7rem repeat(2, minmax(0, 1fr));
+  }
+  .catalogue-propers-id.catalogue-propers-id-wide tr > :first-child { padding-right: 0.35rem; }
+  .catalogue-propers-3.catalogue-propers-id.catalogue-propers-id-wide tr {
+    grid-template-columns: 3.7rem repeat(3, minmax(0, 1fr));
+  }
+  .catalogue-propers-3.catalogue-propers-cycle tr > :nth-child(2) {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+  }
+  .catalogue-propers-3.catalogue-propers-id.catalogue-propers-cycle tr {
+    grid-template-columns: 3.7rem repeat(3, minmax(0, 1fr));
+  }
+  .catalogue-propers-3.catalogue-propers-id.catalogue-propers-cycle tr > :nth-child(3) {
+    grid-column: 4;
     grid-row: 1;
     justify-self: end;
   }

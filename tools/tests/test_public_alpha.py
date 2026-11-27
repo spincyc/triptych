@@ -4424,6 +4424,23 @@ class PublicAlphaTest(unittest.TestCase):
             errors,
         )
 
+    def test_mark_catalogue_tables_distinguishes_wide_postconciliar_ids_from_short_1962_ids(self) -> None:
+        wide_table = (
+            "<table><thead><tr><th>ID</th><th>Celebration</th><th>ChatGPT</th><th>Claude</th><th>Gemini</th></tr></thead>"
+            "<tbody><tr><td>PC-R01</td><td><strong>Presentation of the Lord</strong></td><td>Planned</td><td>Planned</td><td>Planned</td></tr></tbody></table>"
+        )
+        short_table = (
+            "<table><thead><tr><th>ID</th><th>Sunday</th><th>ChatGPT</th><th>Claude</th><th>Gemini</th></tr></thead>"
+            "<tbody><tr><td>01</td><td><strong>First Sunday of Advent</strong></td><td>Planned</td><td>Planned</td><td>Planned</td></tr></tbody></table>"
+        )
+        marked_wide = self.tool.mark_catalogue_tables(wide_table)
+        marked_short = self.tool.mark_catalogue_tables(short_table)
+        self.assertIn('class="catalogue-table catalogue-details-3 catalogue-table-id catalogue-propers catalogue-propers-3 catalogue-propers-id catalogue-propers-id-wide"', marked_wide)
+        self.assertIn('class="catalogue-table catalogue-details-3 catalogue-table-id catalogue-propers catalogue-propers-3 catalogue-propers-id"', marked_short)
+        self.assertNotIn("catalogue-propers-id-wide", marked_short)
+        css = (Path(__file__).resolve().parents[2] / "release/public-alpha/assets/site.css").read_text(encoding="utf-8")
+        self.assertIn(".catalogue-propers-3.catalogue-propers-id.catalogue-propers-id-wide tr", css)
+
 
 if __name__ == "__main__":
     unittest.main()

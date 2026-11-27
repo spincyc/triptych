@@ -56,7 +56,7 @@ class Texts(Surface):
         ("↑ / ↓", "move through works and treatments; the record follows the cursor"),
         ("enter, w", "read the highlighted treatment's web edition, set as the site sets it"),
         ("a", "author: one model, or any"),
-        ("t", "treatment: Claude's, GPT's, or both"),
+        ("t", "treatment: one provider's edition, or all"),
         ("s", "section"),
         ("r", "reading: readable here, PDF only, or however held"),
         ("o", "next order: section then path, title, last revised, extent"),

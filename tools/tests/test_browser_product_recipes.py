@@ -68,6 +68,8 @@ class RecipeTests(unittest.TestCase):
             "src/sources/inventories/classification-review-v1.toml",
             "src/sources/inventories/claude-classification-review-v1.toml",
             "src/sources/inventories/claude-publications-v1.toml",
+            "src/sources/inventories/gemini-classification-review-v1.toml",
+            "src/sources/inventories/gemini-publications-v1.toml",
             "src/sources/inventories/publications-v1.toml",
             "src/sources/inventories/source-family-migration-v1.toml",
         ])
@@ -79,10 +81,12 @@ class RecipeTests(unittest.TestCase):
                 index = any(recipes._READER_INDEX.startswith(tree + "/") for tree in recipe["input_trees"])
                 holds_gpt = any(tree == "src/gpt" or "src/gpt".startswith(tree + "/") for tree in recipe["input_trees"])
                 holds_claude = any(tree == "src/claude" or "src/claude".startswith(tree + "/") for tree in recipe["input_trees"])
+                holds_gemini = any(tree == "src/gemini" or "src/gemini".startswith(tree + "/") for tree in recipe["input_trees"])
                 extra_web = (["src/web"] if identifier == "web-editions"
                              else list(recipes._DOCUMENTS_UNUSED_WEB) if identifier == "documents" else [])
                 evals = ([*(["src/gpt/**/evaluations"] if holds_gpt else []),
-                          *(["src/claude/**/evaluations"] if holds_claude else [])])
+                          *(["src/claude/**/evaluations"] if holds_claude else []),
+                          *(["src/gemini/**/evaluations"] if holds_gemini else [])])
                 self.assertEqual(recipe["exclude_paths"],
                                  (recipes._REVIEW_RECORDS if holds else []) + extra_web + evals
                                  + (["src/index"] if index else []))

@@ -539,13 +539,17 @@ A leaf ID keeps exactly one owning catalog page no matter how many provider
 editions exist. Outside profile-authorized provider-specific subsections, its
 provider editions occupy one row even when their titles differ. In that case,
 use a neutral shared-work label in the first cell and preserve each exact title
-in its provider cell's publication link. Ordinary catalogs use named `ChatGPT`
-and `Claude` columns.
-The complete Sunday-propers calendars also keep named provider columns.
-The postconciliar calendar adds a `Cycle` column: distinguish `A`, `B`, and
-`C` rows wherever their available editions differ; cycles with identical
-availability may share one row. The maintainer requested this separation on
-2026-09-28 so each provider's documents can be compared directly. A hidden
+in its provider cell's publication link. Ordinary catalogs use named `ChatGPT`,
+`Claude`, and (where a Gemini edition is offered) `Gemini` columns.
+The complete Sunday-propers calendars also keep named provider columns
+(`ChatGPT`, `Claude`, `Gemini`). On 2026-11-25 the maintainer superseded the
+split-row `Cycle` layout in `library/novus-ordo-liturgy.md`: each postconciliar
+Sunday occupies exactly one row rather than repeating the Sunday name across
+consecutive `A`/`B`/`C` rows, and published editions inside a provider cell are
+prefixed inline with their Lectionary cycle (`Year A:`, `Year B:`, `Year C:`,
+separated by `<br>` when a provider has multiple cycles for the same Sunday),
+leaving unpublished cells `Planned` (and `Planned with Easter Sunday` for the
+Easter Vigil). A hidden
 stable-publication marker retains ownership for held work whose reader cell
 is plain text; it never replaces a released artifact's visible link.
 Title cells remain unlinked bold text.
@@ -578,7 +582,7 @@ link; new rows may name the reader routes directly, as in
 presentation is owned by
 [corpus-browser-vision.md](corpus-browser-vision.md#tables).
 
-A named `ChatGPT` or `Claude` column contains only that provider's editions.
+A named `ChatGPT`, `Claude`, or `Gemini` column contains only that provider's editions.
 Format labels need not repeat the provider. In mixed-provider legacy tables,
 every edition link names its provider. Show `Planned` where a provider has no
 admitted edition; keep the stable-publication marker for held work without
