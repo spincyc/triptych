@@ -5,22 +5,21 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-11-26.
+Last reconciled: 2026-11-27.
 
 ## Claude postconciliar First Sunday of Advent, Year B, 2026-11-29
 
 <!-- promised-deliverable: claude-pc-s01-advent-year-b-2026-11-29 -->
 
-**Complete on the workspace branch; not pushed.** On 2026-11-26 the
-maintainer asked for the Claude Novus Ordo proper-study documents for the
-upcoming Sunday. Sunday, 29 November 2026 is the First Sunday of Advent
+**Complete: pushed to `main`, deployed and verified live.** On 2026-11-26
+the maintainer asked for the Claude Novus Ordo proper-study documents for the
+upcoming Sunday, and on 2026-11-27 authorized publication to `main`. Sunday, 29 November 2026 is the First Sunday of Advent
 (violet, Psalter Week I), the first Sunday of Lectionary Year B, Lectionary
 no. 2, permanent identity `pc-s01`,
 `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b`.
 The production plan records the one-provider authorization. This is an
 independent Claude production: the published GPT leaf for the same identity
-was closed to every stage and is not an input. Publication to `main` has not
-been authorized.
+was closed to every stage and is not an input.
 
 Run `99f04ef5cf9b711b` (`proper-study` v20) was seeded at the authorization
 commit `cbccbfcb3b`. It reached ACCEPTED with 41 packets, 41 results and 17
@@ -47,6 +46,43 @@ psalter" claim, corrected in the concise study; and the studies' English of
 Augustine on Ps 84.15, corrected in the homily. The run is archived in the
 leaf; the driver's account, with the defects left for other owners, is
 [CYCLES.md](workflows/reviews/claude-pc-s01-production-2026-11-26/CYCLES.md).
+
+After acceptance the archive (`d7468e927e`) was committed. `origin/main` had
+moved by Gemini's third-provider integration and six showcase lanes, a
+print-bundle fix and the indexes and products recorded for them, so it was
+merged (`ef83618be0`). Both sides had added a top entry to this register and
+to the promised-deliverable ledger; both entries are kept. The other
+conflicts were derived values: the product record, the release manifest's
+site-source hashes and the rights digest. Main widened the provider set in
+two chronology scripts in the study's source closure, so the merge commit
+moved the study's and concise study's derived "Last revised" stamp; the
+homily's is unchanged. The publication authorization was then recorded
+(`98916eaa7b`).
+
+These were then refreshed over the merged tree:
+- the corpus and reader indexes (`d2a70acc76`);
+- browser products, 13 products and 31,229 files (`e7fb1622df`);
+- release bindings, 90 changes including the source records the publication
+  now cites (`3023d50221`);
+- the corpus index once more (`7e912adc82`), the fixed point.
+
+On `7e912adc82` these local gates passed:
+- `make check-deployment-sources`;
+- `make public-site`;
+- `public-alpha verify --deployment-target github-pages`;
+- `make check-release-bindings`, with 0 stale.
+
+`native-print-compile` typeset all three editions, 45 pages under runtime
+`wasmtex-2026-47ff73bab1a2e548`, and passed.
+
+`7e912adc82` reached `main` as a fast-forward from `2acae0db07`. Pages run
+[46011438418](https://github.com/spincyc/triptych/actions/runs/46011438418)
+passed the deployment source checks, the canonical index check, all eight
+print-compile shards, print-verify, build and deploy. These pages are
+byte-identical live and in the local build:
+- the three web readers;
+- the three print pages;
+- the Novus Ordo catalog.
 
 ## Gemini six-lane showcase publications and third-provider integration, 2026-11-25
 
