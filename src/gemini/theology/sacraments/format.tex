@@ -1,0 +1,31 @@
+% Leaf-local preamble for the Gemini sacramental reference treatise.
+\def\TriptychPrintEdition{}
+\usepackage{pdflscape}
+\usepackage{ragged2e}
+\input{theology/sacraments/summary-preamble}
+\renewcommand{\sectionguard}{\Needspace*{7\baselineskip}}
+
+\ifdefined\TriptychPrintEdition
+\newcommand{\sacramentMatrixTitle}{Appendix \thesection: Comparative Matrix of the Seven Sacraments}
+\newcommand{\churchesInitiationTitle}{Appendix \thesection: Initiation Across the Twenty-Four Catholic Churches}
+\else
+\newcommand{\sacramentMatrixTitle}{Comparative Matrix of the Seven Sacraments}
+\newcommand{\churchesInitiationTitle}{Initiation Across the Twenty-Four Catholic Churches}
+\fi
+
+\newcommand{\sacramentMatrixPageHook}{%
+  \refstepcounter{section}%
+  \label{app:seven-sacrament-matrix}%
+  \addcontentsline{toc}{section}{\protect\numberline{\thesection}Comparative Matrix of the Seven Sacraments}%
+}
+
+\newcommand{\churchesInitiationPageHook}{%
+  \refstepcounter{section}%
+  \label{app:initiation-table}%
+  \addcontentsline{toc}{section}{\protect\numberline{\thesection}Initiation Across the Twenty-Four Catholic Churches}%
+}
+
+\newcommand{\sacramentLexiconPageHook}{%
+  \phantomsection
+  \addcontentsline{toc}{subsection}{Metaphysical and Sacramental Lexicon}%
+}

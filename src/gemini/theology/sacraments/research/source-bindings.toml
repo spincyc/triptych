@@ -1,0 +1,1453 @@
+schema = 2
+record_type = "bindings"
+document = "theology/sacraments"
+
+[[bindings]]
+source_id = "edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581"
+loci = ["Gen.1.27-28", "Gen.2.18-24", "Exod.12.13-14", "Is.11.1-3", "Mal.1.11", "Matt.16.18-19", "Matt.26.26-28", "Matt.28.18-20", "Mark.6.12-13", "Luke.22.19-20", "John.3.3-6", "John.6.48-59", "John.19.34-35", "John.20.21-23", "Acts.8.14-17", "Rom.6.3-11", "1Cor.11.23-29", "Eph.5.21-33", "Jas.5.14-16", "2Pet.1.4"]
+role = "textual-control"
+states = ["cataloged"]
+context = "Controlling public-domain English Scripture translation for all verbatim biblical quotations across the treatise and its seven summaries; individual inspected book artifacts are bound below."
+
+[[bindings]]
+source_id = "edition.catholic-church.vulgata-clementina.ebible-latvuc"
+loci = ["Eph.1.9", "Eph.3.9", "Eph.5.32", "Col.1.26-27", "John.6.54", "Is.11.2-3", "Acts.14.22"]
+role = "textual-control"
+states = ["cataloged"]
+context = "Controlling public-domain Latin Clementine Vulgate checked alongside Douay-Rheims to verify sacramentum/mysterium terminology and Vulgate/DR versification across all seven sacraments."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-01-genesis-4f9a0975"
+loci = ["Gen.1.27-28", "Gen.2.18-24", "Gen.14.18-20"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for creation of male and female, one-flesh marriage, and Melchisedech's bread and wine."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:aba8e34331af3fc19e272bdef11140f842ca4e75fb2d097f1c8211b637d4fe94"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-02-exodus-56072879"
+loci = ["Exod.12.13-14", "Exod.24.8"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for the Paschal lamb and the blood of the covenant."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:2cf6c449848a14ea55e8a13f58e765a62bd457d60ed057db356b06fbf9d35227"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-27-isaias-7c9a1228"
+loci = ["Is.11.1-3"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for the sevenfold gifts of the Spirit in Confirmation, verifying the seventh gift in v. 3."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:41639d5457be3a0a6446fe59d3c59c7561aacfef7bc43089f650a7353452bbf8"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-44-malachias-0085acf6"
+loci = ["Mal.1.11", "Mal.2.14-16"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for the clean oblation among the Gentiles and the covenant fidelity of marriage."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:9b9df8d7a2bbd53cddefaf98818bbd7b8f7876fa69a9177160e4552853a47455"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-47-matthew-dd0ba183"
+loci = ["Matt.16.18-19", "Matt.18.18", "Matt.19.4-9", "Matt.26.26-28", "Matt.28.18-20"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for the keys and binding/loosing, indissolubility of marriage, Eucharistic institution, and Trinitarian baptismal mandate."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:ed47ecb092ecb6256fb84450e8ad39d0debf2efe6c65442199a76a7fb1a8b98b"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-48-mark-69b4cb75"
+loci = ["Mark.6.12-13", "Mark.10.6-12", "Mark.14.22-24", "Mark.16.15-16"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for apostolic anointing of the sick, marital indissolubility, Last Supper, and baptismal necessity."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:2b4848908df9163a705b6532d1b80e55d35bc75bf2826f2ba03cb69b9f7ff025"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-49-luke-d8269c33"
+loci = ["Luke.15.7", "Luke.15.11-32", "Luke.22.19-20"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for penitential conversion and the Eucharistic mandate Do this for a commemoration of me."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:b6acab91674d3bbe04726da30c835175a133104d3db53fcf3f8e45b1d5b4ba6e"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-50-john-27b8f3ed"
+loci = ["John.2.1-11", "John.3.3-6", "John.6.48-59", "John.19.34-35", "John.20.21-23"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for Cana, rebirth of water and the Holy Ghost, the Bread of Life (verifying DR v. 54), the pierced side, and absolving power."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:4498ea55e49e3577649969ed0bcf456423b8aec2f9edda55586c37190dfe77a4"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-51-acts-73f7a420"
+loci = ["Acts.2.38", "Acts.2.42", "Acts.6.2-6", "Acts.8.14-17", "Acts.13.2-3", "Acts.14.22", "Acts.19.1-6"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for Pentecostal Baptism, breaking of bread, diaconal and presbyteral imposition of hands (verifying DR 14:22), and Samaritan/Ephesian Confirmation."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:dd87be0f13bd98112feedd55e3532a9a4dcbbfe28dee45371197dbc842acd2da"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-52-romans-4d45c497"
+loci = ["Rom.6.3-11"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for baptismal burial and resurrection with Christ."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:1b6036a02c7bcc743d143f4f4e17bb6927cb1f4d8dfff9115aeb3250cf287c64"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-53-1-corinthians-ffc4f260"
+loci = ["1Cor.7.10-15", "1Cor.7.39", "1Cor.10.16-17", "1Cor.11.23-29", "1Cor.12.12-13"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for marital indissolubility and the Pauline privilege, Eucharistic communion and participation, and baptismal incorporation."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:86aa4aafa5cb1a66218d81b3f7735715d33eac0a1b62c9c471499728c0838a11"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-54-2-corinthians-f732ea5d"
+loci = ["2Cor.1.21-22", "2Cor.5.18-20"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for unction and seal of the Spirit and the ministry of reconciliation."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:d46805368cfb0a0832754b383d0c21f3e10361c941f720df0f6e28be6a1f43d2"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-55-galatians-e95d4a59"
+loci = ["Gal.3.27-28"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for putting on Christ in Baptism."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:d1becf65404d8b685106f60ada2ee449c6fc70f69fdb1e90b6eb4712794c0a17"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-56-ephesians-10c79be0"
+loci = ["Eph.1.9-10", "Eph.1.13-14", "Eph.4.4-6", "Eph.5.21-33"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for the mystery of God's will, signing with the Spirit, one Baptism, and the great sacrament of Christ and the Church in Matrimony."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:faac3fc52bb177cb8aeb9f5f56ceb440558a3cd57823293335446f8ae7c4dbf6"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-63-titus-cc381a3c"
+loci = ["Titus.1.5", "Titus.3.5-7"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for ordaining presbyters in every city and the laver of regeneration."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:1330502f1896cc0458d28128af9456d217f8846e1f00063d1737b59362987818"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-65-hebrews-78520956"
+loci = ["Heb.5.1-6", "Heb.7.24-27", "Heb.13.4"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for Christ's eternal high priesthood and the honor of marriage."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:0c686e9320485622fa117ab272c9fdd8858abc5e2473747a5b8ee6557bd89d3b"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-67-1-peter-a30ff490"
+loci = ["1Pet.3.20-21"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for Noah's ark as type of saving Baptism."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:2b6e35c6f13f72ccdbfa3235d5351e9369fbae3410b31aa3a338149fa6a8bc6a"
+
+[[bindings]]
+source_id = "artifact.ante-nicene-fathers.volume-1.ccel-web-2026-10-13.ccel-text-ee9c7f0a"
+loci = ["Ignatius Eph. 20; Trall. 2-3; Smyrn. 7-8", "Justin 1 Apol. 61, 65-67", "Irenaeus Adv. haer. IV.18, V.2"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk across Ignatius (strictly Shorter Recension), Justin Martyr, and Irenaeus of Lyons for early patristic Eucharistic realism, episcopal hierarchy, and baptismal regeneration."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:55185d261b4711561d2908f7ad9d4398cd02feb77eac70722120ef8090518990"
+
+[[bindings]]
+source_id = "passage.ignatius-of-antioch.letter-to-the-smyrnaeans.roberts-donaldson-anf1-1887.7.short-recension"
+loci = ["7"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified repository passage controlling Ignatius's authentic Shorter Recension witness to the Eucharist as the flesh of our Saviour Jesus Christ."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:76aeb4138380b206d89106b8cb4ddea6887a536a233439414b3642b6e93f47d6"
+
+[[bindings]]
+source_id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.61.facsimile"
+loci = ["61"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Repository-verified facsimile passage controlling Justin's witness to baptismal washing, Trinitarian naming, and illumination."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:fd2d39abf81b34b763c660a4e45092ce708c53ef92b72dfe17bf307db874d70d"
+
+[[bindings]]
+source_id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.65.facsimile"
+loci = ["65"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Repository-verified facsimile passage controlling Justin's witness to presidential thanksgiving and diaconal distribution."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:33ef0205f7341f18e4740a62a28c5b1ad007d38b34055e7e38a23f588563bc60"
+
+[[bindings]]
+source_id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.66.facsimile"
+loci = ["66"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Repository-verified facsimile passage controlling Justin's witness to the Eucharist as the flesh and blood of the incarnate Jesus."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:d2b7ffc3be3f4bc46040257f0aa77cbb07b1d51358900efc9ae35225bfb4383f"
+
+[[bindings]]
+source_id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.67.facsimile"
+loci = ["67"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Repository-verified facsimile passage controlling Justin's Sunday liturgical assembly witness."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:bac02d64cdb19410b0d954a444ad57942628b732fc5fbf6ff1b1b7331dd4c9d6"
+
+[[bindings]]
+source_id = "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.18.1-6.facsimile"
+loci = ["4.18.1-6"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Repository-verified facsimile passage controlling Irenaeus's teaching on the new oblation of the Church fulfilling Malachias 1:11."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:03a2088250e024d9d78d0ab62c87296c4ccc8bdf2d393234842dac6a24f29787"
+
+[[bindings]]
+source_id = "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.5.2.2-3.ocr"
+loci = ["5.2.2-3"]
+role = "lead"
+states = ["cataloged", "acquired", "inspected"]
+context = "Inspected OCR passage locating Irenaeus's witness to the Eucharistic body and blood nourishing human bodies unto resurrection, collated against tracked ANF1 CCEL text."
+source_fingerprint = "sha256:c5a2e8e8e0c008e603752947eb28b4d0f955daf9ebba44ec62b85d4da3b6c580"
+
+[[bindings]]
+source_id = "artifact.ante-nicene-fathers.volume-5.ccel-web-2026-10-13.ccel-text-a02b61c3"
+loci = ["Cyprian De lapsis 16, 28-29; Ep. XII"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for St. Cyprian's witness to post-baptismal penance, confession, imposition of hands, and reconciliation (De lapsis 16, 28-29; Ep. XII [Ox. XVIII])."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:2734f36495223970e22cee6bcc810142a01d0e91785405ceebecc202c3a92e46"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.ccel-web-2026-10-06.ccel-text-56d84cfa"
+loci = ["Procatechesis 9", "Catechetical Lectures III", "Mystagogical Catecheses I-V"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for Jerusalem baptismal, chrismational, and Eucharistic mystagogy, noting scholarly attribution to Cyril or John II of Jerusalem."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:1f357ee73bda8276cc25eb0133278376e91529929c0187de2d364f9c3b192261"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-10.ccel-web-2026-10-13.ccel-text-14fa05cc"
+loci = ["De mysteriis III-IV, VII-IX", "De paenitentia I-II"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for St. Ambrose on baptismal water, the spiritual seal, Eucharistic conversion by Christ's word, and the Church's power to forgive all sins."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:71c2da20461a210a60d7d1b536390ec6048ba02c13e0ded9ae509ae12ae1f926"
+
+[[bindings]]
+source_id = "segment.john-chrysostom.homiliae-in-matthaeum.ccel-web-2026-09-17.complete-homilies"
+loci = ["82.1", "82.4", "82.5", "82.6"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for St. John Chrysostom's witness to Christ as principal consecrator of the Eucharist and the identity of the altar with the Upper Room."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:3256f7ab4e49f1dc14e2a0ccbd11d96e3081e94da59d9301d628ce87055c3e88"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-12.ccel-web-2026-09-28.ccel-text-10a3454d"
+loci = ["Hom. in 1 Cor. 24"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for St. John Chrysostom on Eucharistic participation and ecclesial unity."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:c72d9f88324042269c8b3ece8011d4a9732317bb6ce9105acd5d3690f1794509"
+
+[[bindings]]
+source_id = "segment.john-chrysostom.homilies-on-ephesians.english-npnf13-ccel-web-2026-09-05.complete-commentary"
+loci = ["20"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for St. John Chrysostom's patristic theology of Christian marriage as domestic church and image of Christ and the Church."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:6fae4d670aaa24ec943ddbe8297aa83673ffe73927b59b3256f2d89f7a2695f6"
+
+[[bindings]]
+source_id = "work.john-chrysostom.de-sacerdotio"
+role = "context"
+states = ["cataloged"]
+context = "Catalog-only reference for Chrysostom's treatise On the Priesthood (NPNF1-9 absent locally); summarized strictly without verbatim quotation."
+
+[[bindings]]
+source_id = "passage.augustine.de-civitate-dei.dods-1871.10.5-6"
+loci = ["10.5-6"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for St. Augustine's classic definition of visible sacrifice as a sacred sign and the Church offered in the Eucharistic sacrifice."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:656887cdeca9dd94a0c1de3e15400368956fa27922c7e981ce60aa90688d671c"
+
+[[bindings]]
+source_id = "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.10.5-6"
+loci = ["10.5-6"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim Latin CSEL 40 control for Augustine's De civitate Dei X.5-6."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:f6e1e889bb4f2198ccebab9d7119d2edb9160c51892a0bc4fc9b8a202ab617b4"
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45305-body-lf"
+loci = ["14.21-23", "15.16"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for St. Augustine's theology of marriage as a pre-Fall blessing and seed-bed of the city (XIV.21-23; XV.16)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:6bd16ca34656e4a17b7967a6b8ce070ebb4fdffa9b8c855088ab3e08e30bf996"
+
+[[bindings]]
+source_id = "segment.augustine.de-doctrina-christiana.ccel-web-2026-09-17.complete-work"
+loci = ["I.2", "III.9"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for St. Augustine's semiotics of signum and res and the liberating clarity of Christian sacraments."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:004bf21aa42d430e5a5ebf9b654f5bd2e409844b0f65aec733a4f8962c78ec41"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-7.ccel-web-2026-09-17.ccel-text-266502c9"
+loci = ["Tract. 26.11-13", "49.24", "80.3", "120.2", "121.4"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for St. Augustine on word joined to element (Tr. 80.3), the sacraments issuing from Christ's pierced side (verified at Tr. 120.2), Eucharistic unity (Tr. 26.11-13), and loosing of sins (Tr. 49.24, 121.4)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:10294711891b3ca7163bf578e02d0a027dbd110257bdaf2fb0b89b65ffe858de"
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-graeca-volume-3.1857-paris.ia-complete-ocr-c3f4056d"
+role = "lead"
+states = ["cataloged", "acquired", "inspected"]
+context = "Inspected OCR finding aid for Pseudo-Dionysius's tripartite hierarchical consecration of hierarchs, priests, and ministers."
+source_fingerprint = "sha256:74a4a3bc38b1aa69c15acc6e4cf87e3ffa953741c7cf99e566159072f8a346ac"
+
+[[bindings]]
+source_id = "artifact.bede.in-marci-evangelium-expositio.2026-10-13-latin-wikisource-migne.latin-text-b8197766"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim Latin text on disk for St. Bede's witness to apostolic anointing of the sick with oil and marital indissolubility."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:838ec2d9bdd3872f40f104399e97325542dc20fc47dd3b1b4d576e018c618fc2"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.text-790ed587"
+loci = ["Mark 6:12-13", "Mark 10:2-12"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim 1842 Oxford English text on disk for Bede (Book II.6), Pseudo-Chrysostom (Victor of Antioch), and Theophylact on Mark 6:12-13, and Bede on Mark 10:2-12."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:325217fa7bafbcf82ea40449ad8fc7ed0ef4e709b32d339e8103b539ce64d370"
+
+[[bindings]]
+source_id = "segment.john-of-damascus.de-fide-orthodoxa.1898-edinburgh-npnf-ccel.complete-text"
+loci = ["IV.9", "IV.13"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for St. John of Damascus on Baptism and Eucharistic conversion by the Holy Spirit."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:6b1b81850c60b246ab141f5194699e420a32b06d1fe0106cea990c17a33487f9"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006.pg19950-body-4597132e"
+loci = ["III.60.2.corpus", "III.62.1.corpus", "III.63.1.corpus", "III.66.1.corpus", "III.72.1.corpus", "III.75.2.corpus", "III.84.2.corpus"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk across the entire Tertia Pars sacramental treatise (qq. 60-65 general; 66-71 Baptism; 72 Confirmation; 73-83 Eucharist; 84-90 Penance)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:44bb2918bacdd01a424eae980d78ad285fcea31c85426a00800aafd120952178"
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006.iii-79-1-corpus"
+loci = ["III.79.1.corpus"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling St. Thomas's account of the Eucharistic grace of spiritual nourishment and charity."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:922898f245e5d278a6100c380a7713e2d683843b0b3ea09b3204ac17557179b4"
+
+[[bindings]]
+source_id = "work.anonymous-supplement-compiler.supplementum-tertiae-partis"
+role = "context"
+states = ["cataloged"]
+context = "Catalog-only reference for the Supplementum Tertiae Partis (Penance completion, Extreme Unction, Holy Orders, Matrimony); doctrine summarized accurately without verbatim quotes."
+
+[[bindings]]
+source_id = "passage.peter-lombard.sententiae.1981-grottaferrata-third-edition-volume-2.4.17.3.4-6"
+loci = ["4.17.3.4-6"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling Peter Lombard's medieval synthesis on confession to a priest."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:968d13994ab48dae1858bf2a053a49b54dafc537e0a3c527610a6c350d2bd594"
+
+[[bindings]]
+source_id = "passage.peter-lombard.sententiae.1981-grottaferrata-third-edition-volume-2.4.17.4.3-4"
+loci = ["4.17.4.3-4"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling Peter Lombard's citation of Pseudo-Augustine on penitential confession."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:5cfe98c5e23ae28980a0cf33369e6506f72f8e2c0f3fae8cd9fe457ec55ee6ca"
+
+[[bindings]]
+source_id = "passage.anonymous.de-vera-et-falsa-poenitentia.1845-migne-pl-40-corpus-corporum.10.25"
+loci = ["10.25"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin witness distinguishing the medieval treatise De vera et falsa poenitentia from authentic works of St. Augustine."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:caf753b80a5ddba198bbf648611c2d6175c26277dbc6c903017762081b96bc7a"
+
+[[bindings]]
+source_id = "segment.fourth-lateran-council.firmiter-credimus.2026-09-29-latin-patristica.complete-constitution"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim Latin on disk controlling the conciliar definition of transubstantiation and the reservation of Eucharistic consecration to a duly ordained priest."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:92daebd55a99f65bc1817a2f2e4c4cf3016457cc7bb36218ca2a69bcc78901f5"
+
+[[bindings]]
+source_id = "edition.council-of-florence.laetentur-caeli.latin-denzinger"
+role = "official-control"
+states = ["cataloged"]
+context = "Catalog-only reference for the Council of Florence's decree on leavened and unleavened Eucharistic bread."
+
+[[bindings]]
+source_id = "artifact.bullarium-romanum.volume-05.1860-turin-latin.ocr-88dad1019102"
+role = "lead"
+states = ["cataloged", "acquired", "inspected"]
+context = "Inspected 1860 Bullarium Romanum OCR for historical witness to Florence's Decree for the Armenians (Exsultate Deo §§10-16: Penance §13, Extreme Unction §14, Orders §15, Matrimony §16)."
+source_fingerprint = "sha256:2eb12c76ac4d115ee9dfa4a399af57ed27d15e41daab076494ab19245a257d4e"
+
+[[bindings]]
+source_id = "edition.council-of-trent.canones-et-decreta.latin-tauchnitz-1887"
+role = "official-control"
+states = ["cataloged"]
+context = "Broad catalog-level control for the Tridentine sacramental decrees; exact repository-verified sessions are bound individually below."
+
+[[bindings]]
+source_id = "passage.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.sessio-13-decretum-1-5"
+loci = ["sessio-13-decretum-1-5"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin passage controlling Trent's doctrine of Real Presence, transubstantiation, concomitance, and Eucharistic adoration."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:79031e553d56973c2101084ec2ef771623580ddee8b7e4c1201e81041a30766d"
+
+[[bindings]]
+source_id = "passage.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.sessio-13-canon-1-11"
+loci = ["sessio-13-canon-1-11"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canons controlling Trent's Eucharistic dogmas."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:1707e674ced1cc0ae963a49036ab21f0c516152ba7dc63b90e8facc79d6f574c"
+
+[[bindings]]
+source_id = "passage.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.sessio-14-decretum-3"
+loci = ["sessio-14-decretum-3"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin passage controlling Trent's distinction of the quasi-matter (acts of the penitent) and form (absolution) of Penance."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:81b1e09dfc0a8178d088835dfb346f4b51f6ce71cf6155357897fb763ead8e8b"
+
+[[bindings]]
+source_id = "passage.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.sessio-14-decretum-4"
+loci = ["sessio-14-decretum-4"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin passage controlling Trent's doctrine on perfect contrition and attrition."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:af5a3f7acf0e40d1eeb6b801d47f7cb796ed51bedfb55269a67ef70257b25578"
+
+[[bindings]]
+source_id = "passage.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.sessio-14-decretum-6"
+loci = ["sessio-14-decretum-6"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin passage controlling the judicial character of sacramental absolution."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:9fc918f0af037ae6d63468816ace9a7160056a0333f0ab7b32ace028cab41f6c"
+
+[[bindings]]
+source_id = "passage.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.sessio-14-canon-9"
+loci = ["sessio-14-canon-9"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canon defining absolution as a judicial act, not a bare ministry of pronouncing forgiveness."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:f1b870d4cdda2dbfcd84d8bd1a73fd201da1524e8dbb08eb4a3bf541921eb021"
+
+[[bindings]]
+source_id = "passage.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.sessio-22-decretum-1"
+loci = ["sessio-22-decretum-1"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin passage controlling the institution of the sacrifice of the Mass."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:9f748a177fe6ebc5850103f6f7e44d6ed2581bc86b4a46d1816c223be6c926de"
+
+[[bindings]]
+source_id = "passage.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.sessio-22-decretum-2"
+loci = ["sessio-22-decretum-2"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin passage controlling the identity of victim and priest between Calvary and the Mass, differing only in the manner of offering."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:ec6f86c23a9a2edf9293304c379f557da745fcdc8e0dc6469060a0efb2b88482"
+
+[[bindings]]
+source_id = "passage.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.sessio-22-canon-1-2"
+loci = ["sessio-22-canon-1-2"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canons defining the Mass as a true and proper sacrifice offered by New Testament priests."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:5a63f8ef397f3a4530bddb85d877f157ab4eeb7eb2221b63e4cfef449e04e9cc"
+
+[[bindings]]
+source_id = "passage.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.sessio-22-canon-3-9"
+loci = ["sessio-22-canon-3-9"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canons defining the propitiatory value of the Mass."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:722dbbf5e3421c3979d32cd62035f2fd46c1c32987eba4f8318e1c0d543ab18c"
+
+[[bindings]]
+source_id = "passage.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.sessio-24-canon-9"
+loci = ["sessio-24-canon-9"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canon controlling the Church's discipline of clerical celibacy."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:e48183432ba9f53f9aa9d16095715c4e71ea423073e229915ad96a76fc2d9057"
+
+[[bindings]]
+source_id = "passage.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.sessio-24-canon-10"
+loci = ["sessio-24-canon-10"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canon controlling the relative excellence of consecrated virginity and celibacy alongside the goodness of Matrimony."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:ec394617e644d247398b1b8b221a186950532b30e4f802b0e77f39dbd18fad34"
+
+[[bindings]]
+source_id = "passage.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.sessio-24-ref-matr-10"
+loci = ["sessio-24-reformatio-matrimonii-10"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin decree on solemnization of Matrimony."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:ead8b4e29d0f906406f5e2118ae8cdbda82a00df0d038cc4c6223832043427ca"
+
+[[bindings]]
+source_id = "passage.council-of-trent.catechismus-romanus.donovan-baltimore-lucas-brothers.part-2.penance.satisfaction-three-heads"
+loci = ["Part II, Penance, satisfaction under three heads"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim tracked passage controlling the Roman Catechism's three heads of sacramental satisfaction: prayer, fasting, and almsdeeds."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:e7d092fce0b63f63bc55e3d93d1053c93026e36ed8979512c0d53776e461697a"
+
+[[bindings]]
+source_id = "artifact.council-of-trent.catechismus-romanus.donovan-baltimore-lucas-brothers.ia-djvu-text-83a948ed"
+role = "lead"
+states = ["cataloged", "acquired", "inspected"]
+context = "Inspected OCR finding aid for the Roman Catechism's sacramental exposition, catching print typos in session numbers."
+source_fingerprint = "sha256:0ef3fed549b0774de73d546c2a9c17c518a6a7298987e459c33e4c3f34751bb0"
+
+[[bindings]]
+source_id = "artifact.papal.leo-xiii.hf-l-xiii-enc-10021880-arcanum.2026-10-26-vatican-la.latin-text-c91a185f14c4"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim Latin text on disk controlling Leo XIII's teaching on the inseparability of the valid matrimonial contract and the sacrament among the baptized."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:413fb5eb8de933565fd0c8d5206ab6489c9845c562b11622761d9071fa132835"
+
+[[bindings]]
+source_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-reading-text-fc16a357"
+loci = ["Arcanum Divinae (1880)", "Apostolicae Curae (1896)"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim 1903 Benziger English text on disk for Leo XIII's Arcanum Divinae (1880) and Apostolicae Curae (1896)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:700e54ed8c791d21396ab266cced95ec6f379b33dfcc3ca38b326a3d81355f76"
+
+[[bindings]]
+source_id = "artifact.papal.leo-xiii.litterae-apostolicae-apostolicae-curae-13-septembris-1896.2026-10-26-vatican-la.latin-text-f4402a5d479b"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim Latin text on disk controlling Leo XIII's sacramental principles of determinate signification in form and ecclesial intention in Holy Orders."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:ea1621be8b8d44c09caa00905222b7883b5820f30953f3f2b9e2eca57a113684"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.5-7"
+loci = ["5-7"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling Christ's presence in the liturgy and sacramental acts."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:8e0dce329d551149758a5c7ec632f105468317aa33efe975a4ad955348d156d0"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.47-58"
+loci = ["47-58"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling the Eucharistic mystery as paschal banquet and sacrifice."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:93e233330c604440baef8df17b7f3318f8b246a8f09de2c0ac992b721b765646"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.59-82"
+loci = ["59-82"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling the purpose of the sacraments and liturgical revision of Confirmation, Anointing, and Matrimony."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:6c59630518cffffabc9868400650c195643596abfa31950e36d2b2e1512643af"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.10-11"
+loci = ["10-11"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling the essential distinction between the common and ministerial priesthood and the sacramental structure of Christian life."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:a1530ed1e2c173aa46a742fd2676bca27194a7dc568a2962026c62d46d382fab"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.29"
+loci = ["29"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling the sacramental diaconate ordained not unto the priesthood but unto a ministry of service."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:7d612f40dfe25267655197fa3a439b3571166bfc2c7fe572d5698abef096367e"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.orientalium-ecclesiarum.english-vatican-web-2026-07-24.2-6"
+loci = ["2-6"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling the equal dignity of the particular Churches of East and West."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:78824d0b05fd1e920aa6ffc40a8b2ced33fc220f1d53b9a050f17ef62f95f7ed"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.orientalium-ecclesiarum.english-vatican-web-2026-07-24.12-14"
+loci = ["12-14"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling ancient Eastern sacramental discipline and valid presbyteral administration of Chrismation."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:af14155bed7b34d496ca7a519e61e9d504e56c22973ccae45ed0c4a5ac9e0ddb"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.unitatis-redintegratio.english-vatican-web-2026-07-24.22"
+loci = ["22"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling the sacramental bond of unity established by Baptism."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:ed0fadcfe21b37a19072f51579e2603b94cfbd10d8b52960c10a7ce39b8a52f0"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.presbyterorum-ordinis.english-vatican-web-2026-07-23.2-6"
+loci = ["2-6"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling presbyteral configuration to Christ the Head and its ordering to the Eucharist."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:fc1c5dd6b093114b1f1f79c762ea6841bf89faa6b45e3d16cef57b02415750e9"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.presbyterorum-ordinis.english-vatican-web-2026-07-23.16"
+loci = ["16"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling priestly celibacy in the Latin Church while honoring married Eastern presbyters."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:cedade3b5cfefb101625965f52fbb6e64666bdfda97b563fcfc8c339b7b9198a"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.gaudium-et-spes.english-vatican-web-2026-07-23.47-52"
+loci = ["47-52"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling the conjugal covenant, conjugal love, and ordering of marriage to procreation and education of children."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:bdc61fe14752434d2c90e73eed252c9414e56a2618bb0f6027cad96cff14d1e0"
+
+[[bindings]]
+source_id = "work.catholic-church.catechism"
+role = "official-control"
+states = ["cataloged"]
+context = "Catalog-level reference to the Catechism's sacramental synthesis; exact verified passages are bound below."
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-vatican-web-2026-07-23.1131"
+loci = ["1131"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling the formal definition of a sacrament as an efficacious sign of grace instituted by Christ and entrusted to the Church."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:e1889faa27c710c75e1a9948a3f2c03d7c0825096fddcc4d4f67023cca8e1fa5"
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-vatican-web-2026-07-23.1240"
+loci = ["1240"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling the Latin and Eastern baptismal formulas."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:b60fd382aff60e1ab195ef6781d63fa59a67caef6a450668babd2d73759e0fd4"
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-vatican-web-2026-07-23.1300"
+loci = ["1300"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling the Latin Confirmation formula and Eastern Chrismation formula (Vatican web wording)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:fe1ca7bf0b65a700da423d7f0ba01df2e4734bd82bcecec63deb7deaab18984b"
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-usccb-second-2019.1300"
+loci = ["1300"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Verified USCCB second-edition control documenting the minor translation variation in the Eastern Chrismation formula beside Vatican web 1300."
+source_fingerprint = "sha256:7cdd2636436a7cc4930f768baa5168f88ede282c7dbf372e0a36df1ccec903ca"
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-vatican-web-2026-07-23.1322-1323"
+loci = ["1322-1323"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling the Eucharist as completion of Christian initiation."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:87f17d4cf38f86912a9d8703583a3e5e996a6def6f666f1dfcaadfdc36556a31"
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-vatican-web-2026-07-23.1362-1377"
+loci = ["1362-1377"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling Eucharistic memorial, sacrifice, Real Presence, and transubstantiation."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:02656bb2ab56968c4479031806c2a52314900f1b1c450117faff28fd163ce74d"
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-vatican-web-2026-07-23.1382"
+loci = ["1382"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling the Eucharist as both sacrifice and paschal banquet."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:7071b2a068f9d1894b6b808a262d87ebab6ee93e375e84d2c1c1c7c1e1be92db"
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-vatican-web-2026-07-23.1402-1405"
+loci = ["1402-1405"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling the Eucharist as pledge of future glory."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:a300a1cd2e4c124123c7ccb6c0d52e5dc58e1eeec6ccaf2183b00e2a6d686400"
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-vatican-web-2026-07-23.1449"
+loci = ["1449"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling the Latin formula of sacramental absolution."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:47d6ae0a31e483a13f247e1ebcd5c6faa6ef0443a4fdfd892570d82416f9e904"
+
+[[bindings]]
+source_id = "work.papal.pius-xi.hf-p-xi-enc-19301231-casti-connubii"
+role = "official-control"
+states = ["cataloged"]
+context = "Catalog-only reference for Pius XI's encyclical on the three Augustinian goods of marriage (AAS Jan. 1931 restricted)."
+
+[[bindings]]
+source_id = "work.papal.pius-xii.hf-p-xii-apc-19471130-sacramentum-ordinis"
+role = "official-control"
+states = ["cataloged"]
+context = "Catalog-only reference for Pius XII's apostolic constitution determining the essential matter and form of diaconate, presbyterate, and episcopate."
+
+[[bindings]]
+source_id = "passage.paul-vi.mysterium-fidei.english-vatican-web-2026-07-26.38-49"
+loci = ["38-49"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling Paul VI's defense of transubstantiation against transignification/transfinalization reductions."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:fb522dc90e69d33a71c2509657df94805801aed246f807463518856a7fb1bfa0"
+
+[[bindings]]
+source_id = "passage.paul-vi.sacerdotalis-caelibatus.english-vatican-web-2026-07-25.19-34"
+loci = ["19-34"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling the Christological, ecclesiological, and eschatological grounds of priestly celibacy."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:f4e55923fb0da27ddee969d1e573b4f04a1b265e2a0c3de7c7a15779825b56f3"
+
+[[bindings]]
+source_id = "passage.paul-vi.ministeria-quaedam.latin-vatican-web-2026-07-27.i-iv"
+loci = ["I-IV"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling the suppression of minor orders and subdiaconate in the Latin Church and institution of lector and acolyte."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:25cf4287fff223a621920c665547d5920a9898ac713318f39100a26207cbb98c"
+
+[[bindings]]
+source_id = "work.papal.paul-vi.hf-p-vi-apc-19680618-pontificalis-romani"
+role = "official-control"
+states = ["cataloged"]
+context = "Catalog-only reference for Paul VI's revised ordination rites and consecratory prayers."
+
+[[bindings]]
+source_id = "work.papal.paul-vi.hf-p-vi-apc-19710815-divina-consortium"
+role = "official-control"
+states = ["cataloged"]
+context = "Catalog-only reference for Paul VI's determination of the revised Latin Confirmation formula and chrismal anointing."
+
+[[bindings]]
+source_id = "work.papal.paul-vi.hf-p-vi-apc-19721130-sacram-unctionem"
+role = "official-control"
+states = ["cataloged"]
+context = "Catalog-only reference for Paul VI's revision of the essential matter, oil, and form of Anointing of the Sick."
+
+[[bindings]]
+source_id = "passage.john-paul-ii.ecclesia-de-eucharistia.english-vatican-web-2026-07-26.1-26"
+loci = ["1-26"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling the Eucharist as source of the Church's life and sacrifice."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:9ef40be8ad7fea3b7ea6f49bc3cc8eee83911e29ced18e6a002cc9f95b240501"
+
+[[bindings]]
+source_id = "passage.john-paul-ii.pastores-dabo-vobis.english-vatican-web-2026-07-25.29"
+loci = ["29"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling clerical celibacy and spousal charity."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:c68b7f35d4457fda566030a36eb97a83d96e448eb9ca125ec378a67161fdd822"
+
+[[bindings]]
+source_id = "work.papal.john-paul-ii.hf-jp-ii-exh-19811122-familiaris-consortio"
+role = "official-control"
+states = ["cataloged"]
+context = "Catalog-only reference for John Paul II's teaching on Christian marriage and the domestic church."
+
+[[bindings]]
+source_id = "work.papal.john-paul-ii.hf-jp-ii-exh-02121984-reconciliatio-et-paenitentia"
+role = "official-control"
+states = ["cataloged"]
+context = "Catalog-only reference for John Paul II's theology of penance, mortal and venial sin, and individual confession."
+
+[[bindings]]
+source_id = "work.papal.john-paul-ii.hf-jp-ii-motu-proprio-20020502-misericordia-dei"
+role = "official-control"
+states = ["cataloged"]
+context = "Catalog-only reference for the discipline governing individual confession and strict conditions for general absolution."
+
+[[bindings]]
+source_id = "passage.benedict-xvi.sacramentum-caritatis.english-vatican-web-2026-07-26.6-11"
+loci = ["6-11"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling the Trinitarian and sacrificial structure of the Eucharist."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:b73a76f062a688ee5fe33ff20a3c85572217942e98a1997e2c2028c2b5601e65"
+
+[[bindings]]
+source_id = "work.papal.benedict-xvi.hf-ben-xvi-apl-20091026-codex-iuris-canonici"
+role = "currentness-control"
+states = ["cataloged"]
+context = "Catalog-only reference for Benedict XVI's amendment of CIC cc. 1008-1009 distinguishing the episcopal/presbyteral in persona Christi Capitis from the diaconal configuration."
+
+[[bindings]]
+source_id = "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.litterae-circulares-pro-multis-2006.italian-notitiae-481-482.complete-text"
+loci = ["complete-text"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling the liturgical translation of pro multis in the words of consecration."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:fab2e05a8a0de25532254458c5fcd025bec818e3fb1d4294f480dd493f0c463c"
+
+[[bindings]]
+source_id = "passage.holy-see.pontificia-praecepta-de-clero-uxorato-orientali.italian-aas-106-2014.disposizioni"
+loci = ["disposizioni"]
+role = "currentness-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling contemporary discipline on married Eastern Catholic clergy outside traditional Eastern territories."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:877be9e589d335224dcaf7ad96c2ba772ff527e224f2787285f497ea24c58046"
+
+[[bindings]]
+source_id = "work.papal.francesco.papa-francesco-motu-proprio-20160531-de-concordia-inter-codices"
+role = "currentness-control"
+states = ["cataloged"]
+context = "Catalog-only reference for Pope Francis's harmonization of CIC and CCEO norms including baptismal ascription and CIC c. 1108 §3."
+
+[[bindings]]
+source_id = "passage.francis.spiritus-domini.latin-vatican-web-2026-07-27.canon-230-1-modification"
+loci = ["canon-230-1-modification"]
+role = "currentness-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling the 2021 modification opening stable instituted ministries of lector and acolyte to lay persons while retaining their distinction from Holy Orders."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:a20afe4fd7feb3f7ad355989edc2f3d8467f1e588651e3cdb4f04326c6832bf0"
+
+[[bindings]]
+source_id = "work.catholic-church.codex-iuris-canonici-1983"
+role = "official-control"
+states = ["cataloged"]
+context = "Catalog-level control for Latin sacramental canon law; exact verified canon passages are bound below."
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-codex-2026-07-25.canon-1"
+loci = ["canon-1"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canon confirming CIC 1983 binds the Latin Church alone unless otherwise stated."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:5af9d0d838f3a0cfb5bb193cbae8f1071e14c4d45547eea55a86af0d2a71d393"
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-codex-2026-07-25.canon-277"
+loci = ["canon-277"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canon controlling Latin clerical celibacy."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:1af01660366df43eea89f23740ff8fa2ff3c3d32ab1da5acee636bae1e685351"
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-codex-2026-07-25.canon-290"
+loci = ["canon-290"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canon controlling the indelible validity of sacred ordination."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:b11be89ced26eca4daa10282f3593eaab91a86e6f01b5541753318e40e3b3cf3"
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-codex-2026-07-25.canon-976"
+loci = ["canon-976"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canon controlling absolution of any penitent in danger of death by any priest."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:2bba52e0f5ed113e0439670800dad92f7a3a19c08a0737701f51d502da8699b8"
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-codex-2026-07-25.canon-1008"
+loci = ["canon-1008"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canon controlling the sacrament of Holy Orders."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:cb0722c373b7dfc13987d1b8900ce0d0ed64eb3ad78c200b3fcb6e66034dd6d6"
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-codex-2026-07-25.canon-1024"
+loci = ["canon-1024"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canon confirming that only a baptized man validly receives sacred ordination."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:9d63843b72405b3c682c746db647629e7be6245f7376fabb81019800ac8e671f"
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-codex-2026-07-25.canon-1031"
+loci = ["canon-1031"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canon controlling age and marital discipline for transitional and permanent deacons."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:cefd3bf3570bf328454980d43b57b8210cd90670b2c803a1ed7a75d32652de42"
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-codex-2026-07-25.canon-1055"
+loci = ["canon-1055"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canon defining the matrimonial covenant, its ends, and its sacramental identity among the baptized."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:577fb81e590a97efa6bb6971e7305e645cf5ca1e52d1d35ad81352f33d849a02"
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-codex-2026-07-25.canon-1059"
+loci = ["canon-1059"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canon controlling ecclesiastical competence over marriage of Catholics."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:683c889f8a33c9f29c7b911f343358642d4b1e3f5f677f8bf04996e6815ccf64"
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-codex-2026-07-25.canon-1084"
+loci = ["canon-1084"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canon distinguishing antecedent perpetual impotence from sterility."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:5d1d31f350a9e9ca14228e1d6a74549d2610912586b337ca407cbf9375a4a85b"
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-codex-2026-07-25.canon-1087"
+loci = ["canon-1087"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canon controlling the diriment impediment of sacred orders."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:38a62cea72e40ed3ac85171bddf4cfbba84c80eddb02f8616321393fedb75d15"
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-codex-2026-07-25.canon-1135"
+loci = ["canon-1135"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canon controlling equal marital duties and rights of spouses."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:1ffb1c2ed28b3cd69c3f47ccd48464b1f866c22918875c22b0ac32679ee33cf8"
+
+[[bindings]]
+source_id = "work.catholic-church.codex-canonum-ecclesiarum-orientalium"
+role = "official-control"
+states = ["cataloged"]
+context = "Catalog-level control for Eastern Catholic sacramental canon law; exact verified canon passages are bound below."
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-canonum-ecclesiarum-orientalium.latin-aas-82-1990.canon-1"
+loci = ["canon-1"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canon confirming CCEO 1990 governs all Eastern Catholic Churches."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:efb14e3ce9d0cd5205bbe701714fee4a143154f11873a6ca76b2ef309dacde7e"
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-canonum-ecclesiarum-orientalium.latin-vatican-web-2026-07-25.canon-27"
+loci = ["canon-27"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canon defining a Church sui iuris."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:35738c0c177be621d3cd5dee77af0ed076cc631177243a7c2460186eb655311f"
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-canonum-ecclesiarum-orientalium.latin-vatican-web-2026-07-25.canon-28"
+loci = ["canon-28"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canon enumerating the five Eastern ritual traditions (Alexandrian, Antiochene, Armenian, Chaldean, Constantinopolitan)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:e5dfde33edbe6bafeef91b3ddbea6037c7544aa0ad8bd47f7c704274b5fabefc"
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-canonum-ecclesiarum-orientalium.latin-vatican-web-2026-07-25.canon-55"
+loci = ["canon-55"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canon controlling patriarchal Churches sui iuris."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:8eff0c3216c4031deb514c7f8f1fd4131efc16b82de267530ea239d9db2afbb1"
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-canonum-ecclesiarum-orientalium.latin-vatican-web-2026-07-25.canon-151"
+loci = ["canon-151"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canon controlling major archiepiscopal Churches sui iuris."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:0038198f2856a796f40efef5fdbb102fd674e9edd4fa199ad7e33360280ec43a"
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-canonum-ecclesiarum-orientalium.latin-vatican-web-2026-07-25.canon-155"
+loci = ["canon-155"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canon controlling metropolitan Churches sui iuris."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:ca4183f0836c861e8aab53f82df9408fe2299fbbfea871710e1fefcbb581ad89"
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-canonum-ecclesiarum-orientalium.latin-vatican-web-2026-07-25.canon-174"
+loci = ["canon-174"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canon controlling other Churches sui iuris."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:acce231825eb4da0f09377b0795395ba36a6cd1c60195d534fa7d04ad64eab13"
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-canonum-ecclesiarum-orientalium.latin-aas-82-1990.canon-373"
+loci = ["canon-373"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canon controlling clerical celibacy and married Eastern clergy."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:ee9a80568531514e96f98d3be64a9b2c46b84ebb0d3ce2fbdd091654ea7cffa0"
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-canonum-ecclesiarum-orientalium.latin-vatican-web-part2-2026-07-28.canon-668"
+loci = ["canon-668"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canon controlling divine worship and sacramental liturgy in Eastern Churches."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:de5ddbbcc16c2c54486675e73b8ff76e6cd78a1a025cd37ab99a63e9e3f25db4"
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-canonum-ecclesiarum-orientalium.latin-aas-82-1990.canon-758"
+loci = ["canon-758"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canon controlling requirements for licit Eastern ordination."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:ef874a1b26549ed078daf668fb0119c5c3c75d39c98aa912632768829ad7e241"
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-canonum-ecclesiarum-orientalium.latin-aas-82-1990.canon-762"
+loci = ["canon-762"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canon controlling impediments to sacred ordination."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:1006eef5d4cb454aae3ca2689404b4a62e0806baf7325212ce88201804f335af"
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-canonum-ecclesiarum-orientalium.latin-aas-82-1990.canon-804"
+loci = ["canon-804"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canon controlling the diriment impediment of sacred orders in Eastern law."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:c1da0fc0c88841b0598996a4a814a5aeba4b1741755588f58997a09d462a565f"
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-canonum-ecclesiarum-orientalium.latin-vatican-web-part2-2026-07-28.canon-867"
+loci = ["canon-867"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Latin canon controlling sacramentals in Eastern Catholic Churches."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:6c65972d0b8f94f838dc6aedeff50a3aea70ef942658a2f0fa33b6ad14530928"
+
+[[bindings]]
+source_id = "passage.holy-see.scheda-informativa-chiese-cattoliche-orientali-2010.italian-press-bulletin-2010-10-07.enumeration"
+loci = ["enumeration"]
+role = "currentness-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Holy See Press Office enumeration of the 22 Eastern Catholic Churches in 2010 (forming the baseline before the 2015 erection of the Eritrean Church)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:b5e28d80cdbb71255da134ccc024a24506bdd9cc79bc1bba940f18be5927ad96"
+
+[[bindings]]
+source_id = "passage.holy-see.scheda-informativa-chiese-cattoliche-orientali-2010.italian-press-bulletin-2010-10-07.particular-law"
+loci = ["particular-law"]
+role = "currentness-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified passage controlling the role of particular law across the Eastern Churches sui iuris."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:257112ca7685a05467003bf2f046ae6438a357aaa137a851323248b256075071"
+
+[[bindings]]
+source_id = "passage.francis.in-erythraea-nova-constituitur-ecclesia-metropolitana-asmarensis.latin-aas-107-2015.complete-text"
+loci = ["complete-text"]
+role = "currentness-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Verified Latin constitution Multum fructum erecting the Eritrean Catholic Church as a Metropolitan Church sui iuris on 19 January 2015, bringing the total to 24 Churches sui iuris."
+source_fingerprint = "sha256:b45d4e59bba091881622add4e30c2b52486f80684b68a951ae54722af6bdfa2a"
+
+[[bindings]]
+source_id = "work.papal.francesco.papa-francesco-costituzione-ap-20150319-hungariae-prochristifidelibus-byzantiniritus"
+role = "currentness-control"
+states = ["cataloged"]
+context = "Catalog-only reference for the March 2015 elevation of the Hungarian Greek Catholic Church to a Metropolitan Church sui iuris."
+
+[[bindings]]
+source_id = "passage.ukrainian-greek-catholic-church.synod-decrees.2006-lviv-briukhovychi.decree4-ordo-obligation"
+loci = ["Decree 4; closing promulgation and effective-date clauses"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified synodal decree confirming the normative Eastern liturgical Ordo in the Ukrainian Greek Catholic Church."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:d9d41ed9b0891fd4bf236c4aafd6e62c5c689ff769ebc77935605b95b73559dd"
+
+[[bindings]]
+source_id = "passage.melkite-eparchy-of-newton.explanation-ceremonies-christian-initiation.english-pdf-2013.catechumen-rites"
+loci = ["pdf-page-1"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Melkite pastoral explanation witnessing unified infant initiation and pre-baptismal rites."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:049f9cf2151f27b01d8ce5b47b5985ad3fb8ff3988a4988c1ce3e28ed1195c3c"
+
+[[bindings]]
+source_id = "passage.metropolitan-cantor-institute.the-mystery-of-baptism.english-pdf-2012.infant-initiation-placement"
+loci = ["pdf-pages-10-11"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Verified Ruthenian liturgical resource witnessing unified infant Baptism, Chrismation, and First Communion."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:b2e2bcfbae0de5e8b4c64a6464cc0d6b61baaf323e598c75809ca7843c536fa8"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-12.ccel-web-2026-09-28.ccel-text-7bb1db6e"
+loci = ["Leo the Great, Sermon LXXIV.2 (Ascension II)"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for Pope St. Leo the Great's Ascension II sermon (Sermon 74.2: what was visible in our Redeemer has passed over into the sacraments)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:f46e21f750c46c8eabc5db09be985f0f6bbee42101c20dcdea2fc47b044e24bd"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-17-tobias-565b04e8"
+loci = ["Tob.8.5", "Tob.8.8-9"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for Tobias's wedding-night prayer honoring holy marriage and posterity."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:f75f197f33471f5ea7ed5b849997ddb3a0be4c0ad5135bfb6cfb71f4056faddf"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-31-ezechiel-ebd50fae"
+loci = ["Ezech.36.25-27"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for Ezechiel's prophecy of clean water and the new Spirit."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:bf636e7dc7d87b38d2c2a63c40d54e608eab2141e569a934008f295e2059fed2"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-34-joel-7617750c"
+loci = ["Joel.2.13", "Joel.2.28"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for Joel's call to interior penance and the Pentecostal outpouring of the Spirit."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:23452f63ef89ba0a9f9c88a6f329ee5efcaf5dac2de7417ce20eab61da8e4c38"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-58-colossians-d17592ce"
+loci = ["Col.1.24", "Col.1.26-27"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for union of suffering with Christ and Christ as the mystery of glory."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:5cf6c513d39ffc83a9faab86e624dd181f93dfa845f96437b40365ff711ed0ca"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-61-1-timothy-1f76a59e"
+loci = ["1Tim.2.4", "1Tim.4.14"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for God's universal salvific will and imposition of hands of the priesthood."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:6a1bc30255ec2edfbeffa18aff78ca993fa666cb5b4b61f17a4efd0f9c2d0018"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-62-2-timothy-05954dd5"
+loci = ["2Tim.1.6"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for St. Paul's admonition to stir up the grace given by imposition of hands."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:5186e7db174c20830af61e942cb1b24f0e9265ac004672e74cb323adc444ca04"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-66-james-963f1c86"
+loci = ["Jas.5.14-16"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for St. James's apostolic promulgation of Anointing of the Sick and confession of sins."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:6d78eae38029e71208276247191dabb3441a7127a55fa29c476ba0dc0381d704"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-68-2-peter-287fb5f6"
+loci = ["2Pet.1.4"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for sanctifying grace as participation in the divine nature."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:190803ef266149b42b448f7f407a0274df8f7bf48b6aca256e0bf56b8db598ab"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-69-1-john-109bfb9f"
+loci = ["1John.1.8-9", "1John.5.6-8"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for confession of sins and the witness of Spirit, water, and blood."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:49cb9b0f5c004489d8ca8d01109560c49c03b9b6ef95aa7d441c06fb1d9bc9b1"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-73-apocalypse-9ae5c352"
+loci = ["Apoc.5.9-10", "Apoc.19.7-9", "Apoc.21.2", "Apoc.21.22-23"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for the heavenly priesthood and the Marriage Supper of the Lamb."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:b28bde358a8ffc3aa2486baeeeda9bb23021b0bab1a8dccd447d33b2f7225cdb"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.ccel-text-ce371798"
+loci = ["Sermon 71 (NPNF Sermon XXI)"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for St. Augustine's Sermon 71 (NPNF Sermon XXI) identifying the unforgivable sin against the Holy Spirit as final impenitence refusing remission in the Church."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:7f21e16b88aa6eba6556891bfa99280fd5662bf42ef391de140ad6d2960b329a"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-13.english-ccel-web-2026-09-05.ccel-npnf113-text-54274dd9"
+loci = ["Hom. in 1 Tim. XIII", "Hom. in 2 Tim. I"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for St. John Chrysostom's Homilies on 1 Timothy XIII (bishops ordaining) and 2 Timothy I (stirring up the grace of ordination)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:374d296602c0a52e4c252ad0e7704b9c9952d06f6b66b891bb391c8509c390db"
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-27-isaias-0eb1c68d"
+loci = ["Is.11.1-3"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim Latin Vulgate on disk controlling Is 11:2-3 (sevenfold gifts of the Spirit)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:c8ebe298666fd689c0132d046e7f8fa2dfd6c20878929f328179eceec44e8ef5"
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-48-mark-ab7b8b95"
+loci = ["Mark.6.12-13"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim Latin Vulgate on disk controlling Mark 6:12-13 (et ungebant oleo multos aegros)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:b735f8e604c3e75982f2a5b38d3f9340c60bf3764ae851e54be2a26cc50846fe"
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-49-luke-28ae5d9a"
+loci = ["Luke.15.21"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim Latin Vulgate on disk controlling Luke 15:21 (Pater, peccavi in caelum, et coram te)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:c5eb7131bf4e265eeb034ea4bcbceb09f8cddff2c696746f2b4545321b823993"
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-50-john-1542486b"
+loci = ["John.6.51-59", "John.20.22-23"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim Latin Vulgate on disk controlling John 6 Vulgate numbering and John 20:22-23 (insufflavit, remiseritis, retinueritis)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:c270c6a7cd8dcc3b81e1a00becf4d7749677c846e7c0f8abfa315e1b11bf210d"
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-51-acts-d47f5064"
+loci = ["Acts.14.22"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim Latin Vulgate on disk controlling Acts 14:22 Vulgate numbering (= Greek 14:23)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:4a21475f42acd74fc5380e8520edad4b6629b27846fba3a830ee351ba50b8baf"
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-56-ephesians-d9b55031"
+loci = ["Eph.1.9", "Eph.3.9", "Eph.5.26", "Eph.5.32"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim Latin Vulgate on disk controlling sacramentum terminology (Eph 1:9, 3:9, 5:32) and lavacro aquae in verbo vitae (5:26)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:4d2596708ce220f89b008d96cdf3fc6367d6f4698b2abe567517bac4f836648b"
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-58-colossians-f1d99c90"
+loci = ["Col.1.26-27"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim Latin Vulgate on disk controlling mysterium (1:26) beside sacramenti (1:27)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:06c3c5e04fba34cae98e1467242b5e3fc63bbef88a55a37845bf7527b33da821"
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-63-titus-83aa7065"
+loci = ["Titus.3.5"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim Latin Vulgate on disk controlling per lavacrum regenerationis et renovationis Spiritus Sancti."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:4434d1e24e43571b069936a7fced03afa045cd8a94182a5e992d0268cfcb2ac7"
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-66-james-4f2a3f26"
+loci = ["Jas.5.14-15"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim Latin Vulgate on disk controlling James 5:14-15 (Infirmatur quis in vobis... presbyteros ecclesiae... oratio fidei)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:30339547e37acefe937efc4a0ed2efb34abe698a2c614aff72e0beb3c00f3a66"
+
+[[bindings]]
+source_id = "passage.francis.pascite-gregem-dei.english-vatican-web-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "currentness-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the 2021 revision of Book VI of CIC 1983, including renumbered c. 1386 §1 on direct violation of the sacramental seal."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:69e4420f8da7e2067f97506fca4dfca89a710de17d259c31b6a68d3c4b7de180"
+
+[[bindings]]
+source_id = "passage.holy-see.interpretationes-authenticae-codicis-iuris-canonici.vatican-web-2026-07-25.collection"
+loci = ["collection"]
+role = "currentness-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls Pontifical Commission/Council Authentic Interpretations cited in the treatise (CIC c. 87 §1 [1985], c. 1103 [1987], and c. 964 §2 [1998])."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:c69dc43ee6c8a32b48d58aefa62aa838e11cc489510c6761cf0e7e773e1e49a7"

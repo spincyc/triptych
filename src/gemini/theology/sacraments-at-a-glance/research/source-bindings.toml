@@ -1,0 +1,326 @@
+schema = 2
+record_type = "bindings"
+document = "theology/sacraments-at-a-glance"
+
+[[bindings]]
+source_id = "edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581"
+loci = ["Gen.1.27-28", "Gen.2.18-24", "Exod.12.13-14", "Is.11.1-3", "Mal.1.11", "Matt.16.18-19", "Matt.26.26-28", "Matt.28.18-20", "Mark.6.12-13", "Luke.22.19-20", "John.3.3-6", "John.6.48-59", "John.19.34-35", "John.20.21-23", "Acts.8.14-17", "Rom.6.3-11", "1Cor.11.23-29", "Eph.5.21-33", "Jas.5.14-16", "2Pet.1.4"]
+role = "textual-control"
+states = ["cataloged"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Controlling public-domain English Scripture translation for all verbatim biblical quotations across the treatise and its seven summaries; individual inspected book artifacts are bound below."
+
+[[bindings]]
+source_id = "edition.catholic-church.vulgata-clementina.ebible-latvuc"
+loci = ["Eph.1.9", "Eph.3.9", "Eph.5.32", "Col.1.26-27", "John.6.54", "Is.11.2-3", "Acts.14.22"]
+role = "textual-control"
+states = ["cataloged"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Controlling public-domain Latin Clementine Vulgate checked alongside Douay-Rheims to verify sacramentum/mysterium terminology and Vulgate/DR versification across all seven sacraments."
+
+[[bindings]]
+source_id = "artifact.ante-nicene-fathers.volume-1.ccel-web-2026-10-13.ccel-text-ee9c7f0a"
+loci = ["Ignatius Eph. 20; Trall. 2-3; Smyrn. 7-8", "Justin 1 Apol. 61, 65-67", "Irenaeus Adv. haer. IV.18, V.2"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Inspected verbatim on disk across Ignatius (strictly Shorter Recension), Justin Martyr, and Irenaeus of Lyons for early patristic Eucharistic realism, episcopal hierarchy, and baptismal regeneration."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:55185d261b4711561d2908f7ad9d4398cd02feb77eac70722120ef8090518990"
+
+[[bindings]]
+source_id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.61.facsimile"
+loci = ["61"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Repository-verified facsimile passage controlling Justin's witness to baptismal washing, Trinitarian naming, and illumination."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:fd2d39abf81b34b763c660a4e45092ce708c53ef92b72dfe17bf307db874d70d"
+
+[[bindings]]
+source_id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.65.facsimile"
+loci = ["65"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Repository-verified facsimile passage controlling Justin's witness to presidential thanksgiving and diaconal distribution."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:33ef0205f7341f18e4740a62a28c5b1ad007d38b34055e7e38a23f588563bc60"
+
+[[bindings]]
+source_id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.66.facsimile"
+loci = ["66"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Repository-verified facsimile passage controlling Justin's witness to the Eucharist as the flesh and blood of the incarnate Jesus."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:d2b7ffc3be3f4bc46040257f0aa77cbb07b1d51358900efc9ae35225bfb4383f"
+
+[[bindings]]
+source_id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.67.facsimile"
+loci = ["67"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Repository-verified facsimile passage controlling Justin's Sunday liturgical assembly witness."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:bac02d64cdb19410b0d954a444ad57942628b732fc5fbf6ff1b1b7331dd4c9d6"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.ccel-web-2026-10-06.ccel-text-56d84cfa"
+loci = ["Procatechesis 9", "Catechetical Lectures III", "Mystagogical Catecheses I-V"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Inspected verbatim on disk for Jerusalem baptismal, chrismational, and Eucharistic mystagogy, noting scholarly attribution to Cyril or John II of Jerusalem."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:1f357ee73bda8276cc25eb0133278376e91529929c0187de2d364f9c3b192261"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-10.ccel-web-2026-10-13.ccel-text-14fa05cc"
+loci = ["De mysteriis III-IV, VII-IX", "De paenitentia I-II"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Inspected verbatim on disk for St. Ambrose on baptismal water, the spiritual seal, Eucharistic conversion by Christ's word, and the Church's power to forgive all sins."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:71c2da20461a210a60d7d1b536390ec6048ba02c13e0ded9ae509ae12ae1f926"
+
+[[bindings]]
+source_id = "passage.augustine.de-civitate-dei.dods-1871.10.5-6"
+loci = ["10.5-6"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Inspected verbatim on disk for St. Augustine's classic definition of visible sacrifice as a sacred sign and the Church offered in the Eucharistic sacrifice."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:656887cdeca9dd94a0c1de3e15400368956fa27922c7e981ce60aa90688d671c"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-7.ccel-web-2026-09-17.ccel-text-266502c9"
+loci = ["Tract. 26.11-13", "49.24", "80.3", "120.2", "121.4"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Inspected verbatim on disk for St. Augustine on word joined to element (Tr. 80.3), the sacraments issuing from Christ's pierced side (verified at Tr. 120.2), Eucharistic unity (Tr. 26.11-13), and loosing of sins (Tr. 49.24, 121.4)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:10294711891b3ca7163bf578e02d0a027dbd110257bdaf2fb0b89b65ffe858de"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006.pg19950-body-4597132e"
+loci = ["III.60.2.corpus", "III.62.1.corpus", "III.63.1.corpus", "III.66.1.corpus", "III.72.1.corpus", "III.75.2.corpus", "III.84.2.corpus"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Inspected verbatim on disk across the entire Tertia Pars sacramental treatise (qq. 60-65 general; 66-71 Baptism; 72 Confirmation; 73-83 Eucharist; 84-90 Penance)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:44bb2918bacdd01a424eae980d78ad285fcea31c85426a00800aafd120952178"
+
+[[bindings]]
+source_id = "segment.fourth-lateran-council.firmiter-credimus.2026-09-29-latin-patristica.complete-constitution"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Inspected verbatim Latin on disk controlling the conciliar definition of transubstantiation and the reservation of Eucharistic consecration to a duly ordained priest."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:92daebd55a99f65bc1817a2f2e4c4cf3016457cc7bb36218ca2a69bcc78901f5"
+
+[[bindings]]
+source_id = "passage.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.sessio-13-decretum-1-5"
+loci = ["sessio-13-decretum-1-5"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Verified Latin passage controlling Trent's doctrine of Real Presence, transubstantiation, concomitance, and Eucharistic adoration."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:79031e553d56973c2101084ec2ef771623580ddee8b7e4c1201e81041a30766d"
+
+[[bindings]]
+source_id = "passage.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.sessio-14-decretum-3"
+loci = ["sessio-14-decretum-3"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Verified Latin passage controlling Trent's distinction of the quasi-matter (acts of the penitent) and form (absolution) of Penance."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:81b1e09dfc0a8178d088835dfb346f4b51f6ce71cf6155357897fb763ead8e8b"
+
+[[bindings]]
+source_id = "passage.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.sessio-22-decretum-2"
+loci = ["sessio-22-decretum-2"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Verified Latin passage controlling the identity of victim and priest between Calvary and the Mass, differing only in the manner of offering."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:ec6f86c23a9a2edf9293304c379f557da745fcdc8e0dc6469060a0efb2b88482"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.10-11"
+loci = ["10-11"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Verified passage controlling the essential distinction between the common and ministerial priesthood and the sacramental structure of Christian life."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:a1530ed1e2c173aa46a742fd2676bca27194a7dc568a2962026c62d46d382fab"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.29"
+loci = ["29"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Verified passage controlling the sacramental diaconate ordained not unto the priesthood but unto a ministry of service."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:7d612f40dfe25267655197fa3a439b3571166bfc2c7fe572d5698abef096367e"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.orientalium-ecclesiarum.english-vatican-web-2026-07-24.12-14"
+loci = ["12-14"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Verified passage controlling ancient Eastern sacramental discipline and valid presbyteral administration of Chrismation."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:af14155bed7b34d496ca7a519e61e9d504e56c22973ccae45ed0c4a5ac9e0ddb"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.unitatis-redintegratio.english-vatican-web-2026-07-24.22"
+loci = ["22"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Verified passage controlling the sacramental bond of unity established by Baptism."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:ed0fadcfe21b37a19072f51579e2603b94cfbd10d8b52960c10a7ce39b8a52f0"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.gaudium-et-spes.english-vatican-web-2026-07-23.47-52"
+loci = ["47-52"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Verified passage controlling the conjugal covenant, conjugal love, and ordering of marriage to procreation and education of children."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:bdc61fe14752434d2c90e73eed252c9414e56a2618bb0f6027cad96cff14d1e0"
+
+[[bindings]]
+source_id = "work.catholic-church.catechism"
+role = "official-control"
+states = ["cataloged"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Catalog-level reference to the Catechism's sacramental synthesis; exact verified passages are bound below."
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-vatican-web-2026-07-23.1131"
+loci = ["1131"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Verified passage controlling the formal definition of a sacrament as an efficacious sign of grace instituted by Christ and entrusted to the Church."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:e1889faa27c710c75e1a9948a3f2c03d7c0825096fddcc4d4f67023cca8e1fa5"
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-vatican-web-2026-07-23.1240"
+loci = ["1240"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Verified passage controlling the Latin and Eastern baptismal formulas."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:b60fd382aff60e1ab195ef6781d63fa59a67caef6a450668babd2d73759e0fd4"
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-vatican-web-2026-07-23.1300"
+loci = ["1300"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Verified passage controlling the Latin Confirmation formula and Eastern Chrismation formula (Vatican web wording)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:fe1ca7bf0b65a700da423d7f0ba01df2e4734bd82bcecec63deb7deaab18984b"
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-usccb-second-2019.1300"
+loci = ["1300"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Verified USCCB second-edition control documenting the minor translation variation in the Eastern Chrismation formula beside Vatican web 1300."
+source_fingerprint = "sha256:7cdd2636436a7cc4930f768baa5168f88ede282c7dbf372e0a36df1ccec903ca"
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-vatican-web-2026-07-23.1362-1377"
+loci = ["1362-1377"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Verified passage controlling Eucharistic memorial, sacrifice, Real Presence, and transubstantiation."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:02656bb2ab56968c4479031806c2a52314900f1b1c450117faff28fd163ce74d"
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-vatican-web-2026-07-23.1449"
+loci = ["1449"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Verified passage controlling the Latin formula of sacramental absolution."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:47d6ae0a31e483a13f247e1ebcd5c6faa6ef0443a4fdfd892570d82416f9e904"
+
+[[bindings]]
+source_id = "work.catholic-church.codex-iuris-canonici-1983"
+role = "official-control"
+states = ["cataloged"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Catalog-level control for Latin sacramental canon law; exact verified canon passages are bound below."
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-codex-2026-07-25.canon-1008"
+loci = ["canon-1008"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Verified Latin canon controlling the sacrament of Holy Orders."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:cb0722c373b7dfc13987d1b8900ce0d0ed64eb3ad78c200b3fcb6e66034dd6d6"
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-codex-2026-07-25.canon-1024"
+loci = ["canon-1024"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Verified Latin canon confirming that only a baptized man validly receives sacred ordination."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:9d63843b72405b3c682c746db647629e7be6245f7376fabb81019800ac8e671f"
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-codex-2026-07-25.canon-1055"
+loci = ["canon-1055"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Verified Latin canon defining the matrimonial covenant, its ends, and its sacramental identity among the baptized."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:577fb81e590a97efa6bb6971e7305e645cf5ca1e52d1d35ad81352f33d849a02"
+
+[[bindings]]
+source_id = "work.catholic-church.codex-canonum-ecclesiarum-orientalium"
+role = "official-control"
+states = ["cataloged"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Catalog-level control for Eastern Catholic sacramental canon law; exact verified canon passages are bound below."
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-canonum-ecclesiarum-orientalium.latin-vatican-web-2026-07-25.canon-27"
+loci = ["canon-27"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Verified Latin canon defining a Church sui iuris."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:35738c0c177be621d3cd5dee77af0ed076cc631177243a7c2460186eb655311f"
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-canonum-ecclesiarum-orientalium.latin-vatican-web-2026-07-25.canon-28"
+loci = ["canon-28"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Verified Latin canon enumerating the five Eastern ritual traditions (Alexandrian, Antiochene, Armenian, Chaldean, Constantinopolitan)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:e5dfde33edbe6bafeef91b3ddbea6037c7544aa0ad8bd47f7c704274b5fabefc"
+
+[[bindings]]
+source_id = "passage.holy-see.scheda-informativa-chiese-cattoliche-orientali-2010.italian-press-bulletin-2010-10-07.enumeration"
+loci = ["enumeration"]
+role = "currentness-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Verified Holy See Press Office enumeration of the 22 Eastern Catholic Churches in 2010 (forming the baseline before the 2015 erection of the Eritrean Church)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:b5e28d80cdbb71255da134ccc024a24506bdd9cc79bc1bba940f18be5927ad96"
+
+[[bindings]]
+source_id = "passage.francis.in-erythraea-nova-constituitur-ecclesia-metropolitana-asmarensis.latin-aas-107-2015.complete-text"
+loci = ["complete-text"]
+role = "currentness-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Verified Latin constitution Multum fructum erecting the Eritrean Catholic Church as a Metropolitan Church sui iuris on 19 January 2015, bringing the total to 24 Churches sui iuris."
+source_fingerprint = "sha256:b45d4e59bba091881622add4e30c2b52486f80684b68a951ae54722af6bdfa2a"
+
+[[bindings]]
+source_id = "work.papal.francesco.papa-francesco-costituzione-ap-20150319-hungariae-prochristifidelibus-byzantiniritus"
+role = "currentness-control"
+states = ["cataloged"]
+context = "Mechanically inherited without independent companion prose from the treatise-owned shared fragments (full-matrix, lexicon, seven summaries, and twenty-four Churches initiation table). Catalog-only reference for the March 2015 elevation of the Hungarian Greek Catholic Church to a Metropolitan Church sui iuris."

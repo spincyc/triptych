@@ -1,0 +1,58 @@
+% Shared one-page sacrament-summary architecture owned by the treatise and
+% imported by the at-a-glance companion and any future ritual-Mass consumer.
+% Environment names match scripts/web-shim.tex for exact web-edition fidelity.
+\newcommand{\sacramentSummaryKicker}{}
+\newcommand{\sacramentSummaryPageHook}[1]{}
+\newcommand{\sacramentSummaryTitlePrefix}{}
+
+\newcommand{\sacramentSummaryStart}[3]{%
+  \newpage
+  \sacramentSummaryPageHook{#1}%
+  \begingroup
+  \footnotesize
+  \setlength{\parskip}{0.30em}%
+  \begin{center}
+    \sacramentSummaryKicker
+    {\Large\bfseries \sacramentSummaryTitlePrefix#1 at a Glance}\\[0.14em]
+    {\small #2}\\[0.12em]
+    {\footnotesize\itshape #3}
+  \end{center}
+  \vspace{-0.35em}
+}
+
+\newcommand{\sacramentSummaryEnd}{%
+  \par\endgroup
+  \newpage
+}
+
+\newenvironment{summaryidentity}
+{\begingroup\scriptsize\renewcommand{\arraystretch}{1.04}%
+\tabularx{\linewidth}{>{\bfseries\raggedright\arraybackslash}p{0.15\linewidth}>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Identity} & \textbf{Definition and fulfillment}\\
+\midrule}
+{\bottomrule\endtabularx\endgroup}
+
+\newenvironment{summaryconstitution}
+{\begingroup\scriptsize\renewcommand{\arraystretch}{1.04}%
+\tabularx{\linewidth}{>{\bfseries\raggedright\arraybackslash}p{0.135\linewidth}>{\raggedright\arraybackslash}p{0.26\linewidth}>{\raggedright\arraybackslash}p{0.26\linewidth}>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Condition} & \textbf{Metaphysical / ritual fulfillment} & \textbf{Ordinary order} & \textbf{Extraordinary case or limit}\\
+\midrule}
+{\bottomrule\endtabularx\endgroup}
+
+\newenvironment{summaryeconomy}
+{\begingroup\scriptsize\renewcommand{\arraystretch}{1.04}%
+\tabularx{\linewidth}{>{\bfseries\raggedright\arraybackslash}p{0.12\linewidth}>{\raggedright\arraybackslash}p{0.195\linewidth}>{\raggedright\arraybackslash}p{0.235\linewidth}>{\raggedright\arraybackslash}p{0.235\linewidth}>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Axis} & \textbf{Creation / covenant} & \textbf{Christ and Pasch} & \textbf{Church and other sacraments} & \textbf{Last end}\\
+\midrule}
+{\bottomrule\endtabularx\endgroup}
+
+\newenvironment{summarywitnesses}
+{\begingroup\scriptsize\renewcommand{\arraystretch}{1.04}%
+\tabularx{\linewidth}{>{\bfseries\raggedright\arraybackslash}p{0.135\linewidth}>{\raggedright\arraybackslash}p{0.205\linewidth}>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Witness class} & \textbf{Principal loci} & \textbf{Controlling claim}\\
+\midrule}
+{\bottomrule\endtabularx\endgroup}

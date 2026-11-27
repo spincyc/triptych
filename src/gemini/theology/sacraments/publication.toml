@@ -1,0 +1,63 @@
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[document]
+type = 'theology-reference-v1'
+
+[document.main]
+pdftitle = 'The Seven Sacraments'
+pdfsubject = 'Catholic sacramental theology in Scripture, the Fathers, St. Thomas Aquinas, the Ecumenical Councils, and Latin and Eastern Canon Law'
+title = 'The Seven Sacraments'
+subtitle = 'The Mysteries of Christ in the Life of the Church'
+kind-line = 'A patristic, Thomistic, conciliar, and canonical treatise on sign, causality, grace, communion, and glory'
+note = 'Study reference; not an official catechism, liturgical book, or canonical opinion. Scope, terms, and qualifications appear in the terminal appendices.'
+tocdepth = '2'
+emergencystretch = '1.5em'
+contents-style = '\footnotesize'
+headings = 'standard'
+closing = 'none'
+body = [
+  'sections/10-initiation-introduction',
+  'sections/11-baptism',
+  'sections/12-confirmation',
+  'sections/13-eucharist',
+  'sections/20-healing-introduction',
+  'sections/21-penance',
+  'sections/22-anointing',
+  'sections/30-communion-introduction',
+  'sections/31-orders',
+  'sections/32-matrimony',
+  'sections/40-synthesis',
+  { source = 'sections/90-references', roles = ['references'] },
+  '\clearpage',
+]
+appendix = [
+  { source = 'sections/91-scope-terms-qualifications', roles = ['scope-appendix'] },
+  'fragments/full-matrix',
+  { source = 'sections/14-churches-initiation', roles = ['exposition'] },
+  '''
+\renewcommand{\sacramentSummaryPageHook}[1]{%
+  \refstepcounter{section}%
+  \addcontentsline{toc}{section}{\protect\numberline{\thesection}#1 at a Glance}%
+}
+\ifdefined\TriptychPrintEdition
+\renewcommand{\sacramentSummaryTitlePrefix}{Appendix \thesection:\space}
+\else
+\renewcommand{\sacramentSummaryTitlePrefix}{}
+\fi''',
+  'summaries/baptism',
+  'summaries/confirmation',
+  'summaries/eucharist',
+  'summaries/penance',
+  'summaries/anointing',
+  'summaries/orders',
+  '\renewcommand{\sacramentSummaryEnd}{\par\endgroup}',
+  'summaries/matrimony',
+  '''
+\begingroup
+\fontsize{7}{7.8}\selectfont''',
+  'generation-metadata',
+  '\endgroup',
+  '\TriptychRightsNotice',
+]
