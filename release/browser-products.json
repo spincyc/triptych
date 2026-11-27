@@ -2,22 +2,22 @@
  "editorial_approval": false,
  "inputs": {
   "families": {
-   "act-history": "925c958c470250634ae0c15a370e3cf009d7fafec7c23d297d390a57ed5448fe",
+   "act-history": "f31c72090ab1c9d87b35f6ce6068d9d90d7d8b97a755cc2fd2a32d4dae258ed7",
    "bibles": "7ef1ee9173df93c4fca51a04d52029944dc570fce3108d9261b27438974d69ad",
    "calendar": "cb997c7002c689c195cd6c4151439afb9c7b581d418b7e970869a8a93a685698",
-   "catena": "3cef0acf24cd5a2c146fe8dc7dfd7c0b20ff91bc273601bda174fe867631c7ba",
-   "documents": "78c90f1c9fa06553a12fb7c8b8b1a0904c2ef944d4aa97cfe21f28d2dc22ef67",
+   "catena": "9c6b4b2d4e73265a8d5db9fff75d884a109d37a7d9fd9158482a1614de7fdd10",
+   "documents": "262f030fe22339bcbc794778f13780c3002ed92aa184decd87765536c6954325",
    "encyclicals": "13ad862f7978365b226be62ec590168c64be066b480529e3550b03b94ef87542",
-   "ordinary": "f10885a2ca4cdcbd770af8e1683fc203bf1801e83ac2a1c6566a9a3189beae99",
-   "paragraphs": "7405852df36400d9228e1dc1471fdbb80214d29b3b1c368e38e34f34a1102391",
-   "propers": "82ac9ecdd228061f9961138983949de66ae7897200e13252631e705e7fa1f24c",
-   "readings": "199b01f10617094e9142c2ecaf172fd00ffd6fd47af8874626bb0c8bbd59edbb",
+   "ordinary": "15fc8e87cbf70b0742c25408b5c58b27646440b00a5d37f7ed4830579c2e7a36",
+   "paragraphs": "ed9e4e3cd63700b8823cf5be5885ccb37c3c35970d93e1870ad0db20b94f7b81",
+   "propers": "dc9744a4a5750fe659032f1bb1d79ef6d9c2d5e7c8825c3ccb07eb7876fa5b1c",
+   "readings": "289dd3c32080724615a474157a5093365b84607e7a618f9761a1e46ded74d59c",
    "rubrics": "1ff3460bbfead8520b818769d2a5e181fe282aeb6a4cf2584e4632e470bef81d",
-   "sources": "e2c5683064f971ae019cf44e04cd8d6a51c98755a2ed7a8e8646aa71a754ff7d",
-   "web-editions": "e98c0990cea27d5b8ba8a494f5cf67f388c88c19a6d27db0d7d1375ea594b168"
+   "sources": "9085140a845673ce924f0bca503ba70127d74030c842177052d6ad5688e1026e",
+   "web-editions": "c2dbad656d01bfa871dc6ca9267170c56866d096eba5d0133ef62a9392f9b4c9"
   },
   "schema": "triptych-browser-product-aggregate-inputs/v1",
-  "sha256": "07ec2dbeac820cb5d8935527175ac6ee60ade7c4a8bfb21d9358f0287249acea"
+  "sha256": "11dfb9fcffc0dbef652134dc05a48bfb4f09b1b2a951925e99de86b9eb6bd9e0"
  },
  "products": [
   {
@@ -2425,16 +2425,16 @@
    },
    "id": "act-history",
    "inputs": {
-    "content": "b4e6db122363f0e45cc6cbf395c93ca98510feb5eb0d9c5aee0a88236df58048",
-    "count": 82525,
+    "content": "8b2923831045794ef1f29056ececc1a1acc79ca3c81cb8b77b47496a42eeb585",
+    "count": 83100,
     "generator": "115b738863390de273189877c6d458e908757cfba6a7aa7c5e8597ab3d856270",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "7fe4a25e9382a8c42eb4610dada8357bb904837ec5b488799bb7ab08c671aa70",
-    "rights": "5191b6ad0adde8074dc43070df79f815d9b10c68e1a770e02eb751e554f708be",
+    "membership": "8e2f85ae9189b00f7256e7f0b22fe06ef04221511b286bd532659efd7009b68b",
+    "rights": "39a1a630809fcd7cdff8b47939cb5dfadbead542ff50a00bc8470b4f98eaf0f4",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "925c958c470250634ae0c15a370e3cf009d7fafec7c23d297d390a57ed5448fe"
+    "sha256": "f31c72090ab1c9d87b35f6ce6068d9d90d7d8b97a755cc2fd2a32d4dae258ed7"
    },
-   "key": "d6a9fdb310195870e431b4a0c34e4eeb7e76b44654de58fbcd9b9da005e38ef3",
+   "key": "f743ce80474ba3851d29f0780f2e19c880870b88ad6e2c73faebe886b179f5fc",
    "path_set_sha256": "bf96ba68f0f15e963a36714405e693a908618271986222bcc04818b4dbed28bf"
   },
   {
@@ -3673,8 +3673,8 @@
    "path_set_sha256": "a0c13f328642fecd9fec07952be9cfeef0ab13fa0e58633f104eea29995974a9"
   },
   {
-   "bytes": 12041053,
-   "count": 2745,
+   "bytes": 12076691,
+   "count": 2758,
    "files": {
     "structure/catena/01-gen/001.json": {
      "bytes": 45688,
@@ -4664,6 +4664,10 @@
      "bytes": 983,
      "sha256": "6a5373cf58043949f90e3e63376ea6257d202906903ae1926cb31ff7ae6e3243"
     },
+    "structure/catena/24-cant/002.json": {
+     "bytes": 3431,
+     "sha256": "8f8b06cdca3a2ee622db644b0268ba67b39095621e57ecb0f6f7a90a3c71fa34"
+    },
     "structure/catena/25-wis/001.json": {
      "bytes": 795,
      "sha256": "b284a780d3c629783952b3211712fde011e860089480b08dbf936070168e9a82"
@@ -5137,8 +5141,8 @@
      "sha256": "e107c80f06d02e4f19c4c8750e0660f4809362898298631d4e67325674e21c83"
     },
     "structure/catena/47-matt/008.json": {
-     "bytes": 4401,
-     "sha256": "b44cd1dd0b03585f60a61ac7602677cd0e9e53516ca9898e98ccbdd319702efd"
+     "bytes": 5081,
+     "sha256": "5eba1ad9dafb39e1e3957b83b1a61354f95ae19f1b824bf3bab4eb24eaccbae9"
     },
     "structure/catena/47-matt/009.json": {
      "bytes": 6762,
@@ -5205,8 +5209,8 @@
      "sha256": "1cc9b452775dc40137290bd3d17ea95f12c7ad4ca9fd50e78042f82c8aa8f143"
     },
     "structure/catena/47-matt/025.json": {
-     "bytes": 3954,
-     "sha256": "2b001b66c7826592ad37d686ec5262d8e26d6f97cdcd23377332f58f3ad87f3e"
+     "bytes": 6324,
+     "sha256": "d27b130a2cb07a5d9102a58493423ee6c975d8d5266a19b4c4a15848ae330a92"
     },
     "structure/catena/47-matt/026.json": {
      "bytes": 7210,
@@ -5269,8 +5273,8 @@
      "sha256": "e0f8b2f7a992ad2cdd3151da2ca87df19fd25829d5f11ac0fc22f2b7186df5d0"
     },
     "structure/catena/48-mark/013.json": {
-     "bytes": 3589,
-     "sha256": "a479980e75369df42535be2c8a90cdb1ce02138a436641a283808e2a263e340f"
+     "bytes": 4259,
+     "sha256": "42ed06780eb5c055cbf4525e8a77ffedfde86c242df9873579fd3a2556aeeb14"
     },
     "structure/catena/48-mark/014.json": {
      "bytes": 5124,
@@ -5329,8 +5333,8 @@
      "sha256": "2f18a79d6f4d033dc9f39f41dd20b434f10f1cec3808c7c7051736d13c4fde01"
     },
     "structure/catena/49-luke/012.json": {
-     "bytes": 2328,
-     "sha256": "5c7a71d7da8ccb2e4b52763ecf189979a4f1eda10b0be591541bded7c25e1e82"
+     "bytes": 5488,
+     "sha256": "e1af44b33b86e7f369da8a291a9889e39a7052914171e45d22023c124468bc9a"
     },
     "structure/catena/49-luke/013.json": {
      "bytes": 1387,
@@ -5953,8 +5957,8 @@
      "sha256": "91b1ce1e12f019983599769111e830f4078a4a6253a49264e085cd93d6bf5535"
     },
     "structure/catena/index.json": {
-     "bytes": 31935,
-     "sha256": "9d9b7842146c23e4c97dae7e72d31900ba88bbfd30f46d8b1df95d90c701254c"
+     "bytes": 32141,
+     "sha256": "5d8d48b917204a801b4785144f485cf1f7fa26ccc4bf3906e51926f181fb98cb"
     },
     "structure/catena/scripture/01-gen.json": {
      "bytes": 14904,
@@ -10188,6 +10192,10 @@
      "bytes": 1504,
      "sha256": "ea3b33a4420f02db655b79b846b74317f280e272126afafae11e0c5367b1c794"
     },
+    "structure/catena/text/passage.gregory-the-great.homiliae-in-evangelia.1843-oxford-catena-luke.advent-pc-en1-gregory-on-luke-12-36-37.json": {
+     "bytes": 2252,
+     "sha256": "bc0bc716e1b795d7408be46bf36eeb4e539663fad68f74907f94c1c872697f9e"
+    },
     "structure/catena/text/passage.gregory-the-great.homiliae-in-evangelia.1843-oxford-catena-luke.gregory-on-luke-2-7-strange-country.json": {
      "bytes": 1295,
      "sha256": "cc79b98c536e5357ff8c5353ada2ae7c8fbabb986eb7de632c3b2d41d71174f2"
@@ -10208,6 +10216,10 @@
      "bytes": 1457,
      "sha256": "7500e3071969dbfe86cebf7a94d509dbad3ad31a1c24c451176b172d47637d85"
     },
+    "structure/catena/text/passage.gregory-the-great.homiliae-in-evangelia.advent-pc-en1-1908-bute-spring.advent-pc-en1-ascension-octave-leaps.json": {
+     "bytes": 2330,
+     "sha256": "3a1d7f698e1f4452af4caa6bd766594b994f6dfa42b47c2ece6db54dcac304ee"
+    },
     "structure/catena/text/passage.gregory-the-great.homiliae-in-evangelia.latin-migne-corpus-corporum-web-2026-07-25.22.3-4.json": {
      "bytes": 2060,
      "sha256": "f39a4c3f79488215f956650a2b0f9a40e826629146c196ecd258b5c76982f344"
@@ -10227,6 +10239,18 @@
     "structure/catena/text/passage.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.8.1-masses-and-census.json": {
      "bytes": 1405,
      "sha256": "d6661ed40cc6957f8577a1c727815cc68934c2203a69b1c4f6f7cb336f32c80b"
+    },
+    "structure/catena/text/passage.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.advent-pc-l4-12.6-crastinum.json": {
+     "bytes": 1796,
+     "sha256": "2686345207ab1fef2ec2536ced5e46b86ade2a3f623ea14d51865b25a283a7cd"
+    },
+    "structure/catena/text/passage.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.advent-pc-l4-13.3-vigilat.json": {
+     "bytes": 1685,
+     "sha256": "96856c09b9ca4bb4a005108f8aa2f31d3b50d478196f9c750d90bd92d2c23bd3"
+    },
+    "structure/catena/text/passage.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.advent-pc-l4-29.10-saltus.json": {
+     "bytes": 2221,
+     "sha256": "6f094cc070e4191f0754b8aa53402572ae6265c55d57b0aaaf677d8ea7ea0c5d"
     },
     "structure/catena/text/passage.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.1.1-5-luke-21.json": {
      "bytes": 14277,
@@ -13492,6 +13516,14 @@
      "bytes": 6848,
      "sha256": "93e934c4ac650b9ffdfe0b4126b22ba6a6c85cb5a7c270d8c6475b910710a559"
     },
+    "structure/catena/text/passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.advent-pc-l4-augustine-ep-199-on-mark-13-37.json": {
+     "bytes": 2435,
+     "sha256": "6c8ffdd711d749be75fadae14ea7b2fdd9b31175e23d315ebdd9a5791104068f"
+    },
+    "structure/catena/text/passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.advent-pc-l4-theophylact-on-mark-13-35.json": {
+     "bytes": 2331,
+     "sha256": "624fc6b6bc8848e1f1c5547554517478d09d851e2e49ac29b93cf9a807c9d637"
+    },
     "structure/catena/text/passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.01-01-01.json": {
      "bytes": 24206,
      "sha256": "d6f5db6057cad5790ab68866278c1b9ea4eaa235499ff41b8bab24d19bb4c2e3"
@@ -14628,6 +14660,26 @@
      "bytes": 16509,
      "sha256": "edd66b1ea3771a300a430c7a4fbb3d6959cffba196726459e703fd1b94fe7c80"
     },
+    "structure/catena/text/passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.advent-pc-l4-augustine-on-matthew-25-13.json": {
+     "bytes": 1758,
+     "sha256": "47763c3a71fcfb6704b0cac70e25d723f04200003c5942adafcdf3d86b62f9b2"
+    },
+    "structure/catena/text/passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.advent-pc-l4-augustine-on-matthew-8-8.json": {
+     "bytes": 2016,
+     "sha256": "522ebd2db67d3069a73fd28140689ed22e24111f37943b7a619d1101ca4dc120"
+    },
+    "structure/catena/text/passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.advent-pc-l4-chrysostom-on-matthew-25-40.json": {
+     "bytes": 1986,
+     "sha256": "bc6df3a990393349b93943c2b528f979b5108d1fafea85c814463af4f18ac54d"
+    },
+    "structure/catena/text/passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.advent-pc-l4-hilary-and-chrysostom-on-matthew-25-9.json": {
+     "bytes": 2096,
+     "sha256": "e94074e048c10639e268769a5aa29584723b2b6e2607dabd35422a74ef47d546"
+    },
+    "structure/catena/text/passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.advent-pc-l4-pseudo-origen-on-matthew-8-8.json": {
+     "bytes": 2215,
+     "sha256": "fabda63aa1476327f86efdee36cd2157cd3a07418ca89b3eae3d9aa23c85e98e"
+    },
     "structure/catena/text/passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.gregory-on-matthew-11-7.json": {
      "bytes": 1927,
      "sha256": "3f2d670ed4a700fa9afae7be66e77d94b98b0a1f036cce74de4eda6c7a649478"
@@ -14659,43 +14711,43 @@
    },
    "id": "catena",
    "inputs": {
-    "content": "06d1667cb23a8eb4fd33fcbfa1fb8512340aef2f11caa7be39d50686d819efe5",
-    "count": 75911,
+    "content": "cd30179989ab8c983f5b2761a9051ae4b1a61950794514927f8c0d9f6ee15212",
+    "count": 76454,
     "generator": "ab8f84d988c0bd34e8a89eb37583162751964fb19960606776d2adf4ae635c43",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "6f383ae3f40adbfd5100fb2186f3ac4c3a959ffc61b997f14ac77a8d748c8776",
-    "rights": "d97ca307a6f1d3440f54fc77e0fdd114cb688520fc258da78eb7cd60100ea3b3",
+    "membership": "3f23baff824557a9961370c5953515f7bb668f7acda0918a4b58ee04ac17ad00",
+    "rights": "b920324813a3505bc3375919724b6acdb8fdb50b91bae80d550b62e6d15b4570",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "3cef0acf24cd5a2c146fe8dc7dfd7c0b20ff91bc273601bda174fe867631c7ba"
+    "sha256": "9c6b4b2d4e73265a8d5db9fff75d884a109d37a7d9fd9158482a1614de7fdd10"
    },
-   "key": "195de2dbcaa2491c8177ce2b51c1cd2127e5e7a05540da62ca4de845a03ec75c",
-   "path_set_sha256": "e8572f9fb24a1cf7681f7d6e603d413647617f604fada0f3d9d605365c83d5a5"
+   "key": "baeaa74f21dfc97f125b3d6d6ec204e039ad8549d8bd59fb90e52a777fdf4e05",
+   "path_set_sha256": "6c94f333a1b83e7828190063a64c3e354327612f41e4be67f3109f3b08f82afd"
   },
   {
-   "bytes": 1218358,
+   "bytes": 1221155,
    "count": 2,
    "files": {
     "structure/documents/contributions.json": {
-     "bytes": 800106,
-     "sha256": "175647d1af7209b88daa50c08be56139ffd5a3ae974a645fef39ddd2bdc37d81"
+     "bytes": 801358,
+     "sha256": "833a206a1de9201d1a68eb6b5b5e1e199ec4a8ce4701adaa2a3ff9afe066b064"
     },
     "structure/documents/corpus.json": {
-     "bytes": 418252,
-     "sha256": "6a7e8174d430dcbc9d8a77fcb7380abcb3db3d10d9abf90cc55e67383a149f73"
+     "bytes": 419797,
+     "sha256": "5df4ec465c2fb2ccfd8d238ee41ec12e91b7745b377b2bcaf868f518c74c9949"
     }
    },
    "id": "documents",
    "inputs": {
-    "content": "ef76b8e2184fec16c8f4d506c9c593896e6876144526cfd5b12354086b4039e0",
-    "count": 83028,
+    "content": "2debca5b14e9c52274efda17a2102a4e0e65dcf7600f853162a071a0bc4a2d00",
+    "count": 83604,
     "generator": "2d90cf88ad1da8a3c60723f4e89553818a621e51581cdfffb708620deba3cdbd",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "c0a524c5658639abda7bc8e345acd54aa48b078f8247f96efda85a1a4f470d53",
-    "rights": "017c2648c4c552053781eae023cc1522819cd3858b8d0229df939af5c917a10a",
+    "membership": "a8ea4319cf3785e3992923103bbd937b2d8a228d594b4bfb70eb12cc36c6275f",
+    "rights": "b78e28b1ec8495d17659aa4850cf69f8f4e3d72d07e427b4df717453cb9a7882",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "78c90f1c9fa06553a12fb7c8b8b1a0904c2ef944d4aa97cfe21f28d2dc22ef67"
+    "sha256": "262f030fe22339bcbc794778f13780c3002ed92aa184decd87765536c6954325"
    },
-   "key": "92db9e0bf140e1340326428fb034f4ca68f318d5b2af6bb3ab0fb493ce6af5db",
+   "key": "8d15c31ead76cc519f7b0ed8fce7af7944173cc484c3f332923770aa81859a1e",
    "path_set_sha256": "522c959d6aab45538028b331526badc4ee43e7cc4dc863d2f3996e4354ee2f31"
   },
   {
@@ -14725,16 +14777,16 @@
    },
    "id": "ordinary",
    "inputs": {
-    "content": "34a532720e3f1b15745cb66241c478d4357586db23459c96895e27a711814837",
-    "count": 75900,
+    "content": "7577d44259cc7696c55d45c0cfd58bfd909cc4c57c2c13827d5d93af55b0aea1",
+    "count": 76443,
     "generator": "e4e0a986d9eb8b4ad85dfa881489a8defdf17e774e34225f7d4de665ecb96c28",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "86a51991dc6e28edc71bda8b05e82fed9901996b6cfb1c67044da6c82a94b3f8",
-    "rights": "d97ca307a6f1d3440f54fc77e0fdd114cb688520fc258da78eb7cd60100ea3b3",
+    "membership": "baeaf1f770edb5455106c5e08e4c99672437c3493a7801396419836b0dc2d4d3",
+    "rights": "b920324813a3505bc3375919724b6acdb8fdb50b91bae80d550b62e6d15b4570",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "f10885a2ca4cdcbd770af8e1683fc203bf1801e83ac2a1c6566a9a3189beae99"
+    "sha256": "15fc8e87cbf70b0742c25408b5c58b27646440b00a5d37f7ed4830579c2e7a36"
    },
-   "key": "cc7ee628b04a81106c1cf86d30b9176c06f72a254dae10b45f67cd33109c9c4d",
+   "key": "cacbd34d97d0d3a9131f43a8f98268fe6a02d548d06a20f4d570d9da68441f3f",
    "path_set_sha256": "c7867302dc5091e3fe00ebe7e15107e58dfc90a5af1d19e9bc75a6e805816b42"
   },
   {
@@ -36936,16 +36988,16 @@
    },
    "id": "paragraphs",
    "inputs": {
-    "content": "34a532720e3f1b15745cb66241c478d4357586db23459c96895e27a711814837",
-    "count": 75910,
+    "content": "7577d44259cc7696c55d45c0cfd58bfd909cc4c57c2c13827d5d93af55b0aea1",
+    "count": 76453,
     "generator": "ab8f84d988c0bd34e8a89eb37583162751964fb19960606776d2adf4ae635c43",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "1120056e759f75983a8694679cea8a60f50b2669f16a65d06b6e81be747f2fae",
-    "rights": "d97ca307a6f1d3440f54fc77e0fdd114cb688520fc258da78eb7cd60100ea3b3",
+    "membership": "9a4f02fe6976f7c2c191f936b920ff11dc24b34e8e547e514dcb9234ae95ae1e",
+    "rights": "b920324813a3505bc3375919724b6acdb8fdb50b91bae80d550b62e6d15b4570",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "7405852df36400d9228e1dc1471fdbb80214d29b3b1c368e38e34f34a1102391"
+    "sha256": "ed9e4e3cd63700b8823cf5be5885ccb37c3c35970d93e1870ad0db20b94f7b81"
    },
-   "key": "1440c93180646a385bc665238c33651edc5b5d64adeec351e9529bf9f8e739f9",
+   "key": "f62e84e12b0b7a29a03d9762e3450044324a8b13e08925459596d75cc875df78",
    "path_set_sha256": "9de3712da5253ae1811b47967cb17448685f69729faff8a58c640179f9049796"
   },
   {
@@ -43411,16 +43463,16 @@
    },
    "id": "propers",
    "inputs": {
-    "content": "c0a908d8093a756d6dc7b34d98e7551bf8f5a1dac6941b0aa89392075b9636ac",
-    "count": 82431,
+    "content": "eba636a4e8a7fa005fde6c7f7755e473e2b003527d95dcc51403fbadbacde803",
+    "count": 83006,
     "generator": "671e8340f7ddf11b2899235124f1fdb1839355f19785ba960cd6393c3612b307",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "13211a8c1f7fa235b6eda6b32ed2364f4a827a3c2db812e0d3588533677484bd",
-    "rights": "b371d3832ddaf755055a07cde5d34580a6d2f71a1cc78aa9589befe56f1ed230",
+    "membership": "60678a91aa198503cb2d1d0ac4b093ec8312dab3dad6a549de9b37283d79e3b6",
+    "rights": "da0cc55e201a6afe65268dcb7032deb96fbcef9c1e02b01c5b8b24108734b5cf",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "82ac9ecdd228061f9961138983949de66ae7897200e13252631e705e7fa1f24c"
+    "sha256": "dc9744a4a5750fe659032f1bb1d79ef6d9c2d5e7c8825c3ccb07eb7876fa5b1c"
    },
-   "key": "39eca2811c83edff305ac358502b0464a0e1720550aaa27e1eeaf491bb7b52bb",
+   "key": "f76a765ca7cf2a3b15ac8d769db98cff2d7f010766094b9f87063563d2df87fb",
    "path_set_sha256": "69d8d806df7f37465747d0bb1d6f8f78e4f45cf891fcd3884e121255c5b97ae4"
   },
   {
@@ -43434,16 +43486,16 @@
    },
    "id": "readings",
    "inputs": {
-    "content": "34a532720e3f1b15745cb66241c478d4357586db23459c96895e27a711814837",
-    "count": 75897,
+    "content": "7577d44259cc7696c55d45c0cfd58bfd909cc4c57c2c13827d5d93af55b0aea1",
+    "count": 76440,
     "generator": "5cb8855c5040685058de1b9649e1c1252cd05b34bee3ba58e6b6872ff7f6ada5",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "bfdb5eb0dde214a5f4303d86c1861d906d1ccdb317acfaa98b84accefaa11de6",
-    "rights": "d97ca307a6f1d3440f54fc77e0fdd114cb688520fc258da78eb7cd60100ea3b3",
+    "membership": "d9cede87200a688ef5f11022728f22bacbed97b33a61dfc5fde285fe657848cd",
+    "rights": "b920324813a3505bc3375919724b6acdb8fdb50b91bae80d550b62e6d15b4570",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "199b01f10617094e9142c2ecaf172fd00ffd6fd47af8874626bb0c8bbd59edbb"
+    "sha256": "289dd3c32080724615a474157a5093365b84607e7a618f9761a1e46ded74d59c"
    },
-   "key": "dfd892fc36134b79c2eedf21ca8348d89b260a457279768f1b1a0f84b1be8fc5",
+   "key": "26271b4be4773ca540e864aaa23e7d96d54fbf69b4a03fb74aec3f53d5580c53",
    "path_set_sha256": "508b7a8e33c837e26653f6d32011065feafebd126ee7022fefa70a2cccadeabf"
   },
   {
@@ -43482,8 +43534,8 @@
    "path_set_sha256": "b33143518fe47bc2375691f3ef5f78ffee0bc633c3fbb8507344ae056d6b7216"
   },
   {
-   "bytes": 76068602,
-   "count": 20143,
+   "bytes": 76919117,
+   "count": 20306,
    "files": {
     "structure/sources/catalogue/0000.json": {
      "bytes": 68393,
@@ -43494,344 +43546,344 @@
      "sha256": "a4eeeb3142f649fa2a615f155047bccacbb9ba551fedf79c29375fd4907fe350"
     },
     "structure/sources/catalogue/0002.json": {
-     "bytes": 81506,
-     "sha256": "99890ac62ebddce7a25c88260f38ee4f613a6094cb19c55cdd0145aee065f633"
+     "bytes": 81508,
+     "sha256": "fc48c5e9357a7d7ecc8753d732c1c3326f48ab47ff1924ecab371386b7d1dc98"
     },
     "structure/sources/catalogue/0003.json": {
-     "bytes": 58481,
-     "sha256": "638275101c3f1172ee6986864eeb7cd566fa26ec00ac89b427c052df97fe8292"
+     "bytes": 59482,
+     "sha256": "17a31792a99559addbc64f5bb6be47dec9e5bc28b9c3eaae75dcb61d96b5bd0b"
     },
     "structure/sources/catalogue/0004.json": {
-     "bytes": 65161,
-     "sha256": "15492d51f6554417a10a064c89ada75a26293deb3ff54590ca264ba04eacc21a"
+     "bytes": 63331,
+     "sha256": "40cf77f0e7b8db381b8cd124054a8367ee19625a4cb72ab7b0b349f017c627eb"
     },
     "structure/sources/catalogue/0005.json": {
-     "bytes": 58571,
-     "sha256": "55f05ea21d81befd8bd3dda85798b1245e72a1876e2c8f4b5551c54c49455e9b"
+     "bytes": 60122,
+     "sha256": "4b8aa7cd4c2ad20bd13d31345c46acbb936a642a61ff8c5bca31cd417e2a6c3f"
     },
     "structure/sources/catalogue/0006.json": {
-     "bytes": 57182,
-     "sha256": "36a28acca80856a169e10a3c0f46e1078ec5fe741df55aa905f16dfad742b4a2"
+     "bytes": 57372,
+     "sha256": "019c3ea3a105facb231f26213c47004ffe7174869273254fefde7c4e94ee1d41"
     },
     "structure/sources/catalogue/0007.json": {
-     "bytes": 56925,
-     "sha256": "48962115de65ccb9420e8dce5d8dfabb935aa3cafc72a6b19dda60116c4e3167"
+     "bytes": 57014,
+     "sha256": "5f9e1f6d0f14605e5a3e833a9e982a724d389046db000ae444fa57796bdf0209"
     },
     "structure/sources/catalogue/0008.json": {
-     "bytes": 57317,
-     "sha256": "a7e14f7b8fbf6d91d58f1df109f5b0e60354c67ceebf6148746a0a53baacb1a6"
+     "bytes": 57499,
+     "sha256": "e4526c66e15b650bbc0dbd93dd97a0137e41cbb9b91f46791e921f2e206646cd"
     },
     "structure/sources/catalogue/0009.json": {
-     "bytes": 73774,
-     "sha256": "093bd604c286ce1c322f8b8943709fb5aa5a8018bfab96ac55fcfc91e41c8034"
+     "bytes": 73534,
+     "sha256": "c2e92658d0c62ddc04910f786d9f49c746c4d8e7cc82b66e68ce43fe6f3e98a2"
     },
     "structure/sources/catalogue/0010.json": {
-     "bytes": 83979,
-     "sha256": "cd38ec3820ca434bd0348cc050a76b7be711a572045214d8ad59d56316c3a5b9"
+     "bytes": 83824,
+     "sha256": "1ca4f926c349cba278a6a3497c206343d29239c63a07cf2e7c8a6193bbcabba9"
     },
     "structure/sources/catalogue/0011.json": {
-     "bytes": 74330,
-     "sha256": "1af8249a371b258962d04f1a87db5cf37de9433ed14803e376073d95ecb0191d"
+     "bytes": 73452,
+     "sha256": "d0f0f09819d22a767f9591e72cab9054d0d78933dd993954c8966e8636fe39ae"
     },
     "structure/sources/catalogue/0012.json": {
-     "bytes": 70386,
-     "sha256": "e5aeb2fac823eaacce1749beda8936d718c8a6d0f06d8c47365a38e8018f3ab7"
+     "bytes": 69939,
+     "sha256": "a125a24ce7d4bf68c443e1cd83c96a1c576b830eb0c61224c5df2691c5c2b353"
     },
     "structure/sources/catalogue/0013.json": {
-     "bytes": 79244,
-     "sha256": "63b5d9772cb9d01575df37f0b6685627fca9ca5f4945a0bee73550d236a86403"
+     "bytes": 81181,
+     "sha256": "8138dfaf980dfb2c2df3fc672de4c5eea7f314dcf97850146d6c6b19a5db019a"
     },
     "structure/sources/catalogue/0014.json": {
-     "bytes": 97041,
-     "sha256": "58f293b0f34afabdfa9d9d70dd442f9a6f10db0e9f6d9364bb9a1742fcd8a814"
+     "bytes": 94490,
+     "sha256": "d63e568bce57ef45d5ff7f7bffef72c68b0e115b552c5621b2f22f2603889338"
     },
     "structure/sources/catalogue/0015.json": {
-     "bytes": 85823,
-     "sha256": "6bab3d02be62be2130bb8d037aa487d922955f96eec34352e1f2f8914bb791e4"
+     "bytes": 88450,
+     "sha256": "1a0357072db38624331d87f50c929911b87224c12fcb827def7424044ae98af0"
     },
     "structure/sources/catalogue/0016.json": {
-     "bytes": 74603,
-     "sha256": "b3e04dcc495aef721d39be681353e51560d30dd6b14be38da77ea2a943ca4800"
+     "bytes": 74965,
+     "sha256": "6435e73fdb24d66832eabd1eef43017184d3f41990332f9d523db89ffabffb59"
     },
     "structure/sources/catalogue/0017.json": {
-     "bytes": 84087,
-     "sha256": "13f68a343bf8d91e0d9374a4b3de256fe4e149759a585257bac369f4e433d785"
+     "bytes": 82574,
+     "sha256": "db3366866da6e7550247aa8d6f2b116c7de91f1d717a661652964d973b0394d9"
     },
     "structure/sources/catalogue/0018.json": {
-     "bytes": 67217,
-     "sha256": "5e26d675d82798f2e90c7f846e4928cb7bb253a2b53d92ed3de628eb80897342"
+     "bytes": 68616,
+     "sha256": "212b162b21452d6668a407c578dd26d15820118bd51aef046127ce5ff36cba0f"
     },
     "structure/sources/catalogue/0019.json": {
-     "bytes": 67595,
-     "sha256": "1724a6b613341384bb9737d092bd69816115861c20d93b29497d2bc7d086d055"
+     "bytes": 67658,
+     "sha256": "129736ee6bb90e00e49596c021117eae0c9ac32541d818c33baa9202a7308dd4"
     },
     "structure/sources/catalogue/0020.json": {
-     "bytes": 75164,
-     "sha256": "d4a680ec477abfb76bda2fc9b10c021ecc7e4b07207d0c2955316d2ee87eecf3"
+     "bytes": 74988,
+     "sha256": "9dd1e061edb58aed929261b0b9495f92b118cbb16f6707fb239c29189e3c549e"
     },
     "structure/sources/catalogue/0021.json": {
-     "bytes": 78801,
-     "sha256": "cb76125a2be184dd499639cb879cb701b916fdf2fe40aa160d71e3559f27b827"
+     "bytes": 80782,
+     "sha256": "db794051570575c359e3a7a2dc7c922c5e0722ae072a7759246068372d0c922f"
     },
     "structure/sources/catalogue/0022.json": {
-     "bytes": 109426,
-     "sha256": "d6c0a6251be986b9381e779cd0504cf267296b18fe0c3071d9eed87000c1137b"
+     "bytes": 102401,
+     "sha256": "4614a77283decb0d320a9ab708e54b05d22710da7ac4d12dc00aaf87371d3d96"
     },
     "structure/sources/catalogue/0023.json": {
-     "bytes": 164395,
-     "sha256": "0fcb9dc2fddac8e4e64ae213344b408d09734801d751d66bbaee0bf56b92854b"
+     "bytes": 168426,
+     "sha256": "2c71ad267cd5cf6eb3e83444f027669cb9cd49ccc5ac0af8a51f507543ca5735"
     },
     "structure/sources/catalogue/0024.json": {
-     "bytes": 77562,
-     "sha256": "7681b5099d95d6bbe59f7189b0b093f514e1c1e86e879fe66ddab3975eee317e"
+     "bytes": 78544,
+     "sha256": "430a55a924150bedcfa3e0b92568b75002b9540d14fe54f8b5da937e652ed1d0"
     },
     "structure/sources/catalogue/0025.json": {
-     "bytes": 91911,
-     "sha256": "aeabb5e9553957fd6e0285995d6d46978254827cbcd14369ed42dd799002d9f7"
+     "bytes": 91308,
+     "sha256": "ef72605ea38acca2d5365c65666a9ff74f5ee107bb77d29e0ec15e805c5c022f"
     },
     "structure/sources/catalogue/0026.json": {
-     "bytes": 75648,
-     "sha256": "7447e010f70f58e68a7f0ad2cccb5abf8a59892e546cbdb3866d5ee62eff917e"
+     "bytes": 76910,
+     "sha256": "eaa9e55b1ecc86782ac954f46ab5a4ae9ef63a99faa797a6d4ce7971b64c874b"
     },
     "structure/sources/catalogue/0027.json": {
-     "bytes": 66307,
-     "sha256": "8936da330d92fb03c1fe556a007074abc21804c8ef1e1a2f236e396738d02e98"
+     "bytes": 66613,
+     "sha256": "3b9c903112f682d9014a57aa1e672ad3e4072d55d03a099d661827fef5e82da8"
     },
     "structure/sources/catalogue/0028.json": {
-     "bytes": 62562,
-     "sha256": "57b719c6ecbbfbc625b64820a196cbead372df7e9d8e0ee0c015afcff7d97c26"
+     "bytes": 62413,
+     "sha256": "6f53270d095cb8559a7004dbd4bf39ba8fea5a4c1a84fad219abd04e5ef0f4a5"
     },
     "structure/sources/catalogue/0029.json": {
-     "bytes": 63849,
-     "sha256": "0fafaf539d2491a0845147385623c4869e516d5f62f3c7b7690004ad2abc7f2c"
+     "bytes": 63762,
+     "sha256": "16df953206fe51823fb421327f896646b35bb50f13dcd77f96bd244c717ff9c0"
     },
     "structure/sources/catalogue/0030.json": {
-     "bytes": 63771,
-     "sha256": "840ee399b0bee67a9ff92b7119a3cd29f5ef20bcdb8d03ca4dd673d6f4104133"
+     "bytes": 64055,
+     "sha256": "c40ad15dc96421843a6b76df26b2514058f4519fb4a4ba5fa1bd3197ce833621"
     },
     "structure/sources/catalogue/0031.json": {
-     "bytes": 62962,
-     "sha256": "e19036077f932496da327c75376ee7a0a17013b118ef7aad060cf1e8e33ff895"
+     "bytes": 62640,
+     "sha256": "e55783fb2ac7268eeb9906ca075b929b234728a7b3087b01332aab9fa7350a9a"
     },
     "structure/sources/catalogue/0032.json": {
-     "bytes": 65666,
-     "sha256": "3e94d1e1ee26b4fad89df15a132e4a0f909e43288ee44dc2bdf11b4aa61c0001"
+     "bytes": 66048,
+     "sha256": "51e24a4496855be4886ea18f020c538b53d6e267a7068c34a16a5c96dc1e0983"
     },
     "structure/sources/catalogue/0033.json": {
-     "bytes": 60276,
-     "sha256": "b8804011ca93a3665028937903379ee12408dc36bb4e29cdcd685c4a3272fd5e"
+     "bytes": 60925,
+     "sha256": "4f38d7ef469f7e5dd31340883ecb949b38f08eb5321d0c7f7b0363ae500e96ce"
     },
     "structure/sources/catalogue/0034.json": {
-     "bytes": 46581,
-     "sha256": "8c944d12443258f0c5025e1779849e696578b54df11190dec7ec1cc94e02a848"
+     "bytes": 47909,
+     "sha256": "606efb2cd109ce89994c70166f5fb27c0cdcc08b529c1a665c1bb19aa5769a6e"
     },
     "structure/sources/catalogue/0035.json": {
-     "bytes": 104525,
-     "sha256": "dad517d802431d090a04005f50adef7d3c30fce2757e3369f32c8c7f83d38809"
+     "bytes": 102688,
+     "sha256": "5695fa65960957bb3fa5bf16a35c5b7a74297b6e213115fbf61705ea41ef4fa1"
     },
     "structure/sources/catalogue/0036.json": {
-     "bytes": 77270,
-     "sha256": "dd2bf338144c7283e8324a670022fe068df4be9b91bc3f5457edf7f123677505"
+     "bytes": 76241,
+     "sha256": "8c738e2942fb4e4409afde375384ec4b02d082f6052b068f21c0c88ec4349052"
     },
     "structure/sources/catalogue/0037.json": {
-     "bytes": 65396,
-     "sha256": "0c79d8bfe806c39fdbccd7599539886fcb663658c020daf852aa47b5310166f6"
+     "bytes": 65454,
+     "sha256": "87bf3b2d76f39b496d5d12aaab301ba8a7ce5838f9ca873afce2b3edd797f936"
     },
     "structure/sources/catalogue/0038.json": {
-     "bytes": 57976,
-     "sha256": "bcd41fecd82409fb4128b38131702d73712ad867bf42b18c92dd41849e8d6a56"
+     "bytes": 59262,
+     "sha256": "73ed567d605a900aec306f774d08b5a4b228decf3e348fb5502c0555f6f06f55"
     },
     "structure/sources/catalogue/0039.json": {
-     "bytes": 52452,
-     "sha256": "b2bd0ce47e9c3c35715dfc910fbe3c8fa7f1449c30e0dd43107b7968abffb443"
+     "bytes": 53308,
+     "sha256": "b96519d66a3b3de6d4e0bee96b004d26baac090d22aeacfc424d00706bc48d72"
     },
     "structure/sources/catalogue/0040.json": {
-     "bytes": 65863,
-     "sha256": "8f494251d9c83d57a2b5eb6b0549803460b08064f9b4245fa038f5530d4805d6"
+     "bytes": 66133,
+     "sha256": "d8c578469169ca1bd7afe25e708c01f33d3bb4a42fb2d08cd2442147ef1bbe41"
     },
     "structure/sources/catalogue/0041.json": {
-     "bytes": 56832,
-     "sha256": "b688d0373bea1182cfa3f985289ec364dbbdf430f360c2ff256f1c831ca8c674"
+     "bytes": 57161,
+     "sha256": "76b6966c1c139b320fcf16b2af749c6c769d24d478672009de878974ca9267df"
     },
     "structure/sources/catalogue/0042.json": {
-     "bytes": 58978,
-     "sha256": "fadc1790f139a2a37eb4e1d4d1b05304c7813169997f7e4d84fc4a821511663d"
+     "bytes": 49582,
+     "sha256": "ea08ce5518fc1a191850d276ae4018e6c2805962f686a5f44da6a05c5da21dab"
     },
     "structure/sources/catalogue/0043.json": {
-     "bytes": 60775,
-     "sha256": "c11b8c05c21045f152fa1b75c2ef62da8712d80e6dae34afa791bea0869fd348"
+     "bytes": 67464,
+     "sha256": "93e9862688dccf0b383b8bd982951963dedb00ba5bd0f42854c55d0e650497b5"
     },
     "structure/sources/catalogue/0044.json": {
-     "bytes": 67971,
-     "sha256": "6e74b697cac2e32b003bfc93164d05225dbcc7de363e419ab4ba8afa8e00ecec"
+     "bytes": 68997,
+     "sha256": "142ed6e50b26c2bad1fe10192ab57f2bce9c8a55ad755825ae8b521a3f9f82c4"
     },
     "structure/sources/catalogue/0045.json": {
-     "bytes": 56873,
-     "sha256": "ed98496d2223ae3a36c6cf7dcb79829888b07ba72fe135a23952fe3c5a27b3a4"
+     "bytes": 57035,
+     "sha256": "485893183411859a08acb2bfcb24df003eaede7c1200fdc0ffb6141472f30d58"
     },
     "structure/sources/catalogue/0046.json": {
-     "bytes": 61493,
-     "sha256": "3307c87f66c80d4d3ffc47470dab80e1379c2d280f9f5e0be9def4506d21c69d"
+     "bytes": 60315,
+     "sha256": "f1d8c86959c7e0481c615244d084ed8d78f12bf6f856f562e43b69aa1f33f2db"
     },
     "structure/sources/catalogue/0047.json": {
-     "bytes": 61029,
-     "sha256": "2b6a52f25487274dc1979d568237e9d087a53d95793441d714969903f8624e66"
+     "bytes": 61675,
+     "sha256": "552db4df4b1111e5f335d45a2d033adf58a3200828ca52c67a8174b0c4a4cf0b"
     },
     "structure/sources/catalogue/0048.json": {
-     "bytes": 76439,
-     "sha256": "99d61c7d551fb5e1262d25fc03f616175a4676fc6fa3032909cbc1aa15ae0f05"
+     "bytes": 76551,
+     "sha256": "31ad92a68a5d9139cf75f65996cfe032a6e3990115bceaa69ebd080609ab889f"
     },
     "structure/sources/catalogue/0049.json": {
-     "bytes": 62021,
-     "sha256": "a455cf4784c416980bb1e77fb7edda9b918c6750506a34955352a74243c5dca5"
+     "bytes": 60713,
+     "sha256": "fdc5902f395b80df5c09d1637b495951bb77c5d4fba3b5ff5b3851f974eca12e"
     },
     "structure/sources/catalogue/0050.json": {
-     "bytes": 49070,
-     "sha256": "be6cd4fc83fa31d164f5f9b080be01c0054393d72f135a5d678b39e6b6680186"
+     "bytes": 51154,
+     "sha256": "685e632328a18627f91fec58cff2363be6c09652b9578e571d58061a0d7f2d25"
     },
     "structure/sources/catalogue/0051.json": {
-     "bytes": 54702,
-     "sha256": "82f626c8c5122d770154fe3641a564175b09d0aba12a8c67147e6b4d4e023098"
+     "bytes": 54262,
+     "sha256": "9e399ebb915688f134b5d3280f18895d719c7cf629d309dc3a8b5603edaa5e84"
     },
     "structure/sources/catalogue/0052.json": {
-     "bytes": 51849,
-     "sha256": "535bef4c64f650d29d4e59c0477ee75199771e40c1b52562be582991c522a2c2"
+     "bytes": 52655,
+     "sha256": "fe0bd7f122aa4577755933ec7f80fa6b0361157dd6bf3aaf2a5a07406f64c71a"
     },
     "structure/sources/catalogue/0053.json": {
-     "bytes": 54362,
-     "sha256": "30824a6faabf7adfdc559f1b54532d79d616c5d72bf3a057f40d91c1d8e1fcbf"
+     "bytes": 54231,
+     "sha256": "b829587e770ae09cf70c251235d273f79192382525754414ec92ba5becb1152c"
     },
     "structure/sources/catalogue/0054.json": {
-     "bytes": 52351,
-     "sha256": "d1bc22db29f6de5fe9ddafd5bfc8c05667e11e755308c4ea4f8bfd7a2ae00479"
+     "bytes": 52844,
+     "sha256": "df2fcaac843da28df8c14c751cfdbe9f981af3b98da35d18410e228c225de597"
     },
     "structure/sources/catalogue/0055.json": {
-     "bytes": 57740,
-     "sha256": "fdb954ea80472a78c0444b8097d527e12e76d2c782b945f01873b0b08b6e05ea"
+     "bytes": 54250,
+     "sha256": "c5bc2748ba60455500f259f3826800d5ed2815ce5944e004b0de9d068a07538d"
     },
     "structure/sources/catalogue/0056.json": {
-     "bytes": 80651,
-     "sha256": "b36cfe112d1675c3c8e9f904a4e227405e1df6a968d8295daddc49a3f83680c9"
+     "bytes": 85519,
+     "sha256": "d8d0ba0ce64cd77d9e93a40b4d4d4d36822038c96f27df9e92e1c1e142c64794"
     },
     "structure/sources/catalogue/0057.json": {
-     "bytes": 68612,
-     "sha256": "f40cad77dd76e1df8a3ad67c4b5ba1c5b4a8e64de7eac3316d2fe40aedea7f2a"
+     "bytes": 64513,
+     "sha256": "3c047ecc02247587c3083ba9a3a6ae22e2cf4e88f7794af367f901690ef704d3"
     },
     "structure/sources/catalogue/0058.json": {
-     "bytes": 88693,
-     "sha256": "fe437ac38c298b5010f237e3dee6d0d89a0221d4bcb7eb33fc9f63ecbc646cc9"
+     "bytes": 90955,
+     "sha256": "8e4c93a93b1b519e782306985bfd7fd8a919cab095dc2885c38786a8a84643ff"
     },
     "structure/sources/catalogue/0059.json": {
-     "bytes": 62845,
-     "sha256": "c1781c24edfbcea0de36e99419de2234e865b100329f5468b8cd9e19f5d38762"
+     "bytes": 62603,
+     "sha256": "dca7a633b3b4e386de558a7fdce5a0651f1d2d260017bbfedc16b4a6a89281c6"
     },
     "structure/sources/catalogue/0060.json": {
-     "bytes": 52998,
-     "sha256": "0a6366fe37c8c96fc8c22a993089c7c86b983f65104f9e66bb0aad336349eb9b"
+     "bytes": 55090,
+     "sha256": "4798bd85a3b649b6f90324b394829f170a8278e0af4dbc9cf90ed158b76ed899"
     },
     "structure/sources/catalogue/0061.json": {
-     "bytes": 59863,
-     "sha256": "0b6d4e1e4ffd917d9c3ab94d02804db5ff1b8a2d83266b837677af7929d4118e"
+     "bytes": 57275,
+     "sha256": "34b45490cff1d1679ae429af86c3f2f7623c9861bb1760359d58671b0945c49b"
     },
     "structure/sources/catalogue/0062.json": {
-     "bytes": 65775,
-     "sha256": "09714296c0578e9d6f4eaa6d6f0024f0c3307eabcebad62b3647d55298a4b5a6"
+     "bytes": 66026,
+     "sha256": "f5da80f98e1fe69ca1ca86510701aca6345b8cd20c3bc02ef498f30956bf9198"
     },
     "structure/sources/catalogue/0063.json": {
-     "bytes": 71553,
-     "sha256": "34418ca094431ca721301254199cb816bbedbc2e77608e1d0e146c7206563667"
+     "bytes": 70690,
+     "sha256": "fdbc522d7d189b87c70bbff101f8c65b155fbb6159c42ded3a6afc885473b2b5"
     },
     "structure/sources/catalogue/0064.json": {
-     "bytes": 64043,
-     "sha256": "3ad815f0078e3188f8868b31e29eb1f012fdcfab4ec2ef21beca785f7b1b11c0"
+     "bytes": 66866,
+     "sha256": "df89eeda17bc558d9f3529c37941e2361007761ea36ef9e9ef8dc595e7ebbb29"
     },
     "structure/sources/catalogue/0065.json": {
-     "bytes": 57527,
-     "sha256": "de9b94c2470bf60f6decc92e5b1d50bdcba424b3253748a36cdf6ff8e1ff66a8"
+     "bytes": 56621,
+     "sha256": "2b06de520acbe78a1eb931b8254c4e14083adf3b3a564a3204b9bb16c4ef1114"
     },
     "structure/sources/catalogue/0066.json": {
-     "bytes": 56186,
-     "sha256": "eab5bf6d2a625fa4e0edd2c147e9a5569107252e89fdfa2f008690eda0c332c7"
+     "bytes": 55517,
+     "sha256": "735af062819def33fd87d87aa661b952f7f98b5f9babed17abe688db94eb02f8"
     },
     "structure/sources/catalogue/0067.json": {
-     "bytes": 56522,
-     "sha256": "c3efd25a700b3a999b4e8724e18ba13d4a50e39ea99b93e8f854a01e4c34d5d7"
+     "bytes": 56901,
+     "sha256": "b9d0028ede3f8c5cf166a2874324453602fbbbe359d86241ef100814b74d55ed"
     },
     "structure/sources/catalogue/0068.json": {
-     "bytes": 54901,
-     "sha256": "7d1c943c4dc1c7db87c28ae119932cf7c84fbc1c9e46ee16b25fe616c8a4985a"
+     "bytes": 55567,
+     "sha256": "b5e701a98d657282b74000b2d59feae858f49460111b2ce94c2eadc4a9162d43"
     },
     "structure/sources/catalogue/0069.json": {
-     "bytes": 59151,
-     "sha256": "8c322211ee83ecaf36f68381037acad0c06500a2a2dfce1f2092936f54b35174"
+     "bytes": 58079,
+     "sha256": "137079aa6d2910ffffcd89e54fc51f53d3c84084027394ffd5c34bb923b25020"
     },
     "structure/sources/catalogue/0070.json": {
-     "bytes": 67409,
-     "sha256": "f6d8e85a4304c79905617c73bf8768ad06e8f29c61c8fe456a8568bdf5fe9ba0"
+     "bytes": 67891,
+     "sha256": "9b338426a9a6474ef02fea785aa5076a53bacaa25dad6a304676ecd1b82d5bf5"
     },
     "structure/sources/catalogue/0071.json": {
-     "bytes": 60836,
-     "sha256": "48736cc3cc578d5e869df64625ef924d4330a1857a0c9fd68556a5b04cd68515"
+     "bytes": 61050,
+     "sha256": "7ead8671cdfa9e36caf85aa5bfd2786acba5ebf34e8f224531714330abd1fe5b"
     },
     "structure/sources/catalogue/0072.json": {
-     "bytes": 56513,
-     "sha256": "e7f7ace2e3dc96e0fa40e79b8b5d6b90aeac3438737561edbf0b07e005180470"
+     "bytes": 57324,
+     "sha256": "b49c29ddff2ae3c920083e4276144960b37ec2b4865442b7194534af95224851"
     },
     "structure/sources/catalogue/0073.json": {
-     "bytes": 50962,
-     "sha256": "c683baa07fd0aeeaaef6cdabf3416629edf7ab9fb3ee4fec3b578d5ebe4c2a6a"
+     "bytes": 51515,
+     "sha256": "ee6d20f59b791f0beb276b6efc54c8a0b1d2e3623c99c1fcf1c6d73ec2cf7b47"
     },
     "structure/sources/catalogue/0074.json": {
-     "bytes": 61479,
-     "sha256": "9f23d56a2fee017e852db76ea74b6e78a8ec3c49fa0851f236d8de19a741d1bb"
+     "bytes": 60466,
+     "sha256": "71e64b330f7a542ea76f08f7e61e94aea82870d973170087e4b1c9fc748d8c39"
     },
     "structure/sources/catalogue/0075.json": {
-     "bytes": 50605,
-     "sha256": "bc386a5dacd096f3d747d70db182f4482ed0b2607ea1ec9c0a603e52aee95351"
+     "bytes": 50808,
+     "sha256": "db488d8e7531c7efcf228d22e0ca28b5c0bc8af896a859e6f0e8bb6066cdf023"
     },
     "structure/sources/catalogue/0076.json": {
-     "bytes": 59020,
-     "sha256": "5b002a6566154d0dea8f0145ae35b15d9cb3e847446546c95acd53cdcd204192"
+     "bytes": 59830,
+     "sha256": "90fe383d4883518f86b4a30ea31ace3428496a9fdf314bfd0dc46d703e41b6a9"
     },
     "structure/sources/catalogue/0077.json": {
-     "bytes": 55023,
-     "sha256": "eae5f8e14ca93e35b785219dea167012e2ad75a6eeb7503029850243272340af"
+     "bytes": 54335,
+     "sha256": "a29315eee17f2f15ad7f80ecd66bb6cfcfc59743e99bb03305966eb3ebdcd3ad"
     },
     "structure/sources/catalogue/0078.json": {
-     "bytes": 66383,
-     "sha256": "6ecacc671fa9d58d9e7509d74ede24112968308057467bb00d43227c1657ce35"
+     "bytes": 63564,
+     "sha256": "8b4ccd6512fade9f9a560638977945ce8def2538ee66815e4bdc45c59289ef7b"
     },
     "structure/sources/catalogue/0079.json": {
-     "bytes": 68959,
-     "sha256": "d2758c6d13a1f07b8eccbe988768edee5cc81ca95d29b96bc906eca316e0c804"
+     "bytes": 70279,
+     "sha256": "84b290c9481bdd3d064076c4a1ef31cfaa982e1198161dbf0d0c7320f17358d8"
     },
     "structure/sources/catalogue/0080.json": {
-     "bytes": 87884,
-     "sha256": "7a9b206520a6912ccfaa2fe835b438d9c73bc68620e09e0635ff46f5c41dec6b"
+     "bytes": 89010,
+     "sha256": "634a48918209257eb2e43a9abb2d4e5202986785b351a30eb3d8dce50d1a7889"
     },
     "structure/sources/catalogue/0081.json": {
-     "bytes": 88873,
-     "sha256": "88b76f058facb16e54d033e453827ecc04abe3747cef55119cbd18d2536827b8"
+     "bytes": 81318,
+     "sha256": "e823c266c99f88cae8ac782f9241eac4eb2eafcb3364b432bf5cc72ecc943dbc"
     },
     "structure/sources/catalogue/0082.json": {
-     "bytes": 73974,
-     "sha256": "da1e40f5c59f37e84697c603353c545511086b9c54aef7483704542c22a95c63"
+     "bytes": 81560,
+     "sha256": "dda233f7dc5a2e8adf10d6fd912b9ae73d5e7eb2079b7087a3ffc923858675d1"
     },
     "structure/sources/catalogue/0083.json": {
-     "bytes": 79096,
-     "sha256": "04a354f69f8a527e807771a5552cfbc836dc4dc34497e8e420f80c0eab4f3825"
+     "bytes": 75857,
+     "sha256": "1354dad0ffae0c5e4b6fe43e8487e842e0410b5bcef0e13b97b414e6d1af44a4"
     },
     "structure/sources/catalogue/0084.json": {
-     "bytes": 88837,
-     "sha256": "1f4e474a568614d91450156cfe842afd3fa9d9c34f8e92c83dcbf48c2046624d"
+     "bytes": 88034,
+     "sha256": "c034cdfe969a3fc4235023dddf9f39f703e717c85dd99a1852332441ffc345b9"
     },
     "structure/sources/catalogue/0085.json": {
-     "bytes": 80006,
-     "sha256": "886bd7d9f4ad362080ea4177a95eb7842b63c90386c67ea2063d7e8266e97281"
+     "bytes": 82649,
+     "sha256": "01bab7ffa5b974a702383f32a94b1b30d40047eb3acad66cdbce5dc8277650f6"
     },
     "structure/sources/catalogue/0086.json": {
-     "bytes": 57837,
-     "sha256": "6bd542dfb2fb76e2382eea756c73fde926c1a2ad23e9a9309268f8cf28184669"
+     "bytes": 69249,
+     "sha256": "a55326d4a179b94748029eb90244716c1dc017997a8f4279597af3ecabcc9e43"
     },
     "structure/sources/editions/a-a-lings/our-favorite-novenas/1897-1897-benziger.json": {
      "bytes": 10655,
@@ -53318,8 +53370,8 @@
      "sha256": "8b2a03a26048a25af494052bf560bcd8af6a31e72038983053eca99eed72e0db"
     },
     "structure/sources/editions/amalarius-of-metz/liber-officialis/undated-latin-migne-pl-105.json": {
-     "bytes": 16517,
-     "sha256": "da79be202a64cac914346111b91433c368d8febf7a9e4c66d1bb4de899a80311"
+     "bytes": 18510,
+     "sha256": "0701cc914c4c5122e257e155dea9f4e94369885180253b6b87533df2d156cc41"
     },
     "structure/sources/editions/ambrose/de-excessu-fratris-satyri/2026-2026-10-13-ccel-web.json": {
      "bytes": 1042,
@@ -53581,13 +53633,17 @@
      "bytes": 2701,
      "sha256": "f1814eef16d0aab35559193d021abd2c5b08aebacc7ff36123a3ea398ba52b68"
     },
+    "structure/sources/editions/anselm-of-canterbury/proslogion/1903-1903-deane-open-court.json": {
+     "bytes": 7367,
+     "sha256": "ef2fd97854be670919343e85a1a7014a5d5a19829231cae3df385d11e539aac2"
+    },
     "structure/sources/editions/anselm-schott/das-vollstandige-romische-messbuch/1929-herder-second-revised-1929.json": {
      "bytes": 38248,
      "sha256": "a5d4ce49bb4a2981a4a0db2d98fbddf7ca7fc99ae04927226a3af6a708911787"
     },
     "structure/sources/editions/ante-nicene-fathers/volume-1/1887-buffalo-1887.json": {
-     "bytes": 8468,
-     "sha256": "5a6f756c12ae8702e92ee2db823e8db2a91cf3a65c6b5cc1b8a85b53e75fe1b1"
+     "bytes": 36198,
+     "sha256": "e24ed037f3c6ac25b0b78bafe184d1252a0630b86fa86b6ee09cd627671e8841"
     },
     "structure/sources/editions/ante-nicene-fathers/volume-1/2026-2026-10-13-ccel-web-2026-10-13.json": {
      "bytes": 2528,
@@ -53606,8 +53662,8 @@
      "sha256": "047b64b2bf8b96f04de94e2746d61da7215a2d5ca9460d05eb5660eab366c7d9"
     },
     "structure/sources/editions/ante-nicene-fathers/volume-5/2026-2026-10-13-ccel-web-2026-10-13.json": {
-     "bytes": 2607,
-     "sha256": "041530dcc799132af0854ac7a1ef854ca294103c331f523fd4e11d483f5a72f1"
+     "bytes": 14778,
+     "sha256": "99753eb35cfc88269e91f150b948dae09e70bd93acaf44b446fe004f0bc9333f"
     },
     "structure/sources/editions/ante-nicene-fathers/volume-6/1886-buffalo-1886.json": {
      "bytes": 1635,
@@ -53800,6 +53856,10 @@
     "structure/sources/editions/arthur-westwell/carolingian-sacramentaries-of-saint-amand/2024-2024-de-gruyter.json": {
      "bytes": 14101,
      "sha256": "5f539dbea20e7fd6254c57606de175344b892e10a3b1d9d69e192df6e12c4f8f"
+    },
+    "structure/sources/editions/association-episcopale-liturgique-pour-les-pays-francophones/liturgie-des-heures-aelf-daily-office/2026-2026-11-26-api-v1-romain.json": {
+     "bytes": 33631,
+     "sha256": "6b5c9c44c96c8db6682beec9fec1c8139e4ef24896ae347884278be3c10895a7"
     },
     "structure/sources/editions/athanasius-of-alexandria/expositiones-in-psalmos/undated-migne-pg-27-paris.json": {
      "bytes": 6935,
@@ -54012,6 +54072,10 @@
     "structure/sources/editions/augustine/sermo-191/1845-1845-migne-pl38.json": {
      "bytes": 6319,
      "sha256": "62091b95c1dd5a943d4035162d39948283fc08462b4cd0be646c03d9cdc4a25e"
+    },
+    "structure/sources/editions/augustine/sermo-293/1845-1845-migne-pl38.json": {
+     "bytes": 11373,
+     "sha256": "6cf47499be21382a8128c991557c812e694318b49ac6b62236e9faedeb0600f4"
     },
     "structure/sources/editions/augustine/sermo-87/2026-2026-09-17-ccel-web.json": {
      "bytes": 3069,
@@ -54372,6 +54436,10 @@
     "structure/sources/editions/bonaventure/commentarius-in-librum-sapientiae/1893-1893-quaracchi.json": {
      "bytes": 3721,
      "sha256": "96724c38a848faa9836d7d7ea9b2ca179b854cb4c2e45ff5d8791db3f42af823"
+    },
+    "structure/sources/editions/bonaventure/legenda-maior-sancti-francisci/1904-london-dent-1904-salter.json": {
+     "bytes": 5554,
+     "sha256": "fd32a1c0e9694f611a1b1fe88ce7d09169f972864e43cc50dcbea90aecc69956"
     },
     "structure/sources/editions/bonaventure/opera-omnia-quaracchi/1893-1893-volume-6.json": {
      "bytes": 3910,
@@ -70782,20 +70850,28 @@
      "sha256": "b2f08ab44226a5c514477a3e4f3e9a9efa6865ab62400a98acdf15b529ad862d"
     },
     "structure/sources/editions/catholic-church/breviarium-romanum/1888-1888-pustet-ratisbon-pars-hiemalis.json": {
-     "bytes": 212083,
-     "sha256": "83b63889e6663a08e67857d2d3f753b6c958756ef1c819ee1fbe269b47bc2a4d"
+     "bytes": 218597,
+     "sha256": "83ea9c94f827bfe48f50b8e9759f0e5d693a05f29f9f62cd438418bc63397410"
     },
     "structure/sources/editions/catholic-church/breviarium-romanum/1888-1888-pustet-ratisbon-pars-verna.json": {
      "bytes": 20151,
      "sha256": "6fcb223dd43dcc384e3bba763bdd038e0876248af7cd607482de9127fdd95759"
     },
     "structure/sources/editions/catholic-church/breviarium-romanum/1908-1908-blackwood-bute-winter.json": {
-     "bytes": 169956,
-     "sha256": "dd3c2e6202c9cf3d8e5afc713afc1152b349d85d954826716bf32d09a81880ec"
+     "bytes": 175796,
+     "sha256": "f1a24b4226af3a69c76086e2067f685cc16676d6ac51b45a241b32246164fedd"
+    },
+    "structure/sources/editions/catholic-church/breviarium-romanum/1908-advent-pc-en1-1908-blackwood-bute-spring.json": {
+     "bytes": 4215,
+     "sha256": "832592c55c0c804f4d5a1692ba736e0993ab97df1e663c5404a511d9b7af7f4d"
     },
     "structure/sources/editions/catholic-church/caeremoniale-episcoporum/1948-marietti-third-after-typical-1948.json": {
      "bytes": 12495,
      "sha256": "f9a66aa97e049c4d8ffa2c448ec0a766fe2377d7e131af74e277832ad18e70cc"
+    },
+    "structure/sources/editions/catholic-church/calendarium-romanum-generale/1969-latin-editio-typica-1969.json": {
+     "bytes": 9925,
+     "sha256": "c772fe29cce71cd538d93ce296c9963cd9dfb5b8cc078914ac9f7e65eb23093d"
     },
     "structure/sources/editions/catholic-church/calendarium-romanum-generale/2002-latin-missale-romanum-typica-tertia-2002.json": {
      "bytes": 2550,
@@ -70901,9 +70977,13 @@
      "bytes": 5057,
      "sha256": "c8936fcef778e40204e0d7c09e7b02abe5cb2d5929d7e85566114e389d953a41"
     },
+    "structure/sources/editions/catholic-church/institutio-generalis-de-liturgia-horarum/2026-2026-11-26-advent-pc-fix2-english-1974-liturgyoffice-web.json": {
+     "bytes": 6072,
+     "sha256": "ab7b11b9ef6aae7347faa1fa1f85f4045764eec20c7dcf5a3678e3e82a0f95ea"
+    },
     "structure/sources/editions/catholic-church/institutio-generalis-missalis-romani/2002-latin-missale-romanum-typica-tertia-2002.json": {
-     "bytes": 42219,
-     "sha256": "3c467ed7f9ce5b2be16140af73bb98427fa5fc2b9a23d77c817dd27666716d99"
+     "bytes": 45213,
+     "sha256": "a89edeb3431c9a679e9a2c8db2d783ffc670f4e7bfcb51457df0e75d55e362d5"
     },
     "structure/sources/editions/catholic-church/institutio-generalis-missalis-romani/2011-english-us-2011-emended-2021.json": {
      "bytes": 33201,
@@ -70922,8 +71002,12 @@
      "sha256": "d3a32bf63f418d063de2e68b4654b1121833c67f85d561e2a84aeee67ec955f3"
     },
     "structure/sources/editions/catholic-church/martyrologium-romanum/1902-rome-propaganda-fide-1902.json": {
-     "bytes": 11836,
-     "sha256": "3e408bdee99ffb50eefcbac374c56e56d9d2ed0980171f5cb3bd13edea313d14"
+     "bytes": 31047,
+     "sha256": "d1e95728eecab3f48d1d44d9653235f8ffd76ae347fa22784408c978d843db36"
+    },
+    "structure/sources/editions/catholic-church/martyrologium-romanum/1916-advent-pc-en1-baltimore-murphy-1916.json": {
+     "bytes": 13135,
+     "sha256": "18c21813e09eacd4ca9a07f99d8fb3036fff618d56e9f28a5694a20a39543e49"
     },
     "structure/sources/editions/catholic-church/missale-ad-usum-sarum/1861-dickinson-burntisland-1861-1883.json": {
      "bytes": 1717,
@@ -70974,8 +71058,8 @@
      "sha256": "a7fc47516338793f660690321d2a29737c165d6273c024cf4785591f9fbfbd19"
     },
     "structure/sources/editions/catholic-church/missale-romanum/1922-1922-tours-mame-editio-quarta-iuxta-typicam.json": {
-     "bytes": 686752,
-     "sha256": "fd8b5750de36bd474fc7eabc8d07901cdf9070e3adfb57109c62bd485bc14d44"
+     "bytes": 697295,
+     "sha256": "bbd3eb30fd21e89099e0e1e4dc264fe4a39587d55a87b4af6ca475621de04f62"
     },
     "structure/sources/editions/catholic-church/missale-romanum/1942-unidentified-pre-1955-witness-ia-1947.json": {
      "bytes": 7883,
@@ -71014,8 +71098,8 @@
      "sha256": "99b4d5d5aa0c4788344244bec4a6204972ac39b7d69ce461cd86f3506ba48d54"
     },
     "structure/sources/editions/catholic-church/missale-romanum/2002-vatican-typica-tertia-2002.json": {
-     "bytes": 548462,
-     "sha256": "6dc7eba8054b6c3fd47a85763ace72c4600f9b16dc09132b20866124e2c60d14"
+     "bytes": 555405,
+     "sha256": "2d6b1b878df73126fe400a0fc68945496a792386375fc257ade0e77d0ad01636"
     },
     "structure/sources/editions/catholic-church/missale-romanum/2004-2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920.json": {
      "bytes": 4622,
@@ -71053,9 +71137,13 @@
      "bytes": 1788,
      "sha256": "0c651fd27f01bf78ca3b61d637483ed008d30653d5f8eff4f209ec562cf06963"
     },
+    "structure/sources/editions/catholic-church/normae-universales-de-anno-liturgico-et-de-calendario/1969-latin-calendarium-romanum-1969.json": {
+     "bytes": 36953,
+     "sha256": "bf85bb0387b5426ce47f7cb23cae7933885c62d2aef980f24e5bd5cd5f4436c7"
+    },
     "structure/sources/editions/catholic-church/normae-universales-de-anno-liturgico-et-de-calendario/2002-latin-missale-romanum-typica-tertia-2002.json": {
-     "bytes": 2702,
-     "sha256": "a5ffdecfc5d39e77c5bfa9f762d0bf68ffbd7797714cd65d1b2d88b9f05a121b"
+     "bytes": 5900,
+     "sha256": "e98e2573092833042d3420445d08f8912bbdfaddb98543ee6468b5b02682abcb"
     },
     "structure/sources/editions/catholic-church/nova-vulgata/undated-vatican-official-web.json": {
      "bytes": 2697,
@@ -71086,8 +71174,8 @@
      "sha256": "e88b3eb3a62a8f28509da084dd43279d82ebadbf8de1978c06b80f6e688ac94f"
     },
     "structure/sources/editions/catholic-church/ordo-lectionum-missae/1981-latin-editio-typica-altera-1981.json": {
-     "bytes": 48869,
-     "sha256": "46b41c63981cd34603aaeeadc3caa12d30b27b99852fdaaac84dda1845bb2abd"
+     "bytes": 52697,
+     "sha256": "73aa728a352739de50decf0337d9ae780d890d975ca0dd9f385cbe37a6aa13d0"
     },
     "structure/sources/editions/catholic-church/ordo-lectionum-missae/1993-canada-1993-weekday-a.json": {
      "bytes": 12926,
@@ -71202,16 +71290,16 @@
      "sha256": "c7a3b3525ff44d0bf025094c28236289008ef559f6c814c2491a2a62ddcf8e5d"
     },
     "structure/sources/editions/catholic-church/sacramentarium-gelasianum-vetus/1894-wilson-1894.json": {
-     "bytes": 117272,
-     "sha256": "196ec37c509bee858f1771154bb531ad744925dde70c710deef66018cf68ac52"
+     "bytes": 124260,
+     "sha256": "5b7169440cf3573d0fede61add597f1a1320669ebaea88e57ba4a70fee6adea9"
     },
     "structure/sources/editions/catholic-church/sacramentarium-gregorianum-hadrianum/1915-wilson-1915.json": {
-     "bytes": 97114,
-     "sha256": "21affed0a32c950cbb8c9c512f53959ad00297bd9ebbdab7c068245d9212a3a3"
+     "bytes": 102623,
+     "sha256": "3b03bb73906ef1fc70c82578777f1f9588759fb80c3ec342d344efa595628940"
     },
     "structure/sources/editions/catholic-church/sacramentarium-veronense/1896-feltoe-1896.json": {
-     "bytes": 80829,
-     "sha256": "d4bae64e5564024aabad7fb2862a1c34b08ab69cbde29232c4d6aa0e0cfa8130"
+     "bytes": 89036,
+     "sha256": "5a552f51076e3d86a89efa427377f48e4e397a441e36e50ad938717d2bb06935"
     },
     "structure/sources/editions/catholic-church/stowe-missal/1915-1915-warner-vol-2.json": {
      "bytes": 67874,
@@ -71454,8 +71542,8 @@
      "sha256": "c1e4cae7f9187849225ac4dbff9130a7f659eb0af9fead37c7dc2100c6086b42"
     },
     "structure/sources/editions/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/directory-on-popular-piety-2001/2026-2026-09-29-official-english-web.json": {
-     "bytes": 1995,
-     "sha256": "636fa3d8fa11ca28b001bf0378ca2f96af470834ad3841b87f0a91cd283b2a87"
+     "bytes": 5999,
+     "sha256": "20cef1483b855fefb6d96704cc6205c45a75eb003d3118a83cb89712b4d6f46e"
     },
     "structure/sources/editions/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/homiletic-directory/2026-official-english-holy-see-web-2026-07-29.json": {
      "bytes": 2743,
@@ -71665,6 +71753,10 @@
      "bytes": 1703,
      "sha256": "6250697f28dada2aaf078ead46de0a2a8ead4246a61add4ed7cde936744d59de"
     },
+    "structure/sources/editions/dicastery-for-divine-worship-and-the-discipline-of-the-sacraments/note-obligation-mass-transferred-holyday-2025/2025-english-official-pdf.json": {
+     "bytes": 3020,
+     "sha256": "55130c1c4b7336a51b544395a6381fd13ab8f0ac2e2686609d826a33d08c7016"
+    },
     "structure/sources/editions/diocese-of-amiens/missale-ambianense/1487-1487-paris-du-pre.json": {
      "bytes": 2028,
      "sha256": "ab47569769fa1768de78e2b4e38fe25f1c69864863f0fbeb03c36eeb2ef0403a"
@@ -71854,8 +71946,8 @@
      "sha256": "d318d7561945f845b394de8eaa1c08cca0a32a8e6cba4133865339ecd8314485"
     },
     "structure/sources/editions/english-college-of-douay/douay-rheims-bible/1914-murphy-1914.json": {
-     "bytes": 4187,
-     "sha256": "965cbfd8210fa95d31b90839c3251fe22be7477db1a00962fb2e48939661834d"
+     "bytes": 18165,
+     "sha256": "85eb9b3d5cfc3a633c8b6e575fed1cdc63b0ed5982d9aace897ea1d5a0ebc1a8"
     },
     "structure/sources/editions/english-language-liturgical-consultation/praying-together/1998-1998.json": {
      "bytes": 5469,
@@ -71882,8 +71974,8 @@
      "sha256": "f02a7131ed5cce6ed0c9b5ee3d42edf7aeb592aa0d793ac47d1b6c7a903db443"
     },
     "structure/sources/editions/eugene-cummiskey/roman-missal-english-laity/1861-philadelphia-1861.json": {
-     "bytes": 606798,
-     "sha256": "6ea60467c5dcb3f1ae7f3fe191a6786a61718f6c6ac520e56e3e5b8c16263ced"
+     "bytes": 610564,
+     "sha256": "12066294da93819fdfbf20bb5f9a8d0b290e703f4f32d77e50f2d4561049f4c2"
     },
     "structure/sources/editions/eusebius/ecclesiastical-history/1908-greek-schwartz-mommsen-gcs-1908.json": {
      "bytes": 2614,
@@ -71912,6 +72004,10 @@
     "structure/sources/editions/federation-of-diocesan-liturgical-commissions/mystagogical-reflections/2016-2016-collect-and-prayer-after-communion.json": {
      "bytes": 4733,
      "sha256": "058dc6bddd6a9d127aaf0aae430d355ce6d2f89feb2cdb6fbf763e89b29dbcad"
+    },
+    "structure/sources/editions/felix-just/office-of-readings-non-biblical-second-readings/2026-2026-11-22-catholic-resources-web.json": {
+     "bytes": 2926,
+     "sha256": "696782e1ba50c385f16d39be0db39ab133d2ae8f83e1a46af6bef2def8da6452"
     },
     "structure/sources/editions/first-vatican-council/dei-filius/1912-1912-devin-adair-manning-english.json": {
      "bytes": 980,
@@ -71982,8 +72078,8 @@
      "sha256": "fedafb7681ee47871c9a36f0565d02eeb0a3c79042a3fc5035975237d785c686"
     },
     "structure/sources/editions/francis-xavier-lasance/the-new-roman-missal/1946-1946-benziger-revised-1945.json": {
-     "bytes": 252504,
-     "sha256": "31c22c2d4d2d891a539eac9e1d6ae28f5c5b3c2a87e5e6a270294a75bd5f5a18"
+     "bytes": 260051,
+     "sha256": "a250ff6c025a2bc275f741cd8f85e7c4f5558e36d7c79014ed28ae72b22e674d"
     },
     "structure/sources/editions/francis/act-consecration-immaculate-heart-2022/2026-english-vatican-web-2026-07-25.json": {
      "bytes": 1330,
@@ -72606,16 +72702,20 @@
      "sha256": "969b7b3128d30a8dcdcc66adebfae80e2feed7ad24968aa182fdbbf74a8b9a12"
     },
     "structure/sources/editions/gregory-the-great/homiliae-in-evangelia/1843-1843-oxford-catena-luke.json": {
-     "bytes": 6632,
-     "sha256": "78adfa4b206ead81e27fbb81465ad777edf87cb0332212d677ea9013db040af0"
+     "bytes": 10189,
+     "sha256": "ebf102cfe8b1cb8c076736770673491e6ef3e2af5154e325d84f3f23b2a1999e"
     },
     "structure/sources/editions/gregory-the-great/homiliae-in-evangelia/1878-1878-latin-migne-pl76-garnier.json": {
-     "bytes": 28741,
-     "sha256": "5cc91db42e959a853e4181b3aabb2378e0c7d40af5c186b7aa2b68a41a955ee7"
+     "bytes": 38659,
+     "sha256": "a54eccef556ab7580c142187ffc1b406a1ce433072fad52814b21baa6a3f8d24"
     },
     "structure/sources/editions/gregory-the-great/homiliae-in-evangelia/1908-1908-bute-winter.json": {
      "bytes": 9934,
      "sha256": "e169e6b1ae821b9383c65bf2684732dab35f7eee47541af8bd2637abfa8a2202"
+    },
+    "structure/sources/editions/gregory-the-great/homiliae-in-evangelia/1908-advent-pc-en1-1908-bute-spring.json": {
+     "bytes": 4960,
+     "sha256": "a37f0736ad464b7fa462b44cff8dedd9155f62f324ff9255f314bf1000b488bc"
     },
     "structure/sources/editions/gregory-the-great/homiliae-in-evangelia/2026-2026-09-17-pl76-facsimile.json": {
      "bytes": 3916,
@@ -76269,6 +76369,10 @@
      "bytes": 1409,
      "sha256": "27bd223848560c5cbfca8b5b5bd233565f653f6bd0a34255f830a70aff96c1bf"
     },
+    "structure/sources/editions/henry-james-coleridge/life-and-letters-of-st-francis-xavier/1872-london-burns-oates-1872-volume-1.json": {
+     "bytes": 6917,
+     "sha256": "67b200be192479992fc0349bf8c35267933f26f33a67263268c7871d2d8a6fe6"
+    },
     "structure/sources/editions/henry-latham/the-risen-master/1905-deighton-bell-1905.json": {
      "bytes": 6894,
      "sha256": "a2a255140203177cfd2ca6b901178c71bd9f8f231de92e32dc3f3c6e983d31b1"
@@ -76562,16 +76666,16 @@
      "sha256": "1ca212aadd0bf11b3bc51fc0c48984e5b20f7c7aa3f90f773f8ec295024d2e10"
     },
     "structure/sources/editions/holy-see/acta-apostolicae-sedis/1969-1969-acta-aas-061.json": {
-     "bytes": 1801,
-     "sha256": "55ba00a820424a226e436609578c53bb25fc989e8e4ec1144918d98691a80014"
+     "bytes": 2611,
+     "sha256": "db70e148de25f29390e9ca58a83aca13c6c5f63a592d6a04a3f5933cd3dbf575"
     },
     "structure/sources/editions/holy-see/acta-apostolicae-sedis/1970-volume-62-1970.json": {
      "bytes": 1763,
      "sha256": "cb33405ece76a35cf6f61c6b3d90339ef9cec6a0f23e03ffa58464cd0bbccf59"
     },
     "structure/sources/editions/holy-see/acta-apostolicae-sedis/1971-1971-acta-aas-063.json": {
-     "bytes": 1802,
-     "sha256": "7f56d4cdbfc7c6c217699436d513cccec3d6d763b32c0992e45621884f2a6bb9"
+     "bytes": 3390,
+     "sha256": "288ff53d81a372ed3f57db6b82455d1901bd9fbcc3e57299433568564cbbc80e"
     },
     "structure/sources/editions/holy-see/acta-apostolicae-sedis/1972-1972-acta-aas-064.json": {
      "bytes": 1801,
@@ -76582,8 +76686,8 @@
      "sha256": "f860dd45179f61c57554df973f4dd3543d7fa5985b88bd4ac46960f1b5fa37b5"
     },
     "structure/sources/editions/holy-see/acta-apostolicae-sedis/1974-volume-66-1974.json": {
-     "bytes": 1763,
-     "sha256": "a06a7cfc8f3f55171fe041ba4cf4642c0fbf73fd14db4199562f1e63d28dd8a7"
+     "bytes": 3450,
+     "sha256": "bc0d5e4e3d8c6050783e8992a686c02723e41473576dd5a4560cab43c695fbc8"
     },
     "structure/sources/editions/holy-see/acta-apostolicae-sedis/1975-volume-67-1975.json": {
      "bytes": 1763,
@@ -77210,8 +77314,8 @@
      "sha256": "bc96a65e41d7c109679623d77cfcf7d9be66f7001951d2eef88d809db1451a7b"
     },
     "structure/sources/editions/holy-see/inscription-beatae-mariae-virginis-de-loreto-2019/2019-vatican-bulletin-2019-10-31.json": {
-     "bytes": 4069,
-     "sha256": "834c194ba56ac1be32a90f52dfe60f8d259fd96df32517e458039ef79af0ce05"
+     "bytes": 5646,
+     "sha256": "ab8b35e903966d366dd37cef4e9d73155ca55d18de7c166da6c10c9168d14c0c"
     },
     "structure/sources/editions/holy-see/inscription-beatae-mariae-virginis-de-loreto-2019/2023-2023-confirmed-us-english.json": {
      "bytes": 1455,
@@ -77274,8 +77378,8 @@
      "sha256": "00477556a98aec693ea96f7ae0f2d759f297d13c2f27f93b4aac25795dc3303c"
     },
     "structure/sources/editions/holy-see/notitiae/1989-1989-volume-25-number-273.json": {
-     "bytes": 2598,
-     "sha256": "996cacf9cc54d80081d2041a4ad668f6ceb5e32a891387a26b1a4aba1248b81c"
+     "bytes": 3587,
+     "sha256": "7025cb440fc31b7c0230eb207a9191c8bd75ed74a2bf77c6d6a9304a668bf97f"
     },
     "structure/sources/editions/holy-see/notitiae/1996-volume-32-number-357-1996.json": {
      "bytes": 1563,
@@ -77416,6 +77520,10 @@
     "structure/sources/editions/hugh-of-saint-cher/postilla-in-totam-bibliam/2026-2026-09-05-morard-gloss-e.json": {
      "bytes": 2399,
      "sha256": "c19b677822b1ee498b9141888caaa7f93f625f7d0b53c0bd60462984e307b5fc"
+    },
+    "structure/sources/editions/hymnal-noted/hymnal-noted/1851-london-novello-1851-parts-1-2.json": {
+     "bytes": 5453,
+     "sha256": "1afad3a87af7c654c0354bd3b764001fcd010ef79ce6c019049a93613471035f"
     },
     "structure/sources/editions/hymns-ancient-and-modern-proprietors/hymns-ancient-and-modern/1890-london-complete-edition-1890.json": {
      "bytes": 9896,
@@ -77593,9 +77701,13 @@
      "bytes": 16879,
      "sha256": "cce1b6093b69240177a0d6b31a18d808e45aef4e61c206fda39baef37b2160be"
     },
+    "structure/sources/editions/jacques-paul-migne/patrologia-latina-volume-194/undated-advent-pc-fix2-ia-patrologiaecur194mign.json": {
+     "bytes": 3417,
+     "sha256": "b81f6d3bf1205ae99911e1f35a07fa17ad9aac1f528b467e3b6559f9c27a2f5b"
+    },
     "structure/sources/editions/jacques-paul-migne/patrologia-latina-volume-24/1865-1865-paris.json": {
-     "bytes": 12510,
-     "sha256": "3cf9763abee001d777f276792522e7413b67d8ef2ad17f61bb708963b656835c"
+     "bytes": 20650,
+     "sha256": "eb32eb0cd34bd7ece7b306c2a84dc474d67492d356848001af9749e6f0c41cae"
     },
     "structure/sources/editions/jacques-paul-migne/patrologia-latina-volume-26/1845-paris-1845.json": {
      "bytes": 11161,
@@ -77857,6 +77969,10 @@
      "bytes": 3857,
      "sha256": "7f0b4a4152cf143c4e77c7f7c8ded0d5f79a32ebaef70029219bf4049518d547"
     },
+    "structure/sources/editions/john-henry-newman/hymni-ecclesiae/1838-oxford-parker-1838.json": {
+     "bytes": 5452,
+     "sha256": "e16cc096f04630cb343ced23420c9e6919ba664d2de548502fd3129a39d285da"
+    },
     "structure/sources/editions/john-henry-newman/parochial-and-plain-sermons/1869-1869-rivingtons-1869-volume-1.json": {
      "bytes": 2562,
      "sha256": "30af777dcd6eb65569ab9946d7cc91143cb2c038bdeaaed252e0161dae681ef3"
@@ -77880,6 +77996,10 @@
     "structure/sources/editions/john-of-damascus/homilies-on-the-dormition/1898-english-allies-london-1898.json": {
      "bytes": 1151,
      "sha256": "bd9c23168fc9e63245f69b384ae6158ddce40db4e1aa1b8d226b7ac85df0e0a9"
+    },
+    "structure/sources/editions/john-of-the-cross/complete-works/1864-london-1864-lewis-volume-2.json": {
+     "bytes": 10345,
+     "sha256": "f7ef49cf0f5d66c0dc833bbd99c2550b7101c239ef0dedb2ad81aab4a2ea5336"
     },
     "structure/sources/editions/john-paul-ii/ad-tuendam-fidem/1998-english-vatican-web.json": {
      "bytes": 1376,
@@ -78020,6 +78140,10 @@
     "structure/sources/editions/john-paul-ii/general-audience-2002-09-18/2026-english-vatican-web-2026-10-13.json": {
      "bytes": 1354,
      "sha256": "0e9943e2223bc47bc540114cddb6f50a5962809d8f3f4f9b753a7be8cc3c76c3"
+    },
+    "structure/sources/editions/john-paul-ii/homily-2000-09-03-beatification/2026-2026-11-26-advent-pc-fix2-english-vatican-web.json": {
+     "bytes": 2577,
+     "sha256": "16f1f711d641b35a61312519eef1db4a28cbf9039eeb93b3c2943ac69a40cc84"
     },
     "structure/sources/editions/john-paul-ii/pastores-dabo-vobis/2026-2026-10-26-vatican-de.json": {
      "bytes": 1486,
@@ -78458,8 +78582,8 @@
      "sha256": "5303c424a3d7ee1357f45bf33459403d562106d0dd5231d8b06cb8849f2a0243"
     },
     "structure/sources/editions/luis-laso-de-la-vega/huei-tlamahuicoltica/1649-mexico-juan-ruiz-1649.json": {
-     "bytes": 1867,
-     "sha256": "de9d83c51b3f5995206a9f59d76cb863d747da87075b12ce37942d5f922cd3c6"
+     "bytes": 6866,
+     "sha256": "95323fc9f1d43e330de0ccfd804a8379bd883d2715b9ec7b3afce5e28491bd64"
     },
     "structure/sources/editions/lviv-orthodox-eparchy/leiturgiarion/1646-1646-lviv-mihail-sliozka.json": {
      "bytes": 20663,
@@ -78793,6 +78917,10 @@
      "bytes": 2450,
      "sha256": "d69ef47115eef9b16248902757d403e249e0a86f172204ebe1d2b6f5485d3581"
     },
+    "structure/sources/editions/nicene-and-post-nicene-fathers/series-1-volume-10/1888-new-york-1888.json": {
+     "bytes": 11559,
+     "sha256": "76ec779605fade593ae280acb072beb38a6a5eda315fa3db2857414a57d126c8"
+    },
     "structure/sources/editions/nicene-and-post-nicene-fathers/series-1-volume-10/2026-2026-09-17-ccel-web.json": {
      "bytes": 2034,
      "sha256": "dd2ab812bbdfb88a2486f348dbb7459b8c6fe870438bf4b4340e15af06873b31"
@@ -78814,20 +78942,20 @@
      "sha256": "65b395f9523720ba2f446e51eec6c4f8dcb52fbe3ea145e15d699285478c2c09"
     },
     "structure/sources/editions/nicene-and-post-nicene-fathers/series-1-volume-14/1889-new-york-1889.json": {
-     "bytes": 10397,
-     "sha256": "a813df27a9697c68c53ff09f12afa78d270971f3e4b2740b8622f58a5943a63c"
+     "bytes": 15895,
+     "sha256": "1812092e07ea100c2e1c044f41623cafb3229c9e68f1ff82241ef53e559b1ad3"
     },
     "structure/sources/editions/nicene-and-post-nicene-fathers/series-1-volume-2/2026-2026-09-17-ccel-web.json": {
-     "bytes": 1806,
-     "sha256": "9a9b899d91cad61c89abb21a29871514d3250e54890df08edffdada086ad1dd4"
+     "bytes": 10053,
+     "sha256": "7e3adca6b0560ec2882136d9538be4f9407e351c389f74e0c469bb0336f389aa"
     },
     "structure/sources/editions/nicene-and-post-nicene-fathers/series-1-volume-5/2026-2026-09-17-ccel-web.json": {
      "bytes": 1994,
      "sha256": "e300f2852431387852d45629d7c3de3fa95da9b863cc1345bd4975b76ee69e00"
     },
     "structure/sources/editions/nicene-and-post-nicene-fathers/series-1-volume-6/2026-2026-09-17-ccel-web.json": {
-     "bytes": 2087,
-     "sha256": "a37d696c4beb078f1eb84c2a78be37864581c0975a84439a70d996438808bcc9"
+     "bytes": 11061,
+     "sha256": "0a190b44048103ba8be3b5d09a16abde834f4b89947d085cc9fd7df909738d1f"
     },
     "structure/sources/editions/nicene-and-post-nicene-fathers/series-1-volume-7/1888-new-york-1888.json": {
      "bytes": 11045,
@@ -78854,8 +78982,8 @@
      "sha256": "cf39e51a7fb5eb8d103acfb0fbc11b6d6786a6c9769cd66cc4cee90bd3bf859e"
     },
     "structure/sources/editions/nicene-and-post-nicene-fathers/series-2-volume-12/1895-new-york-1895.json": {
-     "bytes": 37942,
-     "sha256": "744c6eae955ea9d7339d1b3ed95f7be538263649887756306eb635a011d5c14d"
+     "bytes": 41434,
+     "sha256": "a3d58926c1205b27f7fe73a83e746ffcb69906317fa31dfb38dca2f47cdade87"
     },
     "structure/sources/editions/nicene-and-post-nicene-fathers/series-2-volume-12/2026-2026-09-28-ccel-web.json": {
      "bytes": 2151,
@@ -78886,12 +79014,12 @@
      "sha256": "9cd3ef1061647df75f74785cdc41ea73058187c3018a33feb71cf226432f2308"
     },
     "structure/sources/editions/nicene-and-post-nicene-fathers/series-2-volume-7/1894-new-york-1894.json": {
-     "bytes": 37783,
-     "sha256": "55385d4bea42256475534500383177c93ebbccb041edb31746c50c883abb37e0"
+     "bytes": 44345,
+     "sha256": "bda3f6aef25df3b09e2347b4a0758570838ff25cf064ad6891cf1e6d73933cb9"
     },
     "structure/sources/editions/nicene-and-post-nicene-fathers/series-2-volume-7/2026-2026-10-06-ccel-web.json": {
-     "bytes": 2306,
-     "sha256": "707fa449523b9b9b02bf284c9b95a113d8ca24d08076a815426f1d16d526c6c4"
+     "bytes": 6070,
+     "sha256": "833b944d90b0bff56b27e64066e0046d6b334ad32aa8bfa347e0de2688620da2"
     },
     "structure/sources/editions/nicene-and-post-nicene-fathers/series-2-volume-8/1895-1895-edinburgh-ccel.json": {
      "bytes": 2222,
@@ -78908,6 +79036,10 @@
     "structure/sources/editions/nicene-and-post-nicene-fathers/series-2-volume-9/1899-new-york-1899.json": {
      "bytes": 1331,
      "sha256": "bf2b904d86d53ae1a05e51306bba0eb9ff89c1cafbfcb4dcf5d54799e7bb8963"
+    },
+    "structure/sources/editions/nicene-and-post-nicene-fathers/series-2-volume-9/1908-new-york-1908.json": {
+     "bytes": 7226,
+     "sha256": "dae76dc8d797512be1cb6467947651a1c0d1bed96f5b5ce351646b43eedc91ca"
     },
     "structure/sources/editions/nicola-franco/necessita-mantenere-rito-greco-mezzojuso/undated-undated-di-marco-online-reset.json": {
      "bytes": 2970,
@@ -79026,8 +79158,8 @@
      "sha256": "acc210da4359f96003c9751738b2fbeaebb77a43dd438c6cb996495403aac195"
     },
     "structure/sources/editions/papal-collections/pius-ix-official-documents-1855/1855-1855-murphy-bilingual.json": {
-     "bytes": 4034,
-     "sha256": "3fabe4f854c8dd9895bf897e3599ce6d72fac515bf83793e4a7e0b76063074a9"
+     "bytes": 13813,
+     "sha256": "52e7acf4ece28e808d2fd3a33e736f278ca4ada9a1b09591528867f982eeaa54"
     },
     "structure/sources/editions/papal-collections/pius-ix-quanta-cura-syllabus/2026-2026-10-26-vatican-latin.json": {
      "bytes": 3499,
@@ -97614,8 +97746,8 @@
      "sha256": "e2e2de7e3df94754309551967a3bdf682041f22d375ebc305dab9f5e7fa499f0"
     },
     "structure/sources/editions/papal-documents/2019-12-01-papal-francesco-papa-francesco-lettera-ap-20191201-admirabile-signum-351aa693/2026-2026-10-26-vatican-en.json": {
-     "bytes": 3604,
-     "sha256": "961dda91b846a7b00884f0483f79233444f270cb3a8e018d5548eedb42272a39"
+     "bytes": 8450,
+     "sha256": "cfd15e635cb7bb1ddf95a7307d350b0816414c1ff9d2a442b33b1601d1d88712"
     },
     "structure/sources/editions/papal-documents/2019-12-01-papal-francesco-papa-francesco-lettera-ap-20191201-admirabile-signum-351aa693/2026-2026-10-26-vatican-es.json": {
      "bytes": 1810,
@@ -100326,8 +100458,8 @@
      "sha256": "5d36d7ecc3f9b4038697a9b913e7fe8bb48eb60ce3dd268045f0b667a0878c33"
     },
     "structure/sources/editions/prosper-gueranger/the-liturgical-year/1870-1870-english-duffy-volume-1-advent.json": {
-     "bytes": 28150,
-     "sha256": "d39a4495fdb52b089310e28931aaeb9773b7dfb22551616ee43da608f4cd9967"
+     "bytes": 29024,
+     "sha256": "01c8a25de45e1c9bcd71aa0246989f564a51852da1616ba38c55122405777f43"
     },
     "structure/sources/editions/prosper-gueranger/the-liturgical-year/1879-english-duffy-1879-volume-10.json": {
      "bytes": 17455,
@@ -100388,6 +100520,14 @@
     "structure/sources/editions/protestant-episcopal-church-in-the-united-states-of-america/book-of-common-prayer/1867-mohawk-williams-new-york-1867.json": {
      "bytes": 3431,
      "sha256": "56e1e597970911082faea578664c82b0dd6163a5b57ba1f974e2bb0c72eed00b"
+    },
+    "structure/sources/editions/provincial-councils-of-baltimore/concilia-provincialia-baltimori-1829-1849/1851-baltimore-murphy-1851.json": {
+     "bytes": 11061,
+     "sha256": "4569b662f11f9c94ec9252c3dae9eae28e532719eeb8927311cc33cf2884839b"
+    },
+    "structure/sources/editions/provincial-councils-of-baltimore/pastoral-letter-1846/1923-1923-advent-pc-en2-guilday-ncwc.json": {
+     "bytes": 7503,
+     "sha256": "6ee9b40d269e9c93d45c5e23835a5db31a0f56cf9a34f1a3eba85a363d4e7f1b"
     },
     "structure/sources/editions/pseudo-dionysius-the-areopagite/de-caelesti-hierarchia/1857-1857-migne-pg3.json": {
      "bytes": 1343,
@@ -100762,8 +100902,8 @@
      "sha256": "84edacc8dc7241c383f692f499093d6e76c51a9b7cb5d08eae131dc363b17733"
     },
     "structure/sources/editions/second-vatican-council/sacrosanctum-concilium/1963-latin-aas-56-1964.json": {
-     "bytes": 4343,
-     "sha256": "2ed7963938c5cfaf2edd5fb8daaaa4df7070cd9fbf26a9aac08896334fe88ce2"
+     "bytes": 9804,
+     "sha256": "0848ef08f59dcd0ecfe2835c6b5f57f713fc50843563dabc2cfa05c13a44f79d"
     },
     "structure/sources/editions/second-vatican-council/sacrosanctum-concilium/2026-english-vatican-web-2026-07-23.json": {
      "bytes": 19436,
@@ -100814,8 +100954,8 @@
      "sha256": "8f0ae3f441280a703ea3214efdc359f4161e917ba03cb88bb8b457978b3c5a00"
     },
     "structure/sources/editions/society-of-biblical-literature/sbl-greek-new-testament/2025-2025-faithlife-v1.2-c4d241a.json": {
-     "bytes": 3307,
-     "sha256": "832f617a83a8e60675d3682eb816f51cd02d11aa70e071bef7ff7b783842d6e2"
+     "bytes": 7188,
+     "sha256": "796b099c23ff90f623e3f9b28089494d4de71108083323606c79bd2376e39229"
     },
     "structure/sources/editions/society-of-bollandists/acta-sanctorum/1866-1866-paris-rome-palme-october-2.json": {
      "bytes": 5475,
@@ -100998,8 +101138,8 @@
      "sha256": "bc4ce1d3532217657700313885367f83e4b18a1f1cd3dcc641fe3ce27282ae42"
     },
     "structure/sources/editions/therese-of-lisieux/histoire-dune-ame/1912-taylor-fifteenth-thousand.json": {
-     "bytes": 4095,
-     "sha256": "3df6cbbcc02de97c189171a1e419a20122c72dd12c3534392a883ee194a21f7a"
+     "bytes": 11892,
+     "sha256": "cbdd6fb30768fd8740be05bbe106cc7d7bf274603a4f1b4d5bd977f948169154"
     },
     "structure/sources/editions/third-plenary-council-of-baltimore/catechism-of-christian-doctrine-no-3/1921-new-york-benziger-1921.json": {
      "bytes": 15417,
@@ -101014,20 +101154,20 @@
      "sha256": "e9804dda78d80dcda4f093763089bfa6614040ede17a0c97735bc77436c7404b"
     },
     "structure/sources/editions/thomas-aquinas/catena-aurea-in-lucam/1843-1843-1865-english-oxford-composite-ia.json": {
-     "bytes": 85150,
-     "sha256": "e0c1f0a38c0436b12af8a4d758f32c38e1b5dfa02895780f0a82ca2a69bc2388"
+     "bytes": 86149,
+     "sha256": "7da4b6d4018afbd98b6ab1af7b91685e5913349ed550596a7268b2ce2905f381"
     },
     "structure/sources/editions/thomas-aquinas/catena-aurea-in-lucam/2026-latin-corpusthomisticum-web-2026-09-05.json": {
      "bytes": 2098,
      "sha256": "ad629d31b13de4a95d7ec324ea6b9ec11ae1011a1f95d3f5fd057a276b97c72e"
     },
     "structure/sources/editions/thomas-aquinas/catena-aurea-in-marcum/1842-1842-english-oxford-ccel.json": {
-     "bytes": 195624,
-     "sha256": "fe0b9cb9352650048cb0429b4d701a37304e49778ba8faa05c0c0e30a8914088"
+     "bytes": 201232,
+     "sha256": "e7e96f1c409edd4472587db941d37453d0d84324b30733acf8a1def252ad7208"
     },
     "structure/sources/editions/thomas-aquinas/catena-aurea-in-matthaeum/1842-1842-english-oxford-ccel.json": {
-     "bytes": 572846,
-     "sha256": "1010adbdd54fa49c66a7536bd376a2cc3ce3516476359998ddc6d93c09b53f95"
+     "bytes": 584160,
+     "sha256": "c0f919999496f86d99264821b04ed22bba49caf8563a8c66b0b5fd45ff7c5735"
     },
     "structure/sources/editions/thomas-aquinas/de-ente-et-essentia/1933-1933-latin-corpus-thomisticum-2026-09-29.json": {
      "bytes": 2676,
@@ -101254,8 +101394,8 @@
      "sha256": "5818f4d00336f0e246db877237889c1cd428041a2fccc2b667537d7940322786"
     },
     "structure/sources/editions/thomas-nimmo-taylor/soeur-therese-of-lisieux/1912-burns-oates-fifteenth-thousand.json": {
-     "bytes": 3333,
-     "sha256": "76b6036fe97b14e57e035d527376ba4db5050a52a3d6f2baa9841e216fe67cd6"
+     "bytes": 5559,
+     "sha256": "01a9d428216d07cccf382bdebee547315ab145ca62b93a990a0a0c954e2525f5"
     },
     "structure/sources/editions/tranquille-de-saint-remi/veritable-relation-1634/1634-french-1634.json": {
      "bytes": 2771,
@@ -101805,6 +101945,10 @@
      "bytes": 1633,
      "sha256": "77176134a6cc7397dd609c9b563dd9a1868d8d9c85f4c8e468f701a7bb0658e5"
     },
+    "structure/sources/editions/united-states-conference-of-catholic-bishops/complementary-norm-canon-1246-2/1992-english-usccb-web-2026-11-26.json": {
+     "bytes": 2869,
+     "sha256": "477400a994d33679dbe44b90d9c090efd9dbef0365439438788cef2b8d7bb766"
+    },
     "structure/sources/editions/united-states-conference-of-catholic-bishops/complementary-norm-canons-1252-1253/2026-english-usccb-web-wayback-2026-04-17.json": {
      "bytes": 4088,
      "sha256": "574c7a2c2ddec8f4fa6b1696fcacbe982012fd5cc233b8ac75c53485a6e88fb9"
@@ -101849,6 +101993,14 @@
      "bytes": 1536,
      "sha256": "fa06d40bcf4506230d5b5bb81aa137d296974e5892e293368c0d008a71ebe919"
     },
+    "structure/sources/editions/united-states-conference-of-catholic-bishops/daily-readings/2026-2026-11-26-advent-pc-fix-page-for-2026-11-30.json": {
+     "bytes": 2751,
+     "sha256": "af648e7fd9a5df83a6fdd47707433c40f42eb914582d125872f291ab465d37c5"
+    },
+    "structure/sources/editions/united-states-conference-of-catholic-bishops/daily-readings/2026-2026-11-26-advent-pc-l2-advent-christmas-pages.json": {
+     "bytes": 67313,
+     "sha256": "6a53d2acb3dcf99ae004d9f70079fd7d9926cfb27cfcd07c2430fb9ab0268d48"
+    },
     "structure/sources/editions/united-states-conference-of-catholic-bishops/daily-readings/2026-2026-11-26-page-for-2026-11-29.json": {
      "bytes": 1536,
      "sha256": "6a56d92dbae54b1240de8079d1c0b030496e267fd4db764303259850fe71cdd3"
@@ -101861,9 +102013,17 @@
      "bytes": 1636,
      "sha256": "3b53a958a2e7b2db9ed429cc8e0f43c967cb5ff7bc5d1b5c21acbe4438e70625"
     },
+    "structure/sources/editions/united-states-conference-of-catholic-bishops/divine-worship-newsletter-2023-11/2023-2023-11-official-pdf.json": {
+     "bytes": 2542,
+     "sha256": "777b01c8115c185d42f2cd93b76d775001d107026e887d27739f5ef635b1f4dc"
+    },
     "structure/sources/editions/united-states-conference-of-catholic-bishops/divine-worship-newsletter-2024-10/2024-2024-october-official-pdf.json": {
      "bytes": 2655,
      "sha256": "9cf9762c6ce2484cd370398731615f47dd6ab50c877312d248c54d40ab77e68b"
+    },
+    "structure/sources/editions/united-states-conference-of-catholic-bishops/divine-worship-newsletter-2025-02/2025-2025-02-official-pdf.json": {
+     "bytes": 2532,
+     "sha256": "ee04a9b76afea070b3bce73fdb707d3fc48ac657168ae3b80138170df9f2927b"
     },
     "structure/sources/editions/united-states-conference-of-catholic-bishops/exorcism-faq/2026-english-usccb-web-2026-07-26.json": {
      "bytes": 1477,
@@ -101877,13 +102037,25 @@
      "bytes": 7074,
      "sha256": "55f6ca82d6be8faaa9ad09fee097327012952fe9fe9a7012b68328665f939f97"
     },
+    "structure/sources/editions/united-states-conference-of-catholic-bishops/liturgical-calendar-dioceses-united-states/2023-2023.json": {
+     "bytes": 3875,
+     "sha256": "a3ce175430d1ae35b6ceae6407b2eac6e3a8fb3e9020447e2d0cca5380310489"
+    },
+    "structure/sources/editions/united-states-conference-of-catholic-bishops/liturgical-calendar-dioceses-united-states/2024-2024.json": {
+     "bytes": 3812,
+     "sha256": "f0884ad70117f1518b691f243ca3b757b981863e6d6690aa8772cef5c02f095c"
+    },
+    "structure/sources/editions/united-states-conference-of-catholic-bishops/liturgical-calendar-dioceses-united-states/2025-2025.json": {
+     "bytes": 3823,
+     "sha256": "49cb8ae78c5c108795da518055bdaea981834429180d198865f716e21b97bfe8"
+    },
     "structure/sources/editions/united-states-conference-of-catholic-bishops/liturgical-calendar-dioceses-united-states/2026-2026.json": {
-     "bytes": 11604,
-     "sha256": "d34ab26d5302f2552516acf36dbd17734498972d1d0e9155bd08f1f64d4beb27"
+     "bytes": 16202,
+     "sha256": "12aa2922f12b3c545958f8961084b56a1de84b4f836d0cc827ad2ae3caee8ecd"
     },
     "structure/sources/editions/united-states-conference-of-catholic-bishops/liturgical-calendar-dioceses-united-states/2027-2027.json": {
-     "bytes": 3745,
-     "sha256": "f6a25b48dca644c2bb742b73714f002f5f00b0fd239b3cebc1268847d36231df"
+     "bytes": 5554,
+     "sha256": "0793d3df9055ce7b0f3bb09c2c4c64938596ffe36bb310213002889c3217ec14"
     },
     "structure/sources/editions/united-states-conference-of-catholic-bishops/liturgical-calendar-dioceses-united-states/2028-2028.json": {
      "bytes": 3745,
@@ -101956,6 +102128,10 @@
     "structure/sources/editions/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/2026-english-usccb-web-2026-10-19.json": {
      "bytes": 1559,
      "sha256": "98ab7ab74c6143d288c7e33f7f2835cb0897f1ffa166848096d46b844947a832"
+    },
+    "structure/sources/editions/united-states-conference-of-catholic-bishops/news-release-2010-08-20-roman-missal-third-edition/2010-english-usccb-web-2026-11-26.json": {
+     "bytes": 2900,
+     "sha256": "3dafd8adbc45523fc58e08311e6ef49bc56c44f6c95810ba4b3d3a4540280387"
     },
     "structure/sources/editions/united-states-conference-of-catholic-bishops/pastoral-statement-on-penance-and-abstinence/2026-english-usccb-web-wayback-2026-09-14.json": {
      "bytes": 7278,
@@ -102073,6 +102249,10 @@
      "bytes": 1856,
      "sha256": "5664c86ec81bb9b6597c4992ddafb0e52a3e695197cd98b2691c4487577453e9"
     },
+    "structure/sources/editions/william-bright/ancient-collects/1887-1887-advent-pc-en2-parker-sixth-edition.json": {
+     "bytes": 11541,
+     "sha256": "9fd8a549a70af26246a98a34e08259e9b4381f8c4dc806bd9ad59094c2c72365"
+    },
     "structure/sources/editions/william-burgess/the-bible-in-shakspeare/1903-chicago-winona-1903.json": {
      "bytes": 3138,
      "sha256": "9c550b876afd0aa66437cb9574c6895180ed9e27c26460355c32d5a3651f8b74"
@@ -102082,8 +102262,8 @@
      "sha256": "687326cf4e24a4205955592107134bce7708b3d8be1c90f53e96b97439b6a74c"
     },
     "structure/sources/editions/william-durandus/rationale-divinorum-officiorum/1568-1568-durandus-and-beleth-composite.json": {
-     "bytes": 3933,
-     "sha256": "ddfbcd7c872000724a952adf71bc0d6dd71d6f5d25d78096972a43022eae8400"
+     "bytes": 6100,
+     "sha256": "a1f33a076592faa821498df374f8ce5ae90535fc5f7f838aaf356bceeb594ef4"
     },
     "structure/sources/editions/william-durandus/rationale-divinorum-officiorum/1612-1612-lyon-tomus-secundus.json": {
      "bytes": 31008,
@@ -102146,8 +102326,8 @@
      "sha256": "ffaf08c0f47cd6ab1d4761546a9e290ce69420b185c891d67395fcc17d5d9d5e"
     },
     "structure/sources/index.json": {
-     "bytes": 199740,
-     "sha256": "4bd6f127018c12d4b3ddc20040b58d8ef9bf40226c460e32d7c2b69f380090bc"
+     "bytes": 200500,
+     "sha256": "a80aa10a098c6688f6c86a82439fdef553236c0afa616ca1b333a7f58fea60b4"
     },
     "structure/sources/text/passage.a-a-lings.our-favorite-novenas.benziger-1897.approbation.json": {
      "bytes": 1686,
@@ -104441,6 +104621,14 @@
      "bytes": 1918,
      "sha256": "875087d1ec56f4080531509bcb80bdd6b2c2bb67fb973c0976ecc0067208d070"
     },
+    "structure/sources/text/passage.anselm-of-canterbury.proslogion.deane-open-court-1903.advent-pc-l3-deane-proslogium-1-teach-me-to-seek.json": {
+     "bytes": 1543,
+     "sha256": "7bf4dec6431d971ed00f7b8eed072f8a2d901ae7e9db7136726bfc39417f5660"
+    },
+    "structure/sources/text/passage.anselm-of-canterbury.proslogion.deane-open-court-1903.advent-pc-l3-deane-proslogium-1-up-now.json": {
+     "bytes": 1837,
+     "sha256": "504cb2142ca541056d5ed1a0cf3669d87306dcb52cd2065a1c7a9be0f4d2117e"
+    },
     "structure/sources/text/passage.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.christ-the-king-three-latin-orations-checked.json": {
      "bytes": 2000,
      "sha256": "ed09a7adaecb86ab4d9dc4154a8015d73c75cd5a06f970591e651449ace14079"
@@ -104485,9 +104673,73 @@
      "bytes": 1299,
      "sha256": "2868e594ec66fd85d3ae4dd5b4d8d5122f96ab016042f43f862174d7b79738f3"
     },
+    "structure/sources/text/passage.ante-nicene-fathers.volume-1.buffalo-1887.advent-pc-l3-diognetus-8-5-to-9-6.json": {
+     "bytes": 4914,
+     "sha256": "705a034dc3b9ea953b3849408d86835c68f3acd6e689f1cd270661bae94eb69f"
+    },
+    "structure/sources/text/passage.ante-nicene-fathers.volume-1.buffalo-1887.advent-pc-l3-diognetus-9-sweet-exchange.json": {
+     "bytes": 1722,
+     "sha256": "b30d2782a7cd9b11bd803c566f6a5094a58945e6df46ccedcd8817bf5e854865"
+    },
+    "structure/sources/text/passage.ante-nicene-fathers.volume-1.buffalo-1887.advent-pc-l3-irenaeus-adversus-haereses-3.20.2-3.json": {
+     "bytes": 3889,
+     "sha256": "813c70613b6d5bd0057b3a8eafa516eac33bf9b4aebc8fc8615acf3624d30728"
+    },
+    "structure/sources/text/passage.ante-nicene-fathers.volume-1.buffalo-1887.advent-pc-l3-irenaeus-adversus-haereses-3.20.2-accustom.json": {
+     "bytes": 2370,
+     "sha256": "b49388d5206e434f06e859d38f102d4970e7e504155b02f100cd66e741847d86"
+    },
+    "structure/sources/text/passage.ante-nicene-fathers.volume-1.buffalo-1887.advent-pc-l3-irenaeus-adversus-haereses-3.22.4-knot.json": {
+     "bytes": 1599,
+     "sha256": "9150eea0d608d5d7547e385cd0f2a875750813e79ce0f75c6628c014b9596aba"
+    },
+    "structure/sources/text/passage.ante-nicene-fathers.volume-1.buffalo-1887.advent-pc-l3-irenaeus-adversus-haereses-3.22.4-obedient.json": {
+     "bytes": 2300,
+     "sha256": "facb39ac36ef9ced62b41cc92b53bb461e65dc213e251fd3e4f153124fd0210c"
+    },
+    "structure/sources/text/passage.ante-nicene-fathers.volume-1.buffalo-1887.advent-pc-l3-irenaeus-adversus-haereses-4.20.4-end-to-beginning.json": {
+     "bytes": 2336,
+     "sha256": "90626000ab44737dd779ff2df74ae5a44a2638acb82b937ae0554102caceb2d4"
+    },
+    "structure/sources/text/passage.ante-nicene-fathers.volume-1.buffalo-1887.advent-pc-l3-irenaeus-adversus-haereses-4.20.5-see-the-light.json": {
+     "bytes": 1676,
+     "sha256": "05371ed728ddee5ff765b4fd48dff7bd93e2b5ff072f67bda48d489a30d6949e"
+    },
+    "structure/sources/text/passage.ante-nicene-fathers.volume-1.buffalo-1887.advent-pc-l3-irenaeus-adversus-haereses-5.19.1-advocata.json": {
+     "bytes": 2349,
+     "sha256": "2bad5e8b2d17c660d4a4cc78186b772747eb26aea211b9ca7be974940af3b317"
+    },
+    "structure/sources/text/passage.ante-nicene-fathers.volume-1.buffalo-1887.advent-pc-l3-irenaeus-adversus-haereses-5.21.1-palm.json": {
+     "bytes": 2135,
+     "sha256": "f64dc9840419606d66a5855a4ebd4a20e278ba440b1fcb0d2de97bdef99be573"
+    },
     "structure/sources/text/passage.ante-nicene-fathers.volume-1.buffalo-1887.irenaeus-adversus-haereses-5.praef.json": {
      "bytes": 1730,
      "sha256": "3df30fa1f78ca62400d255903532a1adb6bf930a186edb3d8fbd9f691397e14e"
+    },
+    "structure/sources/text/passage.ante-nicene-fathers.volume-5.ccel-web-2026-10-13.advent-pc-l3-cyprian-de-bono-patientiae-13.json": {
+     "bytes": 1998,
+     "sha256": "d2587885669ab601fe2103399d931fba19f6f6aa11c17f3b197a8cf1e310d398"
+    },
+    "structure/sources/text/passage.ante-nicene-fathers.volume-5.ccel-web-2026-10-13.advent-pc-l3-cyprian-de-bono-patientiae-15-charity.json": {
+     "bytes": 1602,
+     "sha256": "dfecafcf527cf1ac44e740b88e747e8fb97100905ff7ff7bcf1cca2a604d841a"
+    },
+    "structure/sources/text/passage.ante-nicene-fathers.volume-5.ccel-web-2026-10-13.advent-pc-l3-hippolytus-contra-noetum-10-alone-yet-plural.json": {
+     "bytes": 1742,
+     "sha256": "5e7224c580655206ba00bea1533c723531c8e5e9a07264eff7acffa14ac6001f"
+    },
+    "structure/sources/text/passage.ante-nicene-fathers.volume-5.ccel-web-2026-10-13.advent-pc-l3-hippolytus-contra-noetum-10-made-visible.json": {
+     "bytes": 1790,
+     "sha256": "c2933a3f7da06cd028de10f4c06605e5f5da240fd32688c2e6a7008a97e0b1eb"
+    },
+    "structure/sources/text/passage.ante-nicene-fathers.volume-5.ccel-web-2026-10-13.advent-pc-l3-hippolytus-contra-noetum-12-word-incarnate.json": {
+     "bytes": 1342,
+     "sha256": "c9bd44b0448fc028e6e4f57e0abee3aed822923d6e3db901d8a7ced5e21f0b83"
+    },
+    "structure/sources/text/passage.ante-nicene-fathers.volume-5.ccel-web-2026-10-13.advent-pc-l3-hippolytus-contra-noetum-9-scriptures.json": {
+     "bytes": 1746,
+     "sha256": "ae59ea9c672929e26e3ee10340c605c29b3aca3d94e1dfd97fa0ad80b3c96a2d"
     },
     "structure/sources/text/passage.archdiocese-of-mainz.missale-moguntinum.wurzburg-reyser-1482.fol-122v-perceptio.json": {
      "bytes": 1226,
@@ -105512,6 +105764,14 @@
     "structure/sources/text/passage.augustine.sermo-191.1845-migne-pl38.191.1.json": {
      "bytes": 2149,
      "sha256": "22760cbd94b368df4a62cdb517eded40619fedfeee345e267058c793c0fab7b6"
+    },
+    "structure/sources/text/passage.augustine.sermo-293.1845-migne-pl38.advent-pc-l3-sermo-293.3-parate-viam.json": {
+     "bytes": 1486,
+     "sha256": "60d0eeb28f0065307f83763539117857895dfa20309cb682d184597060092fbf"
+    },
+    "structure/sources/text/passage.augustine.sermo-293.1845-migne-pl38.advent-pc-l3-sermo-293.3-vox-verbum.json": {
+     "bytes": 1445,
+     "sha256": "c7a44a2c77845570d7bdab4fa55a5ded74bdf25dc79ed17fce4bc50e375c9e66"
     },
     "structure/sources/text/passage.augustine.sermo-87.ccel-web-2026-09-17.1-10-and-14-15.json": {
      "bytes": 23448,
@@ -106973,6 +107233,10 @@
      "bytes": 4335,
      "sha256": "92965f893f04e7b37b1a56768ec16d13bfc020f100e6846339ace97ff196dad4"
     },
+    "structure/sources/text/passage.bonaventure.legenda-maior-sancti-francisci.london-dent-1904-salter.advent-pc-l5-greccio.json": {
+     "bytes": 3232,
+     "sha256": "12b2ed4afe4e97c361c3945f43684a4f7f853eb7cce359537b15dd9d75117580"
+    },
     "structure/sources/text/passage.brooke-foss-westcott.the-gospel-according-to-st-john.john-murray-1908-vol-2.vol2-p339-editorial-notes.json": {
      "bytes": 2235,
      "sha256": "0f714963d5ad99157e7901a4cef605bd06f470e46929c14c6907dd6d176973a7"
@@ -106992,6 +107256,14 @@
     "structure/sources/text/passage.catholic-church.breviarium-monasticum.1690-venice-baglioni.queenship-offertory-responsory-base-20261029.json": {
      "bytes": 1107,
      "sha256": "e6e81604862b7fadc985b2452894b91d1f2066134b27826402d841b55d749888"
+    },
+    "structure/sources/text/passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.advent-pc-l3-bute-advent-1-mattins-responsory-1-footnotes.json": {
+     "bytes": 1672,
+     "sha256": "44bf6234368a950d09987f744ca9a6190fad8e828d474b1efcdf94b014bc06d3"
+    },
+    "structure/sources/text/passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.advent-pc-l3-bute-advent-1-mattins-responsory-1.json": {
+     "bytes": 2422,
+     "sha256": "214c16a0650d8d2f73bea04919b580e2dc08033e41d09feeaefe5ec70c7246ce"
     },
     "structure/sources/text/passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.advent-primer-20261119-advent-1-mattins-lesson-1.json": {
      "bytes": 2202,
@@ -107132,6 +107404,14 @@
     "structure/sources/text/passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.advent-primer-great-o-antiphons.json": {
      "bytes": 4012,
      "sha256": "fd1ad5aea215e9051021c45ad38e093105c3a594ae334e61599cee595e7de85b"
+    },
+    "structure/sources/text/passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.advent-pc-l3-advent-1-mattins-responsory-1-aspiciens-rubric.json": {
+     "bytes": 1532,
+     "sha256": "2bfadd09bb2f1676225e28670fd9f8a6cab2713d9df56fe60a8abb7316a4fe42"
+    },
+    "structure/sources/text/passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.advent-pc-l3-advent-1-mattins-responsory-1-aspiciens.json": {
+     "bytes": 2104,
+     "sha256": "49ae46ec8bdee9b231f67ac99180f1704fa24b92f7fe54247b07bee2ac5dca09"
     },
     "structure/sources/text/passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.advent-primer-20261118-alma-redemptoris-advent-versicle.json": {
      "bytes": 1894,
@@ -107385,6 +107665,58 @@
      "bytes": 1151,
      "sha256": "b451d7e055b87c3fe93a9bfb2e13b619609221eb5fa5d7decf1b65bfe9329723"
     },
+    "structure/sources/text/passage.catholic-church.martyrologium-romanum.advent-pc-en1-baltimore-murphy-1916.advent-pc-en1-ambrose.json": {
+     "bytes": 1547,
+     "sha256": "9a735479ca8de68af2b25d9daa732d9136fcced1cf2ab1383fb8ab5ec06d6896"
+    },
+    "structure/sources/text/passage.catholic-church.martyrologium-romanum.advent-pc-en1-baltimore-murphy-1916.advent-pc-en1-damasus.json": {
+     "bytes": 1656,
+     "sha256": "774cd28356a3f12a460c88b89c4b80ad24251535165d6b5533baa9434762fb20"
+    },
+    "structure/sources/text/passage.catholic-church.martyrologium-romanum.advent-pc-en1-baltimore-murphy-1916.advent-pc-en1-lucy.json": {
+     "bytes": 1893,
+     "sha256": "bb81b4e94dc74397d953d514c64a9a56ca229a1172e272ff4166210fc59633f5"
+    },
+    "structure/sources/text/passage.catholic-church.martyrologium-romanum.advent-pc-en1-baltimore-murphy-1916.advent-pc-en1-nicholas.json": {
+     "bytes": 1735,
+     "sha256": "b217e4b6806cb3824ccf699d285fc2b58a8d04b635f35265af22cc5c7289e864"
+    },
+    "structure/sources/text/passage.catholic-church.martyrologium-romanum.rome-propaganda-fide-1902.advent-pc-fix2-martyrology-cyprian.json": {
+     "bytes": 1979,
+     "sha256": "7771cbfd3573ed6947d34e1341cd5cfe1875e092f3d564ccb54a6050445f80b6"
+    },
+    "structure/sources/text/passage.catholic-church.martyrologium-romanum.rome-propaganda-fide-1902.advent-pc-fix2-martyrology-cyril.json": {
+     "bytes": 1679,
+     "sha256": "36ac66e450427b1d2d71b655dfca87d735415cbb45949ddefcfc333d9d1b0c42"
+    },
+    "structure/sources/text/passage.catholic-church.martyrologium-romanum.rome-propaganda-fide-1902.advent-pc-fix2-martyrology-francis-xavier.json": {
+     "bytes": 1642,
+     "sha256": "a5739058086082d365036e838aeea5b0450aa2e5858a5e7868770a9ac5815f98"
+    },
+    "structure/sources/text/passage.catholic-church.martyrologium-romanum.rome-propaganda-fide-1902.advent-pc-fix2-martyrology-john-of-the-cross.json": {
+     "bytes": 1727,
+     "sha256": "1e35f35c11b7c2a5e29e0573117187fb62f817e324f270518018deae5cdbe200"
+    },
+    "structure/sources/text/passage.catholic-church.martyrologium-romanum.rome-propaganda-fide-1902.advent-pc-l5-ambrose.json": {
+     "bytes": 1603,
+     "sha256": "8ea4d9d6e83214489febd62069fbdc7d9f0f6fae5d175cee44692aa8463f47dd"
+    },
+    "structure/sources/text/passage.catholic-church.martyrologium-romanum.rome-propaganda-fide-1902.advent-pc-l5-andrew.json": {
+     "bytes": 1771,
+     "sha256": "d4b566906e1541dbf9005cb111cb1e628e78017cf7e35191f368cb4d3689f019"
+    },
+    "structure/sources/text/passage.catholic-church.martyrologium-romanum.rome-propaganda-fide-1902.advent-pc-l5-damasus.json": {
+     "bytes": 1578,
+     "sha256": "21a6be153b9f952eea251169c043df3a4ff5816401200c9182e1a8bde62eb258"
+    },
+    "structure/sources/text/passage.catholic-church.martyrologium-romanum.rome-propaganda-fide-1902.advent-pc-l5-lucy.json": {
+     "bytes": 1761,
+     "sha256": "051fd3da795d39753b38bc2cee47bdb4898f915ed5912fa0e9d5448a420bf8ae"
+    },
+    "structure/sources/text/passage.catholic-church.martyrologium-romanum.rome-propaganda-fide-1902.advent-pc-l5-nicholas.json": {
+     "bytes": 1648,
+     "sha256": "7a96fe8943c9c458a6bd4b2dd680d82f827c33008e2bfe6421cc8f477b00a6b8"
+    },
     "structure/sources/text/passage.catholic-church.martyrologium-romanum.rome-propaganda-fide-1902.advent-primer-20261119-christmas-proclamation.json": {
      "bytes": 3038,
      "sha256": "7885de975a3bfdcd1d6e3683786df3a4b6812c2ecd4539b7a9116eadce8a5c73"
@@ -107420,6 +107752,30 @@
     "structure/sources/text/passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.advent-ember-saturday-secret-checked-2026-10-20.json": {
      "bytes": 1407,
      "sha256": "295e3987f4c5b1eea7c88f1bfc321cef341daef158030f80ce28f54136a376a5"
+    },
+    "structure/sources/text/passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.advent-pc-l2-advent-1-introit-ad-te-levavi.json": {
+     "bytes": 1148,
+     "sha256": "c71557f837191dc688765a326be132b1bb5c527f70b058bd471ca8301de96256"
+    },
+    "structure/sources/text/passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.advent-pc-l2-advent-2-introit-populus-sion.json": {
+     "bytes": 1123,
+     "sha256": "e7ec0410accf5838b0bbfe5423107f4ee4b61b0cbe08a07186f9da54765a287a"
+    },
+    "structure/sources/text/passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.advent-pc-l2-advent-3-introit-gaudete.json": {
+     "bytes": 1197,
+     "sha256": "a7cb41d5c96f8863870ac647e09a6716c0d7497d3ef606f314dd0b266cedd857"
+    },
+    "structure/sources/text/passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.advent-pc-l2-advent-4-introit-rorate.json": {
+     "bytes": 1075,
+     "sha256": "15015d509dc3724310b1797380d826c65776eda392b7580b025fdeec937409aa"
+    },
+    "structure/sources/text/passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.advent-pc-l2-ember-saturday-concede-collect.json": {
+     "bytes": 1207,
+     "sha256": "0a0ae5157e858eed69fde77377dafe2e00d2fc85dbdafa9a2a26490ec970dff0"
+    },
+    "structure/sources/text/passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.advent-pc-l2-ember-wednesday-festina-collect.json": {
+     "bytes": 1220,
+     "sha256": "3e9afa31f13e30d67f4aa4da40be85f7fdf6818d5ec57a75e2522116bb2f6dd2"
     },
     "structure/sources/text/passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-alleluia-la-checked-2026-10-25.json": {
      "bytes": 1046,
@@ -109777,6 +110133,26 @@
      "bytes": 1909,
      "sha256": "c6a4aa57eace915ed6106d909c02fa3532d1105939d474f9151e151ea9b4624b"
     },
+    "structure/sources/text/passage.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-calendarium-romanum-1969.advent-pc-l1-n-16-b.json": {
+     "bytes": 3111,
+     "sha256": "13f95aeeccf40b9596cce9f03a147f51b729c195a82ae9cffc937e950af6fce0"
+    },
+    "structure/sources/text/passage.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-calendarium-romanum-1969.advent-pc-l1-n-17.json": {
+     "bytes": 3129,
+     "sha256": "39a697230818fee6c2c16a10295c01b3999e58c8fb98efcec0ede6a1741cbb53"
+    },
+    "structure/sources/text/passage.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-calendarium-romanum-1969.advent-pc-l1-n-5.json": {
+     "bytes": 3295,
+     "sha256": "9590560f31872002ca8e6290017d63bc9e8f5b03aca50ab569120cc05119237c"
+    },
+    "structure/sources/text/passage.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-calendarium-romanum-1969.advent-pc-l1-nn-39-42.json": {
+     "bytes": 3739,
+     "sha256": "80aedaafffb9db721aea20b46e57fcd787111c15ba7aa4478d43c8abda7c847e"
+    },
+    "structure/sources/text/passage.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-calendarium-romanum-1969.advent-pc-l1-nn-45-47.json": {
+     "bytes": 3763,
+     "sha256": "532e733ed3a6b02a5a2c7be113081b022ccb5df46f5d27e64cf5fcfbd7926d63"
+    },
     "structure/sources/text/passage.catholic-church.officia-propria-sanctorum-romano-clero.sydney-cunninghame-1868.gregory-x-whole-prayer-20261112.json": {
      "bytes": 1199,
      "sha256": "ac54e556ba88dd1182d6ed8e69c2287a84520687279ce7a79ef2c78a00658bdb"
@@ -109788,6 +110164,22 @@
     "structure/sources/text/passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.advent-five-missae-a3.json": {
      "bytes": 1930,
      "sha256": "d6390b8e0a35ca1b3ce32e1c6d0c5bed2ac043a76bbac45de9d563de60d240d9"
+    },
+    "structure/sources/text/passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.advent-pc-l2-concede-18-december-antecedent.json": {
+     "bytes": 1228,
+     "sha256": "087df3929cd1e9a4f1bbf4679eecb1a8c3db91f3cc1d74d5c38671c0b0de17b9"
+    },
+    "structure/sources/text/passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.advent-pc-l2-da-quaesumus-advent-1-antecedent.json": {
+     "bytes": 1722,
+     "sha256": "8850a8b7f084d9504081070f7304e082cebd5d8ea118c2f0fcc4844a8065a7de"
+    },
+    "structure/sources/text/passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.advent-pc-l2-festina-24-december-antecedent.json": {
+     "bytes": 1320,
+     "sha256": "e8ff0a748f22d03d4a3ea86f66d4cdf4f12334090d55a2d08cc5a3b9757ac025"
+    },
+    "structure/sources/text/passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.advent-pc-l2-preces-populi-21-december-antecedent.json": {
+     "bytes": 1207,
+     "sha256": "e432dd387b0e11969361458b67eb8c28353460ae63a0277349eb8f11938d7c1e"
     },
     "structure/sources/text/passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-hanc-igitur.json": {
      "bytes": 1373,
@@ -109877,6 +110269,18 @@
      "bytes": 1231,
      "sha256": "75ec35999c35741f75db228deba1947a9a53393db4868ffc0271248aa5d918f7"
     },
+    "structure/sources/text/passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.advent-pc-l2-concede-ember-saturday-18-december-antecedent.json": {
+     "bytes": 1309,
+     "sha256": "55b5657682c9b44bc64052b4efac5ecaaa54f234cb28cb730d66775c54c86e77"
+    },
+    "structure/sources/text/passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.advent-pc-l2-festina-ember-wednesday-24-december-antecedent.json": {
+     "bytes": 1316,
+     "sha256": "db99b9aa77e41aaad4671c667e650b3b94a36d3d76f303caaae0e86705ed80d3"
+    },
+    "structure/sources/text/passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.advent-pc-l2-gratiam-tuam-annunciation-ad-complendum.json": {
+     "bytes": 1215,
+     "sha256": "6c1346211b37f5e5a9489ccc64b50bb88008469123896be8f30affebe7dfbe26"
+    },
     "structure/sources/text/passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.advent-sundays-a3.json": {
      "bytes": 1600,
      "sha256": "05ecf0eef36e883ebadfae6f0699e20f5f8b70191a059ec77662171d5ca107e9"
@@ -109960,6 +110364,22 @@
     "structure/sources/text/passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.wilson1915-lent4-sunday-postcommunion-20261113.json": {
      "bytes": 1275,
      "sha256": "6a47ec1f1eeae64309d758008d5e32032771e18139c79880e320c3466957288e"
+    },
+    "structure/sources/text/passage.catholic-church.sacramentarium-veronense.feltoe-1896.advent-pc-en2-exaudi-nos-ascension-collect.json": {
+     "bytes": 1142,
+     "sha256": "ec76f30c68fd4eb84c5ddeb965a6243fc2b49496bf09fbda0af99d88f2f0fcdd"
+    },
+    "structure/sources/text/passage.catholic-church.sacramentarium-veronense.feltoe-1896.advent-pc-l2-ascension-prefaces-advent-preface-1-study.json": {
+     "bytes": 1435,
+     "sha256": "896c8a954570878ba0881e3c371806c15d5aca235543e139f80c222da87db858"
+    },
+    "structure/sources/text/passage.catholic-church.sacramentarium-veronense.feltoe-1896.advent-pc-l2-christmas-preface-praeconia-advent-preface-2-study.json": {
+     "bytes": 1239,
+     "sha256": "fa40c5e8c366c46a1356f9728c250c8d1a3342a771b55688231402472ec76abc"
+    },
+    "structure/sources/text/passage.catholic-church.sacramentarium-veronense.feltoe-1896.advent-pc-l2-commercium-christmas-preface-3-study.json": {
+     "bytes": 1432,
+     "sha256": "8bd81f510398e7a11520d5f1e937ff17e0efc97c75af268689774ccd1e14ba68"
     },
     "structure/sources/text/passage.catholic-church.sacramentarium-veronense.feltoe-1896.common-postcommunion-multiplica-antecedent-20261112.json": {
      "bytes": 1250,
@@ -111393,6 +111813,18 @@
      "bytes": 1565,
      "sha256": "91c6bfa352f444b730435ae85d6d7f6a43cfeaa3727f55ab41ef5716c2b0f327"
     },
+    "structure/sources/text/passage.english-college-of-douay.douay-rheims-bible.murphy-1914.advent-pc-en1-luke-1.46-55.json": {
+     "bytes": 2278,
+     "sha256": "c04a328d03ee042260266645aabbf576b7d6855c08fafa0474cae3d7ad65da6b"
+    },
+    "structure/sources/text/passage.english-college-of-douay.douay-rheims-bible.murphy-1914.advent-pc-en1-luke-1.68-75.json": {
+     "bytes": 2134,
+     "sha256": "11883dbd4ab7055be95cbeb0ebc644a575f61fd81a1b04148db0acc501f62a4c"
+    },
+    "structure/sources/text/passage.english-college-of-douay.douay-rheims-bible.murphy-1914.advent-pc-en1-luke-1.76-79.json": {
+     "bytes": 1945,
+     "sha256": "ead8dd789560f975ec42da1aecb3b28c7404498a230400ce6252bd6bf6ac1019"
+    },
     "structure/sources/text/passage.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-anamnesis.json": {
      "bytes": 2172,
      "sha256": "9cde3cc35bab2d9ebbe1b0b40e540530ccd11619e97a24b5df475a186ce1a0bc"
@@ -111416,6 +111848,14 @@
     "structure/sources/text/passage.ethiopian-catholic-church.missale-aethiopicum-asmara.ethiopian-1907-asmara.apostles-anaphora-preface-and-sanctus.json": {
      "bytes": 3853,
      "sha256": "cffa623f516628612fa9bee91c2077ac809fc4ce3a3a809e527adb06c0600beb"
+    },
+    "structure/sources/text/passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.advent-pc-l4-domine-non-sum-dignus-en.json": {
+     "bytes": 1335,
+     "sha256": "31d550f8d9c133154c9f0e0839c1a515488a1783c1e4227adc3a962fec4a471e"
+    },
+    "structure/sources/text/passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.advent-pc-l4-domine-non-sum-dignus-la.json": {
+     "bytes": 1320,
+     "sha256": "33f69eae09c82b13f307f500a6b5e3492065a5f4ea9194e0387c2fd4f3823b40"
     },
     "structure/sources/text/passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.epiph-02.postcommunion.json": {
      "bytes": 1235,
@@ -111520,6 +111960,22 @@
     "structure/sources/text/passage.francis-de-sales.introduction-a-la-vie-devote.rivingtons-1876.1.15.json": {
      "bytes": 3323,
      "sha256": "f47aba430fc47cc9810412532498741dc660df495d1a846cd37c760a34bd12c4"
+    },
+    "structure/sources/text/passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.advent-pc-l2-advent-1-introit-english.json": {
+     "bytes": 1386,
+     "sha256": "292bb9bf813e6c0166977613d7e0cae549b5415ee33023b95ded8bfcf51a5f24"
+    },
+    "structure/sources/text/passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.advent-pc-l2-advent-2-introit-english.json": {
+     "bytes": 1343,
+     "sha256": "3ebe9dd7de0fc8cc87d0959025ccdf685112ec876704604bb13aea1a4911925c"
+    },
+    "structure/sources/text/passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.advent-pc-l2-advent-3-introit-english-study.json": {
+     "bytes": 1404,
+     "sha256": "87c835aa26d426f496b269d530340d50a0f859ec6bc3f1db4f147a606794d545"
+    },
+    "structure/sources/text/passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.advent-pc-l2-advent-4-introit-english.json": {
+     "bytes": 1315,
+     "sha256": "66b8b91902f528ebd264d41ab5727ce0866f628c8c78aa433d68b56bd4b1640b"
     },
     "structure/sources/text/passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.dimissio-paschalis-en-20261114.json": {
      "bytes": 1291,
@@ -111733,6 +112189,10 @@
      "bytes": 1726,
      "sha256": "d5329014015de2b5b13d9e713bef356c11b42aeb2acbc7f4be93b50fabb09ac4"
     },
+    "structure/sources/text/passage.gregory-the-great.homiliae-in-evangelia.1843-oxford-catena-luke.advent-pc-en1-gregory-on-luke-12-36-37.json": {
+     "bytes": 2034,
+     "sha256": "84a35488f89b7342cec6b13e45387a6423a71a7271d43208efff893d19f7ea05"
+    },
     "structure/sources/text/passage.gregory-the-great.homiliae-in-evangelia.1843-oxford-catena-luke.gregory-on-luke-2-7-strange-country.json": {
      "bytes": 1356,
      "sha256": "ca5b53e6fba2ad940a8f50ea03ff819dab5bad6edf1513bb87237bd0a9fcb6fc"
@@ -111752,6 +112212,10 @@
     "structure/sources/text/passage.gregory-the-great.homiliae-in-evangelia.1908-bute-winter.christmas-census.json": {
      "bytes": 1840,
      "sha256": "ff7a3de33d88f17e6dc0656388a043ee0bd65578f9a75fc36a6d23214ccc7d19"
+    },
+    "structure/sources/text/passage.gregory-the-great.homiliae-in-evangelia.advent-pc-en1-1908-bute-spring.advent-pc-en1-ascension-octave-leaps.json": {
+     "bytes": 2152,
+     "sha256": "f35149d5e62c9113a391f3f1e1a8fd6a2e805ad540188f3d07ea01d107b5be8b"
     },
     "structure/sources/text/passage.gregory-the-great.homiliae-in-evangelia.latin-migne-corpus-corporum-web-2026-07-25.22.3-4.json": {
      "bytes": 1912,
@@ -111785,6 +112249,18 @@
      "bytes": 1502,
      "sha256": "63d1a1ffd99aadd3cd2cc9cc7dbbbe1882b5eccb06908346610a788a2ae3b5b9"
     },
+    "structure/sources/text/passage.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.advent-pc-l4-12.6-crastinum.json": {
+     "bytes": 1635,
+     "sha256": "e95f2524866f7c57eab876ebe7287f7e496658a9dc081a319a98a779bcf6a0ef"
+    },
+    "structure/sources/text/passage.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.advent-pc-l4-13.3-vigilat.json": {
+     "bytes": 1557,
+     "sha256": "e08845bec578d93b49b901b124bd90020221862190545f797be0d9321539b540"
+    },
+    "structure/sources/text/passage.gregory-the-great.homiliae-in-evangelia.latin-migne-pl76-garnier-1878.advent-pc-l4-29.10-saltus.json": {
+     "bytes": 1906,
+     "sha256": "f5b3c6b380febabd84ae689b3d83e20b5c76483f3037a2790c5f79ccc28a283f"
+    },
     "structure/sources/text/passage.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.1.1-5-luke-21.json": {
      "bytes": 10880,
      "sha256": "617aaa9e43e48c9e0d0c6c99eb3dd91f9faa9158e82afa51ba0fa502af359471"
@@ -111804,6 +112280,10 @@
     "structure/sources/text/passage.gregory-the-great.homiliae-in-hiezechihelem-prophetam.1849-migne-pl-76-corpus-corporum.i.10.20.json": {
      "bytes": 3675,
      "sha256": "8eaa221714b93b762d612c855103958e3b3872003b134643251cca42c069ae9d"
+    },
+    "structure/sources/text/passage.henry-james-coleridge.life-and-letters-of-st-francis-xavier.london-burns-oates-1872-volume-1.advent-pc-l5-xavier-universities-of-europe.json": {
+     "bytes": 2812,
+     "sha256": "e782ff71e9fb56223a256c3cac47ea302bbd6d001956d95b2286e48dab773f42"
     },
     "structure/sources/text/passage.henry-latham.the-risen-master.deighton-bell-1905.p34-collapsed-cloths.json": {
      "bytes": 1674,
@@ -112229,6 +112709,10 @@
      "bytes": 1436,
      "sha256": "a184dbeec02858353d95a8bc17f7fba0c4c6cc471a721ab99a9f0496f8f2255a"
     },
+    "structure/sources/text/passage.hymnal-noted.hymnal-noted.london-novello-1851-parts-1-2.advent-pc-l5-come-thou-redeemer-of-the-earth.json": {
+     "bytes": 1759,
+     "sha256": "f3cd5b82e862ed91d89487095c7f78720c6c7cb673b0f1bae39c82afdc5aaa87"
+    },
     "structure/sources/text/passage.ignatius-of-antioch.letter-to-the-smyrnaeans.roberts-donaldson-anf1-1887.7.short-recension.json": {
      "bytes": 2312,
      "sha256": "94ee3e5cddd40210f65decfdccacb59e2a7f3f00ab81978a21357dd9e61da42f"
@@ -112332,6 +112816,18 @@
     "structure/sources/text/passage.jacques-paul-migne.patrologia-latina-volume-184.1879-paris-garnier.scala-claustralium-headnote-attribution.json": {
      "bytes": 1587,
      "sha256": "b16325ed49e3349573f52193d67f0772fd0d21708d1368f81e49062792be69f5"
+    },
+    "structure/sources/text/passage.jacques-paul-migne.patrologia-latina-volume-24.paris-1865.advent-pc-l4-in-isaiam-4-11.1-virga.json": {
+     "bytes": 1590,
+     "sha256": "f8d2b82dc2d627332ec1ba0289e9b80ce35e59672a9f85863f1f776516cfc304"
+    },
+    "structure/sources/text/passage.jacques-paul-migne.patrologia-latina-volume-24.paris-1865.advent-pc-l4-in-isaiam-4-11.2-evangelium-hebraeorum.json": {
+     "bytes": 1516,
+     "sha256": "bf2a164444f8e955739dbd03b6e99a259c68be43821e5876047ad804eee32a09"
+    },
+    "structure/sources/text/passage.jacques-paul-migne.patrologia-latina-volume-24.paris-1865.advent-pc-l4-in-isaiam-4-11.2-flos-requiescet.json": {
+     "bytes": 1513,
+     "sha256": "1b7adeb02271b9c2ca5dad409fec237f7a422bda4d47f246eb607db8af1fc2f4"
     },
     "structure/sources/text/passage.jacques-paul-migne.patrologia-latina-volume-54.1881-paris-garnier.leo-sermo-12.4-tria-ad-religiosas-actiones.json": {
      "bytes": 2389,
@@ -113405,6 +113901,26 @@
      "bytes": 5624,
      "sha256": "5df53f2c1274b5472be9c23c2f23a5f613fe3b821cce0aa04f0a26828a16a0b2"
     },
+    "structure/sources/text/passage.john-henry-newman.hymni-ecclesiae.oxford-parker-1838.advent-pc-l5-veni-redemptor-gentium.json": {
+     "bytes": 1977,
+     "sha256": "e2e0bd96392e86172fe73b68a19a223986481e430d07fd786960a00f13626712"
+    },
+    "structure/sources/text/passage.john-of-the-cross.complete-works.london-1864-lewis-volume-2.advent-pc-l5-desires-of-the-holy-fathers.json": {
+     "bytes": 1707,
+     "sha256": "6ee88c4bb9645bf3b32d7315bf4fcb1103129e13a026b153cbd3e80f77f29ef4"
+    },
+    "structure/sources/text/passage.john-of-the-cross.complete-works.london-1864-lewis-volume-2.advent-pc-l5-maxim-70.json": {
+     "bytes": 1360,
+     "sha256": "9d9095dbe407c9d3ec1e71de059c81be8111900b94ff16b23a5a820834aa8da5"
+    },
+    "structure/sources/text/passage.john-of-the-cross.complete-works.london-1864-lewis-volume-2.advent-pc-l5-the-nativity.json": {
+     "bytes": 1735,
+     "sha256": "8b8cfd9e166bba88862b853f0f1fd2a51b34a5be07ebd1fb35912d50f1110ce9"
+    },
+    "structure/sources/text/passage.john-of-the-cross.complete-works.london-1864-lewis-volume-2.advent-pc-l5-the-same-subject-annunciation.json": {
+     "bytes": 1514,
+     "sha256": "0d5fdbe4199e5fb7486beb867e6e7a27fc3ca3fa7de969a79c51c31568fc9787"
+    },
     "structure/sources/text/passage.joseph-henry-thayer.greek-english-lexicon-of-the-new-testament.american-book-company-corrected.sv-entylisso.json": {
      "bytes": 1330,
      "sha256": "fe22c5f5e5b5a9a7290abb1c82225e293a6b0f517938fd9fca1ada203913868e"
@@ -113448,6 +113964,10 @@
     "structure/sources/text/passage.karl-joseph-von-hefele.conciliengeschichte.1895-edinburgh-english-volume-4.tours-567-c17.json": {
      "bytes": 2262,
      "sha256": "12d14b36ea3a85af8d3ee0849bf2a4c6173d73d2561268a363b155e4c68433be"
+    },
+    "structure/sources/text/passage.luis-laso-de-la-vega.huei-tlamahuicoltica.mexico-juan-ruiz-1649.advent-pc-l5-am-i-not-here.json": {
+     "bytes": 1257,
+     "sha256": "831ed1263fffdbf53519725cb039612e48b9c2c448eb202ec10b8d7830de5709"
     },
     "structure/sources/text/passage.mansi.sacrorum-conciliorum-collectio.florence-1759-tomus-3.tomus-3-coll-633-635.json": {
      "bytes": 2210,
@@ -113557,6 +114077,26 @@
      "bytes": 2134,
      "sha256": "bc20d9428879a27467dc2fd32c2937a7175de727818a16629fc034cdd7a197ce"
     },
+    "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-1-volume-10.new-york-1888.advent-pc-l4-chrysostom-in-mt-hom-77.2-3.json": {
+     "bytes": 1776,
+     "sha256": "f0f249e52b6d8a40645f15fd8bce0ddad897c229da0d71c212500e7e5d0b2f36"
+    },
+    "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-1-volume-10.new-york-1888.advent-pc-l4-chrysostom-in-mt-hom-78.1-2.json": {
+     "bytes": 1745,
+     "sha256": "342a829c4cc73e6004992d694ffad47ce4578e5f78876c2cad568c9f7757c022"
+    },
+    "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-1-volume-10.new-york-1888.advent-pc-l4-chrysostom-in-mt-hom-79.1-2.json": {
+     "bytes": 2634,
+     "sha256": "7740883454cd195b58daee36056b3f97f4a3242fd52f81efbea6963f263cbae9"
+    },
+    "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-1-volume-14.new-york-1889.advent-pc-l4-chrysostom-in-heb-hom-18.1.json": {
+     "bytes": 1532,
+     "sha256": "28351535dfcb078e007c5e23c8bbc22ded98ae5d5f3946a9ceb007ad204d232c"
+    },
+    "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-1-volume-14.new-york-1889.advent-pc-l5-chrysostom-in-io-hom-19.1.json": {
+     "bytes": 1512,
+     "sha256": "891c230e9922ed9088ef8a6af03f5a6e9f32ce5a21ec2fde220b1e0f1f1ed7fc"
+    },
     "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-1-volume-14.new-york-1889.chrysostom-in-io-hom-85.4.json": {
      "bytes": 3092,
      "sha256": "3067678a4794592f1bb288e86f73bca5236693f82baf12bb278bdae957c06a73"
@@ -113568,6 +114108,46 @@
     "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-1-volume-14.new-york-1889.chrysostom-in-io-hom-87.json": {
      "bytes": 1297,
      "sha256": "a0c0697ecb6a881d5a9f1ed6dd881ddb6d80fd255baff5e28d55436dd79d1e4f"
+    },
+    "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-1-volume-2.ccel-web-2026-09-17.advent-pc-l4-civ-dei-17.8-house-of-men.json": {
+     "bytes": 1321,
+     "sha256": "2309720ed17500461481fcc6af1185e927e65c7306be7f2a7376ea39eefb3934"
+    },
+    "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-1-volume-2.ccel-web-2026-09-17.advent-pc-l4-civ-dei-18.30-bethlehem.json": {
+     "bytes": 997,
+     "sha256": "39e9f08deff11bd5fb5439b080b724c23587b5e5b21b2e39c36232d46f1dfcc5"
+    },
+    "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-1-volume-2.ccel-web-2026-09-17.advent-pc-l4-civ-dei-18.33-meek-and-humble-remnant.json": {
+     "bytes": 1382,
+     "sha256": "b1f24ae6bfe1e6f2ca0047db8ffdcd48e7020c63b09c988883050422be2eaa6c"
+    },
+    "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-1-volume-2.ccel-web-2026-09-17.advent-pc-l4-civ-dei-18.33-righteous-shoot.json": {
+     "bytes": 1741,
+     "sha256": "945a08c31d096d165c5dedbcb7db0cc7f19ec9c70bbbe04ccfe402bdf4b70546"
+    },
+    "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-1-volume-2.ccel-web-2026-09-17.advent-pc-l4-civ-dei-21.27-alms-at-the-right-hand.json": {
+     "bytes": 1857,
+     "sha256": "927b650518db0a54200a01652c311f8d93cce135dca59b6e37055ea986e9129b"
+    },
+    "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.advent-pc-fix2-riddle-harmonies-tatian-diatessaron.json": {
+     "bytes": 1524,
+     "sha256": "8fb916b454e18c9f854a158aae88452d65c6697b36a5953f7b24f34a7fbd3d20"
+    },
+    "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.advent-pc-l4-augustine-sermo-12.1-centurion.json": {
+     "bytes": 1105,
+     "sha256": "3370ff4ee3dc8bcc7071c8a100f58ba8c2ec601696dfd7d9da015fcd39915889"
+    },
+    "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.advent-pc-l4-augustine-sermo-27.12-valleys.json": {
+     "bytes": 1209,
+     "sha256": "8f019782e6ab3d85af4f4d5b51db7daf2b48d70f8d5c983d9d28f060dfe57eaf"
+    },
+    "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.advent-pc-l4-augustine-sermo-43.17-watch-with-the-heart.json": {
+     "bytes": 1894,
+     "sha256": "926e698462cae315147ef4abfaa5ba8bed4126f1322bcc5d86d01ab7afb8105f"
+    },
+    "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.advent-pc-l4-augustine-sermo-43.6-meet-the-bridegroom.json": {
+     "bytes": 1158,
+     "sha256": "6039a59e0129a1e3cc3073cd1a6708c862d228afe6e27e517268bbbdf576e2f5"
     },
     "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-1-volume-7.new-york-1888.augustine-tract-in-io-120.9.json": {
      "bytes": 1885,
@@ -113584,6 +114164,10 @@
     "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-1-volume-8.new-york-1888.augustine-enarr-in-ps-37.13.json": {
      "bytes": 2108,
      "sha256": "2943c277afc622966d2506b5d2eee8acb2398f42170e3ecdfea6cedebe8c2a08"
+    },
+    "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-2-volume-12.new-york-1895.advent-pc-l3-leo-epistula-31.2-3.json": {
+     "bytes": 2979,
+     "sha256": "414694af905cbd466fa7cb5278e03fccecad887aac42eb00a49db4236378d4a9"
     },
     "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-2-volume-12.new-york-1895.leo-sermo-12.4.json": {
      "bytes": 2585,
@@ -113648,6 +114232,22 @@
     "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-2-volume-5.new-york-1893.gregory-de-hominis-opificio.json": {
      "bytes": 203582,
      "sha256": "2c20ef6acb2071d1647b38b94217be699a02441b0ba64bdaae62cac11312279f"
+    },
+    "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-2-volume-7.ccel-web-2026-10-06.advent-pc-fix2-gifford-life-of-cyril-lectures-before-episcopate.json": {
+     "bytes": 1252,
+     "sha256": "d52fa9052b4cf1112f76c87352176e0ea219d385ccb2b3589085b95035f0e24b"
+    },
+    "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-2-volume-7.ccel-web-2026-10-06.advent-pc-fix2-gifford-life-of-cyril-priest-catechist-348.json": {
+     "bytes": 1364,
+     "sha256": "10221f243c3e014cc3bac5799793010f84133c9510fd66f142bd937a5ab1826f"
+    },
+    "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894.advent-pc-l3-cyril-catechesis-15.3-opening.json": {
+     "bytes": 1533,
+     "sha256": "43c7f4f1e92ea56a263adae00a1297cbc715c596bfa99781592d01a1a0f17886"
+    },
+    "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894.advent-pc-l3-gregory-oration-45.9-gives-riches.json": {
+     "bytes": 2019,
+     "sha256": "996ac63950254580f6b4238df191a0dee46e1989297da67726f41445d3959066"
     },
     "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-2-volume-7.new-york-1894.cyril-catechesis-15.1.json": {
      "bytes": 2096,
@@ -113728,6 +114328,14 @@
     "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895.basil-hexaemeron-9.json": {
      "bytes": 25794,
      "sha256": "08aeaf2f9e52fe3bf40618a2c864a9eec1cc9e7b9529acc34b92d198f0a045ca"
+    },
+    "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-2-volume-9.new-york-1908.advent-pc-l5-damascene-iii-12.json": {
+     "bytes": 1535,
+     "sha256": "28597fad3f6190261b3292423eec055d972a84163a0218b2a89301154f632d00"
+    },
+    "structure/sources/text/passage.nicene-and-post-nicene-fathers.series-2-volume-9.new-york-1908.advent-pc-l5-damascene-iv-14.json": {
+     "bytes": 1763,
+     "sha256": "a686d4c75174f81fd2f29d3cf3f8f950c7eaa60328aa199db96ff7bbb3b42e66"
     },
     "structure/sources/text/passage.order-of-preachers.missale.1550-venice.canon-communicantes.json": {
      "bytes": 1961,
@@ -113981,6 +114589,22 @@
      "bytes": 3316,
      "sha256": "3091094eb983b12492247840ef66128dd39648c5cfc69120e8fe23a67f15e0c7"
     },
+    "structure/sources/text/passage.papal-collections.pius-ix-official-documents-1855.1855-murphy-bilingual.advent-pc-l5-ineffabilis-deus-definition-english.json": {
+     "bytes": 2193,
+     "sha256": "35c43555b1f3e0d8ec4615ac4f0902549bc45dbc974f013fc8bb6820e188d9b8"
+    },
+    "structure/sources/text/passage.papal-collections.pius-ix-official-documents-1855.1855-murphy-bilingual.advent-pc-l5-ineffabilis-deus-definition-latin.json": {
+     "bytes": 1947,
+     "sha256": "d2dd9e57af6b2804269167aa5aa55c4647e5659df6989f6a335d666f53c191b2"
+    },
+    "structure/sources/text/passage.papal-collections.pius-ix-official-documents-1855.1855-murphy-bilingual.advent-pc-l5-ineffabilis-deus-full-of-grace.json": {
+     "bytes": 2328,
+     "sha256": "862243668135ecb9ae3c59e3563a50410b9999d7b074653d8b5f109dea70c5e8"
+    },
+    "structure/sources/text/passage.papal-collections.pius-ix-official-documents-1855.1855-murphy-bilingual.advent-pc-l5-ineffabilis-deus-gen-3-15.json": {
+     "bytes": 2597,
+     "sha256": "b05fcd6d1ddb6520b67caf5318ae3f5bf66456bb91bc737e89ba040f53cb6c86"
+    },
     "structure/sources/text/passage.peter-chrysologus.sermones.1879-bute-summer.sermon-50.json": {
      "bytes": 2871,
      "sha256": "f1f1ac45c856a23f37e73f7b36269b4dc704a434ef92239b8d43ad72f62195f2"
@@ -114032,6 +114656,22 @@
     "structure/sources/text/passage.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.vol-xi-p-271.json": {
      "bytes": 1404,
      "sha256": "6f144326443f06c8c73a98328903ac2e6ed315a20acb3808795064ba738d4c89"
+    },
+    "structure/sources/text/passage.provincial-councils-of-baltimore.concilia-provincialia-baltimori-1829-1849.baltimore-murphy-1851.advent-pc-l5-1846-petition-and-election.json": {
+     "bytes": 2379,
+     "sha256": "fb14a5e037ddca07839f78ad0fdcba6e46465da253a283811f6791fbb7d212ae"
+    },
+    "structure/sources/text/passage.provincial-councils-of-baltimore.concilia-provincialia-baltimori-1829-1849.baltimore-murphy-1851.advent-pc-l5-1847-confirmation.json": {
+     "bytes": 1954,
+     "sha256": "0218e45448b78b747694e6111e4c21d840be491a00c51c4fc7cdee3697d9e5b8"
+    },
+    "structure/sources/text/passage.provincial-councils-of-baltimore.concilia-provincialia-baltimori-1829-1849.baltimore-murphy-1851.advent-pc-l5-1849-acclamation-and-reply.json": {
+     "bytes": 2342,
+     "sha256": "3e626226f41df20dcf33cf146bf6dd603eff5a0f619365b48f95dfd3f1616c4a"
+    },
+    "structure/sources/text/passage.provincial-councils-of-baltimore.pastoral-letter-1846.advent-pc-en2-guilday-ncwc-1923.advent-pc-en2-patronage-of-the-mother-of-god.json": {
+     "bytes": 2695,
+     "sha256": "25a9540f2b15ab074790a3165c2ae6f0451498f3d880236447328803bfb4b60a"
     },
     "structure/sources/text/passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.1-1.json": {
      "bytes": 2530,
@@ -115725,6 +116365,14 @@
      "bytes": 1528,
      "sha256": "a6002576234a4be5c2d42a21752a704119205668540c22e304706135b9bcb3fd"
     },
+    "structure/sources/text/passage.society-of-biblical-literature.sbl-greek-new-testament.faithlife-v1.2-c4d241a.advent-pc-l4-luke-2-7-verbs.json": {
+     "bytes": 981,
+     "sha256": "6f9bfc6c3f1f6b0a1f103381d1212a237b28e65dc9a7f7b58355e268dc0ea082"
+    },
+    "structure/sources/text/passage.society-of-biblical-literature.sbl-greek-new-testament.faithlife-v1.2-c4d241a.advent-pc-l4-luke-23-53-verbs.json": {
+     "bytes": 968,
+     "sha256": "a499a365baf0e9c351fdca69af3332594ef17ef9c84fea0049f5060813c5e841"
+    },
     "structure/sources/text/passage.society-of-bollandists.acta-sanctorum.1866-paris-rome-palme-october-2.queenship-invocation-20261029.json": {
      "bytes": 1028,
      "sha256": "4fc18a857eebf80d66b9dfbbb090048003152a15f091149872f98144429574cd"
@@ -115840,6 +116488,14 @@
     "structure/sources/text/passage.theophylact-of-ohrid.enarratio-in-evangelium-ioannis.migne-pg-124-latin-column-1864.in-io-20-credidit.json": {
      "bytes": 1480,
      "sha256": "6fdf0e0e8374f9dd36e09e444ddb083b60f5124cd3b44b2d254b04fb15426b87"
+    },
+    "structure/sources/text/passage.therese-of-lisieux.histoire-dune-ame.taylor-fifteenth-thousand.advent-pc-fix-chapter-v-christmas-1886-checked.json": {
+     "bytes": 4127,
+     "sha256": "fec134f2724ffea96daecbc4da7ca763a1b222c3c1041e8bcd2c8624268b1f22"
+    },
+    "structure/sources/text/passage.therese-of-lisieux.histoire-dune-ame.taylor-fifteenth-thousand.advent-pc-fix-chapter-v-night-of-grace-checked.json": {
+     "bytes": 2260,
+     "sha256": "8182b86a88be91e88d35de3b29cd5860ff67a919fb5955baf2044a863ce5b701"
     },
     "structure/sources/text/passage.therese-of-lisieux.histoire-dune-ame.taylor-fifteenth-thousand.chapter-v-christmas-1886.json": {
      "bytes": 5154,
@@ -116420,6 +117076,18 @@
     "structure/sources/text/passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.16-19-20.json": {
      "bytes": 6005,
      "sha256": "9a43798c52fe8d41f9e4c475100613af9e2c4c0aa203f088ca498d624c5a9590"
+    },
+    "structure/sources/text/passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.advent-pc-l4-augustine-ep-199-on-mark-13-37.json": {
+     "bytes": 1975,
+     "sha256": "cb68411161e882ee62408d61875858b08dc21c0d2f277681034e346f99634eaa"
+    },
+    "structure/sources/text/passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.advent-pc-l4-porter-on-mark-13-34.json": {
+     "bytes": 1844,
+     "sha256": "6854b1b6d7ed38b4d38591585e7ddeadb5773f38baccdc224920e06040fb93bd"
+    },
+    "structure/sources/text/passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.advent-pc-l4-theophylact-on-mark-13-35.json": {
+     "bytes": 1924,
+     "sha256": "8c1985fa056a3b5e291cb4418d48d516b17c6458f4316e9c0db0e07a55e64bff"
     },
     "structure/sources/text/passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.01-01-01.json": {
      "bytes": 20691,
@@ -117556,6 +118224,30 @@
     "structure/sources/text/passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.28-16-20.json": {
      "bytes": 13549,
      "sha256": "a29d585788de4f3599c10be9a0fefa20ae675ca67b5239de749360d5c765c08b"
+    },
+    "structure/sources/text/passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.advent-pc-l4-augustine-on-matthew-25-13.json": {
+     "bytes": 1425,
+     "sha256": "ee1692912f04374cdfb260155234295f57baed8968bb9e99258d46b37f6aac67"
+    },
+    "structure/sources/text/passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.advent-pc-l4-augustine-on-matthew-8-8.json": {
+     "bytes": 1585,
+     "sha256": "38d0023b15a319dd479bedf880f2302fcb46f64c178bbaa71d6e098579609a22"
+    },
+    "structure/sources/text/passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.advent-pc-l4-chrysostom-on-matthew-25-40.json": {
+     "bytes": 1553,
+     "sha256": "6aebe9ea082e09cc6e216c42a2ab31a27fbe4e73c4c487124e3e614ea131ee3a"
+    },
+    "structure/sources/text/passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.advent-pc-l4-hilary-and-chrysostom-on-matthew-25-9.json": {
+     "bytes": 1712,
+     "sha256": "7c7cba1558e3b04c8affa278136ce3f34112cb48063a319fad0e2a1230c4b706"
+    },
+    "structure/sources/text/passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.advent-pc-l4-origen-on-matthew-25-33.json": {
+     "bytes": 1425,
+     "sha256": "2b8c738daaa8c28f2094be83d0d076d061d7ce226329d6b6fad35d03f7800006"
+    },
+    "structure/sources/text/passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.advent-pc-l4-pseudo-origen-on-matthew-8-8.json": {
+     "bytes": 1635,
+     "sha256": "a2344d4ffdd9fafc34ec6641d4e611c94e6268a04091eab062abaff552791e9c"
     },
     "structure/sources/text/passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.gregory-on-matthew-11-7.json": {
      "bytes": 1569,
@@ -124033,6 +124725,18 @@
      "bytes": 1562,
      "sha256": "199d42eced334a709244d53f41cafdd57ee93cd352aad1273287b48ce5ba6bf7"
     },
+    "structure/sources/text/passage.william-bright.ancient-collects.advent-pc-en2-parker-1887-sixth-edition.advent-pc-en2-gelasian-excita-domine-potentiam.json": {
+     "bytes": 1457,
+     "sha256": "ca8f15be6fc4f337b5f2157133f07b79b2721bdbcd7e6f272beb466b4a0d71c3"
+    },
+    "structure/sources/text/passage.william-bright.ancient-collects.advent-pc-en2-parker-1887-sixth-edition.advent-pc-en2-gelasian-preces-populi-two-advents.json": {
+     "bytes": 1626,
+     "sha256": "0252a8ef7f27bbf5f88b501ba4b9d86d80e5095ad7c2f3fa9362c5628ea35356"
+    },
+    "structure/sources/text/passage.william-bright.ancient-collects.advent-pc-en2-parker-1887-sixth-edition.advent-pc-en2-leonine-exaudi-nos-ascension.json": {
+     "bytes": 1624,
+     "sha256": "d000c96a67667ea01b009d8f07d56d34b2fd4465734cdb44748260c530f9b493"
+    },
     "structure/sources/text/passage.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.vi.2-alleluia.json": {
      "bytes": 1597,
      "sha256": "a5a692f15fa3c8530560a5793958699752b5d0dce2dee228a8e31e4d5dbc1c2d"
@@ -124060,21 +124764,21 @@
    },
    "id": "sources",
    "inputs": {
-    "content": "698ea10c87ea4239b1bda8944922168f83ab0c527231f16266343fbf0b8a50a7",
-    "count": 82522,
+    "content": "678dddfdf0a970114aa11973ee0acd99f1076daf0e098b484b9114cf7b9b7bfd",
+    "count": 83097,
     "generator": "363bf658a9120023c067eb994e24fdf2ed09b0bfba8ecd052b4ce33c44e3303a",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "21605c3910602ced96da20e97b33aaa82ba55da99ae7a3719a17da7305ad6194",
-    "rights": "6bb119828ded4c0bb5d509287c39149d325cda770862f013d807d431addeb501",
+    "membership": "f0256cdec3ff3b8beb063e4e64141b9860585fb0134c692fbf32cba84b4e01e3",
+    "rights": "5a0dea8bab342b9574e96d76afa503dd92ef8bb0c7ede27bba9c9f7773fba8f3",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "e2c5683064f971ae019cf44e04cd8d6a51c98755a2ed7a8e8646aa71a754ff7d"
+    "sha256": "9085140a845673ce924f0bca503ba70127d74030c842177052d6ad5688e1026e"
    },
-   "key": "798b98cac4c9afb4bb3e03103dfe27e0529f338a2db64dfac56ea7ea0971b1e8",
-   "path_set_sha256": "baad9b0dccc48223d5d48c1a840658f88515d2ef80859d2a40f4c2da393f5a43"
+   "key": "b0c1292f1538a57d58174711a1bbc0c39040346419e1e2b0377318d8924d39e0",
+   "path_set_sha256": "9387dc554fd394f7fd0a511c930938eff2c52cf9d4e396593365a442973fb0a1"
   },
   {
-   "bytes": 32315932,
-   "count": 325,
+   "bytes": 32492497,
+   "count": 326,
    "files": {
     "web-editions/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.json": {
      "bytes": 201884,
@@ -124471,6 +125175,10 @@
     "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.json": {
      "bytes": 143364,
      "sha256": "9c514ef2dbeb31a0f420eec23d497fb255b8cc6a1cb19a021519ab9697b953c3"
+    },
+    "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent.json": {
+     "bytes": 175905,
+     "sha256": "b21ce6d109d562c1d7dba98207904fa60282068b65110bd43142ee5019d3d5db"
     },
     "web-editions/claude/theology/angelology.json": {
      "bytes": 1808700,
@@ -125373,23 +126081,23 @@
      "sha256": "e2f772b0680d93c81ca46dc2118d13132ff538679677b2970464e5748b9d962f"
     },
     "web-editions/index.json": {
-     "bytes": 200736,
-     "sha256": "175c5f3c9190ec4def2e88273871dc9b4e55a21859f682e729dd83dc98d8fb86"
+     "bytes": 201396,
+     "sha256": "61ae9e7ba01d00dfbe540c0d320f95e6990f840a9ec4dfe14bd606a8a99853b2"
     }
    },
    "id": "web-editions",
    "inputs": {
-    "content": "8ee790dac7f950f5d81852b374f5a8515851c1e93c45d65372ab2e7c8acea2ee",
-    "count": 82934,
+    "content": "34891c00f36b550cf30cbe69d1f5879b6151668af4980a7dbfaeb25dc9a1c1fc",
+    "count": 83510,
     "generator": "3b96698fb276636c920bcfa968530e64008f4869e23005f4bb1cd8b9b9947a8d",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "30c373c8081bf2aec7919558bb1dc76b6ebb511d3057723736a153038069a857",
-    "rights": "017c2648c4c552053781eae023cc1522819cd3858b8d0229df939af5c917a10a",
+    "membership": "214b9f83d60cf37fc10cb4034ae97107fef2e5d56bd5cc2675ee0d0ad2a7bc5e",
+    "rights": "b78e28b1ec8495d17659aa4850cf69f8f4e3d72d07e427b4df717453cb9a7882",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "e98c0990cea27d5b8ba8a494f5cf67f388c88c19a6d27db0d7d1375ea594b168"
+    "sha256": "c2dbad656d01bfa871dc6ca9267170c56866d096eba5d0133ef62a9392f9b4c9"
    },
-   "key": "4cc4b7e8885f5be49dfa81c23266777ae3a8bdfae96ac55aca270470a0fbb2eb",
-   "path_set_sha256": "242aeaba91c8c37402228d987dc4e9af226ceb71f1d47adba8521bfb4ea6e82f"
+   "key": "67d53569bee9e6ea70e55db8f39dceb37918ec42d26e4254515e5d85457613e2",
+   "path_set_sha256": "59aebb0fba73101c9df020ef54586337a1070cf49e4eb9528d5584aca0338c97"
   }
  ],
  "proof": "two-independent-cold-builds-byte-parity",
