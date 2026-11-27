@@ -1,8 +1,8 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
-audited_on = "2026-11-25"
-publication_snapshot = "sha256:18c2f6e6539dbb749343f85edaede79dd516d4a7f20a1923a745841d8bac058b"
-classification_snapshot = "sha256:98d9cd59a751d6f8703f328b8224c276c3f995cacb9b20d64300f07741c7ec02"
+audited_on = "2026-11-26"
+publication_snapshot = "sha256:cf742aac32705cdbfc20f08c144fd3d82d6aa34acef1b5787d6faba163f531b8"
+classification_snapshot = "sha256:57c7b3e1d0fa5ddb6f821f309b33fa5dca7b4f646fa7fd7eb340b53801a4a137"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -215,6 +215,10 @@ source_categories = ["canon-law", "dataset-survey", "finding-aid", "historical-p
 [[classifications]]
 document = "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"
 source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
 
 [[classifications]]
 document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a"

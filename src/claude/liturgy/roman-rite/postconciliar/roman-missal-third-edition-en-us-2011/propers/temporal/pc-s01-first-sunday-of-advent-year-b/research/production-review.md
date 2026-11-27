@@ -864,3 +864,98 @@ columns on pages 1–2, the note and References on pages 3–4 with the rights
 colophon on page 4. A first proof of this iteration put the colophon alone
 on a fifth page; the shortened route paragraph removed it. The homily
 prints no `\ref`.
+
+## Reviews and gates recorded by the engine
+
+These are the engine's own recorded results for run `99f04ef5cf9b711b`, as
+the run holds them when installation begins. No acceptance is claimed beyond
+them; the terminal publication gates had not run when this record was
+written. Each result's SHA-256 is the hash the engine recorded for that
+result, and each was re-hashed from the run directory and matched. Every
+research, study, synthesis and homily preflight of the run passed.
+
+| Stage, iteration | Result | Findings and observations | Result SHA-256 |
+| --- | --- | --- | --- |
+| research-review 0 | CHANGES_REQUIRED | blocking RES-CHR-001, RES-ATT-001, RES-TXT-001; advisory RES-TXT-002, RES-ATT-002, RES-REC-001, RES-BND-001 | `a0ec95d20ee4d06b94c1f0de1655da0e60db8ee2d5bf5eb50a623d80be5242d4` |
+| research-review 1 | CHANGES_REQUIRED | blocking RES-TXT-003; advisory RES-INT-001, RES-TXT-004, RES-REC-002, RES-NEG-001; one observation | `d31b1ba78df321262c74187d58a156c7ad8892ac65e36ccff13c16f955020dae` |
+| research-review 2 | PASS | advisory RES-NEG-002; one observation | `d9030c1f7cc7ea91ebc7feb40524e9caaa73a65741c56390155aae637abb22ea` |
+| study-review 0 | CHANGES_REQUIRED | blocking STU-001 to STU-009; advisory STU-010 to STU-014; two observations | `e6de565cb97c364bde9930e5ae160ffac5659db6a93a811ed348760348644d8c` |
+| study-review 1 | CHANGES_REQUIRED | blocking STU-015 to STU-017; advisory STU-018 to STU-022; two observations | `d374e864583ea765a89ea40c7c8a71e054d853e83f3d69701d5a45feab8d21f1` |
+| study-review 2 | PASS | advisory STU-023 to STU-030; two observations | `bdf0c4750c465a52c52557e535c5e3cb127b2eac9d66ee42f85d9734ae8b16c8` |
+| synthesis-review 0 | CHANGES_REQUIRED | blocking SYN-001 to SYN-003; advisory SYN-004, SYN-005; three observations | `92472aa0f203c57edd4d2f47a50e9398324c7f33db64e06e340345e84612ba56` |
+| synthesis-review 1 | PASS | advisory SYN-006; two observations | `acbd77faa85c4db111f5aedd9779cf6e325d472e60359abd41fab89df4979755` |
+| homily-review 0 | CHANGES_REQUIRED | blocking HOM-001; advisory HOM-002 to HOM-006; two observations | `3530b0ed0869b8392106ba8d28f6bcf8e09dd778ba822f89b5e1c07b9ad8ab86` |
+| homily-review 1 | PASS | advisory HOM-007, HOM-008 | `5fb9ca346c6007dbca5dc1853cd725400900e9ffcb93bf48bda56dc62ead373f` |
+| build-artifacts 0 | PASS | worker stage; no print export requested, no PDF built | `32ed9c4ef2851b49b10e7cdf754f21995fe9dbfc784ed855b26a48884a06f246` |
+| artifact-gates 0 | PASS | none | `97af5c9c6c70bfc4459030f6b4c4d3ef1c5d44f458a9759ff4ab5fcbb5607d3c` |
+| generate-web 0 | PASS | worker stage | `d10d6c8643aa1f53e95c677f4232f5991cec9a8e5465c13f5385b6fd5dadeb7a` |
+| web-review 0 | PASS | advisory WEB-001; three observations | `b9538c6e36f34d319874d9487c65b018c9b3d2ba30f5508f9b5174f5deaeece7` |
+
+- **Generate-web, iteration 0.** The canonical study alone was converted from
+  checkpoint `c861ed623d`, its sources committed (stamp
+  2026-11-26T23:01:57Z). `research/web-artifact.json` records the conversion
+  at SHA-256
+  `bb1020b4fb2d3c51db90c8fef7838465b3c7f967f8d44542a30f279e2f8beed0`.
+- **Web review, iteration 0.** The reviewer reproduced the conversion byte
+  for byte, read it whole against the TeX with an in-order word comparison,
+  checked its rendered structure, and viewed it inside the site layout in
+  headless Chromium at 1280 and 390 px. The publication-reader shell was not
+  exercised, because the sealed browser products refused mid-run. WEB-001
+  is the advisory that the study three times gives the second invocation of
+  the Advent solemn blessing in a clause one word from the approved English
+  (`sections/05-appointed-texts.tex`, `sections/10-texts-in-setting.tex`,
+  `sections/40-clay-and-faithful-potter.tex`), the same clause SYN-006
+  judged advisory in the concise study. It stands for the study's owner; the
+  edition sources were closed to installation and were not changed.
+
+## Install-publication, iteration 0 — 26 November 2026
+
+The worker is a fresh Anthropic Claude Code harness subagent
+(`claude-opus-5-5`) with no inherited conversation, dispatched at the
+packet's declared effort `high`, on Claude Code CLI 2.1.332. No reviewed
+source, evidence record, receipt or contribution line was changed at this
+stage. Nothing a reader sees changed, so the generation record gains no
+contribution.
+
+### Checks before publishing
+
+- `tools/tpt document-types refresh --check --leaf claude/<canonical-id>`:
+  current.
+- `scripts/_proper_study.py check --phase content` with presentation, format,
+  authority, orientation and orientation-v3, source mode, for the study and
+  the synthesis and homily editions: pass.
+- A fresh conversion of the canonical study with `tools/web-edition` into
+  scratch is byte-identical to the reviewed conversion and to the receipt
+  (`bb1020b4…beed0`), and carries the committed stamp, not an uncommitted
+  one.
+
+### Publication records
+
+- Release records. `tools/release-bindings add-publication --provider claude
+  --catalog library/novus-ordo-liturgy.md --status alpha` wrote one record for
+  each declared output, the bare ID, `-synthesis` and `-homily`, under
+  `release/publications/claude/…/temporal/`. Each holds only `status =
+  alpha` and the standing `perpetual-public-repository-2026` authorization;
+  the path derives the rest.
+- Catalog. In `library/novus-ordo-liturgy.md` the Claude cell of the First
+  Sunday of Advent, cycle B, row now links the Full Study Guide, Synthesis
+  and Homily web readers in the manifest's order. It links no PDF. The
+  ChatGPT cell and the cycle A and C rows are unchanged. The manifest's
+  primary provider is `gpt`, whose unprefixed marker for this identity
+  already stands, so the one canonical marker added is
+  `claude:<canonical-id>`.
+- Web inspection. `web-edition.toml` records web review 0 as the study
+  reader's inspection: `inspected = "2026-11-26"`, the reviewing provider and
+  run, and its method with the conversion hash. The synthesis and homily
+  readers carry no inspection and remain converter-verified.
+- `scripts/_proper_study.py check --phase publication` (source mode, with the
+  same requirements) and `tools/tpt web-edition check --leaf
+  claude/<canonical-id>` (3 reader outputs) passed after these records were
+  written.
+
+This record was closed before the source inventories were refreshed and the
+browser products recorded, because the leaf's own files are inputs to both.
+The inventory refresh, the browser-product descriptor and the release-binding
+refresh that follow are their own records (`src/sources/inventories/`,
+`release/browser-products.json`, `release/public-alpha.json`), and the
+terminal publication gates are the engine's.

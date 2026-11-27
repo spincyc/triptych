@@ -31,6 +31,7 @@ The Mass commonly called the *Novus Ordo*, studied in the 2008 Latin Roman Missa
 ## Sunday Propers Calendar
 
 <!-- triptych-publication-id: liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc -->
+<!-- triptych-publication-id: claude:liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b -->
 <!-- triptych-publication-id: claude:liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a -->
 <!-- triptych-publication-id: claude:liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a -->
 <!-- triptych-publication-id: claude:liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a -->
@@ -60,7 +61,7 @@ The Mass commonly called the *Novus Ordo*, studied in the 2008 Latin Roman Missa
 | Sunday | Cycle | ChatGPT | Claude |
 | --- | --- | --- | --- |
 | **First Sunday of Advent** | A | Planned | Planned |
-| **First Sunday of Advent** | B | [Full Study Guide](../web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b.html) · [Synthesis](../web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b-synthesis.html) · [Homily](../web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b-homily.html) | Planned |
+| **First Sunday of Advent** | B | [Full Study Guide](../web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b.html) · [Synthesis](../web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b-synthesis.html) · [Homily](../web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b-homily.html) | [Full Study Guide](../web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b.html) · [Synthesis](../web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b-synthesis.html) · [Homily](../web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b-homily.html) |
 | **First Sunday of Advent** | C | Planned | Planned |
 | **Second Sunday of Advent** | A, B, C | Planned | Planned |
 | **Third Sunday of Advent** | A, B, C | Planned | Planned |
