@@ -1,0 +1,36 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/main.tex",
+  "disposition": "PASS",
+  "iteration": 0,
+  "notes": [
+    "Study-preflight: document-types refresh --check current; _proper_study.py content check (research, source) pass; check-content-preflight references-used, identifiers-resolve, bindings-valid, restricted-not-reproduced, relation-coverage, unquoted-not-quoted, structural-meta-labels, house-voice, chronology-record-current, chronology-annotations-current, chronology-claims-supported, provenance-matches-run all pass.",
+    "Web probe: build/tpt-runs/99f04ef5cf9b711b/artifacts/author-study-0/web-probe (all twelve proper-<key> anchors present).",
+    "Proof (informal, manual pdflatex because tools/print-document build --edition main requires synthesis.tex): build/tpt-runs/99f04ef5cf9b711b/artifacts/author-study-0/proof/study.pdf, 31 pages, SHA-256 5863c9004cb8d0737d6a7b31e097ed4b0f18a579c64bdf2127bbe78b7660383e; proof-only revision stamp kept outside the leaf.",
+    "Substantive exposition about 13,800 words (opening 1,443; appointed texts 2,250 incl. ~1,000 Douay text; setting 2,451; interpretations 2,568/2,823/2,585; comparison 724), above the 6,000-10,000 planning range, which is not a quota; repetition was removed.",
+    "No \\ref is used, so the known \\ref{sec:date-location} rendering defect does not arise.",
+    "Shared defects recorded in research/production-review.md: print-document/web-edition check require synthesis.tex before companions exist; generated Isaiah Passage cell prints Clementine numbering without a key; Bede In Marci locus pattern admits only Mark 10.",
+    "Research advisory RES-NEG-002 left for the research owner; no research evidence record changed.",
+    "Independence kept: no GPT leaf, its records, 1962 Advent leaves or other workers' directories opened."
+  ],
+  "paths_to_commit": [
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/publication.toml",
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/proper-components.toml",
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/format.tex",
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/web-edition.toml",
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/generation-metadata.tex",
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/main.tex",
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/generated/scriptural-date-location.tex",
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/00-opening.tex",
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/05-appointed-texts.tex",
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/10-texts-in-setting.tex",
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/20-rend-the-heavens.tex",
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/30-watch-at-the-door.tex",
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/40-clay-and-faithful-potter.tex",
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/50-comparison.tex",
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/85-liturgical-resolution.tex",
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/90-apparatus.tex",
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/production-review.md"
+  ],
+  "stage": "author-study",
+  "summary": "Complete expansive study of PC-S01-B (First Sunday of Advent, Year B, 29 Nov 2026): opening with map, Douay-Rheims appointed texts with twelve proper-<key> anchors, each text in its setting, three interpretations (rend-the-heavens, watch-at-the-door, clay-and-faithful-potter) each with Fathers, strains and four senses, comparison, generated date appendix, liturgical resolution, scope appendix and references. All study-preflight checks pass; web probe converts; informal pdflatex proof 31 pages."
+}

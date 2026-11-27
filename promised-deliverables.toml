@@ -4,7 +4,7 @@ schema_version = 1
 id = "claude-pc-s01-advent-year-b-2026-11-29"
 owner = "PROJECT-WORK.md"
 promise = "Complete the Claude U.S. postconciliar First Sunday of Advent, Year B (pc-s01) proper-study workflow for Sunday 29 November 2026: produce the expansive study, concise study and homily with independent cold reviews and their web readers, committed on the workspace branch."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "claude-pc-s01-authorized"
@@ -18,14 +18,14 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "claude-pc-s01-native-acceptance"
   criterion = "A real proper-study version-20 run for provider claude, identity liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b, date 2026-11-29, audience adult parish assembly, reaches ACCEPTED with every required fresh cold review, and its results are archived in the leaf with a cycles record."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/claude-pc-s01-production-2026-11-26/CYCLES.md", "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/evaluations/proper-study-results/99f04ef5cf9b711b/record.md"]
 
   [[deliverables.requirements]]
   id = "claude-pc-s01-reviewed-publications"
   criterion = "The expansive study, concise study and homily sources pass their gates and reviews; the web reader conversion is reviewed and current; the catalog, inventories and release records are current and the publication gates pass."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "library/novus-ordo-liturgy.md"]
 
 [[deliverables]]
 id = "claude-1962-01-advent-2026-11-29"

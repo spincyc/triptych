@@ -1,0 +1,158 @@
+{
+  "admitted_passage_ids": [
+    "unchanged from iteration 0 (no new admission): passage.john-chrysostom.homilies-on-first-corinthians.ccel-web-2026-09-28.2.1cor-1.7-9; passage.augustine.enarrationes-in-psalmos.1888-english-npnf-anonymous-first-thirty.24.1-2, .24.3, .24.4, .24.5; passage.augustine.enarrationes-in-psalmos.1888-oxford-coxe.psalm-84-9, .psalm-84-15; passage.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.84-9, .84-15; passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-24-verses-1-3, .psalm-79-verses-2-4, .psalm-79-verses-15-19, .psalm-84-verse-8, .psalm-84-verse-13; passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.13-32-37"
+  ],
+  "artifact_path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/source-dispositions.toml",
+  "deferred": [
+    {
+      "binding": 66,
+      "extent": "Matt 24:36; Matt 24:42-43 (analogue)",
+      "id": "jerome-in-matthaeum-iv-matt-24-36-43-segment",
+      "missing_criteria": [
+        "verified-transcription",
+        "tracked-text-controller",
+        "passage-record"
+      ],
+      "note": "new this iteration"
+    },
+    {
+      "binding": 65,
+      "extent": "Matt 24:36; Matt 24:42-43 (analogue)",
+      "id": "jerome-in-matthaeum-iv-matt-24-36-43",
+      "missing_criteria": [
+        "verified-transcription",
+        "tracked-text-controller",
+        "passage-record"
+      ],
+      "note": "research 1's row; reason now cross-references the segment row"
+    },
+    {
+      "extent": "Mark 13:32-37",
+      "id": "bede-in-marcum-mark-13-32-37",
+      "missing_criteria": [
+        "work-locus-grammar",
+        "passage-record",
+        "quoted-text-attribution",
+        "natural-excerpt-boundary"
+      ]
+    },
+    {
+      "extent": "Is 63:15-64:12",
+      "id": "jerome-in-isaiam-xvii-isa-63-15-64-12",
+      "missing_criteria": [
+        "verified-transcription",
+        "tracked-text-controller",
+        "natural-excerpt-boundary"
+      ]
+    },
+    {
+      "extent": "Is 63:15-64:12",
+      "id": "aquinas-super-isaiam-isa-63-15-64-12",
+      "missing_criteria": [
+        "publishable-controller",
+        "tracked-text-controller",
+        "passage-record",
+        "natural-excerpt-boundary"
+      ]
+    },
+    {
+      "extent": "Ps 79:1-4, 15-16, 18-20",
+      "id": "augustine-en-ps-79-npnf8-ccel",
+      "missing_criteria": [
+        "passage-record",
+        "unabridged-text",
+        "natural-excerpt-boundary"
+      ]
+    },
+    {
+      "extent": "1Cor 1:7-9",
+      "id": "aquinas-super-i-cor-1-l1-1cor-1-7-9",
+      "missing_criteria": [
+        "publishable-controller",
+        "tracked-text-controller",
+        "passage-record",
+        "natural-excerpt-boundary"
+      ]
+    },
+    {
+      "extent": "Luke 12:35-40 (analogue)",
+      "id": "gregory-hom-evang-13-luke-12-35-40",
+      "missing_criteria": [
+        "passage-record"
+      ]
+    },
+    {
+      "extent": "Matt 25:14 (analogue)",
+      "id": "gregory-hom-evang-9-1-matt-25-14",
+      "missing_criteria": [
+        "passage-record",
+        "natural-excerpt-boundary"
+      ]
+    },
+    {
+      "extent": "Mark 13:35-37",
+      "id": "augustine-ep-199-mark-13-35-37",
+      "missing_criteria": [
+        "publishable-controller",
+        "tracked-text-controller",
+        "passage-record",
+        "natural-excerpt-boundary"
+      ]
+    },
+    {
+      "extent": "Matt 24:42-44 (analogue)",
+      "id": "chrysostom-hom-mt-77-matt-24-42-44",
+      "missing_criteria": [
+        "edition-translator-credit",
+        "passage-record",
+        "original-language-text"
+      ]
+    },
+    {
+      "extent": "[] (doctrinal-illumination)",
+      "id": "cyril-catechesis-15-1-two-advents",
+      "missing_criteria": [
+        "scripture-extent",
+        "canonical-scripture-edge"
+      ]
+    }
+  ],
+  "disposition": "PASS",
+  "iteration": 1,
+  "leads": [
+    "jerome-in-isaiam-dco-pars-4",
+    "augustine-en-ps-24-augustinus-it",
+    "lapide-1-cor-1-5",
+    "lapide-1-cor-1-7"
+  ],
+  "new_bindings": [
+    "66: segment.jerome.commentariorum-in-evangelium-matthaei.vallarsi-migne-pl26-1845.pl26-columns-15-218 (loci liber-4; role reception; states cataloged/acquired/inspected; fingerprint sha256:b4b4c1532f3ece509e86983d588765108d73d82a8b03954bfa2a409fcf0cc41c; binding_sha256 55d7d78d1b55a0c221aef24860184d9b3978e25fa044e7b878f664bd8df55187)"
+  ],
+  "notes": [
+    "Packet SHA-256 verified (8b916241...). Environment: env.sh, which provides the pinned venv Python with Markdown 3.10.3.",
+    "Research 1's PL 26 work. I re-hashed workers/research-1/dl/pl26.pdf: 63,426,233 B, sha256 0d889bd6..., which equals the registered artifact. I rendered PDF p. 98 at 200 dpi into my scratch directory and read col. 181 on 24:36 ('Gaudent Arius et Eunomius...'; 'non expediat nosse apostolis, ut semper incerti de adventu Judicis... quasi die alia judicandi sint'; the comment ends 'filii nomen est') and col. 182 on 24:42-43 ('ut pendulae exspectationis incerto semper eum credant esse venturum... Et non dixit, quia nescimus... sed nescitis'; ends 'manifestius docet, dicens'). Research 1's binding 65 and row are accurate. Its binding digest (ac76310f...) and fingerprint are current.",
+    "Container holdings. The source-containment inventory lists work.jerome.commentariorum-in-evangelium-matthaei as a whole constituent of PL 26 (cols. 15-218) through segment ...pl26-columns-15-218 (PDF pp. 13-116, which covers p. 98). I added binding 66 for that segment, following the segment-plus-container pattern this leaf already uses for Chrysostom (bindings 45 and 46), and a deferred analogue row for it. The segment's verified state belongs to its prologue locus only, so binding 66 claims inspected, not verified. Binding 65 is unchanged, and so is every earlier binding digest: binding-digests were compared before and after.",
+    "No admission. A passage under the segment would hold only a page range and no words, because the PDF has no text layer, no page is retained, and no checked transcription exists. Transcribing it here would manufacture text the stage cannot verify. The natural boundaries of the two comments are recorded in the row so that admission work stays visible.",
+    "Projection drift (research 1 reported drift at 78 editions). Before touching anything I ran `tools/tpt source-reader structure --strict --check`, and it reported current (19,684 files). The projection was written at 09:09 by source registration 0. Since then the only change under src/sources is the family ledger at 09:21, which the source reader does not read. Its inputs, including the fixed qualified-Latin authority files, are unchanged. I then ran the packet's sequence: `structure --strict` wrote 19,684 files and `--strict --check` reported current. A sha256 inventory of all 19,684 JSON files was byte-identical before and after regeneration. Research 1's report therefore does not reproduce against the present inputs. I could not establish its cause: research 1 left no log, and its environment at that moment cannot be replayed. Ruled out: Markdown (the source reader does not import it), and an alternate working destination (build/browser-data-work does not exist).",
+    "Family ledger: `tools/tpt source-family-migration check` is valid, with canonical_catalog_snapshot current against the records as they now stand (families=0, review_units=172, pending=172, screened=0). This stage created no new canonical record, so no refresh was needed and the ledger file was not touched again.",
+    "Checks, all in the env.sh environment: `tools/source-library validate` is valid (bindings=5474). `python3 scripts/_proper_study.py source-dispositions --mode source` exits 0 (69 rows over 66 bindings). The research preflight (`_proper_study.py check --phase research --require-source-dispositions --mode source --date 2026-11-29`) exits 0. `python3 scripts/_catena.py check` is valid (fragments=1802). The source-reader structure --strict / --check results are given above. `make -k check-sources` fails on two targets. check-publication-inventories: claude-publications-v1.toml hashes are stale for the three modified edition registry files, and the leaf is not yet inventoried; install-publication owns both. check-source-containment: the two known base periodical-issue records. These are the same as the base and iteration 0. The rest passes, including the chronology freshness tests. Logs: <worker-scratch>/workers/source-registration-1/{check-sources.log,research-preflight.log,sr-check-before.log,sr-structure.log,sr-check-after.log,projection-before.sha256,projection-after.sha256,binding-digests.txt,binding-digests-after.txt}.",
+    "Advisory findings (RES-TXT-002, RES-ATT-002, RES-REC-001, RES-BND-001). I checked each one in the current files, and research iteration 1 has already cleared all four. scope 3.3 and interpretations row 3 describe the permissive US rendering at 63:17 and 64:4. The Aquinas bullet cites Ps 143:5 alone. context.md lines 84, 303 and 385-387 give the registered ids. The Missal, Ordo and readings-page bindings carry the added loci, and their digests are refreshed. Nothing further was needed.",
+    "Supporting audit: research/scope.md section 1 (reading languages) now notes the segment binding, and section 11 has a new 'After research iteration 1' entry. The matrix in section 3 already contained research 1's Jerome-on-Matthew row and the corrected Bede row. Every witness it names has a binding.",
+    "Shared defects, recorded for their owners and not edited. (1) Source library: work.bede.in-marci-evangelium-expositio locus_pattern admits only Mark 10 loci, which blocks a passage for Bede on Mark 13:34-37. (2) Calendars owner, carried from earlier stages: the advent-1 Entrance antiphon in src/sources/calendars/postconciliar/propers.yaml is given as Psalm 25:1-3 with no Cf. and no numbering flag, against the Missal's 'Cf. Ps 24, 1-3'.",
+    "Independence: no GPT leaf for this identity, no GPT release or production record and no 1962 Advent leaf or production record was opened. Among other workers' directories, I read only research-1's dl/ receipt and its directory listing. One disclosure: `tools/source-library uses` and a grep for the Jerome segment id printed the source_id and loci lines of other leaves' bindings that use the segment. These were 1962 Sundays after Pentecost and All Saints, among them one GPT 1962 leaf. Nothing from them was used as an input.",
+    "Files to commit, all in the leaf src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/ and untracked in this run: research/source-bindings.toml (binding 66 appended, header note), research/source-dispositions.toml (row 69 appended, header note, row 65's reason cross-referenced) and research/scope.md (sections 1 and 11). Nothing outside the leaf changed in this iteration. The earlier stages' src/sources, fragment-loci.yaml and ledger changes stand as they reported them. The generated .scratch/browser-data-work is outside Git."
+  ],
+  "registered_sources": [],
+  "rejected": [
+    "new-advent-chrysostom-hom-1-cor-1",
+    "new-advent-chrysostom-hom-1-cor-2",
+    "new-advent-chrysostom-hom-mt-77",
+    "new-advent-augustine-en-ps-24",
+    "new-advent-augustine-en-ps-79",
+    "new-advent-augustine-en-ps-84",
+    "new-advent-cyril-catechesis-15",
+    "(unchanged from iteration 0: publishable-controller, unrevised-wording; Cyril also scripture-extent; rejected for the Catena only, and their use here as cross-checks is unchanged)"
+  ],
+  "stage": "source-registration",
+  "summary": "Reconciled source registration after research iteration 1. Research 1 read nothing the library did not hold. I re-hashed the PL 26 receipt (it matches the registered remote artifact 0d889bd6), rendered PDF p. 98 again and confirmed both Jerome comments on the image: Matthew 24:36 at col. 181 and 24:42-43 at col. 182. Because the library already holds Jerome's Commentary on Matthew as a segment of that volume, I also bound the reading through that segment (binding 66), with its own deferred row, so that it carries Jerome's work identity and not only the Migne container's. Nothing new was admitted. The drift in the working projection that research 1 reported does not reproduce: the check was current before I regenerated, and the regenerated projection is byte-identical. The handoff, research-preflight, source-library, Catena and family-ledger checks pass, and the make check-sources failure set is the expected one."
+}

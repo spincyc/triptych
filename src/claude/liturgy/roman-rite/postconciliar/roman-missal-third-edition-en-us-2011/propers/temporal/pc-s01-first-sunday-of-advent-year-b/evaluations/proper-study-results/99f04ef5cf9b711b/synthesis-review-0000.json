@@ -1,0 +1,421 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "SYN-001",
+      "location": "sections/concise/10-commentary.tex lines 302-323 (subsection 'The Lord will give goodness: the earth and its fruit'), especially lines 305-306 ('Two readers of the psalm identify the earth differently'), 310-312 ('which he takes as confession') and 318-319 ('The earth is the Virgin in the first interpretation and the confessing sinner in the third').",
+      "problem": "The subsection sets Bellarmine and Augustine against each other as two readers who identify the psalm's earth differently: Bellarmine the Virgin, Augustine the confessing sinner. At the place cited, Augustine holds both readings. In the registered Latin of Enarrationes in Psalmos 84 (the same Migne/Wikisource text the concise cites for 84.8, 84.9 and 84.15), section 13 first reads v. 12 of the Incarnation: 'Veritas de terra orta est: Christus de femina natus est ... Quid est terra? Caro ... veritas nata est de Maria virgine'. Section 14 offers confession only as 'alterum sensum', and section 15 reads the Communion verse by that second sense. By dropping the first sense, the concise turns a choice Augustine makes between his own two senses into a disagreement between two authors. It does so in the one section whose whole content is that comparison. A reader comes away believing that Augustine does not read the psalm's earth as the flesh of the Virgin, which is false. The expansive study (sections/40-clay-and-faithful-potter.tex lines 121-131) reports only what Augustine says at 84.15 and sets up no contrast with Bellarmine. The contrast is the concise's own, so this is a compression defect: the comparison is not truthful.",
+      "repair_target": "synthesis",
+      "required_result": "Remove the author-level contrast and say only what each author says at the verse cited. Bellarmine reads the Communion verse of the Incarnation (Ps 84, expl. 12). Augustine, expounding the same verse (84.15), reads it through the confession of sins: 'Tua ergo peccata potes habere; fructum bonum non habebis, nisi ille dederit cui confiteris'. Delete 'Two readers of the psalm identify the earth differently'. Restrict 'which he takes as confession' to that section, e.g. 'which at this verse he takes as confession', or delete it. The difference between the first and third interpretations can stand as a difference in which reading each draws on. Stating Augustine's own Incarnational reading of v. 12 (84.13) would be a new source-dependent claim, and it must come through research and the expansive study first.",
+      "severity": "blocking"
+    },
+    {
+      "id": "SYN-002",
+      "location": "sections/concise/04-themes.tex lines 23-25: 'At that last phrase the Missal's antiphon departs from both Latin psalters, which read qui sustinent te; it reads qui te exspectant'.",
+      "problem": "'Both Latin psalters' says that the Latin psalter reads 'qui sustinent te' and that the Missal's antiphon departs from it. That is false of the Latin psalter this concise itself quotes on the same psalm (lines 327-331 of 10-commentary.tex). Augustine's Enarratio in Psalmum 24, section 3, reads 'Etenim universi qui te exspectant non confundentur'. I read this in the augustinus.it page, whose fetched bytes match the registered artifact augustinus-it-ps024-614fe703; that artifact's record says the same, and research/scope.md section 3.7 lists the point as open. The research record claims only that qui te exspectant 'is not the Nova Vulgata's or the Clementine's wording', and it warns the studies not to present the antiphon's waiting as the psalm's Latin (research/scope.md lines 267-269). 'Departs from both' widens that narrow collation into a claim about Latin psalters as such. 'Departs' also says that the Missal changed the psalm's wording. The evidence shows only that the antiphon differs from two editions and agrees with an older Latin psalter, and editorial.md says to 'claim no intention'. The next sentence builds on the verb ('The verb exspectare returns in the Latin of the Mass'), so the reader is left thinking the Missal chose the word.",
+      "repair_target": "synthesis",
+      "required_result": "Name the two texts compared and claim no more. For example: 'At that last phrase the antiphon does not follow the Clementine Vulgate or the Nova Vulgata, which read qui sustinent te; it reads qui te exspectant, \"who wait for thee\".' Do not say or imply that the Missal altered the psalm. Saying that the antiphon keeps an older Latin reading such as Augustine's would be a new source-dependent claim, and it must come through research and the expansive study.",
+      "severity": "blocking"
+    },
+    {
+      "id": "SYN-003",
+      "location": "sections/concise/10-commentary.tex subsection 'The Missal's prayers: a will, a watch and gifts', lines 344-366; and the closing allocations and restatements at lines 193-194 and 295-300.",
+      "problem": "This is a recurring register pattern under 'Say what the texts say, plainly' (asserted significance, texts credited with the study's own inferences, restatement, maxim closers). It is also the closing roll call that the three-document profile names as the source of those defects. The Missal-prayers section hands each prayer a part in each interpretation instead of saying what the prayer says and whose reasoning bears on it. Line 352: 'The Preface has a phrase for each. For the first it is the two comings. For the second it is vigilantes ... For the third it is promissum' credits the Preface with supplying each interpretation. Lines 345-350: 'in the third interpretation, the offering gives back to God what was already his ... is in the second interpretation a prayer of those who keep the watch with works: what they do while they wait is what they ask to have rewarded' assigns roles and closes on a chiastic restatement. Lines 360-366: 'In the second interpretation it stands beside Gregory ... and in the third interpretation that is its point: the teaching, like the turning, is God's work' asserts a point and closes on a maxim. The same ledger closes other sections by restating what the reader has just read. Lines 295-300 ('The three interpretations take different sentences from these two men. The first takes ... The second takes ... The third takes ...') recap the two preceding paragraphs. Lines 193-194 ('In Jerome's words the disciples are uncertain of the hour and not of the coming') restate Jerome's 'they may always believe that he will come', quoted at line 186. Not part of the defect: the Collect paragraph (lines 333-338), which is a real comparison, and the Aquinas/Simeon sentence (lines 338-342).",
+      "repair_target": "synthesis",
+      "required_result": "Rewrite the section so that each prayer is given by what it says and asks, together with the author whose reasoning bears on it. State a difference between interpretations only where it changes what the prayer is taken to mean, and cut the closers. At least these plain rewrites: (1) For lines 352-356 (the two comings are already given at lines 79-81): 'At the end of the Preface those who give thanks call themselves vigilantes, watchers, with the Gospel's vigilate, who now dare to wait for what was promised (promissum), to be received openly when Christ comes in glory.' (2) For lines 360-366: keep the prayer's own sentence (lines 358-360), then: 'Gregory, having said that death is certain for all, tells his hearers not to let the care of earthly things weigh them down: Nolite ergo attendere quid habetis, sed quid estis, \"do not consider what you have, but what you are\" (13.6). Gregory exhorts; the prayer says that God already teaches by the mysteries.' Delete 'In the second interpretation it stands beside' and the closer 'and in the third interpretation that is its point: the teaching, like the turning, is God's work.' (3) For lines 348-350: end the sentence at '... a prayer of those who keep the watch with works.' (4) Delete line 193 ('In Jerome's words ...') to 194, and either delete lines 295-300 or replace them with one sentence that gives a difference not already shown. Keep every prayer recognizable and keep its documented use; change the sentences, not the evidence.",
+      "severity": "blocking"
+    },
+    {
+      "id": "SYN-004",
+      "location": "sections/concise/10-commentary.tex lines 35-38 (Aquinas on dirumperes); sections/concise/02-overview.tex lines 22-23 (Moral row: 'so that each may live every day as if to be judged the next (Jerome)').",
+      "problem": "Compression narrows or widens what two authors are credited with. First, at Super Isaiam c. 64 Aquinas gives two readings of dirumperes: 'figurative loquitur, quasi super caelos habitanti; vel exinanires temetipsum, despiciens majestatem, et carnem assumeres'. The concise says he 'takes dirumperes ... to mean \"that thou wouldst empty thyself ...\"', which drops the first alternative that the expansive study keeps (sections/20 lines 48-51). Second, Jerome's sentence on the hidden hour has the apostles as its subject (Bede's verbatim copy: 'non expediat nosse apostolis, ut semper incerti de adventu Judicis, sic quotidie vivant quasi die illa judicandi sint'; the commentary itself renders it correctly at lines 182-184). The overview's Moral row credits Jerome with 'each may live every day ...'. Neither changes an interpretation's controlling claim.",
+      "required_result": "First: 'He takes dirumperes either as a figure addressed to one who dwells above the heavens or as \"that thou wouldst empty thyself, setting thy majesty aside, and take flesh\"'. Second: credit Jerome only with his clause, e.g. 'The hour is hidden so that the disciples may live each day as if to be judged the next (Jerome); each guards the door of his heart (Bede) ...'.",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-005",
+      "location": "sections/concise/04-themes.tex line 9; sections/concise/10-commentary.tex lines 59-60 and 80-81.",
+      "problem": "These are isolated register instances. Line 9 of the themes opens on a paradox: 'The Mass of the First Sunday of Advent prays for a coming it has already received'. Commentary lines 59-60 answer a question in the next breath: 'If the cry was answered at Bethlehem, why does the Church pray it again? Augustine says why ...'. Commentary lines 80-81 give the Preface's two phrases 'in humilitate carnis assumptae' and 'in suae gloria maiestatis' in Latin only, leaving the reader to construe them.",
+      "required_result": "Line 9: delete the paradox and begin with what the texts say, e.g. 'On the First Sunday of Advent the prophet asks God to tear the sky open and come down; the Gospel commands ...'. Lines 59-60: 'Augustine, at the verse sung before the Gospel, says why the Church still asks for a Christ already given.' Lines 80-81: 'the coming in humilitate carnis assumptae, in the humility of the flesh he took, and the coming in suae gloria maiestatis, in the glory of his majesty'.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "observations": [
+    {
+      "location": "sections/10-texts-in-setting.tex lines 138-140 (expansive study, Entrance Antiphon)",
+      "note": "The accepted study carries the overstatement that SYN-002 finds in the concise ('not a straight quotation of either Latin psalter ... for the psalter's qui sustinent te'), although Augustine's psalter (En. Ps. 24.3, registered artifact 614fe703) reads 'qui te exspectant' and research/scope.md lines 267-269 limit the claim to the Nova Vulgata and Clementine. It is not raised as a finding here because it lies outside the concise deliverable; once SYN-002 is repaired, the two documents will be worded differently on this point."
+    },
+    {
+      "location": "generated/scriptural-date-location-page.tex via research/chronology-table.tex rows row-70f590fc8306682b (Second Reading) and row-440575f29350bca3 (First Reading); shared projection, not this synthesis",
+      "note": "Lookup outcome. For 1 Cor 1:3-9 the table gives only 'Composition: The First Epistle to the Corinthians' and A.D. 56-57, with no place for the writer or the recipients, so the passage-to-place step finds nothing. The Isaiah row prints Clementine numbering (63:16b-17; 64:1, 3-8), while the concise leads with the Lectionary numbering; it is found only through the inventory's Douay parenthesis. Psalm rows also mix numbering order: Ps 80 is Heb.-first, Pss 24 and 84 are Vg.-first, each labelled explicitly."
+    },
+    {
+      "location": "probe build in reviewer scratch (tex/synthesis.pdf), p. 11",
+      "note": "Print only; no edition was requested. In the probe the running head reads 'References' on p. 11 while the scope appendix is still running. Note it for the export stage."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "solemn-blessing"
+          ],
+          "key": "concise-inventory",
+          "kind": "front-matter",
+          "path": "sections/concise/01-inventory.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-inventory"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "solemn-blessing"
+          ],
+          "key": "concise-overview",
+          "kind": "front-matter",
+          "path": "sections/concise/02-overview.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "communion-antiphon"
+          ],
+          "key": "concise-date-location",
+          "kind": "front-matter",
+          "path": "generated/scriptural-date-location-page.tex",
+          "references": [
+            "format.tex",
+            "research/chronology-annotations.tex",
+            "research/chronology-table.tex",
+            "research/chronology.toml"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-overview"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "solemn-blessing"
+          ],
+          "key": "concise-themes",
+          "kind": "front-matter",
+          "path": "sections/concise/04-themes.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-themes"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "solemn-blessing"
+          ],
+          "key": "concise-commentary",
+          "kind": "integrated-commentary",
+          "path": "sections/concise/10-commentary.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "solemn-blessing"
+          ],
+          "key": "concise-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/concise/90-apparatus.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+      "element_keys": [
+        "entrance-antiphon",
+        "collect",
+        "first-reading",
+        "responsorial-psalm",
+        "second-reading",
+        "acclamation",
+        "gospel",
+        "prayer-over-offerings",
+        "preface",
+        "communion-antiphon",
+        "prayer-after-communion",
+        "solemn-blessing"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Jerome",
+            "Thomas Aquinas",
+            "Augustine of Hippo",
+            "Cyril of Jerusalem",
+            "Robert Bellarmine",
+            "John Chrysostom",
+            "Gregory the Great",
+            "Bede"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "Augustine of Hippo",
+            "Cyril of Jerusalem",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "rend-the-heavens"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "solemn-blessing"
+          ],
+          "key": "rend-the-heavens",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Jerome",
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Gregory the Great",
+            "Bede",
+            "Thomas Aquinas",
+            "Robert Bellarmine"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "Augustine of Hippo",
+            "Gregory the Great",
+            "John Chrysostom",
+            "Bede"
+          ],
+          "component_keys": [
+            "watch-at-the-door"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "solemn-blessing"
+          ],
+          "key": "watch-at-the-door",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Jerome",
+            "Thomas Aquinas",
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Robert Bellarmine",
+            "Gregory the Great",
+            "Bede"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "Thomas Aquinas",
+            "Augustine of Hippo",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "clay-and-faithful-potter"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "solemn-blessing"
+          ],
+          "key": "clay-and-faithful-potter",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+    "files": {
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/format.tex": "477b3fd5e29a2f8805e06702a4cce22fe0ec583f59441a4313330feba8a25f5f",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/generated/scriptural-date-location-page.tex": "8ea9acfaf6006c4a023b0dac1156df6d765951174fb6554d4c05a1cbb2f734f3",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/propers/verified.md": "ccb6fbe4d64efb789817b98edd444e9e206d7dc45123512929195d005f221e35",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/chronology-annotations.tex": "fb1cb4b1561b685ac20f775039bbaf396b302f71cb5a5f4f2a565c55a025569a",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/chronology-table.tex": "336112ed465124186a6744227b4ce84a755f0c240c102800e8d8afe941fe40fd",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/chronology.toml": "349511d8f5db94cc1d67982377180fa429f7f230f1053c030531063252fc0025",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/interpretations.md": "4e7895f05242eb372be5da57eaebbc7452e61589c818f4ffc9f693f2a3b0e483",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/scope.md": "28d22abc1638324853498a944f6b1503c3183c6a30eac5f4295d646e74546589",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/concise/01-inventory.tex": "e4bb60bf94c9cb51ee4dcaee9caaf6c315daa9ce2d6441e51344c59cb1c7f88c",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/concise/02-overview.tex": "cdbc2e0eab7f71d55254ab61a037e336df79ef1afb92a5a76bf0dd4209e87a56",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/concise/04-themes.tex": "da3bc2d9c8b5ed7365e7f0174ce9b72379dcad86446c3d7ef59dd9293244635e",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/concise/10-commentary.tex": "05e9d7b4c721d9d8dd25363b12cfc2773c0d4687434dbd989e105eadc54319bd",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/concise/90-apparatus.tex": "e372d8b3e28cc04943725bf28affba2f0fa4e000a99986d979e0e66c108e1fd8",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/synthesis.tex": "4bb14433a222d12ef11719cc0628ff30e91df5c517e56aa7bbbb8fa44dfc9c50",
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "20",
+            "9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec",
+            "99f04ef5cf9b711b",
+            "cbccbfcb3be4896c95225d8cd281e2b0684a12e9",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "synthesis",
+    "schema": 1
+  },
+  "stage": "synthesis-review",
+  "summary": "Artifact: the concise study (synthesis.tex) of the Claude PC-S01 First Sunday of Advent, Year B leaf. Read in full: sections/concise/01-inventory, 02-overview, the generated page 2, 04-themes, 10-commentary and 90-apparatus. Every REVIEW_INPUTS hash matched before reading. Compared with the expansive study's sections 00, 10, 20, 30, 40 and 50 and with research/interpretations.md, scope.md, context.md and propers/verified.md. Evidence checked at the cited loci. Aquinas, Super Isaiam c. 63-64: fetched corpusthomisticum cis50.html, SHA-256 matching the registered 5300798b. Aquinas, Super I Cor c. 1 lect. 1: c1c.html, matching 8be5b71c. Augustine, Ep. 199.1.2-3: augustinus.it, matching 5b570f96. Augustine, En. Ps. 24.3 Latin: matching 614fe703. Read in the library's tracked texts: Augustine, En. Ps. 84.8, 84.9 and 84.13-15 (registered Latin); En. Ps. 24.2 and 79.1, 79.3, 79.9 and 79.11 (NPNF); Chrysostom, Hom. 2 on 1 Cor and Hom. 77 on Matthew; Gregory, Hom. in Ev. 13.3, 13.5 and 13.6; Bede on Mark 13:32-37; Cyril, Cat. 15.1; Bellarmine on Psalms 79 and 84. Jerome on Isaiah could be read only in part in the garbled PL 24 OCR (sive converte nos; the physician's knife). Jerome on Matthew was read through Bede's verbatim copy. Each interpretation's answer can be recovered from the concise prose alone. (1) Descendisti is the cry granted in the Incarnation (Jerome), still prayed because Christ given as man will be given as God (Augustine) and the open coming is still to come (Cyril); Aquinas's preferred literal sense, the memory of the Exodus, is kept as a real disagreement. (2) The hour is hidden so that readiness never lapses (Jerome, Chrysostom), and the command is to all because each one's last day brings the world's last day to him (Augustine), with Bede's division by office. (3) Hope rests on God as Father, maker and faithful caller, and conversion and good fruit are his gift (Jerome, Aquinas, Augustine, Chrysostom). The commentary mostly interleaves by question and reasons beyond the themes pages. Each interpretation keeps its four senses in a closing table. Chronology lookup on the generated table. Mark 13:33-37 gives 'Jesus charges all the disciples to keep watch; on Mount Olivet opposite the Temple' and c. A.D. 29 (derived; Maas; Passion dates disputed), with composition Mark/Rome traditionally, A.D. 38-70: found in one row. The Isaiah reading can be found only through the inventory's Douay numbering, because the table prints Clementine 63:16b-17; 64:1, 3-8. 1 Cor 1:3-9 gives A.D. 56-57 with no place (see observation). Probe build: synthesis.tex compiled in reviewer scratch with a stand-in revision stamp. This is not an export and supports no pagination claim. Result: 12 pages; inventory and overview on p. 1, chronology on p. 2, themes on pp. 3-4, commentary from p. 5. Limits: no print edition was requested. The Ordo titles, Praenotanda, Missal Latin and Nova Vulgata were not re-read. Verdict: CHANGES_REQUIRED, with three synthesis-owned blocking findings and two advisories. (a) The Communion-verse comparison misstates Augustine. (b) 'Departs from both Latin psalters' is false of the Latin psalter the concise itself cites. (c) The Missal-prayers section is a roll call and restates."
+}

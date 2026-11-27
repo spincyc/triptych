@@ -1,0 +1,13 @@
+{
+  "artifact_path": "build/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b.md",
+  "disposition": "PASS",
+  "iteration": 0,
+  "notes": [
+    "Path to commit (driver): src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/web-artifact.json (new, untracked; outside the edition revision closure, so the editions still report uncommitted: false with the same stamp).",
+    "tools/web-edition check --leaf claude/<leaf> refuses with 'publication has no alpha or hold disposition': this is expected before install-publication admits the leaf, and it is not a conversion defect. The single-output tools/tpt web-edition conversion ran the fidelity audits and passed.",
+    "As the packet directs, companion readers were not converted at this stage; installation checks all three readers.",
+    "Probe output only: the worker scratch directory web-probe/ (not for commit)."
+  ],
+  "stage": "generate-web",
+  "summary": "Confirmed the bare, -synthesis and -homily editions all report uncommitted: false at c861ed623d (stamp 2026-11-26T23:01:57Z); converted only the canonical study with tools/tpt web-edition --provider claude --output build/web (all built-in fidelity audits passed; a second conversion into the worker scratch directory was byte-identical, sha256 bb1020b4fb2d3c51db90c8fef7838465b3c7f967f8d44542a30f279e2f8beed0); read the whole 615-line Markdown against the sources and found the opening, the twelve appointed texts with their proper-* anchors, each text in its setting, the three lanes with their own four-senses definition lists and 'where this interpretation strains' sections, the comparison, the generated Scriptural Date and Location table and evidence, both appendices, References, the Last revised stamp and the rights colophon all present in source order, with no raw TeX, model metadata or dropped text; the declaration validates (1 eligible); then recorded the receipt research/web-artifact.json with snapshot-web. No conversion or declaration defect was found, and nothing else was edited."
+}

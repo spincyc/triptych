@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v20
+WORKFLOW_DIGEST: 9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec
+RUN_ID: 99f04ef5cf9b711b
+COMMIT: cbccbfcb3be4896c95225d8cd281e2b0684a12e9
+STAGE: research-preflight
+ITERATION: 0
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-11-29","proper":"liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b","provider":"claude","research_handoff":"none"}
+DOCUMENT_ROOT: src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: []
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

@@ -1,0 +1,32 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/synthesis.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "SYN-001",
+      "note": "Deleted 'Two readers ... identify the earth differently' and 'The earth is the Virgin in the first interpretation and the confessing sinner in the third'. Now reads: the first interpretation reads the verse with Bellarmine, the third with Augustine; Bellarmine of the Incarnation (expl. 7, 12); Augustine, 'expounding the same verse', after 'Truth is sprung out of the earth', 'which in this place he takes as confession' (84.15). Confirmed 84.14 'alterum sensum' in the tracked Latin. Augustine's 84.13 Incarnational reading is not added, because it is a new claim.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "SYN-002",
+      "note": "04-themes: 'the antiphon does not follow the Clementine Vulgate or the Nova Vulgata, which read qui sustinent te; it reads qui te exspectant'; 'returns' is now 'comes again'. The text attributes no alteration to the Missal and does not state the agreement with Augustine's psalter.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "SYN-003",
+      "note": "Offerings: the gifts come from what God has bestowed, compared once with Bede's servants, and the sentence now ends at 'keep the watch with works'. Preface: the reviewer's plain rewrite (vigilantes from the Gospel's vigilate; promissum), with no allotment. Prayer after Communion: the prayer's own sentence, then Gregory 13.6 and 'Gregory exhorts his hearers; the prayer says that God teaches'; the interpretation labels and the maxim closer are deleted; the solemn blessing is cut to its new content. Deleted the 'In Jerome's words ...' restatement and the paragraph allotting Chrysostom and Aquinas to each interpretation, and added one clause comparing Aquinas's day of death with Augustine's letter (a link the scope appendix already lists). The Collect and Entrance Antiphon paragraphs were left as the reviewer scoped them.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "notes": [
+    "Files to commit (leaf-relative to src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/): sections/concise/02-overview.tex, sections/concise/04-themes.tex, sections/concise/10-commentary.tex, generation-metadata.tex (adds this iteration's contribution line), research/production-review.md (adds 'Derive-synthesis, iteration 1'). Also every file listed in derive-synthesis-0, since the whole leaf is still untracked. synthesis.tex, publication.toml, generated files and study and research records are unchanged.",
+    "Advisories cleared: SYN-004 (Aquinas's two readings of dirumperes; the overview Moral row credits Jerome only with 'the disciples may live each day ...'); SYN-005 (themes open without the paradox; the question answered in the next breath before Augustine 84.9 is removed; the Preface's two Latin phrases are translated in the commentary).",
+    "Divergence from the sealed expansive study (study owner, not repaired here): sections/10-texts-in-setting.tex, Entrance Antiphon subsection (about lines 138-140), still says 'not a straight quotation of either Latin psalter ... for the psalter's qui sustinent te'. Augustine's psalter (En. Ps. 24.3) reads qui te exspectant, and research/scope.md section 3.6 bounds the claim to the Nova Vulgata and the Clementine. The concise now follows the research bound, so the two documents are worded differently on this point.",
+    "Checks: document-types refresh --check current; scripts/_proper_study.py check (content phase, synthesis and research editions, source mode with presentation, format, authority, orientation, orientation-v3) exit 0; check-content-preflight --edition synthesis all pass (references-used 18, structural-meta-labels 22, house-voice pass); provenance-matches-run pass; make check-metadata and check-generated-documents-current pass.",
+    "Informal proof (not a cold print review): pdflatex, three passes, proof-only uncommitted revision stamp, in the worker scratch tex/ directory. 12 pages with no overfull boxes. Inventory, overview and sense rows are on abspage 1, chronology on 2, themes on 3-4, and the commentary starts on 5. PDF SHA-256 24eb4416c9ad15540486b13d767c62a3baf1bd1d507060eef317a809ce603d8f. The concise prints no \\ref, so the known sec:date-location rendering defect does not arise.",
+    "Substantive length: page 1 about 690 words, themes about 1,680, commentary with senses table about 4,360, about 6,730 in all. The appendix (945) and References (427) are unchanged."
+  ],
+  "stage": "derive-synthesis",
+  "summary": "Repaired SYN-001 to SYN-003 in the concise study: the Communion-verse subsection now says only what Bellarmine and Augustine each say at Ps 85 (84):13, with no contrast between the two authors; the themes name the Clementine Vulgate and Nova Vulgata as the texts the antiphon's qui te exspectant does not follow and claim no change by the Missal; the Missal's-prayers section gives each prayer by what it says, and the roll-call and restating closers in that section and in the hidden-hour and First Corinthians sections are cut. Also cleared advisories SYN-004 and SYN-005. Source checks, preflight, provenance and metadata pass; an informal 12-page proof keeps every zref marker on its page."
+}

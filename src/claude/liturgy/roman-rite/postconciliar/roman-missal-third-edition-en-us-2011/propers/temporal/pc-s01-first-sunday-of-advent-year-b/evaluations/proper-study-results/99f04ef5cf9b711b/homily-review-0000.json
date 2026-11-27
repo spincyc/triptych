@@ -1,0 +1,319 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "HOM-001",
+      "location": "sections/homily/10-homily.tex lines 122-126 (Augustine on the Communion verse, quoted); sections/homily/90-note.tex lines 100-101 (its stated route)",
+      "problem": "The speech quotes Augustine as saying: 'Your sins, then, you can have of your own; good fruit you will not have unless he gives it to whom you confess.' The Latin (En. in Ps. 84.15, the tracked passage record, line 89) is 'Tua ergo peccata potes habere; fructum bonum non habebis, nisi ille dederit cui confiteris'. There the one who gives and the one confessed to are the same person: 'unless he to whom you confess gives it'. The same section builds the same construction a sentence earlier ('nisi ille fecerit cui confitetur'). In the speech's English, 'to whom you confess' parses as the indirect object of 'gives'. A listener therefore hears that the fruit is given to whoever is confessed to, or hears a clause he cannot parse. Augustine's point, that good fruit is the gift of the God to whom the sinner confesses, is lost. This sentence is the reason the speech gives for its one response ('So before Christmas ... in the sacrament of confession ... call on him as your Father'). Heard once, it does not say what Augustine says. The speech is meant to be read verbatim, and its quotation marks present the English as Augustine's.",
+      "repair_target": "homily",
+      "required_result": "Render the sentence so that the hearer takes the giver to be the one confessed to, and check it against the Latin. For example: 'Your sins, then, you can have of your own; good fruit you will not have unless the one to whom you confess gives it.' Or: '... unless it is given by him to whom you confess.' Keep the quotation marks only if the English renders the Latin; otherwise report the point without them. Correct the note's route sentence (90-note.tex lines 100-101), which says this sentence is quoted 'in the study's English', so that it names the rendering actually spoken.",
+      "severity": "blocking"
+    },
+    {
+      "id": "HOM-002",
+      "location": "sections/homily/10-homily.tex lines 52-56",
+      "problem": "The speech tells Isaiah 63:17 as 'They ask him why he has let them stray from his ways and why their hearts have grown hard against him.' It then says that Jerome 'did not hear in that question a charge that God makes anyone sin' and gives his answer, God's patience. Jerome answered a different form of the question (PL 24 cols. 643-644; research/scope.md section 3.3; sections/40-clay-and-faithful-potter.tex lines 22-44). It is the Latin's 'Quare errare nos fecisti ... indurasti cor nostrum', which the Douay the speech uses elsewhere renders 'Why hast thou made us to err ... why hast thou hardened our heart'. The speech's 'their hearts have grown hard' takes God out of the hardening. Jerome therefore denies a charge the listener has not heard anyone make, and his answer is attached to a question he did not read. Scope section 3.3 says hearers may be taught the hard form, 'saying that it stands in the Latin'. This is advisory: Jerome's answer is reported accurately, and 'let them stray' leaves part of the difficulty audible.",
+      "required_result": "Put the hard form in the listener's ear before Jerome answers it, in one sentence. Do not make the hardening intransitive. For example: 'In the old Douay Bible the question is sharper: \"Why hast thou made us to err, O Lord, from thy ways: why hast thou hardened our heart?\" Saint Jerome did not take that to mean that God makes anyone sin.' Alternatively keep the permissive form and let God remain its subject: 'They ask him why he lets them wander from his ways and hardens their hearts.'",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-003",
+      "location": "sections/homily/10-homily.tex lines 46-48",
+      "problem": "'The first reading is the prayer of a people who say exactly that of themselves' takes 'that' from the sentence before: 'we have slept'. Isaiah's people say that God is angry and they have sinned, that their justice is a soiled rag, and that no one calls on God's name or rises to take hold of him (64:4-6, Hebrew numbering). They do not say they have slept. Reading 64:6 as the sleep the Gospel warns against is the second interpretation's inference, and the note records it as such (90-note.tex lines 70-71). 'Exactly' credits that inference to the people and adds an emphasis the text does not give. At lines 61-62 ('a line that describes the sleep the Gospel warns against') the speech draws the same link in the preacher's own voice, which is the homily form editorial.md allows. Isolated instance.",
+      "required_result": "Let the people say what they say, and draw the link once, at lines 61-62. For example: 'The first reading is the prayer of a people who confess the same failure in their own words.' Or: 'The first reading is the prayer of a people who know they have failed God and say so.'",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-004",
+      "location": "sections/homily/10-homily.tex lines 49-51, 70-72, 109-116 and 136-137",
+      "problem": "There are four places where a listener who hears the speech once may lose the thread. (1) Lines 49-51, 'the prayer ends before the house where their fathers praised him, burnt with fire': 'ends before' can be heard as 'stops short of', and 'burnt with fire' trails after 'praised him', so it can attach to the fathers. The prayer's last verse is also a question (Douay 64:12), not the burnt house, which comes in the verse before. (2) Lines 70-72, 'If we look at your mercy, we dare to pray, because you are our Father': inside the reported speech 'you' is God, while every other 'you' in the speech is the assembly (lines 128-130, 143-147). (3) Lines 109-116: the Chrysostom paragraph makes four separate points: the praise belongs to grace; 'God is faithful' is put first against despair; faithful means true, so he will perform; and failure comes from those who start away. That is more than one hearing holds, against the profile's 'a paragraph one step'. (4) Lines 136-137, 'And it calls those who give thanks by the Gospel's word': 'calls ... by' can be heard as a summons rather than as naming.",
+      "required_result": "Rewrite each place so that it is clear on one hearing. For example: (1) '... and near its end the people speak of the house where their fathers praised him, now burnt with fire.' (2) 'If we look at our merits, he says, we can only despair; if we look at God's mercy, we dare to pray, because he is our Father.' (3) Divide the paragraph. Keep the praise that belongs to grace and 'faithful, that is, true' together. Then give 'where the calling fails, the failure is ours' its own short paragraph, or attach it to line 120, where it bears on Isaiah's people. (4) 'And it names them with the Gospel's word: those who keep watch.'",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-005",
+      "location": "sections/homily/10-homily.tex lines 105-107 and 144-147",
+      "problem": "At line 106 the speech says, with the study's comparison (sections/50-comparison.tex: 'it is Christ who \"will confirm you unto the end\"'), that Christ will strengthen the Corinthians to the end. The closing gives the same promise to God: 'God is faithful. He has called you into the fellowship of his Son, and he will strengthen you to the end.' That reverses 1 Cor 1:8 and 1:9 and makes God the subject of 1:8. Theologically this is harmless, but one verse has two subjects in one speech, and the closing is spoken as Paul's promise.",
+      "required_result": "Give 1:8 one subject throughout. For example, at the close: 'God is faithful. He has called you into the fellowship of his Son, and his Son will strengthen you to the end, so that on the day of our Lord Jesus Christ no charge will stand against you.' Alternatively, change line 106 to 'he will strengthen them to the end'.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-006",
+      "location": "sections/homily/90-note.tex lines 106-107, with lines 118-121",
+      "problem": "The note says that 'Jerome and Bede are reported without quotation marks, in English that renders the Latin given below'. The Exact loci paragraph gives Bede's Latin. For Jerome it gives only 'Ne irascaris, Domine, satis'; the two steps the speech reports (patience that looks like the cause; merits and clemency, clay and sons) are cited by column, without Latin. A reader who checks the speech's Jerome against 'the Latin given below' finds none.",
+      "required_result": "Either give Jerome's Latin for the two steps at their columns, taken from the page images the study used, or say which English the Jerome sentences follow. For example: 'Bede is reported in English that renders the Latin given below; Jerome is reported from the study's account of PL 24 cols. 643-644 and 648-650.'",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "observations": [
+    {
+      "location": "sections/40-clay-and-faithful-potter.tex lines 125-128; sections/concise/10-commentary.tex lines 307-309",
+      "note": "Both studies print the same English of Augustine, En. in Ps. 84.15 ('good fruit you will not have unless he gives it to whom you confess'). HOM-001's misparse applies there too, though there the Latin stands beside it. The text belongs to the study and synthesis owners, not to this deliverable."
+    },
+    {
+      "location": "Jerome, In Isaiam XVII, PL 24 cols. 649-650: tracked raw OCR src/sources/works/jacques-paul-migne/patrologia-latina-volume-24/editions/1865-paris/artifacts/ia-djvu-ocr-7be28ebd/pl-24-1865-djvu.txt physical lines 44859-44874; research/scope.md section 3.3, Jerome row; sections/homily/90-note.tex lines 68-75",
+      "note": "The raw OCR, a locating witness only, shows Jerome continuing his comment on 'there is none that calleth upon thy name' with 'Nos autem ... invocemus nomen ejus, atque dicamus: Peccatum notum feci tibi ...' (Joel 2:32; Ps 31:5). God then answers 'Delevi ... iniquitates tuas' (Is 44:22), and the people say 'Ostende faciem tuam, et salvi erimus' (Ps 79:4). The scope row records only the last step. If the page image confirms it, Jerome himself answers the verse by calling on God's name and confessing, which is close to the homily's central move and its response. The note lists those as the homily's own, which remains true of its observation about the verses' order. This is a research lead, not a defect in the homily."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "solemn-blessing"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-homily.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "homily-body"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "solemn-blessing"
+          ],
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-note.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+      "element_keys": [
+        "entrance-antiphon",
+        "collect",
+        "first-reading",
+        "responsorial-psalm",
+        "second-reading",
+        "acclamation",
+        "gospel",
+        "prayer-over-offerings",
+        "preface",
+        "communion-antiphon",
+        "prayer-after-communion",
+        "solemn-blessing"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Jerome",
+            "Thomas Aquinas",
+            "Augustine of Hippo",
+            "Cyril of Jerusalem",
+            "Robert Bellarmine",
+            "John Chrysostom",
+            "Gregory the Great",
+            "Bede"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "Augustine of Hippo",
+            "Cyril of Jerusalem",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "rend-the-heavens"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "solemn-blessing"
+          ],
+          "key": "rend-the-heavens",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Jerome",
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Gregory the Great",
+            "Bede",
+            "Thomas Aquinas",
+            "Robert Bellarmine"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "Augustine of Hippo",
+            "Gregory the Great",
+            "John Chrysostom",
+            "Bede"
+          ],
+          "component_keys": [
+            "watch-at-the-door"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "solemn-blessing"
+          ],
+          "key": "watch-at-the-door",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Jerome",
+            "Thomas Aquinas",
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Robert Bellarmine",
+            "Gregory the Great",
+            "Bede"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "Thomas Aquinas",
+            "Augustine of Hippo",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "clay-and-faithful-potter"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "solemn-blessing"
+          ],
+          "key": "clay-and-faithful-potter",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+    "files": {
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/format.tex": "477b3fd5e29a2f8805e06702a4cce22fe0ec583f59441a4313330feba8a25f5f",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/homily.tex": "434b5066e79aef5ff4a5e5e9f11b9fbe1b72057d88f0337b5614f3bc5bc4a86b",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/propers/verified.md": "ccb6fbe4d64efb789817b98edd444e9e206d7dc45123512929195d005f221e35",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/interpretations.md": "4e7895f05242eb372be5da57eaebbc7452e61589c818f4ffc9f693f2a3b0e483",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/scope.md": "28d22abc1638324853498a944f6b1503c3183c6a30eac5f4295d646e74546589",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/homily/10-homily.tex": "a8495b196c4fb0593b0c77bda9d08f10c128015a1a3e2829caa895f099d62ccd",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/homily/90-note.tex": "1bf058f895075ed37ffea68cfccc4e53e1c8538c6192e6887f24acd7942b707d",
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "20",
+            "9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec",
+            "99f04ef5cf9b711b",
+            "cbccbfcb3be4896c95225d8cd281e2b0684a12e9",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Cold review of the homily edition of PC-S01-B (homily.tex; sections/homily/10-homily.tex and 90-note.tex), all eleven sealed inputs hash-matched. Heard once, the speech makes one argument that belongs to this Sunday: the command to watch, given to everyone, is kept the way Isaiah's people keep it. They confess that no one calls on God's name and in the next verse call him Father. They ask him for the turning and the will he gives, and they rest on his fidelity. It closes on one practicable response (confession before Christmas) and on 1 Cor 1:8-9. It would not survive a change of readings. The preacher carries the argument and the Fathers carry only steps within it. It speaks no Latin, gives no dates and invents nothing. Its 1,377 spoken words (recounted) take about 10.6-11.5 minutes at 130-120 words a minute, and no timed delivery is claimed. Checked at their loci: Bede on Mark 13:34-37 (tracked Latin, lines 404-405); Chrysostom, Hom. 2 on 1 Cor sections 4-8 (tracked NPNF 12, lines 727-851); Augustine on Ps 79.3 (tracked NPNF 8) and Ps 84.15 (tracked Latin passage record); Augustine, Ep. 199.3, through the tracked Catena aurea English; Jerome on Isaiah 63:17 and 64:7-9 in the tracked raw OCR of PL 24 (a locating witness only); every Douay verse quoted; the study's comparison; and the note's word count, pace and loci. Blocking: the speech's English of Augustine on the Communion verse misrenders 'nisi ille dederit cui confiteris' at the point where it leads into the response (HOM-001, homily). Advisories: Isaiah 63:17 is softened before Jerome answers it; Isaiah's people are said to confess 'exactly' the homily's sleep; four places are unclear when heard; 1 Cor 1:8 is given two different subjects; and the note says Jerome's Latin is given when it is not. Limits: the proclaimed Lectionary English, the augustinus.it Latin of Ep. 199 and the PL 24 page images were not opened in this review. Verdict: CHANGES_REQUIRED."
+}

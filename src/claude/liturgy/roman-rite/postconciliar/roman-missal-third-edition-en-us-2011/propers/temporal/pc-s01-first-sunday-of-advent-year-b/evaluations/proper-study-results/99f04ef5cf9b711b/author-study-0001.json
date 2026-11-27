@@ -1,0 +1,59 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/main.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "STU-001",
+      "note": "All three subsections removed; contributions moved into the bodies (lane 1: Cyril subsection now carries 1 Cor 1:7 with Chrysostom and Aquinas, the Collect, the Prayer over the Offerings, the Preface and blessing, and the Gospel's man gone abroad; Bellarmine on 84:13 joins the Alleluia paragraph. Lane 2: Bellarmine on Ps 24, Chrysostom on the impatient church, Gregory's servat operando with the Collect, Is 64:6 and Augustine 79.11, Gregory 13.6 with the Prayer after Communion, Augustine 84.15 after Bede's doorkeeper, the Preface's vigilantes. Lane 3: Collect's Da after Augustine 84.9; Bede and the Prayer over the Offerings after Aquinas on 1 Cor 1:9). Unused texts are left out or given a clause in the four senses.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-002",
+      "note": "Rewrites (a)-(e) applied, including the comparison row relabelled 'Where the Fathers differ'; the lane-1 and lane-2 strain sentences no longer narrate keeping or crediting. A reviewer may still judge the plainly marked inferences ('Put together, ...', 'Taken together, ...', 'They are read together here because ...') as borderline; each occurs once.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-003",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-004",
+      "note": "Andrew sentence cut rather than reworded.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-005",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-006",
+      "note": "Study now says Egypt/Exodus everywhere. The source of the conflation, research/interpretations.md Reading 1 ('at Sinai and in Egypt (Aquinas's preferred literal sense)'), is research-owned and was not changed; reported for routing.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-007",
+      "note": "Lane 3 follows Homily 2 sections 4, 5, 7, 8, re-read in the registered passage record; section 10 no longer reports Chrysostom's answers, so the two places cannot disagree.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-008",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-009",
+      "note": "10:50 now 'Videte, vigilate (13:33): look, keep awake'; note added under the Douay Mk 13:33 that 'and pray' translates the Clementine et orate, which the Ordo's opening does not show. No Nova Vulgata wording is asserted.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "notes": [
+    "Files changed (for the driver to commit): sections/00-opening.tex, 05-appointed-texts.tex, 10-texts-in-setting.tex, 20-rend-the-heavens.tex, 30-watch-at-the-door.tex, 40-clay-and-faithful-potter.tex, 50-comparison.tex, 90-apparatus.tex, generation-metadata.tex (iteration-1 contribution line appended), research/production-review.md (iteration-1 section), all under src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/. No manifest, publication, generated, research-evidence or shared file changed.",
+    "Research defect for the reviewer to route: research/interpretations.md Reading 1 literal sense credits Sinai to Aquinas; research/scope.md (Aquinas row) has Egypt correctly.",
+    "Checks: scripts/_proper_study.py check (content, research, source, presentation/format/authority/orientation/orientation-v3) pass; check-content-preflight --edition research all checks pass including provenance-matches-run; tools/tpt document-types refresh --check current; web probe at build/tpt-runs/99f04ef5cf9b711b/artifacts/author-study-1/web-probe converted with all twelve proper anchors once; the study prints no \\ref, so the sec:date-location rendering defect does not arise.",
+    "Informal author proof (pdflatex, three settled passes, proof-only revision stamp, not a cold print review): build/tpt-runs/99f04ef5cf9b711b/artifacts/author-study-1/proof/study.pdf, 30 pages, no overfull boxes, SHA-256 c899a0c9576885e4439e343ff770e1d03fb6413c7e032fc100f8f2174168ad79.",
+    "Body length on the proof text layer (running heads removed): about 13,600 words (iteration 0 about 14,570 by the same method), still above the 6,000-10,000 planning range, which is not a quota.",
+    "Independence: no GPT leaf, GPT release or production record, 1962 Advent leaf or GPT 1962 Advent record was opened; no other worker's scratch directory was read."
+  ],
+  "stage": "author-study",
+  "summary": "Revised the Claude expansive study for PC-S01-B against study-review 0: removed the three closing 'rest of the Mass' roll calls and placed their Fathers' contributions (Chrysostom and Aquinas on 1 Cor 1:7, Bellarmine on Ps 84:13 and Ps 24, Augustine 79.11 and 84.15, Gregory 13.6, Bede on the servants' authority, the Collect's Da and venienti, the Prayer over the Offerings, the Preface's vigilantes) where each interpretation's argument uses them; removed process narration, text-agency misattributions, emphatic fragments and restating closers; corrected Aquinas's literal sense to Egypt, Chrysostom's Homily 2 order, the Cyril inference, and the Gospel's Latin (Videte, vigilate) with a note on the Douay 'and pray'. Advisories STU-010 to STU-014 cleared. Content gate, content preflight (all checks), document-type --check and the web probe pass; informal proof 30 pages."
+}

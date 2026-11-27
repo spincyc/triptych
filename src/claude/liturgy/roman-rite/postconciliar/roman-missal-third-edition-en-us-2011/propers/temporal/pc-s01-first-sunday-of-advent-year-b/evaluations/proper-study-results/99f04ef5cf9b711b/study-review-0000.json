@@ -1,0 +1,607 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "STU-001",
+      "location": "sections/20-rend-the-heavens.tex lines 146-199; sections/30-watch-at-the-door.tex lines 162-222; sections/40-clay-and-faithful-potter.tex lines 175-202 (each the subsection 'The rest of the Mass in this interpretation')",
+      "problem": "Each interpretation closes with a subsection that walks the remaining texts of the Mass, one paragraph each in Missal order, and gives each a role in that interpretation. This is the closing roll call that the three-document profile and the study-review contract name as a register defect, not coverage. Many of the roles are manufactured:\n- 20:148 'The Entrance Antiphon opens the Mass in the posture of the cry'.\n- 20:160 'The second reading holds the two comings in one sentence'.\n- 20:176-179, on the Prayer over the Offerings: 'Here it belongs to the interval Cyril describes'. Cyril says nothing of the prayer.\n- 20:181 'The Preface is the Mass's own statement of Cyril's doctrine, as said above'.\n- 30:195-196: the Alleluia verse is 'the prayer of servants who are waiting for their master'.\n- 30:198-201: 'That is the servants' situation in the parable'.\n- 30:208-209: 'In this interpretation the fruit is the servants' work'.\n- 40:184: 'The Gospel gives the same order in a story'.\n- 40:190-192: 'What the people bring to the altar was God's before they brought it'.\n- 40:194-197: 'In this interpretation the way is God's opening, as the clay is God's shaping'.\n- 40:199-202: 'the love is taught by God, as in the refrain the turning is done by God ... and asks for them as gifts'.\nThe same eight texts get three different roles in three parallel subsections, which reads as repeated application, not argument. Meanwhile the real contributions inside these subsections are left at the end instead of where the argument uses them:\n- Chrysostom and Aquinas on 1 Cor 1:7 (20:160-167).\n- Bellarmine on Ps 84:13 (20:186-192) and on Ps 24 (30:164-168).\n- Augustine 79.11 (30:183-187) and 84.15 (30:208-213).\n- Gregory 13.6 (30:215-220).\n- Bede on the servants' authority over every work (40:184-188).\n- The Collect's Da beside Augustine on conversion (40:177-182).",
+      "repair_target": "study",
+      "required_result": "Remove the three 'rest of the Mass' subsections as roll calls. Move each contribution that carries a Father's reasoning or a checked textual fact into the body, where the interpretation's argument uses it. A text the interpretation touches lightly gets a clause there or in its four senses, without an assigned role. A text the interpretation does not use is left out rather than given a use. Every element must still be treated, but shown where the argument uses it, not certified at the close. Plain rewrites:\n(a) 20:176-179, '... and asks that what devotion does in time become the reward of eternal redemption. Here it belongs to the interval Cyril describes, between the coming that has been and the one that is to be.' Drop the second sentence. If the prayer is mentioned, give it a clause beside Cyril: 'The Prayer over the Offerings asks that what devotion does in this passing time become the reward of eternal redemption.'\n(b) 40:190-192, 'The Prayer over the Offerings says the same of the gifts: they are offered de tuis ... collata beneficiis, from what God has bestowed. What the people bring to the altar was God's before they brought it.' becomes 'The Prayer over the Offerings offers the gifts de tuis ... collata beneficiis, from what God has bestowed.', placed beside Bede's reading of the servants' authority as grace.\n(c) 30:195-196, 'The Alleluia verse asks to be shown mercy and given salvation, the prayer of servants who are waiting for their master.' Cut it, or give the verse a clause where the lane quotes the psalms: 'the Alleluia verse asks, Shew us, O Lord, thy mercy.'",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-002",
+      "location": "sections/10-texts-in-setting.tex lines 30-32, 75-82, 88-90, 116-117, 128-129, 159-160, 173-174; sections/20-rend-the-heavens.tex lines 151-152, 171-172, 211-213; sections/30-watch-at-the-door.tex lines 180-181, 230-231; sections/40-clay-and-faithful-potter.tex lines 171-173, 209-210; sections/50-comparison.tex lines 35, 63",
+      "problem": "Recurring register pattern: the prose narrates its own construction and the caution it exercises. Instances:\n- 10:30-32: 'What links them below is the study's own reasoning from their words and from the Fathers who comment on each.'\n- 10:75-82: 'Three things in the passage bear on the rest of this study ... The first is the subject of the first interpretation below, the other two of the third.'\n- 10:88-90: 'Jerome and Aquinas ... do not set it beside the Collect; the comparison is the study's own, made from the words.'\n- 10:116-117: '... which the third interpretation follows through Jerome and Aquinas.'\n- 10:128-129: 'His fuller answer belongs to the third interpretation below.'\n- 10:159-160: 'The coincidence is of the Latin words and is stated as such.'\n- 10:173-174: '... the Collect does not cite it.'\n- 20:151-152: '... and the antiphon's use on this day is the Missal's.'\n- 20:171-172: '(the second interpretation sets out their reasons)'.\n- 20:211: 'The interpretation keeps Aquinas's order'.\n- 30:180-181: 'That is the reason for setting this confession beside the Gospel'.\n- 30:230-231: '... the words are Matthew's commentators' and are credited to them.'\n- 40:171-173: 'This interpretation sets them side by side because the argument is the same'.\n- 40:209-210: '... and this interpretation keeps both answers without choosing.'\n- 50:35: the row label 'Disagreement kept'.\n- 50:63: 'Two disagreements among the Fathers are kept as they stand.'\nThe scope appendix (90:88-99) already says once which links are the authors' and which are the study's. The body repeats the disclaimer at step after step and narrates its compliance ('kept', 'credited', 'stated as such'). Under guidance/editorial.md, 'State the finding, not the process', this moves the appendix into the body. A qualification that changes the truth of a local claim may stay, once. An example is 20:215-217: 'none sets Isaiah's cry beside Mark's parable'.",
+      "repair_target": "study",
+      "required_result": "State the finding and drop the narration. Keep a qualification only where it changes the truth of a local claim, once and briefly. Rewrites:\n(a) 10:86-90, '... The verb and the works are the same, and the directions opposite. Jerome and Aquinas, who comment on the verse, do not set it beside the Collect; the comparison is the study's own, made from the words.' becomes '... In Isaiah God meets the one who does justice; in the Collect the faithful ask to go out with just works to meet Christ.' The appendix already says that such links are the study's.\n(b) 10:157-160: end at '(audemus exspectare).' and cut 'The coincidence is of the Latin words and is stated as such.'\n(c) 40:207-210, '... and their answers differ, one from patience and one from permission. Neither makes God the author of sin, and this interpretation keeps both answers without choosing.' becomes 'Jerome answers from God's patience, Aquinas from his permission; neither makes God the author of sin.'\n(d) 10:75-82: state the three points and drop 'bear on the rest of this study' and the forward map. Do the same with the forward references at 10:116-117, 10:128-129 and 20:171-172.\n(e) 50:35: relabel the row with what it contains, for example 'Where the Fathers differ' (see also STU-012).",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-003",
+      "location": "sections/00-opening.tex line 37; sections/20-rend-the-heavens.tex lines 72-77, 128-130, 160, 181; sections/30-watch-at-the-door.tex lines 168-169, 177, 183, 203-204; sections/40-clay-and-faithful-potter.tex lines 88-89, 137, 184",
+      "problem": "Recurring register pattern: texts and authors are credited with moves that texts do not make. In guidance/editorial.md, 'A text does what texts do': a text says, asks, sings or quotes; it does not hold two ideas together, give an interpretation its words, or 'answer' another text, and 'answer' is for a question actually put. Instances:\n- 00:37: 'The Gospel answers from the other side of the coming.'\n- 20:73: 'a single verb holds the descent at Sinai that was, the descent into the womb ... and the descent to judge'.\n- 20:75: 'the cry can hold all three'.\n- 20:128-130: Cyril 'gives the answer that the Preface prays'.\n- 20:160: 'The second reading holds the two comings in one sentence.'\n- 20:181: 'The Preface is the Mass's own statement of Cyril's doctrine'.\n- 30:168-169: 'The antiphon's exspectant is the Missal's own word for it.'\n- 30:177: 'The first reading gives the opposite of watching'.\n- 30:183: 'The psalm's last strophe gives the servants' vow'.\n- 30:203-204: 'The Preface's last clause gives the Missal's own word for this interpretation.'\n- 40:88-89: 'Jerome answers the hidden face with a verse of the psalm'.\n- 40:137: 'The Entrance Antiphon gives this interpretation its first words.'\n- 40:184: 'The Gospel gives the same order in a story.'\nSeveral instances fall inside the roll calls of STU-001 and go with them. The others stand in the body.",
+      "repair_target": "study",
+      "required_result": "Make the text or author the subject of what it actually does, and state the study's own links once as inferences. Rewrites:\n(a) 00:37, 'The Gospel answers from the other side of the coming. On the Mount of Olives, ...' becomes 'In the Gospel the one who has come speaks of his return. On the Mount of Olives, ...'\n(b) 20:160, 'The second reading holds the two comings in one sentence. Paul thanks God ...' becomes 'Paul names both comings in one sentence: he thanks God for gifts already given in Christ, ''waiting for the manifestation of our Lord Jesus Christ'' (1 Cor 1:7).'\n(c) 40:88-89, 'Jerome answers the hidden face with a verse of the psalm sung after this reading: ...' becomes 'On the hidden face Jerome quotes the psalm sung after this reading: ...'\n(d) 20:128-130, 'Cyril ... gives the answer that the Preface prays:' becomes 'Cyril ... teaches the two comings for which the Preface gives thanks:'",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-004",
+      "location": "sections/00-opening.tex lines 12-13; sections/10-texts-in-setting.tex lines 57-59; sections/20-rend-the-heavens.tex line 30; sections/40-clay-and-faithful-potter.tex lines 5, 93, 152-153, 206",
+      "problem": "Recurring register pattern: emphasis is performed rather than earned, through emphatic fragments and announced significance (guidance/editorial.md: 'Let emphasis come from content', 'Show significance; do not assert it'). Instances:\n- 00:12-13: 'Then the cry.'\n- 20:30: 'Then the verse that follows.'\n- 40:93: 'Then the last verse, and the potter.'\n- 40:152-153: 'Then the reason:' before the quotation. This is the form of the guidance's own example, 'Then the words on which the feast turns:'.\n- 40:5: 'The third question is the hardest.'\n- 40:206: 'Two strains are real.'\n- 10:57-59: 'That Andrew is among the four has a small consequence this year: his feast falls on the next day'. It announces a consequence and never states one.",
+      "repair_target": "study",
+      "required_result": "Let the sentence carry the content without a fragment or announcement. Rewrites:\n(a) 00:12-14, 'Then the cry. In the Latin of the reading, a few lines later, they say something else:' becomes 'A few lines after the cry, the Latin of the reading has them say something else:'\n(b) 20:30, 'Then the verse that follows. Jerome read in the Hebrew ...' becomes 'In the next verse Jerome read in the Hebrew ...'\n(c) 40:93-94, 'Then the last verse, and the potter. Jerome draws the conclusion ...' becomes 'On the last verse, where the people call themselves clay and God the potter, Jerome draws the conclusion ...'\n(d) 40:5: begin with the question itself ('The people who pray Isaiah's cry say of themselves ...').\n(e) 40:206: begin 'The first strain is ...'.\n(f) 10:57-59: 'Andrew, one of the four, has his feast the next day, Monday 30 November', or cut it.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-005",
+      "location": "sections/10-texts-in-setting.tex lines 214-215; sections/20-rend-the-heavens.tex lines 75-77; sections/40-clay-and-faithful-potter.tex lines 64-65, 100-102, 172-173 (and, inside the STU-001 roll calls, 40:191-192, 40:195-197, 40:200-202)",
+      "problem": "Recurring register pattern: paragraphs close on a sentence that restates them as a maxim, chiasmus or summary. Deleting it loses nothing (guidance/editorial.md, 'Each sentence adds something'; 'Say it once'). Instances:\n- 20:75-77: 'Prayed on this Sunday, the cry can hold all three: God has come down before, he has come down in the flesh, and he is asked to come again.' This repeats the triad of the sentence before.\n- 40:64-65: 'God's turning toward his people and his turning of his people stand together under one petition.'\n- 40:100-102: 'In Jerome's reading the people rest their plea on the figure that might have silenced them: a pot cannot argue with its maker, and the maker is their father.' This restates Jerome's sentence, just given, as a paradox.\n- 40:172-173: '... the one who made the vessel and the one who called the church will finish what he began.'\n- 10:214-215: 'In the psalm the Lord's gift comes first and the land's fruit after it.' This paraphrases the verse quoted three lines earlier.\nThe roll calls add 40:192, 40:195-197 and 40:200-202 ('as in the refrain the turning is done by God').",
+      "repair_target": "study",
+      "required_result": "Delete restating closers. Where a closer carries an inference not yet on the page, state it once as the study's inference, without antithesis or chiasmus. Rewrites:\n(a) 20:75-77: delete. The preceding sentence already lists the three descents, once corrected per STU-006.\n(b) 40:100-102: delete. Jerome's own words ('We are clay ... but knowing that we are sons, we dare to say ...') already make the point.\n(c) 40:64-65: delete, or 'Aquinas sets the plea that God turn and the plea that he turn us side by side.'\n(d) 10:214-215: delete.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-006",
+      "location": "sections/20-rend-the-heavens.tex lines 67-68, 73, 208-211; sections/50-comparison.tex lines 22-23 (origin: research/interpretations.md, reading 1 literal sense)",
+      "problem": "Aquinas is credited with Sinai. His preferred literal sense of Descendisti is the descent to free the people from Egypt: 'Vel melius, secundum litteralem sensum ... quando descendisti ut liberares populum tuum de Aegypto. Exod. 4. Ps. 17' (Super Isaiam c. 64 [85024], checked on the fetched Corpus Thomisticum page). Sinai (Exod. 20) appears in his comment only on the preceding member, 'non sustinebimus', the people's terror, which the reading does not include. The study reports Egypt correctly at 20:65 and in the lane-1 four senses. It then credits Sinai to Aquinas in four places:\n- 20:67-68: 'The prophet's people remember Sinai and ask for it again.'\n- 20:73: 'a single verb holds the descent at Sinai that was'.\n- 20:208-210: 'The second strain is the historical one, which Aquinas names: the prophet's people were thinking of Sinai and Egypt'.\n- 50:22-23, the comparison table: 'the same verb names Sinai, the Incarnation and the judgment (Aquinas)'.\nresearch/scope.md section 3.3 reports Aquinas correctly (Egypt; Exod; Ps 17:10). The conflation comes from research/interpretations.md ('as he once did at Sinai and in Egypt (Aquinas's preferred literal sense)'), so the study is following a planning note against the reviewed evidence.",
+      "repair_target": "study",
+      "required_result": "Wherever Aquinas's literal sense is reported (20:67-68, 20:73, 20:208-210, 50:22-23), say Egypt, matching 20:65 and the four senses. If Sinai is wanted, state it as the study's own inference from Ps 18 (17), or drop it; never credit it to Aquinas. Rewrites:\n(a) 20:67-68: 'The prophet's people remember the Exodus and ask for it again.'\n(b) 20:208-210: 'The second strain is historical: Aquinas prefers as the literal sense the descent that freed the people from Egypt, and reads the Incarnation as a further sense.'\n(c) 50:22-23: 'Aquinas reads the verb of the Exodus, the Incarnation and the judgment'.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-007",
+      "location": "sections/40-clay-and-faithful-potter.tex lines 147-153; against sections/10-texts-in-setting.tex lines 125-129",
+      "problem": "Lane 3 misreports the order and content of Chrysostom's argument. It says that Chrysostom asks how Paul can praise a church he will call carnal, and 'His first answer is that the praise is not really theirs: not even did this praise belong to them, but to the grace of God'; 'His second is in the verbs'. The tracked Homily 2 on 1 Corinthians (passage ...ccel-web-2026-09-28.2.1cor-1.7-9) reads otherwise:\n- His answers to that question are in section 4: they became remiss after receiving the gifts; or the praise and the censure are addressed to different members; or the greater part is called the whole, with a hint at Paul's own signs.\n- The grace sentence comes in section 5, after those answers: 'In any case, although the praises be not very close to the truth, still however they are inserted by way of precaution ... he begins with what seem to be praises. I say, seem; for not even did this praise belong to them, but to the grace of God.' It explains why Paul opens with praise. It is not his first answer.\n- The 'verbs' remark ('confirm', 'unreprovable', section 7) is a comment on v. 8.\nSection 10 (10:125-129) reports the section-4 answers correctly and promises that 'His fuller answer belongs to the third interpretation below'. The reader is therefore given two different first answers. The reordering puts in first place, in Chrysostom's mouth, the reading that suits the interpretation.",
+      "repair_target": "study",
+      "required_result": "Report Homily 2 in its own order, and make 10:125-129 and 40:147-153 agree. Rewrite: 'Chrysostom asks how Paul can praise a church he is about to call carnal, and answers that they grew remiss after receiving the gifts, or that Paul speaks of the greater part as the whole. Whatever the case, he adds, Paul begins with what only seem to be praises, ''for not even did this praise belong to them, but to the grace of God''. On v. 8 he notes that ''He shall confirm'' and ''unreprovable'' mark them as still wavering.' Then 'Paul puts this at the beginning ...' can follow as now. Drop 10:128-129's forward reference (STU-002).",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-008",
+      "location": "sections/20-rend-the-heavens.tex lines 138-141",
+      "problem": "The study's inference is credited to Cyril: 'Isaiah's people asked for the sky to be torn and the mountains to flow; the answer came as rain falls on a fleece, seen by no one. The prophet's image of the torn heavens belongs, on Cyril's account, more to the second coming than to the first.' Catechesis 15.1 (verified passage record) distinguishes the unobserved first descent from the open second. It says nothing of Isaiah 64:1, of torn heavens, or of an answer to Isaiah's cry. Assigning Isaiah's image to the second coming is the study's inference from Cyril's distinction, and 'on Cyril's account' moves it into Cyril's mouth. Guidance/editorial.md names this defect: 'never by crediting it to a Father instead'. The study's inference also sits beside Jerome's reading that the cry was answered in the first coming, and the study does not say how the two stand.",
+      "repair_target": "study",
+      "required_result": "State the link once as the study's inference, and say how it stands with Jerome. For example: 'Cyril calls the first descent unobserved, like rain on a fleece. Nothing at Bethlehem tore the sky or melted the mountains; taken with Cyril's distinction, Isaiah's image fits the open coming better than the hidden one, while for Jerome the hidden coming already answered the cry.'",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-009",
+      "location": "sections/10-texts-in-setting.tex lines 50-51; sections/05-appointed-texts.tex line 209",
+      "problem": "At 10:50-51 the study gives 'Videte, vigilate, et orate (13:33): look, keep awake, pray' as the Gospel's words. That is the Clementine Vulgate. The reading's Latin, as the Ordo opens it, is 'Videte, vigilate' (recorded at 05:200-202 and in research/context.md row 7). The Nova Vulgata reads Mark 13:33 'Videte, vigilate; nescitis enim, quando tempus sit', with no 'et orate'; this reviewer read the Holy See web edition on 2026-11-26. propers/verified.md (Relationship classes, item 3) records that the Gospel's titulus was compared with the Clementine only, so the reviewed evidence does not support the Clementine wording as the reading's. At 05:209 the Douay's 'watch and pray' is printed without a note. Elsewhere the study notes the Douay's departures from the appointed text (Isaiah 64:2, Psalm 80) and brackets what is not appointed. The reader is told that the Gospel commands prayer.",
+      "repair_target": "study",
+      "required_result": "At 10:50-51, quote the command as the Ordo opens the reading ('Videte, vigilate') and drop 'pray' from the gloss. At 05:209, add a note like those for Isaiah 64:2 and the psalm: the Douay's 'and pray' translates the Clementine 'et orate', which the Ordo's opening does not show. If the study states the Nova Vulgata wording or the proclaimed English, that witness must be bound as evidence. Otherwise say only what the Ordo and the Clementine show.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-010",
+      "location": "sections/30-watch-at-the-door.tex lines 203-206",
+      "problem": "'Where the Verona prayer has sperare, the Preface has the Gospel's verb.' This is inaccurate. Owner finding 8 and section 10 (10:200-205) record that where the Verona prayer has 'quod nunc audemus sperare', the Preface has 'quod vigilantes nunc audemus exspectare'. The verb that takes the place of sperare is exspectare, which is not the Gospel's verb. The Gospel's vigilate appears in the added participle vigilantes.",
+      "required_result": "Say what changed: 'Where the Verona prayer has quod nunc audemus sperare, the Preface has quod vigilantes nunc audemus exspectare: it adds the Gospel's verb as a participle and has await for hope.' Or rely on section 10, which already says this correctly.",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-011",
+      "location": "sections/40-clay-and-faithful-potter.tex lines 13-16",
+      "problem": "The lane's opening summary goes beyond its sources in two places. (a) It says that Jerome and Aquinas 'both say that the hope rests on mercy alone'. Jerome says 'tantum salvabimur misericordia' (col. 647), but Aquinas says 'et tamen salvabimur, tua misericordia', without 'alone'. (b) It says 'Augustine, on the psalm and on the Communion Antiphon, says that even the people's turning back to God is God's gift'. The body gives the turning on the psalm's refrain (79.3) and on Ps 84:7, the verse before the Alleluia verse. On the Communion Antiphon's verse (84.15) Augustine says that good fruit is God's gift, not the turning.",
+      "required_result": "Match the body: 'Jerome says that we shall be saved by mercy only, Aquinas that we shall be saved by thy mercy'; 'Augustine, on the psalm's refrain and on the verse before the Alleluia verse, says that even the turning back is God's gift, and on the Communion Antiphon's verse that good fruit is.'",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-012",
+      "location": "sections/50-comparison.tex lines 24-25, 35-38, 63-68",
+      "problem": "The comparison misstates two relations between the Fathers. (a) It says 'Christ said ''you'', not ''we'', do not know (Jerome, Chrysostom)'. Jerome's contrast is with 'we' ('Et non dixit, quia nescimus ... sed nescitis', PL 26 col. 182, checked in OCR). Chrysostom's is with 'I' ('He said not, I know not, but, ye know not', quoted correctly at 30:51). (b) The table lists three 'disagreements', and the prose says 'Two disagreements'. One of them, Augustine and Bede on the reach of the command, is said in the same paragraph to be two answers of which 'neither ... excludes the other', and lane 2 says 'The two answers fit together' (30:158). Lane 3 presents Jerome's patience and Aquinas's permission as two accounts, neither making God the author of sin. A complementary difference is reported as a disagreement. The Sinai cell is STU-006.",
+      "required_result": "Credit Chrysostom with 'not I but you'. Call a difference a disagreement only where the Fathers' readings exclude each other: Jerome and Aquinas on the literal sense of Descendisti. Describe Augustine and Bede, and Jerome and Aquinas on 63:17, as different emphases. Make the table and the prose agree.",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-013",
+      "location": "sections/00-opening.tex lines 101-102 (Alleluia verse row) and 116-117 (Communion Antiphon row)",
+      "problem": "The map composes English for the Alleluia verse ('Show us, Lord, your mercy, and grant us your salvation') and for the Communion Antiphon ('The Lord will give his goodness, and our land will yield its fruit'). propers/verified.md's appointed-text table (rows 6 and 10) says that no English is composed for either and that the Douay-Rheims is the study text. The Alleluia row is also one word from the verse the United States assembly hears. The other map rows either describe or use the Douay.",
+      "required_result": "Use the Douay-Rheims, labelled as the source: Ps 84:8 'Shew us, O Lord, thy mercy; and grant us thy salvation'; Ps 84:13 without 'For', 'the Lord will give goodness: and our earth shall yield her fruit'. Alternatively, describe the verse in the study's own words, as the prayer rows do.",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-014",
+      "location": "sections/90-apparatus.tex lines 107-122 (Scope and Qualifications, 'Chronology')",
+      "problem": "Authored prose restates the generated Scriptural Date and Location appendix: Maas's harmony and the Tuesday of Holy Week, Isaiah 56-66 after the exile, the Psalter bound, the Korahite range and the sources of each. It also gets one source slightly wrong: 'The Psalter's composition bound, from the bishops' introduction to the Psalms and Drum's article'. The generated appendix sources that bound to the NABRE Psalms introduction alone. The Catholic Encyclopedia vol. 12 (1911), where Drum's article stands, is cited only for the Korahite range. Nothing contradicts a printed date.",
+      "required_result": "Reduce the paragraph to a pointer to the generated appendix, plus any qualification the appendix does not already print. If the source list stays, match the appendix's attributions.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "observations": [
+    {
+      "location": "sections/30-watch-at-the-door.tex lines 34-37 (Jerome, In Matthaeum IV, PL 26 col. 181)",
+      "note": "The study quotes 'quasi die alia judicandi sint'. In the Internet Archive OCR of PL 26 the word after 'die' is illegible, next to the column marker. Research read 'alia' on the page image, and the gloss 'the next' fits 'alia'. Bede's tracked copy of the sentence reads 'illa'. No finding. A page-image re-read would settle it."
+    },
+    {
+      "location": "sections/00-opening.tex through sections/50-comparison.tex",
+      "note": "Crude word count of sections 00-50 is about 14,500, of which about 1,000 is printed Douay-Rheims. That is above the profile's 6,000-10,000 planning range, which is not a quota. Repairing STU-001 should remove about 1,200 words of roll call. Output of the study content gate run for this review: <worker-scratch>/workers/study-review-0/study-check.txt (pass)."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "solemn-blessing"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/00-opening.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/context.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "solemn-blessing"
+          ],
+          "key": "appointed-texts",
+          "kind": "appointed-text",
+          "path": "sections/05-appointed-texts.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/context.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "appointed-texts"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "solemn-blessing"
+          ],
+          "key": "each-element",
+          "kind": "proper-treatment",
+          "path": "sections/10-texts-in-setting.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/context.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "solemn-blessing"
+          ],
+          "key": "rend-the-heavens",
+          "kind": "interpretive-lane",
+          "path": "sections/20-rend-the-heavens.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "solemn-blessing"
+          ],
+          "key": "watch-at-the-door",
+          "kind": "interpretive-lane",
+          "path": "sections/30-watch-at-the-door.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "solemn-blessing"
+          ],
+          "key": "clay-and-faithful-potter",
+          "kind": "interpretive-lane",
+          "path": "sections/40-clay-and-faithful-potter.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "rend-the-heavens",
+            "watch-at-the-door",
+            "clay-and-faithful-potter"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "solemn-blessing"
+          ],
+          "key": "comparison",
+          "kind": "front-matter",
+          "path": "sections/50-comparison.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "communion-antiphon"
+          ],
+          "key": "scriptural-date-location",
+          "kind": "front-matter",
+          "path": "generated/scriptural-date-location.tex",
+          "references": [
+            "format.tex",
+            "research/chronology-annotations.tex",
+            "research/chronology-table.tex",
+            "research/chronology.toml",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "solemn-blessing"
+          ],
+          "key": "liturgical-resolution",
+          "kind": "terminal-apparatus",
+          "path": "sections/85-liturgical-resolution.tex",
+          "references": [
+            "format.tex",
+            "instance/manifest.md",
+            "research/context.md",
+            "propers/verified.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "solemn-blessing"
+          ],
+          "key": "study-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/90-apparatus.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/context.md",
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+      "element_keys": [
+        "entrance-antiphon",
+        "collect",
+        "first-reading",
+        "responsorial-psalm",
+        "second-reading",
+        "acclamation",
+        "gospel",
+        "prayer-over-offerings",
+        "preface",
+        "communion-antiphon",
+        "prayer-after-communion",
+        "solemn-blessing"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Jerome",
+            "Thomas Aquinas",
+            "Augustine of Hippo",
+            "Cyril of Jerusalem",
+            "Robert Bellarmine",
+            "John Chrysostom",
+            "Gregory the Great",
+            "Bede"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "Augustine of Hippo",
+            "Cyril of Jerusalem",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "rend-the-heavens"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "solemn-blessing"
+          ],
+          "key": "rend-the-heavens",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Jerome",
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Gregory the Great",
+            "Bede",
+            "Thomas Aquinas",
+            "Robert Bellarmine"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "Augustine of Hippo",
+            "Gregory the Great",
+            "John Chrysostom",
+            "Bede"
+          ],
+          "component_keys": [
+            "watch-at-the-door"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "solemn-blessing"
+          ],
+          "key": "watch-at-the-door",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Jerome",
+            "Thomas Aquinas",
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Robert Bellarmine",
+            "Gregory the Great",
+            "Bede"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "Thomas Aquinas",
+            "Augustine of Hippo",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "clay-and-faithful-potter"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "solemn-blessing"
+          ],
+          "key": "clay-and-faithful-potter",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+    "files": {
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/format.tex": "477b3fd5e29a2f8805e06702a4cce22fe0ec583f59441a4313330feba8a25f5f",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/generated/scriptural-date-location.tex": "4092c0542a75e101990c50caeea70211cd52320836b728d6b801aef46d04d4ae",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/instance/manifest.md": "84797da28b49b8aa890e9b18bd7936833c7e82fa963554a6a2288a67ade6903e",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/main.tex": "5fd0992374cb31651407cefb1d318c2a5d1adddc5ecb3637192c535db605d077",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/propers/verified.md": "ccb6fbe4d64efb789817b98edd444e9e206d7dc45123512929195d005f221e35",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/chronology-annotations.tex": "fb1cb4b1561b685ac20f775039bbaf396b302f71cb5a5f4f2a565c55a025569a",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/chronology-table.tex": "336112ed465124186a6744227b4ce84a755f0c240c102800e8d8afe941fe40fd",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/chronology.toml": "349511d8f5db94cc1d67982377180fa429f7f230f1053c030531063252fc0025",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/context.md": "4e853e1f49e21fa29eacb7a58287841b51dc4b33ca2639cd7b3b94db0c01f532",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/interpretations.md": "4e7895f05242eb372be5da57eaebbc7452e61589c818f4ffc9f693f2a3b0e483",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/scope.md": "28d22abc1638324853498a944f6b1503c3183c6a30eac5f4295d646e74546589",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/source-bindings.toml": "fd173bc010e5250673fd074133c1e17fa722f0195046806d19f408f6300731f2",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/00-opening.tex": "d39e0959d9c08441528a3537eb6c7589c7ef2dceadea23f5d440f0609f4e170c",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/05-appointed-texts.tex": "508b73f0d7835b15d507753a418ade27be25e167aaf37be248b3c17af2d2349a",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/10-texts-in-setting.tex": "a309905e1c2b1ffc84e8ed919be5a5a6b441cfdafedbb2cf82e2ab0e0e2297cf",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/20-rend-the-heavens.tex": "25d3adca4bcafc4b70e9540fea1a44b28714899d2f0add377aa4b8f26bf4ac8b",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/30-watch-at-the-door.tex": "7410518ea28508fdbfedd408bd1ff7d5d07eed98ab2da95761458ca0a12d1423",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/40-clay-and-faithful-potter.tex": "1679b6f72ac2ca7199435a713717c1a37966f1ec24056c5c12a609d4bc45ad13",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/50-comparison.tex": "9cdbbd52e7f79f9eb373f4393ecc92bf5cb95eb53abdab5353ed5694ae70aaf3",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/85-liturgical-resolution.tex": "89e57c30b2091171361d948abf533099e3e599b067c432840a461b89226a669f",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/90-apparatus.tex": "c573f6f9517b7de01319e815d6ade8786da7de77a68f3d16fa4d40785c64d2d9",
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "20",
+            "9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec",
+            "99f04ef5cf9b711b",
+            "cbccbfcb3be4896c95225d8cd281e2b0684a12e9",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "Cold review of the Claude expansive study 'The First Sunday of Advent, Year B' (PC-S01-B, 29 November 2026), DOCUMENT_ROOT src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b; locations below are relative to it. Read whole: main.tex, sections 00, 05, 10, 20, 30, 40, 50, 85 and 90, and the generated date appendix for comparison only. These were checked against research/interpretations.md, scope.md, context.md and source-bindings.toml, propers/verified.md, the owner formulary's verified.md and the production record. The structure holds. There are three distinct interpretations: what is prayed for, how to wait, and on what ground sinners may hope. Each has its own four senses, and each has at least two eligible Fathers or Doctors whose reasoning is developed: lane 1 Jerome, Aquinas, Cyril and Augustine; lane 2 Jerome, Chrysostom, Augustine, Gregory and Bede; lane 3 Jerome, Aquinas, Augustine and Chrysostom. Every element is treated, but in each lane through a closing roll call (STU-001). Consequential-difficulty test. (1) Is 64:2b Descendisti. Jerome, In Isaiam XVII, PL 24 col. 646 ('Pulchreque juxta Hebraicum, quasi exauditi essent'; Verbum caro factum est; Emmanuel), checked in the Internet Archive OCR of PL 24: supported, and the prose teaches why the United States English does not contain the answer. Aquinas, Super Isaiam c. 64 [85024], checked on the fetched Corpus Thomisticum page: the three senses are reported, but his literal sense (the descent to free the people from Egypt, Exod 4, Ps 17) becomes Sinai in the body and the comparison (STU-006). (2) Mk 13:32-33, the hidden hour. Jerome, In Matthaeum IV, PL 26 cols. 181-182 (IA OCR: 'ut semper incerti de adventu judicis, sic quotidie vivant'; 'Et non dixit, quia nescimus ... sed nescitis'), and Augustine, Ep. 199.1.2-3 (augustinus.it: 'In quo enim quemque invenerit suus novissimus dies'): supported, and the inference is made intelligible. (3) Is 63:17 and 64:4. Jerome, PL 24 cols. 643-644 (patience, the physician), col. 647 ('Ordo praeposterus ... tantum salvabimur misericordia') and col. 650 ('Si nostra consideremus merita, desperandum est'), and Aquinas [85023] ('permittendo, non immittens gratiam, et non corrigens'): supported, and the difficulty is taught as the Latin's, with the permissive US English described. Also re-read: Augustine, En. in Ps. 24, 79 and 84 (NPNF 8); Chrysostom, Hom. 2 on 1 Cor and Hom. 77 on Matt (tracked); Gregory, Hom. 13; Bede on Mark; the Cyril (Cat. 15.1) and Bellarmine passage records; Aquinas, Super I Cor. c. 1 lect. 1 (fetched); and the Nova Vulgata of Mark 13 (vatican.va, fetched). Defects found: a closing roll call of manufactured roles in every interpretation; four recurring register patterns (process narration, texts doing what texts don't, performed emphasis, restating closers); and four text or attribution errors (Aquinas's Egypt reported as Sinai; Chrysostom's 'first answer' misordered and contradicting section 10; Cyril credited with the study's inference; the Clementine 'et orate' given as the reading's Latin). Limits: Jerome's PL 24 and PL 26 were checked in Internet Archive OCR, not page images. The DCO PDF fetch failed TLS certificate verification and was not bypassed, and one word in PL 26 col. 181 is illegible in the OCR. The Gelasian (Wilson) and Verona (Feltoe) page images were not re-read; owner findings 6-8 are relied on. The USCCB readings page returned a bot-check page, so the proclaimed English was not re-read. No print proof was built. The study content gate (scripts/_proper_study.py check, phase content, research edition, source mode, with the presentation, format, authority and orientation-v3 requirements) passes. Verdict: CHANGES_REQUIRED, study-owned."
+}

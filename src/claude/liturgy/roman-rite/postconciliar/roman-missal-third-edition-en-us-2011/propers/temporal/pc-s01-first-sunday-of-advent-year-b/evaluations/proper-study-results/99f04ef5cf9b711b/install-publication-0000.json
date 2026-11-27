@@ -1,0 +1,29 @@
+{
+  "artifact_path": "release/publications/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b.json",
+  "disposition": "PASS",
+  "files_to_commit": [
+    "library/novus-ordo-liturgy.md",
+    "release/browser-products.json",
+    "release/public-alpha.json",
+    "release/rights/public-alpha-2026-07-15.md",
+    "release/publications/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b.json",
+    "release/publications/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b-synthesis.json",
+    "release/publications/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b-homily.json",
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/web-edition.toml",
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/production-review.md",
+    "src/sources/inventories/claude-publications-v1.toml",
+    "src/sources/inventories/claude-classification-review-v1.toml"
+  ],
+  "iteration": 0,
+  "notes": [
+    "No edition source, evidence record, receipt, generation-metadata.tex or GPT entry was changed. The source-family-migration ledger validated unchanged, so I did not refresh it.",
+    "Order of work: production-review.md was finished before the inventory refresh and the products record, because the documents and web-editions products read leaf files. The record therefore points to the descriptor and binding records rather than restating their outcome.",
+    "Classification of the leaf from my audit of its source records: finding-aid, historical-primary, institutional-current, liturgical, magisterial, patristic, repository-internal, scholastic, scripture, secondary. classification_snapshot is re-pinned and audited_on is 2026-11-26.",
+    "Gates passed locally after every write: the publication-phase check of scripts/_proper_study.py (source mode, all requirements), make check-release-bindings (exact: 0 stale), tools/tpt public-alpha check --provider claude --document <id>, both document-library checks (check and structure --check), tools/tpt web-edition check --leaf claude/<id> (3 readers), browser-products check (ok), make check-publication-inventories and make check-web-editions.",
+    "Standing advisory WEB-001 (a near-ICEL clause in the solemn blessing, which the study gives three times) belongs to the study's owner. Edition sources were closed to this stage, so it is unchanged.",
+    "For the driver: src/index (tools/corpus-index refresh --readers) is not refreshed here. Under AGENTS.md it is committed after its inputs are committed.",
+    "Scratch logs are in .scratch/run02/workers/install-publication-0/ (browser-products-record.log, release-bindings-status-before.log, release-bindings-refresh.log, terminal-gates.log). Not for commit. scripts/_proper_study.py also wrote its own fresh conversion under the checkout's .scratch/proper-study-web/, which is excluded from git."
+  ],
+  "stage": "install-publication",
+  "summary": "Installed the Claude postconciliar First Sunday of Advent, Year B as a source/HTML publication. I checked first: a fresh conversion matched the reviewed one byte for byte (sha256 bb1020b4fb2d3c51db90c8fef7838465b3c7f967f8d44542a30f279e2f8beed0, the hash in research/web-artifact.json), and the content-phase checks passed for all three editions. I then wrote three alpha release records with tools/release-bindings add-publication. In library/novus-ordo-liturgy.md I wired the Claude cell of the cycle-B row to the Full Study Guide, Synthesis and Homily web readers, linking no PDF and leaving the GPT cell unchanged. I added one marker, claude:<id>: the primary provider is gpt, and the GPT unprefixed marker for this identity was already there. Web review 0 is now recorded as the study reader's inspection in web-edition.toml. The engine's review results, which I re-hashed, and the install facts are recorded in research/production-review.md. I refreshed and classified the Claude inventory (70 publications; the leaf, the three registry files and the shared formulary owner are now included). browser-products record passed (13 products, 30466 files, two cold builds, 7m00s), and so did check. The scoped release-binding refresh covered exactly the 90 paths status named, 92 changes in all. Each path was this run's own work: changed since the last binding record, or an unchanged source record newly recognized because this leaf binds it or its ancestor. Every terminal publication gate passed locally."
+}

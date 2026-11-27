@@ -1,0 +1,32 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/main.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "STU-015",
+      "note": "New subsection 'Augustine: Christ given, and still to be given' in sections/20 reports 84.9 in order: Hoc est quod cantavimus; salutare tuum, Christum tuum; Christ already given and still asked for, as daily bread is; given as man, to be given as God; sons in hope, not yet in fact (1 Jn 3:2); the closing line on seeing Christ as the angels see him, in the Oxford English. The question why the Church still prays an answered cry now comes directly before Augustine's answer, with Cyril following. The Oxford ellipsis is marked in the citation ('84.9; §6 in the Oxford translation, which passes over ...; the English of those sentences is the study's, from the Latin'), and the scope appendix notes it. Re-read against the Latin and English passage records.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-016",
+      "note": "Lane 2: the Prayer over the Offerings follows Gregory's servat operando and the Collect; the Alleluia verse is in the moral sense; the solemn blessing is in the anagogical sense. Lane 3: the Preface's promissum is in the anagogical sense. A word search confirms that all twelve elements appear in sections 20, 30 and 40. production-review.md: the iteration-1 policy sentence is corrected in place, and iteration 2 is recorded.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-017",
+      "note": "00: three questions only. The lane leads name their authors' answers briefly and state the thesis once, in different words in each lead, with no shared formula. Lane 3's closing paragraph, which restated its lead, is cut. venienti is discussed only in section 10 (cut from 05; lane 1 has only '(venienti)'). The US-English absence of Descendisti is stated in 00 and used once as a clause in 50. Lane 1's strain now holds the Jerome/Aquinas disagreement, moved out of the body rather than duplicated, plus the no-Father-joins-Isaiah-to-Mark sentence; 'They are read together here because' is cut. 50 no longer restates the theses, and its closing paragraph, which duplicated the table row, is cut. Neighbouring rules re-checked: element coverage (STU-016) and no restored roll call. A cold reader may still judge the lane leads' brief author previews as overlapping the bodies; I kept them in the form the finding's option (a) allows.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 2,
+  "notes": [
+    "Files changed (for the driver to commit), all under src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/: sections/00-opening.tex, sections/05-appointed-texts.tex, sections/10-texts-in-setting.tex, sections/20-rend-the-heavens.tex, sections/30-watch-at-the-door.tex, sections/40-clay-and-faithful-potter.tex, sections/50-comparison.tex, sections/90-apparatus.tex, generation-metadata.tex (iteration-2 contribution line appended), research/production-review.md (iteration-1 policy sentence corrected; iteration-2 section added). No manifest, publication, generated, research-evidence or shared file changed.",
+    "Advisories cleared: STU-018, the Prayer after Communion described as asking profit and stating that God already teaches (sections 10, 20, 30 and 40; section 10 now says the two Verona prayers ask for what the Missal's prayer says God already does); STU-019, 'the sense he prefers' versus 'the first/second sense Aquinas lists', with the gloss 'as prophets speak...' cut; STU-020 (a) and (b), using the finding's wording; STU-021, in the apparatus, with the refrain link counted among the study's observations; STU-022, Augustine 84.15 moved out of Bede's doorkeeper allegory into lane 2's moral sense.",
+    "Checks: scripts/_proper_study.py check (content, research edition, source mode, presentation/format/authority/orientation/orientation-v3) passes; check-content-preflight --edition research passes all checks, and provenance-matches-run passes for this run; tools/tpt document-types refresh --check reports current; web probe at build/tpt-runs/99f04ef5cf9b711b/artifacts/author-study-2/web-probe converted, with all twelve proper anchors present once. The study prints no \\ref, so the sec:date-location rendering defect does not arise. Gate outputs: <worker-scratch>/workers/author-study-2/{study-check,preflight,web-probe}.txt.",
+    "No print proof made at this iteration. Length on the web-probe Markdown, opening through comparison, is about 13,580 words; iteration 1 measured about 13,600 on its proof.",
+    "Research defects for the reviewer to route (unchanged records): research/interpretations.md Reading 1 still credits Sinai to Aquinas's preferred literal sense; research/scope.md and interpretations.md summarize 84.9 without its sentences on Christ given as man and to be given as God.",
+    "Independence: no GPT leaf, GPT release or production record, 1962 Advent leaf or GPT 1962 Advent record was opened; no other worker's scratch directory was read. Before-edit snapshot of changed files is in my scratch directory, under before/."
+  ],
+  "stage": "author-study",
+  "summary": "Revised the Claude expansive study for PC-S01-B against study-review 1. STU-015: Augustine's En. in Ps. 84.9 is now reported in full from the bound Latin in a new lane-1 subsection, including his own reason why the Church still asks for a Christ already given (given as man, to be given as God, to be seen as the angels see him). The sentences the Oxford English omits are translated and marked as the study's. STU-016: every appointed element now has at least a clause in every interpretation, and the production record's wrong policy statement is corrected. STU-017: the opening's rosters, the shared 'Put/Taken together' lead formula, the venienti and US-English refrains, lane 1's restated strains and the comparison's restated theses are removed. Advisories STU-018 to STU-022 are cleared. Content gate, all preflight checks including provenance, document-type --check and the web probe (12 anchors once) pass."
+}

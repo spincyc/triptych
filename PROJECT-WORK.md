@@ -11,14 +11,42 @@ Last reconciled: 2026-11-26.
 
 <!-- promised-deliverable: claude-pc-s01-advent-year-b-2026-11-29 -->
 
-**In progress: authorized; seeding.** On 2026-11-26 the maintainer asked for
-the Claude Novus Ordo proper-study documents for the upcoming Sunday. Sunday,
-29 November 2026 is the First Sunday of Advent, the first Sunday of Lectionary
-Year B, permanent identity `pc-s01`,
+**Complete on the workspace branch; not pushed.** On 2026-11-26 the
+maintainer asked for the Claude Novus Ordo proper-study documents for the
+upcoming Sunday. Sunday, 29 November 2026 is the First Sunday of Advent
+(violet, Psalter Week I), the first Sunday of Lectionary Year B, Lectionary
+no. 2, permanent identity `pc-s01`,
 `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b`.
 The production plan records the one-provider authorization. This is an
-independent Claude production: the published GPT leaf for the same identity is
-not an input. Publication to `main` has not been authorized.
+independent Claude production: the published GPT leaf for the same identity
+was closed to every stage and is not an input. Publication to `main` has not
+been authorized.
+
+Run `99f04ef5cf9b711b` (`proper-study` v20) was seeded at the authorization
+commit `cbccbfcb3b`. It reached ACCEPTED with 41 packets, 41 results and 17
+interventions, with no escalations. It went through six cycles, all content
+defects found by cold reviews:
+- research twice: words credited to Bede that are Jerome's on Matthew 24 and a conflated petition, then the repair's denial of a join Jerome and Aquinas make;
+- the study twice: closing roll calls, register and four attributions, then the coverage the roll-call repair removed;
+- the concise study once: an invented contrast, a psalter overstatement and a roll call;
+- the homily once: the English of Augustine on Ps 84.15.
+
+The web review passed on its first try.
+
+| Commit | What it holds |
+| --- | --- |
+| `431fac11e1` | source registrations, edition registry rows and the shared formulary owner |
+| `c861ed623d` | the leaf; edition stamp `2026-11-26T23:01:57Z` |
+| `1409c698c5` | the web receipt |
+| `8320587711` | installation: the Claude cell of the Year B row in `library/novus-ordo-liturgy.md`, three release records, products re-recorded, 90 binding paths refreshed |
+
+Standing advisories worth a first revision: WEB-001 and SYN-006 (the solemn
+blessing described three times in the study and once in the concise study in
+words one word away from the approved English); the study's "either Latin
+psalter" claim, corrected in the concise study; and the studies' English of
+Augustine on Ps 84.15, corrected in the homily. The run is archived in the
+leaf; the driver's account, with the defects left for other owners, is
+[CYCLES.md](workflows/reviews/claude-pc-s01-production-2026-11-26/CYCLES.md).
 
 ## Claude 1962 First Sunday of Advent, 2026-11-29
 

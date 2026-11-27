@@ -1,0 +1,165 @@
+{
+  "admitted_passage_ids": [
+    "passage.john-chrysostom.homilies-on-first-corinthians.ccel-web-2026-09-28.2.1cor-1.7-9 (new; edge 1Cor 1:7-9 added to src/sources/commentary/fragment-loci.yaml)",
+    "passage.augustine.enarrationes-in-psalmos.1888-english-npnf-anonymous-first-thirty.24.1-2",
+    "passage.augustine.enarrationes-in-psalmos.1888-english-npnf-anonymous-first-thirty.24.3",
+    "passage.augustine.enarrationes-in-psalmos.1888-english-npnf-anonymous-first-thirty.24.4",
+    "passage.augustine.enarrationes-in-psalmos.1888-english-npnf-anonymous-first-thirty.24.5",
+    "passage.augustine.enarrationes-in-psalmos.1888-oxford-coxe.psalm-84-9",
+    "passage.augustine.enarrationes-in-psalmos.1888-oxford-coxe.psalm-84-15",
+    "passage.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.84-9",
+    "passage.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.84-15",
+    "passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-24-verses-1-3",
+    "passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-79-verses-2-4",
+    "passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-79-verses-15-19",
+    "passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-84-verse-8",
+    "passage.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.psalm-84-verse-13",
+    "passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.13-32-37"
+  ],
+  "artifact_path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/source-dispositions.toml",
+  "deferred": [
+    {
+      "extent": "Is 63:15-64:12",
+      "id": "jerome-in-isaiam-xvii-isa-63-15-64-12",
+      "missing_criteria": [
+        "verified-transcription",
+        "tracked-text-controller",
+        "natural-excerpt-boundary"
+      ]
+    },
+    {
+      "extent": "Is 63:15-64:12",
+      "id": "aquinas-super-isaiam-isa-63-15-64-12",
+      "missing_criteria": [
+        "publishable-controller",
+        "tracked-text-controller",
+        "passage-record",
+        "natural-excerpt-boundary"
+      ]
+    },
+    {
+      "extent": "Ps 79:1-4, 15-16, 18-20",
+      "id": "augustine-en-ps-79-npnf8-ccel",
+      "missing_criteria": [
+        "passage-record",
+        "unabridged-text",
+        "natural-excerpt-boundary"
+      ]
+    },
+    {
+      "extent": "1Cor 1:7-9",
+      "id": "aquinas-super-i-cor-1-l1-1cor-1-7-9",
+      "missing_criteria": [
+        "publishable-controller",
+        "tracked-text-controller",
+        "passage-record",
+        "natural-excerpt-boundary"
+      ]
+    },
+    {
+      "extent": "Mark 13:32-37",
+      "id": "bede-in-marcum-mark-13-32-37",
+      "missing_criteria": [
+        "work-locus-grammar",
+        "passage-record",
+        "quoted-text-attribution"
+      ]
+    },
+    {
+      "extent": "Luke 12:35-40 (analogue)",
+      "id": "gregory-hom-evang-13-luke-12-35-40",
+      "missing_criteria": [
+        "passage-record"
+      ]
+    },
+    {
+      "extent": "Matt 25:14 (analogue)",
+      "id": "gregory-hom-evang-9-1-matt-25-14",
+      "missing_criteria": [
+        "passage-record",
+        "natural-excerpt-boundary"
+      ]
+    },
+    {
+      "extent": "Mark 13:35-37",
+      "id": "augustine-ep-199-mark-13-35-37",
+      "missing_criteria": [
+        "publishable-controller",
+        "tracked-text-controller",
+        "passage-record",
+        "natural-excerpt-boundary"
+      ]
+    },
+    {
+      "extent": "Matt 24:42-44 (analogue)",
+      "id": "chrysostom-hom-mt-77-matt-24-42-44",
+      "missing_criteria": [
+        "edition-translator-credit",
+        "passage-record",
+        "original-language-text"
+      ]
+    },
+    {
+      "extent": "[] (doctrinal-illumination)",
+      "id": "cyril-catechesis-15-1-two-advents",
+      "missing_criteria": [
+        "scripture-extent",
+        "canonical-scripture-edge"
+      ]
+    }
+  ],
+  "disposition": "PASS",
+  "iteration": 0,
+  "leads": [
+    "jerome-in-isaiam-dco-pars-4",
+    "augustine-en-ps-24-augustinus-it",
+    "lapide-1-cor-1-5",
+    "lapide-1-cor-1-7"
+  ],
+  "notes": [
+    "Receipts: every file under workers/research-0/dl and workers/resolve-context-0/dl re-hashed and matched the recorded SHA-256 (including the GIRM II gzip transfer and its decoded bytes). Not registered because they are not the source: NABRE Isaiah 63 (HTTP 403 challenge, bc18b907) and augustinus.it Ps 24 (4,608 B, e908b6d0).",
+    "Bindings reconciled (source-bindings.toml, now 64): unread registered states of the readings page (27c3cb63) and the Book of Blessings transcription (6be75b4e) replaced by the states read (7e0b44c0, 25cf5943); added GIRM II capture, Nova Vulgata Isaiae, NABRE Isaiah 64 and 7 New Advent cross-checks; Gelasian OCR and Verona inventory passage re-roled lead -> context (they were inspected, so the handoff check refuses them as leads); Chrysostom Hom. 2 loci corrected to sections 4-8, lines 727-851 (scope.md 3.2 draws on sections 4-5); Augustine NPNF8 Ps 24 lines corrected 6850-6880 -> 6850-6883 (section 5 ends at 6883).",
+    "Supporting audit corrected: research/scope.md (Chrysostom and Augustine Ps 24 matrix rows, section 5 library-relation column, new section 11 on source registration); propers/verified.md (registration ids replace 'not registered').",
+    "Source-family ledger: the new canonical records made src/sources/inventories/source-family-migration-v1.toml's canonical_catalog_snapshot stale (proven: excluding the new files reproduces the pinned snapshot). Ledger has families = []; per guidance/sources.md the source library validated and the changed records are this stage's own reviewed registrations, so ran `tools/tpt source-family-migration refresh --audited-on 2026-11-26 --accept-canonical-catalog`; only audited_on and the two snapshots changed; review states preserved (pending=172, screened=0); `source-family-migration check` valid. Driver may revert this file if it prefers install-publication to own the re-pin.",
+    "Checks: tools/tpt source-library validate: valid (bindings=5472). scripts/_proper_study.py source-dispositions --mode source: pass. python3 scripts/_catena.py check: valid (fragments=1802). tools/tpt source-reader structure --strict: wrote .scratch/browser-data-work/structure/sources (19,684 files); --strict --check: current. make -k check-sources: failure set = {check-publication-inventories (leaf not yet in claude-publications-v1.toml; three edition registry files stale; install-publication owns), check-source-containment (the two known base periodical-issue records)}, both expected; catena accounting 'held corpus audit: ok'; chronology and generated-document freshness tests OK. Log: <worker-scratch>/workers/source-registration-0/check-sources.log.",
+    "Shared defect (source library owner, work.bede.in-marci-evangelium-expositio): locus_pattern admits only Mark 10 loci, which blocks a passage record for Bede on Mark 13:32-37 (deferred row records it). Not edited.",
+    "Shared defect (calendars owner, src/sources/calendars/postconciliar/propers.yaml, advent-1): Entrance antiphon given as Psalm 25:1-3 with no Cf. and no numbering flag, against the Missal's 'Cf. Ps 24, 1-3'. Carried from research; not edited.",
+    "Feltoe Verona PDF (artifact ...feltoe-1896.internet-archive-pdf-3b991b13): its binary resolves through the delivery sidecar and is not hydrated in this checkout; research's fresh copy matched the registered hash. No action taken.",
+    "Independence: no GPT leaf, GPT release or production record, 1962 leaf or 1962 production record was opened; only research-0 and resolve-context-0 dl/ and img/ were read among other workers' directories.",
+    "Files to commit: NEW src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/source-dispositions.toml; MODIFIED (in the new leaf) research/source-bindings.toml, research/scope.md, propers/verified.md; MODIFIED src/sources/commentary/fragment-loci.yaml; MODIFIED src/sources/inventories/source-family-migration-v1.toml; NEW the 20 records under src/sources/works/ listed in registered_sources (paths: catholic-church/nova-vulgata/editions/vatican-official-web/artifacts/liber-isaiae-9c9c78c4/; united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/2026-11-26-english-usccb-web/; united-states-conference-of-catholic-bishops/daily-readings/editions/2026-11-26-page-for-2026-11-29/; catholic-church/institutio-generalis-missalis-romani/editions/english-us-2011-emended-2021/artifacts/usccb-chapter-ii-wayback-2026-10-15-b6bc5b79/; catholic-church/de-benedictionibus/editions/2026-11-26-catholic-culture-1989-us-transcription/; john-chrysostom/homilies-on-first-corinthians/editions/2026-11-26-new-advent/; john-chrysostom/homiliae-in-matthaeum/editions/2026-11-26-new-advent/; augustine/enarrationes-in-psalmos/editions/2026-11-26-new-advent/; cyril-of-jerusalem/catechetical-lectures/editions/2026-11-26-new-advent/; john-chrysostom/homilies-on-first-corinthians/editions/2026-09-28-ccel-web/passages/2.1cor-1.7-9.toml). Generated .scratch/browser-data-work is outside Git."
+  ],
+  "registered_sources": [
+    "artifact.catholic-church.nova-vulgata.vatican-official-web.liber-isaiae-9c9c78c4",
+    "edition.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-11-26",
+    "artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-11-26.isaiah-64-35573e1b",
+    "edition.united-states-conference-of-catholic-bishops.daily-readings.2026-11-26-page-for-2026-11-29",
+    "artifact.united-states-conference-of-catholic-bishops.daily-readings.2026-11-26-page-for-2026-11-29.lectionary-2-7e0b44c0",
+    "artifact.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.usccb-chapter-ii-wayback-2026-10-15-b6bc5b79",
+    "edition.catholic-church.de-benedictionibus.2026-11-26-catholic-culture-1989-us-transcription",
+    "artifact.catholic-church.de-benedictionibus.2026-11-26-catholic-culture-1989-us-transcription.advent-wreath-html-25cf5943",
+    "edition.john-chrysostom.homilies-on-first-corinthians.2026-11-26-new-advent",
+    "artifact.john-chrysostom.homilies-on-first-corinthians.2026-11-26-new-advent.homily-1-73b75a82",
+    "artifact.john-chrysostom.homilies-on-first-corinthians.2026-11-26-new-advent.homily-2-3cdc75f9",
+    "edition.john-chrysostom.homiliae-in-matthaeum.2026-11-26-new-advent",
+    "artifact.john-chrysostom.homiliae-in-matthaeum.2026-11-26-new-advent.homily-77-1f1f2592",
+    "edition.augustine.enarrationes-in-psalmos.2026-11-26-new-advent",
+    "artifact.augustine.enarrationes-in-psalmos.2026-11-26-new-advent.psalm-25-68692606",
+    "artifact.augustine.enarrationes-in-psalmos.2026-11-26-new-advent.psalm-80-4fde8c1d",
+    "artifact.augustine.enarrationes-in-psalmos.2026-11-26-new-advent.psalm-85-4f2451c8",
+    "edition.cyril-of-jerusalem.catechetical-lectures.2026-11-26-new-advent",
+    "artifact.cyril-of-jerusalem.catechetical-lectures.2026-11-26-new-advent.lecture-15-c51f9a4c",
+    "passage.john-chrysostom.homilies-on-first-corinthians.ccel-web-2026-09-28.2.1cor-1.7-9"
+  ],
+  "rejected": [
+    "new-advent-chrysostom-hom-1-cor-1",
+    "new-advent-chrysostom-hom-1-cor-2",
+    "new-advent-chrysostom-hom-mt-77",
+    "new-advent-augustine-en-ps-24",
+    "new-advent-augustine-en-ps-79",
+    "new-advent-augustine-en-ps-84",
+    "new-advent-cyril-catechesis-15",
+    "(all: missing_criteria publishable-controller, unrevised-wording; Cyril also scripture-extent; Catena admission only, cross-check use unchanged)"
+  ],
+  "stage": "source-registration",
+  "summary": "Re-hashed every context and research receipt; registered the 12 read-but-unregistered deliveries as restricted artifacts (5 new dated editions + 2 existing editions); reconciled source-bindings.toml (64 bindings); admitted one new verified Catena passage (Chrysostom, Hom. 2 on 1 Cor, sections 4-8, edge 1 Cor 1:7-9); wrote research/source-dispositions.toml (67 rows), which passes the handoff check."
+}

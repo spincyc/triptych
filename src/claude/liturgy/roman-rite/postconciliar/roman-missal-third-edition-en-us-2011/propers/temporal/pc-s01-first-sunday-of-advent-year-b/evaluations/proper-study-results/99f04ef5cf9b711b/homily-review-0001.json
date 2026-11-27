@@ -1,0 +1,280 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "HOM-007",
+      "location": "sections/homily/10-homily.tex lines 84-87 ('The refrain ... asks God to turn them and show them his face ... Saint Augustine, preaching on that refrain, explained it in one sentence: ...'); sections/homily/90-note.tex lines 63-64 ('Augustine's one sentence on the refrain')",
+      "problem": "The speech says Augustine 'explained' the refrain 'in one sentence'. The antecedent of 'it' is the whole refrain, which the speech has just given as asking God to turn his people and to show his face. Augustine's comment on the refrain (En. in Ps. 79.3, the tracked NPNF English) begins with that sentence on 'O God, convert us' ('For averse we have been from Thee, and except Thou convert us, we shall not be converted'). It then goes on at length to 'illumine Thy face': the face that a cloud of flesh veiled and that was acknowledged after the resurrection and ascension. The expansive study states this correctly ('Augustine's comment on it begins with one sentence', sections/40-clay-and-faithful-potter.tex line 102). The homily turns 'begins with' into a claim about the whole of Augustine's comment, and the note repeats it. The sentence reported is accurate, and the listener is not misled about what it says. 'In one sentence' is the only inaccuracy, and it adds an emphasis of brevity that the source does not support. Isolated instance.",
+      "required_result": "Do not claim that one sentence is Augustine's whole explanation. For example: 'Saint Augustine, preaching on that refrain, says of its first words: we have turned away from God, and unless he turns us, we will not be turned.' Or: 'Saint Augustine, preaching on that refrain, begins with one sentence: ...'. In the note, say 'Augustine's sentence on the refrain's \"convert us\"' or 'Augustine on the refrain's first petition' instead of 'Augustine's one sentence on the refrain'.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-008",
+      "location": "sections/homily/90-note.tex lines 57-58 ('The speech states this as what the texts say and does not stage it as a turn.')",
+      "problem": "The note is reader-facing apparatus. Its purpose is the audience, the length, the loci, the routes of quotation and the homily's own links. This sentence certifies that the speech meets the three-document profile ('the speech states that change as what the text says, not as a staged turn'). It tells the reader nothing about a source or about delivery. editorial.md, 'State the finding, not the process', says that naming the discipline is itself the defect: compliance should be shown, not narrated. The profile places this judgment in the production audit, where a reviewer checks it, and research/production-review.md already records the change and the detail that makes it possible. Isolated instance. The rest of the paragraph, which gives the difficulty and the textual detail, is useful to a reader who would preach from this note.",
+      "required_result": "Delete the sentence 'The speech states this as what the texts say and does not stage it as a turn.' and leave the paragraph's account of the difficulty and the verses unchanged.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 1,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "solemn-blessing"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-homily.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "homily-body"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "solemn-blessing"
+          ],
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-note.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+      "element_keys": [
+        "entrance-antiphon",
+        "collect",
+        "first-reading",
+        "responsorial-psalm",
+        "second-reading",
+        "acclamation",
+        "gospel",
+        "prayer-over-offerings",
+        "preface",
+        "communion-antiphon",
+        "prayer-after-communion",
+        "solemn-blessing"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Jerome",
+            "Thomas Aquinas",
+            "Augustine of Hippo",
+            "Cyril of Jerusalem",
+            "Robert Bellarmine",
+            "John Chrysostom",
+            "Gregory the Great",
+            "Bede"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "Augustine of Hippo",
+            "Cyril of Jerusalem",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "rend-the-heavens"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "solemn-blessing"
+          ],
+          "key": "rend-the-heavens",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Jerome",
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Gregory the Great",
+            "Bede",
+            "Thomas Aquinas",
+            "Robert Bellarmine"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "Augustine of Hippo",
+            "Gregory the Great",
+            "John Chrysostom",
+            "Bede"
+          ],
+          "component_keys": [
+            "watch-at-the-door"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "solemn-blessing"
+          ],
+          "key": "watch-at-the-door",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Jerome",
+            "Thomas Aquinas",
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Robert Bellarmine",
+            "Gregory the Great",
+            "Bede"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "Thomas Aquinas",
+            "Augustine of Hippo",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "clay-and-faithful-potter"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "preface",
+            "communion-antiphon",
+            "prayer-after-communion",
+            "solemn-blessing"
+          ],
+          "key": "clay-and-faithful-potter",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b",
+    "files": {
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/format.tex": "477b3fd5e29a2f8805e06702a4cce22fe0ec583f59441a4313330feba8a25f5f",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/homily.tex": "434b5066e79aef5ff4a5e5e9f11b9fbe1b72057d88f0337b5614f3bc5bc4a86b",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/propers/verified.md": "ccb6fbe4d64efb789817b98edd444e9e206d7dc45123512929195d005f221e35",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/interpretations.md": "4e7895f05242eb372be5da57eaebbc7452e61589c818f4ffc9f693f2a3b0e483",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/research/scope.md": "28d22abc1638324853498a944f6b1503c3183c6a30eac5f4295d646e74546589",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/homily/10-homily.tex": "80e518a976a83d7405aaa8778743c009eaea13b523ab2d2017e696ef56ba01ed",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/sections/homily/90-note.tex": "d53be00002e833220c14924d345d60791836d14870d872212f44459593a6b399",
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s01-first-sunday-of-advent-year-b/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "20",
+            "9829722276b1a1f662a2c7a4f5e7e2562394d5ef83911bb94d8b729393f1feec",
+            "99f04ef5cf9b711b",
+            "cbccbfcb3be4896c95225d8cd281e2b0684a12e9",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Cold review of the homily edition of the Claude postconciliar First Sunday of Advent, Year B (homily.tex; sections/homily/10-homily.tex, sections/homily/90-note.tex; generation-metadata.tex and research/production-review.md as changed this round), read first straight through as a listener would hear it and then against its evidence and the accepted studies. Verdict PASS: no blocking defect. HOM-001 is cleared: the speech now says 'good fruit you will not have unless the one to whom you confess gives it', which renders 'nisi ille dederit cui confiteris' in the tracked Latin of En. in Ps. 84.15, and the note names that English as the homily's own. HOM-002 to HOM-006 are cleared: the Douay form of Is 63:17 comes before Jerome answers it; Isaiah's people are no longer said to name sleep at the reading's introduction; the burnt house, Jerome's 'God's mercy', the divided Chrysostom paragraph and the Preface's watchers are clear on one hearing; 1 Cor 1:8 has Christ as subject both times; the note gives Jerome's route. The argument is specific to this Sunday. Isaiah's people confess that none calls on God's name (64:6) and in the next verse call him Father (64:7). With the psalm's refrain and the Collect's petition for a will, and with Paul's 'God is faithful', the speech moves from the command to all (Mk 13:37) to a single response drawn from the reading, confession, and ends on 1 Cor 1:8-9. It would not survive a change of readings. The preacher's voice carries the scene, the central inference, the links and the close. Fathers' material is about a third of the speech, reported plainly; no Latin, dates or credentials are spoken. No maxim closers, emphatic fragments, rhetorical questions, slogans or inventories of the listeners' lives. Checked evidence: the spoken count, recounted at 1,398 words (10.8 to 11.7 minutes at 130 to 120 words a minute; arithmetic only, no timed delivery). Every Douay quotation against the tracked Challoner text (Mk 13:37; Is 63:17, 64:7-8; Ps 84:13; 1 Cor 1:9). Bede on Mk 13:34-37 in the tracked Latin. Chrysostom, Hom. 2 on 1 Cor, in the verified passage record, sections 4-8. Augustine, En. in Ps. 84.15, in the tracked Latin passage, and 79.3 in the tracked NPNF English. Augustine, Ep. 199.1.2-3, in the Latin of the registered augustinus.it page, fetched again into the reviewer's scratch area with a matching SHA-256 (5b570f96...). Jerome, In Isaiam XVII, cols. 643-644 and 649-650, in the tracked raw OCR. The Missal Latin of the Collect, Preface I of Advent and Prayer after Communion, through the owner and leaf audits. The study's sections 30, 40 and 50, for the note's claims about the interpretations. Limits: the speech was read silently. No PDF or web rendering was inspected. Jerome was read only in the poor raw OCR, a locating witness; the Migne page images were not viewed. The readable OCR confirms 'Non quod Deus erroris causa sit', 'patientia ... causa erroris duritiaeque videatur', 'Si nostra consideremus merita, desperandum est', 'nec vas possit respondere figulo' and 'tamen scientes esse nos filios, audemus dicere'. The United States Lectionary page was not re-fetched; its 'let us wander' at 63:17 rests on the research records. Two advisories, both isolated: HOM-007, Augustine said to explain the refrain 'in one sentence'; HOM-008, a self-certifying sentence in the note."
+}
