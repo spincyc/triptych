@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.martyrologium-romanum.advent-pc-en1-baltimore-murphy-1916.advent-pc-en1-advent-elogia-checked-text-8f5c1f9e"
+edition_id = "edition.catholic-church.martyrologium-romanum.advent-pc-en1-baltimore-murphy-1916"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Published in the United States at Baltimore in 1916 (title page, PDF page 7), from a text first copyrighted in 1897 (verso, PDF page 9); a work published in the United States before 1931 is out of United States copyright with no term running; that line is the one guidance/missals.md section 5 records as current on 1 January 2026, written here as derived for calendar year 2026 and not as a standing rule. This focused transcription reproduces only English printed in that edition and adds no authorship; it contains no Internet Archive markup, stamp or text-layer bytes."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription by the first English-source lane of the postconciliar Advent research (advent-pc-en1) from PDF pages 395, 396, 401, 402 and 403 of the hashed complete scan advent-pc-en1-ia-pdf-688cfa7b (SHA-256 688cfa7b85d8a686a4fde9877cfa133550fef8fce8cf46c6c433abf88983042d), rendered at 300 dots per inch in greyscale with pdftoppm and cropped, read on 2026-11-27; the item's optical text layer was used only to locate the pages. No source text passed through a language model."
+retrieved = "2026-11-27"
+sha256 = "8f5c1f9e3dde482d1f720bcbcdec13fa4d0133d00275d141630d95a1db24f7fb"
+byte_size = 1525
+path = "src/sources/works/catholic-church/martyrologium-romanum/editions/advent-pc-en1-baltimore-murphy-1916/artifacts/advent-pc-en1-advent-elogia-checked-text-8f5c1f9e/advent-pc-en1-advent-elogia.txt"
+derived_from = "artifact.catholic-church.martyrologium-romanum.advent-pc-en1-baltimore-murphy-1916.advent-pc-en1-ia-pdf-688cfa7b"
+transformation = "Transcribe each day heading and the first elogium of the day (for 13 December, the whole Lucy elogium across the page turn) with one heading or sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator (day and printed page); preserve the printed wording, spelling, capitalization and punctuation, except that the display capitals of the opening word (a drop capital A followed by a capital T) are written At and the black-letter day headings are written in roman; join line-end hyphenation and close the printer's spaces before semicolons; stop each elogium at the em dash that introduces the next entry and omit the running heads and page numbers."
+indexable = true
+encoding = "utf-8"

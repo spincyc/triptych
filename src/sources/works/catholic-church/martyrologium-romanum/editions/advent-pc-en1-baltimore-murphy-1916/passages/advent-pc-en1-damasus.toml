@@ -1,0 +1,18 @@
+schema = 1
+record_type = "passage"
+id = "passage.catholic-church.martyrologium-romanum.advent-pc-en1-baltimore-murphy-1916.advent-pc-en1-damasus"
+edition_id = "edition.catholic-church.martyrologium-romanum.advent-pc-en1-baltimore-murphy-1916"
+artifact_id = "artifact.catholic-church.martyrologium-romanum.advent-pc-en1-baltimore-murphy-1916.advent-pc-en1-advent-elogia-checked-text-8f5c1f9e"
+artifact_sha256 = "8f5c1f9e3dde482d1f720bcbcdec13fa4d0133d00275d141630d95a1db24f7fb"
+locus = "The Roman Martyrology (Baltimore 1916), the Eleventh Day of December, St Damasus"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Day heading and the Damasus elogium, the first entry of the day, printed p. 381 (PDF 401)."
+physical_line_ranges = [[5, 7]]
+text = "The Eleventh Day of December. At Rome, St. Damasus, pope and confessor, who condemned the heresiarch Apollinaris, and restored to his see Peter, bishop of Alexandria, who had been driven from it. He also discovered the bodies of many holy martyrs, and wrote verses in their honor."
+transcription_segments = [
+  { line = 5, text = "The Eleventh Day of December." },
+  { line = 6, text = "At Rome, St. Damasus, pope and confessor, who condemned the heresiarch Apollinaris, and restored to his see Peter, bishop of Alexandria, who had been driven from it." },
+  { line = 7, text = "He also discovered the bodies of many holy martyrs, and wrote verses in their honor." },
+]
+verified_on = "2026-11-27"
+notes = "Against the 1902 Latin (artifact.catholic-church.martyrologium-romanum.rome-propaganda-fide-1902.advent-pc-l5-advent-elogia-checked-text-4edef9c2, line 10): close in substance; fugatum restituit becomes restored to his see ... who had been driven from it, and eorumque memorias versibus exornavit (adorned their memorials with verses) becomes wrote verses in their honor."

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.provincial-councils-of-baltimore.pastoral-letter-1846.advent-pc-en2-guilday-ncwc-1923.advent-pc-en2-pastoral-1846-patronage-checked-text-9eac8870"
+edition_id = "edition.provincial-councils-of-baltimore.pastoral-letter-1846.advent-pc-en2-guilday-ncwc-1923"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces one paragraph, one marginal sidenote and the dating line of the 1846 pastoral letter as printed in Guilday's edition, published at Washington, D.C., by the National Catholic Welfare Council in 1923, which is in the United States public domain by date of publication (the parent facsimile's rights_basis gives the evidence and the reasoning); the letter itself dates from 1846. It is transcribed from page images rendered from the hashed Internet Archive facsimile and contains no Internet Archive markup or text-layer bytes."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription by the advent-pc English-witness lane (advent-pc-en2) on 2026-11-27 from the printed page images of the hashed Internet Archive facsimile artifact.provincial-councils-of-baltimore.pastoral-letter-1846.advent-pc-en2-guilday-ncwc-1923.advent-pc-en2-ia-facsimile-pdf-ccb0e5b0 (SHA-256 ccb0e5b0a96031b34e615eab37dfe954c822849ada840a2f20f87e9bfb7d3f4f); the item's OCR text was used only to locate the pages. Printed pages 168 and 169, PDF pages 188 and 189, read at 150 dpi whole and p. 169 again at 300 dpi cropped. No source text passed through a language model."
+retrieved = "2026-11-27"
+sha256 = "9eac88709226b04fbc470b777c2f13ddf2f487f3af473777a665e2ae938e31ef"
+byte_size = 1220
+path = "src/sources/works/provincial-councils-of-baltimore/pastoral-letter-1846/editions/1923-advent-pc-en2-guilday-ncwc/artifacts/advent-pc-en2-pastoral-1846-patronage-checked-text-9eac8870/pastoral-1846-patronage.txt"
+derived_from = "artifact.provincial-councils-of-baltimore.pastoral-letter-1846.advent-pc-en2-guilday-ncwc-1923.advent-pc-en2-ia-facsimile-pdf-ccb0e5b0"
+transformation = "Read the named printed pages as images and transcribe the paragraph beginning We take this occasion, brethren (p. 168 to p. 169), one sentence per LF-terminated UTF-8 line, then the bold marginal sidenote beside it on p. 169 and the italic dating line that follows the closing salutation, each prefixed by a braced locator; words, spelling, capitals and punctuation as printed; line-end hyphenation joined (gen-erations, con-fidence); the line break between can and not on p. 169 carries no hyphen and is given as two words, can not; the small-capital date MDCCCXLVI given in capitals; running heads, page numbers, the closing salutation and the signatures omitted."
+indexable = true
+encoding = "utf-8"

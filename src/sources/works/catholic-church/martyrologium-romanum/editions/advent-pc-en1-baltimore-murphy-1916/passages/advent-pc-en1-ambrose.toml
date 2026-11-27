@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.catholic-church.martyrologium-romanum.advent-pc-en1-baltimore-murphy-1916.advent-pc-en1-ambrose"
+edition_id = "edition.catholic-church.martyrologium-romanum.advent-pc-en1-baltimore-murphy-1916"
+artifact_id = "artifact.catholic-church.martyrologium-romanum.advent-pc-en1-baltimore-murphy-1916.advent-pc-en1-advent-elogia-checked-text-8f5c1f9e"
+artifact_sha256 = "8f5c1f9e3dde482d1f720bcbcdec13fa4d0133d00275d141630d95a1db24f7fb"
+locus = "The Roman Martyrology (Baltimore 1916), the Seventh Day of December, St Ambrose"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Day heading and the Ambrose elogium, which here opens the day, printed p. 376 (PDF 396)."
+physical_line_ranges = [[3, 4]]
+text = "The Seventh Day of December. At Milan, the consecration of St. Ambrose, bishop and doctor of the Church, who has ennobled the universal Church by his holiness and teaching."
+transcription_segments = [
+  { line = 3, text = "The Seventh Day of December." },
+  { line = 4, text = "At Milan, the consecration of St. Ambrose, bishop and doctor of the Church, who has ennobled the universal Church by his holiness and teaching." },
+]
+verified_on = "2026-11-27"
+notes = "Against the 1902 Latin (artifact.catholic-church.martyrologium-romanum.rome-propaganda-fide-1902.advent-pc-l5-advent-elogia-checked-text-4edef9c2, lines 7-8): no Vigil of the Immaculate Conception is announced on this day in the 1916 English (the 1902 Latin prints it before Ambrose); ordinatio is rendered consecration; decoratur is rendered has ennobled."

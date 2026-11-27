@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.english-college-of-douay.douay-rheims-bible.murphy-1914.advent-pc-en1-luke-1-nt-p66-checked-text-dc1acee5"
+edition_id = "edition.english-college-of-douay.douay-rheims-bible.murphy-1914"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This edition record dates the printing to 1914 from the holding library's catalogue (Internet Archive item holybibletransla00balt, Baltimore: John Murphy Co., 1914); the printing carries the approbation of James Cardinal Gibbons, Archbishop of Baltimore, who died in 1921, so on either ground it was published in the United States before 1931, and a work published there before 1931 is out of United States copyright with no term running; that line is the one guidance/missals.md section 5 records as current on 1 January 2026, written here as derived for calendar year 2026 and not as a standing rule. The English is Richard Challoner's eighteenth-century revision of the Douay-Rheims New Testament. This focused transcription reproduces only English printed in that edition and adds no authorship; it contains no Internet Archive markup or text-layer bytes."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription by the first English-source lane of the postconciliar Advent research (advent-pc-en1) from the hashed Internet Archive leaf image advent-pc-en1-ia-leaf-n1165-afc6f043 (SHA-256 afc6f043ff97122f803718425c58377c1811a7799d3a4ed4712ab3ddf8fbcf09), read on 2026-11-27; the item's optical text layer was used only to locate the page. New Testament page 66. Letters hidden in the gutter at the ends of right-column lines of this copy (in Israel, the, horn of, David, his, beginning, from, and, Abraham, us, hand, with-) were read on the same page of a second scanned copy of a Murphy printing of identical pagination and line breaks, Internet Archive item holybibletransl00balt (PIMS, University of Toronto; leaf n1163, fetched twice on 2026-11-27, SHA-256 13d3a1349b03b9d61b4a3b12b2b7243f934ba2f7d67eabff102d47dfac26fdf7, 988653 bytes), whose title page adds the word Publishers to the imprint; that copy is not registered here because neither title page is dated and their identity as one edition is not established. Every punctuation mark in this transcription is visible on the leaf of this edition. No source text passed through a language model."
+retrieved = "2026-11-27"
+sha256 = "dc1acee5f8b06b16698c1e6f459ebe5d15d526f93c9cd0b8fe804818423a9a84"
+byte_size = 1850
+path = "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/murphy-1914/artifacts/advent-pc-en1-luke-1-nt-p66-checked-text-dc1acee5/advent-pc-en1-luke-1-nt-p66.txt"
+derived_from = "artifact.english-college-of-douay.douay-rheims-bible.murphy-1914.advent-pc-en1-ia-leaf-n1165-afc6f043"
+transformation = "Read the leaf on the image at full resolution, cropped to half-columns, and transcribe Luke 1 verse by verse with one verse per LF-terminated UTF-8 line, each prefixed by a braced locator (verse, New Testament page, column); preserve the printed wording, spelling, capitalization and punctuation; join line-end hyphenation and close the printer's spaces before colon, semicolon and question mark; omit the running head, the verse numerals, the chapter argument, the superscript reference letters and the marginal references."
+indexable = true
+encoding = "utf-8"

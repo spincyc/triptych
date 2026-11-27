@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.english-college-of-douay.douay-rheims-bible.murphy-1914.advent-pc-en1-luke-1-nt-p67-checked-text-41c09db4"
+edition_id = "edition.english-college-of-douay.douay-rheims-bible.murphy-1914"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This edition record dates the printing to 1914 from the holding library's catalogue (Internet Archive item holybibletransla00balt, Baltimore: John Murphy Co., 1914); the printing carries the approbation of James Cardinal Gibbons, Archbishop of Baltimore, who died in 1921, so on either ground it was published in the United States before 1931, and a work published there before 1931 is out of United States copyright with no term running; that line is the one guidance/missals.md section 5 records as current on 1 January 2026, written here as derived for calendar year 2026 and not as a standing rule. The English is Richard Challoner's eighteenth-century revision of the Douay-Rheims New Testament. This focused transcription reproduces only English printed in that edition and adds no authorship; it contains no Internet Archive markup or text-layer bytes."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription by the first English-source lane of the postconciliar Advent research (advent-pc-en1) from the hashed Internet Archive leaf image advent-pc-en1-ia-leaf-n1166-1eb158fc (SHA-256 1eb158fcdae91a7f17d86954a926604e7d5525690a650babf79fd020d5e96bee), read on 2026-11-27; the item's optical text layer was used only to locate the page. New Testament page 67.  No source text passed through a language model."
+retrieved = "2026-11-27"
+sha256 = "41c09db43734cf7c22248b26ce53a6a1e6be93bc6bda7578a5f84c2f38f0e31a"
+byte_size = 524
+path = "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/murphy-1914/artifacts/advent-pc-en1-luke-1-nt-p67-checked-text-41c09db4/advent-pc-en1-luke-1-nt-p67.txt"
+derived_from = "artifact.english-college-of-douay.douay-rheims-bible.murphy-1914.advent-pc-en1-ia-leaf-n1166-1eb158fc"
+transformation = "Read the leaf on the image at full resolution, cropped to half-columns, and transcribe Luke 1 verse by verse with one verse per LF-terminated UTF-8 line, each prefixed by a braced locator (verse, New Testament page, column); preserve the printed wording, spelling, capitalization and punctuation; join line-end hyphenation and close the printer's spaces before colon, semicolon and question mark; omit the running head, the verse numerals, the chapter argument, the superscript reference letters and the marginal references."
+indexable = true
+encoding = "utf-8"

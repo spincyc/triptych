@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.breviarium-romanum.advent-pc-en1-1908-blackwood-bute-spring.advent-pc-en1-ascension-octave-lesson-8-checked-text-a34447ac"
+edition_id = "edition.catholic-church.breviarium-romanum.advent-pc-en1-1908-blackwood-bute-spring"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Published at Edinburgh and London in 1908 (title page, PDF page 7); a work first published abroad before 1931 is out of United States copyright with no term running; that line is the one guidance/missals.md section 5 records as current on 1 January 2026, written here as derived for calendar year 2026 and not as a standing rule. The translator, the third Marquess of Bute, died in 1900. This focused transcription reproduces only English printed in that edition and adds no authorship; it contains no Internet Archive markup, stamp or text-layer bytes."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription by the first English-source lane of the postconciliar Advent research (advent-pc-en1) from PDF pages 528-529 of the hashed complete scan advent-pc-en1-ia-pdf-7df236c1 (SHA-256 7df236c1b7a477a1e3b444500578c70a37555d84e18f240ffde6f58bd51185f8), rendered at 300 dots per inch in greyscale with pdftoppm and cropped, read on 2026-11-27; the lesson heading and the preceding rubric Homily by Pope St Gregory [the Great.] (Same as before.) were read on PDF page 528, and the running head OCTAVE OF THE ASCENSION on PDF page 527. No source text passed through a language model."
+retrieved = "2026-11-27"
+sha256 = "a34447acde57456fc834d87108dcaf6f8c0572103b88c809c29de8fd8251aa71"
+byte_size = 1162
+path = "src/sources/works/catholic-church/breviarium-romanum/editions/advent-pc-en1-1908-blackwood-bute-spring/artifacts/advent-pc-en1-ascension-octave-lesson-8-checked-text-a34447ac/advent-pc-en1-ascension-octave-lesson-8.txt"
+derived_from = "artifact.catholic-church.breviarium-romanum.advent-pc-en1-1908-blackwood-bute-spring.advent-pc-en1-ia-pdf-7df236c1"
+transformation = "Transcribe the eighth lesson of the Octave of the Ascension with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator (office, lesson, printed page); preserve the printed wording, spelling, capitalization, punctuation and typographic quotation marks, except that the display capitals of the first word (HENCE) are written Hence; join line-end hyphenation and close the printer's spaces before exclamation marks, question marks, colons and semicolons; omit the lesson heading, running heads, page numbers, footnotes and their markers, and the scripture references in parentheses ((Cant. ii. 8.), (Ps. xviii. 6,), (Cant. i. 3.))."
+indexable = true
+encoding = "utf-8"

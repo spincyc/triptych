@@ -124,3 +124,68 @@ Thérèse of Lisieux at the holy night, and Pope Francis at Greccio. The Angelus
 is printed from one witness, the Raccolta of 1910, in both places it appears;
 "Finding the Day" now opens the daily readings; and the body states its rules
 for any year, keeping 2026 as an example.
+
+## English translations sought, 27 November 2026
+
+Main's source guidance now asks for a published English translation wherever a
+non-English source is quoted or linked for readers, and for a record of the
+search where none is found. Two source lanes searched, lightly, as the
+maintainer asked: the library's own holdings first, then the Internet Archive,
+CCEL, tertullian.org and a general web search. HathiTrust refused automated
+catalogue requests (HTTP 403), and the Google Books API's daily quota was spent,
+so neither was searched. Only public-domain English read on page images was
+registered.
+
+Used in the book, in place of its own rendering, because the English
+translates the same text:
+
+- the Gelasian *Excita, Domine, potentiam tuam* (14), and the Gelasian prayer
+  behind the 21 December Collect (12): William Bright, *Ancient Collects*
+  (1887), pp. 16 and 18;
+- the Veronese clause on the second coming of the Mediator (12): Bright, p. 60,
+  translating the Ascension collect *Exaudi nos*, whose clause is the
+  preface's word for word;
+- St Gregory on Bethlehem, the house of bread, Homily 8.1 (40): Bute's
+  Breviary, Winter, the seventh lesson of Christmas, already held;
+- St Gregory's leaps, Homily 29.10 (42): Bute's Breviary, Spring (newly
+  registered), the Octave of the Ascension, eighth lesson;
+- the canticles of Zachary and of Mary (Appendix B): the Douay printed at
+  Baltimore in 1914, collated on its page images. The words agree with the
+  Gutenberg e-text; its punctuation differs in eighteen places, and its comma in
+  "for thou shalt, go before" (Luke 1:76) is an e-text error.
+
+Found but not used, because the English translates a different text:
+
+- Gregory, Homily 13.3 (20): the Oxford Catena on Luke (1843) gives the passage,
+  but reads "that which he beholds" where the Latin quoted has *quod credit*, and
+  does not repeat *vigilat*, on which the paragraph turns. Linked to the Latin
+  fragment as an excerpt.
+- the Gelasian *Festina* and *Concede* (33, 24 and 18 December): Lefebvre (1925) and
+  Lasance (1945) translate the Missal's later forms, not the Gelasian text. No
+  faulty Lasance conclusion was found.
+- the Roman Martyrology of 1902 (30–32): the English Martyrology (Baltimore, 1916)
+  translates a later edition. It drops Nicholas's *monitis et minis*, the
+  Vigil line for Ambrose, and parts of Lucy's elogium. Registered, not used.
+- the Sixth Provincial Council of Baltimore (31): the bishops' Pastoral Letter
+  of 1846 (Guilday, *National Pastorals*, 1923) announces the same election in
+  other words. It does not translate the decree. Registered, not used.
+
+No public-domain English found:
+
+- Gregory, Homily 12.6 (20), and the manger passage of Homily 8.1 (40). Bute
+  gives only §1 of Homily 12, and his Christmas lesson stops before the manger.
+- Augustine, Sermons 293.3 and 185 (32, 33): only English still in copyright,
+  Hill in *The Works of Saint Augustine* III/6 and III/8 (1993–94) and Fathers
+  of the Church 38 (1959).
+- the Gelasian *Da, quaesumus* (Advent I), the Veronese December preface, and
+  the Hadrianum's *Die dominica uacat*. None survived into the pre-1970 Missal.
+  Bright, Lasance, Bute, the 1888 Breviary and Cummiskey were searched.
+- the Roman calendar of 354: Pearse's tertullian.org edition and Duchesne's
+  *Christian Worship* (1919) print the Latin untranslated.
+- the Nahuatl *Huei tlamahuiçoltica*: the only English found is Sousa, Poole
+  and Lockhart, *The Story of Guadalupe* (1998), in copyright.
+- Honorius Augustodunensis and John Beleth: the Internet Archive yielded only
+  Latin editions.
+
+The Catena's Gregory gaps are recorded in
+`src/sources/commentary/translation-absences.yaml`.

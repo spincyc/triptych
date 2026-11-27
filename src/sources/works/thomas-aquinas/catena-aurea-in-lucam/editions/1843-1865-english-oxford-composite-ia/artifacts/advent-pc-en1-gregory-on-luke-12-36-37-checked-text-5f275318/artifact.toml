@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.advent-pc-en1-gregory-on-luke-12-36-37-checked-text-5f275318"
+edition_id = "edition.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of the Oxford English Catena Aurea on Luke, Part I published in 1843 and Part II in 1865, which is in the United States public domain by date of publication (the parent facsimile's rights_basis gives the evidence). It is transcribed from page images rendered from the hashed Internet Archive facsimile and contains no Internet Archive markup or optical-text bytes. Historical wording is excluded from Triptych CC BY authorship."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription by the first English-source lane of the postconciliar Advent research (advent-pc-en1), collated against the page images of the Internet Archive facsimile pdf-a63aa18e, fetched whole again on 2026-11-27 (SHA-256 a63aa18e946492aaeb263d8d2e1dc95d658b8e81ae42afcc98bd5c5ac5967291, matching the record); the retained optical text ocr-1455eb5f was used only to locate the pages. Printed pages 457-458, PDF pages 481-482; the marginal attribution Greg. ubi sup. refers back to Greg. Hom. 13. in Evang. on printed page 456 (PDF page 480). No source text passed through a language model."
+retrieved = "2026-11-27"
+sha256 = "5f27531830f507c8fa720e099ef52df97db6acaa04180a94cb7e59160745efe5"
+byte_size = 916
+path = "src/sources/works/thomas-aquinas/catena-aurea-in-lucam/editions/1843-1865-english-oxford-composite-ia/artifacts/advent-pc-en1-gregory-on-luke-12-36-37-checked-text-5f275318/advent-pc-en1-gregory-on-luke-12-36-37.txt"
+derived_from = "artifact.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.pdf-a63aa18e"
+transformation = "Read the named printed pages as images rendered at 300 dots per inch in greyscale from the hashed facsimile with pdftoppm and cropped, and transcribe the quoted comment with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced Gospel-verse-and-Father locator; preserve the printed wording, spelling, capitalization and punctuation; print the small-capital Father label in ordinary capitals and lower case with its printed stop; join line-end hyphenation and close the printer's spaces before punctuation; omit italics, running heads, page numbers and the marginal attributions, which are recorded in the provenance."
+indexable = true
+encoding = "utf-8"

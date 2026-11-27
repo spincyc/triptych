@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.william-bright.ancient-collects.advent-pc-en2-parker-1887-sixth-edition.advent-pc-en2-sacramentary-collects-checked-text-8d1ed862"
+edition_id = "edition.william-bright.ancient-collects.advent-pc-en2-parker-1887-sixth-edition"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces three prayers and their source footnotes from William Bright's English, published at Oxford and London by Parker and Co. in 1887, which is in the United States public domain by date of publication (the parent facsimile's rights_basis gives the evidence and the reasoning); Bright died in 1901. It is transcribed from page images rendered from the hashed Internet Archive facsimile and contains no Internet Archive markup or text-layer bytes."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription by the advent-pc English-witness lane (advent-pc-en2) on 2026-11-27 from the printed page images of the hashed Internet Archive facsimile artifact.william-bright.ancient-collects.advent-pc-en2-parker-1887-sixth-edition.advent-pc-en2-ia-facsimile-pdf-49d19339 (SHA-256 49d1933999af5935abe2247f7474bfb08a5916f2263de9d92b47e41dcb584d39); the item's OCR text was used only to locate the pages. Printed pages 16, 18 and 60, PDF pages 36, 38 and 80, read at 150 dpi whole and at 300 dpi cropped. No source text passed through a language model."
+retrieved = "2026-11-27"
+sha256 = "8d1ed8625a1433f174b5529edf44946e146e971e4329aa8406d5e7afd47d2dcd"
+byte_size = 863
+path = "src/sources/works/william-bright/ancient-collects/editions/1887-advent-pc-en2-parker-sixth-edition/artifacts/advent-pc-en2-sacramentary-collects-checked-text-8d1ed862/bright-sacramentary-collects.txt"
+derived_from = "artifact.william-bright.ancient-collects.advent-pc-en2-parker-1887-sixth-edition.advent-pc-en2-ia-facsimile-pdf-49d19339"
+transformation = "Read the named printed pages as images and transcribe the section heading of p. 16, the first prayer of p. 16, the fourth prayer of p. 18 and the second prayer of p. 60, each with the footnotes that identify its source, one unit per LF-terminated UTF-8 line prefixed by a braced locator (printed page; n. and the footnote letter for a footnote); the ornamental red initial and following small capitals (STIR, MERCIFULLY, HEAR) are given in sentence case; words, spelling, capitals and punctuation as printed; line-end hyphenation joined (Ad-vent, Medi-ator); the printer's space before semicolons closed; superscript footnote letters after the prayers omitted from the prayer lines. Footnote c on p. 18 refers to the third prayer of that page and is carried only because footnote d (Ibid.) depends on it; footnote b on p. 60 belongs to the first prayer of that page and is carried for the same reason."
+indexable = true
+encoding = "utf-8"

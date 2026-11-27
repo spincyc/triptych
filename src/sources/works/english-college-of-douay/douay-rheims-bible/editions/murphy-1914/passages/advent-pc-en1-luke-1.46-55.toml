@@ -1,0 +1,25 @@
+schema = 1
+record_type = "passage"
+id = "passage.english-college-of-douay.douay-rheims-bible.murphy-1914.advent-pc-en1-luke-1.46-55"
+edition_id = "edition.english-college-of-douay.douay-rheims-bible.murphy-1914"
+artifact_id = "artifact.english-college-of-douay.douay-rheims-bible.murphy-1914.advent-pc-en1-luke-1-nt-p66-checked-text-dc1acee5"
+artifact_sha256 = "dc1acee5f8b06b16698c1e6f459ebe5d15d526f93c9cd0b8fe804818423a9a84"
+locus = "Luke.1.46-55"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The Canticle of Mary, Luke 1:46-55, whole, as printed in the left column of New Testament page 66 of the Murphy Douay-Rheims (Challoner text). Collated for the Appendix B prayers of the postconciliar Advent handbook, whose text is the Project Gutenberg Challoner e-text."
+physical_line_ranges = [[1, 10]]
+text = "And Mary said: My soul doth magnify the Lord. And my spirit hath rejoiced in God my Saviour. Because he hath regarded the humility of his handmaid; for behold from henceforth all generations shall call me blessed. Because he that is mighty, hath done great things to me; and holy is his name. And his mercy is from generation unto generations, to them that fear him. He hath shewed might in his arm: he hath scattered the proud in the conceit of their heart. He hath put down the mighty from their seat, and hath exalted the humble. He hath filled the hungry with good things; and the rich he hath sent empty away. He hath received Israel his servant, being mindful of his mercy: As he spoke to our fathers, to Abraham and to his seed for ever."
+transcription_segments = [
+  { line = 1, text = "And Mary said: My soul doth magnify the Lord." },
+  { line = 2, text = "And my spirit hath rejoiced in God my Saviour." },
+  { line = 3, text = "Because he hath regarded the humility of his handmaid; for behold from henceforth all generations shall call me blessed." },
+  { line = 4, text = "Because he that is mighty, hath done great things to me; and holy is his name." },
+  { line = 5, text = "And his mercy is from generation unto generations, to them that fear him." },
+  { line = 6, text = "He hath shewed might in his arm: he hath scattered the proud in the conceit of their heart." },
+  { line = 7, text = "He hath put down the mighty from their seat, and hath exalted the humble." },
+  { line = 8, text = "He hath filled the hungry with good things; and the rich he hath sent empty away." },
+  { line = 9, text = "He hath received Israel his servant, being mindful of his mercy:" },
+  { line = 10, text = "As he spoke to our fathers, to Abraham and to his seed for ever." },
+]
+verified_on = "2026-11-27"
+notes = "Verse 46 includes its narrative opening And Mary said:, which a prayer text drops. Against the Project Gutenberg Challoner e-text (artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-49-luke-d8269c33) the wording is identical and the punctuation differs in verses 48, 49, 52, 53, 54 and 55. Verse 54 ends with a colon on the leaf."

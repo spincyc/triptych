@@ -1,0 +1,23 @@
+schema = 1
+record_type = "passage"
+id = "passage.english-college-of-douay.douay-rheims-bible.murphy-1914.advent-pc-en1-luke-1.68-75"
+edition_id = "edition.english-college-of-douay.douay-rheims-bible.murphy-1914"
+artifact_id = "artifact.english-college-of-douay.douay-rheims-bible.murphy-1914.advent-pc-en1-luke-1-nt-p66-checked-text-dc1acee5"
+artifact_sha256 = "dc1acee5f8b06b16698c1e6f459ebe5d15d526f93c9cd0b8fe804818423a9a84"
+locus = "Luke.1.68-75"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The Canticle of Zachary, Luke 1:68-75, the part printed in the right column of New Testament page 66 of the Murphy Douay-Rheims (Challoner text); the canticle continues on page 67 (passage.english-college-of-douay.douay-rheims-bible.murphy-1914.advent-pc-en1-luke-1.76-79)."
+physical_line_ranges = [[11, 18]]
+text = "Blessed be the Lord God of Israel; because he hath visited and wrought the redemption of his people: And hath raised up an horn of salvation to us, in the house of David his servant: As he spoke by the mouth of his holy prophets, who are from the beginning: Salvation from our enemies, and from the hand of all that hate us: To perform mercy to our fathers, and to remember his holy testament, The oath, which he swore to Abraham our father, that he would grant to us, That being delivered from the hand of our enemies, we may serve him without fear, In holiness and justice before him, all our days."
+transcription_segments = [
+  { line = 11, text = "Blessed be the Lord God of Israel; because he hath visited and wrought the redemption of his people:" },
+  { line = 12, text = "And hath raised up an horn of salvation to us, in the house of David his servant:" },
+  { line = 13, text = "As he spoke by the mouth of his holy prophets, who are from the beginning:" },
+  { line = 14, text = "Salvation from our enemies, and from the hand of all that hate us:" },
+  { line = 15, text = "To perform mercy to our fathers, and to remember his holy testament," },
+  { line = 16, text = "The oath, which he swore to Abraham our father, that he would grant to us," },
+  { line = 17, text = "That being delivered from the hand of our enemies, we may serve him without fear," },
+  { line = 18, text = "In holiness and justice before him, all our days." },
+]
+verified_on = "2026-11-27"
+notes = "Against the Project Gutenberg Challoner e-text the wording is identical and the punctuation differs in verses 68 to 74; verse 75 is identical. Gutter letters were read on a second copy as the text artifact's provenance records; no reading of a word depends on that copy alone except the hidden final letters it names."

@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.advent-pc-en2-veronense-exaudi-nos-ascension-collect-3e6f31d1"
+edition_id = "edition.catholic-church.sacramentarium-veronense.feltoe-1896"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Literal reading of the Cambridge 1896 Feltoe printing, public domain in the United States by date of publication. Only printed book text is carried."
+rights_jurisdiction = "United States"
+provenance = "Transcribed on 2026-11-27 by the advent-pc English-witness lane (advent-pc-en2) from the page image of the registered parent PDF, already held in the repository scratch area from the lane-2 fetch of 2026-11-26 and re-hashed on 2026-11-27: SHA-256 3b991b133889bbd4803831455bb4f49de30ecb4d8386534cee1f80f79541967a, equal to the registered parent artifact. Printed p. 20 = PDF p. 44, rendered with pdftoppm at 200 dpi; every transcribed line was read on the image, and the PDF text layer was used only to find the page. No source text passed through a language model."
+retrieved = "2026-11-27"
+sha256 = "3e6f31d16a8adc41c34ef2a287388639d0c2d6e43e180915200f10169c81189b"
+byte_size = 250
+path = "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/advent-pc-en2-veronense-exaudi-nos-ascension-collect-3e6f31d1/veronense-exaudi-nos-ascension-collect.txt"
+derived_from = "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13"
+transformation = "Read printed p. 20 as an image and transcribe the month heading, the formulary heading and the third prayer of formulary VIIII, one unit per LF-terminated UTF-8 line, each prefixed by a braced locator; preserve wording, spelling and punctuation; small capitals given as capitals; abbreviations kept as their printed letters without the overline (Ds, DNI); join line-end hyphenation (Re-demptor, pro-missum); omit the printed line numbers. The first two prayers of the formulary (Adesto Dne, Omp semp Ds) and those after it are not transcribed."
+indexable = true
+encoding = "utf-8"
+notes = "Created by the advent-pc-en2 English-witness lane (postconciliar Advent handbook) to name the Latin that William Bright's English of 1887 (p. 60, footnote c, Leonine) translates. Selected unit only; not a whole-page transcription."

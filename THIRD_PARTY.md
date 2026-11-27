@@ -338,7 +338,14 @@ Liturgy of the Hours; the restricted pages and files read for those citations
 and paraphrases, including pages of the Holy See's and the Association
 épiscopale liturgique pour les pays francophones' websites, are recorded by
 hash and are not redistributed. Their historical wording keeps its own status
-and is not offered under Triptych's CC BY 4.0 licence.
+and is not offered under Triptych's CC BY 4.0 licence. On 27 November 2026 the
+library added, as public domain in the United States (published before 1931),
+checked transcriptions from Bright's *Ancient Collects* (Oxford and London,
+1887), the Spring volume of Bute's *Roman Breviary* (1908), the Douay-Rheims
+printed at Baltimore by John Murphy in 1914, the English *Roman Martyrology*
+(Baltimore, 1916), the Oxford *Catena Aurea* on Luke (1843) and Guilday's
+*National Pastorals of the American Hierarchy* (Washington, 1923); the handbook
+quotes the first three.
 
 ## Liturgical and Scriptural Texts
 

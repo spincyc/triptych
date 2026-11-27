@@ -41,7 +41,7 @@
 #   not-surveyed          nobody has looked; this is data, not an estimate
 #   no-verified-translation  a bounded search found no eligible English counterpart
 schema: triptych-commentary-translation-absences/v1
-updated: 2026-11-24
+updated: 2026-11-27
 
 question: >-
   for each work the catena holds, is there a public-domain English translation
@@ -345,11 +345,19 @@ also_found:
 - work_id: work.gregory-the-great.homiliae-in-evangelia
   language: en
   finding: acquired-partial-public-domain
-  checked_on: '2026-11-24'
+  checked_on: '2026-11-27'
   acquisition: The Marquess of Bute’s 1908 Roman Breviary, Winter, pp. 216–217 and 276, explicitly identifies Homilies
     I and VIII. The source library holds English extracts from both; the Oxford Catena on Luke gives additional,
     sometimes shorter excerpts of the same homilies. David Hurst’s Forty Gospel Homilies is a separate modern
-    translation. The selections do not supply all forty homilies or all the held Latin paragraphs.
+    translation. The selections do not supply all forty homilies or all the held Latin paragraphs. On 2026-11-27
+    the postconciliar Advent loci were checked. Homily XXIX §10 (the leaps) is held whole from Bute’s 1908 Spring
+    volume, pp. 488–489, and the three watchings of Homily XIII §3 in part from the Oxford Catena on Luke, pp.
+    457–458. No public-domain English was found for Homily XII §6 (pardon promised to the penitent, not tomorrow to
+    the sinner) or for the manger sentences of Homily VIII §1. Bute’s Common of Virgins gives only Homily XII §1 (Winter,
+    pp. 571–572; Spring, pp. 640–641); Bute’s Christmas seventh lesson stops before the manger; and the Oxford Catenas on
+    Matthew 25:13 and Luke 2:7 quote other Fathers there. That search was bounded by Bute’s Winter, Spring and Summer volumes,
+    the Oxford Catenas on Matthew, Mark and Luke, CCEL and the tertullian.org index; HathiTrust and Google Books full
+    view were not searched.
 
 - work_id: work.ambrose.expositio-evangelii-secundum-lucam
   language: en

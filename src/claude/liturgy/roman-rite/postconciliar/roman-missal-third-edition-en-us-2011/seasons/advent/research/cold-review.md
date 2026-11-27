@@ -134,3 +134,70 @@ descriptions of persons; and the Breviary's general rubrics for the *Te Deum*.
 One search ended without result: no public Latin text of the General Instruction
 of the Liturgy of the Hours was found, so its English of 1974 serves, and the
 book paraphrases it.
+
+## Reconciliation with main, 27 November 2026
+
+The branch was rebuilt on main, which had added four rules this book was not
+written to. The maintainer asked that all four be applied lightly: the
+harmonization pass, published English where it exists, the canticles collated
+against a printed Douay, and the Lasance conclusions checked against the Latin.
+
+*Harmonization pass* (editorial guidance). A fresh agent read the whole book
+once for consistency. Its changes:
+
+- titles of works in italics (the *Catena Aurea*, *City of God*, *Against
+  Heresies* and others);
+- the usual names of the biblical books in the prose and the tables, with the
+  Douay's own chapter and verse numbers kept and the Douay's name given where
+  it differs (Sirach, "Ecclesiasticus in the Douay");
+- "our Lady" in ordinary use, and "Our Lady of" in the titles of feasts (the
+  coordinator made the two generated headnotes of Appendix B agree);
+- a few attributions shortened.
+
+Divine pronouns are lowercase in the book's own prose, and quotations keep
+their editions' capitals, as About This Book says. The agent also cut the
+*Rorate* Introit and the Angelus prayer from the Fourth Sunday's chapter
+because Appendix B prints them, which would have undone the disposition of R1.
+The maintainer chose to keep them in both places, so that cut was reverted
+and the rest of the chapter's changes kept.
+
+*Published English* (source guidance). Six of the book's own renderings were
+replaced by public-domain English of the same text:
+
+- Bright's *Ancient Collects* (1887) for the Gelasian *Excita*, the Gelasian
+  prayer behind the 21 December Collect and the Veronese clause on the second
+  coming of the Mediator;
+- Bute's Breviary for St Gregory on Bethlehem (Christmas, seventh lesson) and
+  on the leaps and *Trahe nos* (Octave of the Ascension, eighth lesson).
+
+The other renderings stay the book's own. `scope.md` records what was found,
+what was set aside and why, and where the search could not reach. About This
+Book and the References now name Bright, the Spring volume of Bute and the
+Baltimore Douay of 1914.
+
+*Canticles.* The Benedictus and Magnificat of Appendix B had been copied from
+the Gutenberg e-text. They were collated against the page images of the
+Douay printed at Baltimore in 1914 and now follow that printing:
+
+- the words agree with the e-text;
+- the punctuation differs in eighteen places;
+- the e-text's "for thou shalt, go before" (Luke 1:76) is its own error.
+
+The appendix's script reads the three new records, and its self-check finds
+each of the 150 printed lines in a record.
+
+*Lasance.* The rule touches no printed text: the one Lasance English the book
+prints is the *Rorate* Introit, an antiphon without a conclusion. The Lasance
+Collects consulted for *Festina* and *Concede* were read against the Tours
+Latin, and none of their conclusions was faulty. The book does not print them.
+
+After these changes the quotation script, run over every section against a
+freshly built corpus, finds:
+
+- no failing fragment in the body;
+- the same ten capital-only differences as before;
+- twenty-six renderings after Latin, down from thirty.
+
+The References still show the one title that the script reads as a quotation
+(the Felix Just finding aid) and one hymn first line in display capitals. The
+content preflight passes, with 463 bindings, each fingerprinted.
