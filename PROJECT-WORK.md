@@ -185,7 +185,7 @@ two independent reviewers, a blind reader and an accuracy reviewer, whose
 findings and dispositions are in `research/cold-review.md`. Collation then
 found sixteen claims without a record; a directed second research pass
 registered a witness for each, and four passages were reworded to their
-records. The audit maps 1,147 rows with no unverified lead; 452 bindings are
+records. The audit maps 1,150 rows with no unverified lead; 463 bindings are
 fingerprinted, 187 of them restricted and none reproduced. No 2011 Missal,
 Lectionary, NABRE or Liturgy of the Hours English is printed; post-1975 Holy
 See texts are paraphrased, and a five-word overlap test against the official
@@ -201,13 +201,38 @@ dated from its record, not its title page. One correction a research lane
 proposed to an existing inventory note was a misreading (the note belongs to
 another row), and nothing was changed.
 
-The handbook, its witnesses, the indexes and the browser products are committed
-on `feature/triptych/primers` and not pushed. The public-alpha site-source
+On 2026-11-27 the branch was reconciled with main and rebuilt on it twice,
+because main moved during the work. Main's newer guidance was applied
+lightly, as the maintainer asked:
+
+- a whole-volume harmonization pass: titles of works in italics, the usual
+  names of the books with the Douay's numbering, and "our Lady" in ordinary
+  use. The Fourth Sunday's *Rorate* and Angelus prayer stay in both places,
+  as the maintainer chose.
+- public-domain English in place of six of the book's own renderings:
+  Bright's *Ancient Collects* (1887), and Bute's Breviary, Winter and the
+  newly registered Spring volume (1908).
+- the canticles collated to the Douay printed at Baltimore in 1914.
+- one sentence on the older Breviary put in the past tense.
+
+`research/scope.md` records the English searched for and not found, and
+`research/cold-review.md` the reconciliation. Main at 2acae0db07 failed `make
+check-sources` on two periodical issues lacking containment entries. The
+first rebase added them, as the maintainer asked; the second dropped that
+commit once main carried them itself.
+
+The handbook, its witnesses, the corpus index and the browser products (13
+products) are committed on `feature/triptych/primers` over main at e7046a7dd2
+and not pushed. The gates pass: content preflight, document schema, generation
+metadata, web edition, `make check-sources`, `make check-corpus-index` and
+`check-promised-deliverables`. The print edition builds at 45 pages with no
+overfull box, and `native-print-compile` passes. The public-alpha site-source
 binding (`tools/release-bindings refresh --only` for `THIRD_PARTY.md`,
 `library/novus-ordo-liturgy.md` and `release/browser-products.json`, then the
-rights digest) is left for the maintainer's release: `release-bindings status`
-could not run here because the native TeX runtime asset is not hydrated
-locally.
+rights digest) is left for the maintainer's release. `release-bindings status`
+cannot read the site-source set here because the browser TeX runtime
+(`native-tex/wasmtex-2026-47ff73bab1a2e548`, a release archive of about 99 MB)
+is not hydrated locally.
 
 ## Gemini six-lane showcase publications and third-provider integration, 2026-11-25
 
