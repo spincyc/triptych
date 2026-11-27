@@ -1,0 +1,38 @@
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[document]
+type = "liturgy-reference-v1"
+
+[document.main]
+pdftitle = "The Watch of the Coming Lord: A Handbook for Advent in the Postconciliar Roman Rite"
+pdfsubject = "A seasonal handbook for Advent in the Postconciliar Roman Rite: the two-phase season and three comings of Christ; historical development from Saragossa to the third typical edition; Mass, the Liturgy of the Hours, and the domestic church; current law, liturgical restraint, and the United States calendar including December 8 and December 12; the four weeks across Lectionary Cycles A, B, and C, the privileged weekdays of December 17 to 24, the Great O Antiphons, and the threshold of Bethlehem; with an evergreen daily course, verified public-domain prayers and hymns, scope appendix, and references."
+pdfkeywords = "Advent, Postconciliar Roman Rite, Roman Missal, Lectionary for Mass, Liturgy of the Hours, Immaculate Conception, Our Lady of Guadalupe, Great O Antiphons, Church Fathers, Bethlehem"
+title-style = "series-detail"
+series-line = "A Triptych Seasonal Handbook"
+title = "The Watch of the Coming Lord"
+subtitle = "A Handbook for Advent in the Postconciliar Roman Rite"
+title-detail = '''\textit{Missale Romanum} (Third Typical Edition) and \textit{The Roman Missal} (U.S., 2011)\\[0.35em]
+with the United States \textit{Lectionary for Mass} and \textit{Liturgy of the Hours}'''
+title-notice = '''For your parish's Mass times, local calendar notices, and diocesan
+particulars, consult your diocese and parish bulletin; controlling books,
+copyright boundaries, and canonical horizons are listed at the close.'''
+body = [
+  "sections/01-entering-the-season",
+  "sections/02-two-phases-and-three-comings",
+  "sections/03-history-to-the-third-edition",
+  "sections/04-mass-hours-and-the-domestic-church",
+  "sections/05-law-discipline-and-the-us-calendar",
+  "sections/06-first-week",
+  "sections/07-second-week-and-marian-feasts",
+  "sections/08-third-week",
+  "sections/09-december-17-to-24-and-fourth-week",
+  "sections/10-christmas-threshold-and-bethlehem",
+]
+apparatus = [
+  "sections/90-daily-course",
+  "sections/92-received-prayers",
+  { source = "sections/95-about-this-book", roles = ["scope-appendix"] },
+  { source = "sections/99-references", roles = ["references"] },
+]
