@@ -147,7 +147,7 @@ state = "complete"
 id = "claude-postconciliar-advent-handbook-2026-11-26"
 owner = "library/novus-ordo-liturgy.md"
 promise = "Author and publish a Claude seasonal handbook for Advent in the postconciliar Roman Rite as used in the United States (Roman Missal third edition, U.S. English 2011; U.S. Lectionary for Mass; Liturgy of the Hours), under guidance/liturgy/postconciliar-seasonal-handbooks.md: a deeply Catholic, patristic, saintly, papal, historical, pedagogical and prayerful handbook with the season's history through the Council and the current books, the Mass and Hours read together, the Fathers, popes and saints, a rule of life and confession, readings and a received prayer for every Sunday cycle and occurring day, and a cold review."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "witnesses-and-research"
@@ -183,8 +183,16 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "installed"
   criterion = "Document-schema, content-preflight, generation-metadata and web-edition checks pass; the print edition builds and is inspected; the Claude column of the Advent row in library/novus-ordo-liturgy.md links the edition; a release record exists; source inventory, family ledger and corpus index are refreshed; the work is committed on the workspace branch."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = [
+    "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent/generation-metadata.tex",
+    "library/novus-ordo-liturgy.md",
+    "release/publications/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/seasons/advent.json",
+    "src/sources/inventories/claude-publications-v1.toml",
+    "src/sources/inventories/source-family-migration-v1.toml",
+    "src/index/corpus/index.json",
+    "release/browser-products.json",
+  ]
 
 [[deliverables]]
 id = "gemini-six-showcase-publications-2026-11-25"

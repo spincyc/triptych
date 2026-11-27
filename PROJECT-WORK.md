@@ -197,8 +197,17 @@ Liturgia Horarum* was found (its English of 1974 serves, paraphrased); whether
 one Mass can satisfy both the Fourth Sunday and Christmas when 24 December is
 a Sunday is left to the parish, for want of a witness; the English edition
 of the Hours is not named in the records; and the Durandus edition of 1568 is
-dated from its record, not its title page. One correction a research lane proposed to an existing inventory note
-was a misreading (the note belongs to another row), and nothing was changed.
+dated from its record, not its title page. One correction a research lane
+proposed to an existing inventory note was a misreading (the note belongs to
+another row), and nothing was changed.
+
+The handbook, its witnesses, the indexes and the browser products are committed
+on `feature/triptych/primers` and not pushed. The public-alpha site-source
+binding (`tools/release-bindings refresh --only` for `THIRD_PARTY.md`,
+`library/novus-ordo-liturgy.md` and `release/browser-products.json`, then the
+rights digest) is left for the maintainer's release: `release-bindings status`
+could not run here because the native TeX runtime asset is not hydrated
+locally.
 
 ## Gemini six-lane showcase publications and third-provider integration, 2026-11-25
 
