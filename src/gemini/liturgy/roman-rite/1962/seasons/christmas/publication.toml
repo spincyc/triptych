@@ -1,0 +1,40 @@
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[document]
+type = "liturgy-reference-v1"
+
+[document.main]
+pdftitle = "Keeping Christmas: A Companion to the 1962 Roman Rite"
+pdfsubject = "A seasonal handbook for keeping Christmastide in the 1962 Roman Rite (First Vespers of 24 December through None of 5 January): the theology of the Incarnation and the wonderful exchange; the history of 25 December, the three Christmas Masses, the Octave, 1 January, and the Most Holy Name of Jesus; prayer, the domestic church, feasting, obligation, and canon law; the Three Masses, the Companions of Christ, the Sunday within the Octave, St. Thomas of Canterbury, St. Sylvester, the Octave Day, the Most Holy Name, and the ferias and Marian Saturdays of 2–5 January; with an evergreen daily course, received prayers and hymns, calendar rules, and references."
+pdfkeywords = "Christmas, Christmastide, 1962 Roman Rite, Incarnation, Three Masses, Octave of the Nativity, St. Stephen, St. John, Holy Innocents, Circumcision, Most Holy Name of Jesus, Church Fathers, prayer"
+title-style = "series-detail"
+series-line = "A Triptych Seasonal Handbook"
+title = "Keeping Christmas"
+subtitle = "A Companion to the 1962 Roman Rite"
+title-detail = '''\textit{Missale Romanum} and \textit{Breviarium Romanum} of 1962\\[0.35em]
+under the \textit{Codex Rubricarum} of 26 July 1960'''
+title-notice = '''For your parish's liturgical schedule and local obligations of precept or
+penance, consult your diocese and parish calendar; \textit{About This Book}
+explains the sources and legal horizon used here.'''
+body = [
+  'sections/01-entering-the-feast',
+  'sections/02-the-wonderful-exchange',
+  'sections/03-how-rome-built-christmastide',
+  'sections/04-prayer-home-and-feasting',
+  'sections/05-first-vespers-and-midnight-mass',
+  'sections/06-dawn-and-day-masses',
+  'sections/07-comites-christi-stephen-john-innocents',
+  'sections/08-sunday-within-the-octave',
+  'sections/09-days-within-the-octave-thomas-sylvester',
+  'sections/10-octave-day-and-circumcision',
+  'sections/11-most-holy-name-of-jesus',
+  'sections/12-ferias-of-january-and-threshold-of-epiphany',
+]
+apparatus = [
+  'sections/90-daily-course',
+  'sections/92-received-prayers',
+  { source = 'sections/95-about-this-book', roles = ['scope-appendix'] },
+  { source = 'sections/99-references', roles = ['references'] },
+]
