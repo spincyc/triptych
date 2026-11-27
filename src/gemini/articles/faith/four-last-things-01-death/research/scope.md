@@ -1,0 +1,35 @@
+# Research Scope — Four Last Things, I: Death (`Into Thy Hands`)
+
+## Governing Identity
+
+- **Provider and leaf**: `gemini/articles/faith/four-last-things-01-death`
+- **Document type**: `four-last-things-v1` (kind: `article-faith`; owning profile: `guidance/articles.md` and `guidance/editorial.md`)
+- **Series placement**: Part I of the Gemini Four Last Things quartet (*Death*, *Judgment*, *Hell*, *Heaven*), written as a standalone discursive Catholic faith study opening from Ash Wednesday (*Memento, homo*) and Luke 23:46 (*Father, into thy hands I commend my spirit*) and moving through mortality, soul-body anthropology, Christ's victory over death, Baptism and probation, the Fathers in pestilence and bereavement, martyrs and saints, the *Ars Moriendi*, the last sacraments, Christian burial and prayer for the dead, and nightly Compline.
+- **Intended reader**: A serious Catholic believer seeking a sober, source-grounded, tradition-inhabiting exposition of the Church's doctrine and spiritual craft of dying in Christ, closing in concrete examination of conscience and received vocal prayer.
+
+## Governing Question and Boundaries
+
+1. **In scope**:
+   - Mortality as the wages of sin: Ash Wednesday (*Memento, homo*, *Misereris omnium*), Gen 2--3, Wis 1:13--14; 2:23--24, Rom 5:12, 6:23; preternatural gift of immortality; Council of Trent Session V on Original Sin (DS 1511--1512); St. Augustine (*City of God* XIII.1--2); St. Thomas Aquinas (*ST* I q. 97; I-II q. 85 aa. 5--6).
+   - What death is: the unnatural separation of the immortal rational soul from the body (against Platonism and dualism); Councils of Vienne (DS 902) and Fifth Lateran (DS 1440); Vatican II (*Gaudium et spes* § 18); Aquinas (*ST* I qq. 75--76, 89); Augustine (*City of God* XIII.6, 9--11, 16--19); *Roman Catechism* Creed Art. XI.
+   - Christ's entrance into death and victory over it: Easter Sequence (*Victimae paschali laudes*), Heb 2:14--15, Luke 23:46, 1 Cor 15:54--57; hypostatic union maintained with both separated soul and body in the tomb; Descent into the Limbo of the Fathers; St. Athanasius (*On the Incarnation* §§ 8--9, 20--29); St. Leo the Great (*Sermons* LIV, LXXI); Aquinas (*ST* III qq. 50, 52); *Roman Catechism* Creed Arts. IV--V.
+   - Baptism as the first dying and death as the single irreversible close of probation (*status viae*): Rom 6:3--11, Heb 9:27--28, Eccles 11:3, Ecclus 7:40; 11:28--29, Luke 12:16--21; 16:22--26, Matt 24:42--44; exclusion of reincarnation (CCC 1013); Augustine (*City of God* XIII.4--5); Aquinas (*ST* I-II q. 85 a. 5 ad 2; III q. 52 a. 5 ad 2); St. John of Damascus (*De fide orthodoxa* II.4); threshold notice of immediate retribution (*Benedictus Deus*, DS 1000--1002; Florence, *Laetentur caeli*, DS 1304--1306) and Particular Judgment (*Roman Catechism* I.7; CCC 1021--1022).
+   - The Fathers in pestilence and bereavement: extended primary readings of St. Cyprian (*De mortalitate*), St. Ambrose (*De excessu fratris Satyri* I--II), and St. Augustine (*Confessions* IX.10--13 on St. Monica at Ostia).
+   - The martyrs and saints at the threshold: *dies natalis* (Ps 115:15 DR), St. Paul (Phil 1:21--24; 2 Tim 4:6--8), St. John Chrysostom (*Hom. on Phil.* 3), St. Ignatius of Antioch (*Romans* 4--7, shorter recension), St. Francis de Sales (*Introduction to a Devout Life* I.13), St. Alphonsus Liguori (*Preparation for Death* Considerations IV--V).
+   - *Ars Moriendi*: direct reading of *The Book of the Craft of Dying* (Comper 1917, Chs. I--VI: five temptations, Anselm's & Gerson's interrogations, Christ's five deeds on the Cross, warning to the healthy) and St. Robert Bellarmine (*Commentary on the Book of Psalms* on Ps 38 & Ps 89; historical notice of *De arte bene moriendi*, 1620).
+   - The Church at the sickbed: Penance, Extreme Unction / Anointing of the Sick (Jas 5:14--15; Trent Sess. XIV DS 1694--1700, 1716--1719; *Roman Catechism* II.6; pre-1972 / 1962 *Rituale Romanum* discipline alongside Pope St. Paul VI's *Sacram unctionem infirmorum*, 1972), Holy Viaticum (John 6:54--59; *Roman Catechism* II.4; 1889 *Manual of Prayers* *Accipe, frater*), and the classical *Rituale Romanum* Commendation of a Departing Soul (*Proficiscere*, *Commendo te*, *Libera, Domine*, *Commendamus tibi*, *Subvenite*, alongside the postconciliar *Pastoral Care of the Sick*).
+   - Christian grief, reverence for the dead body, burial liturgy, and prayer for the departed: 1 Thess 4:12--17 DR, St. John Chrysostom (*Hom. on 1 Thess.* 6), 1 Cor 3:16--17 & 6:19--20, Tobias, St. Augustine (*City of God* I.12--13), Roman Requiem Preface (*vita mutatur, non tollitur*), Office of the Dead (*Placebo*, *Dirige*, Job 19:25--27), *Non intres* and *In paradisum*, 2 Mach 12:43--46, St. Cyril of Jerusalem (*Cat.* 23.9--10), St. John Chrysostom (*Hom. on Phil.* 3), Council of Florence (*Laetentur caeli*, DS 1304), and Council of Trent (Sess. XXII ch. 2 & can. 3, DS 1743, 1753; Sess. XXV *Decree on Purgatory*, DS 1820).
+   - Nightly Compline as daily rehearsal of death (classical pre-1911 Roman Breviary four-psalm Compline in the 1889 *Manual of Prayers*—1 Pet 5:8, Pss 4, 30, 90, 133, *Te lucis*, *In manus tuas*, *Nunc dimittis*, *Visita, quaesumus*—contextualized with Pope St. Pius X's 1911 *Divino afflatu* / 1962 Roman Breviary and Pope St. Paul VI's 1970 *Laudis canticum* / 1971 *Liturgia Horarum*), concrete five-part examination of conscience, and verbatim received vocal prayers.
+
+2. **Material exclusions (zero-overlap series boundaries)**:
+   - Detailed doctrinal treatment of Particular Judgment, General Judgment, signs of the Parousia, Purgatory, and Indulgences (reserved to Part II, *The Books Were Opened*).
+   - Detailed treatment of Hell, *poena damni*, *poena sensus*, and eternal obstinacy (reserved to Part III, *Depart from Me*).
+   - Detailed treatment of the Beatific Vision, the four endowments of the glorified body, and the New Heavens and New Earth (reserved to Part IV, *Come, Ye Blessed*).
+   - Bioethical or clinical-definition debates on brain death criteria, secular literary death tropes, or project-composed vocal prayers.
+
+## Source Hierarchy and Editorial Standard
+
+- **As-of date**: 2026-11-27.
+- **Scripture witnesses**: Challoner Douay-Rheims Bible (`artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.gutenberg-text-7d10da78`) and Clementine Vulgate (`artifact.catholic-church.vulgata-clementina.ebible-latvuc.ebible-usfm-0ed518ec`); Vulgate/DR verse numbering throughout.
+- **Received vocal prayer witnesses**: 1889 *Manual of Prayers for the Use of the Catholic Laity* (Third Plenary Council of Baltimore: Compline pp. 73--75; *Anima Christi* p. 103) and 1843 Dublin Duffy *Preparation for Death* (St. Alphonsus Liguori, Fourth Consideration, Third Point, "Affections and Prayers", pp. 68--69).
+- **Authority grading**: State each teaching affirmatively at its degree of determination in the body prose; consolidate the explicit authority table in Appendix A (`sections/85-graded-teaching.tex`).

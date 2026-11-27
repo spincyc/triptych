@@ -1,0 +1,35 @@
+[document]
+type = "four-last-things-v1"
+pdftitle = "The Four Last Things, I: Into Thy Hands"
+pdfsubject = "Discursive Catholic study of Death: Scripture, liturgy, councils, Fathers, Doctors, and the saints"
+numeral = "Part I"
+title = "Into Thy Hands"
+subtitle = "Death, the Victory of the Cross, and the Art of Dying in Christ"
+epigraph = 'And Jesus crying with a loud voice, said: Father, into thy hands I commend my spirit. And saying this, he gave up the ghost.'
+epigraph-source = "Luke 23:46 (Douay-Rheims)"
+
+[document.main]
+front = "epigraph"
+notes = "endnotes"
+closing = "unindented"
+body = [
+  "sections/01-wages-of-sin",
+  "sections/02-soul-and-body",
+  "sections/03-christ-enters-death",
+  "sections/04-baptism-and-probation",
+  "sections/05-fathers-pestilence-bereavement",
+  "sections/06-martyrs-and-saints",
+  "sections/07-ars-moriendi",
+  "sections/08-church-at-sickbed",
+  "sections/09-grief-burial-prayer",
+  "sections/10-compline-examination-prayer",
+]
+appendices = [
+  { source = "sections/85-graded-teaching", roles = ["argument"] },
+  { source = "sections/90-scope", roles = ["scope-appendix"] },
+  { source = "sections/95-references", roles = ["references"] },
+]
+
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"

@@ -1,0 +1,35 @@
+[document]
+type = "four-last-things-v1"
+pdftitle = "The Four Last Things, IV: Come, Ye Blessed"
+pdfsubject = "Discursive Catholic study of Heaven: Scripture, liturgy, councils, Fathers, Doctors, and the saints"
+numeral = "Part IV"
+title = "Come, Ye Blessed"
+subtitle = "Heaven, the Beatific Vision, and the City of the Living God"
+epigraph = 'Then shall the king say to them that shall be on his right hand: Come, ye blessed of my Father, possess you the kingdom prepared for you from the foundation of the world.'
+epigraph-source = "Matthew 25:34 (Douay-Rheims)"
+
+[document.main]
+front = "epigraph"
+notes = "endnotes"
+closing = "unindented"
+body = [
+  "sections/01-restless-heart-and-kingdom",
+  "sections/02-confession-of-the-church",
+  "sections/03-light-of-glory-and-trinity",
+  "sections/04-many-mansions",
+  "sections/05-resurrection-of-the-body",
+  "sections/06-four-endowments-glorified-body",
+  "sections/07-communion-mary-angels",
+  "sections/08-new-heavens-new-earth",
+  "sections/09-hope-that-transforms-earth",
+  "sections/10-liturgy-examination-prayer",
+]
+appendices = [
+  { source = "sections/85-graded-teaching", roles = ["argument"] },
+  { source = "sections/90-scope", roles = ["scope-appendix"] },
+  { source = "sections/95-references", roles = ["references"] },
+]
+
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"

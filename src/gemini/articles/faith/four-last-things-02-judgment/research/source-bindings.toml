@@ -1,0 +1,450 @@
+schema = 2
+record_type = "bindings"
+document = "articles/faith/four-last-things-02-judgment"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.gutenberg-text-7d10da78"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = [
+  "2Kings.12.13-14",
+  "Num.20.12",
+  "Job.1.5",
+  "Tob.4.18",
+  "Ps.37.1-4",
+  "Ps.64.2-3",
+  "Ps.65.10-12",
+  "Ps.72.2-3",
+  "Ps.72.12-14",
+  "Ps.84.10-12",
+  "Ps.100.1",
+  "Ps.111.7",
+  "Ps.129.1-8",
+  "Ps.142.2",
+  "Ps.144.8-9",
+  "Prov.24.16",
+  "Eccles.12.14",
+  "Wis.3.5-6",
+  "Wis.5.1-5",
+  "Ecclus.11.28-29",
+  "Isa.6.6-7",
+  "Dan.7.9-14",
+  "Joel.3.2",
+  "Zach.12.10",
+  "Zach.13.9",
+  "Mal.3.2-3",
+  "2Mach.12.43-46",
+  "Matt.5.25-26",
+  "Matt.10.26",
+  "Matt.12.32",
+  "Matt.12.36",
+  "Matt.16.19",
+  "Matt.18.18",
+  "Matt.19.28",
+  "Matt.24.14",
+  "Matt.24.29-31",
+  "Matt.25.31-46",
+  "Mark.13.32",
+  "Luke.7.47",
+  "Luke.12.13-14",
+  "Luke.12.47-48",
+  "Luke.16.19-31",
+  "Luke.21.34-36",
+  "Luke.23.31",
+  "Luke.23.42-43",
+  "John.5.22-29",
+  "John.19.37",
+  "Acts.1.7",
+  "Acts.1.11",
+  "Acts.10.42",
+  "Acts.17.31",
+  "Rom.2.5-11",
+  "Rom.2.16",
+  "Rom.8.33-34",
+  "Rom.11.35",
+  "Rom.14.9",
+  "1Cor.3.11-15",
+  "1Cor.3.17",
+  "1Cor.4.5",
+  "1Cor.6.2-3",
+  "1Cor.11.31-32",
+  "1Cor.12.26",
+  "2Cor.2.10",
+  "2Cor.5.6-10",
+  "Eph.4.32",
+  "Phil.1.23",
+  "Phil.2.10",
+  "Col.1.24",
+  "1Thess.4.15-16",
+  "1Thess.5.2",
+  "2Thess.2.3",
+  "Heb.4.15-16",
+  "Heb.9.27",
+  "Heb.12.29",
+  "James.2.12-13",
+  "1Pet.1.6-7",
+  "1John.2.1-2",
+  "1John.5.16-17",
+  "Apoc.1.7",
+  "Apoc.20.11-15",
+  "Apoc.21.27"
+]
+context = "Public-domain Challoner Douay-Rheims English Scripture witness for all English biblical quotations across Sections 1-10."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:192362da4273317daa469770d5b137a16215f015fc72fae410c0ece2bf70e03f"
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.ebible-usfm-0ed518ec"
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = [
+  "2Mach.12.46",
+  "Ps.84.11",
+  "Ps.129.1-8",
+  "Matt.5.26",
+  "Matt.12.32",
+  "John.5.22-27",
+  "1Cor.3.13-15",
+  "2Cor.5.10",
+  "Heb.9.27",
+  "Apoc.20.12"
+]
+context = "Latin Clementine Vulgate textual control for verse numbering and key Latin terms (propria corporis, donec reddas novissimum quadrantem, detrimentum patietur, quasi per ignem)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:93c7a51db9da7cfe38a11ec61eafc33ec082c6b53271bcb986178e986c8b9eb2"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = [
+  "In Commemoratione Omnium Fidelium Defunctorum, First Mass (Introit Requiem aeternam; Collect Fidelium, Deus; Gradual; Tract Absolve, Domine; Sequence Dies irae strophes 1-8)"
+]
+context = "1962 Roman Missal typical edition witness (via repository page-collated All Souls' Day First Mass propers) for the Requiem Introit, Collect, Gradual, Tract, and Dies irae Latin strophes 1-8."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1604.canon-reading-38b1f81b"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Canon Missae (Commemoratio pro defunctis: Memento etiam; Nobis quoque peccatoribus)"]
+context = "Roman Canon reading witness for Memento etiam ('locum refrigerii, lucis et pacis') and Nobis quoque peccatoribus ('non aestimator meriti, sed veniae, quaesumus, largitor')."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:aa9b3ba7f622e8ad9a3a96002ff12d7347a64e0b8ab019f58c273bc959db808b"
+
+[[bindings]]
+source_id = "artifact.hymns-ancient-and-modern-proprietors.hymns-ancient-and-modern.london-complete-edition-1890.dies-irae-irons-en"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["398"]
+context = "Public-domain received English verse translation of Dies irae by William Josiah Irons (Hymn 398, p. 307, stanzas 1-4 corresponding to Latin strophes 1-8), reproduced verbatim in Section 10."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:58542db7f252f17067024cba61dafcf12c80f69978adcb8db14fb03311d4ed2c"
+
+[[bindings]]
+source_id = "segment.fourth-lateran-council.firmiter-credimus.2026-09-29-latin-patristica.complete-constitution"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["complete-text"]
+context = "Verified Latin text of Fourth Lateran Council Constitution 1, Firmiter credimus (DS 801), on Christ coming at the end of the world to judge the living and the dead in their own proper bodies."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:92daebd55a99f65bc1817a2f2e4c4cf3016457cc7bb36218ca2a69bcc78901f5"
+
+[[bindings]]
+source_id = "artifact.council-of-trent.catechismus-romanus.donovan-baltimore-lucas-brothers.ia-djvu-text-83a948ed"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = [
+  "Part I, Creed Art. V (Purgatory, p. 51)",
+  "Part I, Creed Art. VII (Christ's three offices, Particular and General Judgment, four reasons, pp. 61-65)",
+  "Part II, On the Sacrament of Penance (Satisfaction, wounds of sin, one may satisfy for another, pp. 199-205)"
+]
+context = "Catechism of the Council of Trent (Donovan 1829 translation) on Christ's offices of Redeemer, Patron, and Judge, the two judgments, Purgatory, and satisfaction."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:0ef3fed549b0774de73d546c2a9c17c518a6a7298987e459c33e4c3f34751bb0"
+
+[[bindings]]
+source_id = "artifact.catholic-church.little-office-and-office-of-the-dead.benziger-latin-english-1915.ia-djvu-text-5f44a567"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = [
+  "Office of the Dead: Collect Fidelium, Deus and closing versicles (pp. 278-281)",
+  "Office of the Dead and Burial Service: De profundis (pp. 316, 378)"
+]
+context = "Public-domain 1915 Benziger Latin-English witness for the full conclusion and received English wording of Fidelium, Deus, Requiem versicles, and liturgical placement of Psalm 129."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:1a606a578b95e4eb4f9fd46756521428782d061745588db90cc222b08fefb7c3"
+
+[[bindings]]
+source_id = "artifact.third-plenary-council-of-baltimore.manual-of-prayers.new-york-catholic-publication-society-1889.ia-djvu-text-eada18d4"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Litany of the Saints: Fidelium, Deus (p. 269)", "All Souls' Day Collect (p. 775)"]
+context = "Corroborating 1889 American Catholic public-domain prayerbook witness for the Latin and received English wording of Fidelium, Deus."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:5726eed82c1500fd11d547b542af5f89e3153777b5cd26d1da8c9d6209cf5c48"
+
+[[bindings]]
+source_id = "artifact.third-plenary-council-of-baltimore.catechism-of-christian-doctrine-no-3.new-york-benziger-1921.ia-djvu-text-c5216d04"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = [
+  "Lesson 21: On Indulgences (Qq. 839-845, 853-854, pp. 177-181)",
+  "Lesson 21: On Indulgences (Q. 861, p. 182)",
+  "Lesson 21: On Indulgences (Q. 863, p. 183)",
+  "Lesson 37: Particular Judgment, Purgatory, General Judgment (Qq. 1372-1389, pp. 306-309)"
+]
+context = "Baltimore Catechism No. 3 (1921 Benziger edition) on Particular and General Judgment, daily examination of conscience, Purgatory, suffrages, and indulgences."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:458db01900c3251f21aaa2c0fe8ff87b4cba3d6004fc88a82050398b4a7599f6"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-prima.pg17611-body-9c99a67a"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = [
+  "I.21.1.corpus",
+  "I.21.2.corpus",
+  "I.21.3.reply-2",
+  "I.21.4.corpus",
+  "I.21.4.reply-1",
+  "I.21.4.reply-3"
+]
+context = "St. Thomas Aquinas on the Justice and Mercy of God: divine justice as truth, mercy as the fullness rather than destruction of justice, and mercy as the primary root of every work of God."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:c17b98dc58cabd0086fc556359882738be070d90f21f2dbaebe7f8676128b3e7"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-prima-secundae.pg17897-body-6d5b93fb"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = [
+  "I-II.87.1.corpus",
+  "I-II.87.3.corpus",
+  "I-II.87.4.corpus",
+  "I-II.87.5.corpus",
+  "I-II.87.5.sed-contra",
+  "I-II.87.6.corpus",
+  "I-II.87.6.reply-3",
+  "I-II.87.7.corpus",
+  "I-II.87.8.corpus"
+]
+context = "St. Thomas Aquinas on the debt of punishment, mortal vs. venial sin, persistence of satisfactory punishment after guilt is forgiven, and bearing satisfactory punishment for another in charity."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:39b84965a4aebbff649efc5be968feb872603af6927030d15a340fb50545e9d5"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006.pg19950-body-4597132e"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = [
+  "III.59.1.corpus",
+  "III.59.2.corpus",
+  "III.59.3.corpus",
+  "III.59.4.corpus",
+  "III.59.5.corpus",
+  "III.59.5.reply-1",
+  "III.59.6.corpus",
+  "III.86.1.corpus",
+  "III.86.4.corpus",
+  "III.86.4.reply-2",
+  "III.86.4.reply-3",
+  "III.86.5.corpus"
+]
+context = "St. Thomas Aquinas on Christ's judiciary power (q. 59) and the effect of Penance, persistence of temporal debt and remnants of sin, and operating vs. co-operating grace (q. 86)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:44bb2918bacdd01a424eae980d78ad285fcea31c85426a00800aafd120952178"
+
+[[bindings]]
+source_id = "artifact.anonymous-supplement-compiler.supplementum-tertiae-partis.english-dominicans-1922-questions-87-99.ia-ocr-21251eee"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = [
+  "87.1.corpus",
+  "87.2.corpus",
+  "87.2.reply-3",
+  "87.3.corpus",
+  "88.1.corpus",
+  "88.1.reply-1",
+  "88.2.corpus",
+  "88.3.corpus",
+  "88.4.corpus",
+  "89.1.corpus",
+  "89.2.corpus",
+  "89.3.corpus",
+  "90.1.corpus",
+  "90.2.corpus",
+  "90.2.reply-2",
+  "90.2.reply-4",
+  "90.3.corpus",
+  "97.1.reply-2"
+]
+context = "Posthumously compiled Supplement (drawn from Aquinas's Scriptum super Sententiis IV) on knowledge of merits, fittingness and mode of the General Judgment, saints as judicial assessors, Christ's glorified humanity and wounds, and the cleansing purpose of purgatorial fire."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:5116c99454b462d0f792bf2e89273bc3b61074b0f22f0a3704b9882a0c60107a"
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45305-body-lf"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["20.1-2", "20.5", "20.14-15", "20.30", "21.13", "21.24", "21.26"]
+context = "Marcus Dods English witness of Augustine's City of God Books XX-XXI on hidden Providence, the opened books of conscience, saints judging with Christ, temporary punishments after death, whom suffrages help, and 1 Cor 3:11-15."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:6bd16ca34656e4a17b7967a6b8ce070ebb4fdffa9b8c855088ab3e08e30bf996"
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-2-tei"
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["21.13"]
+context = "CSEL 40 Latin critical control for Augustine's teaching on temporarias poenas suffered in this life or after death before the Last Judgment (XXI.13)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:c8c46915ec1d5dd7bf34a4332481bd214a4c8c42aadf62da985ec3fd29224b9a"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-1.ccel-web-2026-10-13.ccel-text-21000696"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Augustine, Confessions IX.11.27, IX.12.31-32, IX.13.34-37"]
+context = "NPNF Series I vol. 1 witness for St. Monica's dying request to be remembered at the Lord's altar, the offering of the Eucharistic sacrifice at her burial, and St. Augustine's prayer for her soul."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:8107c8312db683f3a6bfab04fe1f0992df14d62972def172358894ca9f8ac889"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-12.ccel-web-2026-09-28.ccel-text-10a3454d"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Chrysostom, Homilies on First Corinthians, Homily XLI.8"]
+context = "St. John Chrysostom on assisting the departed by prayers, alms, and offerings at the altar where the common Expiation of the world lies before us."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:c72d9f88324042269c8b3ece8011d4a9732317bb6ce9105acd5d3690f1794509"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-13.english-ccel-web-2026-09-05.ccel-npnf113-text-54274dd9"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Chrysostom, Homilies on Philippians, Homily III"]
+context = "St. John Chrysostom on the apostolic ordinance of commemorating the dead in the dreadful Mysteries and giving alms to the poor on their behalf."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:374d296602c0a52e4c252ad0e7704b9c9952d06f6b66b891bb391c8509c390db"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.ccel-web-2026-10-06.ccel-text-56d84cfa"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = [
+  "Cyril of Jerusalem, Catechetical Lectures XV.1-3, 21-26",
+  "Cyril of Jerusalem, Catechetical Lectures XXIII (Mystagogical V), secs. 9-10"
+]
+context = "St. Cyril of Jerusalem on Christ's second coming, the luminous sign of the Cross, impartiality of the Judge, and offering Christ sacrificed for our sins on behalf of the faithful departed."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:1f357ee73bda8276cc25eb0133278376e91529929c0187de2d364f9c3b192261"
+
+[[bindings]]
+source_id = "artifact.gregory-the-great.moralia-in-iob.2026-10-12-library-of-fathers-lectionarycentral.complete-text-d9f9ed86"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["14.58.79", "24.8.16"]
+context = "St. Gregory the Great, Moralia in Job XIV.58.79 (propitiating the Judge before the Judgment) and XXIV.8.16 (the Book of Life as the sight of the approaching Judge and the lives of the just as opened books)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:f86bcd2a0e74aedfede4a2a00415c5e8a1a545c525df8ba06e480a9fd97a0e42"
+
+[[bindings]]
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Ps 37:1-4", "Ps 65:12", "Ps 84:10-11", "Ps 129:4-5"]
+context = "St. Robert Bellarmine's Commentary on the Psalms (O'Sullivan 1866) on David's temporal chastisements, passing through fire into refreshment, mercy and justice meeting in Christ's Passion, and repentance between presumption and despair."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:85b019a495120f1320c91743bdd127eef0ccb54126e0247bcb0298f9fb7c3344"
+
+[[bindings]]
+source_id = "artifact.francis-de-sales.introduction-a-la-vie-devote.pustet-new-york-undated.ia-djvu-text-6cb1dd04"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Part I, ch. 14 (Sixth Meditation: On Judgment, pp. 35-37)"]
+context = "St. Francis de Sales's Pustet edition witness for the Sixth Meditation on Judgment (luminous Cross as standard of mercy and rigor, and the resolution to judge oneself now)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:1295f78c518b50421c47db2a3d8b00c6d4a4eb23cca8477183a21f02b05cc8a9"
+
+[[bindings]]
+source_id = "artifact.alphonsus-liguori.apparecchio-alla-morte.duffy-1843.historical-ocr-d25bba22"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = [
+  "Considerations XXIV-XXV (pp. 289-313)",
+  "Consideration XXV, First Point, Affections and Prayers (pp. 303-304)"
+]
+context = "St. Alphonsus Liguori's Preparation for Death (1843 Duffy edition) on Particular and General Judgment and verbatim received closing vocal prayer in Section 10."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:f8f14339e6eebf3147ed446047f190ca9edb57ddcae274ff41a9c1e401dcd120"
+
+[[bindings]]
+source_id = "edition.benedict-xii.benedictus-deus.latin-denzinger"
+role = "bibliographic"
+states = ["cataloged"]
+loci = ["complete-text"]
+context = "Cataloged Denzinger citation (DS 1000-1002) for Pope Benedict XII's Apostolic Constitution Benedictus Deus (29 January 1336) on immediate beatific vision, purgation, immediate descent into hell, and General Judgment, summarized in doctrinal paraphrase without verbatim quotation."
+
+[[bindings]]
+source_id = "edition.council-of-florence.laetentur-caeli.latin-denzinger"
+role = "bibliographic"
+states = ["cataloged"]
+loci = ["complete-text"]
+context = "Cataloged Denzinger citation (DS 1304-1306) for Council of Florence Decree of Union Laetentur caeli (6 July 1439) defining poenis purgatoriis without defining material fire, efficacy of suffrages, and immediate retribution, summarized in doctrinal paraphrase without verbatim quotation."
+
+[[bindings]]
+source_id = "work.council-of-trent.canones-et-decreta"
+role = "bibliographic"
+states = ["cataloged"]
+loci = [
+  "sessio-6-canon-30",
+  "sessio-22-decretum-2",
+  "sessio-22-canon-3",
+  "sessio-25-decretum-1",
+  "sessio-25-decretum-5"
+]
+context = "Cataloged conciliar citation for Council of Trent Session VI can. 30 (DS 1580), Session XXII ch. 2 and can. 3 (DS 1743, 1753), and Session XXV Decree on Purgatory (sessio-25-decretum-1, DS 1820) and Continuation Decree on Indulgences (sessio-25-decretum-5, DS 1835, encoded in the work record's numeric decree-slot grammar), cited by canonical locus in doctrinal paraphrase without verbatim quotation."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.latin-typical-1997"
+role = "bibliographic"
+states = ["cataloged"]
+loci = ["1021-1022", "1030-1032", "1038-1041", "1471-1479"]
+context = "Cataloged Catechism of the Catholic Church citation on Particular Judgment, Purgatory, Last Judgment, and Indulgences, cited by section number in doctrinal paraphrase without verbatim quotation."
+
+[[bindings]]
+source_id = "work.benedict-xvi.spe-salvi"
+role = "bibliographic"
+states = ["cataloged"]
+loci = ["46", "47", "48"]
+context = "Cataloged citation for Pope Benedict XVI's encyclical Spe salvi (30 November 2007), secs. 46-48, on purification, Christ as the refining fire, and solidarity in prayer for the dead, summarized in doctrinal paraphrase without verbatim quotation."
+
+[[bindings]]
+source_id = "work.papal.paul-vi.hf-p-vi-apc-01011967-indulgentiarum-doctrina"
+role = "bibliographic"
+states = ["cataloged"]
+loci = ["sec. 5", "Norm 1", "Norm 3", "Norm 4", "Norm 5", "Norm 7", "Norm 20"]
+context = "Cataloged citation for Pope St. Paul VI's Apostolic Constitution Indulgentiarum doctrina (1 January 1967) on the Treasury of the Church, definition of indulgences, application to the dead per modum suffragii, abolition of days/years notation, and plenary indulgence conditions, cited by section and norm number in doctrinal paraphrase without verbatim quotation."
+
+[[bindings]]
+source_id = "work.catholic-church.codex-iuris-canonici-1983"
+role = "bibliographic"
+states = ["cataloged"]
+loci = ["canon-992", "canon-993", "canon-994", "canon-995", "canon-996", "canon-997"]
+context = "Cataloged citation for the 1983 Code of Canon Law (Book IV, Part I, Title IV, Chapter IV: Indulgences), cited by canon number in doctrinal paraphrase for current post-1967 Latin-Church indulgence discipline without verbatim quotation."
+
+[[bindings]]
+source_id = "work.apostolic-penitentiary.enchiridion-indulgentiarum"
+role = "bibliographic"
+states = ["cataloged"]
+loci = ["norma 20"]
+context = "Cataloged citation for the Apostolic Penitentiary's Enchiridion Indulgentiarum (4th ed., 1999), Norm 20, cited by norm number in doctrinal paraphrase for current post-1967 plenary indulgence conditions without verbatim quotation."
+
+[[bindings]]
+source_id = "work.gregory-the-great.dialogi"
+role = "bibliographic"
+states = ["cataloged"]
+loci = ["IV.39"]
+context = "Cataloged work record for St. Gregory the Great's Dialogues IV.39 on remission of certain lighter faults in the age to come, attested through tracked Aquinas ST I-II, q. 87, a. 5, sed contra, and cited in doctrinal paraphrase without verbatim quotation."

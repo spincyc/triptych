@@ -1,0 +1,35 @@
+[document]
+type = "four-last-things-v1"
+pdftitle = "The Four Last Things, II: The Books Were Opened"
+pdfsubject = "Discursive Catholic study of Judgment and Purgatory: Scripture, liturgy, councils, Fathers, Doctors, and the saints"
+numeral = "Part II"
+title = "The Books Were Opened"
+subtitle = "Particular and Final Judgment, Purgatory, and the Mercy of the Judge"
+epigraph = 'And I saw the dead, great and small, standing in the presence of the throne. And the books were opened: and another book was opened, which is the book of life. And the dead were judged by those things which were written in the books, according to their works.'
+epigraph-source = "Apocalypse 20:12 (Douay-Rheims)"
+
+[document.main]
+front = "epigraph"
+notes = "endnotes"
+closing = "unindented"
+body = [
+  "sections/01-christ-the-judge",
+  "sections/02-particular-judgment",
+  "sections/03-two-judgments",
+  "sections/04-return-and-general-judgment",
+  "sections/05-purgatory-confession",
+  "sections/06-guilt-and-temporal-punishment",
+  "sections/07-fire-that-cleanses",
+  "sections/08-indulgences-and-suffrages",
+  "sections/09-justice-and-mercy",
+  "sections/10-liturgy-examination-prayer",
+]
+appendices = [
+  { source = "sections/85-graded-teaching", roles = ["argument"] },
+  { source = "sections/90-scope", roles = ["scope-appendix"] },
+  { source = "sections/95-references", roles = ["references"] },
+]
+
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"

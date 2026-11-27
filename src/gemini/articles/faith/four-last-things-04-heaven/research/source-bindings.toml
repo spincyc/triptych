@@ -1,0 +1,498 @@
+schema = 2
+record_type = "bindings"
+document = "articles/faith/four-last-things-04-heaven"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.gutenberg-text-7d10da78"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = [
+  "Exod.34.29",
+  "Job.19.25-27",
+  "Ps.16.15",
+  "Ps.33.10-11",
+  "Ps.35.10",
+  "Ps.41.2-3",
+  "Ps.72.25-26",
+  "Ps.83.2-11",
+  "Ps.102.5",
+  "Cant.3.4",
+  "Cant.5.1",
+  "Wis.3.1-7",
+  "Wis.9.15",
+  "Isa.6.2-3",
+  "Isa.65.17",
+  "Isa.66.22",
+  "Ezech.37.1-14",
+  "Dan.12.2-3",
+  "Matt.5.1-12",
+  "Matt.11.28",
+  "Matt.13.8",
+  "Matt.13.43",
+  "Matt.17.2",
+  "Matt.19.12",
+  "Matt.25.14-46",
+  "Luke.15.1-10",
+  "Luke.19.16-19",
+  "Luke.20.36",
+  "Luke.23.43",
+  "Luke.24.31-40",
+  "John.1.18",
+  "John.14.2-3",
+  "John.16.22",
+  "John.17.3",
+  "John.17.24",
+  "John.20.26",
+  "Acts.17.32",
+  "Rom.8.18-24",
+  "1Cor.2.9",
+  "1Cor.3.8",
+  "1Cor.7.31",
+  "1Cor.9.24",
+  "1Cor.13.8-13",
+  "1Cor.15.20-55",
+  "2Cor.4.17-18",
+  "2Cor.5.1",
+  "2Cor.5.8",
+  "2Cor.9.6",
+  "Eph.1.21",
+  "Phil.1.23",
+  "Phil.3.20-21",
+  "Col.1.16",
+  "Col.3.1-4",
+  "1Tim.6.16",
+  "Heb.11.1-16",
+  "Heb.12.22-24",
+  "2Pet.3.13",
+  "1John.3.2-3",
+  "Jude.1.9",
+  "Apoc.4.8",
+  "Apoc.5.8",
+  "Apoc.7.2-16",
+  "Apoc.12.1",
+  "Apoc.21.1-23",
+  "Apoc.22.1-5"
+]
+context = "Public-domain Challoner Douay-Rheims English Scripture witness for all English biblical quotations across Sections 1-10."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:192362da4273317daa469770d5b137a16215f015fc72fae410c0ece2bf70e03f"
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.ebible-usfm-0ed518ec"
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = [
+  "Ps.35.10",
+  "Matt.5.8",
+  "Matt.25.34",
+  "John.14.2",
+  "1Cor.13.12",
+  "1Cor.15.41-44",
+  "1John.3.2",
+  "Apoc.21.1-5"
+]
+context = "Latin Clementine Vulgate textual control for verse numbering and key Latin expressions (in lumine tuo videbimus lumen, sicuti est, facie ad faciem)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:93c7a51db9da7cfe38a11ec61eafc33ec082c6b53271bcb986178e986c8b9eb2"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["In Festo Omnium Sanctorum (1 November)"]
+context = "1962 Roman Missal typical edition witness for the Feast of All Saints (Introit Gaudeamus omnes, Collect Omnipotens sempiterne Deus, Lesson, Gradual, Alleluia, Gospel, Offertory, Secret, Communion, Postcommunion)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-four-propers-la-checked-82edd79a"
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["In Festo Omnium Sanctorum (Collect, Secret, Postcommunion)"]
+context = "Checked 1922 Tours Mame Latin collation witness for the Collect, Secret, and Postcommunion of All Saints."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:2a0cd4cb4fef6eecba7aff8da79c0594d0fc71c6694f8958e567fc56c523599e"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-scriptural-propers-la-checked-415a1d46"
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["In Festo Omnium Sanctorum (Introit, Gradual, Alleluia, Offertory, Communion)"]
+context = "Checked 1922 Tours Mame Latin collation witness for the scriptural propers of All Saints."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:f8d0bf5c594786400cda3dae1a47ecb029017dbfb83141a847fdb26c68820593"
+
+[[bindings]]
+source_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.all-saints-scriptural-propers-en-checked-ff92e98e"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Feast of All Saints (English scriptural propers)"]
+context = "Checked English collation witness for the Feast of All Saints scriptural propers."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:99597fe1c7901f12992692e92fd6ba3c0e3cebfc7f76f9b094e5d0c670f817df"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1604.canon-reading-38b1f81b"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Canon Missae (Communicantes, Supplices te rogamus, Nobis quoque peccatoribus)"]
+context = "1604 Vatican typical Roman Canon Latin witness for Communicantes, Supplices te rogamus, and Nobis quoque peccatoribus."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:aa9b3ba7f622e8ad9a3a96002ff12d7347a64e0b8ab019f58c273bc959db808b"
+
+[[bindings]]
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["canon-missae"]
+context = "1861 Cummiskey Roman Missal English translation witness for Communicantes, Supplices te rogamus (preserving verbatim plural 'by the hands of thy holy angels'), and Nobis quoque peccatoribus in Section 10."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:8bc04b878cd26af996d32afbad2a58c266f1a1c225149cae6d60ffff06eff529"
+
+[[bindings]]
+source_id = "artifact.catholic-church.breviarium-romanum.1879-blackwood-bute-summer.ia-djvu-text-0e0087de"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Pre-1955 Second Day within the Octave of All Saints (2 November), Matins Lessons IV-V (Venerable Bede, p. 1335)"]
+context = "1879 Marquess of Bute English Roman Breviary witness for Venerable Bede's Matins homily on the heavenly fatherland in the classical pre-1955 Octave of All Saints."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:3eefd36e05da10773cad59fa5a9161966d1148715e185cbf508ffe96618b260d"
+
+[[bindings]]
+source_id = "artifact.third-plenary-council-of-baltimore.manual-of-prayers.new-york-catholic-publication-society-1889.ia-djvu-text-eada18d4"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = [
+  "Ordinary of the Mass (pp. 135-137)",
+  "Te Deum laudamus Latin and English (pp. 160-162)",
+  "Collect for All Saints (p. 773)"
+]
+context = "1889 Manual of Prayers (Third Plenary Council of Baltimore) witness for Sursum corda/Preface/Sanctus, received Latin and English Te Deum laudamus, and received English Collect of All Saints in Section 10."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:5726eed82c1500fd11d547b542af5f89e3153777b5cd26d1da8c9d6209cf5c48"
+
+[[bindings]]
+source_id = "segment.fourth-lateran-council.firmiter-credimus.2026-09-29-latin-patristica.complete-constitution"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["complete-text"]
+context = "Tracked historical Latin text of Fourth Lateran Council Constitution 1, Firmiter credimus (DS 800-801), on divine incomprehensibility (DS 800), the resurrection of all in their own bodies, and the everlasting glory of the just with Christ (DS 801)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:92daebd55a99f65bc1817a2f2e4c4cf3016457cc7bb36218ca2a69bcc78901f5"
+
+[[bindings]]
+source_id = "artifact.first-vatican-council.dei-filius.latin-vatican-web-2026-07-24.historical-latin-text-1577b504"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["complete-text"]
+context = "Tracked historical Latin text of First Vatican Council Dogmatic Constitution Dei Filius (24 April 1870), Chapter 1 (De Deo rerum omnium Creatore, DS 3001), confessing God as incomprehensible, infinite in intellect, will, and every perfection, and ineffably exalted above all things that exist or can be conceived."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:cadfa054445c5ceb7764e430f82ff9e357466ad837f0e874307239e34f4651e4"
+
+[[bindings]]
+source_id = "artifact.council-of-trent.catechismus-romanus.donovan-baltimore-lucas-brothers.ia-djvu-text-83a948ed"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = [
+  "Part I, Creed Art. XI (Four endowments of the glorified body)",
+  "Part I, Creed Art. XII (Life everlasting and the Beatific Vision)"
+]
+context = "Catechism of the Council of Trent (Donovan translation, 1829) on impassibility, brightness, agility, and subtlety (Art. XI) and the Beatific Vision, light of glory, and fellowship of the blessed (Art. XII)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:0ef3fed549b0774de73d546c2a9c17c518a6a7298987e459c33e4c3f34751bb0"
+
+[[bindings]]
+source_id = "segment.augustine-of-hippo.confessiones.ccel-web-2026-10-13.complete-work"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["1.1.1", "9.10.25", "9.10.26", "9.11.27"]
+context = "St. Augustine's Confessions (Pilkington trans., NPNF1 vol. 1) on the restless heart (I.1.1) and the vision at Ostia and St. Monica's deathbed request (IX.10.25-11.27)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:f47f415a9d5cf7e75e5cd075b7218c9bcd89ea7dc6e935b655fbb77e86d59a86"
+
+[[bindings]]
+source_id = "artifact.augustine.de-trinitate.1887-haddan-english-web-2026-09-29.complete-page-text-07b2f4f0"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["III.11.21", "III.11.22"]
+context = "St. Augustine's On the Trinity (Haddan 1887, revised by Kevin Knight) on Old Testament theophanies through created forms versus the face-to-face vision of the Divine Substance."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:fdaf226e939cedaac6a306b7a55acd6578946135ecf5251e8e0028176e237aaf"
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45305-body-lf"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["12.1", "20.16-17", "22.19-21", "22.29-30"]
+context = "Marcus Dods English witness of Augustine's City of God on the one city of angels and men (XII.1), cosmic renewal (XX.16-17), the martyrs' scars and spiritual body (XXII.19-21), how bodily eyes see God (XXII.29), and inequality without envy and eternal Sabbath rest (XXII.30)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:6bd16ca34656e4a17b7967a6b8ce070ebb4fdffa9b8c855088ab3e08e30bf996"
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-2-tei"
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["22.30"]
+context = "CSEL 40 Latin critical control for St. Augustine's City of God XXII.30 (Ibi vacabimus et videbimus, videbimus et amabimus, amabimus et laudabimus)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:c8c46915ec1d5dd7bf34a4332481bd214a4c8c42aadf62da985ec3fd29224b9a"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-7.ccel-web-2026-09-17.ccel-text-266502c9"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = [
+  "Augustine, Tractates on the Gospel of John 67.2, 105.3",
+  "Augustine, Homilies on the First Epistle of John IV.6-7"
+]
+context = "St. Augustine on the many mansions without envy (Tract. John 67.2), eternal life as knowing Father and Son (Tract. John 105.3), and desire stretching the soul's vessel (Hom. 1 John IV.6-7)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:10294711891b3ca7163bf578e02d0a027dbd110257bdaf2fb0b89b65ffe858de"
+
+[[bindings]]
+source_id = "artifact.ante-nicene-fathers.volume-1.ccel-web-2026-10-13.ccel-text-ee9c7f0a"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Irenaeus, Against Heresies V.36.1-3"]
+context = "St. Irenaeus of Lyons on the renewal of creation's fashion rather than substance (V.36.1), the gradation of heavenly mansions (V.36.2), and ascent to the Father (V.36.3)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:55185d261b4711561d2908f7ad9d4398cd02feb77eac70722120ef8090518990"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.ccel-web-2026-10-06.ccel-text-56d84cfa"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = [
+  "Cyril of Jerusalem, Catechetical Lectures 18.1, 3, 7, 18-19, 29",
+  "Gregory of Nazianzus, Orations 16.9, 28.1, 28.3, 45.2"
+]
+context = "St. Cyril of Jerusalem on bodily resurrection and everlasting life (Cat. 18) and St. Gregory of Nazianzus on divine incomprehensibility, uncreated light, and pure sight of the Trinity (Or. 16.9, 28.1, 28.3, 45.2)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:1f357ee73bda8276cc25eb0133278376e91529929c0187de2d364f9c3b192261"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-9.1898-edinburgh-ccel.ccel-complete-859ba34c"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["John of Damascus, Exposition of the Orthodox Faith IV.27"]
+context = "St. John of Damascus on the resurrection of the same body that endured labor and ascetic combat."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:4b493efcadaaaffe58256d8c1f349d082079813a8d8450d43610fc5f97fb4d6d"
+
+[[bindings]]
+source_id = "artifact.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.complete-extracted-text-dc25dd69"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["34.3", "34.6-10"]
+context = "St. Gregory the Great's Latin Homily 34 on the Nine Choirs of Angels and the human elect drawn into the heavenly city."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:dd03fd6ff09944af5ba01e741418ae3278e9bc68a08acb4d0cd4538129984eea"
+
+[[bindings]]
+source_id = "artifact.bede.explanatio-apocalypsis.1878-marshall-parker.whole-text-layer-f4e3b01e"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Book III, on Apoc 21-22 (pp. 142-169)"]
+context = "Venerable Bede's Explanation of the Apocalypse (Marshall trans., 1878) on the heavenly Jerusalem, the river of the water of life, and seeing God's face."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:9417c4a1b7403906d4d403f6f8fd4312262520c187a922d0f845f776b2bd8516"
+
+[[bindings]]
+source_id = "artifact.bernard-of-clairvaux.de-diligendo-deo.patmore-1884.ia-ocr-8a4037c2"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Chapters 10-11 (pp. 44-52)"]
+context = "St. Bernard of Clairvaux (Patmore trans., 1884) on the fourth degree of love (ch. 10) and the separated soul's longing for its body so joy may overflow into the whole person (ch. 11)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:33a7ba7759553b251f15cb3e4acdb0e8fde063c56105412f5717b695fc9c1080"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-prima.pg17611-body-9c99a67a"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = [
+  "I.12.1.corpus",
+  "I.12.2.corpus",
+  "I.12.4.corpus",
+  "I.12.5.corpus",
+  "I.12.5.reply-2",
+  "I.12.6.corpus",
+  "I.12.7.corpus",
+  "I.12.7.reply-1",
+  "I.108.1.corpus",
+  "I.108.5.corpus"
+]
+context = "St. Thomas Aquinas on the Beatific Vision, the lumen gloriae, non-comprehension of the Infinite, unequal clarity proportioned to charity (I q. 12), and the Nine Choirs of Angels (I q. 108)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:c17b98dc58cabd0086fc556359882738be070d90f21f2dbaebe7f8676128b3e7"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-prima-secundae.pg17897-body-6d5b93fb"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = [
+  "I-II.2.1.corpus",
+  "I-II.2.2.corpus",
+  "I-II.2.3.corpus",
+  "I-II.2.4.corpus",
+  "I-II.2.5.corpus",
+  "I-II.2.6.corpus",
+  "I-II.2.7.corpus",
+  "I-II.2.8.corpus",
+  "I-II.2.8.reply-2",
+  "I-II.2.8.reply-3",
+  "I-II.3.8.corpus",
+  "I-II.4.1.corpus",
+  "I-II.4.2.corpus",
+  "I-II.4.3.reply-1",
+  "I-II.4.5.corpus",
+  "I-II.4.5.reply-4",
+  "I-II.4.5.reply-5",
+  "I-II.4.6.corpus",
+  "I-II.4.8.corpus",
+  "I-II.4.8.reply-3",
+  "I-II.5.4.corpus"
+]
+context = "St. Thomas Aquinas on man's last end in the Uncreated Good alone (I-II q. 2 aa. 1-8; q. 3 a. 8), delight, comprehension, the risen body, and fellowship of friends (q. 4 aa. 1-8), and the indefeasibility of beatitude (q. 5 a. 4)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:39b84965a4aebbff649efc5be968feb872603af6927030d15a340fb50545e9d5"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-secunda-secundae.pg18755-body-13b14d17"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = [
+  "II-II.17.1.corpus",
+  "II-II.17.2.corpus",
+  "II-II.17.2.reply-3",
+  "II-II.17.5.corpus",
+  "II-II.18.2.corpus",
+  "II-II.18.2.reply-3",
+  "II-II.20.1.corpus",
+  "II-II.21.1.corpus"
+]
+context = "St. Thomas Aquinas on the theological virtue of hope, its proper object eternal beatitude, its cessation in heaven, and the contrary sins of despair and presumption."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:a85980f155106dc475c0a698619c509a12e9ec9f175ff42dd4f11734323234e9"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006.pg19950-body-4597132e"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = [
+  "III.54.1.corpus",
+  "III.54.1.reply-1",
+  "III.54.2.corpus",
+  "III.54.2.reply-1",
+  "III.54.4.corpus"
+]
+context = "St. Thomas Aquinas on the true, palpable, glorified body of the risen Christ and His glorious scars as the pattern of the saints' resurrection."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:44bb2918bacdd01a424eae980d78ad285fcea31c85426a00800aafd120952178"
+
+[[bindings]]
+source_id = "artifact.anonymous-supplement-compiler.supplementum-tertiae-partis.english-dominicans-1922-questions-87-99.ia-ocr-21251eee"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = [
+  "91.1.sed-contra",
+  "91.1.corpus",
+  "91.3.corpus",
+  "92.1.corpus",
+  "93.1.corpus",
+  "93.2.corpus",
+  "93.3.corpus",
+  "94.1.reply-1",
+  "96.1.corpus",
+  "96.1.reply-2",
+  "96.5.corpus",
+  "96.6.corpus",
+  "96.6.reply-3",
+  "96.6.reply-9",
+  "96.7.corpus"
+]
+context = "Posthumously compiled Supplement (drawn from Aquinas's Scriptum super Sententiis IV) on cosmic renewal (q. 91), the Beatific Vision (q. 92), the mansions and happiness of the saints (q. 93), the saints' intercessory knowledge (q. 94), and the three aureoles of martyrs, virgins, and doctors (q. 96)."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:5116c99454b462d0f792bf2e89273bc3b61074b0f22f0a3704b9882a0c60107a"
+
+[[bindings]]
+source_id = "artifact.teresa-of-avila.libro-de-la-vida.lewis-zimmerman-1904.ia-ocr-3b63bc87"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = [
+  "Life, ch. 38, secs. 1-8 (pp. 354-357)",
+  "Life, ch. 40, secs. 1-9 (pp. 385-388)"
+]
+context = "St. Teresa of Avila's approved private testimony of heavenly light, the divine mirror, and the detachment from earthly trifles that follows."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:4bf3afe998c687e14f41c824e9999030dd911161d3699ccd69f1a31259f96334"
+
+[[bindings]]
+source_id = "artifact.francis-de-sales.introduction-a-la-vie-devote.pustet-new-york-undated.ia-djvu-text-6cb1dd04"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = ["Part I, chs. 16-17 (Eighth Meditation: On Heaven; Ninth Meditation: Election and Choice of Heaven)"]
+context = "St. Francis de Sales's Roman Catholic Pustet edition witness on the beauty of the heavenly city, the fellowship of the saints, and the resolute choice of heaven."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:1295f78c518b50421c47db2a3d8b00c6d4a4eb23cca8477183a21f02b05cc8a9"
+
+[[bindings]]
+source_id = "artifact.alphonsus-liguori.apparecchio-alla-morte.duffy-1843.historical-ocr-d25bba22"
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+loci = [
+  "Consideration XXIX (On Heaven), First and Third Points (pp. 351-362)",
+  "Consideration XXIX, Third Point, Affections and Prayers (pp. 361-362)"
+]
+context = "St. Alphonsus Liguori's Preparation for Death (1843 Duffy edition) on heaven, Our Lady's welcome, suffering for glory, and verbatim received closing vocal prayer in Section 10."
+verified_on = "2026-11-27"
+source_fingerprint = "sha256:f8f14339e6eebf3147ed446047f190ca9edb57ddcae274ff41a9c1e401dcd120"
+
+[[bindings]]
+source_id = "edition.council-of-vienne.ad-nostrum-qui.latin-denzinger"
+role = "bibliographic"
+states = ["cataloged"]
+loci = ["complete-text"]
+context = "Cataloged Denzinger citation (DS 895) for Council of Vienne Constitution Ad nostrum qui (6 May 1312), cited by canonical locus in doctrinal paraphrase only (no verbatim quotation) for condemning the denial that the soul requires the supernatural light of glory (lumen gloriae) to behold and blessedly enjoy God."
+
+[[bindings]]
+source_id = "edition.benedict-xii.benedictus-deus.latin-denzinger"
+role = "bibliographic"
+states = ["cataloged"]
+loci = ["complete-text"]
+context = "Cataloged Denzinger citation (DS 1000-1001) for Pope Benedict XII's Apostolic Constitution Benedictus Deus (29 January 1336), cited by canonical locus in doctrinal paraphrase only (no verbatim quotation) on immediate entry into the intuitive, face-to-face Beatific Vision, cessation of faith and hope, and indefeasibility of beatitude."
+
+[[bindings]]
+source_id = "edition.council-of-florence.laetentur-caeli.latin-denzinger"
+role = "bibliographic"
+states = ["cataloged"]
+loci = ["complete-text"]
+context = "Cataloged Denzinger citation (DS 1305) for Council of Florence Bull of Union with the Greeks Laetentur caeli (6 July 1439), cited by canonical locus in doctrinal paraphrase only (no verbatim quotation) on clear vision of the Triune God and diversity of glory according to merits."
+
+[[bindings]]
+source_id = "edition.council-of-trent.canones-et-decreta.english-waterworth"
+role = "bibliographic"
+states = ["cataloged"]
+loci = ["sessio-6-canon-32"]
+context = "Cataloged citation for Council of Trent Session VI, Canon 32 (DS 1582), cited by canonical locus in doctrinal paraphrase only (no verbatim quotation) on the true merit of increase of grace, eternal life, and increase of glory."
+
+[[bindings]]
+source_id = "edition.pius-xii.munificentissimus-deus.english-vatican-web-2026-07-25"
+role = "bibliographic"
+states = ["cataloged"]
+loci = ["44"]
+context = "Cataloged Holy See citation for Pope Pius XII's Apostolic Constitution Munificentissimus Deus (1 November 1950), section 44 (DS 3903), cited by canonical locus in doctrinal paraphrase only (no verbatim quotation) on the dogmatic definition of the bodily Assumption of the Blessed Virgin Mary."
+
+[[bindings]]
+source_id = "work.pius-xii.ad-caeli-reginam"
+role = "bibliographic"
+states = ["cataloged"]
+loci = ["11 October 1954"]
+context = "Cataloged work record for Pope Pius XII's Encyclical Letter Ad Caeli Reginam (11 October 1954), cited in doctrinal paraphrase only (no verbatim quotation) on the Queenship of the Blessed Virgin Mary."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.latin-typical-1997"
+role = "bibliographic"
+states = ["cataloged"]
+loci = ["1023-1029", "1042", "1048"]
+context = "Cataloged citation for the Catechism of the Catholic Church, cited by section locus in doctrinal paraphrase only (no verbatim quotation) on heaven, the Beatific Vision, the communion of saints, and the renewal of the cosmos."
