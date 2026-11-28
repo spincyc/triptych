@@ -1,0 +1,36 @@
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[document]
+type = "article-v1"
+pdftitle = "At the End of Every Why"
+pdfsubject = "Part III of The Creature Before God: the last end, beatific vision, charity as friendship with God, prayer, dryness, Eucharistic desire, suffering, love of neighbor, and the everlasting Sabbath"
+title-page = "kicker"
+kicker = "The Creature Before God"
+subkicker = "Part III"
+title = "At the End of Every Why"
+subtitle = "Beatitude, Charity as Friendship, and the Creature Desired"
+note = "A Triptych study in Catholic faith and theology. See Scope, Method, and Qualifications for edition boundaries, doctrinal distinctions, and attributions."
+tocdepth = "1"
+widows = "strict"
+notes = "endnotes"
+notes-parskip = "0.45em"
+
+[document.main]
+body = [
+  'sections/01-the-chain-of-whys',
+  'sections/02-vision-beyond-nature',
+  'sections/03-commanded-love-and-friendship',
+  'sections/04-hope-prayer-and-dryness',
+  'sections/05-eucharist-suffering-and-neighbor',
+  'sections/06-degrees-of-love-and-everlasting-sabbath',
+  '\clearpage',
+]
+appendices = [
+  '\clearpage',
+  'sections/80-theological-distinctions',
+  '\clearpage',
+  { source = 'sections/90-scope-method-qualifications', roles = ['scope-appendix'] },
+  { source = 'sections/99-references', roles = ['references'] },
+]

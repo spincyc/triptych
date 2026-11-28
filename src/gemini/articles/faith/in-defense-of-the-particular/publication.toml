@@ -1,0 +1,35 @@
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[document]
+type = "article-v1"
+pdftitle = "In Defense of the Particular"
+pdfsubject = "Companion essay to The Creature Before God: why God's universality acts through concrete election, Incarnation, providence, sacraments, and neighbor"
+kicker = "The Creature Before God"
+subkicker = "Companion Essay"
+title = "In Defense of the Particular"
+subtitle = "Universal Causality, Election, Incarnation, and the Concrete Economy of Grace"
+note = "Companion essay to The Creature Before God. Offered as a study in Catholic philosophy and theology; see Scope, Method, and Qualifications for edition boundaries and attributions."
+tocdepth = "1"
+widows = "strict"
+notes = "endnotes"
+notes-parskip = "0.45em"
+
+[document.main]
+body = [
+  'sections/01-scandal-of-nazareth',
+  'sections/02-universal-cause',
+  'sections/03-chosen-for-all',
+  'sections/04-whole-in-the-part',
+  'sections/05-water-bread-neighbor',
+  'sections/06-limits-scale-name',
+  '\clearpage',
+]
+appendices = [
+  '\clearpage',
+  { source = 'sections/80-objections-synopsis', roles = ['synopsis'] },
+  '\clearpage',
+  { source = 'sections/90-scope-method-qualifications', roles = ['scope-appendix'] },
+  { source = 'sections/99-references', roles = ['references'] },
+]

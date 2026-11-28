@@ -11,18 +11,18 @@
 
 ### Trilogy
 
-| Publication | ChatGPT | Claude | Focus |
-| --- | --- | --- | --- |
-| **Ontological Vertigo** | [PDF](../pdf/gpt/articles/faith/ontological-vertigo.pdf) · [Read](../web/gpt/articles/faith/ontological-vertigo.html) | [PDF](../pdf/claude/articles/faith/ontological-vertigo.pdf) · [Read](../web/claude/articles/faith/ontological-vertigo.html) | Part I: creation, present dependence upon God, and the natural-theological judgment that God loves. |
-| **The Due Return** | [PDF](../pdf/gpt/articles/faith/the-due-return.pdf) · [Read](../web/gpt/articles/faith/the-due-return.html) | [PDF](../pdf/claude/articles/faith/the-due-return.pdf) · [Read](../web/claude/articles/faith/the-due-return.html) | Part II: worship as the creature's due return—sacrifice, sacrament, moral life, mercy, grace, and hope. |
-| **At the End of Every Why** | [PDF](../pdf/gpt/articles/faith/at-the-end-of-every-why.pdf) · [Read](../web/gpt/articles/faith/at-the-end-of-every-why.html) | [PDF](../pdf/claude/articles/faith/at-the-end-of-every-why.pdf) · [Read](../web/claude/articles/faith/at-the-end-of-every-why.html) | Part III: charity and friendship with God amid prayer, dryness, suffering, Eucharistic desire, and love of neighbor. |
+| Publication | ChatGPT | Claude | Gemini | Focus |
+| --- | --- | --- | --- | --- |
+| **Ontological Vertigo** | [PDF](../pdf/gpt/articles/faith/ontological-vertigo.pdf) · [Read](../web/gpt/articles/faith/ontological-vertigo.html) | [PDF](../pdf/claude/articles/faith/ontological-vertigo.pdf) · [Read](../web/claude/articles/faith/ontological-vertigo.html) | [PDF](../pdf/gemini/articles/faith/ontological-vertigo.pdf) · [Read](../web/gemini/articles/faith/ontological-vertigo.html) | Part I: creation, present dependence upon God, and the natural-theological judgment that God loves. |
+| **The Due Return** | [PDF](../pdf/gpt/articles/faith/the-due-return.pdf) · [Read](../web/gpt/articles/faith/the-due-return.html) | [PDF](../pdf/claude/articles/faith/the-due-return.pdf) · [Read](../web/claude/articles/faith/the-due-return.html) | [PDF](../pdf/gemini/articles/faith/the-due-return.pdf) · [Read](../web/gemini/articles/faith/the-due-return.html) | Part II: worship as the creature's due return—sacrifice, sacrament, moral life, mercy, grace, and hope. |
+| **At the End of Every Why** | [PDF](../pdf/gpt/articles/faith/at-the-end-of-every-why.pdf) · [Read](../web/gpt/articles/faith/at-the-end-of-every-why.html) | [PDF](../pdf/claude/articles/faith/at-the-end-of-every-why.pdf) · [Read](../web/claude/articles/faith/at-the-end-of-every-why.html) | [PDF](../pdf/gemini/articles/faith/at-the-end-of-every-why.pdf) · [Read](../web/gemini/articles/faith/at-the-end-of-every-why.html) | Part III: charity and friendship with God amid prayer, dryness, suffering, Eucharistic desire, and love of neighbor. |
 
 ### Companion Essays
 
-| Publication | ChatGPT | Claude | Focus |
-| --- | --- | --- | --- |
-| **Against the Instrumentalists** | [PDF](../pdf/gpt/articles/faith/against-the-instrumentalists.pdf) · [Read](../web/gpt/articles/faith/against-the-instrumentalists.html) | [PDF](../pdf/claude/articles/faith/against-the-instrumentalists.pdf) · [Read](../web/claude/articles/faith/against-the-instrumentalists.html) | Why measurement alone cannot settle what is real or rationally knowable. |
-| **In Defense of the Particular** | [PDF](../pdf/gpt/articles/faith/in-defense-of-the-particular.pdf) · [Read](../web/gpt/articles/faith/in-defense-of-the-particular.html) | [PDF](../pdf/claude/articles/faith/in-defense-of-the-particular.pdf) · [Read](../web/claude/articles/faith/in-defense-of-the-particular.html) | How God's universal causality acts through concrete election, Incarnation, providence, sacraments, and neighbor. |
+| Publication | ChatGPT | Claude | Gemini | Focus |
+| --- | --- | --- | --- | --- |
+| **Against the Instrumentalists** | [PDF](../pdf/gpt/articles/faith/against-the-instrumentalists.pdf) · [Read](../web/gpt/articles/faith/against-the-instrumentalists.html) | [PDF](../pdf/claude/articles/faith/against-the-instrumentalists.pdf) · [Read](../web/claude/articles/faith/against-the-instrumentalists.html) | [PDF](../pdf/gemini/articles/faith/against-the-instrumentalists.pdf) · [Read](../web/gemini/articles/faith/against-the-instrumentalists.html) | Why measurement alone cannot settle what is real or rationally knowable. |
+| **In Defense of the Particular** | [PDF](../pdf/gpt/articles/faith/in-defense-of-the-particular.pdf) · [Read](../web/gpt/articles/faith/in-defense-of-the-particular.html) | [PDF](../pdf/claude/articles/faith/in-defense-of-the-particular.pdf) · [Read](../web/claude/articles/faith/in-defense-of-the-particular.html) | [PDF](../pdf/gemini/articles/faith/in-defense-of-the-particular.pdf) · [Read](../web/gemini/articles/faith/in-defense-of-the-particular.html) | How God's universal causality acts through concrete election, Incarnation, providence, sacraments, and neighbor. |
 
 ## Philosophical Reading
 

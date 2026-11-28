@@ -1,0 +1,34 @@
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[document]
+type = "article-v1"
+kicker = "The Creature Before God"
+subkicker = "Companion Essay"
+title = "Against the Instrumentalists"
+subtitle = "Measurement, the Limits of Verification, and the Reach of Reason"
+pdftitle = "Against the Instrumentalists"
+pdfsubject = "Companion essay to The Creature Before God: why physical measurement and empirical verification cannot exhaust what is real or rationally knowable"
+notes = "endnotes"
+notes-parskip = "0.45em"
+widows = "strict"
+tocdepth = "1"
+
+[document.main]
+body = [
+  'sections/01-honoring-the-instruments',
+  'sections/02-no-reading-reads-itself',
+  'sections/03-historical-arc',
+  'sections/04-self-application',
+  'sections/05-sense-to-intellect',
+  'sections/06-what-the-church-stakes-on-reason',
+  'sections/07-scientistic-residue-and-restoration',
+  '\clearpage',
+]
+appendices = [
+  '\clearpage',
+  { source = 'sections/85-positions-synopsis', roles = ['synopsis'] },
+  { source = 'sections/90-scope-method-qualifications', roles = ['scope-appendix'] },
+  { source = 'sections/99-references', roles = ['references'] },
+]

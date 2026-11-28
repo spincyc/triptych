@@ -1,0 +1,37 @@
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[document]
+type = "article-v1"
+pdftitle = "The Due Return"
+pdfsubject = "Part II of The Creature Before God: worship as the creature's due return, religion annexed to justice, sacrifice, common form, mercy, grace, hope, and Gethsemane"
+kicker = "The Creature Before God"
+subkicker = "Part II"
+title = "The Due Return"
+subtitle = "Justice Without Equivalence, Embodied Worship, and the Freedom of the Gift"
+tocdepth = "1"
+widows = "strict"
+notes = "endnotes"
+notes-parskip = "0.45em"
+note = "Part II of The Creature Before God. See Scope, Method, and Qualifications for edition, translation, and legal-scope boundaries."
+
+[document.main]
+body = [
+  "sections/01-the-question-after-vertigo",
+  "sections/02-justice-without-equivalence",
+  "sections/03-the-virtue-of-religion",
+  "sections/04-sacrifice-and-the-seam-to-christ",
+  "sections/05-gift-before-command",
+  "sections/06-the-return-passes-through-the-neighbor",
+  "sections/07-failure-reconciliation-and-moderation",
+  "sections/08-gethsemane-and-the-open-account",
+  '\clearpage',
+]
+appendices = [
+  '\clearpage',
+  { source = "sections/85-appendix-distinctions", roles = ["argument"] },
+  '\clearpage',
+  { source = "sections/90-scope-method-qualifications", roles = ["scope-appendix"] },
+  { source = "sections/99-references", roles = ["references"] },
+]

@@ -1,0 +1,38 @@
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[document]
+type = "article-v1"
+pdftitle = "Ontological Vertigo"
+pdfsubject = "Part I of The Creature Before God: received being, present conservation, asymmetric dependence, and the analogical judgment that God loves"
+kicker = "The Creature Before God"
+subkicker = "Part I"
+title = "Ontological Vertigo"
+subtitle = "Received Being, Present Conservation, and the Consent of the Creature"
+note = "An independent Triptych study in Catholic natural theology and doctrine. See Scope, Method, and Qualifications for edition boundaries and attributions."
+tocdepth = "1"
+notes = "endnotes"
+notes-parskip = "0.16em"
+widows = "strict"
+
+[document.main]
+body = [
+  "sections/01-becoming-and-being",
+  "sections/02-ancient-horizon",
+  "sections/03-essence-existence-first-way",
+  "sections/04-present-conservation-presence",
+  "sections/05-reflexive-arrest-asymmetry",
+  "sections/06-recoil-noncompetitive-virtue",
+  "sections/07-consent-freedom-love",
+  "sections/08-apophatic-restraint-threshold",
+  '\clearpage',
+]
+appendices = [
+  '\clearpage',
+  { source = "sections/85-positions-synopsis", roles = ["synopsis"] },
+  '\clearpage',
+  { source = "sections/90-scope-method-qualifications", roles = ["scope-appendix"] },
+  '\clearpage',
+  { source = "sections/99-references", roles = ["references"] },
+]

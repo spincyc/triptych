@@ -1,0 +1,316 @@
+schema = 2
+record_type = "bindings"
+document = "articles/faith/ontological-vertigo"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.gutenberg-text-7d10da78"
+loci = [
+  "Exod.3.14",
+  "Ps.99.3",
+  "Ps.103.29-30",
+  "Wis.11.25-27",
+  "Matt.4.10",
+  "Acts.17.27-28",
+  "Rom.1.20",
+  "Rom.11.33-36",
+  "1Cor.4.7",
+  "Col.1.17",
+  "Heb.1.3",
+]
+role = "direct-witness"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:192362da4273317daa469770d5b137a16215f015fc72fae410c0ece2bf70e03f"
+context = "Public-domain Challoner Douay-Rheims English text inspected directly for all English biblical quotations in body and endnotes."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-02-exodus-489219e2"
+loci = ["Exod.3.14"]
+role = "textual-control"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:f66a5f177501b3101db81fae4b4549108e0ddb13478544d42bd760398f415a02"
+context = "Clementine Vulgate Latin textual control for Exodus 3:14 (Ego sum qui sum; Qui est)."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-21-psalms-d20e21f8"
+loci = ["Ps.99.3", "Ps.103.29-30"]
+role = "textual-control"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:1481d71b5253d2bf9644408f82c40a7cd90fce2191d6586d9fa24b0f62d49130"
+context = "Clementine Vulgate Latin textual control and Vulgate psalm numbering verification for Ps 99:3 and Ps 103:29-30."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-25-wisdom-bfeace21"
+loci = ["Wis.11.25-27"]
+role = "textual-control"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:01e5e218108eb21d6687c5b3827acc8fba2a63a49e0bbd1a444d9b75f0926653"
+context = "Clementine Vulgate Latin textual control and verse numbering check for Wisdom 11:25-27."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-47-matthew-2d02758d"
+loci = ["Matt.4.10"]
+role = "textual-control"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:da1db83ff564af32d9e8dab7773456aa467a354ded799029638be74368323843"
+context = "Clementine Vulgate Latin textual control for Matt 4:10 on adoration owed to God alone."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-51-acts-d47f5064"
+loci = ["Acts.17.27-28"]
+role = "textual-control"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:4a21475f42acd74fc5380e8520edad4b6629b27846fba3a830ee351ba50b8baf"
+context = "Clementine Vulgate Latin textual control for Acts 17:27-28 (In ipso enim vivimus, et movemur, et sumus)."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-52-romans-b5092f0e"
+loci = ["Rom.1.20", "Rom.11.33-36"]
+role = "textual-control"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:ea1ee4fa64e6aba7f80af9f1c6ef053bdfaaed70f99b318dbe7d10ed2db4b697"
+context = "Clementine Vulgate Latin textual control for Rom 1:20 and the closing doxology Rom 11:33-36."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-53-1-corinthians-82f86d50"
+loci = ["1Cor.4.7"]
+role = "textual-control"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:c82beb331c7ee02b49e217eb826eb024d8c87614af17bbb662f8374cd5880b74"
+context = "Clementine Vulgate Latin textual control for 1 Cor 4:7 on received gifts."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-58-colossians-f1d99c90"
+loci = ["Col.1.17"]
+role = "textual-control"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:06c3c5e04fba34cae98e1467242b5e3fc63bbef88a55a37845bf7527b33da821"
+context = "Clementine Vulgate Latin textual control for Col 1:17 (omnia in ipso constant)."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-65-hebrews-86bab25c"
+loci = ["Heb.1.3"]
+role = "textual-control"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:93020342c4fcb4cf5048061e4033bdf9d92049dc7b3ccfc354c3f892cf14e9bf"
+context = "Clementine Vulgate Latin textual control for Heb 1:3 (portansque omnia verbo virtutis suae)."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.de-ente-et-essentia.1933-latin-corpus-thomisticum-2026-09-29.oee-historical-latin-aa6b1de0"
+loci = ["4", "5"]
+role = "direct-witness"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:abc4c485ce30b7b7ffa6d89b54f682f54383016890362e88c3e95aee6ce11ac6"
+context = "Tracked Latin text of De Ente et Essentia ch. 4-5 inspected directly for the real distinction of essence and esse, uniqueness of ipsum esse subsistens, rejection of esse commune pantheism, and causal dependence of received esse."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-prima.pg17611-body-9c99a67a"
+loci = [
+  "I.2.3.corpus",
+  "I.3.4.corpus",
+  "I.3.4.reply-1",
+  "I.3.4.reply-2",
+  "I.8.1.corpus",
+  "I.8.1.reply-1",
+  "I.8.1.reply-2",
+  "I.12.12.corpus",
+  "I.12.13.reply-1",
+  "I.13.5.corpus",
+  "I.13.7.objection-5",
+  "I.13.7.corpus",
+  "I.13.7.reply-3",
+  "I.13.7.reply-5",
+  "I.13.11.corpus",
+  "I.13.11.reply-1",
+  "I.19.3.corpus",
+  "I.19.3.reply-4",
+  "I.20.2.sed-contra",
+  "I.20.2.corpus",
+  "I.20.2.reply-4",
+  "I.21.1.corpus",
+  "I.21.1.reply-1",
+  "I.21.1.reply-2",
+  "I.21.1.reply-3",
+  "I.21.4.corpus",
+  "I.21.4.reply-4",
+  "I.32.1.corpus",
+  "I.32.1.reply-3",
+  "I.44.1.corpus",
+  "I.44.2.corpus",
+  "I.45.2.reply-1",
+  "I.45.2.reply-2",
+  "I.45.3.corpus",
+  "I.45.3.reply-1",
+  "I.45.3.reply-3",
+  "I.46.2.corpus",
+  "I.46.2.reply-1",
+  "I.46.2.reply-7",
+  "I.104.1.objection-2",
+  "I.104.1.objection-3",
+  "I.104.1.sed-contra",
+  "I.104.1.corpus",
+  "I.104.1.reply-2",
+  "I.104.1.reply-4",
+  "I.105.5.objection-1",
+  "I.105.5.objection-2",
+  "I.105.5.corpus",
+  "I.105.5.reply-1",
+  "I.105.5.reply-2",
+]
+role = "direct-witness"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:c17b98dc58cabd0086fc556359882738be070d90f21f2dbaebe7f8676128b3e7"
+context = "Public-domain English Dominican Prima Pars inspected directly across all cited metaphysical articles and replies: First Way, simplicity, divine immanence, natural knowledge, analogy, mixed relation, Qui Est, divine freedom, divine love, justice/mercy, natural-reason Trinity boundary, universal creation, primary matter, creation as relation, eternity of the world and per se/per accidens series, conservation, and noncompetitive causality."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-prima-secundae.pg17897-body-6d5b93fb"
+loci = [
+  "I-II.79.2.corpus",
+  "I-II.79.2.reply-2",
+]
+role = "direct-witness"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:39b84965a4aebbff649efc5be968feb872603af6927030d15a340fb50545e9d5"
+context = "Public-domain English Dominican Prima Secundae inspected directly at I-II, q. 79, a. 2 (corpus and ad 2) on divine concurrence in the act of sin without causing the defect of sin."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-secunda-secundae.pg18755-body-13b14d17"
+loci = [
+  "II-II.84.1.sed-contra",
+  "II-II.84.1.corpus",
+  "II-II.84.1.reply-1",
+  "II-II.129.1.corpus",
+  "II-II.129.1.reply-3",
+  "II-II.129.3.reply-4",
+  "II-II.161.1.corpus",
+  "II-II.161.1.reply-1",
+  "II-II.161.1.reply-2",
+  "II-II.161.1.reply-5",
+  "II-II.161.2.corpus",
+  "II-II.161.2.reply-2",
+  "II-II.161.2.reply-3",
+  "II-II.161.3.corpus",
+]
+role = "direct-witness"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:a85980f155106dc475c0a698619c509a12e9ec9f175ff42dd4f11734323234e9"
+context = "Public-domain English Dominican Secunda Secundae inspected directly for adoration as an act of latria (q. 84, a. 1), magnanimity and its reconciliation with humility (q. 129, aa. 1, 3 ad 4), and humility (q. 161, aa. 1-3)."
+
+[[bindings]]
+source_id = "artifact.ante-nicene-fathers.volume-1.ccel-web-2026-10-13.ccel-text-ee9c7f0a"
+loci = ["Irenaeus.AdvHaer.II.34.3-4", "Irenaeus.AdvHaer.IV.39.2"]
+role = "direct-witness"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:55185d261b4711561d2908f7ad9d4398cd02feb77eac70722120ef8090518990"
+context = "Tracked public-domain ANF vol. 1 CCEL text inspected directly for St. Irenaeus, Adversus Haereses II.34.3-4 (received life and continuance) and IV.39.2 (clay in the hands of the Maker)."
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-4.new-york-1892.ia-djvu-text-ae54c8ba"
+loci = ["Athanasius.ContraGentes.41", "Athanasius.ContraGentes.42"]
+role = "direct-witness"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:5354531f039ee8d7dbd731740d8cca901f9a882e3c0e0590973d2786d408f7a7"
+context = "Tracked public-domain NPNF ser. 2 vol. 4 (1892) inspected directly for St. Athanasius, Contra Gentes 41-42 on continuous sustenance of creation by the Word."
+
+[[bindings]]
+source_id = "segment.augustine-of-hippo.confessiones.ccel-web-2026-10-13.complete-work"
+loci = ["3.6.11", "7.10.16", "7.11.17", "7.17.23"]
+role = "direct-witness"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:f47f415a9d5cf7e75e5cd075b7218c9bcd89ea7dc6e935b655fbb77e86d59a86"
+context = "Tracked public-domain Pilkington translation (NPNF ser. 1 vol. 1 via CCEL segment) inspected directly for St. Augustine, Confessions III.6.11 and VII.10.16, 11.17, 17.23."
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45304-body-lf"
+loci = ["11.10", "11.24", "12.1", "12.2", "12.6", "12.7", "12.25"]
+role = "direct-witness"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:3b6e07da2d1ed3cedf883f7671a37d82f99427badc4daa23239366798e78d34b"
+context = "Tracked unrevised 1871 Marcus Dods printing (Project Gutenberg vol. 1) inspected directly for St. Augustine, City of God Books XI-XII on simplicity, free creation from goodness, supreme being, deficient cause of evil will, and continuous sustenance."
+
+[[bindings]]
+source_id = "artifact.augustine.de-genesi-ad-litteram.migne-pl-34.degenesi-latin-text-ec363ece"
+loci = ["4.12"]
+role = "direct-witness"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:484aa4562151ceb4dcf64faa1be38053a839d19ec8b695ce4886bc3fb35b6895"
+context = "Tracked Migne PL 34 Latin text inspected directly for St. Augustine, De Genesi ad litteram IV.12 (nn. 22-23) on the builder/house contrast and Acts 17:28."
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.ccel-web-2026-10-06.ccel-text-56d84cfa"
+loci = ["GregoryNazianzen.Or.28.4-6", "GregoryNazianzen.Or.28.17", "GregoryNazianzen.Or.28.21", "GregoryNazianzen.Or.38.7-8"]
+role = "direct-witness"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:1f357ee73bda8276cc25eb0133278376e91529929c0187de2d364f9c3b192261"
+context = "Tracked unrevised 1894 Browne & Swallow printing (NPNF ser. 2 vol. 7 via CCEL) inspected directly for St. Gregory of Nazianzus, Orations 28 and 38 on apophatic restraint, the Sea of Being, the Unoriginate, and Solomon's dizziness."
+
+[[bindings]]
+source_id = "segment.john-of-damascus.de-fide-orthodoxa.1898-edinburgh-npnf-ccel.complete-text"
+loci = ["I.9"]
+role = "direct-witness"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:6b1b81850c60b246ab141f5194699e420a32b06d1fe0106cea990c17a33487f9"
+context = "Tracked unrevised 1898 Edinburgh NPNF ser. 2 vol. 9 printing (S. D. F. Salmond translation via CCEL segment) inspected directly at Book I, ch. 9 on He Who Is and the 'sea of essence infinite and unseen', compared with Aquinas's Latin-mediated citation in ST I, q. 13, a. 11."
+
+[[bindings]]
+source_id = "artifact.pseudo-dionysius-the-areopagite.de-caelesti-hierarchia.1899-parker-english.pearse-complete-text-6fbc0066"
+loci = ["2.3", "4.1"]
+role = "direct-witness"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:bb1a01aa1fda720c9f0da437de285ab5445fa2429a42c5a87a9445b3b14b08f7"
+context = "Tracked public-domain 1899 John Parker translation inspected directly for Pseudo-Dionysius, Celestial Hierarchy II.3 (apophatic negations) and IV.1 (goodness calling essences into being)."
+
+[[bindings]]
+source_id = "segment.fourth-lateran-council.firmiter-credimus.2026-09-29-latin-patristica.complete-constitution"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:92daebd55a99f65bc1817a2f2e4c4cf3016457cc7bb36218ca2a69bcc78901f5"
+context = "Tracked Latin constituent of Fourth Lateran Council Const. 1 (Firmiter credimus, DS 800) inspected directly for solemn definition of creation ex nihilo."
+
+[[bindings]]
+source_id = "artifact.first-vatican-council.dei-filius.latin-vatican-web-2026-07-24.historical-latin-text-1577b504"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:cadfa054445c5ceb7764e430f82ff9e357466ad837f0e874307239e34f4651e4"
+context = "Tracked historical Latin text of First Vatican Council, Dei Filius, inspected directly at ch. 1, ch. 2, ch. 4, canon 5 De Deo rerum omnium creatore, and canon 1 De revelatione."
+
+[[bindings]]
+source_id = "segment.first-vatican-council.dei-filius.1912-devin-adair-manning-english.complete-english-ocr"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:ded16ad0e4e4d6bef8488b473761ecf571b0ca84761cae481dcf1375cbcdf356"
+context = "Tracked public-domain 1912 Cardinal Manning English translation of Dei Filius inspected directly alongside the historical Latin text at ch. 1, ch. 2, ch. 4, canon 5 De Deo rerum omnium creatore, and canon 1 De revelatione."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.latin-typical-1997"
+loci = ["300", "301"]
+role = "bibliographic"
+states = ["cataloged"]
+context = "Cataloged bibliographic reference for doctrinal paraphrase of CCC 300-301 (no verbatim quotation reproduced)."

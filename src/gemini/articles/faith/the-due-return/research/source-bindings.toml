@@ -1,0 +1,408 @@
+schema = 2
+record_type = "bindings"
+document = "articles/faith/the-due-return"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.gutenberg-text-7d10da78"
+loci = [
+  "Exod.19.4-6",
+  "Exod.20.2-3",
+  "Deut.5.6-15",
+  "Deut.6.20-21",
+  "Ps.39.7-9",
+  "Ps.45.11",
+  "Ps.49.12-14",
+  "Ps.115.12-13",
+  "Ps.115.16-17",
+  "Prov.19.17",
+  "Isa.1.11",
+  "Isa.1.15-17",
+  "Hos.6.6",
+  "Amos.5.23-24",
+  "Mic.6.6-8",
+  "Mal.1.11",
+  "Matt.5.23-24",
+  "Matt.9.13",
+  "Matt.12.7",
+  "Matt.21.28-31",
+  "Matt.25.35",
+  "Matt.25.40",
+  "Matt.26.37-39",
+  "Luke.17.10",
+  "Luke.22.42",
+  "John.4.23-24",
+  "John.6.38",
+  "Rom.1.20-25",
+  "Rom.11.35-36",
+  "Rom.12.1-5",
+  "Rom.13.8",
+  "1Cor.4.7",
+  "1Cor.11.20",
+  "1Cor.11.22",
+  "Heb.10.5-10",
+  "Heb.13.16",
+  "Jas.1.27",
+  "1Pet.2.5",
+  "1Pet.2.9",
+  "1John.5.3",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:192362da4273317daa469770d5b137a16215f015fc72fae410c0ece2bf70e03f"
+context = "Public-domain Challoner Douay-Rheims Bible inspected directly for every verbatim English Scripture quotation, including Vulgate/Challoner Psalm 115:10-19 numbering."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-21-psalms-d20e21f8"
+loci = ["Ps.49.12-14", "Ps.115.3-4", "Ps.115.7-8"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:1481d71b5253d2bf9644408f82c40a7cd90fce2191d6586d9fa24b0f62d49130"
+context = "Clementine Vulgate Psalms inspected directly for Quid retribuam Domino, Calicem salutaris accipiam, Dirupisti vincula mea, and Ps 115:1-10 vs Challoner 115:10-19 numbering."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-02-exodus-489219e2"
+loci = ["Exod.19.4-6", "Exod.20.2-3"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:f66a5f177501b3101db81fae4b4549108e0ddb13478544d42bd760398f415a02"
+context = "Clementine Vulgate Exodus inspected directly as Latin textual control for Sinai covenant and Decalogue prologue."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-47-matthew-2d02758d"
+loci = ["Matt.5.23-24", "Matt.21.28-31", "Matt.25.35-40", "Matt.26.37-42"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:da1db83ff564af32d9e8dab7773456aa467a354ded799029638be74368323843"
+context = "Clementine Vulgate Matthew inspected directly for Nolo / Eo, domine in the Parable of the Two Sons and Gethsemane."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-49-luke-28ae5d9a"
+loci = ["Luke.17.10", "Luke.22.41-44"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:c5eb7131bf4e265eeb034ea4bcbceb09f8cddff2c696746f2b4545321b823993"
+context = "Clementine Vulgate Luke inspected directly for servi inutiles and Gethsemane prayer."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-52-romans-b5092f0e"
+loci = ["Rom.1.20-25", "Rom.11.33-36", "Rom.12.1-5"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:ea1ee4fa64e6aba7f80af9f1c6ef053bdfaaed70f99b318dbe7d10ed2db4b697"
+context = "Clementine Vulgate Romans inspected directly for non sicut Deum glorificaverunt, aut gratias egerunt and rationabile obsequium."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-prima-secundae.pg17897-body-6d5b93fb"
+loci = [
+  "I-II.90.1.reply-3",
+  "I-II.90.4.corpus",
+  "I-II.91.1.corpus",
+  "I-II.91.2.corpus",
+  "I-II.91.3.corpus",
+  "I-II.91.4.corpus",
+  "I-II.94.2.corpus",
+  "I-II.100.1.corpus",
+  "I-II.100.3.reply-2",
+  "I-II.100.5.corpus",
+  "I-II.100.10.corpus",
+  "I-II.100.10.reply-2",
+  "I-II.100.10.reply-3",
+  "I-II.106.1.corpus",
+  "I-II.106.2.corpus",
+  "I-II.107.1.corpus",
+  "I-II.107.4.corpus",
+  "I-II.108.1.corpus",
+  "I-II.108.2.corpus",
+  "I-II.109.2.corpus",
+  "I-II.109.3.corpus",
+  "I-II.109.4.corpus",
+  "I-II.109.6.corpus",
+  "I-II.114.1.corpus",
+  "I-II.114.1.reply-3",
+  "I-II.114.2.corpus",
+  "I-II.114.5.corpus",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:39b84965a4aebbff649efc5be968feb872603af6927030d15a340fb50545e9d5"
+context = "English Dominican Summa Theologiae Prima Secundae inspected directly for eternal, natural, divine, and human law, the Decalogue, mode of charity under precept, New Law as grace and liberty, necessity of grace, and merit."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-secunda-secundae.pg18755-body-13b14d17"
+loci = [
+  "II-II.17.1.corpus",
+  "II-II.17.2.corpus",
+  "II-II.17.5.corpus",
+  "II-II.17.5.reply-2",
+  "II-II.58.1.corpus",
+  "II-II.58.2.corpus",
+  "II-II.58.11.corpus",
+  "II-II.80.1.corpus",
+  "II-II.81.1.corpus",
+  "II-II.81.1.reply-1",
+  "II-II.81.3.corpus",
+  "II-II.81.4.corpus",
+  "II-II.81.5.corpus",
+  "II-II.81.5.reply-1",
+  "II-II.81.5.reply-3",
+  "II-II.81.6.corpus",
+  "II-II.81.6.reply-1",
+  "II-II.81.7.corpus",
+  "II-II.81.7.reply-2",
+  "II-II.81.8.corpus",
+  "II-II.82.1.corpus",
+  "II-II.82.2.reply-2",
+  "II-II.82.3.corpus",
+  "II-II.82.3.reply-2",
+  "II-II.83.1.corpus",
+  "II-II.83.2.corpus",
+  "II-II.83.3.corpus",
+  "II-II.83.12.corpus",
+  "II-II.84.1.corpus",
+  "II-II.84.1.reply-1",
+  "II-II.84.2.corpus",
+  "II-II.84.2.reply-1",
+  "II-II.84.2.reply-2",
+  "II-II.85.1.corpus",
+  "II-II.85.1.reply-1",
+  "II-II.85.2.corpus",
+  "II-II.85.3.corpus",
+  "II-II.85.3.reply-2",
+  "II-II.85.3.reply-3",
+  "II-II.85.4.corpus",
+  "II-II.106.1.corpus",
+  "II-II.106.1.reply-1",
+  "II-II.106.4.corpus",
+  "II-II.106.6.corpus",
+  "II-II.106.6.reply-1",
+  "II-II.106.6.reply-2",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:a85980f155106dc475c0a698619c509a12e9ec9f175ff42dd4f11734323234e9"
+context = "English Dominican Summa Theologiae Secunda Secundae inspected directly for hope, justice, potential parts annexed to justice, religion, devotion, prayer, adoration, sacrifice, and gratitude."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006.pg19950-body-4597132e"
+loci = [
+  "III.18.1.corpus",
+  "III.18.4.corpus",
+  "III.18.5.corpus",
+  "III.18.6.sed-contra",
+  "III.18.6.corpus",
+  "III.48.3.corpus",
+  "III.84.1.reply-2",
+  "III.84.5.corpus",
+  "III.85.1.corpus",
+  "III.85.2.corpus",
+  "III.85.3.corpus",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:44bb2918bacdd01a424eae980d78ad285fcea31c85426a00800aafd120952178"
+context = "English Dominican Summa Theologiae Tertia Pars inspected directly for Christ's two wills in Gethsemane, Christ's Passion as true sacrifice, and Penance as sacrament and virtue of relative justice."
+
+[[bindings]]
+source_id = "artifact.ante-nicene-fathers.volume-1.ccel-web-2026-10-13.ccel-text-ee9c7f0a"
+loci = [
+  "Justin Martyr, First Apology 13, 65-67",
+  "Irenaeus, Adversus Haereses IV.14.1-3, IV.17.1-5, IV.18.1-6",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:55185d261b4711561d2908f7ad9d4398cd02feb77eac70722120ef8090518990"
+context = "Tracked public-domain Ante-Nicene Fathers vol. 1 inspected directly for St. Justin Martyr's Sunday assembly and care of the poor and St. Irenaeus on God's non-need, pure oblation, and mercy."
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45304-body-lf"
+loci = ["10.1", "10.3", "10.5-6", "10.19-20"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:3b6e07da2d1ed3cedf883f7671a37d82f99427badc4daa23239366798e78d34b"
+context = "Public-domain Marcus Dods 1871 translation of City of God Book X inspected directly for latria, God's non-need, visible sacrifice as sacred sign, mercy as true sacrifice, and Christ as Priest and Sacrifice."
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-1-tei"
+loci = ["10.1", "10.3", "10.5-6", "10.19-20"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:a2bb5ceb6cd8bd6948a84c369f38dae8a20e8e1b4d3a784ef29b542a74dea615"
+context = "Hoffmann 1899 CSEL 40/1 Latin text of De civitate Dei Book X consulted via the CC BY-SA 4.0 University of Leipzig / OpenGreekAndLatin TEI encoding as Latin textual control for Dods 1871 quotations."
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
+loci = ["115.9-13"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
+context = "Tracked public-domain NPNF I.8 Enarrationes in Psalmos inspected directly on Psalm 115 (numbered Ps CXVI in English) for God returning good for evil, receiving the chalice of salvation, and broken bonds."
+
+[[bindings]]
+source_id = "segment.john-chrysostom.homiliae-in-matthaeum.ccel-web-2026-09-17.complete-homilies"
+loci = ["50.3", "50.4", "67.2", "67.3"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:3256f7ab4e49f1dc14e2a0ccbd11d96e3081e94da59d9301d628ce87055c3e88"
+context = "Tracked public-domain NPNF I.10 Homilies on Matthew inspected directly for Hom. 50.3-4 (honoring Christ on the altar and in the poor without forbidding sacred vessels) and Hom. 67.2-3 (Parable of the Two Sons)."
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.ccel-web-2026-10-06.ccel-text-56d84cfa"
+loci = ["Gregory of Nazianzus, Oration 30.12"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:1f357ee73bda8276cc25eb0133278376e91529929c0187de2d364f9c3b192261"
+context = "Tracked public-domain NPNF II.7 inspected directly for St. Gregory of Nazianzus Oration 30.12 on Gethsemane; also searched for Oration 14 (confirmed absent from NPNF II.7)."
+
+[[bindings]]
+source_id = "artifact.benedict-of-nursia.regula-benedicti.latin-wikisource-web-2026-09-05.regula-latin-text"
+loci = ["49", "72"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:7437374ba0f7d381913f9581217e7f4d5d89a11a6b9475f572c4f23d2949cc27"
+context = "Tracked public-domain Latin Regula Benedicti inspected directly for Lenten moderation under abbatial consent (c. 49, accompanied by an editorial English rendering) and good zeal vs. bitter zeal (c. 72)."
+
+[[bindings]]
+source_id = "artifact.francis-de-sales.introduction-a-la-vie-devote.pustet-new-york-undated.ia-djvu-text-6cb1dd04"
+loci = ["Part I, chs. 1-2", "Part III, ch. 9", "Part III, ch. 23"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:1295f78c518b50421c47db2a3d8b00c6d4a4eb23cca8477183a21f02b05cc8a9"
+context = "Tracked public-domain Pustet edition of Introduction to a Devout Life inspected directly for true devotion, meekness toward oneself after faults, and bodily moderation."
+
+[[bindings]]
+source_id = "artifact.francis-de-sales.introduction-a-la-vie-devote.rivingtons-1876.historical-ocr-8159693d"
+loci = ["Part I, ch. 1", "Part IV, ch. 11"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:21e2850feaa938628c58af791f6032ab2dd8db3450e4a3d55cd1051803d5d5f2"
+context = "Tracked public-domain 1876 Rivingtons edition of Introduction to a Devout Life inspected directly for Part IV, ch. 11 on anxiety of mind."
+
+[[bindings]]
+source_id = "artifact.council-of-trent.catechismus-romanus.donovan-baltimore-lucas-brothers.ia-djvu-text-83a948ed"
+loci = ["Part II: Sacrament of Penance (pp. 176-178)", "Part III: Third Commandment (pp. 263-265)"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:0ef3fed549b0774de73d546c2a9c17c518a6a7298987e459c33e4c3f34751bb0"
+context = "Tracked public-domain Donovan 1829 English translation of the 1566 Roman Catechism inspected directly for Penance as second plank and the natural vs. ceremonial elements of the Third Commandment."
+
+[[bindings]]
+source_id = "artifact.council-of-trent.catechismus-romanus.donovan-baltimore-lucas-brothers.satisfaction-prayer-fasting-alms-checked-15f940ef"
+loci = ["p. 204", "p. 332"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:5b71e411c991765570db7c4b8fbcb0fd396ca83e70c205c779ffd056719d4376"
+context = "Tracked checked excerpt of Donovan 1829 Roman Catechism inspected directly for prayer, fasting, and alms-deeds as triple remedy of satisfaction."
+
+[[bindings]]
+source_id = "artifact.first-vatican-council.dei-filius.latin-vatican-web-2026-07-24.historical-latin-text-1577b504"
+loci = ["complete-text"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:cadfa054445c5ceb7764e430f82ff9e357466ad837f0e874307239e34f4651e4"
+context = "Tracked public-domain historical Latin text of Vatican I Dei Filius inspected directly for Caput III and Canon III.5 on full obedience of intellect and will and free assent to grace."
+
+[[bindings]]
+source_id = "segment.first-vatican-council.dei-filius.1912-devin-adair-manning-english.complete-english-ocr"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:ded16ad0e4e4d6bef8488b473761ecf571b0ca84761cae481dcf1375cbcdf356"
+context = "Tracked public-domain 1912 Manning English translation of Vatican I Dei Filius inspected directly for Chapter III (pp. 223-225) quotations."
+
+[[bindings]]
+source_id = "artifact.papal-collections.dogmatic-canons-decrees-1912.1912-devin-adair-english.raw-ocr-738a5b1c6dd8"
+loci = [
+  "Council of Trent, Session VI, chs. 8, 14, 16 (pp. 32-33, 41, 45-48)",
+  "Council of Trent, Session XIV, chs. 1, 8, can. 2 (pp. 86-87, 104-107, 114)",
+  "Council of Trent, Session XXII, chs. 1-2 (pp. 132-136)",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-28"
+source_fingerprint = "sha256:ff44d10d7ceb4262f1b11985bb98d0f51f8e0356b9914516e1628f13b8324c26"
+context = "Tracked public-domain 1912 Devin-Adair edition of Dogmatic Canons and Decrees inspected directly for Council of Trent Sessions VI, XIV, and XXII quotations and citations."
+
+[[bindings]]
+source_id = "edition.second-vatican-council.sacrosanctum-concilium.latin-aas-56-1964"
+loci = ["7", "10", "14", "47-48", "106"]
+role = "bibliographic"
+states = ["cataloged"]
+context = "Cataloged official Latin AAS edition cited strictly in doctrinal paraphrase for Christ's presence in liturgy, active participation, self-offering in the Eucharist, and Sunday."
+
+[[bindings]]
+source_id = "edition.second-vatican-council.lumen-gentium.latin-aas-57-1965"
+loci = ["10-11", "34"]
+role = "bibliographic"
+states = ["cataloged"]
+context = "Cataloged official Latin AAS edition cited strictly in doctrinal paraphrase for the common priesthood of the faithful and spiritual sacrifices."
+
+[[bindings]]
+source_id = "edition.second-vatican-council.dignitatis-humanae.latin-aas-58-1966"
+loci = ["1-3"]
+role = "bibliographic"
+states = ["cataloged"]
+context = "Cataloged official Latin AAS edition cited strictly in doctrinal paraphrase for moral duty to seek truth and immunity from external coercion in religious acts."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.latin-typical-1997"
+loci = ["1440-1460", "2006-2011", "2095-2109"]
+role = "bibliographic"
+states = ["cataloged"]
+context = "Cataloged typical edition of the Catechism of the Catholic Church cited strictly in doctrinal paraphrase for Penance, merit, and the virtue of religion."
+
+[[bindings]]
+source_id = "edition.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-codex-2026-07-25"
+loci = ["canon-1", "canon-11", "canon-87", "canon-1245", "canon-1246", "canon-1247", "canon-1248"]
+role = "bibliographic"
+states = ["cataloged"]
+context = "Cataloged Holy See Latin web state (Books I-V and VII, dated 2026-07-25) summarized strictly in original plain-English paraphrase for universal Latin Church jurisdiction, dispensation authority, and Sunday obligation."
+
+[[bindings]]
+source_id = "edition.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-2026-07-25"
+loci = ["canon-1311", "canon-1314"]
+role = "bibliographic"
+states = ["cataloged"]
+context = "Cataloged Holy See Latin web state of revised Book VI (dated 2026-07-25, in force from 8 December 2021) cited strictly in original paraphrase for the penal-law boundary that non-attendance at Sunday Mass carries no latae sententiae censure."
+
+[[bindings]]
+source_id = "edition.john-paul-ii.sacrae-disciplinae-leges.2026-10-26-vatican-la"
+loci = ["complete-text"]
+role = "bibliographic"
+states = ["cataloged"]
+context = "Cataloged promulgating apostolic constitution (25 January 1983) for the 1983 Code of Canon Law cited in Legal Scope and Currentness."
+
+[[bindings]]
+source_id = "edition.francis.pascite-gregem-dei.2026-10-26-vatican-la"
+loci = ["complete-text"]
+role = "bibliographic"
+states = ["cataloged"]
+context = "Cataloged apostolic constitution (23 May 2021; effective 8 December 2021) reforming Book VI of the 1983 Code of Canon Law, cited in Legal Scope and Currentness."
+
+[[bindings]]
+source_id = "edition.catholic-church.codex-canonum-ecclesiarum-orientalium.latin-aas-82-1990"
+loci = ["canon-1"]
+role = "bibliographic"
+states = ["cataloged"]
+context = "Cataloged 1990 Eastern Code cited solely to mark the jurisdictional exclusion of Eastern Catholic Churches sui iuris from the 1983 Latin Code illustration."

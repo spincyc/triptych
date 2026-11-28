@@ -1,0 +1,30 @@
+# Cold Review Disposition: Ontological Vertigo
+
+- **Document:** `src/gemini/articles/faith/ontological-vertigo/` (*The Creature Before God*, Part I)
+- **Review and Remediation Date:** 2026-11-28
+- **Review Scope:** Independent read-only review covering automated preflight checks, verbatim quotation accuracy, chronological and scholastic precision, epistemic order, editorial voice, cross-record citation consistency, and print/web layout.
+
+## Summary of Findings and Remediations
+
+### Critical Findings
+- **C-1 (`bindings-valid` 61 locus-format errors):** Rewrote all failing locus strings in `research/source-bindings.toml` to match each owning `work.toml` `locus_pattern` (dot-delimited Scripture loci, four-segment *Summa Theologiae* article-part loci, `"4.12"` for Augustine *De Genesi ad litteram*, and `"complete-text"` for Fourth Lateran and Vatican I). Verified `check-content-preflight --check bindings-valid` passes with exit code 0.
+- **C-2 (St. Irenaeus chronology):** Corrected *"Seven centuries before Aquinas"* in Section 6 to *"Nearly eleven centuries before Aquinas"* (c. 180 AD to 1271–1272 AD).
+- **C-3 (Acts 17:27–28 verbatim quotation):** Moved `"is"` outside quotation marks in Section 4 so the Douay-Rheims wording (`"not far from every one of us. For in him we live and move and are"`) is exact without altering `"be"` to `"is"`.
+- **C-4 (St. Irenaeus *Adv. Haer.* II.34.4 omission):** Restored `[for ever]` verbatim in the Section 4 block quotation (`should henceforth endure [for ever], since God has both willed...`).
+- **C-5 (Epistemic-order breaches in Sections 2–3):** Removed premature *"Creator"*, *"creature"*, and *"created by God"* phrasing from Section 2; reordered Section 3's *De Ente et Essentia* exposition to match Aquinas's own sequence (using *"separate immaterial substances"* in Step 1, executing Step 3 to `causa prima, quae Deus est` before the ch. 5 *esse commune* clarification); kept Section 3.2 at the level of competing classical metaphysical analyses and placed the dogmatic vs. school-thesis boundary in Section 4's conciliar subsection and Appendices A–B; moved *ST* I, q. 13, a. 11 (Exodus 3:14, St. John of Damascus, Tetragrammaton) out of Section 3 into Section 4 after the explicit turn to Scripture and the Fathers.
+
+### Major Findings
+- **M-1 (Pseudo-Dionysius identification):** Added historical identification at first mention in Section 8 and in `sections/99-references.tex` (anonymous late fifth- or early sixth-century Christian author writing under the pseudonym of St. Paul's Athenian convert in Acts 17:34).
+- **M-2 (John of Damascus witness):** Replaced the Book-II-only New Advent edition binding with direct inspection of `segment.john-of-damascus.de-fide-orthodoxa.1898-edinburgh-npnf-ccel.complete-text` at `I.9` (NPNF ser. 2, vol. 9, Edinburgh 1898), distinguishing Aquinas's Latin-mediated wording (*ST* I, q. 13, a. 11) from Salmond's direct English rendering from Greek.
+- **M-3 (Henry of Ghent and Bl. John Duns Scotus):** Corrected Henry of Ghent's placement as Aquinas's older contemporary writing immediately after Aquinas's death (1276); removed the inaccurate `"modally or formally"` conflation on Scotus; updated `sections/99-references.tex` to include *Ordinatio* Book IV, dist. 11, q. 3 and Henry of Ghent's *Quodlibet* I, q. 9.
+- **M-4 (Editorial voice and register):** Removed didactic imperatives, hyperbolic significance adjectives, post-blockquote restatements/re-quotes, self-narration, formulaic section-closing teasers, rapid-fire rhetorical Q&A and authorial exclamation marks, metaphorical `grammar` and term-of-art `witness`, internal repository jargon (`tracked`, `Non-tracked`, `constituent`) from reader-facing appendices and References, and renamed meta-label subsection headings in Sections 4 and 8.
+- **M-5 (Unmarked direct Latin translations):** Removed double quotation marks around direct English translations of Augustine's *De Genesi ad litteram* IV.12.23 and Fourth Lateran's *Firmiter credimus* (DS 800), supplying the Latin clauses and explicit translation disclosures in endnotes.
+- **M-6 (Spelling, contraction, colloquialisms):** Replaced `"closes the vice"` with `"completes the argument"`, `"wasn't"` with `"was not"`, and colloquial metaphors (`"ontological battery"`, `"first Tuesday"`, `"cosmic ignition switch... on its own steam"`, `"dividing the pie"`, `"same shelf"`) with formal prose.
+
+### Minor Findings, Editorial Polish, and Cross-Series Harmonization
+- **m-1 (Gregory of Nazianzus *Or.* 38 §§7–8):** Added trailing ellipsis after `His boundlessness\dots` in §7 and separated §8's verbatim naming of the *Unoriginate* cleanly from §7.
+- **m-2 (Quotation punctuation and OCR audit):** Removed duplicate Irenaeus IV.39.2 re-quote, completed Athanasius *Contra Gentes* §41.3 and §42.3 to authentic sentence endings, restored the comma in *ST* I, q. 21, a. 1, ad 1 (`since,\dots`), and documented OCR/typographical normalizations in `research/source-audit.md`.
+- **m-3 (Cross-record citation consistency):** Cited Vatican I *Dei Filius* ch. 2 and can. 1 *De revelatione* explicitly in Section 8 and reconciled locus lists across Appendices A–C, `research/scope.md`, `research/source-audit.md`, and `research/source-bindings.toml` (removing uncited `Gen 1:1`, `ST` I.12.1, `ST` I.45.1, and secondary-only `Wis 8:1` / `1 Cor 2:12` from direct Douay-Rheims/Vulgate lists).
+- **m-4 & P-2 (Print layout and citation ties):** Tightened `notes-parskip` to `"0.16em"` in `publication.toml` to eliminate the sparse endnotes spill page so all 59 endnotes fit cleanly across two balanced pages, and added non-breaking `~` citation ties across Appendix A tables.
+- **P-1 & P-3 (Editorial polish):** Replaced ambiguous `"Seven centuries"` in Section 2 with `"More than fifteen centuries after Plato and Aristotle"`, and tightened the Appendix B Study-Aid Notice phrasing.
+- **Cross-series harmonization:** Verified lowercase divine pronouns (`he`, `him`, `his`, `himself`) throughout body prose outside verbatim quotations (preserving source capitalization inside verbatim quotations).
