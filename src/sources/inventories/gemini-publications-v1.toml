@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "gemini"
-audited_on = "2026-11-27"
+audited_on = "2026-11-28"
 discovery_rule = "src/gemini/**/main.tex"
-publication_count = 22
-source_surface_file_count = 664
-snapshot = "sha256:986f88796b9ee10d4f8d3f7b886b402d440522a29aba1401752bf2bbc3b73a1f"
+publication_count = 27
+source_surface_file_count = 749
+snapshot = "sha256:5b71eb4c2921d0fa83b1d32fd75c8302f73fa50ec61ae8ba716e3bf07ee61282"
 
 [[owners]]
 id = "owner.articles.faith.four-last-things"
@@ -31,6 +31,28 @@ roots = ["src/gemini/liturgy/roman-rite/postconciliar/roman-missal-third-edition
 id = "owner.typesetting.common"
 kind = "shared-typesetting-owner"
 roots = ["src/common"]
+
+[[documents]]
+id = "articles/faith/against-the-instrumentalists"
+main = "src/gemini/articles/faith/against-the-instrumentalists/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["historical-primary", "institutional-current", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
+[[documents.record_owners]]
+id = "articles/faith/against-the-instrumentalists"
+relationship = "local"
+
+[[documents]]
+id = "articles/faith/at-the-end-of-every-why"
+main = "src/gemini/articles/faith/at-the-end-of-every-why/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["magisterial", "patristic", "prayer-devotional", "scholastic", "scripture"]
+[[documents.record_owners]]
+id = "articles/faith/at-the-end-of-every-why"
+relationship = "local"
 
 [[documents]]
 id = "articles/faith/four-last-things-01-death"
@@ -89,6 +111,28 @@ id = "owner.articles.faith.four-last-things"
 relationship = "render-import"
 
 [[documents]]
+id = "articles/faith/in-defense-of-the-particular"
+main = "src/gemini/articles/faith/in-defense-of-the-particular/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["historical-primary", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
+[[documents.record_owners]]
+id = "articles/faith/in-defense-of-the-particular"
+relationship = "local"
+
+[[documents]]
+id = "articles/faith/ontological-vertigo"
+main = "src/gemini/articles/faith/ontological-vertigo/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["classical", "historical-primary", "magisterial", "patristic", "scholastic", "scripture"]
+[[documents.record_owners]]
+id = "articles/faith/ontological-vertigo"
+relationship = "local"
+
+[[documents]]
 id = "articles/faith/reading-metaphysics"
 main = "src/gemini/articles/faith/reading-metaphysics/main.tex"
 publication_kind = "canonical"
@@ -97,6 +141,17 @@ inventory_state = "sources-categorized"
 source_categories = ["classical", "patristic", "scholastic"]
 [[documents.record_owners]]
 id = "articles/faith/reading-metaphysics"
+relationship = "local"
+
+[[documents]]
+id = "articles/faith/the-due-return"
+main = "src/gemini/articles/faith/the-due-return/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["canon-law", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture"]
+[[documents.record_owners]]
+id = "articles/faith/the-due-return"
 relationship = "local"
 
 [[documents]]
@@ -306,6 +361,204 @@ source_categories = ["canon-law", "institutional-current", "magisterial", "patri
 [[documents.record_owners]]
 id = "theology/sacraments"
 relationship = "derived-source-owner"
+
+[[files]]
+path = "src/gemini/articles/faith/against-the-instrumentalists/main.tex"
+sha256 = "ba680fa0f672244b14eca9521cc31966b698848370f641d3623f241101c6df6e"
+kind = "publication-main"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/gemini/articles/faith/against-the-instrumentalists/publication.toml"
+sha256 = "7d59dd9404f0ecc6f11e82b2d311448d9e49e1ba70c894aa675523df2be30b0b"
+kind = "publication-contract"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/gemini/articles/faith/against-the-instrumentalists/research/cold-review.md"
+sha256 = "67518b9c0216b1dd459c7fd0afa617a3acd3b138784538db1e2459c1b2062a47"
+kind = "research-record"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/gemini/articles/faith/against-the-instrumentalists/research/scope.md"
+sha256 = "b8b49aef30fbd472002baec2e4a2635a19471f04555674ecefae924c4e967504"
+kind = "research-scope"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/gemini/articles/faith/against-the-instrumentalists/research/source-audit.md"
+sha256 = "6ff378bd739c59f71d8d0271cce21c1353400f286eeca3ed835a400b5545edc9"
+kind = "legacy-source-audit"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/gemini/articles/faith/against-the-instrumentalists/research/source-bindings.toml"
+sha256 = "3c6a6d2e784a1913053a8210e515dc164d6e54232012bccae3bf157964c5aea6"
+kind = "source-binding"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/gemini/articles/faith/against-the-instrumentalists/sections/01-honoring-the-instruments.tex"
+sha256 = "5b3f588089ed0e371960577069d06cf8129abd686ffcde06fd3c69eaf235362e"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/gemini/articles/faith/against-the-instrumentalists/sections/02-no-reading-reads-itself.tex"
+sha256 = "e48c33d874f6aec7189e347f18397ef94dc18f1617e25894b72097a653bd720a"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/gemini/articles/faith/against-the-instrumentalists/sections/03-historical-arc.tex"
+sha256 = "9c52316e8b2091d8da278a55a922cc567c2e0a473f138577d1fcb5e7bc310e7c"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/gemini/articles/faith/against-the-instrumentalists/sections/04-self-application.tex"
+sha256 = "090dd7f6206771bd5ac15c17a9b00e3b0dd6c1a5e7ac655eaa5337b9969fe92a"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/gemini/articles/faith/against-the-instrumentalists/sections/05-sense-to-intellect.tex"
+sha256 = "0cc8a52378bf821c3fba39cbb4546f0ed77ba552ce7343db79af1683803709e5"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/gemini/articles/faith/against-the-instrumentalists/sections/06-what-the-church-stakes-on-reason.tex"
+sha256 = "2ff452ff55b8ca690b6727f987acc093ffe731397780fc3861dfef8eff95ef4e"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/gemini/articles/faith/against-the-instrumentalists/sections/07-scientistic-residue-and-restoration.tex"
+sha256 = "2189e8a83e6f25d4428c829db5d13ff1bf345788851608550f0399792fb055a0"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/gemini/articles/faith/against-the-instrumentalists/sections/85-positions-synopsis.tex"
+sha256 = "43cbbc5e91f0a9c33e2b3d93a7d59336d52a7a0c9db9dfcb9e2134e231b597eb"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/gemini/articles/faith/against-the-instrumentalists/sections/90-scope-method-qualifications.tex"
+sha256 = "3eef2c598aa5ddf2dd3fe5e7cd694cc20526eb60b069f352d835654d2bde6f66"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/gemini/articles/faith/against-the-instrumentalists/sections/99-references.tex"
+sha256 = "45104d329400a1f9b3ed15826e3be5c657952b544787226f94806fe32c945f8b"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/gemini/articles/faith/against-the-instrumentalists/web-edition.toml"
+sha256 = "816eb595d3152e057eb6149c27870f2bda53fc245fff2d76888fdcff2ad793ba"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/gemini/articles/faith/at-the-end-of-every-why/main.tex"
+sha256 = "a0b7291f5cf4fc7a9cea594e9ebaa71c01083a1daf73f93579a3aa79fb9b101f"
+kind = "publication-main"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/gemini/articles/faith/at-the-end-of-every-why/publication.toml"
+sha256 = "8491d5c6d928c6884b1238d7b9666b8005b4934e1af1273a6c7965753eba4fae"
+kind = "publication-contract"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/gemini/articles/faith/at-the-end-of-every-why/research/cold-review.md"
+sha256 = "a5e83f8cf5a7b2871eb9f7eaf5fbb773978770820fc6319bee42c163d8ed6a3d"
+kind = "research-record"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/gemini/articles/faith/at-the-end-of-every-why/research/scope.md"
+sha256 = "2fb0d0b452c0c2bc98b9fb22bbab755572086752ef65c529a1013e1baeeccf98"
+kind = "research-scope"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/gemini/articles/faith/at-the-end-of-every-why/research/source-audit.md"
+sha256 = "97701ebc032da4d8d1cf8a9e2d9a3a3e71ab92f1eeb1b781aac7d4586f799829"
+kind = "legacy-source-audit"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/gemini/articles/faith/at-the-end-of-every-why/research/source-bindings.toml"
+sha256 = "7281a8f8639e829202845395a2c65e44dac966f06ba7df414dd74b7c2b340283"
+kind = "source-binding"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/gemini/articles/faith/at-the-end-of-every-why/sections/01-the-chain-of-whys.tex"
+sha256 = "2bfc14580aa19eb8fa7d60aee83044e301bc460709c0934f1eb30c1506c09566"
+kind = "rendered-content"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/gemini/articles/faith/at-the-end-of-every-why/sections/02-vision-beyond-nature.tex"
+sha256 = "ef7414e9c08f21d8a47cbc46371f4bd24e14433c02dd6934893bbe27b35be592"
+kind = "rendered-content"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/gemini/articles/faith/at-the-end-of-every-why/sections/03-commanded-love-and-friendship.tex"
+sha256 = "a024e5afe2538d69246682778b8b581d04ebcd9b64efc9199029bd22710ab85e"
+kind = "rendered-content"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/gemini/articles/faith/at-the-end-of-every-why/sections/04-hope-prayer-and-dryness.tex"
+sha256 = "2c668b4910a463831851bbdb6261d8af719f48311f42cc61d8c03b71a28a14cf"
+kind = "rendered-content"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/gemini/articles/faith/at-the-end-of-every-why/sections/05-eucharist-suffering-and-neighbor.tex"
+sha256 = "a2c0a871e749f799087d2640eb7135c1b7fa211d695e8cbd3f101c3ffeaea7b7"
+kind = "rendered-content"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/gemini/articles/faith/at-the-end-of-every-why/sections/06-degrees-of-love-and-everlasting-sabbath.tex"
+sha256 = "aacce42460bbfd86115264ac56e27534535c6c7fd5dea1235ba5813dadb30995"
+kind = "rendered-content"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/gemini/articles/faith/at-the-end-of-every-why/sections/80-theological-distinctions.tex"
+sha256 = "4111be22d19cce42cbf4019d49b58f96f2afaddeb01b54da27f403e5987e194f"
+kind = "rendered-content"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/gemini/articles/faith/at-the-end-of-every-why/sections/90-scope-method-qualifications.tex"
+sha256 = "47887476364f701ef94e0870b6ad7c8cffabeece915d3a41ce05d2c1d6757d54"
+kind = "rendered-content"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/gemini/articles/faith/at-the-end-of-every-why/sections/99-references.tex"
+sha256 = "c0995e481eeb969d9591a6f6c41d4355a589a1ca6305e255ffb0bb897e1a16ee"
+kind = "rendered-content"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/gemini/articles/faith/at-the-end-of-every-why/web-edition.toml"
+sha256 = "a8fe7ec3b98e1c4d6246abbabbf15a647bdf6d9d5711581f4656548463fe989a"
+kind = "rendered-content"
+owners = ["articles/faith/at-the-end-of-every-why"]
 
 [[files]]
 path = "src/gemini/articles/faith/four-last-things-01-death/main.tex"
@@ -770,6 +1023,210 @@ kind = "rendered-content"
 owners = ["owner.articles.faith.four-last-things"]
 
 [[files]]
+path = "src/gemini/articles/faith/in-defense-of-the-particular/main.tex"
+sha256 = "0afa581ea773209e442a9de5d3044a8bf63010bf9eb3441bc897a3eb1f3ae59e"
+kind = "publication-main"
+owners = ["articles/faith/in-defense-of-the-particular"]
+
+[[files]]
+path = "src/gemini/articles/faith/in-defense-of-the-particular/publication.toml"
+sha256 = "5bbb759be8ebd92b9705fa51458664dc0bec3576d772dc5d3f51b0c2e6c4e665"
+kind = "publication-contract"
+owners = ["articles/faith/in-defense-of-the-particular"]
+
+[[files]]
+path = "src/gemini/articles/faith/in-defense-of-the-particular/research/cold-review.md"
+sha256 = "6be4541edc92d015fc47333edfeb889300a5243395d9a28861be4b75385711e1"
+kind = "research-record"
+owners = ["articles/faith/in-defense-of-the-particular"]
+
+[[files]]
+path = "src/gemini/articles/faith/in-defense-of-the-particular/research/scope.md"
+sha256 = "5a50d88a8b5beb3508e50c49c594f76aea2ef7994d726fbb6a0e3df2bbbd26dc"
+kind = "research-scope"
+owners = ["articles/faith/in-defense-of-the-particular"]
+
+[[files]]
+path = "src/gemini/articles/faith/in-defense-of-the-particular/research/source-audit.md"
+sha256 = "f5785c3d141ceebcdbf9aedd4a3a2b1dabd29148832817761859d2cbc6675248"
+kind = "legacy-source-audit"
+owners = ["articles/faith/in-defense-of-the-particular"]
+
+[[files]]
+path = "src/gemini/articles/faith/in-defense-of-the-particular/research/source-bindings.toml"
+sha256 = "1a5d23dcdfd6a463d3fdd06c2d24b50813bc09dd7264d4b612bb255e1bef0f83"
+kind = "source-binding"
+owners = ["articles/faith/in-defense-of-the-particular"]
+
+[[files]]
+path = "src/gemini/articles/faith/in-defense-of-the-particular/sections/01-scandal-of-nazareth.tex"
+sha256 = "55d0abe5f988f9555a083f1b624fbb1dd58771dfa42892c454c3929e9e54d63a"
+kind = "rendered-content"
+owners = ["articles/faith/in-defense-of-the-particular"]
+
+[[files]]
+path = "src/gemini/articles/faith/in-defense-of-the-particular/sections/02-universal-cause.tex"
+sha256 = "cd5716e594c4d9634cc65e9a982b3b09ff1f800328e4f86c7a9abd1e48256f06"
+kind = "rendered-content"
+owners = ["articles/faith/in-defense-of-the-particular"]
+
+[[files]]
+path = "src/gemini/articles/faith/in-defense-of-the-particular/sections/03-chosen-for-all.tex"
+sha256 = "23d7a3a8b9be37d95013caec1966915e7806589116d289871c0cdfd3328e6c7c"
+kind = "rendered-content"
+owners = ["articles/faith/in-defense-of-the-particular"]
+
+[[files]]
+path = "src/gemini/articles/faith/in-defense-of-the-particular/sections/04-whole-in-the-part.tex"
+sha256 = "380fbd840171e068b759f1d26489f2955e61be6ba2278d55b563fea267a1129d"
+kind = "rendered-content"
+owners = ["articles/faith/in-defense-of-the-particular"]
+
+[[files]]
+path = "src/gemini/articles/faith/in-defense-of-the-particular/sections/05-water-bread-neighbor.tex"
+sha256 = "88fc2993fac05c402e74e6f4897c67eabcb7caf73e746018da6c26d8cd8d6da4"
+kind = "rendered-content"
+owners = ["articles/faith/in-defense-of-the-particular"]
+
+[[files]]
+path = "src/gemini/articles/faith/in-defense-of-the-particular/sections/06-limits-scale-name.tex"
+sha256 = "ad9bbad62f488cc311dcf150036beeab279d27a60e250af1bb17896cb65e14d5"
+kind = "rendered-content"
+owners = ["articles/faith/in-defense-of-the-particular"]
+
+[[files]]
+path = "src/gemini/articles/faith/in-defense-of-the-particular/sections/80-objections-synopsis.tex"
+sha256 = "1fdc7b76f89c77d5b26ca50a074acc5a44bfa6d9367089b6c80cb26bf7d05a5d"
+kind = "rendered-content"
+owners = ["articles/faith/in-defense-of-the-particular"]
+
+[[files]]
+path = "src/gemini/articles/faith/in-defense-of-the-particular/sections/90-scope-method-qualifications.tex"
+sha256 = "2d7f02fff9c572c60db4eaa374015241619a41f3aa227a186e3a584d031794bf"
+kind = "rendered-content"
+owners = ["articles/faith/in-defense-of-the-particular"]
+
+[[files]]
+path = "src/gemini/articles/faith/in-defense-of-the-particular/sections/99-references.tex"
+sha256 = "b3f3cf01793f6203500d1cefd96c308c1f8e6b1b32dbd97c8b9bcb3b921d459b"
+kind = "rendered-content"
+owners = ["articles/faith/in-defense-of-the-particular"]
+
+[[files]]
+path = "src/gemini/articles/faith/in-defense-of-the-particular/web-edition.toml"
+sha256 = "5a737c19d4a386b935ac09baf71fbc68ce50aae9a1676a3fc22964d9d0a905ef"
+kind = "rendered-content"
+owners = ["articles/faith/in-defense-of-the-particular"]
+
+[[files]]
+path = "src/gemini/articles/faith/ontological-vertigo/main.tex"
+sha256 = "53c5cb998dd9ac6b94c1745bb2a615a595dbf118dd9d8e18c21630dc8f563e4d"
+kind = "publication-main"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
+path = "src/gemini/articles/faith/ontological-vertigo/publication.toml"
+sha256 = "7df6b65af91302661b135960d57e11ec784aaf112f9c37194b4e5bf3a10db652"
+kind = "publication-contract"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
+path = "src/gemini/articles/faith/ontological-vertigo/research/cold-review.md"
+sha256 = "20f9c2ba3df005a0e036e1580d642d02bd3b0d983ba8792c405ed917e5ce29dc"
+kind = "research-record"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
+path = "src/gemini/articles/faith/ontological-vertigo/research/scope.md"
+sha256 = "b9301319e8cbed7e574f7dad1bcf2a38a241d7a56ccd3ca1fd9757159db1d0e3"
+kind = "research-scope"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
+path = "src/gemini/articles/faith/ontological-vertigo/research/source-audit.md"
+sha256 = "9404ca8cfc2358cb52b052c1a66de33d743587ccb567c77d14fe22ccf4fcac55"
+kind = "legacy-source-audit"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
+path = "src/gemini/articles/faith/ontological-vertigo/research/source-bindings.toml"
+sha256 = "b34832222236d4543cb22eaeedb4a7a494776682598d7d7dc0e1cd4191ec8c87"
+kind = "source-binding"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
+path = "src/gemini/articles/faith/ontological-vertigo/sections/01-becoming-and-being.tex"
+sha256 = "e29d36db4f460472e7e0808472f420d5b45ccaa15109fe1dc2fcf6db26e2e06b"
+kind = "rendered-content"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
+path = "src/gemini/articles/faith/ontological-vertigo/sections/02-ancient-horizon.tex"
+sha256 = "2af607217f52d5c81728a8e86f3a03480d8807f67b0edde94f74d7f4f10a6caa"
+kind = "rendered-content"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
+path = "src/gemini/articles/faith/ontological-vertigo/sections/03-essence-existence-first-way.tex"
+sha256 = "77f725bd79873b5d269f1f8f635bea688b06f031b2e4d4006f5850bf3b045987"
+kind = "rendered-content"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
+path = "src/gemini/articles/faith/ontological-vertigo/sections/04-present-conservation-presence.tex"
+sha256 = "f15472e6ecaa4b6fc08172d2d37ad7c8cbbd9a991d7d1ef22598b4a531f7e6a2"
+kind = "rendered-content"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
+path = "src/gemini/articles/faith/ontological-vertigo/sections/05-reflexive-arrest-asymmetry.tex"
+sha256 = "935849f73d4034c15b2cd71f52a89acba19fa26ce5f1aa92df062e7d62fb6972"
+kind = "rendered-content"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
+path = "src/gemini/articles/faith/ontological-vertigo/sections/06-recoil-noncompetitive-virtue.tex"
+sha256 = "e7705c19964032d3fc2b5074bd0a7bd1f18d66adcaea0daeb997357d41e63539"
+kind = "rendered-content"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
+path = "src/gemini/articles/faith/ontological-vertigo/sections/07-consent-freedom-love.tex"
+sha256 = "aac435e391add454f81b465aee6d120eb219978e3ff37a2c649d1ee4f5d4bb31"
+kind = "rendered-content"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
+path = "src/gemini/articles/faith/ontological-vertigo/sections/08-apophatic-restraint-threshold.tex"
+sha256 = "6b756d8f11c2b3453e93c8accc0a2c6da0a68c3a85ff3b6ec36cd9b02ea9358a"
+kind = "rendered-content"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
+path = "src/gemini/articles/faith/ontological-vertigo/sections/85-positions-synopsis.tex"
+sha256 = "f9c45b5698cc34b0e1fec4fe21a0dcf25717a79c7992446b0b7de4985251bb10"
+kind = "rendered-content"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
+path = "src/gemini/articles/faith/ontological-vertigo/sections/90-scope-method-qualifications.tex"
+sha256 = "cd79077174eb4c85d4b3fc035b5ffdb1027aab163f0e528ae58b3c46832ddf96"
+kind = "rendered-content"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
+path = "src/gemini/articles/faith/ontological-vertigo/sections/99-references.tex"
+sha256 = "bf4a0dd4d6062c35f88f7fa55092d7b0a4509451895e78c1bba2eccf96a78d91"
+kind = "rendered-content"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
+path = "src/gemini/articles/faith/ontological-vertigo/web-edition.toml"
+sha256 = "e74e04aa4e1c9bd82f67676f1547dac9ece0813c5ad74dcc4190a140bd42bae1"
+kind = "rendered-content"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
 path = "src/gemini/articles/faith/reading-metaphysics/format.tex"
 sha256 = "153a7d2a9f86fe8761674130724caf9c3fe8409f059fcfb335ea667e04a7b79c"
 kind = "rendered-content"
@@ -906,6 +1363,114 @@ path = "src/gemini/articles/faith/reading-metaphysics/web-edition.toml"
 sha256 = "c2807ad34eba31c6527576d4ba309f87a46de3b8f707e69af782b75d268f0c55"
 kind = "rendered-content"
 owners = ["articles/faith/reading-metaphysics"]
+
+[[files]]
+path = "src/gemini/articles/faith/the-due-return/main.tex"
+sha256 = "5085322c8662dee00e6812aa6c2d335d240d6dfbb1051bded575b49f5dcdccbd"
+kind = "publication-main"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/gemini/articles/faith/the-due-return/publication.toml"
+sha256 = "67df4d26a483ece769927657f32a85d2086d1b301d49f71a3cf8f9bd54075526"
+kind = "publication-contract"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/gemini/articles/faith/the-due-return/research/cold-review.md"
+sha256 = "78a0512f3a156e570303a7d665b8573ec1b85fef70e37ca33de6379306e217d5"
+kind = "research-record"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/gemini/articles/faith/the-due-return/research/scope.md"
+sha256 = "a18adb5e39c77eb04b961042e82cad50d7b72e15f1587d9f6101e04874d9ade4"
+kind = "research-scope"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/gemini/articles/faith/the-due-return/research/source-audit.md"
+sha256 = "0fd894f706e2f45d107e76bac3e6c15ab7662ea686bfe63a27fc3f2b80b8c6e0"
+kind = "legacy-source-audit"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/gemini/articles/faith/the-due-return/research/source-bindings.toml"
+sha256 = "8dd65220b40e0d16c1599e1bd584d40e7cf30f515f18f41e2944ecd13d8bab49"
+kind = "source-binding"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/gemini/articles/faith/the-due-return/sections/01-the-question-after-vertigo.tex"
+sha256 = "78ff56d1acb809e6a66bf6a1f725a9c2f2da6bf620aeeccbe8ca8c7d85393e7a"
+kind = "rendered-content"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/gemini/articles/faith/the-due-return/sections/02-justice-without-equivalence.tex"
+sha256 = "9299fc81425a2835d437c45a73d48a946514ac3f92632a88335b3818a1c25b76"
+kind = "rendered-content"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/gemini/articles/faith/the-due-return/sections/03-the-virtue-of-religion.tex"
+sha256 = "8d219cb50367a056b54f90422924b77d19c88b81325c03b9c94faff976ffbe67"
+kind = "rendered-content"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/gemini/articles/faith/the-due-return/sections/04-sacrifice-and-the-seam-to-christ.tex"
+sha256 = "27640065cb1b250dc9ec7ca824f51dd7a1bde2045035c930b543aa0d99c3dbd8"
+kind = "rendered-content"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/gemini/articles/faith/the-due-return/sections/05-gift-before-command.tex"
+sha256 = "c6b6ec021b604c54b274ba004abcc7d89ca6443edd0a79b71ac2f339f8bae391"
+kind = "rendered-content"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/gemini/articles/faith/the-due-return/sections/06-the-return-passes-through-the-neighbor.tex"
+sha256 = "e54b1120d27c083524c6e1cb6cff109442ae1f987375c3969d38e57dc1aaefdf"
+kind = "rendered-content"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/gemini/articles/faith/the-due-return/sections/07-failure-reconciliation-and-moderation.tex"
+sha256 = "a9643a8924b63f7d34e912fd81d184159f578d5f97a43c63287e915d1395d05f"
+kind = "rendered-content"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/gemini/articles/faith/the-due-return/sections/08-gethsemane-and-the-open-account.tex"
+sha256 = "9e1d48edda180b2fc34e50dc47295cc0ec84551999021a923615a9c8f1f4999e"
+kind = "rendered-content"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/gemini/articles/faith/the-due-return/sections/85-appendix-distinctions.tex"
+sha256 = "6620d94645ebe3da5bf9bb73c906b32a6886996f681c8891d80036674d5f599c"
+kind = "rendered-content"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/gemini/articles/faith/the-due-return/sections/90-scope-method-qualifications.tex"
+sha256 = "e9864e92cdd35c857bed1cced5eea9f7b1544a403d4c269063ee0c9b7324c390"
+kind = "rendered-content"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/gemini/articles/faith/the-due-return/sections/99-references.tex"
+sha256 = "5c3c60aa515de99896f0235215f138b02df410b61dd16c29178bcc3adb5320a9"
+kind = "rendered-content"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/gemini/articles/faith/the-due-return/web-edition.toml"
+sha256 = "594eaddda25ca3ab27462c57123c27ee63c2e8a6e2a78c9e3279234e43ecb643"
+kind = "rendered-content"
+owners = ["articles/faith/the-due-return"]
 
 [[files]]
 path = "src/gemini/articles/scripture/abraham-and-the-daylight-stars/main.tex"

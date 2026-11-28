@@ -1,8 +1,16 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
-audited_on = "2026-11-27"
-publication_snapshot = "sha256:c9e228d33f21bc568755d67227d681e1c1ea7edb07f87f31beaba5504d31ac44"
-classification_snapshot = "sha256:db3c5e74d5720ee41fdfb0c3de7af1664529d2f34ad8ef09e08a970676ce7b40"
+audited_on = "2026-11-28"
+publication_snapshot = "sha256:e752ebee4725d7913d0dd4f37aee34862f61f9d83e79276eb9ae28d55bbcf228"
+classification_snapshot = "sha256:817c5f2682ebeacbf15443b63fbf92c5f2c2ead2fdee7d0267adfe593b968f19"
+
+[[classifications]]
+document = "articles/faith/against-the-instrumentalists"
+source_categories = ["historical-primary", "institutional-current", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
+
+[[classifications]]
+document = "articles/faith/at-the-end-of-every-why"
+source_categories = ["magisterial", "patristic", "prayer-devotional", "scholastic", "scripture"]
 
 [[classifications]]
 document = "articles/faith/four-last-things-01-death"
@@ -21,8 +29,20 @@ document = "articles/faith/four-last-things-04-heaven"
 source_categories = ["historical-primary", "liturgical", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture"]
 
 [[classifications]]
+document = "articles/faith/in-defense-of-the-particular"
+source_categories = ["historical-primary", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
+
+[[classifications]]
+document = "articles/faith/ontological-vertigo"
+source_categories = ["classical", "historical-primary", "magisterial", "patristic", "scholastic", "scripture"]
+
+[[classifications]]
 document = "articles/faith/reading-metaphysics"
 source_categories = ["classical", "patristic", "scholastic"]
+
+[[classifications]]
+document = "articles/faith/the-due-return"
+source_categories = ["canon-law", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture"]
 
 [[classifications]]
 document = "articles/scripture/abraham-and-the-daylight-stars"

@@ -1,6 +1,87 @@
 schema_version = 1
 
 [[deliverables]]
+id = "gemini-creature-before-god-2026-11-28"
+owner = "PROJECT-WORK.md"
+promise = "Author independent Gemini versions of all five The Creature Before God faith essays (Ontological Vertigo, The Due Return, At the End of Every Why, Against the Instrumentalists, and In Defense of the Particular), conduct independent read-only cold reviews and full remediation for each essay, harmonize across the five-essay series, update library/faith.md, Gemini source inventories, browser products, release bindings, and corpus index, verify all content/print/web/site gates on clean HEAD, and rebase/reconcile/push to origin/main."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "gemini-cbg-part-1-ontological-vertigo"
+  criterion = "src/gemini/articles/faith/ontological-vertigo is independently authored, independently cold-reviewed and remediated, and passes schema, metadata, preflight, web-edition, and pinned wasmtex native-print-compile gates."
+  status = "pass"
+  evidence = [
+    "src/gemini/articles/faith/ontological-vertigo/publication.toml",
+    "src/gemini/articles/faith/ontological-vertigo/web-edition.toml",
+    "src/gemini/articles/faith/ontological-vertigo/research/cold-review.md",
+    "release/publications/gemini/articles/faith/ontological-vertigo.json",
+    "PROJECT-WORK.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "gemini-cbg-part-2-the-due-return"
+  criterion = "src/gemini/articles/faith/the-due-return is independently authored, independently cold-reviewed and remediated (including universal Latin canon-law legal scope and currentness), and passes schema, metadata, preflight, web-edition, and pinned wasmtex native-print-compile gates."
+  status = "pass"
+  evidence = [
+    "src/gemini/articles/faith/the-due-return/publication.toml",
+    "src/gemini/articles/faith/the-due-return/web-edition.toml",
+    "src/gemini/articles/faith/the-due-return/research/cold-review.md",
+    "release/publications/gemini/articles/faith/the-due-return.json",
+    "PROJECT-WORK.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "gemini-cbg-part-3-at-the-end-of-every-why"
+  criterion = "src/gemini/articles/faith/at-the-end-of-every-why is independently authored, independently cold-reviewed and remediated, and passes schema, metadata, preflight, web-edition, and pinned wasmtex native-print-compile gates."
+  status = "pass"
+  evidence = [
+    "src/gemini/articles/faith/at-the-end-of-every-why/publication.toml",
+    "src/gemini/articles/faith/at-the-end-of-every-why/web-edition.toml",
+    "src/gemini/articles/faith/at-the-end-of-every-why/research/cold-review.md",
+    "release/publications/gemini/articles/faith/at-the-end-of-every-why.json",
+    "PROJECT-WORK.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "gemini-cbg-companion-1-against-the-instrumentalists"
+  criterion = "src/gemini/articles/faith/against-the-instrumentalists is independently authored, independently cold-reviewed and remediated, and passes schema, metadata, preflight, web-edition, and pinned wasmtex native-print-compile gates."
+  status = "pass"
+  evidence = [
+    "src/gemini/articles/faith/against-the-instrumentalists/publication.toml",
+    "src/gemini/articles/faith/against-the-instrumentalists/web-edition.toml",
+    "src/gemini/articles/faith/against-the-instrumentalists/research/cold-review.md",
+    "release/publications/gemini/articles/faith/against-the-instrumentalists.json",
+    "PROJECT-WORK.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "gemini-cbg-companion-2-in-defense-of-the-particular"
+  criterion = "src/gemini/articles/faith/in-defense-of-the-particular is independently authored, independently cold-reviewed and remediated, and passes schema, metadata, preflight, web-edition, and pinned wasmtex native-print-compile gates."
+  status = "pass"
+  evidence = [
+    "src/gemini/articles/faith/in-defense-of-the-particular/publication.toml",
+    "src/gemini/articles/faith/in-defense-of-the-particular/web-edition.toml",
+    "src/gemini/articles/faith/in-defense-of-the-particular/research/cold-review.md",
+    "release/publications/gemini/articles/faith/in-defense-of-the-particular.json",
+    "PROJECT-WORK.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "gemini-cbg-catalog-release-and-main"
+  criterion = "library/faith.md links all five Gemini essays, Gemini source inventories and classification review are updated and valid, browser products, release bindings, and corpus index are refreshed to a clean fixed point, all deployment, source, public-site, and public-alpha gates pass on clean HEAD, and validated commits are pushed to origin/main."
+  status = "pass"
+  evidence = [
+    "library/faith.md",
+    "src/sources/inventories/gemini-publications-v1.toml",
+    "src/sources/inventories/gemini-classification-review-v1.toml",
+    "release/browser-products.json",
+    "release/public-alpha.json",
+    "release/rights/public-alpha-2026-07-15.md",
+    "src/index/corpus/index.json",
+    "PROJECT-WORK.md",
+  ]
+
+[[deliverables]]
 id = "gemini-advent-1-propers-2026-11-29"
 owner = "PROJECT-WORK.md"
 promise = "Add a Gemini column to the propers tables in both library/traditional-latin-mass.md and library/novus-ordo-liturgy.md (consolidating the postconciliar table to one row per week), drive proper-study v20 runs to terminal ACCEPTED for Sunday 29 November 2026 in both 1962 Roman Rite (01-first-sunday-of-advent) and U.S. postconciliar Roman Rite (pc-s01-first-sunday-of-advent-year-b), cold review all work, and publish validated commits to main."
