@@ -1,5 +1,5 @@
 {
- "generation_commit": "e19dd20cd17c3360dccc531f68f52806e142258c",
+ "generation_commit": "1dcc430a1e2040e9d7e4d6e721e03d49c0678926",
  "readers": {
   "claude/articles/canon-law/clerical-celibacy-chastity-and-continence": {
    "canonical": "articles/canon-law/clerical-celibacy-chastity-and-continence",
@@ -5131,6 +5131,100 @@
    "source_format": "latex",
    "title": "The Holy Rosary: Form, Mysteries, History, and Teaching"
   },
+  "gemini/articles/faith/against-the-instrumentalists": {
+   "canonical": "articles/faith/against-the-instrumentalists",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gemini/articles/faith/against-the-instrumentalists"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "contents": true,
+    "document": "articles/faith/against-the-instrumentalists",
+    "eligibility": "eligible",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-28",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gemini/articles/faith/against-the-instrumentalists/generation-metadata.tex",
+    "src/gemini/articles/faith/against-the-instrumentalists/main.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gemini/articles/faith/against-the-instrumentalists",
+    "src/common"
+   ],
+   "document": "articles/faith/against-the-instrumentalists",
+   "edition": "main",
+   "entrypoint": "src/gemini/articles/faith/against-the-instrumentalists/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gemini/articles/faith/against-the-instrumentalists",
+   "kind": "article-faith",
+   "provider": "gemini",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "Against the Instrumentalists"
+  },
+  "gemini/articles/faith/at-the-end-of-every-why": {
+   "canonical": "articles/faith/at-the-end-of-every-why",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gemini/articles/faith/at-the-end-of-every-why"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "contents": true,
+    "document": "articles/faith/at-the-end-of-every-why",
+    "eligibility": "eligible",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-28",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gemini/articles/faith/at-the-end-of-every-why/generation-metadata.tex",
+    "src/gemini/articles/faith/at-the-end-of-every-why/main.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gemini/articles/faith/at-the-end-of-every-why",
+    "src/common"
+   ],
+   "document": "articles/faith/at-the-end-of-every-why",
+   "edition": "main",
+   "entrypoint": "src/gemini/articles/faith/at-the-end-of-every-why/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gemini/articles/faith/at-the-end-of-every-why",
+   "kind": "article-faith",
+   "provider": "gemini",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "At the End of Every Why"
+  },
   "gemini/articles/faith/four-last-things-01-death": {
    "canonical": "articles/faith/four-last-things-01-death",
    "command": [
@@ -5319,6 +5413,100 @@
    "source_format": "latex",
    "title": "The Four Last Things, IV: Come, Ye Blessed"
   },
+  "gemini/articles/faith/in-defense-of-the-particular": {
+   "canonical": "articles/faith/in-defense-of-the-particular",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gemini/articles/faith/in-defense-of-the-particular"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "contents": true,
+    "document": "articles/faith/in-defense-of-the-particular",
+    "eligibility": "eligible",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-28",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gemini/articles/faith/in-defense-of-the-particular/generation-metadata.tex",
+    "src/gemini/articles/faith/in-defense-of-the-particular/main.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gemini/articles/faith/in-defense-of-the-particular",
+    "src/common"
+   ],
+   "document": "articles/faith/in-defense-of-the-particular",
+   "edition": "main",
+   "entrypoint": "src/gemini/articles/faith/in-defense-of-the-particular/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gemini/articles/faith/in-defense-of-the-particular",
+   "kind": "article-faith",
+   "provider": "gemini",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "In Defense of the Particular"
+  },
+  "gemini/articles/faith/ontological-vertigo": {
+   "canonical": "articles/faith/ontological-vertigo",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gemini/articles/faith/ontological-vertigo"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "contents": true,
+    "document": "articles/faith/ontological-vertigo",
+    "eligibility": "eligible",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-28",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gemini/articles/faith/ontological-vertigo/generation-metadata.tex",
+    "src/gemini/articles/faith/ontological-vertigo/main.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gemini/articles/faith/ontological-vertigo",
+    "src/common"
+   ],
+   "document": "articles/faith/ontological-vertigo",
+   "edition": "main",
+   "entrypoint": "src/gemini/articles/faith/ontological-vertigo/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gemini/articles/faith/ontological-vertigo",
+   "kind": "article-faith",
+   "provider": "gemini",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "Ontological Vertigo"
+  },
   "gemini/articles/faith/reading-metaphysics": {
    "canonical": "articles/faith/reading-metaphysics",
    "command": [
@@ -5365,6 +5553,53 @@
    "release_status": "alpha",
    "source_format": "latex",
    "title": "Reading Metaphysics: What Is Being Claimed, and Why Should I Believe It?"
+  },
+  "gemini/articles/faith/the-due-return": {
+   "canonical": "articles/faith/the-due-return",
+   "command": [
+    "tools/tpt",
+    "print-document",
+    "build",
+    "--document",
+    "publication:gemini/articles/faith/the-due-return"
+   ],
+   "declaration": {
+    "blocking_constructs": [],
+    "contents": true,
+    "document": "articles/faith/the-due-return",
+    "eligibility": "eligible",
+    "record_type": "web-edition",
+    "reviewed": "2026-11-28",
+    "schema": 1
+   },
+   "dependencies": [
+    "Makefile",
+    "src/gemini/articles/faith/the-due-return/generation-metadata.tex",
+    "src/gemini/articles/faith/the-due-return/main.tex"
+   ],
+   "dependency_model": "selected Make target; recorder-checked during compilation",
+   "dependency_roots": [
+    "src/gemini/articles/faith/the-due-return",
+    "src/common"
+   ],
+   "document": "articles/faith/the-due-return",
+   "edition": "main",
+   "entrypoint": "src/gemini/articles/faith/the-due-return/main.tex",
+   "family": "publication",
+   "formats": [
+    "pdf"
+   ],
+   "id": "publication:gemini/articles/faith/the-due-return",
+   "kind": "article-faith",
+   "provider": "gemini",
+   "qualifications": [
+    "Canonical authored layout, figures and source notices are preserved.",
+    "Generated output is not a new visual-review or publication approval."
+   ],
+   "recipe": "make doc",
+   "release_status": "alpha",
+   "source_format": "latex",
+   "title": "The Due Return"
   },
   "gemini/articles/scripture/abraham-and-the-daylight-stars": {
    "canonical": "articles/scripture/abraham-and-the-daylight-stars",

@@ -2,22 +2,22 @@
  "editorial_approval": false,
  "inputs": {
   "families": {
-   "act-history": "925c958c470250634ae0c15a370e3cf009d7fafec7c23d297d390a57ed5448fe",
+   "act-history": "b51be4b649b12b8afdb9335e3e2fba8d426c70551a0488bda8f15fc5f7039919",
    "bibles": "7ef1ee9173df93c4fca51a04d52029944dc570fce3108d9261b27438974d69ad",
    "calendar": "cb997c7002c689c195cd6c4151439afb9c7b581d418b7e970869a8a93a685698",
    "catena": "3cef0acf24cd5a2c146fe8dc7dfd7c0b20ff91bc273601bda174fe867631c7ba",
-   "documents": "78c90f1c9fa06553a12fb7c8b8b1a0904c2ef944d4aa97cfe21f28d2dc22ef67",
+   "documents": "d7f00357138809efabebef1e676ed3de1dc53bbb420a1933a21b03c37e39aaeb",
    "encyclicals": "13ad862f7978365b226be62ec590168c64be066b480529e3550b03b94ef87542",
    "ordinary": "f10885a2ca4cdcbd770af8e1683fc203bf1801e83ac2a1c6566a9a3189beae99",
    "paragraphs": "7405852df36400d9228e1dc1471fdbb80214d29b3b1c368e38e34f34a1102391",
-   "propers": "82ac9ecdd228061f9961138983949de66ae7897200e13252631e705e7fa1f24c",
+   "propers": "080e43be56d93473732ddd9689f44396947399dcfe13943ec1cdb36f4e485806",
    "readings": "199b01f10617094e9142c2ecaf172fd00ffd6fd47af8874626bb0c8bbd59edbb",
    "rubrics": "1ff3460bbfead8520b818769d2a5e181fe282aeb6a4cf2584e4632e470bef81d",
-   "sources": "e2c5683064f971ae019cf44e04cd8d6a51c98755a2ed7a8e8646aa71a754ff7d",
-   "web-editions": "e98c0990cea27d5b8ba8a494f5cf67f388c88c19a6d27db0d7d1375ea594b168"
+   "sources": "a24bfaaf94a4a681e6c38b5a7ddaaf7b663a805ce7b35de444d58abc22c411c3",
+   "web-editions": "0b3c71854b407800e2361e47fc725ff4337bc508be9252d6eb86b2e150c84d6d"
   },
   "schema": "triptych-browser-product-aggregate-inputs/v1",
-  "sha256": "07ec2dbeac820cb5d8935527175ac6ee60ade7c4a8bfb21d9358f0287249acea"
+  "sha256": "97eda99d3b88a90fcd68f75ece2a212613a9d934ff085658fe00575c43b0c8c2"
  },
  "products": [
   {
@@ -2425,16 +2425,16 @@
    },
    "id": "act-history",
    "inputs": {
-    "content": "b4e6db122363f0e45cc6cbf395c93ca98510feb5eb0d9c5aee0a88236df58048",
-    "count": 82525,
+    "content": "28fef3d12a04466e4071940cc16f99617ea102c69abe40b2aee2f44d675e9aba",
+    "count": 82615,
     "generator": "115b738863390de273189877c6d458e908757cfba6a7aa7c5e8597ab3d856270",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "7fe4a25e9382a8c42eb4610dada8357bb904837ec5b488799bb7ab08c671aa70",
-    "rights": "5191b6ad0adde8074dc43070df79f815d9b10c68e1a770e02eb751e554f708be",
+    "membership": "04aac2a04e9e57580470ecef23e231955bb419f955430b40616aa104315efa4b",
+    "rights": "0fcf38391ab672a5662829e69ffa30a03bab68f672892473da002975ad070b1c",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "925c958c470250634ae0c15a370e3cf009d7fafec7c23d297d390a57ed5448fe"
+    "sha256": "b51be4b649b12b8afdb9335e3e2fba8d426c70551a0488bda8f15fc5f7039919"
    },
-   "key": "d6a9fdb310195870e431b4a0c34e4eeb7e76b44654de58fbcd9b9da005e38ef3",
+   "key": "885f2cb25ecf593de2b6ecf06c5e33d015face789b2b75affa08d470de65bb88",
    "path_set_sha256": "bf96ba68f0f15e963a36714405e693a908618271986222bcc04818b4dbed28bf"
   },
   {
@@ -14672,30 +14672,30 @@
    "path_set_sha256": "e8572f9fb24a1cf7681f7d6e603d413647617f604fada0f3d9d605365c83d5a5"
   },
   {
-   "bytes": 1218358,
+   "bytes": 1224018,
    "count": 2,
    "files": {
     "structure/documents/contributions.json": {
-     "bytes": 800106,
-     "sha256": "175647d1af7209b88daa50c08be56139ffd5a3ae974a645fef39ddd2bdc37d81"
+     "bytes": 801458,
+     "sha256": "815802d5de1d337e9a7d01a0310f47d7e4649a713864e90e087b40f25530550e"
     },
     "structure/documents/corpus.json": {
-     "bytes": 418252,
-     "sha256": "6a7e8174d430dcbc9d8a77fcb7380abcb3db3d10d9abf90cc55e67383a149f73"
+     "bytes": 422560,
+     "sha256": "fb76d68185d10d6c4c93f98c3dff855cff831bc7439a6113ecf6ac79f27eb9e7"
     }
    },
    "id": "documents",
    "inputs": {
-    "content": "ef76b8e2184fec16c8f4d506c9c593896e6876144526cfd5b12354086b4039e0",
-    "count": 83028,
+    "content": "09b699df5a03afc5db471a15cd68f0141abb9b1f3fa11f6778b194bc33afbbf3",
+    "count": 83123,
     "generator": "2d90cf88ad1da8a3c60723f4e89553818a621e51581cdfffb708620deba3cdbd",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "c0a524c5658639abda7bc8e345acd54aa48b078f8247f96efda85a1a4f470d53",
-    "rights": "017c2648c4c552053781eae023cc1522819cd3858b8d0229df939af5c917a10a",
+    "membership": "069a960a190d3ce82c9733dd375af73115ab8c9a0fbc55703956ad3c969ea4e5",
+    "rights": "625e7fe7b95281abcafe194c6aa2af35ef94fdfc78bc0cd433eb9b31344cc383",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "78c90f1c9fa06553a12fb7c8b8b1a0904c2ef944d4aa97cfe21f28d2dc22ef67"
+    "sha256": "d7f00357138809efabebef1e676ed3de1dc53bbb420a1933a21b03c37e39aaeb"
    },
-   "key": "92db9e0bf140e1340326428fb034f4ca68f318d5b2af6bb3ab0fb493ce6af5db",
+   "key": "c85eb17f0eab7a7e3f6872f1b236e4d06e761ca77544c87bb0b4ef6ffac91d6c",
    "path_set_sha256": "522c959d6aab45538028b331526badc4ee43e7cc4dc863d2f3996e4354ee2f31"
   },
   {
@@ -43411,16 +43411,16 @@
    },
    "id": "propers",
    "inputs": {
-    "content": "c0a908d8093a756d6dc7b34d98e7551bf8f5a1dac6941b0aa89392075b9636ac",
-    "count": 82431,
+    "content": "fc8eba80292a776d2b4679b59533f1b2140c25c00197ca9b7972edf41d491f93",
+    "count": 82521,
     "generator": "671e8340f7ddf11b2899235124f1fdb1839355f19785ba960cd6393c3612b307",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "13211a8c1f7fa235b6eda6b32ed2364f4a827a3c2db812e0d3588533677484bd",
-    "rights": "b371d3832ddaf755055a07cde5d34580a6d2f71a1cc78aa9589befe56f1ed230",
+    "membership": "90db6f9be0e3fd6a47c2262e0e4fb35e3c0b37861e7c2095173c4cc81c71e68e",
+    "rights": "6ecda5d1b1ffc003905cdfc5fdc183da8e145d1696e1648d2420a7bf469541a1",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "82ac9ecdd228061f9961138983949de66ae7897200e13252631e705e7fa1f24c"
+    "sha256": "080e43be56d93473732ddd9689f44396947399dcfe13943ec1cdb36f4e485806"
    },
-   "key": "39eca2811c83edff305ac358502b0464a0e1720550aaa27e1eeaf491bb7b52bb",
+   "key": "cd0120e7162fa215d9d5ebdfe8be5e7104d14a69ad0400224374741000207c20",
    "path_set_sha256": "69d8d806df7f37465747d0bb1d6f8f78e4f45cf891fcd3884e121255c5b97ae4"
   },
   {
@@ -124060,21 +124060,21 @@
    },
    "id": "sources",
    "inputs": {
-    "content": "698ea10c87ea4239b1bda8944922168f83ab0c527231f16266343fbf0b8a50a7",
-    "count": 82522,
+    "content": "0be329627a538924b122997cf74482260e3a9968852792d0484700ef96043d7a",
+    "count": 82612,
     "generator": "363bf658a9120023c067eb994e24fdf2ed09b0bfba8ecd052b4ce33c44e3303a",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "21605c3910602ced96da20e97b33aaa82ba55da99ae7a3719a17da7305ad6194",
-    "rights": "6bb119828ded4c0bb5d509287c39149d325cda770862f013d807d431addeb501",
+    "membership": "1ea20d8bfc2641abb15a6206c732b40d55b706dde1cf576e2a291bbc3978f5c4",
+    "rights": "0120311c1746b6998f03b1e8e29f841d1e777c189e3f15ed6c400b5caad30d1a",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "e2c5683064f971ae019cf44e04cd8d6a51c98755a2ed7a8e8646aa71a754ff7d"
+    "sha256": "a24bfaaf94a4a681e6c38b5a7ddaaf7b663a805ce7b35de444d58abc22c411c3"
    },
-   "key": "798b98cac4c9afb4bb3e03103dfe27e0529f338a2db64dfac56ea7ea0971b1e8",
+   "key": "7980a27ae93c9be4ea88f91d3d8f96f7c951b01a198f1e4c21e610f1d690a452",
    "path_set_sha256": "baad9b0dccc48223d5d48c1a840658f88515d2ef80859d2a40f4c2da393f5a43"
   },
   {
-   "bytes": 32315932,
-   "count": 325,
+   "bytes": 32928485,
+   "count": 330,
    "files": {
     "web-editions/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.json": {
      "bytes": 201884,
@@ -124508,6 +124508,14 @@
      "bytes": 135546,
      "sha256": "4580552b85e07f3fa853fc8a13c348665dbb1ab81dfb7f4329f5b53a2fbdb94c"
     },
+    "web-editions/gemini/articles/faith/against-the-instrumentalists.json": {
+     "bytes": 118125,
+     "sha256": "4dd2c09b1b59a351d5a565dfa70ad4f9921e5a639caa97d8fcc39fc8a7e74da3"
+    },
+    "web-editions/gemini/articles/faith/at-the-end-of-every-why.json": {
+     "bytes": 113332,
+     "sha256": "4990a6ceeacbe3dc36b369ca68a5329b869018e03b83e061519262393b73e558"
+    },
     "web-editions/gemini/articles/faith/four-last-things-01-death.json": {
      "bytes": 123233,
      "sha256": "284f23a8e6ce85de804607344c6b35b2a51777dc440623ec156c0d27c78fd418"
@@ -124524,9 +124532,21 @@
      "bytes": 128009,
      "sha256": "9b2fbe36b365a95d3b863319dbad20d54d7c12047422f0a463404d03d2581ba7"
     },
+    "web-editions/gemini/articles/faith/in-defense-of-the-particular.json": {
+     "bytes": 115955,
+     "sha256": "58da5367ac77972d12d9b3c13c724af80832355968347fc203b5fac958fbf305"
+    },
+    "web-editions/gemini/articles/faith/ontological-vertigo.json": {
+     "bytes": 137939,
+     "sha256": "0316fc5260d2981c07c18ee710c327ac325531534588adbc6baf92916bd83782"
+    },
     "web-editions/gemini/articles/faith/reading-metaphysics.json": {
      "bytes": 315171,
      "sha256": "bebe9923f64b216e5951c249c2b2eb21c75778fa2debf3051c5d6f5e730150fa"
+    },
+    "web-editions/gemini/articles/faith/the-due-return.json": {
+     "bytes": 124854,
+     "sha256": "3c1576aeb05be4f848f3b9acd33b5affe61946954241974a81874ed8581e60ad"
     },
     "web-editions/gemini/articles/scripture/abraham-and-the-daylight-stars.json": {
      "bytes": 81294,
@@ -125373,23 +125393,23 @@
      "sha256": "e2f772b0680d93c81ca46dc2118d13132ff538679677b2970464e5748b9d962f"
     },
     "web-editions/index.json": {
-     "bytes": 200736,
-     "sha256": "175c5f3c9190ec4def2e88273871dc9b4e55a21859f682e729dd83dc98d8fb86"
+     "bytes": 203084,
+     "sha256": "aa840f4d117d99029d6abe10bdb5d7d00c74be575e2b543818506b6e884cdb49"
     }
    },
    "id": "web-editions",
    "inputs": {
-    "content": "8ee790dac7f950f5d81852b374f5a8515851c1e93c45d65372ab2e7c8acea2ee",
-    "count": 82934,
+    "content": "46db9cc4739c96785f9f5aba737481b2e706bcadfdf2c1d991740034995cbf15",
+    "count": 83029,
     "generator": "3b96698fb276636c920bcfa968530e64008f4869e23005f4bb1cd8b9b9947a8d",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "30c373c8081bf2aec7919558bb1dc76b6ebb511d3057723736a153038069a857",
-    "rights": "017c2648c4c552053781eae023cc1522819cd3858b8d0229df939af5c917a10a",
+    "membership": "9737b4b6c88814d0d47184ba5d6e3624684ed374026d6171bbbfd11c9d9e1a05",
+    "rights": "625e7fe7b95281abcafe194c6aa2af35ef94fdfc78bc0cd433eb9b31344cc383",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "e98c0990cea27d5b8ba8a494f5cf67f388c88c19a6d27db0d7d1375ea594b168"
+    "sha256": "0b3c71854b407800e2361e47fc725ff4337bc508be9252d6eb86b2e150c84d6d"
    },
-   "key": "4cc4b7e8885f5be49dfa81c23266777ae3a8bdfae96ac55aca270470a0fbb2eb",
-   "path_set_sha256": "242aeaba91c8c37402228d987dc4e9af226ceb71f1d47adba8521bfb4ea6e82f"
+   "key": "2b771c5c3f5ee83625a04e0b98e461d74a16d1dbe169c9c268e3ddafa71acb3a",
+   "path_set_sha256": "c69499019f0afb8eff6dee8491cfa5afc23012e456fc1b24f20cd65a659522d2"
   }
  ],
  "proof": "two-independent-cold-builds-byte-parity",
